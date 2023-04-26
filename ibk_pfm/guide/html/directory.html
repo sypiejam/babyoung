@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<title>파일구조 | 퍼블리싱 가이드</title>
+<link rel="stylesheet" type="text/css" href="../../guide/css/guide.css">
+<style type="text/css">
+body {height:auto;overflow-x:hidden;overflow-y:auto}
+.main {overflow:auto}
+</style>
+</head>
+
+<body>
+<header>
+	<h1 class="blind">퍼블리싱 가이드</h1>
+	<h2 class="g-tit-h2">개인자산관리(PFM) 파일구조</h2>
+</header>
+<main id="wrap" class="main">
+<div id="container" class="g-cont">
+	<h3 class="g-tit">1. 개인자산관리(PFM) 서비스 구축</h3>
+	<div class="g-desc">
+		<p class="g-desc__li">svn 경로 svn://192.168.224.23/PFM_DEV/SMT_PFM/PUB/</p>
+		<p class="g-desc__li">URL(PC) : 192.168.224.23:12102/PUB/index_pfm.html</p>
+		<p class="g-desc__li">URL(MO) : 203.235.68.60:12102/PUB/index_pfm.html</p>
+	</div>
+	<div class="g-directory">
+		<ul class="d-dep01">
+			<li class="bg-dot"><span class="folder">jsp</span>
+				<ul class="d-dep01">
+					<li><span class="folder">phone</span>
+						<ul class="d-dep02">
+							<li><span class="folder">pfm</span> <span class="desc">(개인자산관리)</span>
+								<ul class="d-dep03">
+									<li class="bg-dot"><span class="folder">fin</span> <span class="desc">(My자산)</span>
+										<ul class="d-dep03">
+											<li><span class="file">&#42;.html</span></li>
+										</ul>
+									</li>
+									<li class="bg-dot"><span class="folder">ies</span> <span class="desc">(My지출)</span></li>
+									<li class="bg-dot"><span class="folder">poa</span> <span class="desc">(My리포트/자산 모으기/연금)</span></li>
+									<li class="bg-dot"><span class="folder">pdr</span> <span class="desc">(자산 모으기 &gt; 잔돈저축)</span></li>
+									<li class="bg-dot"><span class="folder">cma</span> <span class="desc">(신용관리)</span></li>
+									<li class="bg-dot"><span class="folder">res</span> <span class="desc">(부동산)</span></li>
+									<li class="bg-dot"><span class="folder">gog</span> <span class="desc">(정부지원금)</span></li>
+									<li class="bg-dot"><span class="folder">cam</span> <span class="desc">(커리어관리)</span></li>
+									<li class="bg-dot"><span class="folder">dic</span> <span class="desc">(오늘의 금융팁)</span></li>
+									<li><span class="folder">com</span> <span class="desc">(공통/메인)</span></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<!-- //html -->
+			<li class="bg-dot"><span class="folder">css</span>
+				<ul class="d-dep01">
+					<li><span class="folder">phone</span>
+						<ul class="d-dep02">
+							<li><span class="file">common.css</span></li>
+							<li><span class="file">contents.css</span></li>
+						</ul>
+						<ul class="d-dep02">
+							<li><span class="folder">pfm</span>
+								<ul class="d-dep02">
+									<li><span class="file">com.css</span></li>
+									<li><span class="file">fin.css</span></li>
+									<li><span class="file">ies.css</span></li>
+									<li><span class="file">&#42;.css</span></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<!-- //css -->
+			<li class="bg-dot"><span class="folder">img</span>
+				<ul class="d-dep01">
+					<li><span class="folder">phone</span>
+						<ul class="d-dep02">
+							<li><span class="folder">pfm</span>
+								<ul class="d-dep03">
+									<li><span class="img">*.png, *.jpg, *.gif</span>
+									<li class="bg-dot"><span class="folder">man</span> <span class="desc">(메인)</span></li>
+									<li class="bg-dot"><span class="folder">fin</span> <span class="desc">(My자산)</span></li>
+									<li class="bg-dot"><span class="folder">ies</span> <span class="desc">(My지출)</span></li>
+									<li>※ 이하생략(html폴더구조와 동일)</li>
+								</ul>
+							</li>
+						</ul>
+					</li>					
+				</ul>
+			</li>
+			<!-- //images -->
+			<li class="bg-dot"><span class="folder">js</span>
+				<ul class="d-dep01">
+					<li><span class="folder">lib</span>
+						<ul class="d-dep02">
+							<li><span class="file">jquery-lib.js</span></li>
+							<li><span class="file">ionebank.js</span></li>
+							<li><span class="file">ionebank_pfm.js</span></em></li>
+						</ul>
+					</li>
+					<!-- //js -->
+				</ul>
+			</li>
+		</ul>
+		<div class="dir-desc">
+			<h4 class="g-tit2">0. 공통</h4>
+			<ul class="g-desc">
+				<li class="g-desc__li">실서버와 동일한 구조로 구성</li>
+				<li class="g-desc__li">HTML : <b class="g-blue">/jsp/phone/pfm/</b></li>
+				<li class="g-desc__li">CSS : <b class="g-blue">/css/phone/pfm/</b></li>
+				<li class="g-desc__li">IMAGE : <b class="g-blue">/img/phone/pfm/</b></li>
+				<li class="g-desc__li">JS : <b class="g-blue">/js/lib/</b></li>
+			</ul><br><br>
+
+			<h4 class="g-tit2">1. HTML</h4>
+			<ul class="g-desc">
+				<li class="g-desc__li">HTML 문서는 화면정의서의 <strong>화면아이디와 동일</strong>하게 정의함</li>
+				<li class="g-desc__li">메뉴별 폴더는 /pfm/아래 구분하여 파일 분류</li>
+				<li>※ 2Depth 이하 HTML파일 업무코드 참고</li>
+			</ul><br>
+			​
+			<h4 class="g-tit2">2. CSS </h4>
+			<ul class="g-desc">
+				<li class="g-desc__li">[공통] <strong>common.css : </strong> reset 설정, 공통 속성 설정, 공통 기본 요소(버튼, 폼요소 등) 스타일 정의 <em class="g-red">※ 모든 화면 호출</em></li>
+				<li class="g-desc__li">[공통] <strong>contents.css : </strong> 서브 화면 공통요소 스타일 정의 <em class="g-red">※ 모든 화면 호출</em></li>
+				<li class="g-desc__li">[공통] <strong>swiper.css : </strong>  swiper 플러그인의 기본 스타일</li>
+			</ul>
+			<div class="g-indent">
+				<h5 class="g-tit2">2-1. PFM 구축 CSS </h5>
+				<ul class="g-desc">
+					<li class="g-desc__li"><strong>com.css : </strong> 개인자산관리 공통 스타일 정의 <em class="g-red">※ 모든 화면 호출</em></li>
+					<li class="g-desc__li"><strong>fin.css : </strong> My자산 스타일 정의</li>
+					<li class="g-desc__li"><strong>ies.css : </strong> My지출 스타일 정의</li>
+					<li class="g-desc__li"><strong>poa.css : </strong> My리포트/자산 모으기/연금 스타일 정의</li>
+					<li class="g-desc__li"><strong>cma.css : </strong> 신용관리 스타일 정의</li>
+					<li class="g-desc__li"><strong>pdr.css : </strong> 자산 모으기 &gt; 잔돈저축 스타일 정의</li>
+					<li class="g-desc__li"><strong>res.css : </strong> 부동산 스타일 정의</li>
+					<li class="g-desc__li"><strong>gog.css : </strong> 정부지원금 스타일 정의</li>
+					<li class="g-desc__li"><strong>cam.css : </strong> 커리어관리 스타일 정의</li>
+					<li class="g-desc__li"><strong>dic.css : </strong> 오늘의 금융팁 스타일 정의</li>
+					<li class="g-desc__li"><strong>main.css : </strong> 개인자산관리 메인, 서브메인 스타일 정의</li>
+					<li class="g-desc__li"><strong>animation.css : </strong> 개인자산관리 모션 스타일 정의</li>
+				</ul>
+			</div>
+			​
+			<h4 class="g-tit2">3. IMAGE </h4>
+			<div class="g-indent">
+				<h5 class="g-tit2">3-1. PFM 구축 IMAGE </h5>
+				<ul class="g-desc">
+					<li class="g-desc__li"><strong>pfm </strong> : 개인자산관리 공통 요소에 사용되는 이미지</li>
+					<li class="g-desc__li">/pfm/아래 <strong>fin</strong> / <strong>ies</strong> / ... : 개인자산관리 서브 화면에서 사용되는 이미지 - 메뉴별 폴더구분하여 파일 분류</li>
+					<li class="g-desc__li">/pfm/<strong>man</strong> : 개인자산관리 메인 요소에 사용되는 이미지</li>
+				</ul>
+			</div>
+			​
+			<h4 class="g-tit2">4. JS </h4>
+			<ul class="g-desc">
+				<li class="g-desc__li">[공통] <strong>jquery-lib.js : </strong>jQuery 라이브러리(jquery-1.8.3.min) <em class="g-red">※ 모든 화면 호출</em></li>
+				<li class="g-desc__li">[공통] <strong>ionebank.js : </strong>i-ONE뱅크(개인) 앱 UI 관련 스크립트 <em class="g-red">※ 모든 화면 호출</em></li>
+				<li class="g-desc__li"><strong>swiper.min.js : </strong>swiper 플러그인</li>
+			</ul>
+			<div class="g-indent">
+				<h5 class="g-tit2">4-1. PFM 구축 JS </h5>
+				<ul class="g-desc">
+					<li class="g-desc__li"><strong>ionebank_pfm.js : </strong>개인자산관리(PFM) UI 관련 스크립트 <em class="g-red">※ 모든 화면 호출</em></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- <h3 class="g-tit">2. 어드민</h3> -->
+
+</div><!-- //g-cont -->
+</main>
+</body>
+</html>

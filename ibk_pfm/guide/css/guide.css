@@ -1,0 +1,175 @@
+@charset "utf-8";
+@import url("../../css/phone/common.css");
+@import url("../../css/phone/contents.css");
+/* @import url("../../css/phone/bank.css");
+@import url("../../css/phone/card.css");
+@import url("../../css/phone/finance.css"); */
+main {height:auto}
+iframe {margin:0;padding:0;border:0}
+header {position:relative; padding:21px 2rem 0; border-bottom:1px solid #1a90cb; background:#f3f6f8}
+header.fix {position:fixed; top:0; width:100%; background:#fff; box-shadow:0px 0px 15px 10px #fff}
+code {font-family:'Consolas'; color:#111; font-size:12px; white-space:pre-wrap; word-wrap:break-word}
+code em, code strong, code span, code b {font-family:'Consolas'; font-size:12px}
+/*h3, h4, h5, h6, a, th, td, li, p, span, em, i {font-size:12px}*/
+
+/* #wrap {height:auto} */
+#wrap:before {display:none}
+
+.g-tit-h1 {padding-bottom:20px; font-size:28px; line-height:29px; font-weight:bold; letter-spacing:-1px}
+.g-tit-h2 {padding-bottom:20px; font-size:21px; line-height:29px; font-weight:bold; letter-spacing:-1px}
+.g-tit-p {position:absolute; bottom:7px; right:20px; font-size:12px; color:#1a90cb}
+.g-red {color:red !important}
+.g-blue {color:blue !important}
+.g-green {color:#008200 !important}
+.g-color {display:inline-block; line-height:20px !important; text-align:center; color:#fff; width:80px}
+.anchor {color:#599fe8; background:#fff195; font-weight:bold; font-size:12px; text-decoration:underline}
+.g-through {text-decoration:line-through}
+del {font-size:12px}
+
+.mgt5 {margin-top:5px !important}
+
+/* onebank_lnb.html */
+.lnb {min-height:100vh; margin-top:-7px; background:#005199}
+.lnb-tit {margin:20px 0 0; padding:10px; border-bottom:1px solid #1a90cb; color:#fff; font-size:14px; font-weight:bold; background:#1a90cb}
+.lnb-mbox {margin:10px 0 10px 15px}
+.lnb-mbox li {margin-bottom:10px}
+.lnb-mbox li a {display:block; color:#fff; font-size:13px}
+.lnb-mbox li a:before {content:'└ '; margin-right:5px; color:#1a90cb}
+.lnb-mbox li a:hover {color:#c4ddea; text-decoration:none}
+
+.g-cont {}
+/*.g-cont .empty {display:block; height:7px; margin:30px -10px 0; border-top:1px solid #dedede; border-bottom:1px solid #dedede; background:#f5f5f5; line-height:7px; text-indent:-9999px}*/
+.g-full {margin:0 -2rem !important}
+
+.g-workcount {padding:5px 20px; text-align:right}
+.g-workcount span {font-size:12px}
+.g-workcount em {font-weight:bold}
+.g-progress__num {color:#e8320d}
+
+.g-listmenu {overflow:hidden; position:absolute; top:30px; right:20px}
+.g-listmenu li {display:inline-block; margin-right:5px}
+.g-listmenu a {display:block; padding:0 3px; border-bottom:1px solid #1a90cb; color:#4c4c4c; font-size:12px}
+.g-listmenu a:hover {background:#d9d9d9; color:#005199}
+
+/* HTML List : top 버튼 */
+.g-top {position:fixed; right:10px; bottom:10px; display:block; width:34px; height:34px; border:1px solid #ccc; background:#fff; color:#898686; font-size:11px; line-height:34px; text-align:center; opacity:0.8; box-shadow:5px 5px 10px 0 #dbdbdb}
+.g-top:hover {color:#005199}
+
+.g-table {margin:10px 20px 50px}
+.g-table table {border-bottom:1px solid #ddd; width:100%; border-collapse:collapse}
+.g-table thead th {padding:10px 7px; border:1px solid #fff; font-size:12px; background:#000; color:#fff; vertical-align:middle}
+.g-table tr:hover td {background:#f1f3f5}
+.g-table td {padding:8px 7px; border:1px solid #eee; font-size:12px; vertical-align:middle}
+.g-table b {color:#111; font-weight:bold; font-size:11px}
+.g-table .sub {border-top:3px solid #ddd}
+.g-table .dep1 {}
+.g-table .dep2 {}
+.g-table .dep3 {}
+.g-table .dep4 {}
+.g-table .dep5 {}
+.g-table .dep1 em, .g-table .dep2 em, .g-table .dep3 em {float:right; color:#999; font-weight:bold; font-size:11px}
+.g-table .scr-link a {font-size:12px}
+.g-table .scr-link a:hover {color:#e94600; text-decoration:underline}
+.g-table .scr-link a:visited {color:#7d93aa}
+.g-table .scr-link del {color:#aeaeae}
+.g-table .name,
+.g-table .date,
+.g-table .comp {text-align:center; white-space:nowrap}
+.g-table .note {font-size:11px; letter-spacing:-.5px}
+.g-table .date {text-transform:uppercase}
+.g-table .modidate {text-align:center;text-transform:uppercase}
+.g-table .note span {padding-right:3px; color:#111; font-weight:bold; font-size:11px}
+.g-table .note span:after {content:':'; display:inline-block; margin-left:3px}
+.g-table .old td,
+.g-table .native td {background-color:#f8f9fb}
+.g-table .old .scr-link,
+.g-table .old .scr-link a {text-decoration:line-through}
+tr.old td.dep1, tr.old td.dep2, tr.old td.dep3, tr.old td.dep4, tr.old td.dep5,
+tr.old td.date, tr.old td.name, tr.old td.comp,
+tr.native td.scr-link, tr.native td.date, tr.native td.name, tr.native td.comp, tr.native td.note {text-decoration:line-through}
+
+.g-tit {position:relative; margin:20px 0 5px; color:#00f; font-size:14px; font-weight:bold}
+.g-tit:before {content:''; display:block; position:absolute; top:2px; left:-2rem; width:3.3rem; height:15px; border-left:15px solid #00f; background:#d2dde4; box-sizing:border-box; opacity:0.2; z-index:-1}
+.g-tit + .g-tit2 {margin-top:0}
+.g-tit2 {margin:15px 0 5px; color:#0968de; font-size:13px; font-weight:bold}
+.g-tit3 {margin:10px 0 5px; font-size:12px; font-weight:bold}
+
+.g-desc li, .g-desc p, .g-desc span,
+.g-desc strong, .g-desc em, .g-desc b {font-size:12px; line-height:1.4}
+.g-desc b, .g-desc strong {font-weight:600}
+
+.g-desc__li {position:relative; padding-left:10px;font-size:12px; margin-bottom:5px}
+.g-desc__li:before {content:'•'; display:block; position:absolute; top:0; left:0}
+
+.g-desc-wrap {display:table; width:100%; border-top:1px solid #ccc}
+.g-desc-wrap > .g-desc {display:table-cell; width:33%; vertical-align:top}
+.g-desc-wrap > .g-desc > li {border-bottom:1px solid #eee; font-size:12px}
+.g-desc__th {display:inline-block; width:40%; margin-right:10px; padding:10px; background:#f2f2f2; color:#111; text-align:right}
+.g-desc__th--top {width:100%; margin:0; padding:6px; text-align:center; border-right:1px solid #fff; border-bottom:1px solid #ccc; box-sizing:border-box}
+
+.g-desc2 {margin:5px 0 10px; padding-left:10px}
+.g-desc2__li {} 
+.g-desc2__tit {display:block; margin-bottom:5px; text-decoration:underline}
+
+.g-code {margin:10px 0; padding:7px 10px; border:1px dashed #ccc; background:#f5f5f5; font-size:12px}
+
+/* 레이아웃(layout.html) */
+.g-lbox {position:relative; border:1px solid #333; margin:20px 0 20px 0; padding:10px; font-size:12px; line-height:20px; letter-spacing:0}
+.g-lbox div, .g-lbox li, .g-lbox strong, .g-lbox p, .g-lbox b, .g-lbox em {font-family:'Consolas'; font-size:12px}
+.g-lbox .g-lbox {margin:15px 0 5px}
+.g-lbox__txt {position:absolute; left:0; top:-12px; width:auto; height:auto; margin-left:10px; padding:0 5px;visibility:visible; background:#fff; color:#000; font-family:'Consolas', Dotum, '돋움'; text-indent:0}
+
+/* 파일구조(directory.html) */
+/*.g-directory {}
+.g-directory thead th {padding:5px; border:1px solid #ddd; background:#f5f5f5}
+.g-directory tbody td {height:27px; padding:5px; border:1px solid #ddd; text-align:center; vertical-align:middle}*/
+
+.g-description {margin-bottom:10px; padding:10px; border:1px solid #99a0a4; background:#99a0a4; color:#fff}
+.g-directory {margin-top:10px; padding:20px; border:1px solid #ddd}
+.g-directory:after {content:''; display:block; clear:both}
+.g-directory ul.d-dep01 li {padding-bottom:5px; font-size:12px}
+.g-directory ul.d-dep02, .g-directory ul.d-dep03 {margin-left:24px; margin-top:5px}
+.g-directory ul li.bg-dot {background:url('../img/bg_folder.gif') repeat-y 5px 0}
+.g-directory ul li span {display:inline-block; padding-left:20px; height:19px; line-height:19px; font-size:12px}
+.g-directory span.desc {padding-left:5px; color:blue}
+.g-directory span.folder, span.folder {background:url('../img/ico_folder.gif') no-repeat 0 50%; font-weight:bold}
+.g-directory span.file {position:relative; margin-bottom:3px; background:url('../img/ico_file.gif') no-repeat 0 50%}
+/*.g-directory span.file:before {content:''; display:block; position:absolute; top:7px; left:-16px; width:13px; height:1px; border-top:1px dotted #c1c1c1}*/
+.g-directory span.img {background:url('../img/ico_img.gif') no-repeat 0 50%}
+
+.g-directory ul.d-dep01 {float:left; width:30%; box-sizing:border-box; border-right:1px dashed #ddd; font-size:12px}
+.g-directory ul.d-dep01 ul.d-dep01 {float:none; padding-left:30px; width:auto; border-right:none}
+.g-directory .dir-desc {float:left; width:70%; box-sizing:border-box; padding-left:20px}
+.g-directory .dir-desc .g-tit2 {margin:20px 0 5px; padding:0; border:0; border-width:0}
+/* 디바이스별 사이즈 정의 */
+@media all and (max-width:767px) {
+	.g-directory ul.d-dep01 {float:none;width:100%;border-right:0}
+	.g-directory .dir-desc {float:none;width:100%;padding-left:10px}
+}
+
+.ly_popup_wrap {display:none}
+.ly_popup_wrap.is_active{display:block}
+
+
+/* 2021-03-29 개인자산관리(PFM) 추가 */
+.lnb {margin:0}
+.lnb-tit {margin-top:2px}
+.lnb-tit sup {color:#eee}
+.lnb-mbox {margin:10px 0 20px 15px}
+.lnb-accor__tit {position:relative;display:block;width:100%;text-align:left;vertical-align:middle}
+.lnb-accor__ico {display:block;position:absolute;top:50%;right:0;width:50px;height:50px;margin-top:-25px;font-size:1px;text-indent:-99999px;color:transparent;overflow:hidden;}
+.lnb-accor__ico {display:block;content:'';position:absolute;top:50%;right:6%;width:8px;height:8px;margin-top:-5px;margin-left:-5px;border:solid #fff;border-width:1px 1px 0 0;transform:rotate(135deg);-ms-transform:rotate(135deg);-moz-transform:rotate(135deg);-webkit-transform:rotate(135deg);-o-transform:rotate(135deg);}
+.lnb-accor.open .lnb-accor__ico {margin-top:-2px;transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-o-transform:rotate(-45deg);}
+.lnb-accor__con {display: none;}
+.lnb-mbox li a {position:relative; padding-left:20px}
+.lnb-mbox li a:before {position:absolute; top:0; left:0}
+.lnb-mbox sup {color:#ddd}
+.g-indent {padding-left:12px}
+.g-directory .dir-desc .g-indent .g-tit2 {margin:10px 0 5px; color:#1a90cb}
+.g-table .scr-link {color:#ccc}
+.g-table .scr-link a {color:#333}
+.g-table .br-dep {border-top:2px solid #ececec}
+.g-table .th-date {text-align:center; white-space:nowrap; text-transform:uppercase}
+tr.old td.th-date, tr.native td.th-date {text-decoration:line-through}
+tr.v2 td {font-weight:700;background:#ffffef}
+td del {font-size:11px}
