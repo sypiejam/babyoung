@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<title>[문서규칙] 퍼블리싱 가이드 신한은행</title>
+<link rel="stylesheet" type="text/css" href="../style/guide.css">
+</head>
+<body>
+<!-- wrap -->
+<div class="wrap">
+	<!-- header -->
+	<header class="header">
+		<h1 class="header_tit">DOCUMENT</h1>
+		<!-- <button class="header_close"><span class="blind">닫기</span></button> -->
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<section class="container">
+
+		<div class="g-cont">
+			<h3 class="g-tit">1. HTML</h3>
+			<ul class="g-desc">
+				<li class="g-desc_li">신한은행 국내 외국인 모바일 뱅킹은 웹표준/웹접근성을 준수</li>
+				<li class="g-desc_li">iOS 10.0 이상 / Android 6.0 이상 (서비스별로 상이할 수 있음)</li>
+			</ul>
+
+			<h4 class="g-tit2">1-1. 구조와 표현</h4>
+			<ul class="g-desc">
+				<li class="g-desc_li">구조언어 - HTML : 앱의 사용자 환경에서 구조(Structure)를 나타내는 언어</li>
+				<li class="g-desc_li">표현언어 - CSS : 앱의 사용자 환경에서 표현(Rendering)을 나타내는 언어</li>
+				<li class="g-desc_li">마크업 언어(HTML)와 화면 표시(CSS)언어를 본래의 목적에 맞게 분리</li>
+				<li class="g-desc_li">모든 요소(Element)와 속성(Properties) 및 값(Value)은 영문 소문자</li>
+				<li class="g-desc_li">속성값은 큰 따옴표(“”)로 묶음</li>
+				<li class="g-desc_li">
+					<strong class="g-desc2__tit">W3C Validation</strong>
+					<ul>
+						<li>HTML 문법 검사 : <a href="http://validator.kldp.org/" target="_blank" class="anchor">http://validator.w3.org/</a></li>
+						<li>CSS 문법 검사 : <a href="http://jigsaw.w3.org/css-validator/" target="_blank" class="anchor">http://jigsaw.w3.org/css-validator/</a></li>
+					</ul>
+				</li>
+			</ul>
+			<h4 class="g-tit2">1-2. 특수문자 사용 HTML Encoding</h4>
+			<div class="g-desc">
+				<p class="g-desc_li">특수 기호는 문자 엔티티 참조하여 코드로 변환한다.</p>
+				<ul>
+					<li>- quot [ &#34; ] &#38;&#35;34;</li>
+					<li>- number [ &#35; ] &#38;&#35;35;</li>
+					<li>- percent [ &#37; ] &#38;&#35;37;</li><!-- % -->
+					<li>- amp [ &#38; ] &#38;&#35;38;</li><!-- & -->
+					<li>- apos [ &#39; ] &#38;&#35;39;</li>
+					<li>- asterisk [ &#42; ] &#38;&#35;42;</li>
+					<li>- lt [ &lt; ] &#38;&#35;60; / &#38;lt;</li>
+					<li>- gt [ &gt; ] &#38;&#35;62; / &#38;gt;</li>
+					<li>- middot [ &#183; ] &#38;&#35;183;</li>
+					<li>- &#8361; [ &#8361; ] &#38;&#35;8361;</li>
+				</ul>
+			</div>
+
+			<h4 class="g-tit2">1-3. 기본구조</h4>
+			<ul class="g-desc">
+				<li class="g-desc_li">전체 문서는 <code>&lt;html&gt; ~ &lt;/html&gt;</code> 안에 들어간다.</li>
+				<li class="g-desc_li"><code>&lt;head&gt; ~ &lt;/head&gt;</code> 안에는 문서의 기본정보가 들어가는 공간이고 화면에 표시되지 않는다.</li>
+				<li class="g-desc_li">head 요소에는 title, meta 요소 등이 포함된다.</li>
+				<li class="g-desc_li"><code>&lt;body&gt; ~ &lt;/body&gt;</code> 안에는 실제 화면에 표시되는 내용이 들어간다.</li>
+				<li class="g-desc_li">※ 코드의 가독성 및 HTML 구조 파악의 용이성을 위해 들여쓰기를 한다. 들여쓰기할 때는 tab(4칸)을 사용한다.</li>
+				<li class="g-desc_li">※ HTML 코드의 빈 줄은 코드 그룹의 영역을 표시하기 위하여 사용한다.</li>
+				<li class="g-desc_li">HTML5 - HTML문서는 반드시 DTD(Document Type Definition)를 선언한다.</li>
+				<li class="g-desc_li">언어코드(lang)는 User Agent가 언어를 올바로 해석할 수 있게 도와주며 검색과 음성 장치에 활용된다.</li>
+				<li class="g-desc_li">utf-8은 다국어 지원이 가능하며 euc-kr보다 표현 가능한 한글이 많다.</li>
+				<li class="g-desc_li">HEAD 작성 순서 - meta, title, link, script, style 순서로 선언</li>
+				<li class="g-desc_li">속성값 작성 순서 - rel, type, href/src, width/height, target, id, name, class, style, title/alt 그 외 속성들 순서로 선언</li>
+				<li class="g-desc_li">viewport - &lt;meta name=&#34viewport&#34 content=&#34width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover&#34&gt;</li>
+			</ul>
+
+			<h4 class="g-tit2">1-4. 주석표기</h4>
+			<ul class="g-desc">
+				<li class="g-desc_li">시작주석: <code>&lt;!-- 주석내용 --&gt;</code>, 종료주석: <code>&lt;!-- //주석내용 --&gt;</code></li>
+				<li class="g-desc_li">코드의 가독성을 높이고 전체 HTML 구조를 쉽게 파악하기 위하여 주석 사용 준수</li>
+				<li class="g-desc_li"> <strong>레이아웃 구분</strong> : HTML 문서의 구조 파악에 도움이 되게끔 시작과 끝 부분을 주석으로 표시</li>
+				<li class="g-desc_li"><strong>수정작업 시 주석처리</strong> : 마크업 수정 시 수정부분을 표기하는 주석은 날짜를 기입하여 사용</li>
+			</ul>
+			<div class="g-code">
+		<code>&lt;!-- YYYY-MM-DD 주석내용 --&gt;
+&lt;div&gt;
+	...
+&lt;/div&gt;
+&lt;!-- //YYYY-MM-DD 주석내용 --&gt;</code>
+			</div>
+
+			<h3 class="g-tit">2. CSS</h3>
+			<h4 class="g-tit2">2-1. 기본규칙</h4>
+			<ul class="g-desc">
+				<li>선택자 &#123; 속성 : 값 &#125;</li>
+				<li class="g-code">
+					<code>.gnb &#123;display:block; clear:both; width:900px&#125;</code>
+				</li>
+				<li class="g-desc__li">선택자는 스타일 적용 대상을 말하며 주로 <code>&#39;h1&#39;</code>이나 <code>&#39;p&#39;</code>등 HTML요소명, class명이나 id명이 그에 해당한다.</li>
+				<li class="g-desc__li">속성은 선택자에 어떤 스타일을 부여할지를 지정한다. 속성별로 지정할 수 있는 값이 정해져 있다.</li>
+				<li class="g-desc__li">속성은 세미콜론 &#39; ; &#39; 으로 구분지어 복수 지정할 수 있다.</li>
+				<li class="g-desc__li">스타일 속성간 개행하지 않으며 클래스명을 선언한 뒤, 속성과 속성사이에는 한 칸의 공백을 두고 CSS 선언의 마지막 속성의 세미콜론은 생략한다.</li>
+				<li class="g-desc__li">공백이 포함된 폰트명, 한글 폰트명, 문자열 데이터 타입, url은 홑따옴표( &#39; )로 감싸며, <code>&#64;charaset</code> 선언시에는 속성값을 겹따옴표( &#34; )로 감싼다.</li>
+				<li class="g-desc__li">모든 CSS속성은 소문자로 작성하고 들여쓰기를 하지 않는다.</li>
+				<li>※ 스타일 우선순위 : 캐스케이드(cascade)라는 처리에 근거해서 가장 마지막에 지정된 스타일을 우선적으로 적용한다.</li>
+				<li>※ &#39;&#42;&#39; 공통 선택자는 웹 페이지의 성능을 저하를 가져오기 때문에 가급적 사용하지 않는다.</li>
+			</ul>
+			<h4 class="g-tit2">2-2. 인코딩</h4>
+			<ul class="g-desc">
+				<li class="g-desc__li">HTML문서와 같은 인코딩을 사용하며 모든 CSS 첫줄에 선언한다.</p>
+				<li class="g-code">
+					<code>&#64;charset &#34utf-8&#34;</code>
+				</li>
+			</ul>
+
+			<h4 class="g-tit2">2-3. 선언방식</h4>
+			<ul class="g-desc">
+				<li class="g-desc__li">CSS로드에서 &#64;import 방식은 되도록 사용하지 않는다.</li>
+				<li class="g-desc__li"><strong>import방식</strong> : External 방식으로 링크된 CSS 안에 또 다른 CSS를 불러오는 방식</li>
+			</ul>
+
+			<h4 class="g-tit2">2-4. 속성 선언 순서 (준수)</h4>
+			<ul class="g-desc">
+				<li class="g-desc__li">CSS 선언 시 사용빈도가 높은 순서 위주로 선언 순서를 통일한다.</li>
+				<li class="g-desc__li">형태 - 흐름 - 위치 - 크기 - 박스모델 - 배경 - 글자 - 기타 순으로 지정한다.</li>
+				<li class="g-desc__li">유지 보수의 용이성을 위해 속성 순서를 아래와 같이 통일할 것을 권장한다.</li>
+				<li class="g-code">
+					<code class="red">display &gt; overflow / clear / float &gt; position &gt; top / right / bottom / left &gt;  width / height &gt; maring / padding &gt; border &gt; background &gt; color &gt; vertical-align, text-align &gt; font &gt; cursor</code>
+				</li>
+				<li class="g-desc__li">font 속성 순서 : 축약형을 사용하지 않으며, 스타일 선언시 <code>font-style &gt; font-variant &gt; font-weight &gt; font-size &gt; line-height &gt; font-family</code> 순서로 선언 권장한다.</li>
+				<li class="g-desc__li"><code>background-position</code> 속성값 숫자로 선언</li>
+				<li class="g-code">
+					<code>.bg {background-position:0 0}<br>.bg {background-position:50% 50%}</code>
+				</li>
+				<li class="g-desc__li">컬러값 축약형 사용</li>
+				<li class="g-code">
+					<code>.txt {color:#333}<br>.txt {color:#ddd}</code>
+				</li>
+				<li class="g-desc__li">속성값이 0일 경우 단위를 표시하지 않는다.</li>
+				<li class="g-code">
+					<code>.img {top:0; margin:0 10px}</code>
+				</li>
+				<li>※ <code>important</code> : important는 랜더링 이슈로 인해 가급적으로 사용하지 않는다.</li>
+			</ul>
+
+			<h4 class="g-tit2">2-4. 주석표기</h4>
+			<ul class="g-desc">
+				<li>텍스트를 &#39;<span class="green">/&#42;</span>&#39; 와 &#39;<span class="green">&#42;/</span>&#39; 로 둘러싼다.</li>
+				<li>주석 기호와 내용 사이에는 반드시 공백 한 칸이 있어야 한다.</li>
+				<li>시작주석을 작성하며 종료 주석은 작성하지 않는다.</li>
+				<li>CSS 코드가 추가로 수정되었음을 알리는 경우 수정된 코드의 시작부분에 오늘 날짜 &#34;YYYY-MM-DD&#34; 추가</li>
+			</ul>
+			<p class="g-code"><code>/&#42; 주석내용 &#42;/<br>/&#42; YYYY-MM-DD 주석내용 &#42;/</code></p>
+
+
+			<h3 class="g-tit">3. 앱접근성</h3>
+			<h4 class="g-tit2">지침 1. 대체 텍스트</h4>
+			<ul class="g-desc">
+				<li class="g-desc_li">이미지 등 텍스트 아닌 콘텐츠를 제공할 경우에는 반드시 대체 텍스트를 함께 제공해야 한다.</li>
+				<li class="g-desc_li">대체 텍스트는 가능한 짧고 명확(short &#38; clear)하게 제공하는 것이 바람직하며,<br><strong> 보이스오버, 토크백 등 모바일 스크린리더에서 기본적으로 제공해 주는 용어</strong>인<em class="g-red"> “버튼”, “이미지”, “레이블”</em> 등은 중복하여 제공하지 않는 것이 바람직하다.</li>
+				<li>※ 웹 접근성 연구소 <strong>버튼</strong>(×) &#8594; 웹 접근성 연구소(<em class="g-red">○</em>)</li>
+				<li>※ 모바일 접근성 <strong>이미지</strong>(×) &#8594; 모바일 접근성(<em class="g-red">○</em>)</li>
+				<li>※ 금융자동화기기 접근성 <strong>레이블</strong>(×) &#8594; 금융자동화기기 접근성(<em class="g-red">○</em>)</li>
+			</ul>
+			<h4 class="g-tit2">지침 7. 초점 - 검사항목 7.1. 초점은 사용자가 예측할 수 있도록 논리적인 순서로 이동해야 한다.</h4>
+			<ul  class="g-desc">
+				<li class="g-desc_li">하위 메뉴는 상위 메뉴 바로 다음에 와야 하며, 계층관계가 명확하도록 마크업 되어야 함.</li>
+				<li class="g-desc_li">폼 콘트롤 요소와 연계된 &lt;label&gt;은 폼 콘트롤 요소에 인접(바로 옆에)해야 함.</li>
+				<li class="g-desc_li">게시판 형태의 UI는 테이블로 마크업하고 &lt;th&gt; scope를 제공하는 것이 가장 바람직함.</li>
+				<li class="g-desc_li">테이블 형태로 마크업하기 어려운 경우는 콘텐츠를 선형화했을때 &#39;11.12.02&#39;, &#39;4385&#39; 등의 값이 각각 &#39;작성일&#39;, &#39;조회수&#39;임을 바로 알 수 있도록 숨김텍스트 등을 추가로 제공해야 함.</li>
+				<li class="g-desc_li">탭 형태의 콘텐츠에서 각 탭에 해당하는 콘텐츠가 무엇인지 알 수 없는 경우 논리적인 순서에 맞게 숨김텍스트 등을 추가로 제목 제공.</li>
+				<li class="g-desc_li">아이디/비밀번호 입력창에서 콘텐츠가 논리적인 순서 (아이디 → 비밀번호 → 로그인 상태 유지 → 로그인 버튼)로 배치.</li>
+			</ul>
+			<h4 class="g-tit2">지침 8. 누르기 동작 지원</h4>
+			<ul class="g-desc">
+				<li class="g-desc_li">터치(touch) 기반 모바일 기기의 모든 컨트롤은 누르기 동작으로 제어할 수 있어야 한다.</li>
+				<li class="g-desc_li">다중 누르기(Multi-touch), 슬라이드(Slide), 끌기와 놓기(Drag and drop) 등의 복잡한 동작을 사용하는 기능이 있는 경우 해당 기능을 대체할 수 있는 단순한 누르기 동작을 지원.</li>
+			</ul>
+
+			<h4 class="g-tit2">지침 12. 입력 도움 - 검사항목 12.1. 입력서식에는 용도와 목적을 알 수 있는 대체정보를 제공해야 한다.</h4>
+			<ul class="g-desc">
+				<li class="g-desc_li">스크린리더나 점자정보단말기, 모바일의 VoiceOver, TalkBack 등은 폼콘트롤요소의 id값과 label의 for값이 연결되어 있는 경우 폼요소 선택 시에 연계된 label을 읽어줌으로써 폼 콘트롤 요소를 인식할 수 있음.</li>
+				<li class="g-desc_li">&lt;label&gt;은 눈에 보이지 않게 제공할 수 있고, 폼 콘트롤 요소에 title로도 제공 가능함.</li>
+				<li class="g-desc_li">* label이 제공되기 어려운 경우에 한하여 title을 인정해 주고 있으며 <em class="g-red">placeholder</em>는 고려 대상이 아님.(<em class="g-red">감점</em>)</li>
+			</ul>
+			<h5 class="g-tit3">label[for] = input[id]</h5>
+			<ul class="g-desc">
+				<li class="g-desc_li">&lt;label&gt;의 for 값과 폼요소의 id 값을 동일하게 제공하여 연결.</li>
+				<li class="g-desc_li">1:1에 대응하는 레이블을 제공할 수 없는 경우에는 title 속성을 이용하여 폼 요소의 설명을 제공해야 함.</li>
+				<li class="g-code">
+<code>&lt;label <em class="g-red">for</em>="nickname"&gt; 닉네임&lt;/label&gt;
+&lt;input <em class="g-red">id</em>="nickname" name="nickname" type="text" value=&#34;홍길동&#34;&gt;</code>
+				</li>
+				<li class="g-desc_li">label 제공하기 힘들 경우 title 속성으로 대체</li>
+				<li class="g-code">
+<code>&lt;th scope=&#34;row&#34;&gt;&lt;label <em class="g-blue">for=&#34;tel01&#34;</em>&gt;전화번호&lt;/label&gt;&lt;/th&gt;
+&lt;td&gt;
+	&lt;input type=&#34;text&#34; <em class="g-blue">id=&#34;tel01&#34;</em> <em class="g-red">title=&#34;전화번호 첫째자리&#34;</em>&gt; - &lt;input type=&#34;text&#34; id=&#34;tel02&#34; <em class="g-red">title=&#34;전화번호 둘째자리&#34;</em>&gt; - &lt;input type="text" id="tel03" <em class="g-red">title=&#34;전화번호 셋째자리&#34;</em>&gt;
+&lt;/td&gt;</code>
+				</li>
+			</ul>
+
+		</div><!-- //g-cont -->
+	</section>
+</div>
+</body>
+</html>

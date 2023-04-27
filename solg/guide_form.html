@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>[폼] 퍼블리싱 가이드 신한은행</title>
+<link rel="stylesheet" type="text/css" href="../../style/common.css">
+<script type="text/javascript" src="../../script/include/library/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../script/include/library/ui.js"></script>
+</head>
+<style type="text/css">
+.body-area > .bx-inp:not(:first-of-type) {margin-top:32px}
+</style>
+<body>
+<!-- wrap -->
+<div class="wrap"><!-- 하단 버튼 고정일 경우 .fix-wrap 추가 -->
+	<!-- header -->
+	<header class="header">
+		<h1 class="header_tit">FORM</h1>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<section class="container">
+		<!-- content -->
+		<div class="content">
+			<div class="title-area">
+				<h2 class="title-area_dep1">인풋박스</h2>
+			</div>
+			<div class="body-area">
+				<div class="title-area">
+					<h3 class="title-area_dep2">Default</h3>
+				</div>
+				<!-- <div class="inp-area">
+					<label for="inp0101" class="bx-inp_tit">외화출금계좌</label>
+					<span class="bx-inp"><input type="text" id="inp0101" class="bx-inp_txt" value="" placeholder="입력하세요"></span>
+				</div> -->
+				<div class="bx-inp">
+					<label for="inp01" class="inp_tit inp_done">Title &lt;- input 입력 완료 후 타이틀 컬러 변경</label><!-- 입력 완료 후 inp_done 클래스 추가 -->
+					<div class="inp-row clearable">
+						<input type="text" id="inp01" value="POYA" class="" placeholder="성명 입력">
+						<button type="button" class="clearable-btn"><i class="clearable-del"></i><span class="blind">텍스트 지움</span></button>
+					</div>
+				</div>
+				<div class="bx-inp b-table">
+					<div class="inp-cell">
+						<label for="inp504" class="inp_tit">국적</label>
+						<div class="inp-row clearable">
+							<input type="text" id="inp504" value="RUSSIA" placeholder="">
+							<button type="button" class="clearable-btn"><i class="clearable-del"></i><span class="blind">텍스트 지움</span></button>
+						</div>
+					</div>
+					<div class="inp-cell">
+						<label for="inp505" class="inp_tit">생년월일</label>
+						<div class="inp-row clearable">
+							<input type="text" id="inp505" value="881231" placeholder="">
+							<button type="button" class="clearable-btn"><i class="clearable-del"></i><span class="blind">텍스트 지움</span></button>
+						</div>
+					</div>
+				</div>
+				<div class="bx-inp bx-cell">
+					<label for="inp02" class="inp_tit">주민등록번호</label>
+					<div class="row-cell-bx">
+						<div class="inp-row row-cell">
+							<input type="number" id="inp02" value="" class="" placeholder="생년월일" maxlength="6">
+						</div>
+						<div class="row-cell row-cell-hyphen">
+							<div class="inp-row row-first">
+								<input type="number" id="" value="2" class="inp-first" placeholder="" maxlength="1">
+							</div>
+							<div class="inp-dis">
+								<input type="password" id="" value="" class="inp-dis" placeholder="" readonly="">
+							</div>
+						</div>	
+					</div>
+					<p class="inp-desc">주민번호 뒷자리를 입력해 주세요.</p>
+				</div>
+				<div class="bx-inp">
+					<label for="inp05" class="inp_tit">수취인 연락처</label>
+					<div class="inp-row inp-sel clearable">
+						<button type="button" class="select">선택</button>
+						<input type="tel" id="inp05" value="" placeholder="- 제외 숫자입력">
+						<button type="button" class="clearable-btn"><i class="clearable-del"></i><span class="blind">텍스트 지움</span></button>	
+					</div>
+					<div class="chk-bx">
+						<input type="checkbox" id="chk09" class="chk-typ2">
+						<label for="chk09"><span>문자메시지 발송</span></label>
+					</div>
+				</div>
+				<div class="bx-inp">
+					<label for="inp03" class="inp_tit">휴대폰번호</label>
+					<div class="inp-row inp-sel error clearable"><!-- 에러 일때 클래스 .error 추가 -->
+						<button type="button" class="select">선택</button>
+						<input type="tel" id="inp03" value="" placeholder="- 제외하고 입력">
+						<button type="button" class="clearable-btn"><i class="clearable-del"></i><span class="blind">텍스트 지움</span></button>	
+					</div>
+					<p class="inp-err-txt">휴대폰번호를 입력해주세요.</p><!-- input 오류시 노출 -->
+				</div>
+				<div class="bx-inp">
+					<label for="inp04" class="inp_tit">인증번호</label>
+					<div class="inp-row inp-certi">
+						<input type="number" id="inp04" value="" placeholder="인증번호 6자리 입력" maxlength="6">
+						<span class="inp-timer">02:56</span>
+						<button type="button" class="inp-btn">재요청</button>
+					</div> 
+				</div>
+				<div class="bx-inp">
+					<label for="inp402" class="inp_tit">입금자명</label>
+					<div class="inp-row inp-certi">
+						<em class="inp-certi_name">신한</em>
+						<input type="text" id="inp402" value="" class="" placeholder="숫자 4자리" maxlength="4">
+						<span class="inp-timer inp-timer_r">02:56:00</span>
+					</div>
+				</div>
+				<div class="bx-inp bx-sch">
+					<label for="inp01" class="inp_tit">관리점 선택</label>
+					<div class="inp-row row-sch clearable">
+						<input type="text" id="inp01" value="" class="" placeholder="서청주">
+						<button type="button" class="clearable-btn"><i class="clearable-del"></i><span class="blind">텍스트 지움</span></button>
+						<button type="button" class="bx-sch_btn"><span class="blind">검색</span></button>
+					</div>
+				</div>
+				<div class="bx-inp">
+					<label for="inp104" class="inp_tit">이메일</label>
+					<div class="inp-row clearable">
+						<input type="email" id="inp104" class="readonly" value="qwerty@shinhan.com" readonly="">
+						<button type="button" class="clearable-btn"><i class="clearable-del"></i><span class="blind">텍스트 지움</span></button>
+						<button type="button" class="msg-modify-btn"><span class="blind">이메일 수정</span></button>
+					</div>
+				</div>
+				<div class="bx-inp bx-sch">
+					<label for="inp03" class="inp_tit">송금인 영문주소</label>
+					<div class="inp-row row-sch clearable">
+						<input type="text" id="inp03" value="15-1" class="" placeholder="상세주소">
+						<button type="button" class="clearable-btn"><i class="clearable-del"></i><span class="blind">텍스트 지움</span></button>
+						<button type="button" class="bx-sch_btn"><span class="blind">검색</span></button>
+					</div>
+					<div class="inp-row clearable">
+						<input type="text" id="" value="JOONG-GU, NAMDAEMUNRO12" class="" placeholder="기본주소1">
+						<button type="button" class="clearable-btn"><i class="clearable-del"></i><span class="blind">텍스트 지움</span></button>
+					</div>
+					<div class="inp-row clearable">
+						<input type="text" id="" value="SEOUL" class="" placeholder="기본주소2">
+						<button type="button" class="clearable-btn"><i class="clearable-del"></i><span class="blind">텍스트 지움</span></button>
+					</div>
+				</div>
+				<div class="bx-inp bx-sch">
+					<label for="inp15" class="inp_tit tooltip-wrap">
+						SWIFT CODE 
+						<button type="button" class="tooltip-btn" data-role="ly-pop-on" data-link="tooltipPop1"><span>안내 툴팁</span></button><!-- 레이어 툴팁일 경우 :  data-role="ly-pop-on" data-link="tooltipPop2" 속성 추가(data-link는 툴팁팝업의 id 값과 매칭) -->
+					</label>
+					<div class="inp-row">
+						<input type="text" id="inp15" value="" class="" placeholder="선택하여 입력">
+						<button type="button" class="bx-sch_btn"><span class="blind">검색</span></button>
+					</div>
+				</div>
+				<div class="bx-inp">
+					<!-- 툴팁 : 4줄 이하일떄 -->
+					<span class="inp_tit tooltip-wrap"><!-- 툴팁 위로 뜰때 .tooltip-up 클래스 추가 -->
+						해외중계은행 수수료
+						<button type="button" class="tooltip-btn" onclick="tooltip(this)"><span>안내 툴팁</span></button><!-- 4줄 이하의 툴팁일 경우 : onclick="tooltip(this)" 추가 -->
+						<div class="tooltip-cont">
+							<div class="tooltip-txts">
+								<p>툴팁이 4줄 이하일때, 예시화면 내용</p>
+								<p>툴팁 정보를 넣어주세요</p>
+								<p>해외중계은행수수료란?</p>
+							</div>
+							<button type="button" class="tooltip-close" onclick="tooltip(this)"><span class="txt-hide">툴팁 닫기</span></button>
+						</div>
+					</span>
+					<!-- // 툴팁 : 4줄 이하일떄 -->
+					<!-- 2019-09-04 디자인 수정 반영 : 마크업 수정 -->
+					<div class="radio-chk-bx">
+						<p class="radio-chk-li">
+							<input type="radio" id="radioChk01" name="radioChk1" class="radio-chk" checked="">
+							<label for="radioChk01"><span>수취인부담</span></label>	
+						</p>
+						<p class="radio-chk-li">
+							<input type="radio" id="radioChk02" name="radioChk1" class="radio-chk">
+							<label for="radioChk02"><span>송금인부담</span></label>	
+						</p>
+					</div>
+					<!-- // 2019-09-04 디자인 수정 반영 : 마크업 수정 -->
+				</div>
+				<br>
+				<div class="bx-inp bx-sel">
+					<span class="inp_tit">수신국가</span>
+					<div class="inp-row">
+						<input type="text" value="USA" placeholder="선택하세요">
+						<button type="button" class="btn-select"><!-- disabled 일때 .disabled 클래스 추가 -->
+							<span class="blind">옵션 선택</span>
+						</button>
+					</div>
+				</div>
+				<div class="bx-inp bx-account">
+					<span class="inp_tit">원화출금계좌</span>
+					<div class="inp-sel-account error"><!-- 오류일 경우 .error 클래스 추가 -->
+						<button type="button" class="sel-account_btn"><!-- 비활성일때 .disabled 클래스 추가 -->
+							<strong class="inp-account_name">외국인국내보수계좌</strong>
+							<span class="inp-account_num">123-123456-123</span>
+						</button>
+						<p class="possible-amount">
+							<span class="txt">출금가능금액</span>
+							<span class="amount">123,000 <em class="unit">KRW</em></span>
+						</p>	
+					</div>
+					<p class="inp-err-txt">출금잔액이 부족합니다.</p>
+				</div>
+				<!-- <div class="bx-inp inp-select inp-sel_account">
+					<span for="inp06" class="inp_tit">출금계좌</span>
+					<button type="button" class="inp-row inp-account">
+						<span class="inp-account_name">신한 주거래 우대통장</span>
+						<strong class="inp-account_num">230220419110 <em class="fc-point">(588,999 <span>KRW</span>)</em></strong>
+					</button>
+				</div> -->
+				<div class="bx-inp">
+					<label for="inp101" class="inp_tit">금액</label>
+					<div class="inp-row bx-inp_price">
+						<input type="text" id="inp101" class="" pattern="[0-9]*" value="" placeholder="보내는 금액 입력">
+						<span class="bx-inp_currency">KRW</span>
+					</div>
+				</div>
+				<div class="bx-inp">
+					<em class="inp_tit">대미환산금액</em>
+					<div class="inp-row inp-value">
+						<span class="input">USD 8,307.00</span>
+					</div>
+				</div>
+				<div class="bx-inp inp-noline">
+					<label for="inp15" class="inp_tit">외화출금계좌</label>
+					<div class="inp-row">
+						<input type="text" id="inp15" value="662 82 100156" class="" placeholder="" readonly="">
+					</div>	
+				</div>
+				<div class="bx-inp bx-calendar">
+					<label for="inp01" class="inp_tit">출국날짜</label>
+					<div class="inp-row">
+						<input type="text" id="inp01" value="2019.09.15" class="" placeholder="">
+						<button type="button" class="calendar-btn"><span class="blind">적립금액만기일 선택</span></button>
+					</div>
+				</div>
+				<div class="bx-inp">
+					<em class="inp_tit">이체기간</em>
+					<div class="calendar">
+						<div class="calendar-cell">
+							<input type="text" class="calendar-inp" title="시작일 입력" placeholder="시작일" value="2018.08.22" readonly>
+							<button type="button" class="calendar-btn"><span class="blind">시작일 선택</span></button>
+						</div>
+						<span class="calendar-cell_hypnen">~</span>
+						<div class="calendar-cell">
+							<input type="text" class="calendar-inp" title="종료일 입력" placeholder="종료일" value="2018.10.21" readonly>
+							<button type="button" class="calendar-btn"><span class="blind">종료일 선택</span></button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="chk-switch-box">
+					<em class="chk-switch_tit">만기자동해지 신청</em>
+					<span class="chk-switch_item"><label for="chk-switch"><input type="checkbox" id="chk-switch" name="chk-switch" class="chk-switch" title="" checked></label></span>
+				</div>
+			</div>
+			<br><br>
+			<!-- 키패드 테스트 -->
+			<div class="body-area">
+				<!-- div class="inp-area">
+					<div class="bx-inp">
+						<label for="inp001" class="inp_tit">pick a color</label>
+						<div class="inp-row" style="width:35px">
+							<input type="color" id="inp001" value="" class="">
+						</div>	
+					</div>
+					<div class="bx-inp">
+						<label for="inp002" class="inp_tit">choose a date</label>
+						<div class="inp-row">
+							<input type="date" id="inp002" value="" class="">
+						</div>	
+					</div>
+					<div class="bx-inp">
+						<label for="inp003" class="inp_tit">pick a time and date</label>
+						<div class="inp-row">
+							<input type="datetime-local" id="inp003" value="" class="">
+						</div>	
+					</div>
+					<div class="bx-inp">
+						<label for="inp004" class="inp_tit">enter an email address</label>
+						<div class="inp-row">
+							<input type="email" id="inp004" value="" class="">
+						</div>	
+					</div>
+					<div class="bx-inp">
+						<label for="inp005" class="inp_tit">enter a number</label>
+						<div class="inp-row">
+							<input type="number" id="inp005" value="" class="">
+						</div>	
+					</div>
+					<div class="bx-inp">
+						<label for="inp006" class="inp_tit">enter a telephone number</label>
+						<div class="inp-row">
+							<input type="tel" id="inp006" value="" class="">
+						</div>	
+					</div>
+					<div class="bx-inp">
+						<label for="inp007" class="inp_tit">enter your keywords</label>
+						<div class="inp-row">
+							<input type="search" id="inp007" value="" class="">
+						</div>	
+					</div>
+					<div class="bx-inp">
+						<label for="inp008" class="inp_tit">pick a value</label>
+						<div class="inp-row">
+							<input type="range" id="inp008" value="" class="" min="5" max="50" step="5" style="width:100%;height:3px;background:gray">
+						</div>	
+					</div>
+					<div class="bx-inp">
+						<label for="inp009" class="inp_tit">required input</label>
+						<div class="inp-row">
+							<input type="text" id="inp009" value="" class="">
+						</div>	
+					</div>
+					<div class="bx-inp">
+						<label for="inp0010" class="inp_tit">enter alphabet characters only</label>
+						<div class="inp-row">
+							<input type="text" pattern="[a-zA-Z]*" id="inp0010" value="" class="">
+						</div>	
+					</div-->
+					<div class="bx-inp">
+						<label for="inp0011" class="inp_tit">number</label>
+						<div class="inp-row">
+							<input type="number" inputmode="decimal" pattern="\d*" step="0.01" onkeyup="imsi(this)" id="inp0011" value="" class="" placeholder="number">
+						</div>	
+					</div>
+					<div class="bx-inp">
+						<label for="inp0012" class="inp_tit">inputmode="decimal"</label>
+						<div class="inp-row">
+							<input type="text" inputmode="decimal" id="inp0012" value="" class="">
+						</div>	
+					</div>
+				</div>
+				<!-- //키패드 테스트 -->
+
+				<div class="body-area">
+					<div class="title-area">
+						<h2 class="title-area_dep1">체크박스</h2>
+					</div>
+					<br>
+					<div class="title-area">
+						<h3 class="title-area_dep2">- 체크 박스 (기본) .chk-typ1</h3>
+					</div>
+					<div class="chk-bx">
+						<input type="checkbox" id="chk01" class="chk-typ1">
+						<label for="chk01"><span>체크1</span></label>
+					</div>
+					<div class="chk-bx">
+						<input type="checkbox" id="chk02" class="chk-typ1" checked>
+						<label for="chk02"><span>체크2</span></label>
+					</div>
+					<div class="chk-bx">
+						<input type="checkbox" id="chk03" class="chk-typ1" disabled>
+						<label for="chk03"><span>체크3</span></label>
+					</div>
+					<br>
+					<div class="chk-big-bx">
+						<input type="checkbox" id="chk04" class="chk-big">
+						<label for="chk04"><span>[필수] 개인(신용)정보 제3자 제공 동의서</span></label>
+					</div>
+					<br>
+					<div class="title-area">
+						<h3 class="title-area_dep2">- 체크 박스 (+link) .chk-bx.terms-anchor-bx</h3>
+					</div>
+					<div class="chk-bx terms-anchor-bx">
+						<input type="checkbox" id="chk05" class="chk-typ1">
+						<label for="chk05"><span>[필수] 개인(신용)정보 제3자 제공 동의서</span></label>
+						<a href="#none" class="terms-item_anchor">약관상세보기</a>
+					</div>
+					<br>
+					<div class="title-area">
+						<h3 class="title-area_dep2">- 체크 박스 (타입2) .chk-typ2</h3>
+					</div>
+					<div class="chk-bx">
+						<input type="checkbox" id="chk06" class="chk-typ2">
+						<label for="chk06"><span>체크1</span></label>
+					</div>
+					<div class="chk-bx">
+						<input type="checkbox" id="chk07" class="chk-typ2" checked>
+						<label for="chk07"><span>체크2</span></label>
+					</div>
+					<div class="chk-bx">
+						<input type="checkbox" id="chk08" class="chk-typ2" disabled>
+						<label for="chk08"><span>체크3</span></label>
+					</div>
+					<br>
+					<div>
+						<span class="chk-star"><input type="checkbox" id="chk101" checked><label for="chk101"><i class="chk-star_i"></i>자주쓰는계좌 등록</label></span>
+					</div>
+				</div>				
+			</div>			
+
+		</div>
+		<!-- //content -->
+	</section>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+</body>
+<!-- tooltip popup [SWIFT code] -->
+<div class="ly-pop_wrap ly-tooltip" id="tooltipPop1">
+	<div class="ly-pop_inner">
+		<div class="ly-pop-hd">
+			<h2 class="ly-pop-hd_tit">SWIFT CODE</h2>
+		</div>
+		<div class="ly-pop_cont">
+			<ul class="bul-dot">
+				<li class="bul-dot-li">모든 은행은 세계적으로 통용되는 SWIFT CODE와 각 국내에서 사용되는고유의 은행코드(Local Code)를 갖고 있습니다.</li>
+				<li class="bul-dot-li">수취은행의 SWIFT CODE 또는 은행코드를 입력하시면 신속하고 정확한 송금처리가 가능합니다.</li>
+			</ul>
+			<div class="title-area bx-dep2">
+				<strong class="title-area_dep2">SWIFT/BIC CODE는</strong>
+			</div>
+			<ul class="bul-dot">
+				<li class="bul-dot-li">수취은행  및 수취은행 홈페이지 또는 아래 주소에서 조회가능합니다.<br><a href="#" class="a-under" target="_blank">(http://www.swift.com/biconline)</a></li>
+			</ul>
+		</div>			
+		<button type="button" class="pop-btn_close" data-role="pop-off"><span>닫기</span></button>
+	</div>
+</div>					
+<!-- // tooltip popup [SWIFT code] -->
+<script type="text/javascript">
+	var prev ="";
+	var regexp =/^\d*(\.\d{0,2})?$/;
+	function imsi(obj) {
+		if(obj.value.search(regexp)==-1) {
+			obj.value = prev;
+		}
+		else {
+			prev = obj.value;
+		}
+	}
+
+</script>
+</html>
