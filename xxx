@@ -1,0 +1,67 @@
+HTML
+형식
+.들여쓰기는 공백(space) 4문자를 사용한다.
+.HTML 문서 형식을 명확하게 지정한다.
+  브라우저의 일관된 렌더링을 위해 상단에 HTML5 DOCTYPE을 명시한다.
+.최상위 태그에는 lang 속성을 주어 문서의 기본 언어를 지정한다.
+  스크린 리더는 lang을 통해 언어를 인식하여 자동으로 음성을 변환하거나 해당 언어에 적합한 발음을 제공한다.
+.메타태그 charset을 사용하여 문자 인코딩 방식을 지정하면, 브라우저나 개발 도구는 해당 문서의 인코딩을 빠르고 정확하게 인식한다. 
+  문자 인코딩은 유니코드 기반으로 하위 호환이 뛰어나 가장 널리 쓰이는 UTF-8을 권장한다.
+
+CSS 방법론
+OOCSS와 BEM 혼용 권장
+CSS와 HTML 사이의 명확하고, 엄격한 관계를 형성하는 데에 도움을 줍니다.
+재사용 가능하고, 작성 가능한 컴포넌트를 만드는 데에 도움을 줍니다.
+보다 적은 중첩과 낮은 특수성을 갖게 합니다.
+확장성 있는 스타일시트를 작성하도록 도움을 줍니다.
+OOCSS(Object Oriented CSS)
+-중복을 최소화 하고 캡슐화를 원칙으로 하는 방법론이다.
+BEM (Block Element Modifier)
+-블록(block), 요소(element), 상태(modifier)로 구분하여 클래스 작성하며 엄격한 네이밍 규칙을 가진다.
+block : 재사용 가능한 영역(header, footer, navigation…), 하나의 단어를 사용하되 길어질 경우 (-)를 사용
+
+CSS
+형식 / 작성규칙
+소프트 탭(띄어쓰기 4칸) 을 사용하세요.
+네이밍 규칙 : 클래스 이름에는 camelCase 방식보다 -를 사용하세요.
+만약 당신이 BEM(아래 OOCSS와 BEM 참조)을 사용하고 계신다면 _와 PalcalCase 방식을 사용하셔도 괜찮습니다.
+ID 선택자를 사용하지 마세요.
+당신이 규칙 선언부에서 다중 선택자를 사용하실 때, 선택자를 한 줄에 한개씩 적어주세요.
+규칙 선언부의 여는 괄호 { 이전에 띄어쓰기를 넣어주세요.
+속성 부분에서, : 문자 뒤에 띄어쓰기를 넣어주세요. 단, : 문자 앞에는 띄어쓰기를 넣지 말아주세요.
+규칙 선언부의 닫는 괄호 }를 새로운 줄에 넣어주세요.
+규칙 선언부들 사이에 빈 줄을 넣어주세요.
+
+border가 없을 경우 none대신 0을 사용한다.
+
+속성 선언 순서 / 참고
+display - 표시
+overflow - 넘침
+float - 흐름
+position - 위치
+width & height - 크기
+margin & padding - 간격
+border - 보더
+background - 배경
+clor/font - 폰트
+animation
+etc(기타) text-decoration,text-indent,clear...
+
+State : 상태를 나타내는 스타일
+Hidden, expend, active, hover 등의 상태에서 사용
+Class명에 suffix(접두) “is-” 또는 “s-”를 붙여서 사용
+.is-error { ... }
+.is-hidden { ... }
+.is-disabled { ... }
+
+의존적인 스타일을 피하자
+.class p{…}
+
+css에 html 태그를 적지 말자
+div.classname{…}
+p.classname{…}
+
+outline을 지우지 말자
+CSS를 작성할때 개발자들이 가장 흔히하는 실수 중 하나입니다.
+outline으로 highlight를 제거하는데 아무 문제도 없을거라 생각할 수 있지만 사실은 사이트에 접근할 수 없게 만들고 있습니다.
+CSS로 규칙을 추가하는것이 일반적입니다.
