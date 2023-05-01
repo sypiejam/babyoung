@@ -65,3 +65,30 @@ outline을 지우지 말자
 CSS를 작성할때 개발자들이 가장 흔히하는 실수 중 하나입니다.
 outline으로 highlight를 제거하는데 아무 문제도 없을거라 생각할 수 있지만 사실은 사이트에 접근할 수 없게 만들고 있습니다.
 CSS로 규칙을 추가하는것이 일반적입니다.
+.키보드 포커스는 키보드 입력을 허용하도록 선택된 DOM의 현재 요소를 나타냅니다. 
+.outline: 0 다른 초점 개요 구현으로 대체하는 경우 예를 들어 를 설정하여 이 개요를 제거하는 CSS만 사용하십시오.
+
+Web Accessibility Initiative- Accessible Rich Internet Applications 문서에는 완전히 액세스 가능한 JavaScript 위젯을 구축하기 위한 기술이 포함되어 있습니다.
+모든 aria-* HTML 속성은 JSX에서 완전히 지원됩니다. React의 대부분의 DOM 속성과 속성은 camelCased인 반면, 
+이러한 속성은 일반 HTML에 있으므로 하이픈 케이스(kebab-case, lisp-case 등으로도 알려짐)여야 합니다.
+<input
+  type="text"
+  aria-label={labelText}
+  aria-required="true"
+  onChange={onchangeHandler}
+  value={inputValue}
+  name="name"
+/>
+
+접근 가능한 양식
+라벨링
+<input>및 와 같은 모든 HTML 양식 컨트롤은 <textarea>액세스할 수 있도록 레이블을 지정해야 합니다. 
+스크린 리더에도 노출되는 설명 레이블을 제공해야 합니다.
+다음 리소스는 이를 수행하는 방법을 보여줍니다.
+W3C는 요소에 레이블을 지정하는 방법을 보여줍니다.
+WebAIM은 요소에 레이블을 지정하는 방법을 보여줍니다.
+Paciello Group은 액세스 가능한 이름을 설명합니다.
+이러한 표준 HTML 사례는 React에서 직접 사용할 수 있지만 속성은 JSX에서 for와 같이 작성됩니다 .htmlFor
+<label htmlFor="namedInput">Name:</label>
+<input id="namedInput" type="text" name="name"/>
+
