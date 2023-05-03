@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<title>ccc</title>
+<style>
+/* IE의 경우 */
+input::-ms-clear,
+input::-ms-reveal{
+    display:none;
+}
+/* 크롬의 경우 */
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+    display:none;
+}
+.inputWrap {
+    position: relative;
+    height: 30px;
+    display: inline-block;
+ }
+  
+.inputWrap input {
+  padding-right: 30px;
+  height: inherit;
+}
+
+.inputWrap .btnClear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: inherit;
+  background: url(https://img.icons8.com/pastel-glyph/2x/cancel.png) center center no-repeat;
+  background-size: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+
+.clearable-btn {
+    display:none;
+}
+.clearable-btn.is-active {
+    display:block
+}
+</style>
+</head>
+<body>
+<!-- wrap -->
+<div class="wrap">
+    <div class="inputWrap">
+        <input type="search" placeholder="검색어를 입력하세요" />
+        <button class="btnClear" onClick="clearInput(this)"></button>
+    </div>
+    <div class="inputWrap">
+        <input type="search" placeholder="검색어를 입력하세요" />
+        <button class="btnClear" onClick="clearInput(this)"></button>
+    </div>
+    <br>
+    <input type="text" id="inpText">
+    <button disabled="true" id="testBtn" class="btn btn-primary">test</button>
+    <br>
+    <div class="inp-row clearable">
+        <input type="text" id="inp01" value="POYA" class="" placeholder="성명 입력">
+        <button type="button" class="clearable-btn"><i class="clearable-del"></i><span class="blind">텍스트 지움</span></button>
+    </div>
+</div>
+<script>
+    $(function(){
+        $("#inpText").on('input',function(){
+            if($("#inpText").val()=='')
+                $("#inpText").attr("disabled",true);
+            else
+                $("#testBtn").attr("disabled",false);
+        });
+    });
+
+    //function clearBtnShowHide(){
+        //input text clear
+        $(document).on('focusin', '.clearable', function(e){
+            var $input = $(this).find('input:not([readonly]), textarea');
+            var $clear = $(this).find('.clearable-btn');
+
+            // $clear.attr('role', 'button');
+            $input.on('focus input', function(){
+                if(!$(this).attr('readonly')){
+                    if(!!this.value) {
+                        $clear.attr('role', 'button');
+                        $clear.addClass('is-active');	
+                    }
+                }else{
+                    $clear.removeAttr('role', 'button');
+                    $clear.removeClass('is-active');
+                }
+            });
+
+            $clear.click(function() {
+                $input.val('').text('');
+                $clear.removeClass('is-active');
+                $input.focus(); //다시 입력창에 포커스 보내기
+            });
+
+            $input.on('blur', function(){
+                // $input.parents().removeAttr('style');
+                // $(this).parent('.inp-row').removeClass('inp-line');
+                setTimeout(function(){
+                    $clear.removeClass('is-active');
+                    $clear.removeAttr('role', 'button');
+                }, 300)
+            });
+
+        });
+    // };
+    // if ($('.clearable-btn').length){ // input 텍스트 삭제(X) 버튼
+	// 	clearBtnShowHide();
+	// }
+</script>
+
+<script>
+    // var btnClear = document.querySelectorAll('.btnClear');
+    // btnClear.forEach(function(btn){
+    //     btn.addEventListener('click', function(){
+    //         btn.parentNode.querySelector('input').value = "";
+    //     })
+    // })
+    var clearInput = function(obj) {
+        obj.parentNode.querySelector('input').value = ""
+    }
+</script>
+</body>
+</html>
