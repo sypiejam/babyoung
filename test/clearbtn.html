@@ -49,6 +49,13 @@ input::-webkit-search-results-decoration{
 .clearable-btn.is-active {
     display:block
 }
+
+.element {
+  cursor: pointer; /* iOS는 클릭 불가능 요소에 cursor 속성을 설정해야 클릭 이벤트가 발생한다. */
+}
+.bold {
+  font-weight: 700;
+}
 </style>
 </head>
 <body>
@@ -70,8 +77,21 @@ input::-webkit-search-results-decoration{
         <input type="text" id="inp01" value="POYA" class="" placeholder="성명 입력">
         <button type="button" class="clearable-btn"><i class="clearable-del"></i><span class="blind">텍스트 지움</span></button>
     </div>
+    <br><br>
+    <span class="element">THIS TEXT IS CLICKABLE!</span>
+    <br>
+    <button class="element">THIS TEXT IS CLICKABLE!</button>
 </div>
 <script>
+    const element = document.querySelectorAll(".element");
+
+    for (let i = 0; i < element.length ; i++) {
+    element[i].addEventListener("click", (e) => {
+        e.target.classList.toggle("bold");
+    });
+    }
+
+
     $(function(){
         $("#inpText").on('input',function(){
             if($("#inpText").val()=='')
