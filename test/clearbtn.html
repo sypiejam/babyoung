@@ -56,11 +56,22 @@ input::-webkit-search-results-decoration{
 .bold {
   font-weight: 700;
 }
+
+/**/
+.searchbox {}
+.searchbox .btn_clear {display: none;}
+.searchbox input:not(:placeholder-shown) + .btn_clear {display: inline-block;}
+
 </style>
 </head>
 <body>
 <!-- wrap -->
 <div class="wrap">
+    <div class="searchbox">
+        <input type="search" placeholder="검색어를 입력하세요" />
+        <button class="btn_clear">삭제</button>
+    </div>
+    <br><br>
     <div class="inputWrap">
         <input type="search" placeholder="검색어를 입력하세요" />
         <button class="btnClear" onClick="clearInput(this)"></button>
@@ -91,6 +102,17 @@ input::-webkit-search-results-decoration{
     });
     }
 
+    $(function(){
+        let $inputsch = $(this).find('.searchbox input:not([readonly]), textarea');
+        let $clearbtn = $(this).find('.searchbox .btn_clear');
+
+        $clearbtn.click(function() {
+                $inputsch.val('').text('');
+                // $clearbtn.removeClass('is-active');
+                $inputsch.focus(); //다시 입력창에 포커스 보내기
+            });
+
+    });
 
     $(function(){
         $("#inpText").on('input',function(){
