@@ -68,7 +68,7 @@ input::-webkit-search-results-decoration{
 <!-- wrap -->
 <div class="wrap">
     <div class="searchbox">
-        <input type="search" placeholder="검색어를 입력하세요" />
+        <input type="search" class="inputsch" placeholder="검색어를 입력하세요" />
         <button class="btn_clear">삭제</button>
     </div>
     <br><br>
@@ -103,12 +103,25 @@ input::-webkit-search-results-decoration{
     }
 
     $(function(){
-        let $inputsch = $(this).find('.searchbox input:not([readonly]), textarea');
-        let $clearbtn = $(this).find('.searchbox .btn_clear');
+        let $inputsch = $('.searchbox .inputsch');
+        let $clearbtn = $('.searchbox .btn_clear');
+        let $schbox = $('.searchbox');
+
+        $inputsch.on('focus input', function(){
+            if(!$(this).attr('readonly')){
+                if(!!this.value) {
+                    // $clearbtn.attr('role', 'button');
+                    $schbox.addClass('is-active');	
+                }
+            }else{
+                // $clearbtn.removeAttr('role', 'button');
+                $schbox.removeClass('is-active');
+            }
+        });
 
         $clearbtn.click(function() {
                 $inputsch.val('').text('');
-                // $clearbtn.removeClass('is-active');
+                $inputsch.parents('.searchbox').removeClass('is-active');
                 $inputsch.focus(); //다시 입력창에 포커스 보내기
             });
 
