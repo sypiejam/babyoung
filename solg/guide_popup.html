@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>[Popup] 신한은행</title>
+<link rel="stylesheet" type="text/css" href="../../style/common.css">
+<link rel="stylesheet" type="text/css" href="../../style/swiper.css">
+<script type="text/javascript" src="../../script/include/library/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../script/include/library/ui.js"></script>
+<script type="text/javascript" src="../../script/include/library/swiper.min.js"></script>
+</head>
+<style type="text/css">
+.pop-btn-on {margin-top:10px; padding:5px; font-size:13px; border:1px solid #a0a0a0}
+</style>
+<body>
+<!-- wrap -->
+<div class="wrap fix-wrap"><!-- 하단 버튼 고정일 경우 .fix-wrap 추가 -->
+	<!-- header -->
+	<header class="header">
+		<button class="header_prev"><span class="blind">뒤로가기</span></button>
+		<h1 class="header_tit">팝업</h1>
+		<button class="header_allmenu"><span class="blind">전체메뉴</span></button>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<section class="container sec-co">
+		<!-- contents -->
+		<div class="content">
+			<div class="title-area">
+				<h2 class="title-area_dep1">슬라이드</h2>
+			</div>
+
+			<!-- [★] data는 퍼블 가이드용 스크립트 적용을 위한 속성입니다. 실제 개발시 포함되지 않습니다. -->
+			<!-- 레이어팝업 호출 버튼 data-roll="slide-pop-on" data-link="slidePop1" 속성 추가(data-link 는 레이어팝업의 id값과 동일)
+				 레이어팝업 닫힘 버튼 data-roll="pop-off" 속성 추가 -->
+			<!-- 하단슬라이드 팝업 호출 버튼 data-roll="ly-pop-on" data-link="layerPop1" 속성 추가(data-link 는 레이어팝업의 id값과 동일)
+				 하단슬라이드 팝업 닫힘 버튼 data-roll="pop-off" 속성 추가 -->
+
+			<!-- slide popup 예시 버튼 -->
+			<button type="button" class="pop-btn-on" data-role="slide-pop-on" data-link="slidePop1">기본 팝업 열기</button><br>
+			<button type="button" class="pop-btn-on" data-role="slide-pop-on" data-link="slidePop2">하단버튼 포함 팝업 열기</button>
+
+			<br>
+			<button type="button" class="pop-btn-on" data-role="slide-pop-on" data-link="slidePop3">자동재예치 횟수 슬라이드 팝업 열기</button>
+
+			<br>
+			<div class="bx-con"><!-- bx-con : padding-top:40px -->
+				<!-- bullet -->
+				<div class="title-area">
+					<h2 class="title-area_dep1">툴팁</h2>
+				</div>
+				<div class="bx-inp bx-sch">
+					<em class="inp_tit tooltip-wrap">
+						SWIFT CODE 
+						<button type="button" class="tooltip-btn" data-role="ly-pop-on" data-link="tooltipPop1"><span>안내 툴팁</span></button><!-- 레이어 툴팁일 경우 :  data-role="ly-pop-on" data-link="tooltipPop2" 속성 추가(data-link는 툴팁팝업의 id 값과 매칭) -->
+					</em>
+				</div>
+				<br>
+				<div class="title-area">
+					<div class="tooltip-wrap">
+						<span class="title-area_dep2">해외중계은행수수료</span>
+						<button type="button" class="tooltip-btn" onclick="tooltip(this);"><span>안내 툴팁</span></button>
+						<div class="tooltip-cont">
+							<div class="tooltip-txts">
+								<p>툴팁이 4줄 이하일때, 예시화면 내용</p>
+								<p>툴팁 정보를 넣어주세요</p>
+								<p>해외중계은행수수료란?</p>
+							</div>
+							<button type="button" class="tooltip-close" onclick="tooltip(this);"><span class="txt-hide">툴팁 닫기</span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- //contents -->
+	</section>
+	<!-- //container -->
+
+	<!-- 하단버튼 -->
+	<!-- <div class="btn-wrap">
+		<button type="button" class="btn-typ1">버튼</button>
+	</div> -->
+	<!-- //하단버튼 -->
+</div>
+<!-- //wrap -->
+<!-- <div class="dimmed"></div> -->
+</body>
+
+<!-- tooltip popup [SWIFT code] -->
+<div class="ly-pop_wrap ly-tooltip" id="tooltipPop1">
+	<div class="ly-pop_inner">
+		<div class="ly-pop-hd">
+			<h2 class="ly-pop-hd_tit">SWIFT CODE</h2>
+		</div>
+		<div class="ly-pop_cont">
+			<ul class="bul-dot">
+				<li class="bul-dot-li">모든 은행은 세계적으로 통용되는 SWIFT CODE와 각 국내에서 사용되는고유의 은행코드(Local Code)를 갖고 있습니다.</li>
+				<li class="bul-dot-li">수취은행의 SWIFT CODE 또는 은행코드를 입력하시면 신속하고 정확한 송금처리가 가능합니다.</li>
+			</ul>
+			<div class="title-area bx-dep2">
+				<strong class="title-area_dep2">SWIFT/BIC CODE는</strong>
+			</div>
+			<ul class="bul-dot">
+				<li class="bul-dot-li">수취은행  및 수취은행 홈페이지 또는 아래 주소에서 조회가능합니다.<br><a href="#" class="a-under" target="_blank">(http://www.swift.com/biconline)</a></li>
+			</ul>
+		</div>			
+		<button type="button" class="pop-btn_close" data-role="pop-off"><span>닫기</span></button>
+	</div>
+</div>
+<!-- //tooltip popup [SWIFT code] -->
+
+<!-- slide popup -->
+<div class="slide-pop_wrap" id="slidePop1">
+	<div class="slide-pop_inner pop-inr_shadow"><!-- 슬라이드 높이 고정(스크롤 없는) 컨텐츠일때 클래스(pop-inr_shadow) 삭제 -->
+		<div class="slide-pop-hd">
+			<h1 class="slide-pop-hd_tit">Title</h1>
+		</div>
+		<div class="slide-pop_cont">
+			<div class="sel-slide">
+				<ul class="sel-list">
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록1</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록2</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록3</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록4</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록5</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록6</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록7</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록8</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button type="button" class="pop-btn_close" data-role="pop-off"><span>확인</span></button>
+	</div>
+</div>
+<!-- //slide popup -->
+
+<!-- slide popup -->
+<div class="slide-pop_wrap" id="slidePop2">
+	<div class="slide-pop_inner">
+		<div class="slide-pop-hd">
+			<h1 class="slide-pop-hd_tit">Title</h1>
+		</div>
+		<div class="slide-pop_cont pop-shadow_cont"><!-- 하단 버튼 생성시 클래스(pop-shadow_cont) 추가 -->
+			<div class="sel-slide">
+				<ul class="sel-list">
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록1</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록2</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록3</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록4</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록5</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록6</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록7</a>
+					</li>
+					<li class="sel-item">
+						<a href="#none" class="sel-item_txt">목록8</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="pop-btn_wrap pop-shadow_btn">
+			<button type="button" class="pop-btn_fix pop-btn_dis" data-role="pop-off"><span>취소</span></button>
+			<button type="button" class="pop-btn_fix" data-role="pop-off"><span>확인</span></button>
+		</div>
+		<button type="button" class="pop-btn_close" data-role="pop-off"><span>확인</span></button>
+	</div>
+</div>
+<!-- //slide popup -->
+
+<!-- slide popup [자동재예치 횟수] -->
+<div class="slide-pop_wrap" id="slidePop3">
+	<div class="slide-pop_inner">
+		<div class="slide-pop-hd">
+			<h1 class="slide-pop-hd_tit">자동재예치 횟수</h1>
+		</div>
+		<div class="slide-pop_cont" style="height:279px"><!-- 팝업 높이 고정 - height:279px -->
+			<div class="pop-info-txt">가입기간 12개월 에 대한 자동재예치 횟수는 총 <span class="fw-bld">5</span>회 입니다.</div>
+			<div class="pop-swiper pop-side-shadow">
+				<div class="swiper-container">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><span class="num">1회</span><span class="date">2023.08.09</span></li><!-- 2019-10-31 span.num 추가 -->
+						<li class="swiper-slide"><span class="num">2회</span><span class="date">2023.08.09</span></li>
+						<li class="swiper-slide"><span class="num">3회</span><span class="date">2023.08.09</span></li>
+						<li class="swiper-slide"><span class="num">4회</span><span class="date">2023.08.09</span></li>
+						<li class="swiper-slide"><span class="num">5회</span><span class="date">2023.08.09</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="pop-btn_wrap">
+			<button type="button" class="pop-btn_fix" data-role="pop-off"><span>확인</span></button>
+		</div>
+		<button type="button" class="pop-btn_close" data-role="pop-off"><span>확인</span></button>
+	</div>
+</div>
+<!-- // slide popup [자동재예치 횟수] -->
+<script>
+	// 자동재예치 Slide Popup
+	var swiper = new Swiper('.pop-swiper .swiper-container', {
+		slidesPerView: 3,
+		centeredSlides: true,
+		loop: true,
+	})
+</script>
+
+</html>
