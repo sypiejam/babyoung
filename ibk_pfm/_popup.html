@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<title>Pupup | 퍼블리싱 가이드</title>
+<link rel="stylesheet" type="text/css" href="../../css/phone/card.css">
+<link rel="stylesheet" type="text/css" href="../css/guide.css">
+<script type="text/javascript" src="../../js/lib/jquery-lib.js"></script>
+<script type="text/javascript" src="../../js/lib/ionebank.js"></script>
+<style type="text/css">
+body {height:auto;overflow-x:hidden;overflow-y:auto}
+.main {overflow:auto}
+/* 툴팁 bank.css */
+.bx_account_inq {position:relative; margin-top:20px; padding:12px 0 15px; border:1px solid #d9d9d9}
+.bx_account_inq .tooltip_wrap {position:absolute; top:12px; right:1.5rem}
+</style>
+</head>
+<body>
+<header>
+	<h1 class="blind">퍼블리싱 가이드</h1>
+	<h2 class="g-tit-h2">Popup(레이어팝업)</h2>
+</header>
+<main id="wrap" class="main">
+<div id="container" class="g-cont">
+	<h3 class="g-tit">1. 레이어 팝업</h3>
+	<div class="g-code">
+		<code>&lt;div <b class="g-red">class=&#34;ly_popup&#34;</b>&gt;</code>
+	</div>
+
+	<!-- [★] data는 퍼블 가이드용 스크립트 적용을 위한 속성입니다. 실제 개발시 포함되지 않습니다. -->
+
+	<!-- 레이어팝업 호출 버튼 data-roll="layer-pop-on" data-link="layer01" 속성 추가(data-link 는 레이어팝업의 id값과 동일)
+		 레이어팝업 닫힘 버튼 data-roll="layer-pop-off" 속성 추가 -->
+	<!-- 하단슬라이드 팝업 호출 버튼 data-roll="slidebtm-on" data-link="pop1" 속성 추가(data-link 는 레이어팝업의 id값과 동일)
+		 하단슬라이드 팝업 닫힘 버튼 data-roll="slidebtm-off" 속성 추가 -->
+
+	<a href="#none" class="anchor" data-roll="layer-pop-on" data-link="layer01">Alert 레이어 팝업 열기</a>
+<br><br>
+	<a href="#none" class="anchor" data-roll="layer-pop-on" data-link="layer02">Confirm 레이어 팝업 열기</a>
+<br><br>
+	<a href="#none" class="anchor" data-roll="layer-pop-on" data-link="layer02-1">오류코드 레이어 팝업 열기</a>
+<br><br>
+	<a href="#none" class="anchor" data-roll="layer-pop-on" data-link="layer03">SNS 공유하기 팝업 열기</a>
+<br><br>
+	<a href="#none" class="anchor" data-roll="layer-pop-on" data-link="layer03-1">메시지전송 팝업 열기</a>
+<br><br>
+	<a href="#none" class="anchor" data-roll="layer-pop-on" data-link="layARS">ARS요청 팝업 열기</a>
+<br><br>
+	<h3 class="g-tit">2. 슬라이드 팝업(Bottom to Top)</h3>
+	<div class="g-code">
+		<code>&lt;div <b class="g-red">class=&#34;bx_slidebtm&#34;</b>&gt;
+    &lt;div <b class="g-red">class=&#34;hd_slidebtm&#34;</b>&gt;</code>
+	</div>
+	<a href="#" class="anchor" data-roll="slide-btm-on" data-link="pop1">계좌선택 슬라이드 열기</a>
+	<!-- <a href="#none" class="anchor" data-roll="slide-btm-on" data-link="slidePopTel">인증용 전화번호 슬라이드 열기</a> -->
+<br><br>
+	<a href="#none" class="anchor" data-roll="slide-btm-on" data-link="pop2">은행/증권사 선택 슬라이드 열기</a>
+	<!-- <a href="#none" class="anchor" data-roll="slide-btm-on" data-link="telecom">통신사 선택</a> -->
+<br><br>
+	<a href="#none" class="anchor" data-roll="slide-btm-on" data-link="pop3">카드선택(체크박스) 슬라이드 열기</a>
+<br><br>
+	<a href="#none" class="anchor" data-roll="slide-btm-on" data-link="pop4">카드선택(단일) 슬라이드 열기</a>
+<br><br>
+	<a href="#none" class="anchor" data-roll="slide-btm-on" data-link="pop5">메시지를 보낼 방법 선택 슬라이드 열기</a>
+<br>
+<br>
+
+<br>
+	<h3 class="g-tit">3. 툴팁</h3>
+<div class="bx_account_inq"><!-- 가이드용 bank.css -->&nbsp;
+	<!-- 툴팁 -->
+	<div class="tooltip_wrap">
+		<button type="button" class="btn_tooltip" onclick="tooltip(this);"><span>툴팁</span></button>
+		<div class="box_tooltip">
+			<ul>
+				<li class="tooltip_item"><a href="#" class="tooltip_item_a">계좌별명관리</a></li>
+				<li class="tooltip_item"><a href="#" class="tooltip_item_a">계좌번호복사</a></li>
+				<li class="tooltip_item"><a href="#" class="tooltip_item_a">QR코드 생성하기</a></li>
+			</ul>
+			<button type="button" class="tooltip_btncls" onclick="tooltip(this);"><span class="txt_hide">툴팁 메뉴 닫기</span></button>
+		</div>
+	</div>
+	<!-- //툴팁 -->
+</div>
+
+
+<!-- Alert Layer Popup -->
+<div class="ly_popup_wrap" id="layer01">
+	<div class="ly_popup">
+		<div class="hd_popup">
+			<h2 class="hd_popup_tit">안내</h2>
+		</div>
+		<div class="bd_popup">
+			<div class="bd_popup_txts">
+				<p>모바일 인증서 발금은 <br>로그아웃 후 가능합니다.</p>
+			</div>
+		</div>
+		<div class="btn_wrap">
+			<button type="button" class="btn_fix" data-roll="layer-pop-off">확인</button>
+		</div>
+		<button type="button" class="btn_close" data-roll="layer-pop-off"><span>닫기</span></button>
+	</div>
+</div>
+<!-- //Alert Layer Popup -->
+<!-- Confirm Layer Popup -->
+<div class="ly_popup_wrap" id="layer02">
+	<div class="ly_popup">
+		<div class="hd_popup">
+			<h2 class="hd_popup_tit">예금주 확인</h2>
+		</div>
+		<div class="bd_popup">
+			<div class="bd_popup_top">
+				<p class="bd_popup_txt1">받는분의 이름(실명)과 예금주명이 <br>일치합니까?</p>
+			</div>
+			<div class="bd_popup_mid">
+				<em class="bd_popup_txt2">홍길동 과장님</em>
+			</div>
+			<p class="bx_smltxt">받는분의 실명과 예금주명이 일치해야 이체 가능합니다.<br>
+			직함 또는 별명은 상제하시고 실명만 입력하세요.</p>
+		</div>
+		<div class="btn_wrap">
+			<button type="button" class="btn_fix btn_fix_dis" data-roll="layer-pop-off">아니오</button>
+			<button type="button" class="btn_fix" data-roll="layer-pop-off">예</button>
+		</div>
+		<button type="button" class="btn_close" data-roll="layer-pop-off"><span>닫기</span></button>
+	</div>
+</div>
+<!-- //Confirm Layer Popup -->
+
+<!-- 오류코드 Layer Popup -->
+<div class="ly_popup_wrap" id="layer02-1">
+	<div class="ly_popup">
+		<div class="hd_popup">
+			<h2 class="hd_popup_tit">제목</h2>
+		</div>
+		<div class="bd_popup">
+			<div class="bd_popup_top">
+				<p class="bd_popup_txts">안내문구<br>안내문구 안내문구</p><!-- 2019-01-29 클래스 변경  -->
+			</div>
+			<div class="bx_error_code">
+				<button type="button" class="bx_error_tit">오류코드</button>
+				<p class="bx_error_txt">XXXXXXXXXX</p>
+			</div>
+		</div>
+		<div class="btn_wrap">
+			<button type="button" class="btn_fix btn_fix_half" data-roll="layer-pop-off">상담</button>
+			<button type="button" class="btn_fix" data-roll="layer-pop-off">챗봇</button>
+		</div>
+		<button type="button" class="btn_close" data-roll="layer-pop-off"><span>닫기</span></button>
+	</div>
+</div>
+<!-- //오류코드 Layer Popup -->
+
+<!-- ARS인증 진행 중 레이어팝업 -->
+<div id="layARS" class="ly_popup_wrap">
+	<div class="ly_popup">
+		<div class="hd_popup">
+			<h2 class="hd_popup_tit">ARS인증 진행 중</h2>
+		</div>
+		<div class="bd_popup">
+			<div class="bd_popup_top">
+				<p class="bd_popup_txt1">인증번호</p>
+			</div>
+			<div class="certifi_num">
+				<em class="certifi_num_fig">47</em>
+			</div>
+			<p class="bx_smltxt">인증번호를 입력하시고<br>완료 후 ‘확인’ 버튼을 눌러주세요.</p>
+		</div>
+		<div class="btn_wrap">
+			<button type="button" class="btn_fix" data-roll="layer-pop-off">확인</button>
+		</div>
+		<button type="button" class="btn_close" data-roll="layer-pop-off"><span>닫기</span></button>
+	</div>
+</div>
+<!-- //ARS인증 진행 중 레이어팝업 -->
+
+
+<!-- SNS 공유하기 Layer Popup -->
+<div class="ly_popup_wrap" id="layer03">
+	<div class="ly_popup">
+		<div class="hd_popup">
+			<h2 class="hd_popup_tit">공유하기</h2>
+		</div>
+		<div class="bd_popup">
+			<div class="btn_share_wrap">
+				<a href="#" class="btn_share_item kakao">카카오톡</a>
+				<a href="#" class="btn_share_item facebook">페이스북</a>
+				<a href="#" class="btn_share_item twitter">트위터</a>
+				<a href="#" class="btn_share_item url">URL복사</a>
+			</div>
+		</div>
+		<button type="button" class="btn_close" data-roll="layer-pop-off"><span>닫기</span></button>
+	</div>
+</div>
+<!-- //SNS 공유하기 Layer Popup -->
+
+<!-- 메시지전송 팝업 -->
+<div class="ly_popup_wrap" id="layer03-1">
+	<div class="ly_popup">
+		<div class="hd_popup">
+			<h2 class="hd_popup_tit">공유하기</h2>
+		</div>
+		<div class="bd_popup">
+			<div class="btn_share_wrap">
+				<a href="#" class="btn_share_item msg">메시지</a>
+				<a href="#" class="btn_share_item kakao">카카오톡</a>
+				<a href="#" class="btn_share_item line">라인</a>
+			</div>
+		</div>
+		<button type="button" class="btn_close" data-roll="layer-pop-off"><span>닫기</span></button>
+	</div>
+</div>
+<!-- 메시지전송 팝업 -->
+
+<!-- 계좌선택 슬라이드 팝업(Bottom to Top) -->
+<div class="bx_slidebtm" id="pop1" data-roll="slide-cont">
+	<div class="hd_slidebtm">
+		<h3 class="hd_slidebtm_tit">내 계좌선택</h3>
+		<a href="#" class="btn_often_set"><span class="txt_hide">자주쓰는계좌관리 이동</span></a>
+	</div>
+	<div class="bx_slidebtm_cont">
+		<div class="tab_wrap list_account_wrap">
+			<ul class="tab_list">
+				<li class="tab_list_li"><a href="#">자주</a></li>
+				<li class="tab_list_li"><a href="#">최근</a></li>
+				<li class="tab_list_li is_active"><a href="#">내계좌</a></li>
+			</ul>
+			<div class="tab_cont">
+				자주쓰는계좌 목록
+			</div>
+			<div class="tab_cont">
+				최근입금계좌 목록
+			</div>
+			<div class="tab_cont is_active">
+				내계좌
+			</div>
+		</div>
+	</div>
+	<button type="button" class="btn_close" data-roll="slide-btm-off"><span>닫기</span></button>
+</div><!-- //bx_slidebtm -->
+<!-- //계좌선택 슬라이드 팝업(Bottom to Top) -->
+
+<!-- 인증용 전화번호 슬라이드(Bottom to Top) -->
+<div class="bx_slidebtm" id="slidePopTel" data-roll="slide-cont">
+	<div class="hd_slidebtm">
+		<h3 class="hd_slidebtm_tit">인증용 전화번호</h3>
+	</div>
+	<div class="bx_slidebtm_cont">
+		<ul class="list_typ5">
+			<li class="list_typ5_li"><a href="#none" class="list_typ5_anchor">휴대폰번호 : 010-1234-5678</a></li>
+			<li class="list_typ5_li"><a href="#none" class="list_typ5_anchor">자택 전화번호 : 070-1234-5678</a></li>
+			<li class="list_typ5_li"><a href="#none" class="list_typ5_anchor">직장 전화번호 : 02-1234-5678</a></li>
+		</ul>
+	</div>
+	<button type="button" class="btn_close" data-roll="slide-btm-off"><span>닫기</span></button>
+</div>
+<!-- //인증용 전화번호 슬라이드(Bottom to Top) -->
+
+<!-- 은행/증권사 선택 슬라이드 팝업(Bottom to Top) -->
+<div class="bx_slidebtm" id="pop2" data-roll="slide-cont">
+	<div class="hd_slidebtm">
+		<h3 class="hd_slidebtm_tit">은행/증권사</h3>
+	</div>
+	<div class="bx_slidebtm_cont">
+		<div class="tab_wrap list_financial_wrap">
+			<ul class="tab_list">
+				<li class="tab_list_li is_active"><a href="#">은행</a></li>
+				<li class="tab_list_li"><a href="#">증권사</a></li>
+			</ul>
+			<div class="tab_cont is_active">
+				<ul class="list_financial_firm clear">
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_003"></i>
+							<span>기업은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_004"></i>
+							<span>국민은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_020"></i>
+							<span>우리은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_088"></i>
+							<span>신한은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_081"></i>
+							<span>KEB하나은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_011"></i>
+							<span>농협은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_012"></i>
+							<span>지역농축협</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_023"></i>
+							<span>SC은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_027"></i>
+							<span>한국씨티은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_071"></i>
+							<span>우체국</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_039"></i>
+							<span>경남은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_034"></i>
+							<span>광주은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_031"></i>
+							<span>대구은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_055"></i>
+							<span>도이치</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_032"></i>
+							<span>부산은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_064"></i>
+							<span>삼림조합</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_002"></i>
+							<span>산업은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_050"></i>
+							<span>상호저축은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_045"></i>
+							<span>새마을금고</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_007"></i>
+							<span>수협</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_048"></i>
+							<span>신협중앙회</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_037"></i>
+							<span>전북은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_035"></i>
+							<span>제주은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_060"></i>
+							<span>BOA</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_054"></i>
+							<span>HSBC</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_057"></i>
+							<span>JP모간</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_062"></i>
+							<span>중국공상은행</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_061"></i>
+							<span>BNP파리바</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_090"></i>
+							<span>카카오뱅크</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_089"></i>
+							<span>케이뱅크</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="tab_cont">
+				<ul class="list_financial_firm clear">
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_261"></i>
+							<span>교보증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_267"></i>
+							<span>대신증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_238"></i>
+							<span>미래에셋대우</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_279"></i>
+							<span>DB금융투자</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_209"></i>
+							<span>유안타증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_287"></i>
+							<span>메리츠증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_290"></i>
+							<span>부국증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_240"></i>
+							<span>삼성증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_268"></i>
+							<span>솔로몬투자증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_291"></i>
+							<span>신영증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_278"></i>
+							<span>신한금융투자</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_247"></i>
+							<span>우리투자증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_280"></i>
+							<span>유진투자증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_265"></i>
+							<span>이베스트증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_264"></i>
+							<span>키움증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_270"></i>
+							<span>하나금융투자</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_262"></i>
+							<span>하이투자</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_243"></i>
+							<span>한국투자</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_269"></i>
+							<span>한화증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_218"></i>
+							<span>KB증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_263"></i>
+							<span>현대차투자증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_292"></i>
+							<span>케이프투자증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_289"></i>
+							<span>NH농협증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_266"></i>
+							<span>SK증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_227"></i>
+							<span>KTB투자증권</span>
+						</a>
+					</li>
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_294"></i>
+							<span>한국포스증권</span><!-- 2019-05-14 로고 및 텍스트 수정 -->
+						</a>
+					</li>
+					<!-- 2019-05-14 은행/증권사 이미지가 없을 경우 제공할 이미지(개발용) -->
+					<li class="list_name">
+						<a href="#">
+							<i class="ico_logo_000"></i>
+							<span>default</span>
+						</a>
+					</li>
+					<!-- //2019-05-14 은행/증권사 이미지가 없을 경우 제공할 이미지(개발용) -->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<button type="button" class="btn_close" data-roll="slide-btm-off"><span>닫기</span></button>
+</div><!-- //bx_slidebtm -->
+<!-- //은행/증권사 선택 슬라이드 팝업(Bottom to Top) -->
+
+<!-- 통신사 선택 슬라이드(Bottom to Top) -->
+<!-- [★] data는 퍼블 가이드용 스크립트 적용을 위한 속성입니다. 실제 개발시 포함되지 않습니다. -->
+<div class="bx_slidebtm" id="telecom" data-roll="slide-cont">
+	<div class="hd_slidebtm">
+		<h3 class="hd_slidebtm_tit">통신사 선택</h3>
+	</div>
+	<div class="bx_slidebtm_cont">
+		<div class="bx_slidebtm_inner">
+			<ul class="source_btns source_btns_row">
+				<li class="source_btns_li"><input type="radio" id="telecom11" class="btn_source" name="telecom" checked><label for="telecom11" class="btn_source_i">SKT</label></li>
+				<li class="source_btns_li"><input type="radio" id="telecom12" class="btn_source" name="telecom"><label for="telecom12" class="btn_source_i">KT</label></li>
+				<li class="source_btns_li"><input type="radio" id="telecom13" class="btn_source" name="telecom"><label for="telecom13" class="btn_source_i">LGU+</label></li>
+			</ul>
+			<ul class="source_btns source_btns_row source_btns_row_child2">
+				<li class="source_btns_li"><input type="radio" id="telecom21" class="btn_source" name="telecom"><label for="telecom21" class="btn_source_i">SKT 알뜰폰</label></li>
+				<li class="source_btns_li"><input type="radio" id="telecom22" class="btn_source" name="telecom"><label for="telecom22" class="btn_source_i">KT 알뜰폰</label></li>
+				<li class="source_btns_li"><input type="radio" id="telecom23" class="btn_source" name="telecom"><label for="telecom23" class="btn_source_i">LGU+ 알뜰폰</label></li>
+			</ul>
+		</div>
+	</div>
+	<button type="button" class="btn_close" data-roll="slide-btm-off"><span>닫기</span></button>
+</div>
+<!-- //통신사 선택 슬라이드(Bottom to Top) -->
+
+<!-- 카드선택(다중) 슬라이드(Bottom to Top) -->
+<div class="bx_slidebtm" id="pop3">
+	<div class="hd_slidebtm">
+		<h3 class="hd_slidebtm_tit">카드선택</h3>
+		<!-- <button type="button" class="btn btn_crd_use btn_sel_all">전체선택</button> --><!-- 클릭시 하단 리스트 전체 선택 -->
+	</div>
+	<div class="bx_slidebtm_cont">
+		<button type="button" class="bx_slide_btn bx_slide_btn_cancel txt_blue">전체선택</button>
+		<div class="list_crd_sel">
+			<ul>
+				<li class="list_crd_item">
+					<div class="chk_crd_sel">
+						<input type="checkbox" id="chk01" class="bx_check">
+						<label for="chk01"><i class="bx_check_i"></i>
+							<div class="crd_info">
+								<div class="crd_sel_img">
+									<img src="../../img/phone/crd/crd_cashback_img01.jpg" alt="카드 이미지"><!-- 2018-12-31 img 경로 수정 -->
+								</div>
+								<div class="crd_sel_txt">
+									<ul>
+										<li class="crd_sel_txt_name"><strong>일상의 기쁨카드 (신용)</strong></li><!-- 2018-12-31 strogn 태그 추가 -->
+										<li class="crd_sel_txt_num">1234-0000-1234-0000</li><!-- 2018-12-31 strogn 태그 삭제 -->
+										<li class="crd_sel_txt_owner">홍길동</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+					</div>					
+				</li>
+				<li class="list_crd_item">
+					<div class="chk_crd_sel">
+						<input type="checkbox" id="chk02" class="bx_check">
+						<label for="chk02"><i class="bx_check_i"></i>
+							<div class="crd_info">
+								<div class="crd_sel_img">
+									<img src="../../img/phone/crd/crd_cashback_img01.jpg" alt="카드 이미지"><!-- 2018-12-31 img 경로 수정 -->
+								</div>
+								<div class="crd_sel_txt">
+									<ul>
+										<li class="crd_sel_txt_name"><strong>일상의 기쁨카드 (신용)</strong></li><!-- 2018-12-31 strogn 태그 추가 -->
+										<li class="crd_sel_txt_num">1234-0000-1234-0000</li><!-- 2018-12-31 strogn 태그 삭제 -->
+										<li class="crd_sel_txt_owner">홍길동</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+					</div>					
+				</li>
+				<li class="list_crd_item">
+					<div class="chk_crd_sel">
+						<input type="checkbox" id="chk03" class="bx_check">
+						<label for="chk03"><i class="bx_check_i"></i>
+							<div class="crd_info">
+								<div class="crd_sel_img">
+									<!-- <img src="../../img/phone/crd/crd_cashback_img01.jpg" alt="카드 이미지"> --> <!-- 이미지 없을 경우 --><!-- 2018-12-31 img 경로 수정 -->
+								</div>
+								<div class="crd_sel_txt">
+									<ul>
+										<li class="crd_sel_txt_name"><strong>일상의 기쁨카드 (신용)</strong></li><!-- 2018-12-31 strogn 태그 추가 -->
+										<li class="crd_sel_txt_num">1234-0000-1234-0000</li><!-- 2018-12-31 strogn 태그 삭제 -->
+										<li class="crd_sel_txt_owner">홍길동</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+					</div>					
+				</li>
+				<li class="list_crd_item">
+					<div class="chk_crd_sel">
+						<input type="checkbox" id="chk04" class="bx_check">
+						<label for="chk04"><i class="bx_check_i"></i>
+							<div class="crd_info">
+								<div class="crd_sel_img">
+									<!-- <img src="../../img/phone/crd/crd_cashback_img01.jpg" alt="카드 이미지"> --> <!-- 이미지 없을 경우 --><!-- 2018-12-31 img 경로 수정 -->
+								</div>
+								<div class="crd_sel_txt">
+									<ul>
+										<li class="crd_sel_txt_name"><strong>일상의 기쁨카드 (신용)</strong></li><!-- 2018-12-31 strogn 태그 추가 -->
+										<li class="crd_sel_txt_num">1234-0000-1234-0000</li><!-- 2018-12-31 strogn 태그 삭제 -->
+										<li class="crd_sel_txt_owner">홍길동</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+					</div>					
+				</li>
+				<li class="list_crd_item">
+					<div class="chk_crd_sel">
+						<input type="checkbox" id="chk05" class="bx_check">
+						<label for="chk05"><i class="bx_check_i"></i>
+							<div class="crd_info">
+								<div class="crd_sel_img">
+									<!-- <img src="../../img/phone/crd/crd_cashback_img01.jpg" alt="카드 이미지"> --> <!-- 이미지 없을 경우 --><!-- 2018-12-31 img 경로 수정 -->
+								</div>
+								<div class="crd_sel_txt">
+									<ul>
+										<li class="crd_sel_txt_name"><strong>일상의 기쁨카드 (신용)</strong></li><!-- 2018-12-31 strogn 태그 추가 -->
+										<li class="crd_sel_txt_num">1234-0000-1234-0000</li><!-- 2018-12-31 strogn 태그 삭제 -->
+										<li class="crd_sel_txt_owner">홍길동</li>
+									</ul>
+								</div>
+							</div>
+						</label>
+					</div>					
+				</li>
+			</ul>
+		</div>
+	</div>
+	<button type="button" class="btn_close" data-roll="slide-btm-off"><span>닫기</span></button>
+</div>
+<!-- //카드선택(다중) 슬라이드(Bottom to Top) -->
+
+<!-- 카드선택(단일) 슬라이드(Bottom to Top) -->
+<div class="bx_slidebtm" id="pop4">
+	<div class="hd_slidebtm">
+		<h3 class="hd_slidebtm_tit">카드선택</h3>
+	</div>
+	<div class="bx_slidebtm_cont">
+		<div class="list_crd_sel">
+			<ul>
+				<li class="list_crd_item">
+					<a href="#" class="chk_crd_sel">
+						<div class="crd_info">
+							<div class="crd_sel_img">
+								<img src="../../img/phone/crd/crd_cashback_img01.jpg" alt="카드 이미지"><!-- 2018-12-31 img 경로 수정 -->
+							</div>
+							<div class="crd_sel_txt">
+								<ul>
+									<li class="crd_sel_txt_name"><strong>일상의 기쁨카드 (신용)</strong></li><!-- 2018-12-31 strogn 태그 추가 -->
+									<li class="crd_sel_txt_num">1234-0000-1234-0000</li><!-- 2018-12-31 strogn 태그 삭제 -->
+									<li class="crd_sel_txt_owner">홍길동</li>
+								</ul>
+							</div>
+						</div>
+					</a>					
+				</li>
+				<li class="list_crd_item">
+					<a href="#" class="chk_crd_sel">
+						<div class="crd_info">
+							<div class="crd_sel_img">
+								<img src="../../img/phone/crd/crd_cashback_img01.jpg" alt="카드 이미지"><!-- 2018-12-31 img 경로 수정 -->
+							</div>
+							<div class="crd_sel_txt">
+								<ul>
+									<li class="crd_sel_txt_name"><strong>일상의 기쁨카드 (신용)</strong></li><!-- 2018-12-31 strogn 태그 추가 -->
+									<li class="crd_sel_txt_num">1234-0000-1234-0000</li><!-- 2018-12-31 strogn 태그 삭제 -->
+									<li class="crd_sel_txt_owner">홍길동</li>
+								</ul>
+							</div>
+						</div>
+					</a>					
+				</li>
+				<li class="list_crd_item">
+					<a href="#" class="chk_crd_sel">
+						<div class="crd_info">
+							<div class="crd_sel_img">
+								<img src="../../img/phone/crd/crd_cashback_img01.jpg" alt="카드 이미지"><!-- 2018-12-31 img 경로 수정 -->
+							</div>
+							<div class="crd_sel_txt">
+								<ul>
+									<li class="crd_sel_txt_name"><strong>일상의 기쁨카드 (신용)</strong></li><!-- 2018-12-31 strogn 태그 추가 -->
+									<li class="crd_sel_txt_num">1234-0000-1234-0000</li><!-- 2018-12-31 strogn 태그 삭제 -->
+									<li class="crd_sel_txt_owner">홍길동</li>
+								</ul>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="list_crd_item">
+					<a href="#" class="chk_crd_sel">
+						<div class="crd_info">
+							<div class="crd_sel_img">
+								<img src="../../img/phone/crd/crd_cashback_img01.jpg" alt="카드 이미지"><!-- 2018-12-31 img 경로 수정 -->
+							</div>
+							<div class="crd_sel_txt">
+								<ul>
+									<li class="crd_sel_txt_name"><strong>일상의 기쁨카드 (신용)</strong></li><!-- 2018-12-31 strogn 태그 추가 -->
+									<li class="crd_sel_txt_num">1234-0000-1234-0000</li><!-- 2018-12-31 strogn 태그 삭제 -->
+									<li class="crd_sel_txt_owner">홍길동</li>
+								</ul>
+							</div>
+						</div>
+					</a>					
+				</li>
+				<li class="list_crd_item">
+					<a href="#" class="chk_crd_sel">
+						<div class="crd_info">
+							<div class="crd_sel_img">
+								<img src="../../img/phone/crd/crd_cashback_img01.jpg" alt="카드 이미지"><!-- 2018-12-31 img 경로 수정 -->
+							</div>
+							<div class="crd_sel_txt">
+								<ul>
+									<li class="crd_sel_txt_name"><strong>일상의 기쁨카드 (신용)</strong></li><!-- 2018-12-31 strogn 태그 추가 -->
+									<li class="crd_sel_txt_num">1234-0000-1234-0000</li><!-- 2018-12-31 strogn 태그 삭제 -->
+									<li class="crd_sel_txt_owner">홍길동</li>
+								</ul>
+							</div>
+						</div>
+					</a>				
+				</li>
+			</ul>
+		</div>
+	</div>
+	<button type="button" class="btn_close" data-roll="slide-btm-off"><span>닫기</span></button>
+</div>
+<!-- //카드선택(단일) 슬라이드(Bottom to Top) -->
+
+<div class="bx_slidebtm" id="pop5" data-roll="slide-cont">
+	<div class="hd_slidebtm">
+		<strong class="hd_slidebtm_tit w100">메시지를 보낼 방법을 선택하세요.</strong>
+	</div>
+	<div class="bx_slidebtm_cont">
+		<div class="sel_slide">
+			<ul class="sel_slide_list">
+				<li class="sel_slide_item">
+					<a href="#" class="sel_slide_picker"><span class="slide_align_left w60"><i class="i_sns kakao"></i>카카오톡으로 보내기</span></a>
+				</li>
+
+				<li class="sel_slide_item">
+					<a href="#" class="sel_slide_picker"><span class="slide_align_left w60"><i class="i_sns sms"></i>SMS로 보내기</span></a>
+				</li>
+
+				<li class="sel_slide_item">
+					<a href="#" class="sel_slide_picker"><span class="slide_align_left w60"><i class="i_sns line"></i>라인으로 보내기</span></a>
+				</li>
+				
+				<li class="sel_slide_item">
+					<a href="#" class="sel_slide_picker"><span class="slide_align_left w60"><i class="i_sns band"></i>밴드에 게시</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<button type="button" class="btn_close" data-roll="slide-btm-off"><span>닫기</span></button>
+</div>
+<!-- //셀렉트 옵션 슬라이드 타입A -->
+
+
+</div><!-- //g-cont -->
+</main>
+
+<script type="text/javascript">
+//퍼블리싱 가이드를 위한 스크립트입니다. 실제 개발에는 적용되지 않습니다.
+/* $(document).ready(function(){
+	layHide();
+});
+function layHide(){
+	$('.ly_popup_wrap').hide();
+}
+function lyPop(el){
+	var $this = $(el);
+	var dimm = '<div class="dim_wrap"></div>';
+	$('.dim_wrap').remove();
+	$('#container').append(dimm);
+	$this.next('.ly_popup_wrap').show();
+}
+function lyPopClose() {
+	$('.ly_popup_wrap').hide();
+	$('.dim_wrap').remove();
+} */
+</script>
+
+</body>
+</html>
