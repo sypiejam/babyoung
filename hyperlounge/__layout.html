@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>__LAYOUT</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<!-- 카카오 우편번호 API -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function kakaopost() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+            document.querySelector("#zipcode").value = data.zonecode;
+            document.querySelector("#address").value =  data.address
+            }
+        }).open();
+    }
+</script>
+<!-- //카카오 우편번호 API -->
+</head>
+<body>
+<main class="hyper-wrap">
+    <!-- hyper-header -->
+    <header class="hyper-header">
+        <strong class="h-logo">Hyperlounge</strong>
+        <div class="inner">
+            <div class="d-flex">
+                <dl class="login-info">
+                    <dt class="login-info__tit">최종 로그인</dt>
+                    <dd class="login-info__txt">2021/12/25 11:45:38</dd>
+                    <dt class="login-info__tit">IP</dt>
+                    <dd class="login-info__txt">192.168.0.00</dd>
+                </dl>
+                <button class="member-info">
+                    <span class="member-info__picture">
+                        <!-- <span class="default">SC</span> -->
+                        <img src="/static/images/dummy_people.jpg" alt="" class="member-info__img" />
+                    </span>
+                    <em class="member-info__name">Ronnie Woodkin</em>
+                </button>
+                <button type="button" class="btn-logout"><span>Logout</span></button>
+            </div>
+        
+            <!-- dashboard button -->
+            <div class="dashboard">
+                <div class="btnwrap">
+                    <a href="#none" class="hyper-btn"><span>서비스 <br>현황</span></a> 
+                    <a href="#none" class="hyper-btn"><span>데이터 수집 <br>현황</span></a> 
+                    <a href="#none" class="hyper-btn"><span>Audit <br>현황</span></a>
+                </div>
+            </div>
+            <!-- //dashboard button -->
+        </div>
+    </header>
+    <!-- //hyper-header -->
+
+    <!-- hyper-gnb -->
+    <nav class="hyper-gnb">
+        <div class="gnb-depth1">
+            <ul class="gnblist-depth1">
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m01">고객사(Tenants) 관리</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">고객사 관리</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">고객사 등록</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m02">운영 관리</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor">APP. 이력 관리</a>
+                                <!-- gnb-depth3 -->
+                                <div class="gnb-depth3">
+                                    <ul class="gnblist-depth3">
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">APP. 이력 정보</a>
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">APP. 정보 등록</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //gnb-depth3 -->
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m03">운영시스템 관리</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor">오류코드 관리</a>
+                                <!-- gnb-depth3 -->
+                                <div class="gnb-depth3">
+                                    <ul class="gnblist-depth3">
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">오류코드 정보</a>
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">오류코드 등록</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //gnb-depth3 -->
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor">운영자 관리</a>
+                                <!-- gnb-depth3 -->
+                                <div class="gnb-depth3">
+                                    <ul class="gnblist-depth3">
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">운영자 정보</a>
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">운영자 그룹 설정</a>
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">운영자 등록</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //gnb-depth3 -->
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor">운영자 공지사항 관리</a>
+                                <!-- gnb-depth3 -->
+                                <div class="gnb-depth3">
+                                    <ul class="gnblist-depth3">
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">운영자 공지사항 정보</a>
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">운영자 공지사항 등록</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //gnb-depth3 -->
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m04">C/S 관리</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor">C/S 처리 관리</a>
+                                <!-- gnb-depth3 -->
+                                <div class="gnb-depth3">
+                                    <ul class="gnblist-depth3">
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">문의 결과 현황</a>
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">처리 결과 등록</a>
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">P.V.C sets 코드 보기</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //gnb-depth3 -->
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor">C/S 담당 등록</a>
+                                <!-- gnb-depth3 -->
+                                <div class="gnb-depth3">
+                                    <ul class="gnblist-depth3">
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">담당자 정보</a>
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">담당자 등록</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //gnb-depth3 -->
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m05">더보기 관리</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor">공지사항 관리</a>
+                                <!-- gnb-depth3 -->
+                                <div class="gnb-depth3">
+                                    <ul class="gnblist-depth3">
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">공지사항 정보</a>
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">공지사항 등록</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //gnb-depth3 -->
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor">약관 관리</a>
+                                <!-- gnb-depth3 -->
+                                <div class="gnb-depth3">
+                                    <ul class="gnblist-depth3">
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor isdepth">이용약관</a>
+                                            <!-- gnb-depth4 -->
+                                            <div class="gnb-depth4">
+                                                <ul class="gnblist-depth4">
+                                                    <li class="gnblist-depth4__item">
+                                                        <a href="#none" class="gnblist-depth4__anchor">이용약관 정보</a>
+                                                    </li>
+                                                    <li class="gnblist-depth4__item">
+                                                        <a href="#none" class="gnblist-depth4__anchor">이용약관 등록</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- //gnb-depth4 -->
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor isdepth">개인정보처리방침</a>
+                                            <!-- gnb-depth4 -->
+                                            <div class="gnb-depth4">
+                                                <ul class="gnblist-depth4">
+                                                    <li class="gnblist-depth4__item">
+                                                        <a href="#none" class="gnblist-depth4__anchor">개인정보처리방침 정보</a>
+                                                    </li>
+                                                    <li class="gnblist-depth4__item">
+                                                        <a href="#none" class="gnblist-depth4__anchor">개인정보처리방침 등록</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- //gnb-depth4 -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //gnb-depth3 -->
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor">FAQ 관리</a>
+                                <!-- gnb-depth3 -->
+                                <div class="gnb-depth3">
+                                    <ul class="gnblist-depth3">
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">FAQ 정보</a>
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">FAQ 등록</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //gnb-depth3 -->
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor">하이퍼리포트 뉴스 관리</a>
+                                <!-- gnb-depth3 -->
+                                <div class="gnb-depth3">
+                                    <ul class="gnblist-depth3">
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">하이퍼리포트 뉴스 정보</a>
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">하이퍼리포트 뉴스 등록</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //gnb-depth3 -->
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m06">메시지 관리</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor">APP. Push 관리</a>
+                                <!-- gnb-depth3 -->
+                                <div class="gnb-depth3">
+                                    <ul class="gnblist-depth3">
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">APP. Push 이력</a>
+                                        </li>
+                                        <li class="gnblist-depth3__item">
+                                            <a href="#none" class="gnblist-depth3__anchor">APP. Push 발송</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //gnb-depth3 -->
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m07">통계 관리</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">문의 현황</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">월 계약 현황</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">당일 로그인 현황</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">앱 버전 별 오류 현황</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">P.V.C sets 오류 현황</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">데이터 수집 현황</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">Audit 현황</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- //hyper-gnb -->
+
+    <!-- hyper-container -->
+    <div class="hyper-container">
+        <section class="hyper-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">고객사 관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">고객사 정보</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">고객사 상세</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1 typ1">
+                <h1 class="title__dep1">서울공업식품(주)</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- tabwrap : 2depth -->
+            <div class="tabwrap tabwrap--dep2">
+                <ul class="tablist tablist--dep2">
+                    <li class="tablist__item is-active">
+                        <a href="#none">고객사 정보</a>
+                    </li>
+                    <li class="tablist__item">
+                        <a href="#none">사용자 정보</a>
+                    </li>
+                    <li class="tablist__item">
+                        <a href="#none">P.V.C set</a>
+                    </li>
+                    <li class="tablist__item">
+                        <a href="#none">수집 Data</a>
+                    </li>
+                </ul>
+
+                <!-- tabcont : 2depth -->
+                <div class="tabcont tabcont--dep2 is-active">
+                    <!-- 고객사 정보 [S] -->
+                    <div class="titlewrap titlewrap--dep1">
+                        <h2 class="title__dep1">고객사 관리</h2>
+                    </div>
+
+                    <!-- hyper-contents -->
+                    <div class="hyper-contents">
+                        <div class="titlewrap titlewrap--dep2">
+                            <h3 class="title__dep2">사용자 정보</h3>
+                        </div>
+
+                        <!-- tabwrap : 3depth -->
+                        <div class="tabwrap tabwrap--dep3">
+                            <ul class="tablist tablist--dep3">
+                                <li class="tablist__item is-active">
+                                    <a href="#none">계정 정보</a>
+                                </li>
+                                <li class="tablist__item">
+                                    <a href="#none">그룹 정보</a>
+                                </li>
+                            </ul>
+
+                            <!-- tabcont : 3depth -->
+                            <div class="tabcont tabcont--dep3 is-active">
+                                <!-- 계정 정보 [S] -->
+                                <div class="con-group">
+                                    <div class="titlewrap titlewrap--dep3">
+                                        <h4 class="title__dep3">대표 계정 (account ID)</h4>
+                                        <div class="btnwrap">
+                                            <button type="button" class="hyper-btn" disabled><span>이력보기</span></button> 
+                                            <button type="button" class="hyper-btn on"><span>수정하기</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="hyper-table rowtbl">
+                                        <table>
+                                            <colgroup>
+                                                <col width="160px">
+                                                <col>
+                                                <col width="160px">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">이름<i class="necessary">&#42;</i></th>
+                                                    <td>000</td>
+                                                    <th scope="row">사진</th>
+                                                    <td>
+                                                        <!-- <a href="#none" class="a-rowline"><span>account_image.jpg</span></a> -->
+                                                        <div class="filebox">
+                                                            <input type="text" class="upload" value="서울식품LOGO.png" readonly>
+                                                            <label for="file" class="hyper-btn">파일 추가하기</label>
+                                                            <input type="file" id="file">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">대상 고객</th>
+                                                    <td  colspan="3" class="vt">
+                                                        <div class="customerlist">
+                                                            <button type="button" class="customerlist__btn"><span class="txt">펄침</span></button>
+                                                            <div class="customerlist__cont">
+                                                                <p class="customerlist__txt">고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명, 고객사명</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Account ID</th>
+                                                    <td colspan="3">account@seoul-food.co.kr</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">연락처 1<i class="necessary">&#42;</i></th>
+                                                    <td>010-1111-2222</td>
+                                                    <th scope="row">문의 구분/유형</th>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <span class="selectbox">
+                                                                <select>
+                                                                    <option>문의 구분 전체</option>
+                                                                    <option>서비스</option>
+                                                                    <option>보안</option>
+                                                                    <option>기타</option>
+                                                                </select>
+                                                            </span>
+                                                            <span class="selectbox">
+                                                                <select disabled="">
+                                                                    <option>문의 유형 전체</option>
+                                                                    <option></option>
+                                                                </select>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">최근 VOC</th>
+                                                    <td colspan="3">
+                                                        <div class="d-flex--between">
+                                                            <p>[문의] VOC 제목_Sunt vitae facere aperiam pariatur neque! / [답변상태] 완료</p>
+                                                            <button type="button" class="hyper-btn"><span>문의 사항 확인하기</span></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">최근 접속 일시</th>
+                                                    <td>
+                                                        <div class="d-flex--between">
+                                                            <div>YYYY.MM.DD - HH:MM:SS</div>
+                                                            <button type="button" class="hyper-btn"><span>접속 이력 확인</span></button>
+                                                        </div>
+                                                    </td>
+                                                    <th>최근 접속 IP</th>
+                                                    <td>198.120.0.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">대표 주소1<i class="necessary">&#42;</i></th>
+                                                    <td colspan="3">
+                                                        <div class="addresswrap">
+                                                            <input type="text" name="zipcode" id="zipcode" class="c-input inp-zipcode" value="27333">
+                                                            <button type="button" class="hyper-btn btn-zipcode" onclick="kakaopost()"><span>우편번호 찾기</span></button>
+                                                            <div class="inp-address">
+                                                                <input type="text" name="address" id="address" class="c-input" value="충청북도 충주시 충원대로 862">
+                                                                <input type="text" id="" class="c-input" value="">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="tooltipwrap">
+                                                            첨부파일
+                                                            <div class="tooltipbox">
+                                                                <i class="tooltipbox__i"></i>
+                                                                <div class="tooltipbox__cont">
+                                                                    <p>※ 첨부파일은 최대 3개까지 추가 가능하며, 최대용량은 10MB입니다.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <!-- <div class="btnwrap">
+                                                            <button type="button" class="hyper-btn"><span>파일추가</span></button>
+                                                        </div> -->
+                                                        <div class="filebox btnonly">
+                                                            <input type="text" class="upload" value="" readonly>
+                                                            <label for="file" class="hyper-btn">파일추가</label>
+                                                            <input type="file" id="file">
+                                                        </div>
+                                                        <ul class="addfile">
+                                                            <li class="addfile__item">
+                                                                <span>설연휴 이벤트 공지.jpg (5.6MB)</span>
+                                                                <button type="button" class="addfile__btn"><span>삭제</span></button>
+                                                            </li>
+                                                            <li class="addfile__item">
+                                                                <span>설연휴 이벤트 공지.jpg (5.6MB)</span>
+                                                                <button type="button" class="addfile__btn"><span>삭제</span></button>
+                                                            </li>
+                                                            <li class="addfile__item">
+                                                                <span>설연휴 이벤트 공지.jpg (5.6MB)</span>
+                                                                <button type="button" class="addfile__btn"><span>삭제</span></button>
+                                                            </li>
+                                                        </ul>
+                                                        <p class="addfile__txt">※ 파일 업로드는 건당 10MB까지 최대 3개까지 등록 가능합니다.</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- //con-group -->
+
+                                <div class="sch-group">
+                                    <div class="titlewrap titlewrap--dep2">
+                                        <h3 class="title__dep2">고객사 검색</h3>
+                                        <div class="btnwrap">
+                                            <button type="button" class="hyper-btn"><span>이력보기</span></button> 
+                                            <button type="button" class="hyper-btn"><span>수정하기</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="togglebox is-open">
+                                        <div class="togglebox__cont">
+                                            <div class="hyper-table rowtbl">
+                                                <table>
+                                                    <colgroup>
+                                                        <col width="160px">
+                                                        <col>
+                                                        <col width="160px">
+                                                        <col>
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                <div class="tooltipwrap">
+                                                                    서비스 상태
+                                                                    <div class="tooltipbox">
+                                                                        <i class="tooltipbox__i"></i>
+                                                                        <div class="tooltipbox__cont">
+                                                                            <p>※ 사이즈 0000 x 0000를 맞춰주세요</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <td colspan="3">
+                                                                <ul class="c-chklist">
+                                                                    <li>
+                                                                        <span class="c-radio">
+                                                                            <input type="radio" name="RO" class="c-radio__input" id="rd_a1">
+                                                                            <label for="rd_a1" class="c-radio__label"><i class="c-radio__i"></i>Unselected</label>
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="c-radio">
+                                                                            <input type="radio" name="RO" class="c-radio__input" checked id="rd_a2">
+                                                                            <label for="rd_a2" class="c-radio__label"><i class="c-radio__i"></i>Check</label>
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="c-radio">
+                                                                            <input type="radio" name="RO" class="c-radio__input" disabled id="rd_a3">
+                                                                            <label for="rd_a3" class="c-radio__label"><i class="c-radio__i"></i>Disabled</label>
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="c-radio">
+                                                                            <input type="radio" name="RO1" class="c-radio__input" disabled checked id="rd_a4">
+                                                                            <label for="rd_a4" class="c-radio__label"><i class="c-radio__i"></i>Disabled / Check</label>
+                                                                        </span>
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                대상 시스템<i class="necessary">&#42;</i>
+                                                            </th>
+                                                            <td colspan="3">
+                                                                <ul class="c-chklist">
+                                                                    <li>
+                                                                        <span class="c-check">
+                                                                            <input type="checkbox" class="c-check__input" id="ck_a1">
+                                                                            <label for="ck_a1" class="c-check__label"><i class="c-check__i"></i>Unselected</label>
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="c-check">
+                                                                            <input type="checkbox" class="c-check__input" checked id="ck_a2">
+                                                                            <label for="ck_a2" class="c-check__label"><i class="c-check__i"></i>Check</label>
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="c-check">
+                                                                            <input type="checkbox" class="c-check__input" disabled id="ck_a3">
+                                                                            <label for="ck_a3" class="c-check__label"><i class="c-check__i"></i>Disabled</label>
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="c-check">
+                                                                            <input type="checkbox" class="c-check__input" disabled checked id="ck_a4">
+                                                                            <label for="ck_a4" class="c-check__label"><i class="c-check__i"></i>Disabled / Check</label>
+                                                                        </span>
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Industry</th>
+                                                            <td>
+                                                                <span class="selectbox">
+                                                                    <select>
+                                                                        <option>전체</option>
+                                                                        <option>고객사명</option>
+                                                                        <option>고객사 담당자</option>
+                                                                        <option>Data 수집 위치</option>
+                                                                        <option>서비스 담당자</option>
+                                                                    </select>
+                                                                </span>
+                                                            </td>
+                                                            <th scope="row">
+                                                                대표자 명<i class="necessary">&#42;</i>
+                                                            </th>
+                                                            <td>
+                                                                <input type="text" id="" class="c-input" value="서성훈">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">고객사 노출 사항</th>
+                                                            <td colspan="3">
+                                                                <div class="d-flex">
+                                                                    <ul class="c-chklist">
+                                                                        <li>
+                                                                            <span class="c-radio">
+                                                                                <input type="radio" name="ROc" class="c-radio__input" id="rd_c1">
+                                                                                <label for="rd_c1" class="c-radio__label"><i class="c-radio__i"></i>전체</label>
+                                                                            </span>
+                                                                        </li>
+                                                                        <li>
+                                                                            <span class="c-radio">
+                                                                                <input type="radio" name="ROc" class="c-radio__input" id="rd_c2" checked="">
+                                                                                <label for="rd_c2" class="c-radio__label"><i class="c-radio__i"></i>개별</label>
+                                                                            </span>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="btnwrap">
+                                                                        <button type="button" class="hyper-btn" data-roll="popup-on" data-link="costomerSelect"><span>고객사 선택</span></button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chkedlist">
+                                                                    <span class="chkedlist__item">
+                                                                        <em class="chkedlist__txt">서울식품공업(주)</em>
+                                                                        <button type="button" class="chkedlist__btn"><span>삭제</span></button>
+                                                                    </span>
+                                                                    <span class="chkedlist__item">
+                                                                        <em class="chkedlist__txt">고객사명</em>
+                                                                        <button type="button" class="chkedlist__btn"><span>삭제</span></button>
+                                                                    </span>
+                                                                    <span class="chkedlist__item">
+                                                                        <em class="chkedlist__txt">고객사명</em>
+                                                                        <button type="button" class="chkedlist__btn"><span>삭제</span></button>
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">서비스 기간</th>
+                                                            <td colspan="3">
+                                                                <div class="d-flex">
+                                                                    <span class="selectbox w-small">
+                                                                        <select>
+                                                                            <option>전체</option>
+                                                                            <option>문의일</option>
+                                                                            <option>답변일</option>
+                                                                        </select>
+                                                                    </span>
+                                                                    <ul class="c-chklist">
+                                                                        <li>
+                                                                            <span class="c-radio">
+                                                                                <input type="radio" name="ROb" class="c-radio__input" id="rd_b1" checked>
+                                                                                <label for="rd_b1" class="c-radio__label"><i class="c-radio__i"></i>전체</label>
+                                                                            </span>
+                                                                        </li>
+                                                                        <li>
+                                                                            <span class="c-radio">
+                                                                                <input type="radio" name="ROb" class="c-radio__input" id="rd_b2">
+                                                                                <label for="rd_b2" class="c-radio__label"><i class="c-radio__i"></i>기간설정</label>
+                                                                            </span>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="calendar">
+                                                                        <div class="calendar__item calendar__item--st">
+                                                                            <input type="text" class="c-input calendar__input datepicker" title="시작일 입력" placeholder="yyyy.mm.dd" value="2022.02.22" id="">
+                                                                        </div>
+                                                                        <div class="calendar__item calendar__item--en">
+                                                                            <input type="text" class="c-input calendar__input datepicker" title="종료일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <ul class="datepick">
+                                                                        <li class="datepick__item">
+                                                                            <input type="radio" id="datep11" class="datepick__input" name="datepick" checked>
+                                                                            <label for="datep11" class="datepick__label">오늘</label>
+                                                                        </li>
+                                                                        <li class="datepick__item">
+                                                                            <input type="radio" id="datep12" class="datepick__input" name="datepick">
+                                                                            <label for="datep12" class="datepick__label">일주일</label>
+                                                                        </li>
+                                                                            <li class="datepick__item">
+                                                                            <input type="radio" id="datep13" class="datepick__input" name="datepick">
+                                                                            <label for="datep13" class="datepick__label">한달</label>
+                                                                        </li>
+                                                                            <li class="datepick__item">
+                                                                            <input type="radio" id="datep14" class="datepick__input" name="datepick">
+                                                                            <label for="datep14" class="datepick__label">6개월</label>
+                                                                        </li>
+                                                                            <li class="datepick__item">
+                                                                            <input type="radio" id="datep15" class="datepick__input" name="datepick">
+                                                                            <label for="datep15" class="datepick__label">1년</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">검색</th>
+                                                            <td colspan="3">
+                                                                <div class="d-flex">
+                                                                    <span class="selectbox">
+                                                                        <select>
+                                                                            <option>전체</option>
+                                                                            <option></option>
+                                                                        </select>
+                                                                    </span>
+                                                                    <input type="text" class="c-input mgl10" style="width: 629px;" placeholder="검색어를 입력하세요">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="btnwrap btnwrap--sch">
+                                                <button type="button" class="btn-refresh"><span>초기화</span></button>
+                                                <button type="button" class="hyper-btn btn--black"><span>검색</span></button>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="togglebox__btn"><span>close</span></button><!-- 검색항목 접기-->
+                                    </div>
+                                </div>
+                                <!-- //sch-group -->
+
+                                <div class="con-group">
+                                    <div class="titlewrap titlewrap--dep2">
+                                        <h3 class="title__dep2">사용자 목록</h3>
+                                    </div>
+                                    <div class="tblsortwrap">
+                                        <div class="tblsort">
+                                            <div class="tblsort__total">
+                                                <em class="tblsort__txt">Total 500</em>
+                                                <div class="selectbox">
+                                                    <select>
+                                                        <option>10개보기</option>
+                                                        <option>20개보기</option>
+                                                        <option>30개보기</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="btnwrap">
+                                                <button type="button" class="hyper-btn"><span>등록</span></button>
+                                                <button type="button" class="hyper-btn"><span>엑셀 업로드</span></button>
+                                                <button type="button" class="hyper-btn"><span>엑셀 다운로드</span></button>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="tbl-ovflow">
+                                            <div class="hyper-table coltbl" style="width: 120%;">
+                                                <table>
+                                                    <colgroup>
+                                                        <col width="80px">
+                                                        <col>
+                                                        <col>
+                                                        <col width="35%">
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">No.</th>
+                                                            <th scope="col">답변상태</th>
+                                                            <th scope="col">문의 구분/유형</th>
+                                                            <th scope="col">제목</th>
+                                                            <th scope="col">고객사</th>
+                                                            <th scope="col">고객사 Account ID</th>
+                                                            <th scope="col">문의 일시</th>
+                                                            <th scope="col">답변자</th>
+                                                            <th scope="col">답변 일시</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>답변보류</td>
+                                                            <td></td>
+                                                            <td class="tl">
+                                                                <span>문의사항 타이틀</span>
+                                                                <span class="ico-clip fr">첨부파일</span>
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="tbl-ovflow">
+                                            <div class="hyper-table coltbl" style="width: 300%;">
+                                                <table>
+                                                    <colgroup>
+                                                        <col width="100px">
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">No.</th>
+                                                            <th scope="col">고객사 ID</th>
+                                                            <th scope="col">고객사명</th>
+                                                            <th scope="col">서비스 이용상태</th>
+                                                            <th scope="col">Industry</th>
+                                                            <th scope="col">대표자명</th>
+                                                            <th scope="col">사업자변호</th>
+                                                            <th scope="col">대표전화번호</th>
+                                                            <th scope="col">고객사 담당자</th>
+                                                            <th scope="col">고객사 담당자 연락처</th>
+                                                            <th scope="col">서비스 사용자 수</th>
+                                                            <th scope="col">서비스 시작일</th>
+                                                            <th scope="col">서비스 종료일</th>
+                                                            <th scope="col">Data 수집 위치</th>
+                                                            <th scope="col">PVC set</th>
+                                                            <th scope="col">Data 수집 담당자</th>
+                                                            <th scope="col">Audit 진행 상태</th>
+                                                            <th scope="col">Audit 담당자</th>
+                                                            <th scope="col">등록자</th>
+                                                            <th scope="col">등록일시</th>
+                                                            <th scope="col">수정자</th>
+                                                            <th scope="col">수정일시</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td><a href="#none" class="a-rowline">Tenants’ ID</a></td>
+                                                            <td><a href="#none" class="a-rowline">법인명</a></td>
+                                                            <td>상태명</td>
+                                                            <td>업명</td>
+                                                            <td>대표자명</td>
+                                                            <td>990-99-00000</td>
+                                                            <td>02-1234-5678</td>
+                                                            <td>account ID(이름 직책/부서)</td>
+                                                            <td>000-0000-0000</td>
+                                                            <td>25 명</td>
+                                                            <td>YYYY.MM.DD</td>
+                                                            <td>YYYY.MM.DD</td>
+                                                            <td>ERP/PCF/GW/Cloud</td>
+                                                            <td>120 개</td>
+                                                            <td>운영자 ID(이름 직책/부서)</td>
+                                                            <td>진행상태명</td>
+                                                            <td>운영자 ID(이름 직책/부서)</td>
+                                                            <td>운영자 ID(이름 직책/부서)</td>
+                                                            <td>YYYY.MM.DD HH:MM:SS</td>
+                                                            <td>운영자 ID(이름 직책/부서)</td>
+                                                            <td>YYYY.MM.DD HH:MM:SS</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td><a href="#none" class="a-rowline">Tenants’ ID</a></td>
+                                                            <td><a href="#none" class="a-rowline">(주)유클릭</a></td>
+                                                            <td>사용중</td>
+                                                            <td>온라인 서비스업</td>
+                                                            <td>김인욱, 엄남한</td>
+                                                            <td>110-81-41781</td>
+                                                            <td>02-1234-5678</td>
+                                                            <td>account ID(이름 직책/부서)</td>
+                                                            <td>000-0000-0000</td>
+                                                            <td>25 명</td>
+                                                            <td>YYYY.MM.DD</td>
+                                                            <td>YYYY.MM.DD</td>
+                                                            <td>ERP/PCF/GW/Cloud</td>
+                                                            <td>120 개</td>
+                                                            <td>운영자 ID(이름 직책/부서)</td>
+                                                            <td>진행상태명</td>
+                                                            <td>운영자 ID(이름 직책/부서)</td>
+                                                            <td>운영자 ID(이름 직책/부서)</td>
+                                                            <td>YYYY.MM.DD HH:MM:SS</td>
+                                                            <td>운영자 ID(이름 직책/부서)</td>
+                                                            <td>YYYY.MM.DD HH:MM:SS</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td><a href="#none" class="a-rowline">Tenants’ ID</a></td>
+                                                            <td><a href="#none" class="a-rowline">(주)유클릭</a></td>
+                                                            <td><em class="tx-color2">일시정지</em></td>
+                                                            <td>온라인 서비스업</td>
+                                                            <td>김인욱, 엄남한</td>
+                                                            <td>110-81-41781</td>
+                                                            <td>02-1234-5678</td>
+                                                            <td>jyp@uclic.co.kr(홍길동 팀장/운영팀)</td>
+                                                            <td>010-1234-5678</td>
+                                                            <td>25 명</td>
+                                                            <td>2021.11.25</td>
+                                                            <td>2023.12.25</td>
+                                                            <td>ERP, GW, PCF, Cloud</td>
+                                                            <td>120 개</td>
+                                                            <td>youngkwang.lee(이영광 님/플랫폼팀)</td>
+                                                            <td>진행중</td>
+                                                            <td>jeongcheol.lee(이정철 팀장님/온보딩팀)</td>
+                                                            <td>hyonggun.ryu(류형근 팀장님/운영팀)</td>
+                                                            <td>2022.01.15 15:23:45</td>
+                                                            <td>hyonggun.ryu(류형근 팀장님/운영팀)</td>
+                                                            <td>2022.01.15 15:23:45</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <!-- paginate -->
+                                        <div class="paginate">
+                                            <button type="button" class="btn-paginate__first">
+                                                <span class="blind">처음 페이지</span>
+                                            </button>
+                                            <button type="button" class="btn-paginate__prev">
+                                                <span class="blind">이전 페이지</span>
+                                            </button>
+                                            <p class="paging"><span class="paging__active">1</span> / 10</p>
+                                            <button type="button" class="btn-paginate__next">
+                                                <span class="blind">다음 페이지</span>
+                                            </button>
+                                            <button type="button" class="btn-paginate__last">
+                                                <span class="blind">끝 페이지</span>
+                                            </button>
+                                            <div class="page">
+                                                <input type="text" class="c-input" value="1"> / 10
+                                            </div>
+                                        </div>
+                                        <!-- //paginate -->
+                                    </div>
+                                    <!-- //tblsortwrap -->
+                                </div>
+                                <!-- //con-group -->
+
+                                <div class="con-group">
+                                    <div class="titlewrap titlewrap--dep2">
+                                        <h3 class="title__dep2">관리자 메모</h3>
+                                    </div>
+                                    <div class="hyper-table rowtbl mgb0">
+                                        <table class="br-none">
+                                            <colgroup>
+                                                <col width="160px">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">내용</th>
+                                                    <td>
+                                                        <textarea id="" rows="6" class="c-textarea" placeholder="" style="height:111px;"></textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="hyper-table coltbl typ1 br-none">
+                                        <table>
+                                            <colgroup>
+                                                <col width="210px">
+                                                <col>
+                                                <col width="210px">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <td>admin1(관리자1/운영팀)</td>
+                                                    <td class="tl">
+                                                        담당자 이관되었습니다. 담당자: 운영자 ID(이름 직책/부서)
+                                                    </td>
+                                                    <td class="tr">2021.12.20 18:12:33</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>admin2(관리자2/플랫폼팀)</td>
+                                                    <td class="tl">
+                                                        담당자 이관되었습니다. 담당자: 운영자 ID(이름 직책/부서)
+                                                    </td>
+                                                    <td class="tr">2021.12.2018:12:33</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <ul class="bullet">
+                                    <li class="bullet__item">수정자/수정일시는 최종 수정자와 수정일시를 노출합니다.</li>
+                                    <li class="bullet__item">상세내용은 ‘이력 내용 보기’ 팝업에서 확인하세요.</li>
+                                </ul>
+
+                                <div class="btnwrap btnwrap--btm">
+                                    <button type="button" class="hyper-btn fl"><span>목록보기</span></button>
+                                    <button type="button" class="hyper-btn"><span>취소하기</span></button>
+                                    <button type="button" class="hyper-btn"><span>등록하기</span></button>
+                                </div>
+                                <!-- //계정 정보 [S] -->
+                            </div>
+                            <!-- //tabcont : 3depth -->
+
+                            <!-- tabcont : 3depth -->
+                            <div class="tabcont tabcont--dep3">
+                                <!-- 그룹 정보 [S] -->
+                                <!-- 그룹 정보 [E] -->
+                            </div>
+                            <!-- //tabcont : 3depth -->
+                        </div>
+                        <!-- //tabwrap : 3depth -->
+                    </div>
+                    <!-- //hyper-contents -->
+                    <!-- //고객사 정보 [E] -->
+                </div>
+                <!-- //tabcont : 2depth -->
+
+                <!-- tabcont : 2depth -->
+                <div class="tabcont tabcont--dep2">
+                    <!-- 사용자 정보 [S] -->
+                    <!-- //사용자 정보 [E] -->
+                </div>
+                <!-- //tabcont : 2depth -->
+
+                <!-- tabcont : 2depth -->
+                <div class="tabcont tabcont--dep2">
+                    <!-- P.V.C set [S] -->
+                    <!-- //P.V.C set [E] -->
+                </div>
+                <!-- //tabcont : 2depth -->
+
+                <!-- tabcont : 2depth -->
+                <div class="tabcont tabcont--dep2">
+                    <!-- 수집 Data [S] -->
+                    <!-- //수집 Data [E] -->
+                </div>
+                <!-- //tabcont : 2depth -->
+            </div>
+            <!-- //tabwrap : 2depth -->
+        </section>
+        <!-- //hyper-section -->
+  
+        <!-- hyper-footer -->
+        <footer class="hyper-footer">
+            <div class="inner">
+                <p class="copyright">Copyright ⓒ hyperlounge. All rights reserved.</p>
+                <div class="footer-link">
+                    <a href="https://www.hyperlounge.ai" target="_blank" class="footer-link__item">
+                        <span>Hyperlounge</span>
+                    </a>
+                    <a href="https://www.facebook.com/%ED%95%98%EC%9D%B4%ED%8D%BC%EB%9D%BC%EC%9A%B4%EC%A7%80-Hyperlounge-108324221517167/?ref=pages_you_manage" target="_blank" class="footer-link__item">
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:6882264700579663872" target="_blank" class="footer-link__item">
+                        <span>Linkedin</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <!-- //hyper-footer -->
+    </div>
+    <!-- //hyper-container -->
+
+    <!-- 고객사 선택 레이어팝업 -->
+    <div class="popup-wrap" id="costomerSelect">
+        <div class="popup-cont ">
+            <div class="titlewrap titlewrap--dep2">
+                <strong class="title__dep2">고객사 선택</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <div class="tbl-ovflow">
+                        <div class="hyper-table coltbl">
+                            <table>
+                                <colgroup>
+                                    <col width="10%">
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">고객사 명</th>
+                                        <th scope="col">고객사 ID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="c-check nolabel">
+                                                <input type="checkbox" name="" class="c-check__input" id=""checked>
+                                            </span>
+                                        </td>
+                                        <td>법인명</td>
+                                        <td>Tenants’ ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="c-check nolabel">
+                                                <input type="checkbox" name="" class="c-check__input" id=""checked>
+                                            </span>
+                                        </td>
+                                        <td>(주)유클릭</td>
+                                        <td>Tenants’ ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="c-check nolabel">
+                                                <input type="checkbox" name="" class="c-check__input" id="">
+                                            </span>
+                                        </td>
+                                        <td>(주)유클릭</td>
+                                        <td>Tenants’ ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="c-check nolabel">
+                                                <input type="checkbox" name="" class="c-check__input" id="">
+                                            </span>
+                                        </td>
+                                        <td>(주)유클릭</td>
+                                        <td>Tenants’ ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="c-check nolabel">
+                                                <input type="checkbox" name="" class="c-check__input" id="" checked>
+                                            </span>
+                                        </td>
+                                        <td>서울공업식품(주)</td>
+                                        <td>Tenants’ ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="c-check nolabel">
+                                                <input type="checkbox" name="" class="c-check__input" id="">
+                                            </span>
+                                        </td>
+                                        <td>(주)유클릭</td>
+                                        <td>Tenants’ ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="c-check nolabel">
+                                                <input type="checkbox" name="" class="c-check__input" id="">
+                                            </span>
+                                        </td>
+                                        <td>(주)유클릭</td>
+                                        <td>Tenants’ ID</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="hyper-btn" data-roll="popup-off"><span>취소</span></button>
+                <button type="button" class="hyper-btn btn--black"><span>확인</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //고객사 선택 레이어팝업 -->
+</main>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>팝업</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="hyper-wrap">
+    <div class="hyper-container">
+        <!--
+            레이어팝업 호출 버튼 data-roll="popup-on" data-link="layer01" 속성 추가 (data-link 는 레이어팝업(.popup-wrap)의 id값과 동일)
+		    레이어팝업 닫기 버튼 data-roll="popup-off" 속성 추가 
+        -->
+        <div class="btnwrap">
+            <button type="button" class="hyper-btn" data-roll="popup-on" data-link="popupAlert"><span>Alert 팝업</span></button>
+            <button type="button" class="hyper-btn" data-roll="popup-on" data-link="popupConfirm"><span>Confirm 팝업</span></button>
+        </div>
+    </div>
+    
+    <!-- Alert 팝업 -->
+    <div class="popup-wrap" id="popupAlert">
+        <div class="popup-cont alertbox">
+            <div class="popup-head">
+                <strong class="popup__title">동시접속 로그인</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <p class="popup__desc">새로 로그인 되어 <br>현재 로그인 계정은 로그아웃 됩니다.</p>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="hyper-btn btn--black"><span>확인</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //Alert 팝업 -->
+
+    <!-- Confirm 팝업 -->
+    <div class="popup-wrap" id="popupConfirm">
+        <div class="popup-cont alertbox">
+            <div class="popup-head">
+                <strong class="popup__title">동시접속 로그인</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <p class="popup__desc">현재 해당 계정으로 로그인 된 상태 입니다.
+                        <br>이전 로그인 계정은 로그아웃 됩니다. <br>새로 로그인 하시겠습니까?</p>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="hyper-btn"><span>취소</span></button>
+                <button type="button" class="hyper-btn btn--black"><span>확인</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //Confirm 팝업 -->
+
+</main>
+</body>
+</html>

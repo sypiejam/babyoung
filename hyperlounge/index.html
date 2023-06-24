@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Publising List</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<style>
+.coltbl td {text-align: left !important;}
+.coltbl td.filelink {padding-left: 20px}
+.coltbl td.filelink a:hover {text-decoration: underline;}
+.coltbl td.date {text-align: center !important;}
+.tr-border--dep td {border-top:2px solid #d2d2d2;}
+</style>
+</head>
+<body>
+<main class="hyper-wrap">
+    <!-- hyper-header -->
+    <header class="hyper-header">
+        <strong class="h-logo">Hyperlounge</strong>
+        <div class="inner">
+            <div class="d-flex">
+                <dl class="login-info">
+                    <dt class="login-info__tit">최종 로그인</dt>
+                    <dd class="login-info__txt">2021/12/25 11:45:38</dd>
+                    <dt class="login-info__tit">IP</dt>
+                    <dd class="login-info__txt">192.168.0.00</dd>
+                </dl>
+                <button class="member-info">
+                    <span class="member-info__picture">
+                        <!-- <span class="default">SC</span> -->
+                        <img src="/static/images/dummy_people.jpg" alt="" class="member-info__img" />
+                    </span>
+                    <em class="member-info__name">Ronnie Woodkin</em>
+                </button>
+                <button type="button" class="btn-logout"><span>Logout</span></button>
+            </div>
+        
+            <!-- dashboard button -->
+            <div class="dashboard">
+                <div class="btnwrap">
+                    <a href="#none" class="hyper-btn"><span>서비스 <br>현황</span></a> 
+                    <a href="#none" class="hyper-btn"><span>데이터 수집 <br>현황</span></a> 
+                    <a href="#none" class="hyper-btn"><span>Audit <br>현황</span></a>
+                </div>
+            </div>
+            <!-- //dashboard button -->
+        </div>
+    </header>
+    <!-- //hyper-header -->
+
+    <!-- hyper-gnb : 2depth 이하 생략 __layout.html 참조 -->
+    <nav class="hyper-gnb">
+        <div class="gnb-depth1">
+            <ul class="gnblist-depth1">
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m01">고객사(Tenants) 관리</a>
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m02">운영 관리</a>
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m03">운영시스템 관리</a>
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m04">C/S 관리</a>
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m05">더보기 관리</a>
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m06">메시지 관리</a>
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m07">통계 관리</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- //hyper-gnb : 2depth 이하 생략 __layout.html 참조 -->
+
+    <!-- hyper-container -->
+    <div class="hyper-container">
+        <section class="hyper-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html" class="breadcrumbs__anchor">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none" class="breadcrumbs__anchor">고객사 관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none" class="breadcrumbs__anchor">고객사 정보</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none" class="breadcrumbs__anchor">고객사 상세</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <div class="titlewrap  titlewrap--dep1 typ1">
+                <h1 class="title__dep1">Publising List</h1>
+            </div>
+
+            <!-- hyper-contents -->
+            <div class="hyper-contents">
+                <div class="hyper-table coltbl">
+                    <table>
+                        <colgroup>
+                            <col width="11%"><!-- 1depth -->
+                            <col width="13%"><!-- 2depth -->
+                            <col><!-- 3depth -->
+                            <col><!-- 4depth -->
+                            <col><!-- URL -->
+                            <col width="8%"><!-- 완료일 -->
+                            <col width="12%"><!-- 비고 -->
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col">4depth</th>
+                                <th scope="col">URL</th>
+                                <th scope="col">완료일</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="dep1">레이아웃/공통</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/__layout.html" target="_blank">__layout.html</a>
+                                </td>
+                                <td class="date">01/17</td>
+                                <td class="note"></td>
+                            </tr>
+                            <!-- 팝업 -->
+                            <tr>
+                                <td class="dep1">팝업</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/__popup.html" target="_blank">__popup.html</a>
+                                </td>
+                                <td class="date">01/21</td>
+                                <td class="note"></td>
+                            </tr>
+
+                            <!-- 로그인 -->
+                            <tr>
+                                <td class="dep1">로그인</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/auth/ad_login.html" target="_blank">ad_login.html</a>
+                                </td>
+                                <td class="date">01/21</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1">비밀번호 변경 안내</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/auth/ad_change_pw.html" target="_blank">ad_change_pw.html</a>
+                                </td>
+                                <td class="date">01/21</td>
+                                <td class="note"></td>
+                            </tr>
+
+                            <!-- 고객사 관리 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">고객사 관리</td>
+                                <td class="dep2">고객사 정보</td>
+                                <td class="dep3">고객사 정보 검색/목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/company/customer_info.html" target="_blank">customer_info.html</a>
+                                </td>
+                                <td class="date">01/17</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">고객사 정보 상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/company/customer_info_detail.html" target="_blank">customer_info_detail.html</a>
+                                </td>
+                                <td class="date">01/17</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">고객사 정보 수정</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/company/customer_info_edit.html" target="_blank">customer_info_edit.html</a>
+                                </td>
+                                <td class="date">01/17</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">사용자 정보</td>
+                                <td class="dep3">계정정보</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/company/user_info_t01.html" target="_blank">user_info_t01.html</a>
+                                </td>
+                                <td class="date">01/18</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">그룹정보</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/company/user_info_t02.html" target="_blank">user_info_t02.html</a>
+                                </td>
+                                <td class="date">01/18</td>
+                                <td class="note"></td>
+                            </tr>
+
+                            <!-- 고객센터 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">고객센터</td>
+                                <td class="dep2">1:1 문의</td>
+                                <td class="dep3">1:1 문의 조회/목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/cs/inquiry_info.html" target="_blank">inquiry_info.html</a>
+                                </td>
+                                <td class="date">01/20</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">1:1 문의 상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/cs/inquiry_info_detail.html" target="_blank">inquiry_info_detail.html</a>
+                                </td>
+                                <td class="date">01/20</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">1:1 문의 수정</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/cs/inquiry_info_edit.html" target="_blank">inquiry_info_edit.html</a>
+                                </td>
+                                <td class="date">01/20</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">1:1 문의 등록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/cs/inquiry_info_regist.html" target="_blank">inquiry_info_regist.html</a>
+                                </td>
+                                <td class="date">01/20</td>
+                                <td class="note"></td>
+                            </tr>
+                            
+                            <!-- 운영 관리 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">운영 관리</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="" target="_blank"></a>
+                                </td>
+                                <td class="date"></td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="" target="_blank"></a>
+                                </td>
+                                <td class="date"></td>
+                                <td class="note"></td>
+                            </tr>
+                            
+                            <!-- 운영시스템 관리 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">운영시스템 관리</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="" target="_blank"></a>
+                                </td>
+                                <td class="date"></td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="" target="_blank"></a>
+                                </td>
+                                <td class="date"></td>
+                                <td class="note"></td>
+                            </tr>
+                            
+                            <!-- C/S 관리 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">C/S 관리</td>
+                                <td class="dep2">C/S 처리 관리</td>
+                                <td class="dep3">문의 결과 현황 검색/목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/cs/status_info.html" target="_blank">status_info.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">문의 결과 현황 상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/cs/status_info_detail.html" target="_blank">status_info_detail.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/cs/" target="_blank"></a>
+                                </td>
+                                <td class="date"></td>
+                                <td class="note"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">C/S 담당 관리</td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/cs/" target="_blank"></a>
+                                </td>
+                                <td class="date"></td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/cs/" target="_blank"></a>
+                                </td>
+                                <td class="date"></td>
+                                <td class="note"></td>
+                            </tr>
+
+                            <!-- 더보기 관리 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">더보기 관리</td>
+                                <td class="dep2">공지사항 관리</td>
+                                <td class="dep3">공지사항 정보 검색/목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/notice_info.html" target="_blank">notice_info.html</a>
+                                </td>
+                                <td class="date">01/18</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">공지사항 정보 상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/notice_info_detail.html" target="_blank">notice_info_detail.html</a>
+                                </td>
+                                <td class="date">01/18</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">공지사항 정보 수정</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/notice_info_edit.html" target="_blank">notice_info_edit.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">공지사항 정보 등록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/notice_info_regist.html" target="_blank">notice_info_regist.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">약관 관리</td>
+                                <td class="dep3">이용약관 검색/목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/terms_info.html" target="_blank">terms_info.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">이용약관 상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/terms_info_detail.html" target="_blank">terms_info_detail.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">이용약관 수정</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/terms_info_edit.html" target="_blank">terms_info_edit.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">개인정보처리방침 목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/privacy_info.html" target="_blank">privacy_info.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">개인정보처리방침 상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/privacy_info_detail.html" target="_blank">privacy_info_detail.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">개인정보처리방침 수정</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/privacy_info_edit.html" target="_blank">privacy_info_edit.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">FAQ 관리</td>
+                                <td class="dep3">FAQ 정보 검색/목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/faq_info.html" target="_blank">faq_info.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">FAQ 정보 상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/faq_info_detail.html" target="_blank">faq_info_detail.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">FAQ 정보 수정</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/faq_info_edit.html" target="_blank">faq_info_edit.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">FAQ 정보 등록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../publishing/board/faq_info_regist.html" target="_blank">faq_info_regist.html</a>
+                                </td>
+                                <td class="date">01/19</td>
+                                <td class="note"></td>
+                            </tr>
+                            
+                            <!-- 메시지 관리 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">메시지 관리</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="" target="_blank"></a>
+                                </td>
+                                <td class="date"></td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="" target="_blank"></a>
+                                </td>
+                                <td class="date"></td>
+                                <td class="note"></td>
+                            </tr>
+                            
+                            <!-- 통계 관리 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">통계 관리</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="" target="_blank"></a>
+                                </td>
+                                <td class="date"></td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="" target="_blank"></a>
+                                </td>
+                                <td class="date"></td>
+                                <td class="note"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- //hyper-contents -->
+        </section>
+  
+        <!-- hyper-footer -->
+        <footer class="hyper-footer">
+        
+        </footer>
+        <!-- //hyper-footer -->
+    </div>
+    <!-- //hyper-container -->
+</main>
+</body>
+</html>
