@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>대시보드</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1 typ1">
+                <h1 class="title__dep1">이름(사번) 님 / 직책 / 부서</h1>
+            </div>
+            <!-- //page title -->
+
+            <!-- l-contents -->
+            <div class="l-contents">
+                <!-- tabwrap -->
+                <div class="tabwrap tabwrap--dep2">
+                    <ul class="tablist tablist--dep2">
+                        <li class="tablist__item is-active">
+                            <a href="#none">나의 점검현황</a>
+                        </li>
+                        <li class="tablist__item">
+                            <a href="#none">팀 점검현황</a>
+                        </li>
+                        <li class="tablist__item">
+                            <a href="#none">전체 점검현황</a>
+                        </li>
+                    </ul>
+
+                    <!-- tabcont -->
+                    <div class="tabcont tabcont--dep2 is-active">
+                        <!-- 나의 점검현황 [S] -->
+                        <div class="titlewrap titlewrap--dep2">
+                            <h2 class="title__dep2">점검현황</h2>
+                        </div>
+                        <div class="c-table coltbl tbl-typ1" style="width: 100%;">
+                            <table>
+                                <colgroup>
+                                    <col width="180px">
+                                    <col>
+                                    <col width="200px">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" rowspan="2" class="br-none--left">점검기간</th>
+                                        <th scope="col" rowspan="2">점검지수</th>
+                                        <th scope="col" rowspan="2">점검분류</th>
+                                        <th scope="col" colspan="3">점검결과</th>
+                                        <th scope="col" colspan="2">조치결과</th>
+                                        <th scope="col" rowspan="2">점검합계</th>
+                                        <th scope="col" rowspan="2">제도 <br>이행률(%)</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">점검예정</th>
+                                        <th scope="col">이행+중지</th>
+                                        <th scope="col">미이행</th>
+                                        <th scope="col">조치요청</th>
+                                        <th scope="col">조치완료</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="br-none--left">22/01/01 ~ 22/09/22</td>
+                                        <td>항시</td>
+                                        <td class="tl">채팅</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">22/01/01 ~ 22/09/22</td>
+                                        <td>항시</td>
+                                        <td class="tl">청소년유해물&gt;성인용품</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">22/01/01 ~ 22/09/30</td>
+                                        <td>법이행2209</td>
+                                        <td class="tl">불법정보</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">22/01/01 ~ 22/09/30</td>
+                                        <td>채팅2209</td>
+                                        <td class="tl">채팅</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //나의 점검현황 [E] -->
+                    </div>
+                    <!-- //tabcont -->
+
+                    <!-- tabcont-->
+                    <div class="tabcont tabcont--dep2">
+                        <!-- 팀 점검현황 [S] -->
+                        <div class="c-table coltbl tbl-typ1" style="width: 100%;">
+                            <table>
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col width="220px">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row" colspan="3" class="br-none--left">합계</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" rowspan="2" class="br-none--left">점검자</th>
+                                        <th scope="col" rowspan="2">점검분류</th>
+                                        <th scope="col" rowspan="2">점검구분/할당기준</th>
+                                        <th scope="col" colspan="2">오늘</th>
+                                        <th scope="col" colspan="2">어제</th>
+                                        <th scope="col" colspan="2">지난2주</th>
+                                        <th scope="col" colspan="2">지난4주</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">점검</th>
+                                        <th scope="col">유해</th>
+                                        <th scope="col">점검</th>
+                                        <th scope="col">유해</th>
+                                        <th scope="col">점검</th>
+                                        <th scope="col">유해</th>
+                                        <th scope="col">점검</th>
+                                        <th scope="col">유해</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="br-none--left">홍길동</td>
+                                        <td>서비스점검</td>
+                                        <td class="tl">법이행</td>
+                                        <td>50</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">홍길동</td>
+                                        <td>컨텐츠점검</td>
+                                        <td class="tl">아프리카TV (성매매,마약)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left"></td>
+                                        <td></td>
+                                        <td class="tl"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="titlewrap titlewrap--dep2">
+                            <h2 class="title__dep2">점검현황</h2>
+                        </div>
+                        <div class="c-table coltbl tbl-typ1" style="width: 100%;">
+                            <table>
+                                <colgroup>
+                                    <col width="180px">
+                                    <col>
+                                    <col width="200px">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" rowspan="2" class="br-none--left">점검기간</th>
+                                        <th scope="col" rowspan="2">점검지수</th>
+                                        <th scope="col" rowspan="2">점검구분</th>
+                                        <th scope="col" colspan="3">점검결과</th>
+                                        <th scope="col" colspan="2">조치결과</th>
+                                        <th scope="col" rowspan="2">점검합계</th>
+                                        <th scope="col" rowspan="2">제도 <br>이행률(%)</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">점검예정</th>
+                                        <th scope="col">이행+중지</th>
+                                        <th scope="col">미이행</th>
+                                        <th scope="col">조치요청</th>
+                                        <th scope="col">조치완료</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="br-none--left">22/01/01 ~ 22/09/22</td>
+                                        <td>항시</td>
+                                        <td class="tl">채팅</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">22/01/01 ~ 22/09/22</td>
+                                        <td>항시</td>
+                                        <td class="tl">청소년유해물&gt;성인용품</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">22/01/01 ~ 22/09/30</td>
+                                        <td>법이행2209</td>
+                                        <td class="tl">불법정보</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">22/01/01 ~ 22/09/30</td>
+                                        <td>채팅2209</td>
+                                        <td class="tl">채팅</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //팀 점검현황 [E] -->
+                    </div>
+                    <!-- //tabcont -->
+
+                    <!-- tabcont -->
+                    <div class="tabcont tabcont--dep2">
+                        <!-- 전체 점검현황 [S] -->
+                        <div class="c-table coltbl tbl-typ1" style="width: 100%;">
+                            <table>
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col width="220px">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row" colspan="3" class="br-none--left">합계</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" rowspan="2" class="br-none--left">팀</th>
+                                        <th scope="col" rowspan="2">점검분류</th>
+                                        <th scope="col" rowspan="2">점검구분/할당기준</th>
+                                        <th scope="col" colspan="2">오늘</th>
+                                        <th scope="col" colspan="2">어제</th>
+                                        <th scope="col" colspan="2">지난2주</th>
+                                        <th scope="col" colspan="2">지난4주</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">점검</th>
+                                        <th scope="col">유해</th>
+                                        <th scope="col">점검</th>
+                                        <th scope="col">유해</th>
+                                        <th scope="col">점검</th>
+                                        <th scope="col">유해</th>
+                                        <th scope="col">점검</th>
+                                        <th scope="col">유해</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="br-none--left">법제팀</td>
+                                        <td>서비스점검</td>
+                                        <td class="tl">법이행</td>
+                                        <td>50</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">법제팀</td>
+                                        <td>컨텐츠점검</td>
+                                        <td class="tl">아프리카TV (성매매,마약)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">SNS팀</td>
+                                        <td></td>
+                                        <td class="tl"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">SNS팀</td>
+                                        <td></td>
+                                        <td class="tl"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="titlewrap titlewrap--dep2">
+                            <h2 class="title__dep2">점검현황</h2>
+                        </div>
+                        <div class="c-table coltbl tbl-typ1" style="width: 100%;">
+                            <table>
+                                <colgroup>
+                                    <col width="180px">
+                                    <col>
+                                    <col width="200px">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" rowspan="2" class="br-none--left">점검기간</th>
+                                        <th scope="col" rowspan="2">점검지수</th>
+                                        <th scope="col" rowspan="2">점검구분</th>
+                                        <th scope="col" colspan="3">점검결과</th>
+                                        <th scope="col" colspan="2">조치결과</th>
+                                        <th scope="col" rowspan="2">점검합계</th>
+                                        <th scope="col" rowspan="2">제도 <br>이행률(%)</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">점검예정</th>
+                                        <th scope="col">이행+중지</th>
+                                        <th scope="col">미이행</th>
+                                        <th scope="col">조치요청</th>
+                                        <th scope="col">조치완료</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="br-none--left">22/01/01 ~ 22/09/22</td>
+                                        <td>항시</td>
+                                        <td class="tl">채팅</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">22/01/01 ~ 22/09/22</td>
+                                        <td>항시</td>
+                                        <td class="tl">청소년유해물&gt;성인용품</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">22/01/01 ~ 22/09/30</td>
+                                        <td>법이행2209</td>
+                                        <td class="tl">불법정보</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="br-none--left">22/01/01 ~ 22/09/30</td>
+                                        <td>채팅2209</td>
+                                        <td class="tl">채팅</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //전체 점검현황 [E] -->
+                    </div>
+                    <!-- //tabcont -->
+
+                    <!-- //tabcont -->
+                </div>
+                <!-- //tabwrap -->
+
+            </div>
+            <!-- //l-contents -->
+
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+</main>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>서점검계획 &gt; 등록</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검업무할당</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검계획</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">신규 점검계획 생성</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h2 class="title__dep2">점검계획 기본정보</h2>
+                        <p class="mark-reference">※ &#39; <i class="necessary mgl0">&#42;</i> &#39; 항목은 필수 값 입니다.</p>
+                    </div>
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">점검차수명<i class="necessary">&#42;</i></th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="점검차수명을 입력해주세요">
+                                    </td>
+                                    <th scope="row">점검기간</th>
+                                    <td>
+                                        <div class="calendar">
+                                            <div class="calendar__item calendar__item--st">
+                                                <input type="text" class="c-input calendar__input datepicker" title="시작일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                            </div>
+                                            <div class="calendar__item calendar__item--en">
+                                                <input type="text" class="c-input calendar__input datepicker" title="종료일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">점검구분</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>법이행점검</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>지정고시</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <th scope="row">점검담당팀</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>법이행점검팀</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>전체</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //con-group -->
+
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h2 class="title__dep2">점검대상선택</h2>
+                    </div>
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">점검대상 검색</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>URL</option>
+                                                    <option>서비스명</option>
+                                                    <option>제공업체명</option>
+                                                    <option>검색태그</option>
+                                                    <option>고시호수</option>
+                                                </select>
+                                            </span>
+                                            <input type="text" id="" class="c-input mgl10" style="width: calc(100% - 350px);" value="" placeholder="검색어를 입력하세요">
+                                            <button type="button" class="c-btn btn--search"><span>검색</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //con-group -->
+
+                <div class="con-group mgt10">
+                    <div class="tbl-ovflow max-h__320">
+                        <div class="c-table coltbl" style="width: auto;">
+                            <table>
+                                <colgroup>
+                                    <col width="6%">
+                                    <col width="11%">
+                                    <col width="11%">
+                                    <col width="15%">
+                                    <col>
+                                    <col width="12%">
+                                    <col width="11%">
+                                    <col width="11%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">대상추가</th>
+                                        <th scope="col">서비스명</th>
+                                        <th scope="col">플랫폼</th>
+                                        <th scope="col">URL</th>
+                                        <th scope="col">하위메뉴</th>
+                                        <th scope="col">청유물정보</th>
+                                        <th scope="col">관련민원</th>
+                                        <th scope="col">최종검검일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="c-btn btn--plus"><span class="blind">추가</span></button>
+                                        </td>
+                                        <td><a href="#none" class="a-rowline">유투브</a></td>
+                                        <td><a href="#none" class="a-rowline">PC웹</a></td>
+                                        <td><a href="#none" class="a-rowline">www.youtube.com</a></td>
+                                        <td></td>
+                                        <td>제 2022-192호</td>
+                                        <td>민원-2022-192</td>
+                                        <td>2022.07.22</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="c-btn btn--plus"><span class="blind">추가</span></button>
+                                        </td>
+                                        <td><a href="#none" class="a-rowline">유투브</a></td>
+                                        <td><a href="#none" class="a-rowline">구글플레이스토어</a></td>
+                                        <td><a href="#none" class="a-rowline">www.goo...com/sfdsf</a></td>
+                                        <td>웹소설</td>
+                                        <td>제 2022-192호</td>
+                                        <td>민원-2022-192</td>
+                                        <td>2022.07.22</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- //con-group -->
+
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h2 class="title__dep2">선택된 점검대상 (현재 <span>121</span>개)</h2>
+                    </div>
+                    <div class="tbl-ovflow max-h__320">
+                        <div class="c-table coltbl" style="width: auto;">
+                            <table>
+                                <colgroup>
+                                    <col width="6%">
+                                    <col width="11%">
+                                    <col width="11%">
+                                    <col width="12%">
+                                    <col width="15%">
+                                    <col>
+                                    <col width="12%">
+                                    <col width="11%">
+                                    <col width="11%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">대상제외</th>
+                                        <th scope="col">서비스명</th>
+                                        <th scope="col">점검타입</th>
+                                        <th scope="col">플랫폼</th>
+                                        <th scope="col">URL</th>
+                                        <th scope="col">하위메뉴</th>
+                                        <th scope="col">청유물정보</th>
+                                        <th scope="col">관련민원</th>
+                                        <th scope="col">최종검검일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="c-btn btn--minus"><span class="blind">삭제</span></button>
+                                        </td>
+                                        <td><a href="#none" class="a-rowline">유투브</a></td>
+                                        <td><a href="#none" class="a-rowline">서비스</a></td>
+                                        <td><a href="#none" class="a-rowline">PC웹</a></td>
+                                        <td><a href="#none" class="a-rowline">www.youtube.com</a></td>
+                                        <td>동영상 &gt; 19금</td>
+                                        <td><a href="#none" class="a-rowline">제 2022-192호</a></td>
+                                        <td>민원-2022-192</td>
+                                        <td>2022.07.22</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- //con-group -->
+
+                <div class="btnwrap btnwrap--btm">
+                    <button type="button" class="c-btn"><span>취소</span></button>
+                    <button type="button" class="c-btn btn--black"><span>등록</span></button>
+                </div>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+</main>
+</body>
+</html>

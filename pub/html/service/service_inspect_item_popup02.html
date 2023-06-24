@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>관련민원 선택 팝업</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검대상관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">서비스점검목록</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">서비스 점검대상 등록</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="LyPopup02"><span>관련민원 선택 팝업</span></button>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- 관련민원 선택 레이어팝업 -->
+    <div class="popup-wrap is-active" id="LyPopup02">
+        <div class="popup-cont popup-cont--large">
+            <div class="titlewrap titlewrap--dep1">
+                <h3 class="title__dep1">관련민원 선택</h3>
+            </div>
+            <div class="popup-body">
+                <div class="sch-group">
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">접수일</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <ul class="c-chklist">
+                                                <li>
+                                                    <span class="c-radio">
+                                                        <input type="radio" name="ROb" class="c-radio__input" id="rd_b1" checked="">
+                                                        <label for="rd_b1" class="c-radio__label"><i class="c-radio__i"></i>전체</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="c-radio">
+                                                        <input type="radio" name="ROb" class="c-radio__input" id="rd_b2">
+                                                        <label for="rd_b2" class="c-radio__label"><i class="c-radio__i"></i>기간설정</label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <div class="calendar">
+                                                <div class="calendar__item calendar__item--st">
+                                                    <input type="text" class="c-input calendar__input datepicker hasDatepicker" title="시작일 입력" placeholder="yyyy.mm.dd" value="2022.09.22" id="dp1667995265999">
+                                                </div>
+                                                <div class="calendar__item calendar__item--en">
+                                                    <input type="text" class="c-input calendar__input datepicker hasDatepicker" title="종료일 입력" placeholder="yyyy.mm.dd" value="" id="dp1667995266000">
+                                                </div>
+                                            </div>
+                                            <ul class="datepick">
+                                                <li class="datepick__item">
+                                                    <input type="radio" id="datep11" class="datepick__input" name="datepick" checked="">
+                                                    <label for="datep11" class="datepick__label">오늘</label>
+                                                </li>
+                                                <li class="datepick__item">
+                                                    <input type="radio" id="datep12" class="datepick__input" name="datepick">
+                                                    <label for="datep12" class="datepick__label">일주일</label>
+                                                </li>
+                                                    <li class="datepick__item">
+                                                    <input type="radio" id="datep13" class="datepick__input" name="datepick">
+                                                    <label for="datep13" class="datepick__label">한달</label>
+                                                </li>
+                                                    <li class="datepick__item">
+                                                    <input type="radio" id="datep14" class="datepick__input" name="datepick">
+                                                    <label for="datep14" class="datepick__label">6개월</label>
+                                                </li>
+                                                    <li class="datepick__item">
+                                                    <input type="radio" id="datep15" class="datepick__input" name="datepick">
+                                                    <label for="datep15" class="datepick__label">1년</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">검색</th>
+                                    <td>
+                                        <input type="text" class="c-input mgl10" placeholder="검색어를 입력하세요">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btnwrap tc">
+                        <button type="button" class="c-btn btn--black"><span>검색</span></button>
+                    </div>
+                </div>
+
+                <div class="con-group">
+                    <div class="tblsortwrap">
+                        <div class="tblsort">
+                            <div class="tblsort__total">
+                                <em class="tblsort__txt">Total 500</em>
+                                <div class="selectbox">
+                                    <select>
+                                        <option>10개보기</option>
+                                        <option>20개보기</option>
+                                        <option>30개보기</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tbl-ovflow">
+                            <div class="c-table coltbl">
+                                <table>
+                                    <colgroup>
+                                        <col width="6%">
+                                        <col width="10%">
+                                        <col width="35%">
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">선택</th>
+                                            <th scope="col">접수번호</th>
+                                            <th scope="col">제목</th>
+                                            <th scope="col">대상/URL</th>
+                                            <th scope="col">신청일</th>
+                                            <th scope="col">접수일</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><button type="button" class="c-btn btn--blue"><span>선택</span></button></td>
+                                            <td>민-20332</td>
+                                            <td class="tl"><span class="txt-over">제목제목</span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button type="button" class="c-btn btn--blue"><span>선택</span></button></td>
+                                            <td></td>
+                                            <td class="tl"><span class="txt-over"></span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //관련민원 선택 레이어팝업 -->
+</main>
+</body>
+</html>

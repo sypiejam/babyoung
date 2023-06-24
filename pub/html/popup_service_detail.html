@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>서비스 기본 정보 팝업</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">서비스 관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">서비스 정보</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">서비스 정보</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="largeLyPop05"><span>서비스 기본 정보 팝업</span></button>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- 사업자 정보 레이어팝업 -->
+    <div class="popup-wrap is-active" id="largeLyPop05">
+        <div class="popup-cont popup-cont--large">
+            <div class="titlewrap titlewrap--dep1">
+                <h3 class="title__dep1">서비스 기본 정보</h3>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">서비스 URL</th>
+                                    <td colspan="3">
+                                        <div class="servicelistbox">
+                                            <div class="servicelist">
+                                                <ul class="servicelist__show">
+                                                    <li class="servicelist__item">
+                                                        <em class="servicelist__tit">PC웹</em>
+                                                        <span class="servicelist__url">http://ww1.11ee.com</span>
+                                                    </li>
+                                                    <li class="servicelist__item">
+                                                        <em class="servicelist__tit">PC웹</em>
+                                                        <span class="servicelist__url">http://ww1.11ee.com</span>
+                                                    </li>
+                                                    <li class="servicelist__item">
+                                                        <em class="servicelist__tit">구글 플레이스토어</em>
+                                                        <span class="servicelist__url">https://play.google.com/apps/id=3i2o42</span>
+                                                    </li>
+                                                </ul>
+                                                <!-- 10개 이상 일 때 목록 숨김처리 
+                                                <ul class="servicelist__hid">
+                                                    <li class="servicelist__item">
+                                                        <em class="servicelist__tit">PC웹</em>
+                                                        <span class="servicelist__url">http://ww1.11ee.com</span>
+                                                    </li>
+                                                    <li class="servicelist__item">
+                                                        <em class="servicelist__tit">PC웹</em>
+                                                        <span class="servicelist__url">http://ww1.11ee.com</span>
+                                                    </li>
+                                                    <li class="servicelist__item">
+                                                        <em class="servicelist__tit">구글 플레이스토어</em>
+                                                        <span class="servicelist__url">https://play.google.com/apps/id=3i2o42</span>
+                                                    </li>
+                                                </ul>-->
+                                            </div>
+                                            <!-- 10개 이상 일 때 더보기 버튼 생성 
+                                            <div class="btnwrap">
+                                                <button type="button" class="btn-more"><span class="toggle-txt">더보기</span></button>
+                                            </div>-->
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">서비스명(한글)</th>
+                                    <td>유투브</td>
+                                    <th scope="row">서비스명(영문)</th>
+                                    <td>Youtube</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">서비스제공업체</th>
+                                    <td>구글</td>
+                                    <th scope="row">서비스운영상태</th>
+                                    <td>운영중</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">점검 대상<i class="necessary">&#42;</i></th>
+                                    <td colspan="3">
+                                        <ul class="c-chklist">
+                                            <li>
+                                                <span class="c-check">
+                                                    <input type="checkbox" class="c-check__input" id="check0101" checked>
+                                                    <label for="check0101" class="c-check__label">서비스(앱/법제) 점검 대상</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-check">
+                                                    <input type="checkbox" class="c-check__input" id="check0102" checked>
+                                                    <label for="check0102" class="c-check__label">컨텐츠 점검 대상 (채팅내용, 인터넷방송, SNS 등)</label>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">채팅앱 여부</th>
+                                    <td>해당</td>
+                                    <th scope="row">서비스점검 구분</th>
+                                    <td>불법정보</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">자체신고테마</th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <span>사용</span>
+                                            <div class="btnwrap">
+                                                <button type="button" class="c-btn"><span>신고테마아이템 편집</span></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">검색용 태그(tag)</th>
+                                    <td colspan="3">
+                                        <span>&#35;인터넷방송</span>, <span>&#35;구글서비스</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //사업자 정보 레이어팝업 -->
+</main>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>신규 컨텐츠 점검대상 생성</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검대상관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">컴텐츠점검대상</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">신규 컨텐츠 점검대상 생성</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="con-group">
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">서비스명(한글)<i class="necessary">&#42;</i></th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <span>다같이채팅앱</span>
+                                            <button type="button" class="c-btn"><span>선택</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">서비스명(영문)</th>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">대표URL</th>
+                                    <td>https//playsore.google.com?id=ccssdcsdcdd</td>
+                                    <th scope="row">서비스제공업체</th>
+                                    <td>다같이컴퍼니</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="con-group">
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">점검구분</th>
+                                    <td colspan="3">
+                                        <div class="d-flex">
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>청소년유해매체물관리</option>
+                                                    <option></option>
+                                                    <option></option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>음란-성매매</option>
+                                                    <option></option>
+                                                    <option></option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">플랫폼구분</th>
+                                    <td colspan="3">
+                                        <span class="selectbox">
+                                            <select>
+                                                <option>웹사이트</option>
+                                                <option></option>
+                                                <option></option>
+                                                <option></option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">청유물정보</th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <span>고시번호 2022-232</span>
+                                            <button type="button" class="c-btn"><span>선택</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">관련민원</th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <span>민원-2231231322</span>
+                                            <button type="button" class="c-btn"><span>선택</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //con-group -->
+
+                <div class="btnwrap btnwrap--btm">
+                    <button type="button" class="c-btn"><span>취소</span></button>
+                    <button type="button" class="c-btn btn--black"><span>등록</span></button>
+                </div>
+            </div>
+            <!-- //l-contents -->
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+</main>
+</body>
+</html>

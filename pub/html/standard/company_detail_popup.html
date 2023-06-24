@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>업체정보 팝업</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검기준관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">업체정보관리</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">업체정보</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="companyDetailLyPop"><span>업체정보 팝업</span></button>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- 업체정보 레이어팝업 -->
+    <div class="popup-wrap is-active" id="companyDetailLyPop">
+        <div class="popup-cont popup-cont--large">
+            <div class="titlewrap titlewrap--dep1">
+                <h3 class="title__dep1"><span>구글</span> (구분: <span>국외</span>)</h3>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h4 class="title__dep2">업체 정보</h4>
+                        <div class="btnwrap">
+                            <button type="button" class="c-btn"><span>수정하기</span></button>
+                        </div>
+                    </div>
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">사업자등록번호</th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <span>425-99-02843</span>
+                                            <div>
+                                                <em class="badge badge--ing">운영중</em>
+                                                <em class="badge badge--close">폐업</em>
+                                                <em class="badge badge--unknown">알수없음</em>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <th scope="row">대표자명</th>
+                                    <td>데이빗</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">통신판매업면허</th>
+                                    <td>203040-2132222</td>
+                                    <th scope="row">업체상태</th>
+                                    <td>영업정지</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">고객센터</th>
+                                    <td>070-5555-5555</td>
+                                    <th scope="row">이메일</th>
+                                    <td>center@google.com</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">사업장 주소</th>
+                                    <td colspan="3">서울 ...</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">기타 정보</th>
+                                    <td colspan="3"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h4 class="title__dep2">업체가 운영중인 서비스</h4>
+                    </div>
+                    <div class="tbl-ovflow">
+                        <div class="c-table coltbl">
+                            <table>
+                                <colgroup>
+                                    <col width="80px">
+                                    <col>
+                                    <col>
+                                    <col width="16%">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">서비스명</th>
+                                        <th scope="col">서비스 ID</th>
+                                        <th scope="col">대표URL</th>
+                                        <th scope="col">서비스제공자</th>
+                                        <th scope="col">매체타입</th>
+                                        <th scope="col">고시타입</th>
+                                        <th scope="col">고시호수</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>99</td>
+                                        <td><a href="#none" class="a-rowline">유투브</a></td>
+                                        <td><a href="#none" class="a-rowline">SVC-202011</a></td>
+                                        <td>www.youtube.com</td>
+                                        <td>구글</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>98</td>
+                                        <td><a href="#none" class="a-rowline">구글</a></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn" data-roll="popup-off"><span>닫기</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //업체정보 레이어팝업 -->
+</main>
+</body>
+</html>

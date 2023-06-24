@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>성과상세내역 팝업</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">인력관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">성과관리</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">성과관리</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="staffOutputLyPop"><span>성과상세내역 팝업</span></button>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- 성과상세내역 레이어팝업 -->
+    <div class="popup-wrap is-active" id="staffOutputLyPop">
+        <div class="popup-cont popup-cont--large">
+            <div class="titlewrap titlewrap--dep1">
+                <strong class="title__dep1"><span>홍길동</span> 일별 성과상세내역 (<span>22/08/21 ~ 22/08/31</span>)</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <div class="tbl-ovflow">
+                        <div class="c-table coltbl">
+                            <table>
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <th scope="col">일자</th>
+                                    <th scope="col">근무지</th>
+                                    <th scope="col">출근</th>
+                                    <th scope="col">퇴근</th>
+                                    <th scope="col">조퇴</th>
+                                    <th scope="col">휴가</th>
+                                    <th scope="col">최초 로그인시각</th>
+                                    <th scope="col">마지막 사용시각</th>
+                                    <th scope="col">점검건수</th>
+                                    <th scope="col">유해건수</th>
+                                    <th scope="col">유해%</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2022/08/21</td>
+                                        <td>사무실</td>
+                                        <td>09:21</td>
+                                        <td>18:31</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td><button type="button" class="a-rowline">09:45</button></td>
+                                        <td><button type="button" class="a-rowline">17:46</button></td>
+                                        <td>21</td>
+                                        <td>10</td>
+                                        <td>45%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn" data-roll="popup-off"><span>닫기</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //성과상세내역 레이어팝업 -->
+</main>
+</body>
+</html>

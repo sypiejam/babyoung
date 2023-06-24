@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>점검분야</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검기준관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검분야</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">점검분야</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="titlewrap titlewrap--dep2">
+                    <h2 class="title__dep2">점검구분</h2>
+                </div>
+                <div class="d-table">
+                    <div class="d-table__cell d-table__cell--left">
+                        <div class="td-ovflow-y treewrap">
+                            <div class="treelist">
+                                <ul class="treedep01">
+                                    <li class="treedep01__item">
+                                        <a href="#none" class="treedep01__tit">법이행점검</a>
+                                        <ul class="treedep02">
+                                            <li class="treedep02__item">
+                                                <a href="#none" class="treedep02__anchor">지정고시</a>
+                                            </li>
+                                            <li class="treedep02__item">
+                                                <a href="#none" class="treedep02__anchor">특별고시</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="treedep01__item">
+                                        <a href="#none" class="treedep01__tit">청소년유해정보</a>
+                                    </li>
+                                    <li class="treedep01__item">
+                                        <a href="#none" class="treedep01__tit">청소년유해매체물</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-table__cell d-table__cell--right">
+                        <div class="con-group">
+                            <div class="c-table rowtbl">
+                                <table>
+                                    <colgroup>
+                                        <col width="160px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">점검구분명</th>
+                                            <td>
+                                                <input type="text" id="" class="c-input" value="법이행점검" placeholder="점검구분명을 입력하세요">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">점검 대분류</th>
+                                            <td>
+                                                <ul class="c-chklist c-chklist--col">
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check01a1">
+                                                            <label for="check01a1" class="c-check__label">서비스점검 (기 생서오딘 점검목록에 대한 점검 수행)</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check01a2">
+                                                            <label for="check01a2" class="c-check__label">컨텐츠점검 (점검목록을 점검자가 생성)</label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">점검규정</th>
+                                            <td>
+                                                <button type="button" class="c-btn" data-roll="popup-on" data-link="guideOptionLyPop"><span>점검가이드 선택</span></button><!-- 20221109 점검가이드 선택 레이어팝업 추가 -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">점검지침</th>
+                                            <td class="pd0">
+                                                <!-- 에디터 영역 -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">점검항목</th>
+                                            <td>
+                                                <ul class="c-chklist c-chklist--grow"> <!-- 20221109 클래스 c-chklist--grow 추가 -->
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0201">
+                                                            <label for="check0201" class="c-check__label">고시구분</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0202">
+                                                            <label for="check0202" class="c-check__label">본인확인수단</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0203">
+                                                            <label for="check0203" class="c-check__label">광고하는전화번호</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0204">
+                                                            <label for="check0204" class="c-check__label">동영상채증</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0205">
+                                                            <label for="check0205" class="c-check__label">근거법률</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0206">
+                                                            <label for="check0206" class="c-check__label">타임스탬프</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0207">
+                                                            <label for="check0207" class="c-check__label">구간연령제한</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0208">
+                                                            <label for="check0208" class="c-check__label">청소년보호법위반사항</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0209">
+                                                            <label for="check0209" class="c-check__label">성기구종류</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0210">
+                                                            <label for="check0210" class="c-check__label">리얼돌취급여부</label>
+                                                        </span>
+                                                    </li>
+
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0211">
+                                                            <label for="check0211" class="c-check__label">리얼돌체험방여부</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0212">
+                                                            <label for="check0212" class="c-check__label">성매매경고문구개재여부</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0213">
+                                                            <label for="check0213" class="c-check__label">유통사</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0214">
+                                                            <label for="check0214" class="c-check__label">이용등급</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0215">
+                                                            <label for="check0215" class="c-check__label">출시일</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0216">
+                                                            <label for="check0216" class="c-check__label">설치수</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0217">
+                                                            <label for="check0217" class="c-check__label">인증방법</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0218">
+                                                            <label for="check0218" class="c-check__label">대화저장여부</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0219">
+                                                            <label for="check0219" class="c-check__label">신고가능여부</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0220">
+                                                            <label for="check0220" class="c-check__label">프로필임의설정</label>
+                                                        </span>
+                                                    </li>
+                                                    
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0221">
+                                                            <label for="check0221" class="c-check__label">이용형태</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0222">
+                                                            <label for="check0222" class="c-check__label">대화상대선택방식</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0223">
+                                                            <label for="check0223" class="c-check__label">위치정보사용여부</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0224">
+                                                            <label for="check0224" class="c-check__label">유료서비스제공여부</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0225">
+                                                            <label for="check0225" class="c-check__label">청소년유해매체물</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0226">
+                                                            <label for="check0226" class="c-check__label">신고대상</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0227">
+                                                            <label for="check0227" class="c-check__label">계정구분</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0228">
+                                                            <label for="check0228" class="c-check__label">계정명</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0229">
+                                                            <label for="check0229" class="c-check__label">게시물구분</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0230">
+                                                            <label for="check0230" class="c-check__label">게시일</label>
+                                                        </span>
+                                                    </li>
+                                                    
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0231">
+                                                            <label for="check0231" class="c-check__label">신고자연령대</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0232">
+                                                            <label for="check0232" class="c-check__label">신고자성별</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0233">
+                                                            <label for="check0233" class="c-check__label">신고내용</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0234">
+                                                            <label for="check0234" class="c-check__label">신고대상닉네임</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0235">
+                                                            <label for="check0235" class="c-check__label">신고대상연령대</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0236">
+                                                            <label for="check0236" class="c-check__label">신고대상지역</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0237">
+                                                            <label for="check0237" class="c-check__label">신고대상연락처</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0238">
+                                                            <label for="check0238" class="c-check__label">신고대상URL</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0239">
+                                                            <label for="check0239" class="c-check__label">거래구분</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0240">
+                                                            <label for="check0240" class="c-check__label">거래품목</label>
+                                                        </span>
+                                                    </li>
+                                                    
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0241">
+                                                            <label for="check0241" class="c-check__label">거래조건</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0242">
+                                                            <label for="check0242" class="c-check__label">수수료</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0243">
+                                                            <label for="check0243" class="c-check__label">거래방법</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0244">
+                                                            <label for="check0244" class="c-check__label">거래지역</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0245">
+                                                            <label for="check0245" class="c-check__label">금융거래구분</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0246">
+                                                            <label for="check0246" class="c-check__label">금융거래금액</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0247">
+                                                            <label for="check0247" class="c-check__label">금융거래인증방법</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0248">
+                                                            <label for="check0248" class="c-check__label">거래목적</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0249">
+                                                            <label for="check0249" class="c-check__label">광고등록상태</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0250">
+                                                            <label for="check0250" class="c-check__label">청소년보호책임자</label>
+                                                        </span>
+                                                    </li>
+                                                    
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0251">
+                                                            <label for="check0251" class="c-check__label">광고개재여부</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0252">
+                                                            <label for="check0252" class="c-check__label">상업광고개재여부</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0253">
+                                                            <label for="check0253" class="c-check__label">유해성광고개재여부</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0254">
+                                                            <label for="check0254" class="c-check__label">모바일앱URL</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0255">
+                                                            <label for="check0255" class="c-check__label">광고유형</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0256">
+                                                            <label for="check0256" class="c-check__label">광고타겟</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0257">
+                                                            <label for="check0257" class="c-check__label">광고주유형</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0258">
+                                                            <label for="check0258" class="c-check__label">광고주명</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0259">
+                                                            <label for="check0259" class="c-check__label">홍보대상성별</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0260">
+                                                            <label for="check0260" class="c-check__label">근거법률</label>
+                                                        </span>
+                                                    </li>
+                                                    
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0261">
+                                                            <label for="check0261" class="c-check__label">지각비</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0262">
+                                                            <label for="check0262" class="c-check__label">광고등록일</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0263">
+                                                            <label for="check0263" class="c-check__label">홍보대상URL</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0264">
+                                                            <label for="check0264" class="c-check__label">방심위_등록정보_정보내용</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0265">
+                                                            <label for="check0265" class="c-check__label">방심위_등록정보_정보상세</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0266">
+                                                            <label for="check0266" class="c-check__label">방심위_등록정보_정보위치</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0267">
+                                                            <label for="check0267" class="c-check__label">방심위_등록정보</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0268">
+                                                            <label for="check0268" class="c-check__label">방심위_등록일</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0269">
+                                                            <label for="check0269" class="c-check__label">방심위_심의일</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check0270">
+                                                            <label for="check0270" class="c-check__label">방심위_등록정보_URL</label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">후속조치실행</th>
+                                            <td>
+                                                <span class="c-check">
+                                                    <input type="checkbox" class="c-check__input" id="check-01">
+                                                    <label for="check-01" class="c-check__label">조치확인</label>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="btnwrap tr">
+                                <button type="button" class="c-btn"><span>하위 구분 추가</span></button>
+                                <button type="button" class="c-btn btn--black w-initial"><span>저장</span></button>
+                            </div>
+                        </div>
+
+                        <div class="con-group">
+                            <div class="titlewrap titlewrap--dep2">
+                                <h2 class="title__dep2">하위 구분 추가</h2>
+                            </div>
+                            <div class="c-table rowtbl">
+                                <table>
+                                    <colgroup>
+                                        <col width="160px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">점검구분명</th>
+                                            <td>
+                                                <input type="text" id="" class="c-input" value="" placeholder="점검구분명을 입력하세요">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">점검 대분류</th>
+                                            <td>
+                                                <ul class="c-chklist c-chklist--col">
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check01b1">
+                                                            <label for="check01b1" class="c-check__label">서비스점검 (기 생서오딘 점검목록에 대한 점검 수행)</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-check">
+                                                            <input type="checkbox" class="c-check__input" id="check01b2">
+                                                            <label for="check01b2" class="c-check__label">컨텐츠점검 (점검목록을 점검자가 생성)</label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">점검규정</th>
+                                            <td>
+                                                <button type="button" class="c-btn"><span>점검가이드 선택</span></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">점검지침</th>
+                                            <td class="pd0">
+                                                <!-- 에디터 영역 -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="btnwrap tr">
+                            <button type="button" class="c-btn btn--black w-initial"><span>저장</span></button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //d-table -->
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- 20221109 마크업 추가 -->
+    <!-- 점검가이드 선택 레이어팝업 -->
+    <div class="popup-wrap" id="guideOptionLyPop">
+        <div class="popup-cont">
+            <div class="titlewrap titlewrap--dep1">
+                <strong class="title__dep1">점검가이드 선택</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <div class="tbl-ovflow">
+                        <div class="c-table coltbl">
+                            <table>
+                                <colgroup>
+                                    <col width="10%">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            <span class="c-check nolabel">
+                                                <input type="checkbox" class="c-check__input" id="checkAll">
+                                            </span>
+                                        </th>
+                                        <th scope="col">점검가이드명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="c-check nolabel">
+                                                <input type="checkbox" class="c-check__input" name="chk" id="">
+                                            </span>
+                                        </td>
+                                        <td class="tl">성매매 컨텐츠 점검 가이드</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="c-check nolabel">
+                                                <input type="checkbox" class="c-check__input" name="chk" id="">
+                                            </span>
+                                        </td>
+                                        <td class="tl">미이행 보고서</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="c-check nolabel">
+                                                <input type="checkbox" class="c-check__input" name="chk" id="">
+                                            </span>
+                                        </td>
+                                        <td class="tl">심의요청서</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- //con-group -->
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn" data-roll="popup-off"><span>취소</span></button>
+                <button type="button" class="c-btn btn--black"><span>선택된 점검가이드 적용</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //점검가이드 선택 레이어팝업 -->
+    <!-- //20221109 마크업 추가 -->
+</main>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>직원추가 팝업</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">인력관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">직원관리</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">직원관리</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="staffAddLyPop"><span>직원추가 팝업</span></button>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- 직원추가 레이어팝업 -->
+    <div class="popup-wrap is-active" id="staffAddLyPop">
+        <div class="popup-cont" style="width: 1100px;">
+            <div class="titlewrap titlewrap--dep1">
+                <strong class="title__dep1">직원추가</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="140px">
+                                <col>
+                                <col width="140px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">직원명</th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="직원명을 입력하세요">
+                                    </td>
+                                    <th scope="row">사번</th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="사번을 입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">이메일</th>
+                                    <td><input type="text" id="" class="c-input" value="" placeholder="이메일(구글)을 입력하세요"></td>
+                                    <th scope="row">직책</th>
+                                    <td>
+                                        <span class="selectbox w100">
+                                            <select>
+                                                <option>직책을 선택하세요</option>
+                                                <option></option>
+                                                <option></option>
+                                                <option></option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">소속부서</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>법제팀</option>
+                                                    <option></option>
+                                                    <option></option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>채팅점검 1그룹</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <th scope="row">고용형태</th>
+                                    <td>
+                                        <span class="selectbox w100">
+                                            <select>
+                                                <option>고용형태를 선택하세요</option>
+                                                <option>정규</option>
+                                                <option>선택근무제</option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">로그인 허용여부</th>
+                                    <td>
+                                        <span class="selectbox w100">
+                                            <select>
+                                                <option>로그인 허용여부를 선택하세요</option>
+                                                <option>허용</option>
+                                                <option>허용안함</option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                    <th scope="row">근무기간</th>
+                                    <td>
+                                        <div class="calendar">
+                                            <div class="calendar__item calendar__item--st">
+                                                <input type="text" class="c-input calendar__input datepicker" title="시작일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                            </div>
+                                            <div class="calendar__item calendar__item--en">
+                                                <input type="text" class="c-input calendar__input datepicker" title="종료일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn" data-roll="popup-off"><span>취소</span></button>
+                <button type="button" class="c-btn btn--black"><span>등록</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //직원추가 레이어팝업 -->
+</main>
+</body>
+</html>

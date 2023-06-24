@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>청소년유해매체물정보 &gt; 추가/수정</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검기준관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">청소년유해매체물정보</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">청소년유해매체물정보</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="btnwrap">
+                    <button type="button" class="c-btn" data-roll="popup-on" data-link="legalAddkLyPop"><span>청소년유해매체물정보 추가/수정</span></button>
+                </div>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- 청소년유해매체물정보 추가/수정 레이어팝업 -->
+    <div class="popup-wrap is-active" id="legalAddkLyPop">
+        <div class="popup-cont popup-cont--large">
+            <div class="titlewrap titlewrap--dep1">
+                <strong class="title__dep1">청소년유해매체물정보 추가/수정</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">일련번호<i class="necessary">&#42;</i></th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="일련번호를 입력하세요">
+                                    </td>
+                                    <th scope="row">매체분류</th>
+                                    <td>
+                                        <span class="selectbox w100">
+                                            <select>
+                                                <option>도서-1.도서</option>
+                                                <option></option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">매체제먹/URL</th>
+                                    <td colspan="3">
+                                        <input type="text" id="" class="c-input" value="" placeholder="매체제목 혹은 URL를 입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">제작자/제공자</th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <span>다나와라</span>
+                                            <button type="button" class="c-btn"><span>선택</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">심의번호</th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="심의번호를 입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">결정사유</th>
+                                    <td>
+                                        <span class="selectbox w100">
+                                            <select>
+                                                <option>가) 음란한 자태 묘사</option>
+                                                <option></option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                    <th scope="row">결정일</th>
+                                    <td>
+                                        <div class="calendar__item">
+                                            <input type="text" class="c-input calendar__input datepicker" title="결정일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">고시번호</th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="고시번호를 입력하세요">
+                                    </td>
+                                    <th scope="row">고시일</th>
+                                    <td>
+                                        <div class="calendar__item">
+                                            <input type="text" class="c-input calendar__input datepicker" title="고시일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">효력발생일</th>
+                                    <td>
+                                        <div class="calendar__item">
+                                            <input type="text" class="c-input calendar__input datepicker" title="효력발생일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                        </div>
+                                    </td>
+                                    <th scope="row">취소여부</th>
+                                    <td>
+                                        <span class="selectbox w100">
+                                            <select>
+                                                <option>취소되지 않있음</option>
+                                                <option></option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">취소일</th>
+                                    <td>
+                                        <div class="calendar__item">
+                                            <input type="text" class="c-input calendar__input datepicker" title="취소일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                        </div>
+                                    </td>
+                                    <th scope="row">취소고시번호</th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="취소고시번호를 입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">비고</th>
+                                    <td colspan="3">
+                                        <textarea id="" rows="6" class="c-textarea" placeholder="" style="height:80px;"></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn" data-roll="popup-off"><span>취소</span></button>
+                <button type="button" class="c-btn btn--black" data-roll="popup-off"><span>저장</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //청소년유해매체물정보 추가/수정 레이어팝업 -->
+</main>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>결정고시 정보 팝업</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">서비스 관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">서비스 정보</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">서비스 정보</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="middleLyPop02"><span>결정고시 정보 팝업</span></button>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- 중간사이즈 레이어팝업 -->
+    <div class="popup-wrap is-active" id="middleLyPop02">
+        <div class="popup-cont">
+            <div class="titlewrap titlewrap--dep2">
+                <h3 class="title__dep2">유투브 신고테마 목록</h3>
+                <div class="btnwrap">
+                    <button type="button" class="c-btn"><span>수정하기</span></button>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <div class="tbl-ovflow">
+                        <div class="c-table coltbl">
+                            <table>
+                                <colgroup>
+                                    <col width="10%">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">신고아이템</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="tl">
+                                            <a href="#none" class="a-rowline">선정성</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td class="tl">
+                                            <a href="#none" class="a-rowline">마약</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td class="tl"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td class="tl"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td class="tl"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td class="tl"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td class="tl"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td class="tl"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td class="tl"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td class="tl"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td class="tl"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn" data-roll="popup-off"><span>닫기</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //중간사이즈 레이어팝업 -->
+</main>
+</body>
+</html>

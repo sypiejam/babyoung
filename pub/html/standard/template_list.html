@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>보고서템플릿 관리</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검기준관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">보고서템플릿 관리</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">보고서템플릿(MS Excel) 관리</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="con-group">
+                    <div class="c-table rowtbl" style="width: 100%;">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">보고서명</th>
+                                    <td>
+
+                                    </td>
+                                    <th scope="row">템플릿</th>
+                                    <td>
+                                        <div class="filebox">
+                                            <input type="text" class="upload" value="" readonly>
+                                            <label for="file" class="c-btn">파일선택</label>
+                                            <input type="file" id="file" class="upload-hidde">
+                                        </div>
+                                        <div>
+                                            <p>여성가족부보고서_템플릿.xls</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <p>INSPECT_NUM : 점검번호 / INSPECT_DATE : 점검일자 / ... </p>
+                                        <p>INSPECT_NUM : 점검번호 / INSPECT_DATE : 점검일자 / ... </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btnwrap tr">
+                        <button type="button" class="c-btn btn--black"><span>저장</span></button>
+                    </div>
+                </div>
+                <!-- //con-group -->           
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+</main>
+</body>
+</html>

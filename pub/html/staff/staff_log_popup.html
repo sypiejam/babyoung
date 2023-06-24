@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>활동로그 팝업</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">인력관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">성과관리</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">성과관리</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="staffLogLyPop"><span>활동로그 팝업</span></button>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- 성과상세내역 레이어팝업 -->
+    <div class="popup-wrap is-active" id="staffLogLyPop">
+        <div class="popup-cont">
+            <div class="titlewrap titlewrap--dep1">
+                <strong class="title__dep1"><span>홍길동</span> 활동로그 (<span>22/08/21 ~ 22/08/31</span>)</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <div class="c-table coltbl">
+                        <table>
+                            <colgroup>
+                                <col width="25%">
+                                <col width="25%">
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <th scope="col">작업 일시</th>
+                                <th scope="col">IP Address</th>
+                                <th scope="col">작업</th>
+                                <th scope="col">수정내용</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2022/08/21 09:12</td>
+                                    <td>102.221.33.22</td>
+                                    <td class="tl">
+                                        로그인
+                                    </td>
+                                    <td class="tl">
+                                        
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn" data-roll="popup-off"><span>닫기</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //성과상세내역 레이어팝업 -->
+</main>
+</body>
+</html>

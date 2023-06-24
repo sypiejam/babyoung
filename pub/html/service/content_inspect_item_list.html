@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>컨텐츠점검대상 &gt; 목록</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검대상관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">컨텐츠점검대상</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">컨텐츠 점검 대상</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2 fl-end">
+                        <div class="btnwrap">
+                            <button type="button" class="c-btn"><span>신규 컨텐츠 점검 할당기준 생성</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="tbl-ovflow">
+                        <div class="c-table coltbl" style="width: 100%;">
+                            <table>
+                                <colgroup>
+                                    <col width="50px">
+                                    <col width="25%">
+                                    <col>
+                                    <col width="15%">
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">점검명</th>
+                                        <th scope="col">점검대상 서비스</th>
+                                        <th scope="col">점검 구분</th>
+                                        <th scope="col">플랫폼</th>
+                                        <th scope="col">청유물정보</th>
+                                        <th scope="col">관련민원</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>99</td>
+                                        <td>유투브-블법정보자윯조치-202208</td>
+                                        <td><a href="#none" class="a-rowline">유투브</a></td>
+                                        <td>불법정보자율조치 &gt; 음란성매매</td>
+                                        <td>웹사이트</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+</main>
+</body>
+</html>

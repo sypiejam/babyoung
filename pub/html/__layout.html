@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>__LAYOUT</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/jquery-ui-timepicker-addon.js"></script><!-- datetimepicker 추가 -->
+<script src="/static/js/ui.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui-timepicker-addon.css"><!-- datetimepicker 추가 -->
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header">
+        <strong class="l-logo">여성가족부</strong>
+        <div class="inner">
+            <div class="d-flex">
+                <button class="member-info">
+                    <div class="member-info__name"><em>홍길동(액모)</em> 님(<span>AMM-0001</span>)</div>
+                </button>
+                <dl class="login-info">
+                    <dt class="login-info__tit">최종 로그인</dt>
+                    <dd class="login-info__txt">2021/12/25 11:45:38</dd>
+                    <dt class="login-info__tit">최종 IP</dt>
+                    <dd class="login-info__txt">192.168.0.00</dd>
+                </dl>
+                <button type="button" class="btn-otp" data-roll="popup-on" data-link="popupOtp"><span>채증툴 OTP</span></button>
+                <button type="button" class="btn-logout"><span>로그아웃</span></button>
+            </div>
+        </div>
+    </header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation">
+        <div class="gnb-depth1">
+            <ul class="gnblist-depth1">
+                <li class="gnblist-depth1__item is-active"> <!-- Depth1 메뉴 활성화 is-active 추가 -->
+                    <a href="#none" class="gnblist-depth1__anchor--m01">점검기준관리</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item is-active"> <!-- Depth2 메뉴 활성화 is-active 추가 -->
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">점검분야</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">보고서템플릿</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">점검가이드</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">청소년유해매체물정보</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">유해카테고리</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">업체정보관리</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">용어 관리</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m02">점검대상관리</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">서비스관리</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">서비스점검목록</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">컨텐츠점검대상</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">민원정보</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m03">점검업무할당</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">점검계획</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m04">점검수행</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">서비스점검</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">컨텐츠점검</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m05">검토 및 후속조치</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">점검내용검토</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m06">인력관리</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">근태관리</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">성과관리</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">직원관리</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">조직관리</a>
+                            </li>
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">메뉴접근권한관리</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+                <li class="gnblist-depth1__item">
+                    <a href="#none" class="gnblist-depth1__anchor--m07">통계데이터추출</a>
+                    <!-- depth2 -->
+                    <div class="gnb-depth2">
+                        <ul class="gnblist-depth2">
+                            <li class="gnblist-depth2__item">
+                                <a href="#none" class="gnblist-depth2__anchor nodepth">데이터추출</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //depth2 -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">서비스 관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">서비스 정보</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">타이틀 H1</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <!-- tabwrap -->
+                <div class="tabwrap">
+                    <ul class="tablist">
+                        <li class="tablist__item is-active">
+                            <a href="#none">탭 메뉴1</a>
+                        </li>
+                        <li class="tablist__item">
+                            <a href="#none">탭 메뉴2</a>
+                        </li>
+                        <li class="tablist__item">
+                            <a href="#none">탭 메뉴3</a>
+                        </li>
+                    </ul>
+                    <div class="tabcont is-active">
+                        <!-- 탭 컨텐츠1 [S] -->
+                        <div class="con-group">
+                            <div class="titlewrap titlewrap--dep2">
+                                <h2 class="title__dep2">타이틀 H2</h2>
+                            </div>
+                            탭 컨텐츠1
+                        </div>
+                        <!-- //탭 컨텐츠1 [E] -->
+                    </div>
+                    <!-- //tabcont -->
+                    <!-- tabcont -->
+                    <div class="tabcont">
+                        <!-- 탭 컨텐츠2 [S] -->
+                        <div class="con-group">탭 컨텐츠2</div>
+                        <!-- //탭 컨텐츠2 [E] -->
+                    </div>
+                    <!-- //tabcont -->
+                    <!-- tabcont -->
+                    <div class="tabcont">
+                        <!-- 탭 컨텐츠3 [S] -->
+                        <div class="con-group">탭 컨텐츠3</div>
+                        <!-- //탭 컨텐츠3 [E] -->
+                    </div>
+                    <!-- //tabcont -->
+                </div>
+                <!-- //tabwrap -->
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer">
+            <div class="inner">
+                <p class="copyright">Copyright ⓒ 한국청소년센터. All rights reserved.</p>
+                <div class="footer-link">
+                    <a href="#none" target="_blank" class="footer-link__item">
+                        <span>한국청소년센터</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- 채증툴 인증 레이어팝업 -->
+    <div class="popup-wrap" id="popupOtp">
+        <div class="popup-cont alertbox">
+            <div class="popup-head">
+                <strong class="popup__title">채증툴 인증</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <p class="popup__desc">채증툴 로그인을 위해 아래 코드를 입력해주세요.</p>
+                    <div class="d-flex--between mgt20">
+                        <input type="text" id="" class="c-input inp-otp" value="563914" readonly>
+                        <button type="button" class="c-btn"><span>복사</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn btn--black"><span>확인</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //채증툴 인증 레이어팝업 -->
+</main>
+</body>
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>__COMMON</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/jquery-ui-timepicker-addon.js"></script><!-- datetimepicker 추가 -->
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui-timepicker-addon.css"><!-- datetimepicker 추가 -->
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<!-- 카카오 우편번호 API -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function kakaopost() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+            document.querySelector("#zipcode").value = data.zonecode;
+            document.querySelector("#address").value =  data.address
+            }
+        }).open();
+    }
+</script>
+<!-- //카카오 우편번호 API -->
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">서비스 관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">서비스 정보</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">공통</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h2 class="title__dep2">테이블/폼</h2>
+                        <p class="mark-reference">※ &#39; <i class="necessary mgl0">&#42;</i> &#39; 항목은 필수 값 입니다.</p>
+                    </div>
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">필수입력표시<i class="necessary">&#42;</i></th>
+                                    <td>홍길동</td>
+                                    <th scope="row">파일선택</th>
+                                    <td>
+                                        <!-- <a href="#none" class="a-rowline"><span>account_image.jpg</span></a> -->
+                                        <div class="filebox">
+                                            <input type="text" class="upload" value="C:\fakepath\FV5-_ZMaQAEGYV2.jpg" readonly>
+                                            <label for="file" class="c-btn">파일선택</label>
+                                            <input type="file" id="file">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">체크박스</th>
+                                    <td>
+                                        <ul class="c-chklist">
+                                            <li>
+                                                <span class="c-check">
+                                                    <input type="checkbox" class="c-check__input" id="ck_a1">
+                                                    <label for="ck_a1" class="c-check__label">Unselected</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-check">
+                                                    <input type="checkbox" class="c-check__input" checked id="ck_a2">
+                                                    <label for="ck_a2" class="c-check__label">Check</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-check">
+                                                    <input type="checkbox" class="c-check__input" disabled id="ck_a3">
+                                                    <label for="ck_a3" class="c-check__label">Disabled</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-check">
+                                                    <input type="checkbox" class="c-check__input" disabled checked id="ck_a4">
+                                                    <label for="ck_a4" class="c-check__label">Disabled / Check</label>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <th scope="row">인풋박스</th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">라디오박스</th>
+                                    <td>
+                                        <ul class="c-chklist">
+                                            <li>
+                                                <span class="c-radio">
+                                                    <input type="radio" name="RO" class="c-radio__input" id="rd_a1">
+                                                    <label for="rd_a1" class="c-radio__label">Unselected</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-radio">
+                                                    <input type="radio" name="RO" class="c-radio__input" checked id="rd_a2">
+                                                    <label for="rd_a2" class="c-radio__label">Check</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-radio">
+                                                    <input type="radio" name="RO" class="c-radio__input" disabled id="rd_a3">
+                                                    <label for="rd_a3" class="c-radio__label">Disabled</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-radio">
+                                                    <input type="radio" name="RO1" class="c-radio__input" disabled checked id="rd_a4">
+                                                    <label for="rd_a4" class="c-radio__label">Disabled / Check</label>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <th scope="row">셀렉트박스</th>
+                                    <td>
+                                        <span class="selectbox">
+                                            <select>
+                                                <option>전체</option>
+                                                <option></option>
+                                                <option></option>
+                                                <option></option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">라디오 + 버튼</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <ul class="c-chklist">
+                                                <li>
+                                                    <span class="c-radio">
+                                                        <input type="radio" name="ROc" class="c-radio__input" id="rd_c1">
+                                                        <label for="rd_c1" class="c-radio__label">전체</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="c-radio">
+                                                        <input type="radio" name="ROc" class="c-radio__input" id="rd_c2" checked>
+                                                        <label for="rd_c2" class="c-radio__label">개별</label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <div class="btnwrap">
+                                                <button type="button" class="c-btn"><span>버튼</span></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <th scope="row">셀렉트 + 셀렉트</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>문의 구분 전체</option>
+                                                    <option>서비스</option>
+                                                    <option>보안</option>
+                                                    <option>기타</option>
+                                                </select>
+                                            </span>
+                                            <span class="selectbox">
+                                                <select disabled>
+                                                    <option>문의 유형 전체</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">텍스트 + 버튼</th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <span>제 2022-23호</span>
+                                            <button type="button" class="c-btn"><span>확인하기</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">인풋 + 인풋</th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <input type="text" id="" class="c-input" value="" placeholder="업체를 선택해 주세요">
+                                            <input type="text" id="" class="c-input mgl10" value="" placeholder="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">인풋 + 버튼</th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <input type="text" id="" class="c-input" value="" placeholder="업체를 선택해 주세요">
+                                            <button type="button" class="c-btn"><span>업체 찾기/선택</span></button>
+                                        </div>
+                                    </td>
+                                    <th>셀렉트 + 버튼</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>대분류선택</option>
+                                                    <option></option>
+                                                    <option></option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                            <button type="button" class="c-btn"><span>버튼버튼</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="tooltipwrap">
+                                            주소
+                                            <div class="tooltipbox">
+                                                <i class="tooltipbox__i"></i>
+                                                <div class="tooltipbox__cont">
+                                                    <p>툴팁 내용내용내용</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <td colspan="3">
+                                        <div class="addresswrap">
+                                            <input type="text" name="zipcode" id="zipcode" class="c-input inp-zipcode" value="27333" placeholder="우편번호">
+                                            <button type="button" class="c-btn btn-zipcode" onclick="kakaopost()"><span>우편번호 찾기</span></button>
+                                            <div class="inp-address">
+                                                <input type="text" name="address" id="address" class="c-input" value="충청북도 충주시 충원대로 862" placeholder="기본주소">
+                                                <input type="text" id="" class="c-input" value="" placeholder="상세주소 및 상세 건물명">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">textarea</th>
+                                    <td colspan="3">
+                                        <textarea id="" rows="6" class="c-textarea" placeholder="" style="height:111px;"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">첨부파일</th>
+                                    <td colspan="3">
+                                        <!-- <div class="btnwrap">
+                                            <button type="button" class="c-btn"><span>파일추가</span></button>
+                                        </div> -->
+                                        <div class="filebox btnonly">
+                                            <input type="text" class="upload" value="" readonly>
+                                            <label for="file" class="c-btn">파일추가</label>
+                                            <input type="file" id="file">
+                                        </div>
+                                        <ul class="addfile">
+                                            <li class="addfile__item">
+                                                <span>설연휴 이벤트 공지.jpg (5.6MB)</span>
+                                                <button type="button" class="addfile__btn"><span>삭제</span></button>
+                                            </li>
+                                            <li class="addfile__item">
+                                                <span>설연휴 이벤트 공지.jpg (5.6MB)</span>
+                                                <button type="button" class="addfile__btn"><span>삭제</span></button>
+                                            </li>
+                                            <li class="addfile__item">
+                                                <span>설연휴 이벤트 공지.jpg (5.6MB)</span>
+                                                <button type="button" class="addfile__btn"><span>삭제</span></button>
+                                            </li>
+                                        </ul>
+                                        <p class="addfile__txt">※ 파일 업로드는 건당 10MB까지 최대 3개까지 등록 가능합니다.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="sch-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h2 class="title__dep2">검색</h2>
+                        <div class="btnwrap">
+                            <button type="button" class="c-btn"><span>버튼</span></button>
+                            <button type="button" class="c-btn"><span>버튼</span></button>
+                        </div>
+                    </div>
+                    <div class="togglebox is-open">
+                        <div class="togglebox__cont">
+                            <div class="c-table rowtbl">
+                                <table>
+                                    <colgroup>
+                                        <col width="160px">
+                                        <col>
+                                        <col width="160px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">검색</th>
+                                            <td colspan="3">
+                                                <div class="d-flex--between">
+                                                    <span class="selectbox">
+                                                        <select>
+                                                            <option>전체</option>
+                                                            <option></option>
+                                                        </select>
+                                                    </span>
+                                                    <input type="text" class="c-input mgl10"  placeholder="검색어를 입력하세요">
+                                                    <button type="button" class="c-btn btn--search"><span>검색</span></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">기간</th>
+                                            <td colspan="3">
+                                                <div class="d-flex">
+                                                    <span class="selectbox w-small">
+                                                        <select>
+                                                            <option>전체</option>
+                                                            <option>문의일</option>
+                                                            <option>답변일</option>
+                                                        </select>
+                                                    </span>
+                                                    <ul class="c-chklist fl-nowrap">
+                                                        <li>
+                                                            <span class="c-radio">
+                                                                <input type="radio" name="ROb" class="c-radio__input" id="rd_b1" checked>
+                                                                <label for="rd_b1" class="c-radio__label">전체</label>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="c-radio">
+                                                                <input type="radio" name="ROb" class="c-radio__input" id="rd_b2">
+                                                                <label for="rd_b2" class="c-radio__label">기간설정</label>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="calendar">
+                                                        <div class="calendar__item calendar__item--st">
+                                                            <input type="text" class="c-input calendar__input datepicker" title="시작일 입력" placeholder="yyyy.mm.dd" value="2022.02.22" id="">
+                                                        </div>
+                                                        <div class="calendar__item calendar__item--en">
+                                                            <input type="text" class="c-input calendar__input datepicker" title="종료일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                                        </div>
+                                                    </div>
+                                                    <ul class="datepick">
+                                                        <li class="datepick__item">
+                                                            <input type="radio" id="datep11" class="datepick__input" name="datepick" checked>
+                                                            <label for="datep11" class="datepick__label">오늘</label>
+                                                        </li>
+                                                        <li class="datepick__item">
+                                                            <input type="radio" id="datep12" class="datepick__input" name="datepick">
+                                                            <label for="datep12" class="datepick__label">일주일</label>
+                                                        </li>
+                                                            <li class="datepick__item">
+                                                            <input type="radio" id="datep13" class="datepick__input" name="datepick">
+                                                            <label for="datep13" class="datepick__label">한달</label>
+                                                        </li>
+                                                            <li class="datepick__item">
+                                                            <input type="radio" id="datep14" class="datepick__input" name="datepick">
+                                                            <label for="datep14" class="datepick__label">6개월</label>
+                                                        </li>
+                                                            <li class="datepick__item">
+                                                            <input type="radio" id="datep15" class="datepick__input" name="datepick">
+                                                            <label for="datep15" class="datepick__label">1년</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">기간</th>
+                                            <td>
+                                                <div class="calendar">
+                                                    <div class="calendar__item calendar__item--st">
+                                                        <input type="text" class="c-input calendar__input datepicker" title="시작일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                                    </div>
+                                                    <div class="calendar__item calendar__item--en">
+                                                        <input type="text" class="c-input calendar__input datepicker" title="종료일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <th scope="row">날짜선택</th>
+                                            <td>
+                                                <div class="calendar__item">
+                                                    <input type="text" class="c-input calendar__input datepicker" title="날짜 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">날짜 및 시간 선택</th>
+                                            <td>
+                                                <div class="calendar__item calendar__item--time">
+                                                    <input type="text" class="c-input calendar__input datetimepicker" title="날짜 및 시간 입력" placeholder="yyyy.mm.dd hh:mm" value="" id="">
+                                                </div>
+                                                <!-- 
+                                                    .날짜 선택 클래스 datepicker
+                                                    .날짜/시간 선택 클래스 datetimepicker
+                                                 -->
+                                            </td>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="btnwrap btnwrap--sch">
+                                <button type="button" class="btn-refresh"><span>초기화</span></button>
+                                <button type="button" class="c-btn btn--black"><span>검색</span></button>
+                            </div>
+                        </div>
+                        <button type="button" class="togglebox__btn"><span>close</span></button><!-- 검색항목 접기-->
+                    </div>
+                </div>
+                <!-- //sch-group -->
+                
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h3 class="title__dep2">목록</h3>
+                    </div>
+                    <div class="tblsortwrap">
+                        <div class="tblsort">
+                            <div class="tblsort__total">
+                                <em class="tblsort__txt">Total 500</em>
+                                <div class="selectbox">
+                                    <select>
+                                        <option>10개보기</option>
+                                        <option>20개보기</option>
+                                        <option>30개보기</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="btnwrap">
+                                <button type="button" class="c-btn"><span>등록</span></button>
+                                <button type="button" class="c-btn"><span>엑셀 업로드</span></button>
+                                <button type="button" class="c-btn"><span>엑셀 다운로드</span></button>
+                            </div>
+                        </div>
+                    
+                        <div class="tbl-ovflow">
+                            <div class="c-table coltbl" style="width: 300%;">
+                                <table>
+                                    <colgroup>
+                                        <col width="80px">
+                                        <col width="130px">
+                                        <col width="250px">
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col width="180px">
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">No.</th>
+                                            <th scope="col">점검번호</th>
+                                            <th scope="col">URL</th>
+                                            <th scope="col">서비스명</th>
+                                            <th scope="col">점검일시</th>
+                                            <th scope="col">점검자</th>
+                                            <th scope="col">점검상태</th>
+                                            <th scope="col">점검한 플랫폼</th>
+                                            <th scope="col">게시자</th>
+
+                                            <th scope="col">프로필</th>
+                                            <th scope="col">이번차수 검토자</th>
+                                            <th scope="col">이번차수 검토일시</th>
+                                            <th scope="col">매체타입</th>
+                                            <th scope="col">고시타입</th>
+                                            <th scope="col">고시호수</th>
+                                            <th scope="col">법이행여부</th>
+                                            <th scope="col">미이행보고서 송신일</th>
+                                            <th scope="col">신고대상</th>
+                                            <th scope="col">신고번호</th>
+                                            <th scope="col">신고보고서 송신일</th>
+                                            <th scope="col">신고조치여부</th>
+                                            <th scope="col">등록일</th>
+                                            <th scope="col">검색태그</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>99</td>
+                                            <td><a href="#none" class="a-rowline">CONT-2022102</a></td>
+                                            <td>www.youtube.com</td>
+                                            <td><a href="#none" class="a-rowline">유투브</a></td>
+                                            <td>08/22 13:24</td>
+                                            <td>홍길동</td>
+                                            <td>임시저장</td>
+                                            <td>구글플레이스토어</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>인터넷</td>
+                                            <td>해당없음</td>
+                                            <td>제2022-33호</td>
+                                            <td>점검 미대상</td>
+                                            <td>미송신</td>
+                                            <td>미대상</td>
+                                            <td>해당안됨</td>
+                                            <td>미대상</td>
+                                            <td>대상아님</td>
+                                            <td>2019.01.01</td>
+                                            <td>동영상</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- paginate -->
+                        <div class="paginate">
+                            <button type="button" class="btn-paginate__first">
+                                <span class="blind">처음 페이지</span>
+                            </button>
+                            <button type="button" class="btn-paginate__prev">
+                                <span class="blind">이전 페이지</span>
+                            </button>
+                            <p class="paging"><span class="paging__active">1</span> / 10</p>
+                            <button type="button" class="btn-paginate__next">
+                                <span class="blind">다음 페이지</span>
+                            </button>
+                            <button type="button" class="btn-paginate__last">
+                                <span class="blind">끝 페이지</span>
+                            </button>
+                            <div class="page">
+                                <input type="text" class="c-input" value="1"> / 10
+                            </div>
+                        </div>
+                        <!-- //paginate -->
+                    </div>
+                    <!-- //tblsortwrap -->
+                </div>
+                <!-- //con-group -->
+
+                <div class="con-group">
+                    <div class="c-table">
+                        <div class="nodata">
+                            <p class="nodata__msg">등록된 내용이 없습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h3 class="title__dep2">bullet</h3>
+                    </div>
+                    <ul class="bullet">
+                        <li class="bullet__item">수정자/수정일시는 최종 수정자와 수정일시를 노출합니다.</li>
+                        <li class="bullet__item">상세내용은 ‘이력 내용 보기’ 팝업에서 확인하세요.</li>
+                    </ul>
+                </div>
+                <!-- //con-group -->
+
+                <div class="btnwrap btnwrap--btm">
+                    <button type="button" class="c-btn fl"><span>목록</span></button>
+                    <button type="button" class="c-btn"><span>취소</span></button>
+                    <button type="button" class="c-btn btn--black"><span>등록</span></button>
+                </div>
+
+            </div>
+            <!-- //l-contents -->
+
+
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+</main>
+</body>
+</html>

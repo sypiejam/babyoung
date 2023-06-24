@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>점검계획 &gt; 목록</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검업무할당</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검계획</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">점검계획</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="sch-group">
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">점검구분</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>법이행점검</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>지정고시</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <th scope="row">점검팀</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>법이행점검팀</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>전체</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">점검차수</th>
+                                    <td>
+                                        <span class="selectbox">
+                                            <select>
+                                                <option>전체</option>
+                                                <option></option>
+                                                <option></option>
+                                                <option></option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                    <th scope="row">점검기간</th>
+                                    <td>
+                                        <div class="calendar">
+                                            <div class="calendar__item calendar__item--st">
+                                                <input type="text" class="c-input calendar__input datepicker" title="시작일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                            </div>
+                                            <div class="calendar__item calendar__item--en">
+                                                <input type="text" class="c-input calendar__input datepicker" title="종료일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- <div class="btnwrap tc">
+                        <button type="button" class="c-btn btn--black"><span>검색</span></button>
+                    </div> -->
+                </div>
+                <!-- //sch-group -->
+
+                <div class="con-group">
+                    <div class="tblsortwrap">
+                        <div class="tblsort">
+                            <div class="tblsort__total">
+                                <em class="tblsort__txt">Total 500</em>
+                                <div class="selectbox">
+                                    <select>
+                                        <option>10개보기</option>
+                                        <option>20개보기</option>
+                                        <option>30개보기</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="btnwrap">
+                                <button type="button" class="c-btn"><span>신규 서비스 점검계획(점검차수) 생성</span></button>
+                            </div>
+                        </div>
+                    
+                        <div class="tbl-ovflow">
+                            <div class="c-table coltbl th-border" style="width: auto;">
+                                <table>
+                                    <colgroup>
+                                        <col width="50px">
+                                        <col width="140px">
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="2" class="br-none--left">No.</th>
+                                            <th scope="col" rowspan="2">점검차수</th>
+                                            <th scope="col" rowspan="2">점검담당</th>
+                                            <th scope="col" colspan="2">점검기간</th>
+                                            <th scope="col" rowspan="2">목표점검 <br>건수</th>
+                                            <th scope="col" colspan="2">점검현황</th>
+                                            <th scope="col" colspan="2">검토현황</th>
+                                            <th scope="col" colspan="2">조치확인현황</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">시작일</th>
+                                            <th scope="col">종료일</th>
+                                            <th scope="col">점검건수</th>
+                                            <th scope="col">진도(%)</th>
+                                            <th scope="col">점검검토건수</th>
+                                            <th scope="col">진도(%)</th>
+                                            <th scope="col">확인건수</th>
+                                            <th scope="col">진도(%)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>99</td>
+                                            <td><a href="#none" class="a-rowline">서비스-2022-04</a></td>
+                                            <td>법이행팀</td>
+                                            <td>2022.06.01</td>
+                                            <td>2022.06.14</td>
+                                            <td>150</td>
+                                            <td>115</td>
+                                            <td>75%</td>
+                                            <td>96</td>
+                                            <td>83%</td>
+                                            <td>50</td>
+                                            <td>52%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>98</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>97</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- paginate -->
+                        <div class="paginate">
+                            <button type="button" class="btn-paginate__first">
+                                <span class="blind">처음 페이지</span>
+                            </button>
+                            <button type="button" class="btn-paginate__prev">
+                                <span class="blind">이전 페이지</span>
+                            </button>
+                            <p class="paging"><span class="paging__active">1</span> / 10</p>
+                            <button type="button" class="btn-paginate__next">
+                                <span class="blind">다음 페이지</span>
+                            </button>
+                            <button type="button" class="btn-paginate__last">
+                                <span class="blind">끝 페이지</span>
+                            </button>
+                            <div class="page">
+                                <input type="text" class="c-input" value="1"> / 10
+                            </div>
+                        </div>
+                        <!-- //paginate -->
+                    </div>
+                    <!-- //tblsortwrap -->
+                </div>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+</main>
+</body>
+</html>

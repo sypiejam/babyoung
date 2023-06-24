@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>점검가이드 관리 &gt; 목록</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">시스템 관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검가이드 관리</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">점검가이드 관리</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2 fl-end">
+                        <div class="btnwrap">
+                            <button type="button" class="c-btn" data-roll="popup-on" data-link="guideEditLyPop"><span>점검가이드 추가</span></button>
+                        </div>
+                    </div>
+                    <div class="c-table coltbl" style="width: 100%;">
+                        <table>
+                            <colgroup>
+                                <col width="60px">
+                                <col>
+                                <col width="70px">
+                                <col width="70px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">점검가이드명</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="tl">
+                                        <a href="#none" class="a-rowline block">미이행 보고서</a>
+                                    </td>
+                                    <td><button type="button" class="c-btn" data-roll="popup-on" data-link="guideEditLyPop"><span>편집</span></button></td>
+                                    <td><button type="button" class="c-btn btn--gray" data-roll="popup-on" data-link="deleteLyPop"><span>삭제</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="tl">
+                                        <a href="#none" class="a-rowline block">심의요청서</a>
+                                    </td>
+                                    <td><button type="button" class="c-btn"><span>편집</span></button></td>
+                                    <td><button type="button" class="c-btn btn--gray"><span>삭제</span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- URL Prefix 관리 레이어팝업 -->
+    <div class="popup-wrap" id="guideEditLyPop">
+        <div class="popup-cont">
+            <div class="titlewrap titlewrap--dep2">
+                <strong class="title__dep2">점검가이드 수정/추가</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">점검가이드명</th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="점검가이드명">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">점검가이드 내용</th>
+                                    <td style="height:620px;padding:0;">
+                                        <!-- 에디터 영역 -->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn" data-roll="popup-off"><span>취소</span></button>
+                <button type="button" class="c-btn btn--black"><span>등록</span></button>
+                <button type="button" class="c-btn btn--black"><span>저장</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //URL Prefix 관리 레이어팝업 -->
+
+    <!-- 점검가이드 삭제 팝업 -->
+    <div class="popup-wrap" id="deleteLyPop">
+        <div class="popup-cont alertbox">
+            <div class="popup-head">
+                <strong class="popup__title">점검가이드 삭제</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <p class="popup__desc">선택한 점검가이드를 삭제 하시겠습니까?</p>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn"><span>취소</span></button>
+                <button type="button" class="c-btn btn--black"><span>삭제</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //점검가이드 삭제 팝업 -->
+</main>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>성과관리 &gt; 목록</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">인력관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">성과관리</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">성과관리</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="sch-group">
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">직원</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>법제팀</option>
+                                                    <option></option>
+                                                    <option></option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>채팅점검1그룹</option>
+                                                    <option></option>
+                                                    <option></option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>전체직원</option>
+                                                    <option></option>
+                                                    <option></option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">근무기간</th>
+                                    <td>
+                                        <div class="calendar">
+                                            <div class="calendar__item calendar__item--st">
+                                                <input type="text" class="c-input calendar__input datepicker" title="시작일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                            </div>
+                                            <div class="calendar__item calendar__item--en">
+                                                <input type="text" class="c-input calendar__input datepicker" title="종료일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btnwrap tc">
+                        <button type="button" class="c-btn btn--black"><span>검색</span></button>
+                    </div>
+                </div>
+                <!-- //sch-group -->
+
+                <div class="con-group">
+                    <div class="c-table coltbl th-border" style="width: 100%;">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" rowspan="2" class="br-none--left"></th>
+                                    <th scope="col" colspan="4">직원정보</th>
+                                    <th scope="col" colspan="2">근무일정</th>
+                                    <th scope="col" colspan="4">휴가현황</th>
+                                    <th scope="col" rowspan="2">실근무일 <br>합계</th>
+                                    <th scope="col" colspan="3">성과</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">직원명</th>
+                                    <th scope="col">사번</th>
+                                    <th scope="col">부서</th>
+                                    <th scope="col">직책</th>
+                                    <th scope="col">출근</th>
+                                    <th scope="col">재택</th>
+                                    <th scope="col">연차</th>
+                                    <th scope="col">병가</th>
+                                    <th scope="col">특별휴가</th>
+                                    <th scope="col">휴가합계</th>
+                                    <th scope="col">점검</th>
+                                    <th scope="col">유해</th>
+                                    <th scope="col">유해%</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="pdl0 pdr0">
+                                        <button type="button" class="c-btn"><span>성과표</span></button>
+                                    </td>
+                                    <td><button type="button" class="a-rowline">홍길동</button></td>
+                                    <td>UE-01033</td>
+                                    <td>법제팀 &gt; 채팅점검1그룹</td>
+                                    <td>팀장</td>
+                                    <td>13</td>
+                                    <td>5.5</td>
+                                    <td>1.5</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>2.5</td>
+                                    <td>16</td>
+                                    <td>20</td>
+                                    <td>10</td>
+                                    <td>50%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+</main>
+</body>
+</html>

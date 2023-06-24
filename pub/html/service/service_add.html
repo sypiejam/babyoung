@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>서비스 정보 &gt; 등록</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검대상관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">서비스 정보</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">서비스 등록</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h2 class="title__dep2">서비스 기본 정보</h2>
+                        <p class="mark-reference">※ &#39; <i class="necessary mgl0">&#42;</i> &#39; 항목은 필수 값 입니다.</p>
+                    </div>
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">서비스명(한글)<i class="necessary">&#42;</i></th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="한글 서비스명을 입력해주세요">
+                                    </td>
+                                    <th scope="row">서비스명(영문)</th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="영문 서비스명을 입력해주세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">대표URL</th>
+                                    <td colspan="3">
+                                        <input type="url" id="" class="c-input" value="" placeholder="URL을 입력해주세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">서비스제공업체</th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <input type="text" id="" class="c-input" value="" placeholder="업체를 선택해 주세요">
+                                            <button type="button" class="c-btn"><span>업체 찾기/선택</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">서비스점검</th>
+                                    <td>
+                                        <span class="c-check">
+                                            <input type="checkbox" class="c-check__input" id="check0101">
+                                            <label for="check0101" class="c-check__label">서비스 점검 대상</label>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">컨텐츠 점검여부</th>
+                                    <td>
+                                        <span class="c-check">
+                                            <input type="checkbox" class="c-check__input" id="check0102">
+                                            <label for="check0102" class="c-check__label">컨텐츠 점검 대상 (채팅내용, 인터넷방송, SNS 등)</label>
+                                        </span>
+                                    </td>
+                                    <th scope="row">자체신고테마</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <ul class="c-chklist">
+                                                <li>
+                                                    <span class="c-radio">
+                                                        <input type="radio" name="radio010" class="c-radio__input" id="radio0101" checked>
+                                                        <label for="radio0101" class="c-radio__label">사용</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="c-radio">
+                                                        <input type="radio" name="radio010" class="c-radio__input" id="radio0102">
+                                                        <label for="radio0102" class="c-radio__label">사용안함</label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <div class="btnwrap">
+                                                <button type="button" class="c-btn"><span>신고테마편집</span></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="btnwrap btnwrap--btm">
+                    <button type="button" class="c-btn"><span>취소</span></button>
+                    <button type="button" class="c-btn btn--black"><span>등록</span></button>
+                </div>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+</main>
+</body>
+</html>

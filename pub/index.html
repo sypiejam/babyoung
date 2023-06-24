@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Publising List 청소년유해물관리시스템</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<style>
+.coltbl td {font-size:12px !important;text-align: left !important;}
+.coltbl td.tr {text-align: right !important;}
+.coltbl td.filelink {padding-left: 20px;color: #c7c7c7;}
+.coltbl td.filelink a {color: #161616;}
+.coltbl td.filelink a:hover {text-decoration: underline;}
+.coltbl td.date {text-align: center !important;}
+.tr-border--dep td {border-top:2px solid #d2d2d2;}
+</style>
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html" class="breadcrumbs__anchor">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none" class="breadcrumbs__anchor">서비스 관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none" class="breadcrumbs__anchor">서비스 정보</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <div class="titlewrap  titlewrap--dep1 typ1">
+                <h1 class="title__dep1">청소년유해물관리시스템 Publising List</h1>
+            </div>
+
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="titlewrap titlewrap--dep2">
+                    <p class="title__dep2">한국청소년협의회_SB_baord_ver.1.1 재작업 : 10/28~11/06</p>
+                </div>
+                <div class="c-table coltbl">
+                    <table>
+                        <colgroup>
+                            <col width="11%"><!-- 1depth -->
+                            <col width="13%"><!-- 2depth -->
+                            <col><!-- 3depth -->
+                            <col><!-- 4depth -->
+                            <col><!-- URL -->
+                            <col width="8%"><!-- 완료일 -->
+                            <col width="12%"><!-- 비고 -->
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col">4depth</th>
+                                <th scope="col">URL</th>
+                                <th scope="col">완료일</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <tr>
+                                <td class="dep1">레이아웃</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/__layout.html" target="_blank">__layout.html</a>
+                                </td>
+                                <td class="date">22/09/12</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1">공통</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/__common.html" target="_blank">__common.html</a>
+                                </td>
+                                <td class="date">22/09/12</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1">팝업</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/__popup.html" target="_blank">__popup.html</a>
+                                </td>
+                                <td class="date">22/09/12</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1">로딩바</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/__loading.html" target="_blank">__loading.html</a>
+                                </td>
+                                <td class="date">22/09/12</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr class="tr-border--dep">
+                                <td class="dep1">로그인</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/login.html" target="_blank">login.html</a>
+                                </td>
+                                <td class="date">22/09/12</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1">로그인 실패</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/login_fail.html" target="_blank">login_fail.html</a>
+                                </td>
+                                <td class="date">22/09/12</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1">메인 대시보드</td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/dashboard.html" target="_blank">dashboard.html</a>
+                                </td>
+                                <td class="date">
+                                    <del>22/10/01</del><br>
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3 tr">(팝업)</td>
+                                <td class="dep4">서비스 기본 정보</td>
+                                <td class="filelink">
+                                    <a href="../html/popup_service_detail.html" target="_blank">popup_service_detail.html</a>
+                                </td>
+                                <td class="date">22/09/12</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3 tr">(팝업)</td>
+                                <td class="dep4">결정고시 정보 : 신고테마 목록</td>
+                                <td class="filelink">
+                                    <a href="../html/popup_report_list.html" target="_blank">popup_report_list.html</a>
+                                </td>
+                                <td class="date">22/09/12</td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3 tr">(팝업)</td>
+                                <td class="dep4">업체 찾기/선택</td>
+                                <td class="filelink">
+                                    <a href="../html/popup_company_list.html" target="_blank">popup_company_list.html</a>
+                                </td>
+                                <td class="date">22/09/12</td>
+                                <td class="note">
+                                    22/11/09 : 수정
+                                </td>
+                            </tr>
+
+                    <!-- 점검기준관리 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">점검기준관리</td>
+                                <td class="dep2">점검분야</td>
+                                <td class="dep3">+ (팝업) 점검가이드 선택</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/standard/service_inspect_unit_edit.html" target="_blank">service_inspect_unit_edit.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note">
+                                    22/10/31 : 점검항목 체크박스 추가<br>
+                                    22/11/09 : 점검가이드 선택 팝업 추가
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">보고서템플릿</td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/standard/template_list.html" target="_blank">template_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">점검가이드</td>
+                                <td class="dep3">+ (팝업) 점검가이드 수정/추가, 삭제</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/standard/guide_list.html" target="_blank">guide_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">청소년유해매체물정보</td>
+                                <td class="dep3">목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/standard/legal_notice_list.html" target="_blank">legal_notice_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/standard/legal_notice_detail.html" target="_blank">legal_notice_detail.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 추가/수정</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/standard/legal_notice_edit.html" target="_blank">legal_notice_edit.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">유해카테고리</td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/standard/category_info.html" target="_blank">category_info.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">업체정보관리</td>
+                                <td class="dep3">목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/standard/company_list.html" target="_blank">company_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 추가</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/standard/company_add_popup.html" target="_blank">company_add_popup.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/standard/company_detail_popup.html" target="_blank">company_detail_popup.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 수정</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/standard/company_edit_popup.html" target="_blank">company_edit_popup.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">용어 관리</td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/standard/term_list.html" target="_blank">term_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+
+                    <!-- 점검대상관리 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">점검대상관리</td>
+                                <td class="dep2">서비스관리</td>
+                                <td class="dep3">목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/service_list.html" target="_blank">service_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">등록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/service_add.html" target="_blank">service_add.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">수정</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/service_edit.html" target="_blank">service_edit.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">서비스점검목록</td>
+                                <td class="dep3">목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/service_inspect_item_list.html" target="_blank">service_inspect_item_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">등록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/service_inspect_item_add.html" target="_blank">service_inspect_item_add.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">수정</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/service_inspect_item_edit.html" target="_blank">service_inspect_item_edit.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 청소년유해매체물정보 선택</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/service_inspect_item_popup01.html" target="_blank">service_inspect_item_popup01.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/09
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 관련민원 선택</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/service_inspect_item_popup02.html" target="_blank">service_inspect_item_popup02.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/09
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">컨텐츠점검대상</td>
+                                <td class="dep3">목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/content_inspect_item_list.html" target="_blank">content_inspect_item_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">등록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/content_inspect_item_add.html" target="_blank">content_inspect_item_add.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">민원정보</td>
+                                <td class="dep3">목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/complaint_list.html" target="_blank">complaint_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 등록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/complaint_add.html" target="_blank">complaint_add.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/complaint_detail.html" target="_blank">complaint_detail.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">수정</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/service/complaint_edit.html" target="_blank">complaint_edit.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            
+                    <!-- 점검업무할당 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">점검업무할당</td>
+                                <td class="dep2">점검계획</td>
+                                <td class="dep3">목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/plan/service_inspect_plan_list.html" target="_blank">service_inspect_plan_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">등록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/plan/service_inspect_plan_add.html" target="_blank">service_inspect_plan_add.html</a>
+                                </td>
+                                <td class="date">
+                                    22/10/30
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+
+                    <!-- 점검수행 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">점검수행</td>
+                                <td class="dep2">서비스점검</td>
+                                <td class="dep3">목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/inspect/service_inspection_list.html" target="_blank">service_inspection_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/03
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/inspect/service_inspection_add.html" target="_blank">service_inspection_add.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/03
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">컨텐츠점검</td>
+                                <td class="dep3">목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/inspect/content_inspection_list.html" target="_blank">content_inspection_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/03
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/inspect/content_inspection_add.html" target="_blank">content_inspection_add.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/03
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+
+                    <!-- 검토 및 후속조치 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">검토 및 후속조치</td>
+                                <td class="dep2">점검내용검토</td>
+                                <td class="dep3">목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/examine/service_inspect_check_list.html" target="_blank">service_inspect_check_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/03
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 담당자 선택</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/examine/staff_selection_popup.html" target="_blank">staff_selection_popup.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/03
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">등록(검토)</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/examine/service_inspect_check_add.html" target="_blank">service_inspect_check_add.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/03
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 공문양식 선택</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/examine/service_inspect_check_popup.html" target="_blank">service_inspect_check_popup.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/09
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            
+                    <!-- 인력관리 -->
+                            <!-- <tr class="tr-border--dep">
+                                <td class="dep1">인력관리</td>
+                                <td class="dep2">근태관리</td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/staff/staff_attend_.html" target="_blank"></a>
+                                </td>
+                                <td class="date">
+
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/staff/staff_attend_.html" target="_blank"></a>
+                                </td>
+                                <td class="date">
+
+                                </td>
+                                <td class="note"></td>
+                            </tr> -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">인력관리</td>
+                                <td class="dep2">성과관리</td>
+                                <td class="dep3">목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/staff/staff_output_list.html" target="_blank">staff_output_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/05
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 상세</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/staff/staff_output_detail_popup.html" target="_blank">staff_output_detail_popup.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/05
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 활동로그</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/staff/staff_log_popup.html" target="_blank">staff_log_popup.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/05
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">직원관리</td>
+                                <td class="dep3">목록</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/staff/staff_list.html" target="_blank">staff_list.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/05
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 추가</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/staff/staff_add_popup.html" target="_blank">staff_add_popup.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/05
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 수정</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/staff/staff_edit_popup.html" target="_blank">staff_edit_popup.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/05
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">조직관리</td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/staff/department_info.html" target="_blank">department_info.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/05
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2"></td>
+                                <td class="dep3">(팝업) 소속직원추가</td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/staff/staff_group_add_popup.html" target="_blank">staff_group_add_popup.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/05
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                            <tr>
+                                <td class="dep1"></td>
+                                <td class="dep2">접근권한관리</td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/staff/access_control_info.html" target="_blank">access_control_info.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/05
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+
+                    <!-- 통계데이터추출 -->
+                            <tr class="tr-border--dep">
+                                <td class="dep1">통계데이터추출</td>
+                                <td class="dep2">데이터추출</td>
+                                <td class="dep3"></td>
+                                <td class="dep4"></td>
+                                <td class="filelink">
+                                    <a href="../html/stats/report_overall.html" target="_blank">report_overall.html</a>
+                                </td>
+                                <td class="date">
+                                    22/11/05
+                                </td>
+                                <td class="note"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- //l-contents -->
+        </section>
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+</main>
+</body>
+</html>

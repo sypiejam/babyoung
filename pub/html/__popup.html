@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>팝업</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <div class="c-container">
+        <div style="padding: 50px">
+            <!--
+                레이어팝업 호출 버튼 data-roll="popup-on" data-link="layer01" 속성 추가 (data-link 는 레이어팝업(.popup-wrap)의 id값과 동일)
+                레이어팝업 닫기 버튼 data-roll="popup-off" 속성 추가 
+            -->
+            <div class="btnwrap">
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="popupError"><span>Error 팝업(타이틀 없음)</span></button>
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="popupAlert"><span>Alert 팝업</span></button>
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="popupConfirm"><span>Confirm 팝업</span></button>
+            </div>
+            <br>
+            <div class="btnwrap">
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="middleLyPop"><span>중간사이즈 팝업</span></button>
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="largeLyPop"><span>라지사이즈 팝업</span></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Error 팝업 : 타이틀 없음 -->
+    <div class="popup-wrap" id="popupError">
+        <div class="popup-cont alertbox">
+            <div class="popup-body">
+                <div class="con-group">
+                    <p class="popup__desc">동일한 사업자번호로 이미 등록된 업체가 존재합니다. <br>확인해주세요.</p>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn btn--black"><span>확인</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //Error 팝업 : 타이틀 없음 -->
+
+    <!-- Alert 팝업 -->
+    <div class="popup-wrap" id="popupAlert">
+        <div class="popup-cont alertbox">
+            <div class="popup-head">
+                <strong class="popup__title">점검항목 중복</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <p class="popup__desc">이미 해당 URL(게시자와 프로필)로 점검이 실시되었습니다. <br>목록에 표시된 점검 내역을 확인 바랍니다.</p>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn btn--black"><span>확인</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //Alert 팝업 -->
+
+    <!-- Confirm 팝업 -->
+    <div class="popup-wrap" id="popupConfirm">
+        <div class="popup-cont alertbox">
+            <div class="popup-head">
+                <strong class="popup__title">로그인 연장</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <p class="popup__desc">로그인 연장을 원하지 않으실 경우 <br>자동 로그아웃 됩니다.</p>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn"><span>로그아웃</span></button>
+                <button type="button" class="c-btn btn--black"><span>로그인 연장</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //Confirm 팝업 -->
+
+    
+    <!-- 중간사이즈 레이어팝업 -->
+    <div class="popup-wrap" id="middleLyPop">
+        <div class="popup-cont">
+            <div class="titlewrap titlewrap--dep2">
+                <strong class="title__dep2">중간사이즈 팝업</strong>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn" data-roll="popup-off"><span>취소</span></button>
+                <button type="button" class="c-btn btn--black"><span>확인</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //popup-wrap -->
+    <!-- //중간사이즈 레이어팝업 -->
+
+    <!-- 라지사이즈 레이어팝업 -->
+    <div class="popup-wrap" id="largeLyPop">
+        <div class="popup-cont popup-cont--large">
+            <div class="titlewrap titlewrap--dep1">
+                <h3 class="title__dep1">라지사이즈 팝업</h3>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h4 class="title__dep2">업체 정보</h4>
+                        <div class="btnwrap">
+                            <button type="button" class="c-btn"><span>수정하기</span></button>
+                        </div>
+                    </div>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                    컨텐츠<br>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn btn--black" data-roll="popup-off"><span>닫기</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //라지사이즈 레이어팝업 -->
+</main>
+</body>
+</html>

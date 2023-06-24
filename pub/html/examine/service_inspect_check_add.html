@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>점검검토 &gt; 등록</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">검토 및 후속조치</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검내용검토</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">{점검명} - {URL/게시자}-{프로필} 점검검토</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2 fl-end">
+                        <div class="btnwrap">
+                            <button type="button" class="c-btn"><span>점검가이드</span></button>
+                        </div>
+                    </div>
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">점검번호</th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <span>SVC-9202222</span>
+                                            <button type="button" class="c-btn"><span>복사하기</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">점검구분</th>
+                                    <td>법이행점검 &gt; 지정고시</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">URL</th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <span>www.fsdfdsfds.com/id=2030233</span>
+                                            <button type="button" class="c-btn"><span>상세보기</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">게시자명/프로필</th>
+                                    <td>나쁜놈/오늘도 나쁜짓</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //con-group -->
+
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h2 class="title__dep2">점검내용</h2>
+                    </div>
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">고시구분</th>
+                                    <td>
+                                        <span class="selectbox">
+                                            <select>
+                                                <option>지정고시</option>
+                                                <option></option>
+                                                <option></option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                    <th scope="row">청소년보호법위반사항</th>
+                                    <td>
+                                        <span class="selectbox w100">
+                                            <select>
+                                                <option>법 제 13조 (청소년유해표시 의무)</option>
+                                                <option></option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">본인확인수단</th>
+                                    <td colspan="3">
+                                        <ul class="c-chklist">
+                                            <li>
+                                                <span class="c-check">
+                                                    <input type="checkbox" class="c-check__input" id="check0101">
+                                                    <label for="check0101" class="c-check__label">신분증</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-check">
+                                                    <input type="checkbox" class="c-check__input" id="check0102">
+                                                    <label for="check0102" class="c-check__label">공인인증서</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-check">
+                                                    <input type="checkbox" class="c-check__input" id="check0103">
+                                                    <label for="check0103" class="c-check__label">신용카드</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-check">
+                                                    <input type="checkbox" class="c-check__input" id="check0104">
+                                                    <label for="check0104" class="c-check__label">휴대전화(문자)</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-check">
+                                                    <input type="checkbox" class="c-check__input" id="check0105">
+                                                    <label for="check0105" class="c-check__label">휴대전화(음성)</label>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //con-group -->
+
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h2 class="title__dep2">채증</h2>
+                    </div>
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">파일선택</th>
+                                    <td>
+                                        <div class="filebox">
+                                            <input type="text" class="upload" value="채증자료함/2022/08/n29040_20220831123825.png" readonly>
+                                            <label for="file" class="c-btn">파일선택</label>
+                                            <input type="file" id="file">
+                                        </div>
+                                        <ul class="addfile">
+                                            <li class="addfile__item">
+                                                <spanp>채증자료함/2022/08/n29040_20220831123825.png</spanp>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">채증자료 설명</th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="선택한 파일에 대한 설명이 필요할 경우 기입해 주세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">채증자료 미리보기</th>
+                                    <td>
+                                        <div class="previewbox">
+                                            <img src="/static/images/2036186204.jpg" alt="" class="preview__img">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btnwrap btnwrap--tbl">
+                            <button type="button" class="c-btn"><span>체증삭제</span></button>
+                            <button type="button" class="c-btn btn--blue"><span>체증추가</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- //con-group -->
+
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h2 class="title__dep2">점검의견</h2>
+                    </div>
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">유해여부</th>
+                                    <td>
+                                        <ul class="c-chklist">
+                                            <li>
+                                                <span class="c-radio">
+                                                    <input type="radio" name="radio02" class="c-radio__input" id="radio0201" checked>
+                                                    <label for="radio0201" class="c-radio__label">유해</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-radio">
+                                                    <input type="radio" name="radio02" class="c-radio__input" id="radio0202">
+                                                    <label for="radio0202" class="c-radio__label">무해</label>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <th scope="row">유해카테고리</th>
+                                    <td>
+                                        <div class="d-flex">
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>소분류선택</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>소분류선택</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">운영상태</th>
+                                    <td colspan="3">
+                                        <ul class="c-chklist">
+                                            <li>
+                                                <span class="c-radio">
+                                                    <input type="radio" name="radio03" class="c-radio__input" id="radio0301" checked>
+                                                    <label for="radio0301" class="c-radio__label">운영중</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-radio">
+                                                    <input type="radio" name="radio03" class="c-radio__input" id="radio0302">
+                                                    <label for="radio0302" class="c-radio__label">운영중단</label>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">점검/검토의견</th>
+                                    <td colspan="3">
+                                        <textarea id="" rows="6" class="c-textarea" placeholder="점검/검토의견을 기입해주세요" style="height:80px;"></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //con-group -->
+
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h2 class="title__dep2">조치확인 결과</h2>
+                    </div>
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">조치여부</th>
+                                    <td>
+                                        <ul class="c-chklist">
+                                            <li>
+                                                <span class="c-radio">
+                                                    <input type="radio" name="radio04" class="c-radio__input" id="radio0401" checked>
+                                                    <label for="radio0401" class="c-radio__label">조치</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="c-radio">
+                                                    <input type="radio" name="radio04" class="c-radio__input" id="radio0402">
+                                                    <label for="radio0402" class="c-radio__label">미조치</label>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <th scope="row">조치확인예정일</th>
+                                    <td>
+                                        <div class="calendar__item">
+                                            <input type="text" class="c-input calendar__input datepicker" title="조치확인예정일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">조치의견</th>
+                                    <td colspan="3">
+                                        <textarea id="" rows="6" class="c-textarea" placeholder="조치의견을 기입해주세요" style="height:80px;"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">파일선택</th>
+                                    <td colspan="3">
+                                        <div class="filebox">
+                                            <input type="text" class="upload" value="채증자료함/2022/08/n29040_20220831123825.png" readonly>
+                                            <label for="file" class="c-btn">파일선택</label>
+                                            <input type="file" id="file">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">채증자료 미리보기</th>
+                                    <td colspan="3">
+                                        <div class="previewbox">
+                                            <img src="/static/images/2036186204.jpg" alt="" class="preview__img">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //con-group -->
+
+                <div class="btnwrap btnwrap--btm">
+                    <button type="button" class="c-btn fl"><span>취소</span></button>
+                    <button type="button" class="c-btn"><span>임시저장</span></button>
+                    <button type="button" class="c-btn btn--black"><span>검토완료</span></button>
+                    <button type="button" class="c-btn btn--black"><span>재검토요청</span></button>
+                </div>
+
+                <hr class="hr">
+
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h2 class="title__dep2">공문 생성</h2>
+                        <div class="btnwrap">
+                            <button type="button" class="c-btn"><span>공문저장 및 다운로드</span></button>
+                        </div>
+                    </div>
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">공문 양식</th>
+                                    <td>
+                                        <div class="d-flex--between">
+                                            <span>여가부공문 미이행보고서</span>
+                                            <button type="button" class="c-btn"><span>공문양식선택</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">공문 전달자</th>
+                                    <td>
+                                        <input type="text" id="" class="c-input" value="" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">공문 송신일</th>
+                                    <td>
+                                        <div class="calendar__item">
+                                            <input type="text" class="c-input calendar__input datepicker" title="공문 송신일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                        </div>
+                                    </td>
+                                    <th scope="row">공문 반송일</th>
+                                    <td>
+                                        <div class="calendar__item">
+                                            <input type="text" class="c-input calendar__input datepicker" title="공문 반송일 입력" placeholder="yyyy.mm.dd" value="" id="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">공문 송달 관련 메모</th>
+                                    <td colspan="3">
+                                        <textarea id="" rows="6" class="c-textarea" placeholder="선택한 파일에 대한 설명이 필요할 경우 기입해 주세요" style="height:111px;"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">관련부처의견</th>
+                                    <td colspan="3">
+                                        <textarea id="" rows="6" class="c-textarea" placeholder="선택한 파일에 대한 설명이 필요할 경우 기입해 주세요" style="height:111px;"></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //con-group -->
+
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h2 class="title__dep2">공문생성/발송이력 이력</h2>
+                    </div>
+                    <div class="tbl-ovflow">
+                        <div class="c-table coltbl" style="width: 100%;">
+                            <table>
+                                <colgroup>
+                                    <col width="10%">
+                                    <col width="32%">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">보고서보기</th>
+                                        <th scope="col">공문양식</th>
+                                        <th scope="col">생성일</th>
+                                        <th scope="col">송신일</th>
+                                        <th scope="col">전달자</th>
+                                        <th scope="col">관련메모</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><button type="button" class="c-btn"><span>다운로드</span></button></td>
+                                        <td><a href="#none" class="a-rowline">여가부공문-미이행보고서</a></td>
+                                        <td>해당</td>
+                                        <td>2022년 8월 21일</td>
+                                        <td>2022년 8월 23일</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- //con-group -->
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+</main>
+</body>
+</html>

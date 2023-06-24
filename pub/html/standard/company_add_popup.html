@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>업체등록 팝업</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<!-- 카카오 우편번호 API -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function kakaopost() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+            document.querySelector("#zipcode").value = data.zonecode;
+            document.querySelector("#address").value =  data.address
+            }
+        }).open();
+    }
+</script>
+<!-- //카카오 우편번호 API -->
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검기준관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">업체정보관리</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">업체 정보</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="companyAddLyPop"><span>업체등록 팝업</span></button>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- 업체정보 등록 레이어팝업 -->
+    <div class="popup-wrap is-active" id="companyAddLyPop">
+        <div class="popup-cont popup-cont--large">
+            <div class="titlewrap titlewrap--dep1">
+                <h3 class="title__dep1">업체등록</h3>
+                <p class="mark-reference">※ &#39; <i class="necessary mgl0">&#42;</i> &#39; 항목은 필수 값 입니다.</p>
+            </div>
+            <div class="popup-body">
+                <div class="con-group">
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">업체명<i class="necessary">&#42;</i></th>
+                                    <td><input type="text" id="" class="c-input" value="" placeholder="업체명"></td>
+                                    <th scope="row">사업자구분</th>
+                                    <td>
+                                        <span class="selectbox">
+                                            <select>
+                                                <option>국내</option>
+                                                <option>국외</option>
+                                                <option>미확인</option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">대표자</th>
+                                    <td><input type="text" id="" class="c-input" value="" placeholder="대표자명"></td>
+                                    <th scope="row">사업자등록번호</th>
+                                    <td><input type="text" id="" class="c-input" value="" placeholder="사업자등록번호"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">통신판매면허</th>
+                                    <td><input type="text" id="" class="c-input" value="" placeholder="통신판매 면허번호"></td>
+                                    <th scope="row">고객센터</th>
+                                    <td><input type="text" id="" class="c-input" value="" placeholder="고객센터 연락처"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">사업장주소</th>
+                                    <td colspan="3">
+                                        <div class="addresswrap">
+                                            <input type="text" name="zipcode" id="zipcode" class="c-input inp-zipcode" value="" placeholder="우편번호">
+                                            <button type="button" class="c-btn btn-zipcode" onclick="kakaopost()"><span>우편번호 찾기</span></button>
+                                            <div class="inp-address">
+                                                <input type="text" name="address" id="address" class="c-input" value="" placeholder="기본주소">
+                                                <input type="text" id="" class="c-input" value="" placeholder="상세주소 및 상세 건물명">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">이메일</th>
+                                    <td><input type="email" id="" class="c-input" value="" placeholder="이메일"></td>
+                                    <th scope="row">업체상태</th>
+                                    <td>
+                                        <span class="selectbox">
+                                            <select>
+                                                <option>운영중</option>
+                                                <option>영업정지</option>
+                                                <option>폐업</option>
+                                                <option>알수없음</option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">기타 업체정보</th>
+                                    <td colspan="3">
+                                        <textarea id="" rows="6" class="c-textarea" placeholder="업체에 관련된 메모 혹은 기타 참고사항를 입력해 주세요." style="height:111px;"></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <button type="button" class="c-btn" data-roll="popup-off"><span>취소</span></button>
+                <button type="button" class="c-btn btn--black"><span>등록</span></button>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //업체정보 등록 레이어팝업 -->
+</main>
+</body>
+</html>

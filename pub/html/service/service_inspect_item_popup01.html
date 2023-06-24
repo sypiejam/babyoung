@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>청소년유해매체물정보 선택 팝업</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검대상관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">서비스점검목록</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">서비스 점검대상 등록</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <button type="button" class="c-btn" data-roll="popup-on" data-link="LyPopup01"><span>청소년유해매체물정보 선택 팝업</span></button>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+
+    <!-- 청소년유해매체물정보 선택 레이어팝업 -->
+    <div class="popup-wrap is-active" id="LyPopup01">
+        <div class="popup-cont popup-cont--large">
+            <div class="titlewrap titlewrap--dep1">
+                <h3 class="title__dep1">청소년유해매체물정보 선택</h3>
+            </div>
+            <div class="popup-body">
+                <div class="sch-group">
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">검색</th>
+                                    <td colspan="3">
+                                        <div class="d-flex">
+                                            <span class="selectbox">
+                                                <select>
+                                                    <option>고시호수</option>
+                                                    <option></option>
+                                                </select>
+                                            </span>
+                                            <input type="text" class="c-input mgl10" placeholder="검색어를 입력하세요">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">매체구분</th>
+                                    <td>
+                                        <span class="selectbox w100">
+                                            <select>
+                                                <option>전체</option>
+                                                <option></option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                    <th scope="row">결정사유</th>
+                                    <td>
+                                        <span class="selectbox w100">
+                                            <select>
+                                                <option>전체</option>
+                                                <option></option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btnwrap tc">
+                        <button type="button" class="c-btn btn--black"><span>검색</span></button>
+                    </div>
+                </div>
+
+                <div class="con-group">
+                    <div class="titlewrap titlewrap--dep2">
+                        <h3 class="title__dep2">결정고시 목록</h3>
+                    </div>
+                    <div class="tblsortwrap">
+                        <div class="tblsort">
+                            <div class="tblsort__total">
+                                <em class="tblsort__txt">Total 500</em>
+                                <div class="selectbox">
+                                    <select>
+                                        <option>10개보기</option>
+                                        <option>20개보기</option>
+                                        <option>30개보기</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tbl-ovflow">
+                            <div class="c-table coltbl">
+                                <table>
+                                    <colgroup>
+                                        <col width="8%">
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">선택</th>
+                                            <th scope="col">일련번호</th>
+                                            <th scope="col">매체분류</th>
+                                            <th scope="col">매체제목/URL</th>
+                                            <th scope="col">제작자/제공자</th>
+                                            <th scope="col">심의번호</th>
+                                            <th scope="col">결정사유</th>
+                                            <th scope="col">결정일</th>
+                                            <th scope="col">결정기관</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><button type="button" class="c-btn btn--blue"><span>선택</span></button></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button type="button" class="c-btn btn--blue"><span>선택</span></button></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="popup-close" data-roll="popup-off"><span class="blind">닫기</span></button>
+        </div>
+        <!-- //popup-cont -->
+    </div>
+    <!-- //청소년유해매체물정보 선택 레이어팝업 -->
+</main>
+</body>
+</html>

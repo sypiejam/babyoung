@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>용어 관리 &gt; 목록</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검기준관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">용어 관리</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">용어 관리</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="sch-group">
+                    <div class="c-table rowtbl">
+                        <table>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">용어</th>
+                                    <td>
+                                        <input type="text" class="c-input" placeholder="검색하려는 용어를 입력하세요">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btnwrap tc">
+                        <button type="button" class="c-btn btn--black"><span>검색</span></button>
+                    </div>
+                </div>
+
+                <div class="con-group">
+                    <div class="tblsortwrap">
+                        <div class="tblsort">
+                            <div class="tblsort__total">
+                                <em class="tblsort__txt">Total 500</em>
+                                <div class="selectbox">
+                                    <select>
+                                        <option>10개보기</option>
+                                        <option>20개보기</option>
+                                        <option>30개보기</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="tbl-ovflow">
+                            <div class="c-table coltbl" style="width: 100%;">
+                                <table>
+                                    <colgroup>
+                                        <col width="30%">
+                                        <col>
+                                        <col width="15%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">용어</th>
+                                            <th scope="col">정의</th>
+                                            <th scope="col">추가/삭제</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tl">
+                                                <input type="text" id="" class="c-input" value="" placeholder="유해키워드">
+                                            </td>
+                                            <td>
+                                                <input type="text" id="" class="c-input" value="" placeholder="검색하려는 용어를 입력하세요">
+                                            </td>
+                                            <td class="tl">
+                                                <button type="button" class="c-btn"><span>추가</span></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tl">
+                                                <span>서비스점검</span>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="" class="c-input" value="법제 점검과 같이 앱 자체 혹은 웹사이트 자체를 조사하는 것을 의미함." placeholder="검색하려는 용어를 입력하세요">
+                                            </td>
+                                            <td class="tl">
+                                                <button type="button" class="c-btn btn--black w-initial"><span>저장</span></button>
+                                                <button type="button" class="c-btn btn--gray"><span>삭제</span></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- paginate -->
+                        <div class="paginate">
+                            <button type="button" class="btn-paginate__first">
+                                <span class="blind">처음 페이지</span>
+                            </button>
+                            <button type="button" class="btn-paginate__prev">
+                                <span class="blind">이전 페이지</span>
+                            </button>
+                            <p class="paging"><span class="paging__active">1</span> / 10</p>
+                            <button type="button" class="btn-paginate__next">
+                                <span class="blind">다음 페이지</span>
+                            </button>
+                            <button type="button" class="btn-paginate__last">
+                                <span class="blind">끝 페이지</span>
+                            </button>
+                            <div class="page">
+                                <input type="text" class="c-input" value="1"> / 10
+                            </div>
+                        </div>
+                        <!-- //paginate -->
+                    </div>
+                    <!-- //tblsortwrap -->
+                </div>
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+</main>
+</body>
+</html>

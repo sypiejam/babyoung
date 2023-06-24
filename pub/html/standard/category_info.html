@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>유해카테고리</title>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/ui.js"></script>
+<script src="/static/js/layout.js"></script><!-- layout 용도로 퍼블 HTML 에만 사용 -->
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<main class="l-wrap">
+    <!-- l-header -->
+    <header class="l-header" id="header"></header>
+    <!-- //l-header -->
+
+    <!-- l-gnb -->
+    <nav class="l-gnb" id="navigation"></nav>
+    <!-- //l-gnb -->
+
+    <!-- l-container -->
+    <div class="l-container">
+        <section class="l-section">
+            <!-- breadcrumb -->
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="../index.html">홈</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">점검기준관리</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#none">유해카테고리</a>
+                </li>
+            </ul>
+            <!-- //breadcrumb -->
+
+            <!-- page title -->
+            <div class="titlewrap titlewrap--dep1">
+                <h1 class="title__dep1">유해카테고리</h1>
+            </div>
+            <!-- //page title -->
+            
+            <!-- l-contents -->
+            <div class="l-contents">
+                <div class="d-table">
+                    <div class="d-table__cell d-table__cell--left">
+                        <div class="titlewrap titlewrap--dep2">
+                            <h2 class="title__dep2">유해카테고리</h2>
+                        </div>
+                        <div class="td-ovflow-y treewrap">
+                            <div class="treelist">
+                                <ul class="treedep01">
+                                    <li class="treedep01__item">
+                                        <a href="#none"abel class="treedep01__tit">법이행</a>
+                                        <ul class="treedep02">
+                                            <li class="treedep02__item">
+                                                <a href="#none" class="treedep02__anchor">성매매</a>
+                                            </li>
+                                            <li class="treedep02__item">
+                                                <a href="#none" class="treedep02__anchor">마약</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="treedep01__item">
+                                        <a href="#none"abel class="treedep01__tit">청소년유해정보</a>
+                                    </li>
+                                    <li class="treedep01__item">
+                                        <a href="#none"abel class="treedep01__tit">청소년유해매체물</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-table__cell d-table__cell--right">
+                        <div class="con-group">
+                            <div class="titlewrap titlewrap--dep2">
+                                <h2 class="title__dep2">유해카테고리 정보</h2>
+                            </div>
+                            <div class="c-table rowtbl">
+                                <table>
+                                    <colgroup>
+                                        <col width="160px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">유해카테고리코드</th>
+                                            <td>HC01002</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">유해카테고리명</th>
+                                            <td>
+                                                <input type="text" id="" class="c-input" value="마약" placeholder="카테고리명을 입력하세요">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">적용</th>
+                                            <td>
+                                                <ul class="c-chklist">
+                                                    <li>
+                                                        <span class="c-radio">
+                                                            <input type="radio" name="radio010" class="c-radio__input" id="radio0101" checked>
+                                                            <label for="radio0101" class="c-radio__label">사용</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-radio">
+                                                            <input type="radio" name="radio010" class="c-radio__input" id="radio0102">
+                                                            <label for="radio0102" class="c-radio__label">미사용</label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="btnwrap tr">
+                            <button type="button" class="c-btn"><span>하위 카테고리 추가</span></button>
+                            <button type="button" class="c-btn btn--black w-initial"><span>저장</span></button>
+                        </div>
+                        </div>
+
+                        <div class="con-group">
+                            <div class="titlewrap titlewrap--dep2">
+                                <h2 class="title__dep2">하위 유해카테고리 추가</h2>
+                            </div>
+                            <div class="c-table rowtbl">
+                                <table>
+                                    <colgroup>
+                                        <col width="160px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">유해카테고리명</th>
+                                            <td>
+                                                <input type="text" id="" class="c-input" value="" placeholder="카테고리명을 입력하세요">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">적용</th>
+                                            <td>
+                                                <ul class="c-chklist">
+                                                    <li>
+                                                        <span class="c-radio">
+                                                            <input type="radio" name="radio020" class="c-radio__input" id="radio0201" checked>
+                                                            <label for="radio0201" class="c-radio__label">사용</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="c-radio">
+                                                            <input type="radio" name="radio020" class="c-radio__input" id="radio0202">
+                                                            <label for="radio0202" class="c-radio__label">미사용</label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="btnwrap tr">
+                            <button type="button" class="c-btn btn--black w-initial"><span>저장</span></button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //d-table -->
+            </div>
+            <!-- //l-contents -->
+            
+        </section>
+        <!-- //l-section -->
+  
+        <!-- l-footer -->
+        <footer class="l-footer" id="footer"></footer>
+        <!-- //l-footer -->
+    </div>
+    <!-- //l-container -->
+</main>
+</body>
+</html>
