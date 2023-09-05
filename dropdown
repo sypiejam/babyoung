@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Dropdown</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Dropdown</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <div class="title_wrap">
+                    <strong class="title_h1">Dropdown(드롭다운)</strong>
+                </div>
+            </div>
+            <div class="title_wrap">
+                <em class="title_h2">기본형</em>
+            </div>
+            <div class="dvgroup">
+                <!--
+                    Dropdown 기본형
+                    field_wrap에 더블 클래스로 상태 구분
+                    is-error : 에러문구가 있을 경우
+
+                    inp_field에 더블 클래스로 상태 구분
+                    filled : 사용자가 입력을 완료한 상태
+                    disabled : 비활성화 상태로 입력하거나 편집할 수 없는 상태
+                -->
+
+                <div class="field_wrap">
+                    <em class="inp_title">title : 기본형 - 사용자가 입력하지 않았지만 입력이 가능한 상태 (enabled)</em>
+                    <div class="inp_field inp_select">
+                        <button type="button" class="inp_select_item" title="통신사 선택">
+                            <div class="inp_select_value">통신사</div>
+                        </button>
+                    </div>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">title : 사용자가 입력을 완료한 상태 (filled)</em>
+                    <div class="inp_field inp_select filled">
+                        <button type="button" class="inp_select_item" title="통신사 선택">
+                            <div class="inp_select_value">통신사</div>
+                        </button>
+                    </div>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">title : 비활성화 상태로 입력하거나 편집할 수 없는 상태 (disabled)</em>
+                    <div class="inp_field inp_select disabled">
+                        <div class="inp_select_item d-flex">
+                            <div class="inp_select_value">통신사</div>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+            <div class="field_wrap is-error">
+                <em class="inp_title">title - error 문구 있는 경우</em>
+                <div class="inp_field inp_select filled">
+                    <button type="button" class="inp_select_item" title="통신사 선택">
+                        <div class="inp_select_value">통신사</div>
+                    </button>
+                </div>
+                <div class="txt_error">
+                    <p>Enter an error message</p>
+                </div>
+            </div>
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">아이콘형</em>
+                </div>
+                <!--
+                    Dropdown 아이콘형
+                    1.field_wrap에 더블 클래스로 상태 구분
+                    is-error : 에러문구가 있을 경우
+
+                    2.inp_field에 더블 클래스로 상태 구분
+                    filled : 사용자가 입력을 완료한 상태
+                    readonly : 입력하거나 편집할 수 없는 상태
+                    disabled : 비활성화 상태
+                -->
+
+                <div class="field_wrap">
+                    <em class="inp_title">title : 기본형 - 사용자가 입력하지 않았지만 입력이 가능한 상태 (enabled)</em>
+                    <div class="inp_field inp_select">
+                        <button type="button" class="inp_select_item select_icon" title="은행사 선택">
+                            <span class="inp_select_value">Selet</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">title : 사용자가 입력을 완료한 상태 (filled)</em>
+                    <div class="inp_field inp_select filled">
+                        <button type="button" class="inp_select_item select_icon" title="은행사 선택">
+                            <i class="ci_bank ci_bank_020"></i>
+                            <span class="inp_select_value">Woori Bank</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">title : 입력하거나 편집할 수 없는 상태 (readonly)</em>
+                    <div class="inp_field inp_select readonly">
+                        <div class="inp_select_item select_icon">
+                            <i class="ico_flag us"></i>
+                            <span class="inp_select_value">USD</span>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+            <div class="field_wrap is-error">
+                <em class="inp_title">title - error 문구 있는 경우</em>
+                <div class="inp_field inp_select filled">
+                    <button type="button" class="inp_select_item select_icon" title="은행사 선택">
+                        <span class="inp_select_value">Selet</span>
+                    </button>
+                </div>
+                <div class="txt_error">
+                    <p>Enter an error message</p>
+                </div>
+            </div>
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">텍스트형</em>
+                </div>
+                <!--
+                    Dropdown 텍스트형
+                -->
+                <div class="field_wrap">
+                    <em class="inp_title">title - 보통 filter 용도로 사용</em>
+                    <div class="inp_field inp_select select_text">
+                        <button type="button" class="inp_select_item select_icon" title="은행사 선택">
+                            <i class="ci_bank ci_bank_020"></i>
+                            <span class="inp_select_value">Woori Bank</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">계좌형</em>
+                </div>
+                <!--
+                    Dropdown 계좌형
+                    inp_field에 더블 클래스로 상태 구분
+                    filled : 사용자가 입력을 완료한 상태
+                    disabled : 비활성화 상태
+                -->
+                <div class="field_wrap">
+                    <em class="inp_title">title - 전체계좌선택 (enabled)</em>
+                    <div class="inp_field inp_select select_account">
+                        <div class="account_wrap">
+                            <button type="button" class="inp_select_item account_box" title="은행사 선택">
+                                <div class="inner">
+                                    <span class="inp_select_value">Select All Accounts</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">title - 통장명칭 + 계좌번호 (filled)</em>
+                    <div class="inp_field inp_select select_account filled">
+                        <div class="account_wrap">
+                            <button type="button" class="inp_select_item account_box" title="은행사 선택">
+                                <div class="inner">
+                                    <span class="account_name">Product name</span>
+                                    <span class="account_num">1002-456-890123</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">title - 통장명칭 + 계좌번호 + 출금가능금액 (disabled)</em>
+                    <div class="inp_field inp_select select_account disabled">
+                        <div class="account_wrap">
+                            <button type="button" class="inp_select_item account_box" title="은행사 선택">
+                                <div class="inner">
+                                    <span class="account_name">Product name Product name Product name Product name </span>
+                                    <span class="account_num">1002-456-890123</span>
+                                </div>
+                            </button>
+                            <div class="account_btm">
+                                <span class="txt">Transferable amount</span><div class="break"><span class="cur">KRW</span><strong class="num">999,999,999</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                  
+                <div class="field_wrap">
+                    <em class="inp_title">title - 은행명 + 계좌번호</em>
+                    <div class="inp_field inp_select select_account filled">
+                        <div class="account_wrap">
+                            <button type="button" class="inp_select_item account_box" title="은행사 선택">
+                                <i class="ci_bank lg ci_bank_020"></i>
+                                <div class="inner">
+                                    <span class="account_name">Woori bank</span>
+                                    <span class="account_num">1002-456-890123</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>                   
+                <div class="field_wrap">
+                    <em class="inp_title">title - 은행명 + 계좌번호 + 출금가능금액</em>
+                    <div class="inp_field inp_select select_account filled">
+                        <div class="account_wrap">
+                            <button type="button" class="inp_select_item account_box" title="은행사 선택">
+                                <i class="ci_bank lg ci_bank_020"></i>
+                                <div class="inner">
+                                    <span class="account_name">Woori bank Woori bank Woori bank Woori bank </span>
+                                    <span class="account_num">1002-456-890123</span>
+                                </div>
+                            </button>
+                            <div class="account_btm">
+                                <span class="txt">Transferable amount</span><div class="break"><span class="cur">KRW</span><strong class="num">999,999,999</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>          
+            </div>                              
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+</body>
+</html>
