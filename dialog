@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Dialog</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/lib/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/renewal/_new2/common_ui.js"></script>
+<style>
+    /* .dialog_head {background-color: #ffffffa8 !important;}
+    .dialog_body {background-color: blue;}
+    .dialog_body .inner {background-color: aqua;} */
+</style>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Dialog</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Dialog(다이얼로그)</strong>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">Dialog</em>
+                </div>
+                <button type="button" class="btn_outlined btn_small" onclick="$('#dialog002').show();"><span>Alert</span></button><!-- SMJ1501P00 alert -->
+                <button type="button" class="btn_outlined btn_small" onclick="$('#dialog001').show();"><span>Confirm</span></button><!-- SMJ1502P00 Confirm -->
+                <button type="button" class="btn_outlined btn_small" onclick="$('#dialog003').show();"><span>Warning</span></button>
+            </div>
+            <!-- <hr class="hr">
+            <div class="dvgroup">
+                <button type="button" class="btn_outlined btn_small" onclick="$('#notiPM').show();"><span>PM공지</span></button> SMJ1604P00 
+                <button type="button" class="btn_outlined btn_small" onclick="$('#notiAPP').show();"><span>앱별공지</span></button> SMJ1605P00 
+            </div> -->
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">Custom</em>
+                </div>
+                <button type="button" class="btn_outlined btn_small" onclick="$('#popup001').show();"><span>Popup</span></button><!-- SMJ1504P00 커스텀 팝업 -->
+                <button type="button" class="btn_outlined btn_small" onclick="$('#popup002').show();"><span>Share</span></button><!-- 공유하기 -->
+            </div>
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+
+    <div class="dialogwrap"  id="dialog001">
+        <div class="dimmed"></div>
+        <div class="dialogbox">
+            <div class="dialog has_fixed">
+                <div class="dialog_head">
+                    <strong class="dialog_tit">_Title</strong>
+                </div>
+                <div class="dialog_body">
+                    <div class="inner">
+                        <p>Enter the content of the dialog.</p>
+                    </div>
+                </div>
+                <div class="dialog_foot btm_fixed">
+                    <div class="btn_wrap">
+                        <div class="d-flex asym"><!-- 2단 비대칭형 클래스 asym 추가 -->
+                            <a href="javascript:void(0);" class="btn_contained_gray"><span>취소</span></a>
+                            <a href="javascript:void(0);" class="btn_primary" onclick="$('#dialog001').hide();"><span>확인</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dialogwrap"  id="dialog002">
+        <div class="dimmed"></div>
+        <div class="dialogbox">
+            <div class="dialog has_fixed">
+                <div class="dialog_head">
+                    <strong class="dialog_tit">_Enter a title</strong>
+                </div>
+                <div class="dialog_body">
+                    <div class="inner">
+                        <p>Table of Tax Treaty Limitation Rates by Contracting State.</p>
+                    </div>
+                </div>
+                <div class="dialog_foot btm_fixed">
+                    <div class="btn_wrap">
+                        <div class="d-flex">
+                            <a href="javascript:void(0);" class="btn_primary" onclick="$('#dialog002').hide();"><span>확인</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dialogwrap"  id="dialog003">
+        <div class="dimmed"></div>
+        <div class="dialogbox">
+            <div class="dialog has_fixed">
+                <div class="dialog_head">
+                    <strong class="dialog_tit">_Warning</strong>
+                </div>
+                <div class="dialog_body">
+                    <div class="inner">
+                        <p>Table of Tax Treaty Limitation Rates by Contracting State.</p>
+                    </div>
+                </div>
+                <div class="dialog_foot btm_fixed">
+                    <div class="btn_wrap">
+                        <div class="d-flex asym"><!-- 2단 비대칭형 클래스 asym 추가 -->
+                            <a href="javascript:void(0);" class="btn_contained_gray"><span>취소</span></a>
+                            <a href="javascript:void(0);" class="btn_warning" onclick="$('#dialog003').hide();"><span>확인</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 커스텀 팝업 : 바텀시트보다 주목도를 높여야 할 때 사용 -->
+    <div class="dialogwrap"  id="popup001">
+        <div class="dimmed"></div>
+        <div class="dialogbox custombox">
+            <div class="dialog has_fixed">
+                <div class="dialog_head">
+                    <strong class="dialog_tit">_Title</strong>
+                </div>
+                <div class="dialog_body">
+                    <div class="inner">
+                        <p>Enter the content of the dialog.</p>
+                    </div>
+                </div>
+                <div class="dialog_foot btm_fixed">
+                    <div class="btn_wrap">
+                        <div class="d-flex asym"><!-- 2단 비대칭형 클래스 asym 추가 -->
+                            <a href="javascript:void(0);" class="btn_contained_gray"><span>취소</span></a>
+                            <a href="javascript:void(0);" class="btn_primary" onclick="$('#popup001').hide();"><span>확인</span></a>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="ico_close btn_close" onclick="$('#popup001').hide();"><span class="blind">닫기</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 커스텀 팝업 : 공유하기 -->
+    <div class="dialogwrap"  id="popup002">
+        <div class="dimmed"></div>
+        <div class="dialogbox custombox">
+            <div class="dialog">
+                <div class="dialog_head">
+                    <strong class="dialog_tit">Share</strong>
+                </div>
+                <div class="dialog_body">
+                    <div class="inner">
+                        <div class="share_box share_popup">
+                            <button type="button" class="share_item">
+                                <i class="ico_kakao lg"></i>
+                                <span class="share_txt">KakaoTalk</span>
+                            </button>
+                            <button type="button" class="share_item">
+                                <i class="ico_sms lg"></i>
+                                <span class="share_txt">Text messages</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="ico_close btn_close" onclick="$('#popup002').hide();"><span class="blind">닫기</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PM공지 -->
+    <div class="dialogwrap"  id="notiPM">
+        <div class="dimmed"></div>
+        <div class="dialogbox">
+            <div class="dialog has_fixed">
+                <div class="dialog_head">
+                    <strong class="dialog_tit">PM 공지제목</strong>
+                </div>
+                <div class="dialog_body">
+                    <div class="inner">
+                        <div class="title_lv3">
+                            <p>PM 공지내용이 출력됩니다.</p>
+                        </div>
+                        <div class="pm_notibox">
+                            <div class="title_wrap">
+                                <strong class="title_h5">Title</strong>
+                            </div>
+                            <div class="textbox sm">
+                                <p>Enter the content.</p>
+                            </div>
+                            <div class="title_wrap">
+                                <strong class="title_h5">Title</strong>
+                            </div>
+                            <div class="textbox sm">
+                                <p>Enter the content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog_foot btm_fixed">
+                    <div class="btn_wrap">
+                        <div class="d-flex">
+                            <a href="javascript:void(0);" class="btn_primary" onclick="$('#notiPM').hide();"><span>확인</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 앱별공지 -->
+    <div class="dialogwrap"  id="notiAPP">
+        <div class="dimmed"></div>
+        <div class="dialogbox">
+            <div class="dialog has_fixed">
+                <div class="dialog_head">
+                    <strong class="dialog_tit">앱별 공지제목</strong>
+                </div>
+                <div class="dialog_body">
+                    <div class="inner">
+                        <div class="title_lv3">
+                            <p>서식없는 텍스트 공지내용이 출력됩니다. 서식없는 텍스트 공지내용이 출력됩니다. 서식없는 텍스트 공지내용이 출력됩니다.</p>
+                            <p>서식없는 텍스트 공지내용이 출력됩니다.</p>
+                        </div>
+                        <div class="selection mt24">
+                            <input type="checkbox" name="depth" id="depth001" class="check_normal">
+                            <label for="depth001">오늘 다시 보지 않음</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog_foot btm_fixed">
+                    <div class="btn_wrap">
+                        <div class="d-flex">
+                            <a href="javascript:void(0);" class="btn_primary" onclick="$('#notiAPP').hide();"><span>확인</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
