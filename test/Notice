@@ -1,0 +1,24 @@
+import { useTranslation } from "react-i18next";
+/**
+ * 
+ * @name Notice
+ * @role 알아두세요 컴포넌트
+ * 
+ */
+
+function Notice({children}){
+    const {t} = useTranslation();
+    
+    return(
+        <>
+            <hr className="hr full thick" />
+            <div className="notibox">
+                <strong className="notibox_tit">{t("co1501_0053")}</strong>
+                <div className="notibox_cont">
+                    {children}
+                </div>
+            </div>
+        </>
+    )
+}
+export default Notice
