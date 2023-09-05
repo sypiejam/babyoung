@@ -1,0 +1,55 @@
+import styled from "styled-components";
+
+/**
+ * @name MoreBtn 
+ * @role 리스트를 추가로 불러올 때 리스트 하단에 활용
+ * @props title(string) - 버튼 타이틀
+ * @props blindTitle(string) - 블라인드 타이틀
+ * @props onClick - 버튼 클릭시 실행될 함수
+ * @props folding(boolean) - 테이블에서 사용될경우 화살표 디자인 변경을 위해 사용( 펼침 시 true로 변경 / 닫힘 시 false로 변경 )
+ */
+
+function MoreBtn({title, blindTitle, onClick, folding}){
+
+    return(
+        <StyledMore className="more_wrap">
+            <button type="button" className={`btn_more${folding? " is-active":""}`} onClick={onClick}>
+                {title &&
+                    <span>{title}</span>
+                }
+                {blindTitle &&
+                    <span className="blind">{blindTitle}</span>
+                }
+            </button>
+        </StyledMore>
+    )
+}
+
+const StyledMore = styled.div`
+    height:5.6rem;
+    margin-top:0.8rem;
+    text-align:center;
+    .btn_more {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:100%;
+        height:100%;
+        color:#4c5459;
+    }
+    .btn_more::after {
+        content:'';
+        display:block;
+        width:2.4rem;
+        height:2.4rem;
+        margin-left:0.4rem;
+        background-repeat:no-repeat;
+        background-position:0 0;
+        background:url(/images/com/ic_arrow_normal_down_enabled.png) no-repeat 0 0 / 100%;
+    }
+    .btn_more.is-active::after{
+        background-image:url(/images/com/ic_arrow_normal_up_enabled.png);
+    }
+`
+
+export default MoreBtn;
