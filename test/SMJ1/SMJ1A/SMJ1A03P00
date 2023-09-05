@@ -1,0 +1,43 @@
+import { useTranslation } from "react-i18next";
+import PopupFrame from "../../../../../common/components/popup/PopupFrame";
+import PopupHeader from "../../../../../common/components/popup/PopupHeader";
+import PopupContainer from "../../../../../common/components/popup/PopupContainer";
+import { Button, ButtonWrap, FloatingButtonWrap } from "../../../../../common/components/button/index";
+import NormalTextField from "../../../../../common/components/input/textField/NormalTextField";
+import Notice from "../../../../../common/components/Notice";
+
+// 1회용 인증번호 인증
+function SMJ1A03P00(){
+    const {t} = useTranslation();
+    return(
+        <PopupFrame>
+            <PopupHeader type="normal" title={t("co0803_0001")} />
+            <PopupContainer hasFixed>
+                <div className="thead_wrap">
+                    <strong className="title_h1">{t("co0803_0002")}</strong>
+                </div>
+                <div className="dvgroup">
+                    <div className="field_wrap">{/* 에러시 클래스 is-error 추가 */}
+                        <em className="inp_title">{t('co0803_0003')}</em>
+                        <NormalTextField type="number" inputMode="numeric" status="" placeholder={t('co1501_0034')} />
+                        <div className="txt_error">
+                            <p>{t('co0701_0006')}</p>
+                        </div>
+                    </div>
+                </div>
+                <Notice>
+                    {/* 퍼블검수 1차 : div.bullet 삭제 */}
+                    <p className="bullet_item">{t("co0803_0004")}</p>
+                </Notice>
+
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <Button tag="button" size="lg" status="primary" text={t('co1501_0036')} />
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </PopupContainer>
+        </PopupFrame>
+    );
+}
+
+export default SMJ1A03P00;
