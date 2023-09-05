@@ -1,0 +1,308 @@
+import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
+import { useState, useRef, useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { popupAction } from "../../../../../common/store/popupReducer"
+import Wrap from "../../../../../common/components/layout/Wrap"
+import SlickFrame from "../../../../../common/components/slick/SlickFrame"
+import Slider from "react-slick"
+import { CustomA } from "../../../../../common/components/button"
+import {AccSlideItem , TransSlideItem, RateSlideItem, BannerSlideItem, SlideController } from "./index"
+import SMJ1201P00 from "../../../SMJ12/SMJ1201/SMJ1201P00/SMJ1201P00"
+
+function SMJ1101M00(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const login = true; //로그인여부
+    const [loading, setLoading] = useState(false); //로딩여부
+    const [alarm, setAlarm] = useState(true) //신규알람목록 여부
+    const transHistory = true; //최근송금리스트 여부
+    const refMain = useRef(); // 메인
+    const refBanner = useRef(); //하단배너영역
+    const refBannerControl = useRef(); //하단배너컨트롤
+    const [totalPage, setTotalPage] = useState(); //하단배너 슬라이드페이징
+    const accSliderSet = { //상단 계좌
+        slidesToShow : 1,
+        slidesToScroll : 1,
+        infinite : true,
+        arrows: false,
+        dots : true,
+        dotsClass: "dots_custom",
+    }
+    const bannerSliderSet = { //하단 이벤트배너
+        slidesToShow : 1,
+        slidesToScroll : 1,
+        infinite : true,
+        arrows: false,
+        autoplay : true,
+        autoplaySpeed : 4000,
+        speed : 800,
+        dots : true,
+        onInit : () => {
+            const slide = document.querySelectorAll('.m-banner_slider .slick-slide:not(.slick-cloned)');
+            // 2023-09-04 배너개수 1개일경우
+            if(slide.length === 1){
+                document.querySelector('.btn_control').style.display = 'none';
+            }
+            setTotalPage(slide.length)
+        },
+        customPaging : (i) => {
+            return (
+                <>
+                    <span className="blind">{`총${totalPage}개의배너 중 현재${i+1}번째배너`}</span>
+                    <span aria-hidden="true">
+                        <span className="current">{i+1}</span> / <span className="total">{totalPage}</span>
+                    </span>
+                </>
+            )
+        },
+    }
+    //로딩이벤트 
+    function mainLoadedEvt(){
+        refMain.current.classList.add('m-loaded');
+        setTimeout(()=>{
+            setLoading(true);
+        }, 1000)
+    }
+    useEffect(()=>{
+       mainLoadedEvt(); // 로드 후 함수실행
+    },[])
+
+    return(
+        <Wrap>
+            <main className="m-wrap">
+                <div className="m-main" ref={refMain}>
+                    <h1 className="blind">우리은행 글로벌뱅킹 메인</h1>
+                    <div className="m-sec_top">
+                        <div className="m-top_head">
+                            <div className="user_info">
+                                {
+                                    login && 
+                                    <div className="welcome_msg">
+                                        <span>{t("ma0500_0014")}</span>, 
+                                        <CustomA href="#none" btnClass="user_name" callback={()=> navigate("/SMJ5101M00")}>
+                                            <strong className="underline">Timothee Chalamet</strong>
+                                            <span className="blind">마이페이지로 이동</span>
+                                        </CustomA>
+                                    </div>
+                                }
+                                <div className="alarm_msg">
+                                    {
+                                        login ? 
+                                        <CustomA href="#none" btnClass={`btn_alarm${alarm ? ' is-active' : ''}`} callback={()=> navigate("/SMJ5203M00")}>
+                                            <span className="blind">{alarm && '새로운 알림이 있습니다.'}알림목록으로 이동</span>
+                                        </CustomA> :
+                                        <CustomA href="#none" btnClass="btn_alarm" callback={()=> navigate("/SMJ1H01M00")}>
+                                            <span className="blind">로그인페이지로 이동</span>
+                                        </CustomA>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        {
+                            login && 
+                            <div className="m-top_body">
+                                { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                                <h2 className="blind">{t("bk0201_0007")}</h2>
+                                <div className="m-acc_slider">
+                                    <SlickFrame>
+                                        <Slider {...accSliderSet}>
+                                            <AccSlideItem 
+                                                cicode="020" 
+                                                accNumber="111111-11-111111" 
+                                                cur="KRW" 
+                                                accSum="999,999,999,999,999" 
+                                                accDetail={()=> navigate("/SMJ2102M00")} 
+                                                accTransfer={()=> navigate("/SMJ2201M00")} 
+                                            />
+                                            <AccSlideItem 
+                                                cicode="020" 
+                                                accNumber="222222-22-222222" 
+                                                cur="KRW" 
+                                                accSum="22,222,000" 
+                                                accDetail={()=> navigate("/SMJ2102M00")} 
+                                            />
+                                            {/* 대표계좌설정 */}
+                                           <AccSlideItem mainAccSet />  
+                                        </Slider>
+                                    </SlickFrame>
+                                </div>
+                            </div> 
+                        } 
+                    </div>
+
+                    {/* 송금배너(로그아웃시 노출) */}
+                    {   !login &&
+                        <div className="m-sec_remit">
+                            <p className="remit_txt">{t("ma0500_0011")}</p>
+                            <div className="m-remit_banner">
+                                { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                                <CustomA href="#none" btnClass="remit_link" callback={()=> navigate("/SMJ3413M00")}><span>{t("ma0500_0009")}</span></CustomA> {/* 우리글로벌 퀵송금 화면으로 이동 */}
+                            </div> 
+                        </div>
+                    }
+
+                    {/* 최근송금(로그인 후 최근송금내역 있는 경우 노출) */}
+                    {   (login && transHistory) && 
+                        <div className="m-sec_trans">
+                            { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                            <div className="m-trans_wrap">
+                                <div className="m-trans_header">
+                                    <h2 className="title_h6"><span>{t("ma0500_0012")}</span></h2>
+                                    <span className="link_wrap">
+                                        <CustomA href="#none" btnClass="link_arr arr_right" callback={()=> navigate("/SMJ4031M00")}>{t("ma0500_0013")}</CustomA> 
+                                        {/* SMJ4031M00 나의 송금내역조회 페이지 이동 */} 
+                                    </span>
+                                </div>
+                                <div className="m-trans_body">
+                                    <ul className="m-trans_list">
+                                        {/* 리스트 클릭시 송금했던 서비스로 이동. 최대 10개노출 */}
+                                        <TransSlideItem 
+                                            target="Christopher McQuarrie" 
+                                            cur="USD" 
+                                            sum="548.566.00" 
+                                            callback={()=> navigate(".")} 
+                                        />
+                                        <TransSlideItem 
+                                            target="Sebastian" 
+                                            cur="USD" 
+                                            sum="2,222.20" 
+                                            callback={()=> navigate(".")} 
+                                        />
+                                        <TransSlideItem 
+                                            target="Ablelyn" 
+                                            cur="USD" 
+                                            sum="122,222.20" 
+                                            callback={()=> navigate(".")} 
+                                        />
+                                        <TransSlideItem 
+                                            target="alice" 
+                                            cur="USD" 
+                                            sum="140.578.00"
+                                            callback={()=> navigate(".")} 
+                                        />
+                                        <TransSlideItem 
+                                            target="Tomas" 
+                                            cur="USD" 
+                                            sum="122,234,140.578.00"
+                                            callback={()=> navigate(".")} 
+                                        />
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    {/* 환율정보 */}
+                    <div className="m-sec_rate">
+                        { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                        <h2 className="blind">{t("ma0600_0030")}</h2>
+                        <div className="m-rate_slider">
+                            <ul className="m-rate_items original">
+                                <RateSlideItem flagCode="us" cur="USD" rate="1.413.20" />
+                                <RateSlideItem flagCode="jp" cur="JPY" rate="902.18" />
+                                <RateSlideItem flagCode="cn" cur="CNY" rate="178.59" />
+                                <RateSlideItem flagCode="gb" cur="GBP" rate="1.639.94" />
+                                <RateSlideItem flagCode="kh" cur="KHR" rate="0.31" />
+                            </ul>
+                            {/* [D] 롤링을 위한 copy본입니다. original과 똑같이 넣어주세요 */}
+                            <ul className="m-rate_items clone">
+                                <RateSlideItem flagCode="us" cur="USD" rate="1.413.20" />
+                                <RateSlideItem flagCode="jp" cur="JPY" rate="902.18" />
+                                <RateSlideItem flagCode="cn" cur="CNY" rate="178.59" />
+                                <RateSlideItem flagCode="gb" cur="GBP" rate="1.639.94" />
+                                <RateSlideItem flagCode="kh" cur="KHR" rate="0.31" />
+                            </ul>
+                            {/* [D] 롤링을 위한 copy본입니다. original과 똑같이 넣어주세요 */}
+                            <ul className="m-rate_items clone2">
+                                <RateSlideItem flagCode="us" cur="USD" rate="1.413.20" />
+                                <RateSlideItem flagCode="jp" cur="JPY" rate="902.18" />
+                                <RateSlideItem flagCode="cn" cur="CNY" rate="178.59" />
+                                <RateSlideItem flagCode="gb" cur="GBP" rate="1.639.94" />
+                                <RateSlideItem flagCode="kh" cur="KHR" rate="0.31" />
+                            </ul>
+                            <CustomA href="#none" btnClass="rate_link" callback={()=> navigate("/SMJ3101M00")}><span className="blind">환율조회 바로가기</span></CustomA> 
+                        </div>
+                    </div>
+
+                    <div className="m-sec_shortcut">
+                        <h2 className="blind">주요메뉴 바로가기</h2>
+                        <ul className="m-shortcut_box">
+                            <li className="menu01"> {/* 퀵송금 */}
+                                { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                                <CustomA href="#none" btnClass="shortcut_link" callback={()=> navigate("/SMJ3414M00")}>{t("ma0500_0002")}</CustomA>
+                            </li>
+                            {/* 2023-09-04 (해외송금,머니그램) 메뉴순서 변경 ST */}
+                            <li className="menu02"> {/* 해외송금 */}
+                                { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                                <CustomA href="#none" btnClass="shortcut_link" callback={()=> navigate("/SMJ3307M00")}>{t("ma0500_0003")}</CustomA>
+                            </li>
+                            <li className="menu03"> {/* 머니그램 */}
+                                { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                                <CustomA href="#none" btnClass="shortcut_link" callback={()=> navigate("/SMJ3518M00")}>{t("fx0501_0001")}</CustomA>
+                            </li>
+                            {/* 2023-09-04 (해외송금,머니그램) 메뉴순서 변경 END */}
+                            <li className="menu04"> {/* 환율계산기 */}
+                                { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                                <CustomA href="#none" btnClass="shortcut_link" callback={()=> navigate("/SMJ3202M00")}>{t("ma0500_0004")}</CustomA>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div className="m-sec_banner">
+                        { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                        <div className="m-banner_slider" ref={refBanner}>
+                            <h2 className="blind">공지 및 이벤트</h2>
+                            <SlickFrame>
+                                <Slider {...bannerSliderSet} ref={refBannerControl}>
+                                    <BannerSlideItem 
+                                        title="WOORI Happy Return Event1" 
+                                        desc="100% free gift upon registeration" 
+                                        bgcolor="#308fd7" 
+                                        bgimage="/images/man/dummy_banner.png" 
+                                        callback={()=> navigate(".")} 
+                                    />
+                                    <BannerSlideItem 
+                                        title="WOORI Happy Return Event2" 
+                                        desc="100% free gift upon registeration" 
+                                        bgcolor="#7170de" 
+                                        bgimage="/images/man/dummy_banner.png" 
+                                        callback={()=> navigate(".")} 
+                                    />
+                                    <BannerSlideItem 
+                                        title="WOORI Happy Return Event3" 
+                                        desc="100% free gift upon registeration 100% free gift upon registeration" 
+                                        bgcolor="#dea000" 
+                                        bgimage="/images/man/dummy_banner.png" 
+                                        callback={()=> navigate(".")} 
+                                    />
+                                </Slider>
+                                <SlideController refBanner={refBanner} refBannerControl={refBannerControl} />
+                            </SlickFrame>
+                        </div>
+                    </div>
+                </div>
+                {/* 하단탭바 */}
+                <div className="m-tabbar">
+                    <div className="m-tabbar_inner">
+                        <div className="m-tabbar_menu">
+                            <CustomA href="#none" btnClass="tab_home is-active" callback={()=> navigate("/SMJ1101M00")}><span className="txt">{t("bk0101_0008")}</span></CustomA>
+                            <CustomA href="#none" btnClass="tab_inquiry" callback={()=> navigate("/SMJ2101M00")}><span className="txt">{t("bk0101_0009")}</span></CustomA>
+                            <CustomA href="#none" btnClass="tab_remittance" callback={()=> navigate("/SMJ3307M00")}><span className="txt">{t("bk0101_0010")}</span></CustomA>
+                            <button type="button" className="tab_allmenu" onClick={()=>
+                                dispatch(popupAction({
+                                    title: "",
+                                    message : <SMJ1201P00 />,
+                                    state : null
+                                }))
+                            }><span className="txt">{t("bk0101_0011")}</span></button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </Wrap>
+    )
+}
+
+export default SMJ1101M00;
