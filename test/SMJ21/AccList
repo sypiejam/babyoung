@@ -1,0 +1,69 @@
+import { useNavigate } from "react-router-dom"
+import { useTranslation } from "react-i18next"
+import { CustomA } from "../../../common/components/button"
+
+/**
+ * 
+ * @name AccList
+ * @role 거래내역에서 기간 및 조건설정 후 검색시 노출되는 리스트입니다.
+ * @props date(string) - 거래가 일어난 날짜를 넘겨받습니다. date="2023 07 07"
+ * @props count(string) - 회차정보가 있는 상품인 경우 몇회차인지 차수를 넘겨받습니다. count="2"
+ * @props briefs(string) - 거래정보, 적요정보
+ * @props category(string) - 거래종류
+ * @props increase(plus, minus) - 거래정보가 +인경우 plus, -인경우 minus를 넘겨줍니다. increase="plus" (색상지정을 위함)
+ * @props cur(string) - 통화정보를 넘겨줍니다. cur="usd"
+ * @props sum(string) - 거래금액정보를 넘겨줍니다. sum="100,000,000"
+ * @props traded(string) - 거래좌수정보를 넘겨줍니다.
+ * @props time(string) - 거래시간 time="00:00:00"
+ * @props txt(string) - 잔액좌측에 텍스트가 있는 경우 넣어줍니다. txt="balance"
+ * @props balanceCur(string) - 잔액에 통화정보를 넘겨줍니다. balanceCur="usd"
+ * @props balance(string) - 잔액정보를 넘겨줍니다. balance="100,000,000"
+ * @props branch(string) - 지점정보가 있는경우 사용합니다. branch="명동점"
+ * 
+ */ 
+
+function AccList({date, count, briefs, category, increase, cur, sum, traded, time, txt, balanceCur, balance, branch}){
+    const navigate = useNavigate();
+    const {t} = useTranslation();
+    return(
+        <>
+            <li>
+                <CustomA href="#none" btnClass="acc_list_item" callback={()=> navigate(".")}> {/* 거래상세팝업 호출 */}
+                    <div className="top_item">
+                        {date && 
+                            <div className="date_area">
+                                <span className="blind">{t("bk0101_0086")}</span><span className="date">{date}</span> {/* 퍼블검수 1차 : 번역코드 변경 */}
+                            </div>
+                        }
+                        {/* 2023-07-21 마크업 위치 변경 */}
+                        {time && 
+                            <div className="time_area">
+                                <span className="blind">{t("bk0101_0087")}</span><span className="time">{time}</span> {/* 퍼블검수 1차 : 번역코드 변경 */}
+                            </div>
+                        }
+                        {count && <span className="count"><span>{count}</span>{t("bk0101_0156")}</span>}
+                    </div>
+                    <div className="mid_item">
+                        {(briefs || category) &&
+                            <div className="txt_area">
+                                {briefs && <strong className="briefs">{briefs}</strong>}
+                                {category && <strong className="category">{category}</strong>}
+                            </div>
+                        }
+                        <div className={`sum_area${(increase === "plus") ? " acc_plus" : (increase === "minus") ? " acc_minus" : ''}`}>
+                            {cur && <span className="cur">{(increase === "plus") ? "+" : (increase === "minus") ? "-" : ''} {cur}</span>}{sum && <span className="sum">{sum}</span>}
+                            {traded && <><span className="sum">{traded} <span>{t("bk0101_0235")}</span></span></>} {/* 퍼블검수 1차 : 좌수 마크업변경 */}
+                        </div>
+                    </div>
+                    <div className="btm_item">
+                        <div className="balance_area">
+                            {txt && <span className="txt">{txt}</span>}<span className="d-inblk">{balanceCur && <span className="cur">{balanceCur}</span>}{balance && <span className="sum">{balance}</span>}</span> {/* 2023-06-02 d-inblk 마크업 추가 */}
+                        </div>
+                    </div>
+                    {branch && <div className="branch_area">{branch}</div>}
+                </CustomA>
+            </li>
+        </>
+    )
+}
+export default AccList;
