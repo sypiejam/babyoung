@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Top Area</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<style>
+    [class^="icon_"] {background-color:turquoise;}
+    .icon_smj5304 {background-image:url("/public/images/svc/img_callcenter.png");}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Top Area</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Top Area(탑 에어리어)</strong>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">기본형</em>
+                </div>
+                <div class="descbox">
+                    <p>기본형은 아이콘을 적용하는 것을 기본으로 하며, 서비스를 소개하는 Index 성격의 화면 상단에 사용한다.</p>
+                </div>
+                <br>
+                <div class="toparea bg">
+                    <!-- <div class="title_wrap d-flex">
+                        <strong class="title_h1">한글의 경우 타이틀은 1줄</strong><button type="button" class="ico_help btn_help"><span class="blind">도움말</span></button>
+                    </div> -->
+                    <div class="title_wrap">
+                        <strong class="title_h1" style="background-color: aquamarine;">영문 2줄 Top Area Top Area Top Area Top Area 2줄</strong><button type="button" class="ico_help btn_help" style="background-color: aqua;"><span class="blind">도움말</span></button>
+                    </div>
+                    <div class="toparea_desc">
+                        <p class="txt">서브카피는 2줄을 권장한다. 다국어 특성상 높이는 고정으로 사용하지 않는다.</p>
+                        <div class="icon_smj3307 lg img"></div>
+                    </div>
+                    <div class="btn_wrap">
+                        <a href="javascript:void(0);" class="btn_outlined btn_large"><span>Button</span></a>
+                    </div>
+                </div>
+                <div class="toparea">
+                    <div class="title_wrap">
+                        <strong class="title_h1">Top Area(탑 에어리어) 기본형 Top Area Top Area Top Area</strong>
+                    </div>
+                    <div class="toparea_desc">
+                        <div class="icon_certify lg img"></div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">요약형</em>
+                </div>
+                <div class="toparea bg">
+                    <div class="title_wrap">
+                        <strong class="title_h1">서비스를 안내하는 페이지에 사용</strong>
+                    </div>
+                    <div class="toparea_desc">
+                        <p class="txt">서브카피는 3줄까지 사용을 권창한다. 다국어 특성상 높이는 고정으로 사용하지 않는다.</p>
+                    </div>
+                </div>
+                <div class="toparea">
+                    <div class="title_wrap">
+                        <strong class="title_h1">Top Area(탑 에어리어) 요약형 한글의 경우 타이틀은 2줄</strong>
+                    </div>
+                    <div class="toparea_desc">
+                        <p class="txt">서브카피는 3줄까지 사용을 권창한다. 다국어 특성상 높이는 고정으로 사용하지 않는다.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <hr class="hr mg32">
+
+            <div class="title_wrap">
+                <strong class="title_h2">이미지만 있을 경우</strong>
+            </div>
+            <div class="toparea empty">
+                <div class="icon_smj5304 lg img"></div>
+            </div> -->
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+</body>
+</html>
