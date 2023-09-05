@@ -1,0 +1,4 @@
+import TabCont from "./TabCont";
+import TabMenu from "./TabMenu";
+
+export { TabCont, TabMenu };
