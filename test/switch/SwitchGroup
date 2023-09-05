@@ -1,0 +1,49 @@
+import styled from 'styled-components';
+import { StyledSwitchItem } from './SwitchItem'
+
+/**
+ * 
+ * @name SwitchGroup 
+ * @role 주로 시스템 설정, 알림 설정과 같은 단일옵션의 선택/미선택(on/off) 기능으로 사용하며, 2depth가 적용될때 SwitchItem을 감싸서 사용합니다.
+ * @props name(boolean) : 고유한 name을 설정합니다.
+ * @props title(string) : 항목의 타이틀값을 기재합니다.
+ * @props onChange(function) : onChange이벤트가 발생될 때 수행할 함수입니다.
+ * @props chk(boolean) : checked의 값이 boolean형태로 넘어옵니다. 
+ * @props id(string) : label과 input을 연결해줄 고유한 값을 넣어줍니다.
+ * @props disabled(boolean) : disabled일때 설정합니다.
+ * @props info(boolean) : title에 도움말이 들어가는 경우 boolean값으로 넣어줍니다.
+ * @props callback(function) : callback함수 
+ */
+
+function SwitchGroup({children, name, title, onChange, chk, disabled, id, info, callback}){ // 2023-05-23 info, callback 추가
+    return(
+        <>
+            <StyledSwitchGroup>
+                {/* 2023-05-23 마크업 수정 st */}
+                <div className="switch_item">
+                    <strong className="title_lv3"><span>{title}</span>{info && <button type="button" className="ico_help" onClick={()=>callback()}><span className="blind">도움말</span></button>}</strong> 
+                    <label className='switch_box'>
+                        <input type="checkbox" name={name} className="switch" onChange={onChange} checked={chk} disabled={disabled} />
+                        <span className="switch_ball" aria-hidden="true"></span>
+                    </label>
+                </div>
+                {/* 2023-05-23 마크업 수정 end */}
+                <ul className="switchgroup">
+                    {children}
+                </ul>
+            </StyledSwitchGroup>
+        </>
+    )
+}
+const StyledSwitchGroup = styled(StyledSwitchItem)`
+    .switchgroup{
+        padding-left:1.6rem;
+        li{
+            border:0;
+        }
+        .switch_item{ // 2023-05-23 클래스명 수정
+            padding:0 0 2.4rem 0;
+        }
+    }
+`
+export default SwitchGroup
