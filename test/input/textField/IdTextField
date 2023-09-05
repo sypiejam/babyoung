@@ -1,0 +1,43 @@
+import { useTranslation } from "react-i18next";
+
+/**
+ * @name IdTextField 
+ * @role input 주민등록번호 입력 컴포넌트
+ * @props type(string) -  'visible'입력 시 뒷자리 첫 자리 입력할 수 있는 타입 / 'hidden'입력 시 뒷자리가 모두 hidden 된 타입
+ * @props status(string) -  disabled(비활성화), readOnly(읽기만 가능 할 경우), error 상태일 경우
+ * @props placeholder(string) -  주민번호 앞 6자리 input 속성에 쓰이는 placeholder, title 문구
+ **/ 
+
+function IdTextField({ type, status, placeholder }) {
+    const {t} = useTranslation();
+    const classNames = [
+        "inp_field",
+        (status==="disabled") ? ` disabled` : "",
+        (status==="readOnly") ? ` readonly` : "",
+        (status==="error") ? ` is-error` : "",
+        (type==="visible") ? ` field_flex` : "",
+    ].join("");
+
+    return  ( 
+        <div className={classNames}>
+            <div className="inp_item">
+                <input type="number" inputMode="numeric" className="inp_text" defaultValue="" placeholder={placeholder} title={placeholder} />
+                <div className="inp_delete"><button type="button" className="ico_delete inp_button"><span className="blind">삭제</span></button></div>{/* {t(ce0104_0502)} */}
+            </div>
+            <div className="inp_tilde ico_dash"></div>
+            <div className="inp_item">
+                {(type==="hidden")&&
+                    <input type="password" className="inp_text hide" defaultValue="0000000" title="주민등록번호 뒷번호 7자리" maxLength="7" readOnly/> //2023-08-16 placeholder 삭제 , 2023-08-09 defaultValue에 값 추가
+                }
+                {(type==="visible")&&
+                    <>
+                        <input type="number" inputMode="numeric" className="inp_text id_num" defaultValue="" placeholder="●" title="주민번호 뒷자리 첫자리 입력" maxLength="1"/>
+                        <input type="password" className="inp_text pw" defaultValue="" placeholder="******" title="주민등록번호 뒷자리 나머지 6자리" maxLength="6" readOnly/>
+                    </>
+                }                
+            </div>
+        </div>
+    )
+}
+
+export default IdTextField;
