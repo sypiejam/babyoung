@@ -1,0 +1,57 @@
+import styled, { css } from 'styled-components';
+
+/**
+ * 
+ * @name BottomSheetBody
+ * @role 바텀시트 컨텐츠 영역 상위 컴포넌트입니다.
+ * @props hasFixed(boolean) - 버튼이 있을 경우 간격에 따라 hasfixed 추가, 버튼이 없을 경우엔 hasfixed 제거합니다.
+ * @props hType(string) - 컨텐츠 영역 높이값을 변경이 필요할 경우 추가합니다. 기본 높이(default), 높이 유동(hauto), 높이 고정/탭(tabfix) (ex. hType="hauto") // 2023-05-23 수정
+ * @props btmClass - 컴포넌트로 정의된 스타일 외에 더블클래스를 줘서 사용해야 할 때 클래스 네임을 넣어 사용합니다. // 2023-05-23 추가
+ * @props unsetY(boolean) - 컨텐츠안에 탭영역이 들어갈 때 탭영역 안에서 스크롤이 필요할 경우 Inner 걸려있는 overflow-y 해제합니다. // 2023-05-25 추가
+ * 
+ */ 
+
+function BottomSheetBody({ hasFixed, children, hType, btmClass, unsetY }){ // 2023-05-25 추가 // 2023-05-23 hType, btmClass 추가
+    return (
+        <StyledBtmSheetBody hasFixed={hasFixed} hType={hType} className={btmClass} unsetY={unsetY}>{children}</StyledBtmSheetBody> // 2023-05-23 hType, btmClass 추가
+    );
+}
+
+const hTypes = {
+    default: "50.1vh",
+    hauto: "12.1rem",
+    tabfix:"unset"
+};
+
+const StyledBtmSheetBody = styled.div`
+    overflow-y:${({unsetY}) => unsetY ? `unset` : `auto`};// 2023-05-25 추가
+    scroll-behavior:smooth;// 2023-05-25 추가
+
+    // 2023-05-23 css 수정
+    ${({hType}) => hTypes[hType] === hTypes["tabfix"] ? 
+        css`
+            max-height:${({hType}) => hTypes[hType] ?? hTypes["tabfix"]};
+            min-height:37.7rem; // 퍼블검수 1차 : min-height 수정(0810)
+        `
+        :
+        css`
+            max-height:calc(100vh - ${({hType}) => hTypes[hType] ?? hTypes["default"]});
+
+        `
+    };  
+    
+    // 2023-08-08 hasFixed css 수정
+    ${({hasFixed}) => hasFixed ?
+        css`
+            padding-bottom:8.8rem;
+        ` :
+        css`
+            .descbox {
+                margin:1.6rem 0 3.2rem;
+            }
+        ` 
+    };
+`;
+
+
+export default BottomSheetBody;
