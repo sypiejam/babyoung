@@ -1,0 +1,86 @@
+import styled from "styled-components";
+import CustomA from "../button/CustomA";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+/**
+ * @name Pagination 
+ * @role 페이지 이동에 사용하는 페이징 컨포넌트
+ * @props nowNum
+ * @props totalNum
+ * @props showNumCount
+ * @props setNowNum
+ */
+
+function Pagination({nowNum, totalNum, showNumCount, setNowNum}){
+    const navigate = useNavigate();
+    const {t} = useTranslation();
+
+    return(
+        <StyledPagination>
+            <CustomA href="#none" btnClass={"control prev disabled"} callback={()=> navigate(".")}><span className="blind">이전</span></CustomA>{/* 이전버튼, 다음버튼 비활성화시 disabled 클래스 추가 */} {/* {t(bk0203_0059)} */}
+            <div className="pagingbox">
+                <CustomA href="#none" btnClass={"page is-active"} callback={()=> navigate(".")}>1</CustomA>{/* 활성화 페이지일 경우 is-active 클래스 추가 */}
+                <CustomA href="#none" btnClass={"page"} callback={()=> navigate(".")}>2</CustomA>
+                <CustomA href="#none" btnClass={"page"} callback={()=> navigate(".")}>3</CustomA>
+                <CustomA href="#none" btnClass={"page"} callback={()=> navigate(".")}>4</CustomA>
+                <CustomA href="#none" btnClass={"page"} callback={()=> navigate(".")}>5</CustomA>
+            </div>
+            <CustomA href="#none" btnClass={"control next"} callback={()=> navigate(".")}><span className="blind">다음</span></CustomA> {/* {t(co1501_0040)} */}
+        </StyledPagination>
+    )
+}
+
+const StyledPagination = styled.div`
+    position:relative;
+    height:5.6rem;
+    margin-top:2.4rem;
+    padding:1.6rem 0;
+    text-align:center;
+    & .control{
+        position:absolute;
+        top:1.6rem;
+        display:block;
+        width:1.4rem;
+        height:2.4rem;
+        background-size:100%;
+        background-position:0 0;
+        background-repeat:no-repeat;
+        opacity:0.6;
+    }
+    & .prev{
+        left:0;
+        background:url(/images/com/ic_arrow_normal_left_enabled.png) no-repeat 0 0 / 100%;
+    }
+    & .next{
+        right:0;
+        background:url(/images/com/ic_arrow_normal_right_enabled.png) no-repeat 0 0 / 100%;
+    }
+    & .prev.disabled{
+        background:url(/images/com/ic_arrow_normal_left_disabled.png) no-repeat 0 0 / 100%;
+    }
+    & .next.disabled{
+        background:url(/images/com/ic_arrow_normal_right_disabled.png) no-repeat 0 0 / 100%;
+    }
+    & .pagingbox {
+        display:flex;
+        justify-content:center;
+    }
+    & .pagingbox .page{
+        display:inline-block;
+        width:2.4rem;
+        height:2.4rem;
+        font-size:1.5rem;
+        color:#848a92;
+        white-space:nowrap;
+    }
+    & .pagingbox .page~.page{
+        margin-left:1.6rem;
+    }
+    & .pagingbox .is-active{
+        font-weight:500;
+        color:#151c22;
+    }
+`
+
+export default Pagination;
