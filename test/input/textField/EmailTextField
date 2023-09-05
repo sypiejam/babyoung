@@ -1,0 +1,57 @@
+import styled from "styled-components";
+import { useTranslation } from "react-i18next";
+/**
+ * @name EmailTextField 
+ * @role input EmailTextField 단일 컴포넌트
+ * @props status(string) - disabled(비활성화), error 상태일 경우
+ * @props placeholder(string) - input 속성인 placeholder, title에 사용되는 문구
+ * @props defaultValue(string) - value 값이 존재할 경우 사용
+ * @poprs errorMsg(string) - 에러 메세지 내용
+ **/ 
+
+function EmailTextField({ status , placeholder ,defaultValue, errorMsg}) {
+    const {t} = useTranslation();
+    const classNames = [
+        "inp_field",
+        (status==="disabled") ? ` disabled` : "",
+        (status==="error") ? ` is-error` : "",
+    ].join("");
+
+    return  ( 
+        <StyledEmail>
+            <div className={classNames}>
+                <div className="inp_item">
+                    {/* D : 이메일 목록 노출시 aria-expanded="true", 미노출시 aria-expanded="false" 
+                        이메일자동완성 옵션선택시 aria-activedescendant="autocomplete_item 옵션의 id값" */}
+                    <input type="email" className="inp_text" defaultValue={defaultValue} placeholder={placeholder} title={placeholder} disabled={(status === "disabled"? "disabled" : "")} role="combobox" aria-autocomplete="list" aria-expanded="true" aria-owns="listBox" aria-activedescendant=""/>
+                    <div className="inp_delete">
+                        <button type="button" className="ico_delete inp_button"><span className="blind">{t('ce0104_0502')}</span></button>
+                    </div>
+                </div>
+            </div>
+            {(status === "error")&&
+                <div className="txt_error">
+                    <p>{errorMsg}</p>
+                </div>
+            }
+            {/* S : 이메일 입력시 하단에 이메일예시 노출 */}
+            <div className="autocomplete">
+                <ul role="listbox" id="listBox">
+                    {/* D : 이메일자동완성 옵션선택시 aria-selected="true" 미선택시 aria-selected="false" */}
+                    <li className="autocomplete_item" role="option" aria-selected="false" id="option01"><span><em className="fc-blue02">woori</em>@gmail.com</span></li>
+                    <li className="autocomplete_item" role="option" aria-selected="false" id="option02"><span><em className="fc-blue02">woori</em>@naver.com</span></li>
+                    <li className="autocomplete_item" role="option" aria-selected="false" id="option03"><span><em className="fc-blue02">woori</em>@daum.net</span></li>
+                    <li className="autocomplete_item" role="option" aria-selected="false" id="option04"><span><em className="fc-blue02">woori</em>@hanmail.net</span></li>
+                    <li className="autocomplete_item" role="option" aria-selected="false" id="option05"><span><em className="fc-blue02">woori</em>@nate.com</span></li>
+                </ul>
+            </div>
+            {/* E : 이메일 입력시 하단에 이메일예시 노출 */}
+        </StyledEmail>
+    )
+}
+const StyledEmail = styled.div`
+    .txt_error, .autocomplete{
+        display:block;
+    }
+`;
+export default EmailTextField;
