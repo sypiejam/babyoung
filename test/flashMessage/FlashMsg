@@ -1,0 +1,94 @@
+import styled from "styled-components";
+
+/**
+ * @name FlashMsg 
+ * @role 사용자가 진행한 프로세스가 완료되었을 때 처리 결과를 알려준다
+ * @props type(string) - 완료 : complete, 오류 : error, 경고 : warning 으로 넣어서 lottie 변경
+ * @props title(string) - 오류 타이틀
+ * @props message(string) - 부가 메세지
+ * @props errorCode(string) - 오류코드 입력 (ex.[BEDDP02446] Enter error code )
+ * @props className(string) - 더블 클래스로 스타일을 줘야할 경우 사용
+ **/ 
+
+function FlashMsg({type,title,message,errorCode, className}) {
+
+    return  ( 
+      <StyledFlashMsg className={className}>
+        <div className="result_ico">
+          <div className="lottieplayer" aria-hidden="true">
+          {(type === "complete") &&
+              <lottie-player
+              style={{ width: "10.4rem", height: "10.4rem" }}
+              src="/images/motion/img_flash_done.json"
+              background="transparent"
+              speed=".8"
+              autoplay
+            ></lottie-player> 
+          }
+          {(type === "error") &&
+              <lottie-player
+              style={{ width: "10.4rem", height: "10.4rem" }}
+              src="/images/motion/img_flash_error.json"
+              background="transparent"
+              speed=".8"
+              autoplay
+            ></lottie-player>    
+          }
+          {(type === "warning") &&
+              <lottie-player
+              style={{ width: "10.4rem", height: "10.4rem" }}
+              src="/images/motion/img_flash_warning01.json"
+              background="transparent"
+              speed=".8"
+              autoplay
+            ></lottie-player>
+          }
+          </div>
+        </div>
+        <h1 className="result_tit">{title}</h1>{/* 접근성검수 : h1으로 태그변경 */}
+        <p className="result_txt">{message}</p>
+        {(errorCode) &&
+          <div className="descbox bg">
+              <span>{errorCode}</span>
+          </div>  
+        }
+      </StyledFlashMsg>
+    )
+  }
+
+// 퍼블검수 1차 : 디자인 수정반영(css 전체반영해주세요)
+const StyledFlashMsg = styled.div`
+  margin:1.2rem 0 4.8rem;
+  text-align:center;
+  &.first{
+    margin-top:7.2rem;
+  }// 2023-06-02 margin값 수정
+  & .result_ico {
+    width:10.4rem;
+    height:10.4rem;
+    margin:0 auto;
+  }
+  & .result_tit {
+    display:block;
+    margin-top:2.4rem;
+    font-size:2rem;
+    font-weight:500;
+  }
+  & .result_txt {
+    display:block;
+    margin-top:0.8rem;
+    color:#4c5459;
+  }
+  & .descbox {
+    margin-top:2.4rem;
+    font-size:1.4rem;
+    color:#4c5459;
+    &.bg {
+      padding:1.2rem 1.6rem;
+      border-radius:0.6rem;
+      background:#f2f5f9;
+    }
+  }
+`;
+
+export default FlashMsg;
