@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Search Field</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<style>
+    .sch_popup .inp_button {background-color:rgba(255, 0, 0, 0.05);} /* 버튼영역 표시 */
+</style>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Search Field</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <div class="title_wrap">
+                    <strong class="title_h1">Search Field(검색)</strong>
+                </div>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">기본형</em>
+                </div>
+                <div class="field_wrap"><!-- 에러시 클래스 is-error 추가 -->
+                    <em class="inp_title">Enabled</em>
+                    <div class="inp_field sch_field"><!-- 비활성화 클래스 disabled 추가, 입력을 완료한 상태 또는 readonly 일때 filled 추가 -->
+                        <input type="search" class="inp_text inp_search" value="Search name" placeholder="Search name" title="" />
+                        <div class="field_item">
+                            <button type="button" class="ico_search inp_button"><span class="blind">검색</span></button>
+                        </div>
+                    </div>
+                    <div class="txt_error">
+                        <p>Enter an error message</p>
+                    </div>
+                    <div class="txt_helper">
+                        <p class="bullet_disc">Enter an additional description.</p>
+                    </div>
+                </div>
+                <!-- 검생영역 풀팝업(직원찾기 등) 띄울 때 div.field_wrap에 sch_popup 추가 -->
+                <div class="field_wrap sch_popup">
+                    <em class="inp_title">직원찾기</em>
+                    <div class="inp_field sch_field filled">
+                        <input type="search" class="inp_text inp_search" value="" placeholder="Please select a referral" title="Please select a referral" readonly />
+                        <div class="field_item">
+                            <button type="button" class="ico_search inp_button"><span class="blind">검색</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="hr">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">박스형</em>
+                </div>
+                <div class="field_wrap"><!-- 에러시 클래스 is-error 추가 -->
+                    <div class="inp_field sch_field searchbox"><!-- 비활성화 클래스 disabled 추가 -->
+                        <input type="search" class="inp_text inp_search" value="Search name" placeholder="Search name" title="" />
+                        <div class="border"></div>
+                        <div class="field_item">
+                            <button type="button" class="ico_search inp_button"><span class="blind">검색</span></button>
+                        </div>
+                    </div>
+                    <div class="txt_error">
+                        <p>Enter an error message</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+</body>
+</html>
