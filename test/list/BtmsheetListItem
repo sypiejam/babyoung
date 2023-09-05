@@ -1,0 +1,104 @@
+import styled, {css} from "styled-components";
+import { CustomA } from "../button";
+
+/**
+ * 
+ * @name BtmsheetListItem 
+ * @role 여러 항목 중에 한개의 항목을 선택하는데 활용하며 바텀시트에서 사용합니다.
+ * @props type(a, radio) : 바텀시터에 들어간 옵션을 a또는 radio로 설정합니다.
+ * @props name(string) : 라디오그룹의 name을 지정합니다. 동일그룹 내의 name값은 동일하게 사용합니다.
+ * @props id(string) : 라디오의 인풋과 레이블을 연결해주며 id값이 겹치지 않도록 항목별로 고유한 값을 넣어줍니다.
+ * @props title(string) : 항목의 타이틀값을 기재합니다.
+ * @props cicode(boolean) : 은행ci아이콘이 들어가는 리스트일 경우 사용합니다.
+ * @props flagcode(string) : 국가아이콘이 들어가는 리스트일 경우 사용합니다.
+ * @props chkicon(boolean) : 옵션선택시 파란색 체크아이콘이 생성되는 경우 사용합니다.
+ * @props onchange(function) : onchange 이벤트
+ * @props callback(function) : callback 이벤트
+ * @props chk(boolean) : default옵션이 있는 경우 설정합니다.
+ */
+
+function BtmsheetListItem({type, name, id, title, cicode, flagcode, chkicon, onchange, callback, chk, disabled}){ // 2023-06-27 disabled 추가
+    return(
+        <>
+            {
+                type === "a" ? <StyledBtmsheetListItem chkicon={chkicon} cicode={cicode}><CustomA href="#" btnClass={`list_item ${disabled && "disabled"}`} callback={callback}>{title}</CustomA></StyledBtmsheetListItem>  // 2023-06-27 disabled 추가
+                : <StyledBtmsheetListItem chkicon={chkicon} cicode={cicode}>
+                    <input 
+                        type="radio"
+                        name={name}
+                        id={id}
+                        value={title} 
+                        onChange={onchange}
+                        defaultChecked={chk} // 2023-06-08 속성변경 checked > defaultChecked
+                        disabled={disabled}  // 2023-06-27 disabled 추가
+                    />
+                    <label htmlFor={id} className="list_item">
+                        {cicode && <i className={`ci_bank ci_bank_${cicode}`}></i>}
+                        {flagcode && <i className={`ico_flag ${flagcode}`}></i>}
+                        <span className="vm">{title}</span>
+                    </label>
+                </StyledBtmsheetListItem>
+            }
+        </>
+    )
+}
+
+// 퍼블검수 1차 : 디자인 수정 반영 (css전체반영해주세요)
+export const StyledBtmsheetListItem = styled.li`
+    border-bottom:1px solid #f2f5f9;
+    input{
+        overflow:hidden;
+        position:absolute;
+        width:1px;
+        height:1px;
+        margin:-1px;
+        color:transparent;
+        clip:rect(0 0 0 0);
+    }
+    .list_item{
+        position:relative;
+        display:block;
+        width:100%;
+        min-height:6rem;
+        padding:1.8rem 0;
+        font-size:1.5rem;
+        color:#333a40;
+        height:${props => (props.cicode || props.flagcode) && 'auto'};
+        padding-right:${props => props.chkicon && '3.4rem'}
+    }
+    // 2023-06-27 disabled 추가 st
+    .list_item.disabled {
+        color:#c4cbd3;
+    }
+    input[disabled] + .list_item{
+        color:#c4cbd3;
+    }
+    // 2023-06-27 disabled 추가 end
+    ${props => props.chkicon && css`
+        input:checked + label{
+            color:#1490ef;
+            font-weight:500;
+        }
+        input:checked + label:after{
+            content:'';
+            position:absolute;
+            width:2.4rem;
+            height:2.4rem;
+            top:50%;
+            right:0;
+            background:url(/images/com/check_small_enabled_on.png) no-repeat 0 0 / 100%;
+            transform:translateY(-50%)
+        }
+    `}
+    .ci_bank{
+        display:inline-block;
+        width:2.4rem;
+        height:2.4rem;
+        margin-right:0.8rem;
+        vertical-align:middle;
+    }
+    .ico_flag{
+        margin-right:0.8rem;
+    }
+`
+export default BtmsheetListItem
