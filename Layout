@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Layout</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">헤더 제목영역(최대 두줄이 들어갑니다)</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <!-- content -->
+        <div class="content">
+            
+        </div>
+        <!-- //content -->
+
+        <!-- floating buttom -->
+        <div class="btm_fixed">
+            <div class="btn_wrap">
+                <div class="d-flex asym">
+                    <a href="javascript:void(0);" class="btn_secondary"><span>이전</span></a>
+                    <a href="javascript:void(0);" class="btn_primary"><span>다음</span></a>
+                </div>
+            </div>
+        </div>
+        <!-- //floating buttom -->
+    </div>
+    <!-- //container -->
+</div>
+</body>
+</html>
