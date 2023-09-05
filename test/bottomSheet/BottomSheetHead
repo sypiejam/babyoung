@@ -1,0 +1,46 @@
+import styled from 'styled-components';
+
+/**
+ * 
+ * @name BottomSheetHead
+ * @role 바텀시트 타이틀 컴포넌트입니다.
+ * @props title(string) - 타이틀이 있는 경우 기재합니다.
+ * @props btnClose(boolean) - 닫기 버튼이 필요할 경우 btnClose 추가해줍니다.
+ * 
+ */ 
+
+function BottomSheetHead({ title, btnClose }){
+    return (
+        <StyledBtmSheetHead>
+            { title && <strong className="title_h1">{title}</strong> } {/* 2023-05-15 className 추가 */}
+            { btnClose &&
+                <button className="btn_close">
+                    <span className="blind">닫기</span>
+                </button>
+            }
+        </StyledBtmSheetHead>
+    );
+}
+
+// 2023-06-21 css 수정
+export const StyledBtmSheetHead = styled.div`
+    display:flex;
+    padding:2.4rem 2rem 1.2rem 2rem; // 2023-06-07 수정
+    min-height:6.1rem;
+
+    // 2023-05-18 title_h1 css 추가, 2023-06-05 수정
+    .title_h1 {
+        flex:1;
+        font-size:1.8rem;
+    }
+
+    .btn_close {
+        display:inline-block;
+        width:2.4rem;
+        height:2.4rem;
+        margin:0 -0.4rem 0 1.6rem;
+        background:url(/images/com/ic_header_close.png) no-repeat 0 0 / 100%;
+    }
+`;
+
+export default BottomSheetHead;
