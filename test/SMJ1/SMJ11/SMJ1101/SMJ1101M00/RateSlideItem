@@ -1,0 +1,18 @@
+/**
+ * @name RateSliderItem 
+ * @role 환율슬라이드
+ * @props flagCode(string) : 국가코드
+ * @props cur(string) : 통화 
+ * @props rate(string) : 환율 
+*/
+
+function RateSliderItem({flagCode, cur, rate}){
+    return (
+        <li className="rate_item">
+            <i className={`ico_flag ${flagCode}`}></i>
+            <span className="cur">{cur}</span> 
+            <span className="rate">{rate}</span>
+        </li>
+    )
+}
+export default RateSliderItem;
