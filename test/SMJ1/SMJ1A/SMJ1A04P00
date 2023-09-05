@@ -1,0 +1,129 @@
+/* eslint-disable react/jsx-pascal-case */
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import PopupFrame from "../../../../../common/components/popup/PopupFrame";
+import PopupHeader from "../../../../../common/components/popup/PopupHeader";
+import PopupContainer from "../../../../../common/components/popup/PopupContainer";
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer";
+import { Button, ButtonWrap, FloatingButtonWrap, CustomA } from "../../../../../common/components/button/index";
+import CheckBox from "../../../../../common/components/input/CheckBox";
+import CheckBoxGroup from "../../../../../common/components/input/CheckBoxGroup";
+import Notice from "../../../../../common/components/Notice";
+import SMJ1A04P00_btm from "./SMJ1A04P00_btm";
+
+// 스마트간편인증 AOS
+function SMJ1A04P00(){
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    return(
+        <PopupFrame>
+            <PopupHeader type="normal" title={t("co0804_0001")} />
+            <PopupContainer hasFixed>
+                <div className="thead_wrap">
+                    <strong className="title_h1">{t("co0804_0002")}</strong>
+                </div>
+                <div className="table_wrap">
+                    <div className="table tbl_round">
+                        <table>
+                            <caption>{t("co1501_0029")}</caption>
+                            <colgroup>
+                                <col style={{width:"55%"}} />
+                                <col />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">{t("co1501_0029")}</th>
+                                    <td><span className="num">010-0000-9999</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div className="dvgroup">
+                    <div className="selections_wrap">
+                        <div className="selections_box">
+                            <CheckBoxGroup allCheck count="7">
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox name="check" id="check01" type="small" text={t('co0804_0003')}/>
+                                        </div>
+                                        <CustomA href="" btnClass="ico_arrow small"><span className="blind">바로가기</span></CustomA>
+                                    </div>
+                                </li>
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox name="check" id="check02" type="small" text={t('co0804_0004')}/>
+                                        </div>
+                                        <CustomA href="" btnClass="ico_arrow small"><span className="blind">바로가기</span></CustomA>
+                                    </div>
+                                </li>
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox name="check" id="check03" type="small" text={t('co0804_0005')}/>
+                                        </div>
+                                        <CustomA href="" btnClass="ico_arrow small"><span className="blind">바로가기</span></CustomA>
+                                    </div>
+                                </li>
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox name="check" id="check04" type="small" text={t('co0804_0006')}/>
+                                        </div>
+                                        <CustomA href="" btnClass="ico_arrow small"><span className="blind">바로가기</span></CustomA>
+                                    </div>
+                                </li>
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox name="check" id="check05" type="small" text={t('co0804_0007')}/>
+                                        </div>
+                                        <CustomA href="" btnClass="ico_arrow small"><span className="blind">바로가기</span></CustomA>
+                                    </div>
+                                </li>
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox name="check" id="check06" type="small" text={t('co0804_0008')}/>
+                                        </div>
+                                        <CustomA href="" btnClass="ico_arrow small"><span className="blind">바로가기</span></CustomA>
+                                    </div>
+                                </li>
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox name="check" id="check07" type="small" text={t('co0804_0009')}/>
+                                        </div>
+                                        <CustomA href="" btnClass="ico_arrow small"><span className="blind">바로가기</span></CustomA>
+                                    </div>
+                                </li>
+                            </CheckBoxGroup>
+                        </div>
+                    </div>
+                </div>
+                <Notice>
+                    {/* 퍼블검수 1차 : div.bullet 삭제 */}
+                    <p className="bullet_item">{t("co0804_0010")}</p>
+                </Notice>
+
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <Button tag="button" size="lg" status="primary" text={t('co0804_0011')} 
+                            onClick={()=>{
+                                dispatch(bottomSheetAction({
+                                    title: "",
+                                    message: <SMJ1A04P00_btm />,
+                                    state: null
+                                }))
+                            }}
+                        />
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </PopupContainer>
+        </PopupFrame>
+    );
+}
+
+export default SMJ1A04P00;
