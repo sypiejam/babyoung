@@ -1,0 +1,59 @@
+import { useSelector, useDispatch } from "react-redux";
+import { StyledDimmed } from '../dimmed/Dimmed';
+import { StyledDialogWrap, StyledDialogBox } from '../dialog/DialogFrame';
+import { useEffect, useRef } from "react";
+import { customPopupAction } from "../../store/customPopupReducer";
+
+/**
+ * 
+ * @name CustomPopupFrame
+ * @role 커스텀팝업을 감싸는 상위 컴퍼넌트입니다. 바텀시트보다 주목도를 높여야 할 때 사용합니다.
+ * @props fixed(boolean) - 버튼이 있을 경우 간격에 따라 hasfixed 추가, 버튼이 없을 경우엔 hasfixed 제거합니다. (ex. fixed="hasFixed")
+ * 
+ */ 
+
+function CustomPopupFrame() {
+
+    const {title, message} = useSelector(state => state.customPopupReducer);
+    const customRef = useRef();
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        document.body.classList.add("hidden");
+
+    return () => {
+        if(!document.querySelector(".react-layer")) {
+            document.body.classList.remove("hidden");
+        }
+    }
+    },[])
+
+    const onCloseCustomPopup = (e) => {
+        if(customRef.current.querySelector(".btn_close")) {
+            console.log(customRef.current.childNodes[0]);
+            if(!customRef.current.childNodes[0].contains(e.target)) {
+                    dispatch(customPopupAction({
+                        title : "",
+                        message : null,
+                        state : null
+                    }))
+            }
+        }
+    }
+
+    return (
+        <StyledDialogWrap>
+            <StyledDimmed  />
+            <StyledDialogBox ref={customRef} onClick={onCloseCustomPopup}>
+                <>
+                    {title}
+                </>
+                <>
+                    {message}
+                </>
+            </StyledDialogBox>
+        </StyledDialogWrap>
+    );
+}
+
+export default CustomPopupFrame;
