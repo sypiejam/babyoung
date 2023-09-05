@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Text Container</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Text Container</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <div class="container">
+        <div class="content">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <h2 class="title_h1">Color</h2>
+                </div>
+                <div class="fc-blue01">.fc-blue01 : &#35;1490ef</div>
+                <div class="fc-blue02">.fc-blue02 : &#35;1056c3</div>
+                <div class="fc-blue03">.fc-blue03 : &#35;0b3497</div>
+                <div class="fc-point01">.fc-point01 : &#35;e5483d</div>
+                <div class="fc-point02 bg-blue">.fc-point02 : &#35;fff27d / .bg-blue : &#35;0b3497</div>
+                <div class="fc-gray01 bg-gray11">.fc-gray01 : &#35;151c22 / .bg-gray11 : &#35;f7f9fc</div>
+                <div class="fc-gray02">.fc-gray02 : &#35;333a40</div>
+                <div class="fc-gray03">.fc-gray03 : &#35;4c5459</div>
+                <div class="fc-gray04">.fc-gray04 : &#35;686e75</div>
+                <div class="fc-gray05">.fc-gray05 : &#35;848a92</div>
+                <div class="fc-gray06">.fc-gray06 : &#35;a1a9b2</div>
+                <div class="fc-gray07">.fc-gray07 : &#35;c4cbd3</div>
+                <div class="fc-gray08">.fc-gray08 : &#35;d5dbe3</div>
+                <div class="fc-gray09">.fc-gray09 : &#35;e4eaf2</div>
+                <div class="fc-gray10">.fc-gray10 : &#35;f2f5f9</div>
+                <div class="fc-gray11 bg-gray">.fc-gray11 : &#35;f7f9fc / .bg-gray : &#35;e4eaf2</div>
+            </div>
+
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <h2 class="title_h1">Desc Box / color : &#35;333a40</h2>
+                </div>
+                <div class="descbox">
+                    <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한 사람 대한으로 길이 보전하세;</p>
+                    <strong class="title_lv3 mt8 mb4">말줄임 1줄 .tx-over</strong>
+                    <p class="tx-over">남산 위에 저 소나무 철갑을 두른 듯 바람 서리 불변함은 우리 기상일세 무궁화 삼천리 화려강산 대한 사람 대한으로 길이 보전하세</p>
+                    <strong class="title_lv3 mt8 mb4">말줄임 2줄 .tx-over.elli2</strong>
+                    <p class="tx-over elli2">가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편단심일세 무궁화 삼천리 화려강산 대한 사람 대한으로 길이 보전하세</p>
+                </div>
+                <hr class="hr mg16">
+                <div class="descbox bg">
+                    <p>padding:1.2rem 1.6rem; Table of Tax Treaty Limitation Rates by Contracting State.</p>
+                    <div class="link_wrap tr"><button type="button" class="link_line"><span>Button</span></button></div>
+                </div>
+                <hr class="hr mg16">
+                <div class="descbox bg wd">
+                    <ul class="bullet">
+                        <li class="bullet_disc">.descbox.bg.wd</li>
+                        <li class="bullet_disc">padding:1.6rem 2rem;</li>
+                        <li class="bullet_disc">Enter the content Enter the content Enter the content.</li>
+                    </ul>
+                </div>
+                <hr class="hr mg16">
+                <div class="descbox bd">
+                    <div class="title_wrap">
+                        <strong class="title_h3">Title Bullet</strong>
+                    </div>
+                    <ul class="bullet">
+                        <li class="bullet_number"><span class="num">1.</span>.descbox.bd</li>
+                        <li class="bullet_number"><span class="num">2.</span>padding:1.6rem 2rem;border:1px solid &#35;d5dbe3;border-radius:0.6rem;</li>
+                        <li class="bullet_number"><span class="num">3.</span>Enter the content.</li>
+                    </ul>
+                </div>
+                <hr class="hr mg16">
+                <div class="bordbox">
+                    <div class="title_wrap">
+                        <strong class="title_h3">.bordbox</strong>
+                    </div>
+                    <div class="graybox fc-gray04">
+                        <p>padding:2.4rem 2rem;border:1px solid #e4eaf2;border-radius:1rem;</p>
+                    </div>
+                    <!-- <div class="title_wrap title_flex mb4">
+                        <strong class="title_h3">신분증</strong>
+                        <span class="badge_item">촬영완료</span>
+                    </div>
+                    <div class="fc-gray04"><span>여권</span></div>
+                    <div class="btn_wrap mt24">
+                        <a href="javascript:void(0);" class="btn_outlined btn_medium"><span>다시 촬영하기</span></a>
+                    </div> -->
+                </div>
+                <hr class="hr mg16">
+                <div class="title_wrap">
+                    <h2 class="title_h1">Gray font Box</h2>
+                </div>
+                <div class="graybox">
+                    <p>font-size:1.3rem; + .fc-gray&#35;&#35;</p>
+                </div>
+            </div>
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <h3 class="title_h1">Title Big</h3>
+                </div>
+                <div class="title_wrap">
+                    <strong class="title_h1">Level 1 = Title H1</strong>
+                </div>
+                <div class="title_wrap help_wrap">
+                    <strong class="title_h3">Level 2 = Title H3</strong>
+                    <button type="button" class="ico_help btn_help"><span class="blind">도움말</span></button>
+                </div>
+                <div class="title_wrap">
+                    <strong class="title_lv3">Level 3 (1.5rem) 400 &#35;4c5459</strong>
+                </div>
+                <hr class="hr mg8">
+                <div class="title_wrap title_flex">
+                    <div class="d-flex">
+                        <i class="ico_flag kr"></i>
+                        <strong class="title_h2">Title Level 2</strong>
+                    </div>
+                    <div class="chk_star">
+                        <input type="checkbox" id="chkStar" class="blind" />
+                        <label for="chkStar" class="ico_star"><span class="blind">즐겨찾기 등록</span></label>
+                    </div>
+                </div>
+                <hr class="hr mg8">
+                <div class="title_wrap title_flex">
+                    <strong class="title_h2">타이틀 + 버튼</strong>
+                    <div class="btn_wrap">
+                        <button type="button" class="btn_contained_gray btn_small btn_icon btn_icon_delete">
+                            <span>Delete</span>
+                        </button>
+                    </div>
+                </div>
+                <hr class="hr mg8">
+                <a href="#none" class="title_wrap title_flex">
+                    <strong class="title_h2">Title + Arrow</strong>
+                    <i class="ico_arrow"></i>
+                </a>
+            </div>
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <h3 class="title_h1">Title Text</h3>
+                </div>
+                <div class="title_wrap help_wrap">
+                    <strong class="title_lv3">타이틀 + 도움말</strong>
+                    <button type="button" class="ico_help btn_help"><span class="blind">도움말</span></button>
+                </div>
+                <hr class="hr mg8">
+                <div class="title_wrap title_flex">
+                    <div class="d-flex">
+                        <i class="ico_flag kr"></i>
+                        <strong class="title_lv3">타이틀 + 아이콘</strong>
+                    </div>
+                    <div class="chk_star">
+                        <input type="checkbox" id="chkStar" class="blind" />
+                        <label for="chkStar" class="ico_star"><span class="blind">즐겨찾기 등록</span></label>
+                    </div>
+                </div>
+                <hr class="hr mg8">
+                <div class="title_flex link_wrap">
+                    <em class="inp_title">Mobile phone number flex</em>
+                    <a href="javascript:void(0);" class="link_arr arr_right"><span>Change customer information</span></a>
+                </div>
+                <hr class="hr mg8">
+                <div class="title_float link_wrap">
+                    <div class="title_wrap">
+                        <em class="inp_title">Subject float Subject Subject</em>
+                    </div>
+                    <a href="javascript:void(0);" class="link_arr arr_right"><span>Arrow right link</span></a>
+                </div>
+                <hr class="hr mg8">
+                <div class="title_float link_wrap">
+                    <div class="title_wrap help_wrap">
+                        <em class="inp_title">Subject float Subject Subject Subject Subject Subject Subject</em>
+                        <button type="button" class="ico_info btn_info"><span class="blind">도움말</span></button>
+                    </div>
+                    <a href="javascript:void(0);" class="link_arr arr_right"><span>Arrow right link</span></a>
+                </div>
+                <hr class="hr mg8">
+                <div class="title_wrap d-float">
+                    <strong class="title_lv3">타이틀 + 버튼은 제목 우측에 배치하되, 문구가 길어질 경우에는 제목과 버튼의 배치를 줄바꿈하여 표현할 수 있다.</strong>
+                    <div class="link_wrap">
+                        <a href="javascript:void(0);" class="link_arr arr_right"><span>button</span></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <h2 class="title_h1">Helper</h2>
+                </div>
+                <div>
+                    <div class="title_wrap">
+                        <strong class="title_lv3">텍스트형</strong>
+                    </div>
+                    <!-- default : align right / bullet : align left-->
+                    <!-- Form 요소 및 그룹, 항목의 설명을 돕는 보조 텍스트로 사용-->
+                    <div class="txt_helper">
+                        <p class="bullet_disc">Enter an additional description.</p>
+                        <p>블릿을 제거할 경우 우측 정렬</p>
+                    </div>
+                    <div>
+                        <p class="txt_caption">Text Caption 1.3rem / &#35;848a92</p>
+                    </div>
+                    <!-- default : display none & align left -->
+                    <!-- Textfield 하단에 에러값을 입력한 경우 사용 -->
+                    <div class="is-error">
+                        <div class="txt_error">
+                            <p>Enter an error message</p>
+                        </div>
+                        <div class="txt_error">
+                            <p class="tr">Enter an error message</p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="hr mg16">
+                <div>
+                    <div class="title_wrap">
+                        <strong class="title_lv3">금액형</strong>
+                    </div>
+                    <div class="txt_amount">
+                        <button type="button" class="btn_refresh">
+                            <div class="d-flex"><span>Balance inquiry failed</span><i class="ico_refresh ml8"></i></div>
+                        </button>
+                    </div>
+                    <!-- default : align right -->
+                    <!-- Textfield 상단에 입력된 금액을 나열해주는 영역 -->
+                    <div class="txt_amount">
+                        <em class="num">900</em><span class="unit">Billion</span>
+                    </div>
+                    <!-- Textfield 하단에 사용자 잔액을 보여주는 영역 : 클래스 btm 추가 -->
+                    <div class="txt_amount btm">
+                        <span class="unit">Balance</span><span class="unit">KRW</span><em class="num">9,999,000</em>
+                    </div>
+                </div>
+            </div>
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <h2 class="title_h1">Footnote</h2>
+                </div>
+                <div class="descbox">
+                    <p class="txt_footnote">Enter the content Enter the content Enter the content.</p>
+                    <p class="txt_footnote fc-point01">Enter the content Enter the content.</p>
+                </div>
+            </div>
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <h2 class="title_h1">Info / Help</h2>
+                </div>
+                <div class="descbox">
+                    <p class="txt_info">단, 등록되어 있는 스마트폰을 통해서만 이용 가능합니다.</p>
+                    <p class="txt_help">단, 등록되어 있는 스마트폰을 통해서만 이용 가능합니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
