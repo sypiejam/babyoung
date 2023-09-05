@@ -1,0 +1,107 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";// 2023-06-07 추가
+import { useNavigate } from "react-router-dom";// 2023-06-07 추가
+import { useTranslation } from "react-i18next";
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer";// 2023-06-07 추가
+import PopupFrame from "../../../../../common/components/popup/PopupFrame"
+import PopupHeader from "../../../../../common/components/popup/PopupHeader"
+import PopupContainer from "../../../../../common/components/popup/PopupContainer"
+import SearchField from "../../../../../common/components/input/textField/SearchField";
+import Nodata from "../../../../../common/components/empty/Empty";
+import { SegmentWrap, SegmentControl } from "../../../../../common/components/segment/index";
+import { CustomA } from "../../../../../common/components/button";// 2023-06-07 추가
+import BadgeItem from "../../../../../common/components/badge/BadgeItem";// 2023-06-07 추가
+import SMJ1I01P00_btm from "./SMJ1I01P00_btm";// 2023-06-07 추가
+
+function SMJ1I01P00(){
+    const {t} = useTranslation();
+    const dispatch = useDispatch();// 2023-06-07 추가
+    const navigate = useNavigate();// 2023-06-07 추가
+    const [segmentIdx, setSegmentIdx] = useState(0);
+
+    return(
+        <>
+            <PopupFrame>
+                <PopupHeader type="normal" title={t("fx0301_0114")} />
+                <PopupContainer>
+                    <div className="dvgroup first">
+                        <div className="title_wrap">
+                            <strong className="title_lv3">{t("fx0301_0616")}</strong>
+                        </div>
+                        <SegmentWrap groupname="searchLanguage" activeIdx={segmentIdx}>
+                            <SegmentControl id="SMJ1I01P00_1" title="KOR" onChange={setSegmentIdx}/>
+                            <SegmentControl id="SMJ1I01P00_2" title="ENG" onChange={setSegmentIdx} />
+                        </SegmentWrap>
+                    </div>
+                    <div className="dvgroup">
+                        <div className="field_wrap">
+                            <SearchField title={t("fx0301_0617")} icoText="주소 검색" />
+                            <div className="txt_helper">
+                                <p className="bullet_disc">{t("fx0301_0131")}</p>
+                                {/*2023-06-12 영문으로 검색시 노출 문구 추가 <p className="bullet_disc">{t("fx0301_0632")}</p> */}
+                            </div>
+                        </div>
+                        <div className="descbox bg">
+                            <ul className="bullet">
+                                <li className="bullet_disc">{t("fx0301_0132")}</li>
+                                <li className="bullet_disc">{t("fx0301_0134")}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    {/* s 2023-06-07 마크업 변경 */}
+                    <hr className="hr full thick" />
+
+                    {/* 검색결과가 있는 경우 */}
+                    <ul className="listbox mb0">
+                        <li className="custbox_list">
+                            <div className="addrbox">
+                                <div className="addrbox_top">
+                                    <strong className="title_h2">04631</strong>
+                                </div>
+                                <div className="addrbox_btm">
+                                    <CustomA href="#none" btnClass="addrbox_item" callback={()=>
+                                            dispatch(bottomSheetAction({
+                                            title: "",
+                                            message : <SMJ1I01P00_btm />,
+                                            state : null
+                                        }))
+                                    }>
+                                        <BadgeItem text="KOR" />
+                                        <span className="text">서울 중구 회현동 소공로 48 (회현동2가, 우리금융디지털타워)</span>
+                                    </CustomA>
+                                    <CustomA href="#none" btnClass="addrbox_item" callback={()=> navigate(".")}>
+                                        <BadgeItem color="disabled" text="ENG" />
+                                        <span className="text">48, Sogong-ro, Jung-gu, Seoul, Republic of Korea</span>
+                                    </CustomA>
+                                </div>
+                            </div>
+                        </li>                            
+                        <li className="custbox_list">
+                            <div className="addrbox">
+                                <div className="addrbox_top">
+                                    <strong className="title_h2">04631</strong>
+                                </div>
+                                <div className="addrbox_btm">
+                                    <CustomA href="#none" btnClass="addrbox_item" callback={()=> navigate(".")}>
+                                        <BadgeItem text="KOR" />
+                                        <span className="text">서울 중구 회현동 소공로 48 (회현동2가, 우리금융디지털타워)</span>
+                                    </CustomA>
+                                    <CustomA href="#none" btnClass="addrbox_item" callback={()=> navigate(".")}>
+                                        <BadgeItem color="disabled" text="ENG" />
+                                        <span className="text">48, Sogong-ro, Jung-gu, Seoul, Republic of Korea</span>
+                                    </CustomA>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    {/* //e 2023-06-07 마크업 변경 */}
+
+                    {/* 검색결과가 없는 경우 */}
+                    <Nodata txt={t("co1200_0007")} />{/* 2023-06-06 dvgroup 삭제 */}
+                </PopupContainer>
+            </PopupFrame>
+        </>
+    );
+}
+
+export default SMJ1I01P00;
