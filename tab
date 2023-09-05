@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Tab</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Tab</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <div class="container">
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Tab(탭)</strong>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">고정형 탭</em>
+                </div>
+                <div class="descbox">
+                    <p>Tab 문구는 2줄 이상 사용하지 않는다.
+                    <p>1Depth Tab은 3개 까지 사용하는 것을 지향하지만, 4개까지 사용할 수 있다.</p>
+                    <p>탭화면 진입 시 기본 선택된 메뉴를 제공한다.</p>
+                </div>
+                <div class="title_wrap">
+                    <em class="title_h2">세컨드 탭</em>
+                </div>
+                <div class="descbox">
+                    <p>기본 탭의 하위 탭이 필요한 경우 사용</p>
+                </div>
+            </div>
+            <div class="dvgroup">
+                <div class="tab_wrap">
+                    <div class="tab_head">
+                        <a href="#cont0101" role="tab" aria-selected="true" aria-controls="cont0101" class="tab_item is-active"><span class="tab_txt">우리은행</span></a>
+                        <a href="#cont0102" role="tab" aria-selected="false" aria-controls="cont0102" class="tab_item"><span class="tab_txt">다른기관</span></a>
+                        <a href="#cont0103" role="tab" aria-selected="false" aria-controls="cont0103" class="tab_item"><span class="tab_txt">가나바사아자차카파하</span></a>
+                        <a href="#cont0104" role="tab" aria-selected="false" aria-controls="cont0104" class="tab_item"><span class="tab_txt">Ganadaramabhasaa</span></a>
+                    </div>
+                    <div class="tab_scroll">
+                        <div class="tab_dep2">
+                            <ul class="tab_list">
+                                <li class="tab_item">
+                                    <a href="javascript:void(0);" class="tab_btn is-active"><span class="tab_txt">All</span></a>
+                                </li>
+                                <li class="tab_item">
+                                    <a href="javascript:void(0);" class="tab_btn"><span class="tab_txt">Ganada</span></a>
+                                </li>
+                                <li class="tab_item">
+                                    <a href="javascript:void(0);" class="tab_btn"><span class="tab_txt">Ganadarama</span></a>
+                                </li>
+                                <li class="tab_item">
+                                    <a href="javascript:void(0);" class="tab_btn"><span class="tab_txt">Ganada</span></a>
+                                </li>
+                                <li class="tab_item">
+                                    <a href="javascript:void(0);" class="tab_btn"><span class="tab_txt">Ganada</span></a>
+                                </li>
+                                <li class="tab_item">
+                                    <a href="javascript:void(0);" class="tab_btn"><span class="tab_txt">Ganadasa</span></a>
+                                </li>
+                                <li class="tab_item">
+                                    <a href="javascript:void(0);" class="tab_btn"><span class="tab_txt">Ganada</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div role="tabpanel" id="cont0101" class="tab_panel">
+                        탭영역 1
+                    </div>
+                    <div role="tabpanel" class="tab_panel" style="display:none">
+                        탭영역 2
+                    </div>
+                    <div role="tabpanel" class="tab_panel" style="display:none">
+                        탭영역 3
+                    </div>
+                    <div role="tabpanel" class="tab_panel" style="display:none">
+                        탭영역 4
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
