@@ -1,0 +1,269 @@
+import { useNavigate } from "react-router-dom"
+import { useTranslation } from "react-i18next"
+import { useDispatch } from "react-redux"
+import { useState } from "react"
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer"
+import { popupAction } from "../../../../../common/store/popupReducer"
+import Wrap from '../../../../../common/components/layout/Wrap'
+import Header from "../../../../../common/components/layout/Header"
+import { CustomA } from "../../../../../common/components/button"
+import SwitchItem from "../../../../../common/components/switch/SwitchItem"
+import { AccordionWrap, AccordionItem } from "../../../../../common/components/accordion/index"
+import Nodata from "../../../../../common/components/empty/Empty"
+import SMJ2101P01 from "../SMJ2101P01/SMJ2101P01"
+import SMJ2101P02 from "../SMJ2101P02/SMJ2101P02"
+import AccAccount from "../../AccAccount"
+import AccBalance from "../../AccBalance"
+import SMJ1201P00 from "../../../../SMJ1/SMJ12/SMJ1201/SMJ1201P00/SMJ1201P00"
+
+function SMJ2101M00(){ // 전계좌 목록
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [balanceState, setBalanceState] = useState(false);
+    const bottomsheetEvt = () =>{ // 계좌설정 바텀시트
+        dispatch(bottomSheetAction({
+            title: "",
+            message : <SMJ2101P02 />,
+            state : null
+        })) 
+    }
+    return (
+        <>
+            <Wrap>
+                <Header back menu title="전체계좌조회" />
+                <div className="acc_main_wrap"> {/* 2023-09-01 하단탭바 추가되어 container컴퍼넌트에서 div로 변경 */}
+                    <div className="acc_wrap acc_main">
+                        <div className="acc_main_board">
+                            <div className="title_wrap">
+                                <strong className="title_lv3">{t('bk0101_0001')}</strong>
+                                <button type="button" className="ico_help btn_help" onClick={()=> dispatch(bottomSheetAction({
+                                    title: "",
+                                    message : <SMJ2101P01 />,
+                                    state : null
+                                })) }><span className="blind">도움말</span></button>
+                            </div>
+                            <div className="board_control">
+                                <SwitchItem tag="div" name="balance" title={t('bk0101_0031')} onChange={()=> setBalanceState(!balanceState)} />
+                            </div>
+                            {
+                                balanceState && 
+                                <div className="acc_balance">
+                                    <AccBalance cur="KRW" balance="999,999,999,999,999" />
+                                </div>
+                            }
+                        </div>
+                        <div className="acc_main_list">
+                            <AccordionWrap border="none">
+                                {/* 1. 입출금 title:상품명, count:보유상품개수(1개미만시 리스트 미노출), 최상위 아코디언 open속성 추가 */}
+                                <AccordionItem 
+                                    title={
+                                        <>
+                                            <div className="acc_infomation">
+                                                <strong className="type">{t('bk0101_0002')}</strong>
+                                                {
+                                                    balanceState &&  
+                                                    <div className="acc_balance">
+                                                        <AccBalance cur="KRW" balance="12,000,000" />
+                                                    </div>
+                                                }
+                                            </div>
+                                        </>
+                                    } 
+                                    count="3" 
+                                    open
+                                > 
+                                    <ul className="typanel">
+                                        <li className="acc_typanel"> 
+                                            <CustomA href="#none" btnClass="typanel_link" callback={()=> navigate(".")}> {/* 거래내역 페이지로 이동 */}
+                                                <AccAccount account="1001-000-091234" product="우리꿈통장" nonCopy />
+                                                {
+                                                    balanceState && 
+                                                    <div className="acc_balance">
+                                                        <AccBalance cur="KRW" balance="589,075,000" />
+                                                    </div>
+                                                }
+                                            </CustomA>
+                                            <button type="button" className="ico_accset" onClick={bottomsheetEvt}><span className="blind">{t('bk0101_0019')}</span></button> {/* 계좌설정 바텀시트 호출 */}
+                                            <div className="btn_wrap">
+                                                <CustomA type="styled" href="#none" size="lg" status="blue" text={t('bk0201_0067')} callback={()=> navigate(".")} /> {/* 이체하기 페이지로 이동 */}
+                                            </div>
+                                        </li>
+                                        <li className="acc_typanel"> 
+                                            <CustomA href="#none" btnClass="typanel_link" callback={()=> navigate(".")}> 
+                                                <AccAccount account="1081-300-000000" product="외화보통에금" nonCopy />
+                                                {
+                                                    balanceState && 
+                                                    <div className="acc_balance">
+                                                        <AccBalance cur="USD" balance="542,000.99" />
+                                                    </div>
+                                                }
+                                            </CustomA> 
+                                            <button type="button" className="ico_accset" onClick={bottomsheetEvt}><span className="blind">{t('bk0101_0019')}</span></button>
+                                            <div className="btn_wrap">
+                                                <CustomA type="styled" href="#none" size="lg" status="blue" text={t('bk0201_0067')} callback={()=> navigate(".")} /> 
+                                            </div>
+                                        </li>
+                                        <li className="acc_typanel"> 
+                                            <CustomA href="#none" btnClass="typanel_link" callback={()=> navigate(".")}> 
+                                                <AccAccount account="1001-000-091234" product="우리WON모아통장" nonCopy />
+                                                {
+                                                    balanceState && 
+                                                    <div className="acc_balance">
+                                                        <AccBalance cur="KRW" balance="12,000,000" />
+                                                    </div>
+                                                }
+                                            </CustomA>
+                                            <button type="button" className="ico_accset" onClick={bottomsheetEvt}><span className="blind">{t('bk0101_0019')}</span></button>
+                                            <div className="btn_wrap">
+                                                <CustomA type="styled" href="#none" size="lg" status="blue" text={t('bk0201_0067')} callback={()=> navigate(".")} /> 
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </AccordionItem>
+                                {/* 2. 예금 (title:상품명, count:보유상품개수(1개미만시 리스트 미노출)) */}
+                                <AccordionItem 
+                                    title={
+                                        <>
+                                            <div className="acc_infomation">
+                                                <strong className="type">{t('bk0101_0004')}</strong>
+                                                {
+                                                    balanceState &&  
+                                                    <div className="acc_balance">
+                                                        <AccBalance cur="KRW" balance="12,000,000" />
+                                                    </div>
+                                                }
+                                            </div>
+                                        </>
+                                    } 
+                                    count="1" 
+                                >
+                                    <ul className="typanel">
+                                        <li className="acc_typanel">
+                                            <CustomA href="#none" btnClass="typanel_link" callback={()=> navigate(".")}> 
+                                                <AccAccount account="1081-300-000000" product="예금 상품명" nonCopy />
+                                                {
+                                                    balanceState && 
+                                                    <div className="acc_balance">
+                                                        <AccBalance cur="KRW" balance="12,000,000" />
+                                                    </div>
+                                                }
+                                            </CustomA>
+                                            <button type="button" className="ico_accset" onClick={bottomsheetEvt}><span className="blind">{t('bk0101_0019')}</span></button>
+                                        </li>
+                                    </ul>
+                                </AccordionItem>
+                                {/* 3. 대출 (title:상품명, count:보유상품개수(1개미만시 리스트 미노출)) */}
+                                <AccordionItem 
+                                    title={
+                                        <>
+                                            <div className="acc_infomation">
+                                                <strong className="type">{t('bk0101_0005')}</strong>
+                                                {
+                                                    balanceState &&  
+                                                    <div className="acc_balance">
+                                                        <AccBalance cur="KRW" balance="13,573,000" />
+                                                    </div>
+                                                }
+                                            </div>
+                                        </>
+                                    } 
+                                    count="1"
+                                >
+                                    <ul className="typanel">
+                                        <li className="acc_typanel">
+                                            <CustomA href="#none" btnClass="typanel_link" callback={()=> navigate(".")}> 
+                                                <AccAccount account="1081-300-000000" product="대출 상품명" nonCopy />
+                                                {
+                                                    balanceState && 
+                                                    <div className="acc_balance">
+                                                        <AccBalance cur="KRW" balance="12,000,000" />
+                                                    </div>
+                                                }
+                                            </CustomA>
+                                            <button type="button" className="ico_accset" onClick={bottomsheetEvt}><span className="blind">{t('bk0101_0019')}</span></button>
+                                        </li>
+                                    </ul>
+                                </AccordionItem>
+                                {/* 4. 펀드/신탁 (title:상품명, count:보유상품개수(1개미만시 리스트 미노출)) */}
+                                <AccordionItem 
+                                    title={
+                                        <>
+                                            <div className="acc_infomation">
+                                                <strong className="type">{t('bk0101_0007')}</strong>
+                                                {
+                                                    balanceState &&  
+                                                    <div className="acc_balance">
+                                                        <AccBalance cur="USD" balance="13,573.00" />
+                                                    </div>
+                                                }
+                                            </div>
+                                        </>
+                                    } 
+                                    count="2"
+                                >
+                                    <ul className="typanel">
+                                        <li className="acc_typanel">
+                                            <CustomA href="#none" btnClass="typanel_link" callback={()=> navigate(".")}>
+                                                <AccAccount account="1081-300-000000" product="펀드상품명" nonCopy />
+                                                {
+                                                    balanceState && 
+                                                    <div className="acc_balance">
+                                                        <AccBalance cur="USD" balance="15,000.00" />
+                                                        <div className="btm_info rate_info">
+                                                            <span className="txt">{t("bk0101_0015")}</span>
+                                                            <span className="data"><em className="rate">+ 0.05%</em></span>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </CustomA>
+                                            <button type="button" className="ico_accset" onClick={bottomsheetEvt}><span className="blind">{t('bk0101_0019')}</span></button>
+                                        </li>
+                                        <li className="acc_typanel">
+                                            <CustomA href="#none" btnClass="typanel_link" callback={()=> navigate(".")}> 
+                                                <AccAccount account="1081-300-000000" product="펀드상품명" nonCopy />
+                                                {
+                                                    balanceState && 
+                                                    <div className="acc_balance">
+                                                        <AccBalance cur="USD" balance="2,483.00" />
+                                                        <div className="btm_info rate_info">
+                                                            <span className="txt">{t("bk0101_0015")}</span>
+                                                            <span className="data"><em className="rate">- 0.05%</em></span>
+                                                        </div>  
+                                                    </div>
+                                                }
+                                            </CustomA> 
+                                            <button type="button" className="ico_accset" onClick={bottomsheetEvt}><span className="blind">{t('bk0101_0019')}</span></button>
+                                        </li>
+                                    </ul>
+                                </AccordionItem>
+                            </AccordionWrap>
+                        </div>
+                        {/* 2023-08-25 보유계좌 없는케이스 추가 */}
+                        <Nodata txt={t('bk0101_0006')} />
+                    </div>
+                </div>
+
+                {/* 2023-09-01 하단탭바 추가 */}
+                <div className="m-tabbar">
+                    <div className="m-tabbar_inner">
+                        <div className="m-tabbar_menu">
+                            <CustomA href="#none" btnClass="tab_home is-active" callback={()=> navigate("/SMJ1101M00")}><span className="txt">{t("bk0101_0008")}</span></CustomA>
+                            <CustomA href="#none" btnClass="tab_inquiry" callback={()=> navigate("/SMJ2101M00")}><span className="txt">{t("bk0101_0009")}</span></CustomA>
+                            <CustomA href="#none" btnClass="tab_remittance" callback={()=> navigate("/SMJ3307M00")}><span className="txt">{t("bk0101_0010")}</span></CustomA>
+                            <button type="button" className="tab_allmenu" onClick={()=>
+                                dispatch(popupAction({
+                                    title: "",
+                                    message : <SMJ1201P00 />,
+                                    state : null
+                                }))
+                            }><span className="txt">{t("bk0101_0011")}</span></button>
+                        </div>
+                    </div>
+                </div>
+            </Wrap>
+        </>
+    )
+}
+
+export default SMJ2101M00
