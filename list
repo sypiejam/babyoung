@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>List</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<style>
+    /* a {background-color: rgba(0, 150, 255, 0.1);} */
+    a:is(:hover,:focus,:active) {-webkit-tap-highlight-color: rgba(0, 150, 255, 0.1);} /* 터치영역표시 */
+</style>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">List</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">List(목록)</strong>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">일반형</em>
+                </div>
+                <!-- basic -->
+                <ul class="listbox">
+                    <li class="listbox_list">
+                        <div class="listbox_item">
+                            <span class="listbox_tit">Enter your content</span>
+                        </div>
+                    </li>
+                    <li class="listbox_list">
+                        <a href="javascript:void(0);" class="listbox_item anchor">
+                            <span class="listbox_tit">Enter your content</span>
+                        </a><!-- 페이지 기본 링크목록 고객센터 인덱스 화면 참고 /SMJ5/SMJ53/SMJ5304/SMJ5304M00 -->
+                    </li>
+                    <li class="listbox_list">
+                        <input type="checkbox" name="check" id="check01" class="blind listbox_inp" checked>
+                        <label for="check01" class="listbox_item label">
+                            <span>Content is selected Checkbox</span>
+                        </label>
+                    </li>
+                    <li class="listbox_list">
+                        <input type="radio" name="radio" id="radio01" class="blind listbox_inp">
+                        <label for="radio01" class="listbox_item label">
+                            <i class="ico_flag kr"></i>
+                            <span>Content is selected Radio</span>
+                        </label>
+                    </li>
+                    <li class="listbox_list">
+                        <div class="listbox_item">
+                            <span class="badge_item disabled">Badge</span>
+                            <div class="label_wrap">
+                                <input type="radio" name="radio" id="radio02" class="blind listbox_inp">
+                                <label for="radio02" class="label">
+                                    <span>Content is selected Radio</span>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="listbox_list">
+                        <div class="listbox_item">
+                            <!-- <span class="badge_item disabled">Badge</span> -->
+                            <div class="label_wrap">
+                                <input type="checkbox" name="check" id="check02" class="blind listbox_inp">
+                                <label for="check02" class="label">
+                                    <span>Content is selected Checkbox</span>
+                                    <span class="subtxt">Additional information</span>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="listbox_list">
+                        <a href="javascript:void(0);" class="listbox_item">
+                            <i class="ci_bank ci_bank_020"></i>
+                            <div class="d-flex">
+                                <span class="listbox_tit">Woori Bank</span>
+                                <span class="listbox_txt">information text</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="listbox_list">
+                        <a href="javascript:void(0);" class="listbox_item anchor">
+                            <div class="exlist">
+                                <i class="ico_flag md us"></i>
+                                <div class="listbox_desc">
+                                    <div class="d-flex">
+                                        <span class="listbox_tit">USD</span>
+                                        <span class="listbox_tit">US dollar</span>
+                                    </div>
+                                    <div class="btm">
+                                        <span class="listbox_txt">1,312.20</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <span class="chk_star listbox_favor">
+                            <input type="checkbox" id="chkStar" class="blind">
+                            <label for="chkStar" class="ico_star"><span class="blind">즐겨찾기 등록</span></label>
+                        </span>
+                    </li>
+                </ul>
+                <div class="custlist">
+                    <a href="tel:" class="custlist_item">
+                        <div class="d-flex">
+                            <i class="ico_tel"></i><em class="tit">Ansan Foreigner Financial Center</em>
+                        </div>
+                        <span class="txt">031-000-000</span>
+                    </a>
+                </div>
+                <!-- //basic -->
+            </div>
+            <hr class="hr full thick">
+            <!-- 지점방문 -->
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">지점방문</em>
+                </div>
+                <!-- <hr class="hr full thick"> -->
+                <ul class="listbox">
+                    <li class="listbox_list">
+                        <div class="title_flex visit_top">
+                            <div class="title_wrap">
+                                <span class="txt_caption">2022.09.27</span>
+                                <strong class="visit_tit">Number of authorization extensions remaining</strong>
+                            </div>
+                            <span class="badge_item">Badge</span>
+                        </div>
+                        <div class="custbox_btm">
+                            <div class="infocusto">
+                                <div class="infolist_item">
+                                    <span class="infolist_lt">Date of visit</span>
+                                    <span class="infolist_rt num">2022.02.27 12:00</span>
+                                </div>
+                            </div>
+                            <div class="btn_wrap">
+                                <a href="javascript:void(0);" class="btn_outlined btn_large"><span>Cancel a reservation</span></a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- //추후 수정될 수 있음 -->
+                </ul>
+            </div>
+            <!-- //지점방문 -->
+            <hr class="hr full thick">
+
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">목록 상단 상태</em>
+                </div>
+                <div class="captgroup">
+                    <span class="txt">신청일</span>
+                    <span class="txt num">2023.12.12</span>
+                </div>
+                <div class="condition">
+                    <div class="inner">
+                        <em>2023년 1월 13일</em>
+                    </div>
+                </div>
+                <hr class="mg4">
+                <div class="condition bg">
+                    <div class="inner">
+                        <span class="txt">조회기준</span><em class="num">2023.11.25 13:33:18</em>
+                    </div>
+                </div>
+                <hr class="mg4">
+                <div class="condition bg">
+                    <div class="inner">
+                        <em class="txt">검색결과 총 2건</em>
+                    </div>
+                </div>
+
+                <hr class="mg8">
+
+                <div class="condition big">
+                    <div class="inner">
+                        <div class="atl">
+                            <button type="button" class="ico_search"><span class="blind">찾기</span></button>
+                        </div>
+                        <div class="tc">
+                            <em class="date_str">2023.01.01</em> ~ <em class="date_end">2023.01.31</em>
+                        </div>
+                        <div class="atr">
+                            <button type="button" class="ico_setting"><span class="blind">검색조건설정</span></button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mg4">
+                <div class="condition big">
+                    <div class="inner">
+                        <div class="atl">
+                            <em class="dvh">3Month</em>
+                            <em class="num">2023.01.01</em>
+                        </div>
+                        <div class="atr">
+                            <button type="button" class="ico_setting"><span class="blind">검색조건설정</span></button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mg4">
+                <div class="condition big">
+                    <div class="inner">
+                        <div class="atl">
+                            <span class="txt">장애인 편의시설</span>
+                        </div>
+                        <div class="atr">
+                            <button type="button" class="ico_setting"><span class="blind">검색조건설정</span></button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mg4">
+                <div class="condition big">
+                    <div class="inner">
+                        <div class="tc monthbox">
+                            <div class="inner">
+                                <div class="selected">
+                                    <em class="year">2023</em>
+                                    <em class="month">01</em>
+                                </div>
+                                <button type="button" class="btn_prev"><span class="ico_arrow lt"><span class="blind">다음달</span></span></button>
+                                <button type="button" class="btn_next" disabled><span class="ico_arrow"><span class="blind">이전달</span></span></button>
+                            </div>
+                        </div>
+                        <div class="atr">
+                            <button type="button" class="ico_search"><span class="blind">찾기</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="hr full thick">
+
+            <!-- 영업점방문 -->
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">영업점방문</em>
+                </div>
+                <!-- <hr class="hr full thick"> -->
+                <ul class="listbox">
+                    <li class="custbox_list">
+                        <div class="normal-list-styled"><!-- StyledNormalListLinkItem -->
+                            <a href="javascript:void(0);" class="custbox_item">
+                                <strong class="item_tit">연락처 YES</strong>
+                            </a>
+                            <div class="item_subtxt"><em>Print street address(WON banking address)</em></div>
+                        </div>
+                        <div class="placeinfo">
+                            <div class="link_wrap">
+                                <a href="#none" class="link_line fc-blue01" href="tel:"><span>02-2002-3000</span></a>
+                            </div>
+                            <div class="convlist">
+                                <em class="convlist_item convlist_parking">장애인 주차장</em>
+                                <em class="convlist_item convlist_toilet">장애인 화장실</em>
+                                <em class="convlist_item convlist_slope">경사로</em>
+                                <em class="convlist_item convlist_elevator">승강기</em>
+                                <em class="convlist_item convlist_ringbell">호출벨</em>
+                            </div>
+                        </div>
+                        <div class="btn_wrap">
+                            <div class="d-flex">
+                                <a href="javascript:void(0);" class="btn_outlined btn_medium"><span>영업점 위치보기</span></a><!-- cs0303_0033 -->
+                            </div>
+                        </div>
+                    </li>
+                    <li class="normal-list-styled">
+                        <button type="button" class="custbox_item">
+                            <strong class="item_tit">연락처 NO</strong>
+                        </button>
+                        <div class="item_subtxt"><em>Print street address(WON banking address)</em></div>
+                    </li>
+                    <li class="custbox_list">
+                        <div class="normal-list-styled">
+                            <a href="javascript:void(0);" class="custbox_item">
+                                <div class="custbox_top">
+                                    <span class="label">In-store ATM</span>
+                                </div>
+                                <strong class="item_tit">점내ATM</strong>
+                            </a>
+                            <div class="item_subtxt"><em>Print street address(WON banking address)</em></div>
+                        </div>
+                        <div class="infocusto mt-16">
+                            <div class="infolist_item">
+                                <span class="infolist_lt">Hours of operation</span>
+                                <span class="infolist_rt num">09:00 ~ 18:00</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="custbox_list">
+                        <div class="normal-list-styled">
+                            <a href="javascript:void(0);" class="custbox_item">
+                                <div class="custbox_top">
+                                    <span class="label">In-store ATM</span>
+                                </div>
+                                <strong class="item_tit">점외ATM</strong>
+                            </a>
+                            <div class="item_subtxt"><em>Print street address(WON banking address)</em></div>
+                        </div>
+                        <ul class="infocusto mt-16">
+                            <li class="infolist_item">
+                                <span class="infolist_lt">Where to install</span>
+                                <span class="infolist_rt">ATM installation location(WON Banking installation location)</span>
+                            </li>
+                            <li class="infolist_item">
+                                <span class="infolist_lt">Hours of operation</span>
+                                <span class="infolist_rt num">09:00 ~ 18:00</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="custbox_list">
+                        <div class="normal-list-styled">
+                            <a href="javascript:void(0);" class="custbox_item">
+                                <div class="custbox_top">
+                                    <div class="d-flex">
+                                        <span class="label">Foreigners only</span>
+                                        <span class="label">Open on Sundays</span>
+                                    </div>
+                                </div>
+                                <strong class="item_tit">글로벌영업점</strong>
+                            </a>
+                            <div class="item_subtxt"><em>Print street address(WON banking address)</em></div>
+                        </div>
+                        <div class="btn_wrap">
+                            <div class="d-flex">
+                                <a href="javascript:void(0);" class="btn_outlined btn_medium btn_icon_tel"><span>123-4567-8901</span></a>
+                                <a href="javascript:void(0);" class="btn_outlined btn_medium btn_local"><span class="ico_local"><span class="blind">영업점 위치보기</span></span></a><!-- cs0303_0033 -->
+                            </div>
+                        </div>
+                    </li>
+                    <li class="custbox_list">
+                        <div class="normal-list-styled">
+                            <a href="javascript:void(0);" class="custbox_item">
+                                <!-- <div class="custbox_top">
+                                    <div class="d-flex">
+                                        <i class="ico_flag us"></i>
+                                        <span class="label">USD</span>
+                                    </div>
+                                </div> -->
+                                <div class="item_tit">
+                                    <i class="ico_flag us"></i><strong>외국인전용+일요일</strong>
+                                </div>
+                            </a>
+                            <div class="item_subtxt"><em>Print street address(WON banking address)</em></div>
+                        </div>
+                        <div class="btn_wrap">
+                            <div class="d-flex">
+                                <a href="javascript:void(0);" class="btn_outlined btn_medium btn_icon_tel"><span>123-4567-8901</span></a>
+                                <a href="javascript:void(0);" class="btn_outlined btn_medium btn_local"><span class="ico_local"><span class="blind">영업점 위치보기</span></span></a><!-- cs0303_0033 -->
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- //영업점방문 -->
+            <hr class="hr full thick">
+            <!-- 이벤트-공지사항 -->
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">이벤트-공지사항</em>
+                </div>
+                <!-- <hr class="hr full thick"> -->
+                <ul class="notilist">
+                    <li class="custbox_list">
+                        <div class="normal-list-styled"><!-- StyledNormalListLinkItem : normal-list-styled 퍼블 확인용 클래스 -->
+                            <a href="javascript:void(0);" class="custbox_item">
+                                <div class="custbox_top">
+                                    <span class="badge_item">D-20</span>
+                                </div>
+                                <strong class="item_tit">진행중 Event title, notice title release area</strong>
+                            </a>
+                        </div>
+                        <div class="infocusto">
+                            <span class="date">2022.10.22 ~ 2022.11.20</span>
+                        </div>
+                    </li>
+                    <li class="custbox_list">
+                        <div class="normal-list-styled"><!-- StyledNormalListLinkItem : normal-list-styled 퍼블 확인용 클래스 -->
+                            <div class="custbox_item">
+                                <strong class="item_tit">종료 Event title, notice title release area</strong>
+                            </div>
+                        </div>
+                        <ul class="infocusto">
+                            <li class="infolist_item">
+                                <span class="infolist_lt">Period</span>
+                                <span class="infolist_rt num">2022.10.22 ~ 2022.11.20</span>
+                            </li>
+                            <li class="infolist_item">
+                                <span class="infolist_lt">Announcement Date</span>
+                                <span class="infolist_rt num">2022.12.27</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="custbox_list">
+                        <div class="normal-list-styled"><!-- StyledNormalListLinkItem : normal-list-styled 퍼블 확인용 클래스 -->
+                            <a href="javascript:void(0);" class="custbox_item">
+                                <!-- <div class="custbox_top">
+                                    <span class="badge_item">Badge</span>
+                                </div> -->
+                                <strong class="item_tit">당첨자 Event title, notice title release area</strong>
+                            </a>
+                        </div>
+                        <ul class="infocusto">
+                            <li class="infolist_item">
+                                <span class="infolist_lt">Winnings</span>
+                                <span class="infolist_rt">Starbucks Americano</span>
+                            </li>
+                            <li class="infolist_item">
+                                <span class="infolist_lt">Announcement Date</span>
+                                <span class="infolist_rt num">2022.12.27</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="custbox_list">
+                        <div class="normal-list-styled"><!-- StyledNormalListLinkItem : normal-list-styled 퍼블 확인용 클래스 -->
+                            <a href="javascript:void(0);" class="custbox_item">
+                                <strong class="item_tit">공지사항 Event title, notice title release area</strong>
+                            </a>
+                        </div>
+                        <div class="infocusto">
+                            <span class="date">2022.10.27</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- //이벤트-공지사항 -->
+
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">박스형</em>
+                </div>
+                <!-- boxed -->
+                <div class="typanel">
+                    <div class="typanel_list">
+                        <a href="javascript:void(0);" class="listbox_item anchor">
+                            <div class="listbox_desc">
+                                <strong class="typanel_tit">Mobile phone sms authentication</strong>
+                                <div class="btm">
+                                    <p class="listbox_txt">Authenticate after entering the SMS authentication number</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="typanel_list">
+                        <div class="exchange_item">
+                            <div class="flag_wrap">
+                                <i class="ico_flag md us"></i>
+                                <span class="nation">USD</span>
+                            </div>
+                            <div class="listbox_desc">
+                                <span class="price">999.99</span>
+                                <span class="exinfo">적용환율 <em class="num">1,205.69</em></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="typanel_list">
+                        <div class="exchange_tit">
+                            <strong class="title_lv3">Title</strong>
+                        </div>
+                        <div class="exchange_item">
+                            <div class="flag_wrap">
+                                <i class="ico_flag md us"></i>
+                                <span class="nation">USD</span>
+                            </div>
+                            <div class="listbox_desc">
+                                <span class="price">999.99</span>
+                                <span class="exinfo">적용환율 <em class="num">1,205.69</em></span>
+                            </div>
+                        </div>
+                        <div class="exchange_btm">
+                            <ul>
+                                <li class="infolist_item">
+                                    <span class="infolist_lt">Transfer fee</span>
+                                    <div class="infolist_rt">
+                                        <em>KRW <em class="num">10,000</em></em>
+                                        <span class="info_num">(USD <span class="num">5</span>)</span>
+                                    </div>
+                                </li>
+                                <li class="infolist_item">
+                                    <span class="infolist_lt">Amount Payable</span>
+                                    <span class="infolist_rt">KRW <em class="num">999,999,999,999</em></span>
+                                </li>
+                                <li class="infolist_item">
+                                    <span class="infolist_lt">은행코드</span>
+                                    <div class="infolist_rt">
+                                        <div class="flag_wrap">
+                                            <span class="ico_flag us"><span class="blind">USA</span></span>
+                                            <span class="code">NBNYUS31XXX</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="txt_helper">
+                        <p class="bullet_disc">살제 이체 시 환율 변도엥 의해 출금금액이 달라질 수 있습니다.</p>
+                    </div>
+                    <div class="typanel_list">
+                        <div class="listbox_item">
+                            <i class="ico_flag us"></i>
+                            <div class="csinfo_desc">
+                                <span class="csinfo_tit">English</span>
+                                <span class="csinfo_txt">1 after connecting 1599-2288</span>
+                            </div>
+                            <a href="tel:+82 1599-2288" class="csinfo_tel"><div class="ico_tel"><span class="blind">전화연결</span></div></a>
+                        </div>
+                    </div>
+                    <div class="typanel_list">
+                        <div class="listbox_item csinfo">
+                            <div class="flag_wrap">
+                                <i class="ico_flag kr"></i>
+                                <span class="csinfo_tit">Korean</span>
+                            </div>
+                            <ul class="csinfo_list">
+                                <li class="csinfo_li">
+                                    <span class="csinfo_txt">1599-5000</span>
+                                    <a href="tel:+82 1599-5000" class="csinfo_tel"><div class="ico_tel"><span class="blind">전화연결</span></div></a>
+                                </li>
+                                <li class="csinfo_li">
+                                    <span class="csinfo_txt">1599-5000</span>
+                                    <a href="tel:+82 1599-5000" class="csinfo_tel"><div class="ico_tel"><span class="blind">전화연결</span></div></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- //boxed -->
+            </div>
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+</body>
+</html>
