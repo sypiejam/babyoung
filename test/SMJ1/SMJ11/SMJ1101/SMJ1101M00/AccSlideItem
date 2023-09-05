@@ -1,0 +1,71 @@
+import { useTranslation } from "react-i18next"
+import { useDispatch } from "react-redux"
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer"
+import { popupAction } from "../../../../../common/store/popupReducer"
+import { CustomA } from "../../../../../common/components/button"
+import SMJ2101P02 from "../../../../SMJ2/SMJ21/SMJ2101/SMJ2101P02/SMJ2101P02"
+import SMJ1102P00 from "../../SMJ1102/SMJ1102P00/SMJ1102P00"
+
+/**
+ * @name AccSliderItem 
+ * @role 메인상단에 보유계좌 리스트
+ * @props cicode(string) : 계좌은행코드번호 
+ * @props accNumber(string) : 계좌번호 
+ * @props cur(string) : 통화 
+ * @props accSum(string) : 계좌잔액 
+ * @props accDetail(function) : 계좌상세페이지로 이동시킬 함수
+ * @props accTransfer(function) : 이체페이지로 이동시킬 함수
+ * @props mainAccSet(function) : 대표계좌설정 팝업 호출시킬 함수
+*/
+
+function AccSliderItem({cicode, accNumber, cur, accSum, accDetail, accTransfer, mainAccSet}){
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    
+    return (
+        <div className="acc_item">
+            <div className="m-acc_info">
+                {
+                    accDetail && 
+                    <CustomA href="#none" btnClass="acc_link" callback={accDetail}>
+                        <div className="acc_num">
+                            <span className="blind">{t("bk0101_0085")}</span>
+                            <i className={`ci_bank ci_bank_${cicode}`} aria-hidden="true"></i>
+                            <span className="num">{accNumber}</span>
+                        </div>
+                        <div className="acc_sum">
+                            <span className="blind">{t("fx0601_0024")}</span>
+                            <span className="cur">{cur}</span><strong className="sum">{accSum}</strong>
+                        </div>
+                    </CustomA>
+                }
+                {
+                    accTransfer && 
+                    <div className="btn_box">
+                        <CustomA href="#none" btnClass="btn_transfer" text={t('ma0500_0008')} callback={accTransfer}>{t("ma0500_0008")}</CustomA>
+                    </div>
+                }
+                {
+                mainAccSet && 
+                    <button type="button" className="btn_setting" onClick={()=>
+                        dispatch(popupAction({
+                            title: "",
+                            message : <SMJ1102P00 />,
+                            state : null
+                        }))
+                    }><span>{t('ma0600_0001')}</span></button>
+                }
+            </div>
+            {
+                !mainAccSet &&
+                <button type="button" className="ico_accset" onClick={()=>dispatch(bottomSheetAction({
+                    title: "",
+                    message : <SMJ2101P02 accSet />,
+                    state : null
+                })) }><span className="blind">{t('bk0101_0019')}</span>
+                </button>
+            }
+        </div>
+    )
+}
+export default AccSliderItem;
