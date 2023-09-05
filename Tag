@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Tag</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Tag</h1>
+            <a href="javascript:;" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <div class="container">
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Tag(태그)</strong>
+            </div>
+            <div class="dvgroup">
+                <div class="descbox">
+                    <p>텍스트 길이로 인해 태그가 영역보다 길어질 경우 말줄임 처리하여 1라인 이상 초과되지 않도록 한다.</p>
+                    <p>태그 간 간격을 8이고, 바텀시트에서는 상단과의 간격을 24이다.</p>
+                </div>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">기본형</em>
+                </div>
+                <div class="tag_wrap">
+                    <div class="tag_item">
+                        <span class="tx-over">Tag Basic</span>
+                    </div>
+                    <div class="tag_item">
+                        <span class="tx-over">Tag</span>
+                    </div>
+                    <div class="tag_item">
+                        <span class="tx-over">Tagtag</span>
+                    </div>
+                </div>
+                <!-- <hr class="mg8">
+                <div class="tag_wrap">
+                    <div class="tag_item md">
+                        <span class="tx-over">Tag medium</span>
+                    </div>
+                    <div class="tag_item md">
+                        <span class="tx-over">Tag medium medium medium</span>
+                    </div>
+                </div> -->
+            </div>
+            <hr class="hr">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">삭제버튼 있는 경우</em>
+                </div>
+                <div class="tag_wrap">
+                    <div class="tag_item">
+                        <span class="tx-over">Tag</span>
+                        <button type="button" class="ico_delete btn_delete"><span class="blind">태그삭제</span></button>
+                    </div>
+                    <div class="tag_item">
+                        <span class="tx-over">Tag medium if there is a delete button</span>
+                        <button type="button" class="ico_delete btn_delete"><span class="blind">태그삭제</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
