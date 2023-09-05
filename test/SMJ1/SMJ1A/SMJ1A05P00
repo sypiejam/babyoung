@@ -1,0 +1,96 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import PopupFrame from "../../../../../common/components/popup/PopupFrame"
+import PopupHeader from "../../../../../common/components/popup/PopupHeader"
+import PopupContainer from "../../../../../common/components/popup/PopupContainer"
+import { Button, ButtonWrap, FloatingButtonWrap, CustomA } from "../../../../../common/components/button/index";
+import { BadgeWrap , BadgeItem } from "../../../../../common/components/badge/index";
+
+// 추가인증 수단 선택
+function SMJ1A05P00(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    return(
+        <PopupFrame>
+            <PopupHeader type="normal" title={t("bk0203_0096")} />
+            <PopupContainer hasFixed>
+                <div className="dvgroup only">
+                    <ul className="typanel">
+                        <li className="typanel_list">
+                            <CustomA href="#none" btnClass="listbox_item" callback={()=> navigate(".")}>
+                                <div className="listbox_desc">
+                                    <BadgeWrap>
+                                        <BadgeItem text={t('co0804_0044')}/>
+                                    </BadgeWrap>
+                                    <strong className="typanel_tit">{t('cs0101_0064')}</strong>
+                                    <div className="btm">
+                                        <p className="listbox_txt">{t('cs0101_0065')}</p>
+                                    </div>
+                                </div>
+                            </CustomA>
+                        </li>
+                        <li className="typanel_list">
+                            <CustomA href="#none" btnClass="listbox_item" callback={()=> navigate(".")}>
+                                <div className="listbox_desc">
+                                    <BadgeWrap>
+                                        <BadgeItem text={t('co1501_0032')}/>
+                                    </BadgeWrap>
+                                    <strong className="typanel_tit">{t('cs0101_0062')}</strong>
+                                    <div className="btm">
+                                        <p className="listbox_txt">{t('cs0101_0063')}</p>
+                                    </div>
+                                </div>
+                            </CustomA>
+                        </li>
+                        <li className="typanel_list">
+                            <CustomA href="#none" btnClass="listbox_item" callback={()=> navigate(".")}>
+                                <div className="listbox_desc">
+                                    <BadgeWrap>
+                                        <BadgeItem text={t('co1501_0032')}/>
+                                    </BadgeWrap>
+                                    <strong className="typanel_tit">{t('ce0103_0153')}</strong>
+                                    <div className="btm">
+                                        <p className="listbox_txt">{t('ce0103_0154')}</p>
+                                    </div>
+                                </div>
+                            </CustomA>
+                        </li>
+                        <li className="typanel_list">
+                            <CustomA href="#none" btnClass="listbox_item" callback={()=> navigate(".")}>
+                                <div className="listbox_desc">
+                                    <BadgeWrap>
+                                        <BadgeItem text={t('co1501_0032')}/>
+                                    </BadgeWrap>
+                                    <strong className="typanel_tit">{t('ce0103_0149')}</strong>
+                                    <div className="btm">
+                                        <p className="listbox_txt">{t('ce0103_0150')}</p>
+                                    </div>
+                                </div>
+                            </CustomA>
+                        </li>
+                        <li className="typanel_list">
+                            <CustomA href="#none" btnClass="listbox_item" callback={()=> navigate(".")}>
+                                <div className="listbox_desc">
+                                    <BadgeWrap>
+                                        <BadgeItem text={t('co1501_0032')}/>
+                                    </BadgeWrap>
+                                    <strong className="typanel_tit">{t('cs0403_0042')}</strong>
+                                    <div className="btm">
+                                        <p className="listbox_txt">{t('cs0403_0043')}</p>
+                                    </div>
+                                </div>
+                            </CustomA>
+                        </li>
+                    </ul>
+                </div>
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <Button type="styled" text={t('co1501_0010')} disabled callback={()=> navigate(".")} status="primary" />
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </PopupContainer>
+        </PopupFrame>
+    )
+}
+
+export default SMJ1A05P00;
