@@ -1,0 +1,59 @@
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import PopupFrame from "../../../../../common/components/popup/PopupFrame";
+import PopupHeader from "../../../../../common/components/popup/PopupHeader";
+import PopupContainer from "../../../../../common/components/popup/PopupContainer";
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer";
+import { Button, ButtonWrap, FloatingButtonWrap } from "../../../../../common/components/button/index";
+import Dropdown from "../../../../../common/components/dropdown/Dropdown";
+import Nodata from '../../../../../common/components/empty/Empty';
+import Notice from "../../../../../common/components/Notice";
+import SMJ1A02P01 from "../../SMJ1A02/SMJ1A02P01/SMJ1A02P01";
+
+// ARS(2채널) 인증
+function SMJ1A02P00(){
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    return(
+        <PopupFrame>
+            <PopupHeader type="normal" title={t("co0802_0001")} />
+            <PopupContainer hasFixed>
+                <div className="thead_wrap">
+                    <strong className="title_h1">{t("co0802_0002")}</strong>
+                </div>
+                <div className="dvgroup">
+                    <div className="bignumbox">
+                        <em className="title_lv3">{t("co1501_0033")}</em>
+                        <strong className="item">86</strong>
+                    </div>
+                </div>
+                <Dropdown title={t('co0802_0003')} type="normal" status="filled"
+                    onClick={()=>{
+                        dispatch(bottomSheetAction({
+                            title: "",
+                            message : <SMJ1A02P01 />,
+                            state : null
+                        }))
+                    }}>
+                    {/* <div className="inp_select_value">{t('co0802_0004')}</div> */}
+                    <div className="inp_select_value"><span className="listbox_tit">Mobile</span><span className="listbox_txt">010-****-1100</span></div>
+                </Dropdown>
+                <div className="dvgroup">
+                    <Nodata txt={t("co0802_0007")} icon="phone" />
+                </div>
+                <Notice>
+                    {/* 퍼블검수 1차 : div.bullet 삭제 */}
+                    <p className="bullet_item">{t("co0802_0005")}</p>
+                </Notice>
+
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <Button tag="button" size="lg" status="primary" text={t('co0802_0006')} />
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </PopupContainer>
+        </PopupFrame>
+    );
+}
+
+export default SMJ1A02P00;
