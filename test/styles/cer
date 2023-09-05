@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* cer.css 우리글로벌뱅킹 재구축 : 인증/보안(SMJ6) */
+
+/* 인증센터 index */
+.icon_smj6101{background-image:url('/public/images/cer/img_security_authentication_center.png');}
+.icon_smj6102{background-image:url('/public/images/cer/img_security_won_certificate.png');}
+
+/* 금융인증서 이용안내 */
+.icon_smj6103{background-image:url('/public/images/cer/img_security_financial_certificates.png');}
+
+/* 공동(공인)인증센터 */
+.cer_regist_img{display:flex;justify-content:center;align-items:center;margin:2.4rem 0 3.2rem;}
+.regist_pc,.regist_mobile{position:relative;display:inline-block;min-width:7.2rem;color:#848a92;font-size:1.3rem;text-align:center;}
+.regist_pc::before{display:block;width:6.2rem;height:6.2rem;margin:0.5rem auto 0.9rem;border-radius:50%;background:#f2f5f9 url('/public/images/cer/img_unregister_pc.png') no-repeat center / 3.6rem;content:'';}
+.regist_mobile::before{display:block;width:6.2rem;height:6.2rem;margin:0.5rem auto 0.9rem;border-radius:50%;background:#f2f5f9 url('/public/images/cer/img_unregister_mobile.png') no-repeat center / 3.6rem;content:'';}
+.regist_arr{display:block;width:2.4rem;height:2.4rem;margin:-2.2rem 2rem 0;background:url('/public/images/cer/img_unregister_arrow.png') no-repeat 0 0 / 100%;}
