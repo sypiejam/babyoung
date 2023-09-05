@@ -1,0 +1,14 @@
+import { useSelector } from "react-redux";
+
+function PopupWebContainer() {
+
+    const {message} = useSelector(state => state.popupReducer);
+
+    return (
+        <>
+            {message}
+        </>
+    );
+}
+
+export default PopupWebContainer;
