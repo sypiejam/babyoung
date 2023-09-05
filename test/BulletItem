@@ -1,0 +1,29 @@
+import styled from "styled-components";
+
+function BulletItem({message, children, type}) {
+    return (
+        <BulletItemStyle type={type}>
+            <span className="bullet-box">
+                {
+                    type === "number" ? <div>1.</div> : ""
+                }
+            {message}
+            </span>
+            
+            {
+                children  ? <div style={{marginLeft : "1rem"}}>{children}</div> : ""
+            }
+            
+        </BulletItemStyle>
+    )
+}
+
+const BulletItemStyle = styled.span`
+    color : ${props => props.type === "empha" ? "red" : "black"};
+
+    .bullet-box {
+        display : flex;
+    }
+`;
+
+export default BulletItem;
