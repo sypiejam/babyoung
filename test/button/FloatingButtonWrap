@@ -1,0 +1,39 @@
+import styled from "styled-components";
+
+/**
+ * @name FloatingButtonWrap 
+ * @role Button을 페이지 하단이나 팝업에서 Floating Buttond으로 사용해야하는 경우 ButtonWrap 컨포넌트를 감싸는 상위 컴포넌트
+ * @props children - 하위 태그 요소 (ButtonWrap 컴포넌트)
+ **/ 
+
+function FloatingButtonWrap({children}) {
+
+    return  <StyledFloatingBtnWrap className="btm_fixed">
+        {children}
+    </StyledFloatingBtnWrap>
+  }
+            
+const StyledFloatingBtnWrap = styled.div`
+z-index:10;
+position:fixed;
+right:0;
+bottom:0;
+left:0;
+min-height:8.8rem;
+padding:1.6rem;
+background:#fff;
+
+.d-flex [class*=btn_]{
+    display:flex;
+    flex:1;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:5.6rem;
+    border-radius:0.6rem;
+    font-weight:500;
+    font-size:1.6rem;
+    line-height:1.4;
+}
+`;
+export default FloatingButtonWrap;
