@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* svc.css 우리글로벌뱅킹 재구축 : 안내/지원(SMJ5) */
+
+/* 고객센터 */
+.icon_smj5304 {background-image:url(/public/images/svc/img_callcenter.png);}
+.apimap {position:fixed;top:6rem;right:0;bottom:0;left:0;}
+.apimap_point {position:absolute;transform:translate(-50%, -3.6rem);}
+.apimap .point_item {position:relative;text-align:center;}
+.apimap .point_txt {display:block;width:10rem;margin-top:0.4rem;font-weight:500;font-size:1.4rem;}
+
+/* 원터치상담 */
+.csinfo {display:block;}
+.csinfo_list {margin-left:3.2rem;}
+.csinfo_li {position:relative;margin-top:1.2rem;}
+.csinfo_li .csinfo_tel {right:0;}
+.csinfo_desc {width:calc(100% - 6.4rem);}
+.csinfo_tit {display:block;margin-bottom:0.4rem;color:#333a40;}
+.csinfo_txt {font-size:1.6rem;line-height:2.2rem;}
+.csinfo_tel {position:absolute;top:50%;right:2rem;transform:translateY(-50%);}
+
+/* 안내지원_알림 */
+.svc_alarm_banner {position:relative;display:flex;align-items:center;justify-content:space-between;padding:2rem 2.4rem;background:rgba(208, 233, 252, 0.5);border-radius:0.6rem;}
+.svc_alarm_banner .inner {flex:1;}
+.svc_alarm_banner:after {content:'';width:6.4rem;height:6.4rem;background:url(/public/images/svc/img_alarm.png) no-repeat 0 0 / 100%;}
+.svc_alarm_banner .link_wrap {margin-top:0.8rem;}
+.svc_noti_set .switch_cont {border-bottom:0;}
+.svc_noti_set .subtxt {font-size:1.5rem;}
+.svc_noti_set li {padding:2.4rem 0;border-bottom:1px solid #f2f5f9;}
+.svc_noti_set .switch_cont .switch_item {padding:0;}
+.svc_noti_set .link_wrap {margin-top:0.4rem;}
+.svc_alarm_list {margin-bottom:0;}
+.svc_alarm_list li:last-child {border-bottom:0;}
+.svc_alarm_list .item_subtxt .cur {margin-left:0.4rem;}
+.svc_alarm_list .item_subtxt .sum {margin-left:0.4rem;}
+.svc_alarm_list .custbox_item .item_tit {font-size:1.6rem;}
+.svc_alarm_list div.custbox_item .item_tit {padding-right:0;}
+.svc_alarm_list .custbox_item:after {top:2.4rem;transform:translateY(0);}
+.svc_alarm_list .item_subtxt {font-size:1.3rem;color:#848a92;}
+
+/* 영업점 찾기 */
+.branchlist .listbox {margin:0;}
+.branchlist .custbox_list>div {padding-bottom:0;}
+.branchlist .placeinfo {margin:0.8rem 0 0;}
+.placeinfo {color:#686e75;}
+.placeinfo_dist {display:inline-block;}
+.placeinfo .link_wrap+.placeinfo_dist {margin-top:0.8rem;}
+.placeinfo .bullet {margin-top:1.6rem;}
+
+/* 방문예약내역 */
+.visit_top {padding:2.4rem 0;align-items:flex-start;}
+.visit_top .title_wrap {flex:1;margin:0;margin-right:0.8rem;}
+.visit_tit {display:block;margin-top:0.4rem;font-weight:500;font-size:1.7rem;}
+.visit_top .ico_del {margin-left:0.4rem;}
+
+/* 장애인 편의시설 */
+.convlist {display:flex;flex-wrap:wrap;}
+.convlist_item {flex:1 1 50%;position:relative;min-height:2.4rem;margin-top:1.6rem;padding:1px 1.6rem 0 3.2rem;}
+.convlist_item::before {content:'';position:absolute;top:0;left:0;display:inline-block;width:2.4rem;height:2.4rem;vertical-align:top;background-position:0 0;background-repeat:no-repeat;background-size:100%;}
+.convlist_parking::before {background-image:url(/public/images/icon/ic_convenient_parking.png);}
+.convlist_toilet::before {background-image:url(/public/images/icon/ic_convenient_toilet.png);}
+.convlist_slope::before {background-image:url(/public/images/icon/ic_convenient_slope.png);}
+.convlist_elevator::before {background-image:url(/public/images/icon/ic_convenient_elevator.png);}
+.convlist_ringbell::before {background-image:url(/public/images/icon/ic_convenient_bell.png);}
+
+/* 설정 */
+.icon_smj5413 {background-image:url(/public/images/svc/img_setting.png);}
+
+/* 모바일핀패드 */
+.mobile_pin.list_half {align-items:stretch;gap:1.6rem;}
+.mobile_pin.list_half .chk_item {flex:1 1 40%;}
+.mobile_pin.list_half .chk_item:nth-child(odd) {padding-right:0;}
+.mobile_pin .radio_normal~label {width:100%;height:100%;padding:2.4rem 2rem;text-align:center;border-radius:0.6rem;color:#151c22;word-break:break-all;}
+.mobile_pin .radio_normal~label::before {position:absolute;display:block;top:0;left:0;width:100%;height:100%;border:1px solid #e4eaf2;border-radius:0.6rem;background:none;content:'';}
+.mobile_pin .radio_normal:checked~label::before {position:absolute;display:block;top:0;left:0;width:100%;height:100%;border:2px solid #1490ef;border-radius:0.6rem;background:none;content:'';}
+.mobile_pin [class^='icon_regist'] {display:block;width:6.2rem;height:6.2rem;margin:0 auto 0.8rem;background-size:100%;}
+.mobile_pin .icon_regist01 {background-image:url(/public/images/svc/img_alien_registration_card.png);}
+.mobile_pin .icon_regist02 {background-image:url(/public/images/svc/img_alien_registration_card_not.png);}
+.mpinpad .custbox_item {display:flex;flex-direction:row-reverse;margin-right:0.8rem;padding-bottom:0;}
+.mpinpad .custbox_item .item_tit {flex:1;margin-right:2rem;}
+.mpinpad .badge_wrap {margin:0;}
+
+/* 공지사항 */
+.notilist .infocusto .infolist_lt {flex:0 0 36%;}
+.details_noti .details_cont {white-space:pre-wrap;}
+.attachfile {padding:3.2rem 0;border-top:1px solid #f2f5f9;}
+.attachfile_item {display:block;font-size:1.4rem;color:#686e75;}
+.attachfile_item:not(:first-child) {margin-top:1.2rem;}
+.attachfile_item a::before {content:'';display:inline-block;width:1.8rem;height:1.8rem;margin-right:0.8rem;vertical-align:middle;background:url(/public/images/com/ic_file_clip.png) no-repeat 0 0 / 100%;}
+
+/* 이벤트 상세 템플릿 */
+.evt_template .textarea {white-space:pre-wrap;}
+.evt_lookout {margin-bottom:0.8rem;font-size:1.2rem;color:#848a92;}
+.evt_toparea {color:#fff;}
+.evt_keyvisual {padding:1.6rem;text-align:center;background-color:#7170de;}
+.evt_keyvisual::before {content:'';display:block;width:5.6rem;height:5.6rem;margin:0 auto 0.8rem;background:url(/public/images/svc/img_event_preview_top.png) no-repeat 0 0 / 100%;}
+.evt_keyvisual .title_h1 {white-space:pre-wrap;color:#fff;}
+.evt_duration {display:flex;align-items:center;padding:1.2rem 1.6rem;background-color:#4b5fd0;}
+.evt_duration .badge_item {margin-right:0.8rem;border-color:#fff;font-weight:500;color:#fff;}
+.evt_duration .date {font-size:1.4rem;}
+.evt_midarea {padding:2.4rem 1.6rem;background-color:#f8f2ff;color:#333a40;}
+.evt_midarea::after {content:'';display:block;max-width:28.8rem;height:9.8rem;margin:2.4rem auto 0;background:url(/public/images/svc/img_event_preview_bottom.png) no-repeat 0 0 / 100%;}
+.evt_consent {padding:2.4rem 1.6rem;background:#f7f9fc;color:#333a40;}
+.evt_images {line-height:0;}
+
+/* 마이페이지 */
+.icon_smj5101 {background-image:url(/public/images/svc/img_mypage.png);}
