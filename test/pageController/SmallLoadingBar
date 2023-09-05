@@ -1,0 +1,51 @@
+import styled,{css} from "styled-components";
+
+/**
+ * @name SmallLoadingBar 
+ * @role 계좌 잔액을 조회하거나 Infinity Scroll 경우에 사용하는 Small loading
+ * @props type(string) - 디폴트는 왼쪽 정렬 /
+ *    center : 중앙정렬 (계좌잔액 조회시)
+ *    right : 오른쪽 정렬 (계좌잔액 조회시)
+ *    infinity : Infinity Scroll 경우 추가 데이터 조회 될때 출력
+ **/ 
+
+function SmallLoadingBar({type}) {
+    return  ( 
+      <StyledSamllLoading type={type}>
+        <div className="loading">
+          <div className="lottieplayer" aria-hidden="true">
+            <lottie-player
+              style={{ width: "3.2rem", height: "2.1rem" }}
+              src="/images/motion/loading_2.json"
+              background="transparent"
+              speed="1"
+              autoplay loop
+            ></lottie-player> 
+          </div>
+        </div>
+      </StyledSamllLoading>
+    )
+  }
+
+const StyledSamllLoading = styled.div`
+  text-align:left;
+  line-height:0;
+  & > .loading{
+    display:inline-block;
+  }
+  ${({type})=> type===`center` && 
+  css`
+    text-align:center;
+  `}
+  ${({type})=> type===`right` && 
+  css`
+    text-align:right;
+  `}  
+  ${({type})=> type===`infinity` && 
+  css`
+    padding:1.8rem 0;
+    text-align:center;
+  `}
+
+`;
+export default SmallLoadingBar;
