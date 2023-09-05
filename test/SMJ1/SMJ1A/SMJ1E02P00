@@ -1,0 +1,102 @@
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer"
+import PopupFrame from "../../../../../common/components/popup/PopupFrame"
+import PopupHeader from "../../../../../common/components/popup/PopupHeader"
+import PopupContainer from "../../../../../common/components/popup/PopupContainer"
+import { CustomA } from '../../../../../common/components/button'
+import TabMenu from '../../../../../common/components/tab/TabMenu'
+import TabCont from '../../../../../common/components/tab/TabCont'
+import NormalListLinkItem from '../../../../../common/components/list/NormalListLinkItem'
+import SMJ1E03P00 from '../../SMJ1E03/SMJ1E03P00/SMJ1E03P00'
+
+function SMJ1E02P00(){
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    // 1. 주소탭(동적탭)
+    const [tabIdx, setTabIdx] = useState(0); // 주소탭인덱스 관리state
+    const [tabInfo, setTabInfo] = useState([ // 주소탭정보 관리state
+        // 1. complete : depth별로 선택시 true로 변경되어야함(클래스로 전달되어 폰트스타일 다르게 적용됨) 2. disabled : 상위depth선택 전 하위depth선택시 클리이벤트 막기위해 설정
+        {tabname : t("co1200_0008"), id : "addressDepth01", tabPanel : 'addressDepth01Panel', complete : false, disabled : false}, 
+        {tabname : t("co1200_0009"), id : "addressDepth02", tabPanel : 'addressDepth02Panel', complete : false, disabled : true},
+        {tabname : t("co1200_0010"), id : "addressDepth03", tabPanel : 'addressDepth03Panel', complete : false, disabled : true},
+    ])
+    const dummyAddressData = [ // 주소 dummydata
+        ['서울', '부산', '대구', '인천', '광주', '대전', '울산'],
+        ['거제시', '거창군', '고성군', '김해시', '남해군', '밀양시', '사천시', '산청군'],
+        ['동이름', '동이름', '동이름', '동이름']
+    ]
+    // 2. bottom sheet
+    const dummyOfficeData = ['김우리', '박우리', '이우리', '신우리', '장우리', '한우리', '고우리', '조우리']; //검색 후 리스트 클릭시 호출되는 bottom sheet의 영업점 직원 dummy정보
+    const [selectdata, setSelectData] = useState(null); // bottom sheet에서 옵션 선택시 담길 옵션정보
+    console.log(selectdata)
+    const bottomsheetEvt = () =>{ //검색 후 리스트 클릭시 호출되는 bottom sheet
+        dispatch(bottomSheetAction({
+            title: "",
+            message : <SMJ1E03P00 data={dummyOfficeData} setSelectData={setSelectData} />,
+            state : null
+        })) 
+    }
+    return(
+        <>
+            <PopupFrame>
+                <PopupHeader type="normal" title={t("co1200_0001")} />
+                <PopupContainer hasFixed>
+                    <div className="tab_wrap">
+                        <div className="tab_head">
+                            <CustomA href="#none" btnClass="tab_item" callback={()=> navigate("/SMJ1E01P00")}><span className="tab_txt">{t("co1200_0002")}</span></CustomA>
+                            <CustomA href="#none" btnClass="tab_item is-active" callback={()=> navigate("/SMJ1E02P00")}><span className="tab_txt">{t("co1200_0003")}</span></CustomA>
+                        </div>
+                        <div className="tabcont"> 
+                            <h2 className="blind">{t("co1200_0003")}</h2>
+                            <div className="dvgroup first"> 
+                                <div className="tab_wrap arr_type">
+                                    <div className="tab_head" role="tablist">
+                                        <TabMenu tabInfo={tabInfo} tabIdx={tabIdx} onClick={setTabIdx} /> 
+                                    </div>
+                                    <TabCont tabcont={tabInfo[tabIdx]}>
+                                        <SMJ1E02P00DataBox address={dummyAddressData} tabInfo={tabInfo} setTabInfo={setTabInfo} tabIdx={tabIdx} />
+                                        {/* 검색완료시 */}
+                                        <ul className="listbox"> {/* 2023-05-31 태그수정 div > ul */}
+                                            <NormalListLinkItem type="button" arrow title="지점명1" subtxt="도로명 주소시 출력1" onClick={bottomsheetEvt} />
+                                            <NormalListLinkItem type="button" arrow title="지점명2" subtxt="도로명 주소시 출력2" onClick={bottomsheetEvt} />
+                                        </ul>
+                                    </TabCont>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </PopupContainer>
+            </PopupFrame>
+        </>
+    )
+}
+
+function SMJ1E02P00DataBox({address, tabInfo, tabIdx, setTabInfo}){
+    const onChange = (e) => {
+        const newbtnTab = [...tabInfo];
+        newbtnTab[tabIdx].complete = true;
+        if(tabIdx !== tabInfo.length-1){
+            newbtnTab[tabIdx+1].disabled = false;
+        }
+        setTabInfo(newbtnTab)
+    }
+    return(
+        <ul className="optionbox">
+            {
+                address[tabIdx].map((data, i)=>(
+                    <li className="option_item" key={i}>
+                        <input type="radio" name="option" id={`option_${i}`} className="blind" onChange={(e)=> onChange(e)} value={data} />
+                        <label className="option_lb" htmlFor={`option_${i}`}><span>{data}</span></label>
+                    </li>
+                ))
+            }
+        </ul>
+    )
+}
+
+export default SMJ1E02P00
