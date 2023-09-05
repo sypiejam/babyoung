@@ -1,0 +1,32 @@
+
+import {useState} from 'react'
+import { useTranslation } from "react-i18next";
+import BottomSheetHead from './bottomSheet/BottomSheetHead'
+import BottomSheetBody from './bottomSheet/BottomSheetBody'
+import BottomSheetInner from './bottomSheet/BottomSheetInner'
+import BtmsheetListItem from './list/BtmsheetListItem'
+
+function CalendarList(){
+    const {t} = useTranslation();
+    const [selectdata, setSelectData] = useState(null);
+    const dataArr = ['매월 01일','매월 02일','매월 03일','매월 04일','매월 05일','매월 06일','매월 07일','매월 08일', '매월 09일', '매월 10일', '매월 11일', '매월 12일', '매월 13일','매월 14일','매월 15일','매월 16일','매월 17일','매월 18일','매월 19일','매월 20일','매월 21일', '매월 22일', '매월 23일', '매월 24일', '매월 25일', '매월 26일', '매월 27일', '매월 28일', '매월 29일', '매월 30일', '매월 말일']; //{t(co1002_0001)}
+    console.log(selectdata)
+    return(
+        <>
+            <BottomSheetHead title="날짜선택" btnClose /> {/* {t(co1001_0001)} */}
+            <BottomSheetBody>
+                <BottomSheetInner>
+                    <ul className="list_wrap">
+                        {
+                            dataArr.map((data, idx)=>(
+                                <BtmsheetListItem key={idx} chkicon type="radio" name="selectday" id={data} title={data} onChange={(e)=> setSelectData(data)} /> // 230519 chkicon 속성추가, 컴퍼넌트명 변경 type="radio"추가
+                            ))
+                        }
+                    </ul>
+                </BottomSheetInner>
+            </BottomSheetBody>
+        </>
+    )
+}
+
+export default CalendarList
