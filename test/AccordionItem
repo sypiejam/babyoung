@@ -1,0 +1,44 @@
+import {useState, useRef} from "react";
+/**
+ * @name AccordionItem
+ * @role Accordion content
+ * @props title(string) - AccordionItem 제목
+ * @props isScroll(boolean) - title 클릭시 페이지 상단 위치로 스크롤 되어 올라가야 한다면 넣어서 사용  //2023-05-16 props 명 수정
+ * @props children - AccordionItem 내용
+ * @props open(boolean) - 아코디언이 열린 상태여야 할 때 (디폴트는 닫힘 상태) //2023-05-15 open 상태 추가
+ * @props count(string) - title 옆에 개수가 들어갈 때 //2023-05-18 추가
+ */
+function AccordionItem({title,isScroll,children, open, count}){//2023-05-18 count 추가
+    const [isOpen,setOpen] = useState(open? true : false); //2023-05-15 open 상태 추가
+    const scrollRef = useRef();
+
+    const handleScroll = () =>{
+        const header = 60;
+        setOpen(!isOpen);
+        if(isScroll && !isOpen){  //2023-05-16 props 명 수정
+            setTimeout(function(){
+                window.scrollTo({top:scrollRef.current?.getBoundingClientRect().top - header + window.scrollY,behavior:"smooth"});
+            },100);
+        }
+    }   
+
+    return(
+        <div className="accordion_item" ref={scrollRef}>
+            <button className={`accordion_head ${isOpen ? "is-active" : ""}`} title={`${isOpen ? "내용닫기" : "내용열기"}`}  onClick={handleScroll}>
+                {title}
+                {count && //2023-05-18 count 추가
+                    <>
+                        <span className="count">{count}</span><span className="blind">계좌</span> {/* 2023-05-22 : blind 마크업 추가 */}
+                    </>
+                }
+            </button>
+            {isOpen && 
+                <div className="accordion_body">
+                    {children}
+                </div>
+            }
+        </div>
+    )
+}
+
+export default AccordionItem;
