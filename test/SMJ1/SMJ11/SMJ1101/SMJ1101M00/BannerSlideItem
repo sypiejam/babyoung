@@ -1,0 +1,28 @@
+import { CustomA } from "../../../../../common/components/button"
+
+/**
+ * @name BannerSliderItem 
+ * @role 공지와 이벤트 배너노출(관리자에서 설정)
+ * @props title(string) : 타이틀 
+ * @props desc(string) : 부가설명
+ * @props bgcolor(string) : 배너색상
+ * @props bgimage(string) : 배너이미지경로
+ * @props callback(function) : 배너이동경로
+*/
+
+function BannerSliderItem({title, desc, bgcolor, bgimage, callback}){
+    return (
+       <div>
+            <div className="banner_item" style={{backgroundColor:bgcolor}}>
+                <CustomA href="#none" btnClass="banner_link" callback={callback}>
+                    <img src={bgimage} className="banner_img" alt="" aria-hidden="true" />
+                    <div className="banner_txt">
+                        <strong className="banner_tit">{title}</strong>
+                        <p className="banner_desc">{desc}</p>
+                    </div>
+                </CustomA>
+            </div>
+       </div>
+    )
+}
+export default BannerSliderItem;
