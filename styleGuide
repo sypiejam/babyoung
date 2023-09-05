@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Style Guide</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<style>
+    code {
+        overflow:hidden;
+        overflow-x:auto;
+        display:block;
+        margin:1.6rem 0;
+        padding:0 2rem;
+        border-radius:1rem;
+        font-size:1.3rem;
+        font-family:'Consolas';
+        letter-spacing:0;
+        white-space:pre;
+        background-color:#f2f5f9;
+    }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Style Guide</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <!-- 20230428 작성중 -->
+        <div class="content">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <h2 class="title_h1">1. HTML/CSS</h2>
+                </div>
+                <div class="descbox">
+                    <p>우리글로벌뱅킹 재구축 웹표준/웹접근성 준수</p>
+                    <p>IOS 14.0 이상 / Android 7.0 이상 (서비스별로 상이할 수 있음)</p>
+                    <p>디자인적으로 치명적이지 않은 1~2px의 차이는 무시</p>
+                    <p>인코딩 &#64;charset utf-8</p>
+                </div>
+                <div class="title_wrap">
+                    <h2 class="title_h1">2. CSS 작성 규칙</h2>
+                </div>
+                <ul class="bullet">
+                    <li class="bullet_item">선택자 {속성:값;}</li>
+                    <li class="bullet_disc">여는 중괄로( &#123; )는 마지막 선택자와 스페이스 한 칸의 간격을 둔다;</li>
+                    <li class="bullet_disc">콜론( &#58; ) 뒤에는 스페이스를 넣지 않는다;</li>
+                    <li class="bullet_disc">특성 선택자 와 속성 값에는 작은따옴표( &#39; )를 사용한다;</li>
+                    <li class="bullet_disc">URL값( url&#40;&#41; )에는 따옴표를 사용하지 않는다;</li>
+                    <li class="bullet_disc">예외: &#64;charset 문자열 인코딩을 지정할 땐 큰따옴표( &#34; )를 사용한다;</li>
+                    <li class="bullet_disc">모든 선언의 끝은 세미콜론( &#59; )으로 마무리한다;</li>
+                    <li class="bullet_disc">유형 별로 정렬하기;
+                        <p class="bullet_dash">overflow, float, position, display, width &#38; height, margin &#38; padding, border, color, font, background, 기타 등등</p>
+                        <p class="bullet_dash">font 그룹 : color, letter-spacing, text-align, text-decoration, text-indent, vertical-align, white-space 등</p>
+                    </li>
+                    <li class="bullet_disc">숫자는 1보다 작은 소수 앞의 0을 표기, 뒤따르는 0은 표기하지 않는다;</li>
+                    <li class="bullet_disc">SHL이나 RGB를 표기 할때, 쉼표( &#44; ) 뒤에 스페이스 한 칸을 더하고 괄호와 내용 사이에는 스페이스를 넣지 않는다;</li>
+                </ul>
+<code>
+//Okay
+.woori {overflow:hidden;display:block;margin:0 auto;padding:2rem;color:rgba(0, 0, 0, 0.1);background:hsl(300, 100%, 100%);opacity:0.5;}
+
+//Nope
+.woori{ display: block; overflow: hidden;margin: 0 auto;padding: 2.0rem;color: rgba(0,0,0,0.1); background:hsl( 300, 100%, 100% );opacity: .5}
+
+</code>
+            </div>
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+</body>
+</html>
