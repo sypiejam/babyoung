@@ -1,0 +1,19 @@
+import styled from "styled-components";
+
+function BulletContainer({children}) {
+
+    console.log(children);
+
+    return (
+        <BulletContainerStyle>
+            {children}
+        </BulletContainerStyle>
+    );
+}
+
+const BulletContainerStyle = styled.div`
+  display : flex;
+  flex-direction : column;
+`
+
+export default BulletContainer;
