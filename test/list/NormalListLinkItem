@@ -1,0 +1,82 @@
+import styled, {css} from "styled-components";
+import { CustomA } from "../button";
+
+/**
+ * 
+ * @name NormalListLinkItem 
+ * @role 기본적인 형태의 리스트로 여러 항목 중에서 한개의 항목을 선택하거나 이동하는데 활용합니다.
+ * @props type(a or button or radio) : 리스트를 구성할 태그를 넣어줍니다.
+ * @props id(string) : 라디오의 인풋과 레이블을 연결해주며 id값이 겹치지 않도록 항목별로 고유한 값을 넣어줍니다.
+ * @props name(string) : 라디오그룹의 name을 지정합니다. 동일그룹 내의 name값은 동일하게 사용합니다.
+ * @props title(string) : 항목의 타이틀값을 기재합니다.
+ * @props href(string) : a태그를 사용하는 경우 href값을 넣어줍니다.
+ * @props subtxt(string) : 항목에 서브텍스트가 있는 경우 기재합니다.
+ * @props arrow(boolean) : 리스트에 arrow아이콘이 있는경우 넣어줍니다.
+ * @props onChange(function) : onChange이벤트
+ * @props onClick(function) : onClick이벤트
+ * @props callback(function) : callback이벤트
+ * @props tag(string) : 기본(li) 다른태그로 변경할 경우 props로 전달합니다.(tag="div")
+ * @props callback(function) : callback이벤트
+ */
+
+function NormalListLinkItem({type, id, name, title, href, subtxt, arrow, onChange, onClick, callback, tag, children}){ {/* 2023-05-31  tag, children 추가 */}
+    return(
+        <>
+            <StyledNormalListLinkItem as={tag} arrow={arrow}> {/* 2023-05-31 as={tag} 추가 */}
+                {
+                    type === "radio" &&
+                    <>
+                        <input type="radio" className="blind" name={name} id={id} value={title} onChange={onChange} />
+                        <label htmlFor={id} className="custbox_item">
+                            {children} {/* 2023-05-31  children 추가 */}
+                            {title && <span className="item_tit">{title}</span>} {/* 2023-05-31 title수정 */}
+                        </label>
+                    </> 
+                }
+                { type === "button" && 
+                    <button type="button" className="custbox_item" onClick={onClick}>
+                        {children} {/* 2023-05-31  children 추가 */}
+                        {title && <span className="item_tit">{title}</span>} {/* 2023-05-31 title수정 */}
+                    </button> 
+                }
+                { type === "a" && <CustomA href={href ? href : "#none"} btnClass="custbox_item" callback={callback}>{/* 접근성검수 : href 조건 추가 */}
+                    {children} {/* 2023-05-31  children 추가 */}
+                    {title && <span className="item_tit">{title}</span>}</CustomA> } {/* 2023-05-31 title수정 */}
+                {/* 2023-06-07 div case 추가 */}
+                { type === "div" && 
+                    <div className="custbox_item">
+                        {children}
+                        {title && <span className="item_tit">{title}</span>} 
+                    </div> 
+                }
+                { subtxt && <div className="item_subtxt">{subtxt}</div> }
+            </StyledNormalListLinkItem>
+        </>
+    )
+}
+// 2023-05-31 태그수정(div > li)
+const StyledNormalListLinkItem = styled.li` 
+    border-bottom:1px solid #f2f5f9;
+    position:relative;
+    padding:0 0 2.4rem 0;
+    // 2023-06-08 custbox_item 스타일 common.css 으로 이동
+    ${({arrow}) => arrow && css`
+    // 2023-06-07 arrow 스타일 수정
+    // 2023-06-08 item_tit 스타일 common.css 으로 이동
+    // 2023-07-06 item_tit 스타일 padding 추가
+        .item_tit {
+            padding-right:2.2rem;
+        }
+        .item_tit::after {
+                content:'';
+                position:absolute;
+                width:1.4rem;
+                height:2.4rem;
+                top:0;
+                right:0;
+                background:url(/images/com/ic_arrow_normal_right_enabled.png) no-repeat 0 0 / 100%;
+            }
+        `
+    }
+`
+export default NormalListLinkItem
