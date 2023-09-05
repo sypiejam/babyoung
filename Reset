@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* Font */
+@font-face {
+    font-family:'Noto';
+    font-weight:400;
+    src:url(/css/nonetouch/fonts/cjk/NotoSansCJKkr-Regular.woff) format('woff'),
+        url(/css/nonetouch/fonts/cjk/NotoSansCJKkr-Regular.otf) format('opentype'),
+        url(/css/nonetouch/fonts/cjk/NotoSansCJKkr-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family:'Noto';
+    font-weight:500;
+    src:url(/css/nonetouch/fonts/cjk/NotoSansCJKkr-Medium.woff) format('woff'),
+        url(/css/nonetouch/fonts/cjk/NotoSansCJKkr-Medium.otf) format('opentype'),
+        url(/css/nonetouch/fonts/cjk/NotoSansCJKkr-Medium.ttf) format('truetype');
+}
+@font-face {
+    font-family:'Noto';
+    font-weight:700;
+    src:url(/css/nonetouch/fonts/cjk/NotoSansCJKkr-Bold.woff) format('woff'),
+        url(/css/nonetouch/fonts/cjk/NotoSansCJKkr-Bold.otf) format('opentype'),
+        url(/css/nonetouch/fonts/cjk/NotoSansCJKkr-Bold.ttf) format('truetype');
+}
+@font-face {
+    font-family:'Noto';
+    font-weight:400;
+    unicode-range:U+0030-0039;
+    src:url(/css/nonetouch/fonts/robotonew/Roboto-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family:'Noto';
+    font-weight:500;
+    unicode-range:U+0030-0039;
+    src:url(/css/nonetouch/fonts/robotonew/Roboto-Medium.ttf) format('truetype');
+}
+@font-face {
+    font-family:'Noto';
+    font-weight:700;
+    unicode-range:U+0030-0039;
+    src:url(/css/nonetouch/fonts/robotonew/Roboto-Bold.ttf) format('truetype');
+}
+
+/* Reset */
+body {min-width:320px;overflow-wrap:break-word;word-break:break-all;-webkit-user-select:none;-webkit-touch-callout:none;}
+/* :lang(ko) {word-break:keep-all;}Do not break Korena words */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,button,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,input,ins,kbd,q,s,strong,samp,select,small,strike,sub,sup,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,caption,textarea,tbody,tfoot,thead,tr,th,td,hr,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {margin:0;padding:0;border:0;outline:none;font-weight:400;font-family:'Noto',AppleSDGothicNeo,sans-serif;font-size:10px;font-style:normal;line-height:1.4;letter-spacing:-0.6px;background-color:transparent;color:#151c22;box-sizing:border-box;-webkit-appearance:none;appearance:none;-webkit-border-radius:0;}
+ul,ol,li,th,td {list-style:none;font-size:inherit;color:inherit;}
+h1,h2,h3,h4,h5,h6 {font-weight:500;}
+button,div,details,strong,span,em,b,u,i,li,dt,dd,p {font-size:inherit;font-weight:inherit;letter-spacing:inherit;color:inherit;}
+legend,caption {width:0;height:0;text-indent:-9999px;visibility:hidden;}
+summary::marker {display:none;font-size:0;}
+img {width:100%;height:auto;}
+table {border-spacing:0;border-collapse:collapse;table-layout:fixed;width:100%}
+a {display:inline-block;font-size:inherit;text-decoration:none;color:inherit;}
+a:is(:hover,:focus,:active) {text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+/* :focus-visible, input:focus-visible+label {outline:2px solid #1056c3;}/* 키보드 포커스 */
+label {text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+::before,::after {box-sizing:border-box;}
+
+input {vertical-align:middle;}
+/* input[type="text"],input[type="password"],input[type="number"],input[type="search"],input[type="email"],input[type="tel"],input[type="file"] {-webkit-user-select:text;color:#151c22;} */
+input {-webkit-user-select:text;color:#151c22;}
+input::placeholder {opacity:1;font-weight:400;color:#c4cbd3;-webkit-text-fill-color:rgba(196,203,211,1);}
+input::-webkit-input-placeholder {opacity:1;font-weight:400;color:#c4cbd3;-webkit-text-fill-color:rgba(196,203,211,1);}
+input:disabled {opacity:1;background-color:transparent;color:#d5dbe3;-webkit-text-fill-color:rgba(213,219,227,1);}
+input:disabled::placeholder {color:#d5dbe3;-webkit-text-fill-color:rgba(213,219,227,1);}
+input:read-only {background-color:transparent;pointer-events:none;}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {display:none;-webkit-appearance:none;}
+textarea:disabled {opacity:1;background-color:transparent;color:#f2f5f9;-webkit-text-fill-color:rgba(242,245,249,1);}
+textarea:disabled::placeholder {color:#d5dbe3;-webkit-text-fill-color:rgba(213,219,227,1);}
