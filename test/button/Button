@@ -1,0 +1,190 @@
+import styled, { css } from "styled-components";
+
+/**
+ * @name Button 
+ * @role 버튼 컨포넌트 (text button은 제외)
+ *            button태그로 변경됩니다. button태그로 변경시 필요없는 href속성은 제거해야합니다.
+ * @props size(string) - button 사이즈 따라 sm(small), md(medium), lg(large) (플로팅 버튼에서는 사용하지 않음)
+ * @props tag(string) - a링크가 아닌 button 태그로 사용시 "button"으로 지정해서 사용
+ * @props status(string) - 해당하는 status를 넣어서 사용합니다.
+ *            /Floating Button의 경우 -> primary, secondary, negative, warning
+ *            /Ground Button의 경우 -> primary, blue(contained blue), gray(contained gray), outlined, ghost
+ * @props icon(string) - 지정된 icon이름을 넣어서 사용합니다. (ex. phone)
+ * @props text(string) - 버튼 내용
+ * @props disabled(boolean) - disabled 상태일때 사용
+ * @props onClick - click 이벤트
+ * @props btnClass - 컴포넌트로 정의된 스타일 외에 더블클래스를 줘서 사용해야 할 때 클래스 네임을 넣어 사용
+ **/ 
+
+function Button({ size, tag, status, icon, text , disabled, onClick, btnClass }){
+    const sizeStyle = SIZES[size];
+    const variantStyle = VARIANTS[status];
+    const classNames = ( size ? (icon ? `btn_${size} btn_icon_${icon}` : `btn_${size}`) : `btn_${status}`) + (btnClass? ` ${btnClass}`:"");
+
+     
+    return(<StyledButton as={tag} className={classNames} sizeStyle={sizeStyle} variantStyle={variantStyle} disabled={disabled} onClick={onClick}>
+        <span>{text}</span>
+    </StyledButton>)
+}
+
+export const SIZES = {
+    sm : css`
+    --button-width:auto;
+    --button-min-width:4.8rem;
+    --button-height:3rem;
+    --button-padding:0 0.8rem;
+    --button-border-radius:0.5rem;
+    --button-font-size:1.3rem;
+    `,
+    md : css`
+    --button-width:100%;
+    --button-min-width:9.6rem;
+    --button-min-height:3.8rem;
+    --button-padding:0.8rem 1.2rem;
+    --button-border-radius:0.6rem;
+    --button-font-size:1.3rem;
+    `,
+    lg : css`
+    --button-width:100%;
+    --button-height:4.9rem;
+    --button-padding:0 1.6rem;
+    --button-border-radius:0.6rem;
+    --button-font-size:1.5rem;
+    `
+};
+
+export const VARIANTS = {
+    primary: css`
+    --button-background:#1490ef;
+    --button-color:#fff;
+    --button-active-background:linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), #1490ef;
+    --button-disabled-background:#d0e9fc;
+    `,
+    secondary: css`
+    --button-background:#fff;
+    --button-border:1px solid #1490ef;
+    --button-color:#1490ef;
+    --button-active-background:rgba(0,0,0,0.05);
+    `, 
+    negative: css`
+    --button-background:#e4eaf2;
+    --button-color:#333a40;
+    --button-active-background:linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), #e4eaf2;
+    `, 
+    warning: css`
+    --button-background:#e5483d;
+    --button-color:#fff;
+    `, 
+    blue: css`
+    --button-background:#e9f3ff;
+    --button-color:#1056c3;
+    --button-active-background:linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05)), #e9f3ff;
+    --button-disabled-color:rgba(16,86,195,0.3);
+    `,
+    gray: css`
+    --button-background:#f2f5f9;
+    --button-color:#333a40;
+    --button-active-background:linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05)), #f2f5f9;
+    --button-disabled-color:rgba(51,58,64,0.3);
+    `, 
+    outlined: css`
+    --button-background:#fff;
+    --button-border:1px solid #d5dbe3;
+    --button-color:#333a40;
+    --button-active-background:linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05)), #fff;
+    --button-disabled-color:rgba(51,58,64,0.3);
+    --button-disabled-background:#f7f9fc;
+    `, 
+    ghost: css`
+    --button-background:#fff;
+    --button-color:inherit;
+    --button-active-background:rgba(0,0,0,0.05);
+    --button-disabled-color:rgba(51,58,64,0.3);
+    --button-disabled-background:color:rgba(51,58,64,0.3);
+    `
+};
+
+export const StyledButton = styled.a`
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:500;
+    word-break:break-all;
+    text-align:center;
+    box-sizing:border-box;
+
+    width:var(--button-width,auto);
+    min-width:var(--button-min-width,initial);
+    height:var(--button-height,auto);
+    min-height:var(--button-min-height,auto);
+    padding:var(--button-padding,0 0.8rem);
+    border-radius:var(--button-border-radius,0.5rem);
+    font-size:var(--button-font-size,1.3rem);
+    background:var(--button-background, initial);
+    color:var(--button-color, initial);
+    border :var(--button-border, initial);
+
+    &:active{
+        background:var(--button-active-background, var(--button-background));
+    }
+    // 2023-06-16 수정
+    &[disabled], &.disabled{
+        background:var(--button-disabled-background, var(--button-background));
+        color:var(--button-disabled-color, var(--button-color));
+        cursor:default;
+    }
+    &[class*='btn_icon']::before{
+        content:'';
+        display:block;
+        background-position:0 0;
+        background-repeat:no-repeat;
+        background-size:100%;        
+    }
+    &[class*='btn_icon'].btn_sm::before{
+        width:1.4rem;
+        height:1.4rem;
+        margin-right:0.3rem;
+    }
+    &[class*='btn_icon'].btn_md::before{
+        width:1.6rem;
+        height:1.6rem;
+        margin-right:0.4rem;
+    }
+    &[class*='btn_icon'].btn_lg::before{
+        width:2rem;
+        height:2rem;
+        margin-right:0.8rem;
+    }
+    &.btn_request {
+        width:11.5rem;
+        height:auto;
+        min-height:4.1rem;
+        max-height:5.6rem;
+        padding:1rem 1.2rem;
+        font-size:1.3rem;
+        line-height:1.4;
+        color:#333a40;
+    }
+    &.btn_location {
+        position:relative;
+        min-width:4.8rem;
+        width:4.8rem;
+        &::after {
+            content:'';
+            display:inline-block;
+            width:2.4rem;
+            height:2.4rem;
+            margin:-1px 0;
+            background:url('/images/com/ic_location.png') no-repeat 0 0 / 100%;
+        }
+    }
+    &.btn_timer {
+        &[disabled], .disabled {
+            background-color:#f2f5f9;
+            color:#e5483d;
+        }
+    }
+    ${(x) => x.sizeStyle}
+    ${(x) => x.variantStyle}
+` ;
+export default Button;
