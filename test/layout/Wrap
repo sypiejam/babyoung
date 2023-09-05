@@ -1,0 +1,23 @@
+import styled from 'styled-components'
+
+/**
+ * 
+ * @name Wrap 
+ * @role 바닥페이지를 감싸는 최상위 컴퍼넌트입니다.
+ */
+
+function Wrap({children}){
+    return(
+        <>
+            <StyledWrap>
+                {children}
+            </StyledWrap>
+        </>
+    )
+}
+
+const StyledWrap = styled.div`
+    font-size:1.5rem;
+`
+
+export default Wrap
