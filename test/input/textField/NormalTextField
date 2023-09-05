@@ -1,0 +1,52 @@
+import { useTranslation } from "react-i18next";
+import SmallLoadingBar from "../../pageController/SmallLoadingBar";
+
+/**
+ * @name NormalTextField 
+ * @role input NormalTextField 단일 컴포넌트
+ * @props type(string) - input type에 따라 알맞은 타입 설정 (디폴트값 text, 숫자값을 받을 때는 number로 설정)
+ * @props inputMode(string) - inputMode 설정(숫자형 numeric, 소수점 제공하는 숫자형 decimal 외 type 설정과 동일) //2023-06-09 추가
+ * @props status(string) - disabled(비활성화), readOnly(읽기만 가능 할 경우), error 상태일 경우
+ * @props placeholder(string) - input 속성인 placeholder, title에 사용되는 문구
+ * @props defaultValue(string) - value 값이 존재할 경우 사용
+ * @props loading(boolean) - smallloadingbar가 노출 되는 경우
+ * @props className - 기타 디자인 요소를 적용하기 위한 클래스 // 2023-09-01 추가
+ **/ 
+
+function NormalTextField({ children, type, inputMode, status, defaultValue, placeholder, loading, id, className}) {
+    const {t} = useTranslation();
+    const classNames = [
+        "inp_field",
+        (status==="disabled") ? ` disabled` : "",
+        (status==="readOnly") ? ` readonly` : "",
+        (status==="error") ? ` is-error` : "",
+    ].join("");
+
+    return  ( 
+        <div className={classNames}>
+            {/* 2023-06-28 수정 */}
+            {(!loading&&(status !== "readOnly"))&&
+                <div className="inp_item">
+                    <input type={type? type : "text"} inputMode={inputMode && ""+inputMode} id={id} className={`inp_text ${className ? className : ""}`} defaultValue={defaultValue} placeholder={placeholder} title={placeholder} disabled={(status === "disabled"? "disabled" : "")} />
+                    <div className="inp_delete">
+                        <button type="button" className="ico_delete inp_button"><span className="blind">{t('ce0104_0502')}</span></button>{/* 2023-05-19 번역코드 적용 */}
+                    </div>
+                </div>
+            }
+            {(!loading&&(status === "readOnly"))&&
+                <div className="inp_readonly">
+                    {defaultValue ? defaultValue : <span className="placeholder">{placeholder}</span>}{/* 2023-07-13 수정 */}
+                </div>
+            }
+            {/* //2023-06-28 수정 */}
+            {children}
+            {loading&&
+                <div className="loadingbox">
+                    <SmallLoadingBar type="center"/>
+                </div>
+            }
+        </div>
+    )
+}
+
+export default NormalTextField;
