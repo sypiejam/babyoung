@@ -1,0 +1,44 @@
+import styled, {css} from "styled-components";
+
+/**
+ * 
+ * @name FlexBox 
+ * @role flex의 가로배치 속성을 props로 받아 정렬합니다.
+ * @props align(string) : (center, between, around, start, end)
+ */
+
+function FlexBox({children, align}){
+    return (
+        <StyledFlexBox align={align}>
+            {children}
+        </StyledFlexBox>
+
+    )
+}
+
+const StyledFlexBox = styled.div`
+    display:flex;
+    align-items:center;
+    justify-content:${({align})=> StyledFlexAlignFunc(align)};
+    > * { 
+       flex:1; 
+    }
+`
+const StyledFlexAlignFunc = (align) => {
+    switch(align){
+        case 'center' : 
+            return "center"
+        case 'between' :
+            return "space-between"
+        case 'around' :
+            return "space-around"
+        case 'start' :
+            return "flex-start"
+        case 'end' :
+            return "flex-end"
+        default : 
+            return "center"
+    }
+}
+
+export default FlexBox
