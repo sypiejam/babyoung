@@ -1,0 +1,1539 @@
+$(function(){
+	// OS체크
+	deviceChk();
+
+	//table + 더보기
+	if( $('.dtjs') ){
+		$('.dtjs').each(function(){
+			var component = $(this).attr('data-js');
+			switch( component ){
+				case 'table':
+				tableUI();
+				break;
+				case 'accordion':
+				accordionUI();
+				break;
+			}
+		});
+	}
+
+	//하단 fixed 버튼 존재하는 경우
+	if( $('.nst_buttons_wrap.fixed').length ){
+		$('.frame_pageWrap.newST .page_container').css('margin-bottom', '8.8rem');
+	}
+	
+	//////////////////////////////////////////////////////////////////////////
+	/* 2023년 접근성 대응 추가 */
+	accessibility();
+
+	//탭 관련
+	tabUI();
+
+	//스위치형태의 탭 관련
+	tabSwitchUI();
+
+	//처음 문서로드할때 윈도우 높이
+	winOriginalHeight = $(window).height();
+
+	//fixed Button 처리
+	/*
+		기존 common_ui.js와 동일한 코드(input, fixedButton 클래스만 따라감)
+	*/
+	// pbCmmUIBtnFixedTop(); 
+	
+	moreShow();//더보기 230324 
+
+	//////////////////////////////////////////////
+	//바텀쉬트 공통
+	/*
+		디폴트(유동) => 유동 전용! (기존 nst_react_box 사용하지말것!)
+		nst_btmsheet nst_responsive_box
+		nst_responsive_box js_nst_btmsheet
+
+		출금계좌(고정) => 출금계좌 전용!
+		nst_btmsheet nst_account_box
+		nst_selectbox nst_account_box js_nst_btmsheet
+
+		매월일자(고정) = 출금계좌를 뺀 모든 고정 바텀쉬트 => 사용하지말것!
+		nst_selectbox nst_hfix_box js_nst_btmsheet
+		nst_btmsheet nst_hfix_box
+
+		새로추가된 버전 nst_hmax_box => 목록형태는 이걸로 통일!!
+		**432 이전이면 기본높이, 432넘어가면 432로 고정!**
+		nst_selectbox nst_hmax_box js_nst_btmsheet
+		nst_btmsheet nst_hmax_box
+
+		바텀쉬트 닫기 'js_nstbtm_close' 클래스추가(onclick 불필요)
+	*/
+
+	/* 바텀쉬트가 여러개일때 처리 20220331 */
+	$.each( $('.nst_wbank .js_nst_btmsheet'), function(i,v){
+		$(v).attr('data-link-index', (i+1) );
+	});
+
+	$(document).on('click', '.nst_wbank .js_nst_btmsheet', function(){
+
+		var html = $('html');
+		if( $(this).attr('data-id') === undefined || $(this).attr('data-id') === ''){
+			return;
+		}else{
+			var sheetLayer = $('#'+ $(this).attr('data-id') );
+		}
+
+		/* 20220331 추가 */
+		sheetLayer.attr('data-btmsheet-index', $(this).attr('data-link-index') );
+		//console.log( $(this).attr('data-link-index') );
+
+		//original_btn = this; //클릭 호출변수
+		//console.log( original_btn );
+
+		//바텀쉬트 디폴트!!
+		if( $(this).hasClass('nst_react_box') || $(this).hasClass('nst_responsive_box') ){
+
+			//안드로이드 일때(숫자키패드때문에 window 높이 달라지는 문제)
+			//최신버전 아닐때(네이티브 헤더 60)
+			if( $('.lowApp').length ){
+				if( $('body').attr('data-device') == 'a' ){
+					if( $('main').height() != winOriginalHeight ){
+						var mainDiffer = parseInt( winOriginalHeight - $(window).height() ,10);
+						var sheetMaxH = parseInt( ($(window).height() + mainDiffer) - 60 ,10);
+					}else{
+						var sheetMaxH = parseInt( $(window).height() - 60 ,10);
+					}
+				}
+				//아이폰일때는 영향없음
+				else{
+					var sheetMaxH = parseInt( $(window).height() - 60 ,10);
+				}
+			}
+			//최신버전 일때(웹 헤더 44)
+			else{
+				if( $('body').attr('data-device') == 'a' ){
+					if( $('main').height() != winOriginalHeight ){
+						var mainDiffer = parseInt( winOriginalHeight - $(window).height() ,10);
+						var sheetMaxH = parseInt( ($(window).height() + mainDiffer) - 44 ,10);
+					}else{
+						var sheetMaxH = parseInt( $(window).height() - 44 ,10);
+					}
+				}
+				//아이폰일때는 영향없음
+				else{
+					var sheetMaxH = parseInt( $(window).height() - 44 ,10);
+				}
+			}
+
+		}
+		//높이 고정 (ex.출금계좌,일자 셀렉트) [fixedValue=432]
+		//높이 고정은 무조건 nst_hfix_box로 부여하기(출금계좌만 예외처리 nst_account_box )
+		else if( $(this).hasClass('nst_account_box') || $(this).hasClass('nst_hfix_box') ){
+			var fixedValue = 432;
+			var accountSheetMax = parseInt( fixedValue, 10);
+		}
+		//432 이전이면 max-height는 inherit, 432넘어가면 432로 고정!
+		else if( $(this).hasClass('nst_hmax_box') ){
+			var fixedMaxValue = 432;
+			var fixedSheetMax = parseInt( fixedMaxValue, 10);
+		}
+
+		html.addClass('nst_scroll_lock');
+		setTimeout(function(){
+			//nst_dimmed 중복생성방지
+			if( sheetLayer.next('.nst_dimmed').length ){
+				sheetLayer.next('.nst_dimmed').remove();
+			}
+			sheetLayer.after('<div class="nst_dimmed" aria-hidden="true"></div>').next().fadeIn().on({
+				'click':function(e){
+					btmDimClose(e.target);
+				},
+				'touchmove':function(e){
+					e.preventDefault();
+				}
+			});
+		
+			sheetLayer.show();
+
+			// 2022-12-26 start
+			var tab_height = 0;
+			try {
+				tab_height = typeof nstBtmSheetTabHeight == 'function' ? nstBtmSheetTabHeight(sheetLayer) : 0;
+			} catch (e) {
+			}
+			//end 2022-12-26
+
+			//바텀쉬트 디폴트!!
+			if( sheetLayer.hasClass('nst_react_box') || sheetLayer.hasClass('nst_responsive_box') ){
+
+				setTimeout(function(){
+					//최대높이값 초과시
+					var scrollConH = sheetLayer.find('.nst_btmsheet_cont').prop('scrollHeight');
+					var sheetTitH = sheetLayer.find('.nst_btmsheet_tit').innerHeight();
+					var sheetBtnH = sheetLayer.find('.nst_buttons_wrap').innerHeight();
+					var sheetSumH = scrollConH + sheetTitH + sheetBtnH + tab_height; // 2022-12-26
+			
+					if( sheetSumH  >= sheetMaxH ){
+						sheetLayer.css('height', sheetMaxH );
+
+						//플로팅 버튼 O
+						if( sheetLayer.find('.nst_buttons_wrap').length ){
+							sheetLayer.find('.nst_btmsheet_cont').css({
+								'maxHeight': sheetMaxH - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - sheetLayer.find('.nst_buttons_wrap').innerHeight() - tab_height // 2022-12-26
+							});
+						}
+						//플로팅버튼 X
+						else{
+							if( !sheetLayer.hasClass('nst_responsive_box') ){ //기존
+								sheetLayer.find('.nst_btmsheet_cont').css({
+									'maxHeight': sheetMaxH - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - tab_height, // 2022-12-26
+									'paddingBottom':'3rem'
+								});
+							}else{ //채워지게
+								sheetLayer.find('.nst_btmsheet_cont').css({
+									'maxHeight': sheetMaxH - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - tab_height, // 2022-12-26
+									'paddingBottom':'0'
+								});
+							}
+						}
+					}
+					//최대높이값 미만시
+					else{
+						//플로팅버튼 O
+						if( sheetLayer.find('.nst_buttons_wrap').length ){
+							sheetLayer.css('height', sheetSumH );
+							sheetLayer.find('.nst_btmsheet_cont').css({
+								'maxHeight':'initial'
+							});
+						}
+						//플로팅버튼 X
+						else{
+							//nst_btmsheet_inner에 padding-bottom:3rem 있어서 바닥이 채워지지않는 현상 처리
+							if( !sheetLayer.hasClass('nst_responsive_box') ){ //기존
+								sheetLayer.css('height', sheetSumH + 30 );
+							}else{ //채워지게
+								sheetLayer.css('height', sheetSumH );
+							}
+							sheetLayer.find('.nst_btmsheet_cont').css({
+								'maxHeight':'initial',
+							});
+						}
+					}
+
+				});
+			}
+			//높이 고정 (ex.출금계좌,일자 셀렉트) [fixedValue=432]
+			//높이 고정은 무조건 nst_hfix_box로 부여하기(출금계좌만 예외처리 nst_account_box )
+			else if( sheetLayer.hasClass('nst_account_box') || sheetLayer.hasClass('nst_hfix_box') ){
+				setTimeout(function(){
+					sheetLayer.css('height', accountSheetMax );
+
+					if( sheetLayer.find('.nst_tab_menus') ){
+						sheetLayer.find('.nst_btmsheet_cont').css({
+							'maxHeight': accountSheetMax - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - sheetLayer.find('.nst_tab').innerHeight()
+						});
+					}
+					else{
+						sheetLayer.find('.nst_btmsheet_cont').css({
+							'maxHeight': accountSheetMax - sheetLayer.find('.nst_btmsheet_tit').innerHeight()
+						});
+					}
+				});
+			}
+			//432 이전이면 max-height는 inherit, 432넘어가면 432로 고정!
+			else if( sheetLayer.hasClass('nst_hmax_box') ){
+				setTimeout(function(){
+					//최대높이값 초과시
+					var scrollConH = sheetLayer.find('.nst_btmsheet_cont').prop('scrollHeight');
+					var sheetTitH = sheetLayer.find('.nst_btmsheet_tit').innerHeight();
+					var sheetBtnH = sheetLayer.find('.nst_buttons_wrap').innerHeight();
+					var sheetSumH = scrollConH + sheetTitH + sheetBtnH + tab_height; // 2022-12-26
+					
+					if( sheetSumH  >= fixedSheetMax ){
+						sheetLayer.css('height', fixedSheetMax );
+			
+						//플로팅 버튼 O
+						if( sheetLayer.find('.nst_buttons_wrap').length ){
+							sheetLayer.find('.nst_btmsheet_cont').css({
+								'maxHeight': fixedSheetMax - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - sheetLayer.find('.nst_buttons_wrap').innerHeight() - tab_height // 2022-12-26
+							});
+						}
+						//플로팅버튼 X
+						else{
+							sheetLayer.find('.nst_btmsheet_cont').css({
+								'maxHeight': fixedSheetMax - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - tab_height // 2022-12-26
+							});
+						}
+					}
+					//최대높이값 미만시
+					else{
+						//플로팅버튼 O
+						if( sheetLayer.find('.nst_buttons_wrap').length ){
+							sheetLayer.css('height', sheetSumH );
+							sheetLayer.find('.nst_btmsheet_cont').css({
+								'maxHeight':'initial'
+							});
+						}
+						//플로팅버튼 X
+						else{
+							sheetLayer.css('height', sheetSumH );
+							sheetLayer.find('.nst_btmsheet_cont').css({
+								'maxHeight':'initial'
+							});
+						}
+					}
+				});
+			}
+
+			sheetLayer.animate({bottom:0},300,function(){
+				setTimeout(function(){
+					sheetLayer.find('.nst_btmsheet_tit').attr('tabindex','0').focus();
+				});
+			});
+
+			//특정클래스 닫기처리
+			sheetLayer.find('.js_nstbtm_close').off('click').on('click', function(){
+				var html = $('html');
+				var callId = $(this).parents('.nst_btmsheet').attr('id');
+				var sheetLayer = $('#'+ callId );
+			
+				sheetLayer.animate({
+					'bottom': '-100%'
+				},300, function(){
+					$(this).removeClass('on').next('.nst_dimmed').fadeOut().remove();
+					html.removeClass('nst_scroll_lock');
+					$('main.state_general').removeClass('scrollLock');
+					//$('[data-id="'+ callId +'"]').focus();
+
+					//console.log( original_btn );
+					//$(original_btn).focus(); //클릭호출 변수로 초점처리
+
+					/* 20220331 추가 */
+					//console.log( sheetLayer.attr('data-btmsheet-index') );
+					if( sheetLayer.attr('data-btmsheet-index') ){
+						$('.js_nst_btmsheet[data-link-index='+ sheetLayer.attr('data-btmsheet-index') +']').attr('tabindex','0').focus(); // 2022-12-26
+					}else{
+						$('[data-id="'+ callId +'"]').attr('tabindex','0').focus(); // 2022-12-26
+					}
+
+					sheetLayer.hide();
+				});
+			});
+
+		});
+
+	});
+	//////////////////////////////////////////////
+
+	
+	//체크박스 선택시 스크롤(1단계 약관)
+	$('.nst_wbank .nst_selections_wrap').find('.nst_big').each(function(){
+		nstOffEvent(this, 'change.n2commonUi');
+		$(this).on('change.n2commonUi',function(e){
+			
+			var clickedBtn = $(this).parents('.nst_selections_box');
+			
+			//낮은 버전일 경우 (네이티브 헤더 60, 현재 웹 헤더 44)
+			if( $('.lowApp').length ){
+				setTimeout(function(){
+					$('main').animate({
+						scrollTop: ($('main').scrollTop() + clickedBtn.offset().top) - 60
+					}, 500, 'linear');
+				},100)
+			}else{
+				setTimeout(function(){
+					$('main').animate({
+						scrollTop: ($('main').scrollTop() + clickedBtn.offset().top) - 44
+					}, 500, 'linear');
+				},100)
+			}
+		});
+	});
+	//////////////////////////////////////
+
+	//슬라이더 텍스트 정렬(원예금 1단계 슬라이더 눈금 정렬)
+	$('.js_range_slider').each(function(){
+		var len = $(this).find('.min_max_area span').length;
+		$(this).find('.min_max_area span').each(function(){
+			var idx = $(this).index();
+			var wid = 100/(len-1);
+			var lft = (wid * idx) + '%';
+			var mgL = $(this).outerWidth()/2;
+			$(this).css({'left':lft, 'margin-left':-mgL-4});
+			$(this).closest('.min_max_area').find('span:first-child').css({'margin-left':'-.8rem'});
+			$(this).closest('.min_max_area').find('span:last-child').css({'margin-left':-(mgL*2 -8)});
+		});
+	});
+
+	
+});
+
+$(window).on('load', function(){
+
+	//안드로이드 아이폰 구분
+	if(/Android/i.test(navigator.userAgent)){
+		// Android
+		$('html').addClass('android');
+	}else if(/iPhone | iPad | iPod/i.test(navigator.userAgent)){
+		// ios
+		$('html').addClass('ios');
+	}
+});
+
+/**
+ * getUserAgent
+ * @description - Device OS
+ * @return {String} android ,IOS - ios else
+ */
+function getUserAgent(){var e=navigator.userAgent.toLowerCase(),t=/android/.test(e)?"android":/ipad|ipod|iphone/.test(e)?"ios":"else";return t}function deviceChk(){var e=$("body");switch(getUserAgent()){case"ios":e.attr("data-device","i");break;case"android":e.attr("data-device","a");break;default:e.attr("data-device","e")}}
+
+//tab
+function tabUI(){
+	if( $('.nst_ui_tab').length ){
+		nstOffEvent($('.nst_ui_tab').find('.nst_tab_btn'), 'click.n2commonUi');
+		$('.nst_ui_tab').find('.nst_tab_btn').on('click.n2commonUi', function(e){
+			e.preventDefault();
+			var selectedBtn = $(this);
+			var selectedCon = $( $(this).attr('href') );
+			
+			// 2023-03-09 start
+			var $tabCont = selectedBtn.closest('.nst_ui_tab');
+			var $tabItems = $('.nst_ui_tab .nst_tab_item');
+			if ($tabCont.hasClass('-multi_ui_tab')) {
+				$tabItems = $('.nst_tab_item', $tabCont);
+			}
+			//end 2023-03-09
+		
+			$.each( $tabItems, function(i,v){ // 2023-03-09
+				$(this).find('.nst_tab_btn').attr({
+					'aria-selected':'false',
+					'aria-label': $(v).find('.nst_tab_txt').text()
+				}).removeClass('active');
+			});
+		
+			selectedBtn.attr({
+				'aria-selected':'true',
+				'aria-label': $(this).find('.nst_tab_txt').text() + ' 선택됨'
+			}).addClass('active');
+			selectedCon.show().siblings().hide();
+		});
+	}
+}
+
+//table 더보기
+function tableUI(){
+	if( $('.nst_table_more').length ){
+		var hiddenLen = $('.nst_table_more').parents('.dtjs').find('.nst_screen_out').length;
+
+		$('.nst_table_more_btn').attr('aria-label', hiddenLen+'개 숨겨져있는 더보기' );
+	}
+	nstOffEvent($('.nst_table_more_btn'), 'click.n2commonUi');
+	$('.nst_table_more_btn').on('click.n2commonUi', function(){
+		var moreBtn = $(this);
+		if( !$(this).hasClass('on') ){
+			$(this).parents('.dtjs').find('.nst_screen_out').show();
+			$(this).addClass('on').text('접기').attr('aria-label', hiddenLen+'개 펼쳐져있는 접기'); //2023-08-07 접근성 수정"더보기 > 접기 변경"
+			setTimeout(function(){
+				moreBtn.parents('.dtjs').find('.nst_screen_out').first().attr('tabindex','0').focus();
+			},100);
+		}else{
+			$(this).parents('.dtjs').find('.nst_screen_out').hide();
+			$(this).removeClass('on').text('더보기').attr('aria-label', hiddenLen+'개 숨겨져있는 더보기');
+		}
+
+		//220217 더보기가 바텀쉬트 내부에 있는 경우
+		if( moreBtn.parents('.nst_btmsheet').length ){
+			var moreBtn_btmsheet = moreBtn.parents('.nst_btmsheet');
+
+			//최대높이값 초과시
+			var scrollConH = moreBtn_btmsheet.find('.nst_btmsheet_cont').prop('scrollHeight');
+			var sheetTitH = moreBtn_btmsheet.find('.nst_btmsheet_tit').innerHeight();
+			var sheetBtnH = moreBtn_btmsheet.find('.nst_buttons_wrap').innerHeight();
+			var sheetSumH = scrollConH + sheetTitH + sheetBtnH;
+			//var sheetMaxH = moreBtn_btmsheet.height(); //이미 열려있는 상태에서 높이는 그대로 유지 (스크롤만 생기게 처리)
+
+			//높이까지 재조정하려면 하기로 교체
+			var sheetMaxH = appVerSheetMaxH();
+
+			if( sheetSumH  >= sheetMaxH ){
+				moreBtn_btmsheet.css('height', sheetMaxH );
+	
+				//플로팅 버튼 O
+				if( moreBtn_btmsheet.find('.nst_buttons_wrap').length ){
+					moreBtn_btmsheet.find('.nst_btmsheet_cont').css({
+						'maxHeight': sheetMaxH - moreBtn_btmsheet.find('.nst_btmsheet_tit').innerHeight() - moreBtn_btmsheet.find('.nst_buttons_wrap').innerHeight()
+					});
+				}
+				//플로팅버튼 X
+				else{
+					moreBtn_btmsheet.find('.nst_btmsheet_cont').css({
+						'maxHeight': sheetMaxH - moreBtn_btmsheet.find('.nst_btmsheet_tit').innerHeight(),
+						'paddingBottom':'3rem'
+					});
+				}
+			}
+			//최대높이값 미만시
+			else{
+				//플로팅버튼 O
+				if( moreBtn_btmsheet.find('.nst_buttons_wrap').length ){
+					moreBtn_btmsheet.css('height', sheetSumH );
+					moreBtn_btmsheet.find('.nst_btmsheet_cont').css({
+						'maxHeight':'initial'
+					});
+				}
+				//플로팅버튼 X
+				else{
+					moreBtn_btmsheet.css('height', sheetSumH + 30 );
+					moreBtn_btmsheet.find('.nst_btmsheet_cont').css({
+						'maxHeight':'initial',
+					});
+				}
+			}
+		}
+	});
+}
+
+//app버전에 따른 바텀쉬트 최대값 리턴함수
+function appVerSheetMaxH(){
+	if( $('.lowApp').length ){
+		if( $('body').attr('data-device') == 'a' ){
+			if( $('main').height() != winOriginalHeight ){
+				var mainDiffer = parseInt( winOriginalHeight - $(window).height() ,10);
+				var sheetMaxH = parseInt( ($(window).height() + mainDiffer) - 60 ,10);
+			}else{
+				var sheetMaxH = parseInt( $(window).height() - 60 ,10);
+			}
+		}
+		else{
+			var sheetMaxH = parseInt( $(window).height() - 60 ,10);
+		}
+	}else{
+		if( $('body').attr('data-device') == 'a' ){
+			if( $('main').height() != winOriginalHeight ){
+				var mainDiffer = parseInt( winOriginalHeight - $(window).height() ,10);
+				var sheetMaxH = parseInt( ($(window).height() + mainDiffer) - 44 ,10);
+			}else{
+				var sheetMaxH = parseInt( $(window).height() - 44 ,10);
+			}
+		}
+		else{
+			var sheetMaxH = parseInt( $(window).height() - 44 ,10);
+		}
+	}
+	return sheetMaxH;
+}
+
+//아코디온 (nst_offset)
+function accordionUI(){
+	$('.nst_accordion').find('.nst_accordion_btn').each(function(){
+		var offset_top = $(this).parents('.nst_accordion').attr('nst_offset') || 0;
+
+		if ($(this).closest('.nst_accordion').hasClass('-prevent_multi_click')) {
+			$(this).off('click.accordionUI');
+		}
+		
+		nstOffEvent(this, 'click.accordionUI')
+		$(this).on('click.accordionUI',function(e){
+			e.preventDefault();
+			var clickedBtn = $(this);
+
+			if( $(this).hasClass('active') ) {
+				$(this).removeClass('active').attr({'aria-expanded':'false','title':'내용열기'}).next().slideUp(300);
+			}else{
+				$(this).addClass('active').next().slideDown();
+				var clickedBody = $(this).addClass('active').next();
+
+				//낮은 버전일 경우 (네이티브 헤더 60, 현재 웹 헤더 44)
+				if( $('.lowApp').length ){
+					setTimeout(function(){
+						$('main').animate({
+							scrollTop: ($('main').scrollTop() + clickedBody.prev().offset().top - offset_top) - 60
+						}, 500, 'linear');
+					},100)
+				}else{
+					setTimeout(function(){
+						$('main').animate({
+							scrollTop: ($('main').scrollTop() + clickedBody.prev().offset().top - offset_top) - 44
+						}, 500, 'linear');
+					},100)
+				}
+
+				if( clickedBtn.hasClass('active') ){
+					clickedBtn.attr({'aria-expanded':'true','title':'내용닫기'});
+				}else{
+					clickedBtn.attr({'aria-expanded':'false','title':'내용열기'});
+				}
+			}
+		});
+		
+	});
+}
+
+//스위치형태의 탭
+function tabSwitchUI(){
+	if( $('.nst_ui_tabswitch').length ){
+		$('.nst_ui_tabswitch').each(function(){
+			var _this = $(this);
+			_this.find('.nst_tab_check').each(function(){
+				$(this).attr('aria-hidden','true');
+			});
+	
+			_this.find('.nst_tab_item2').each(function(){
+				nstOffEvent(this, 'click.n2commonUi');
+				$(this).on('click.n2commonUi', function(){
+					var selectedTab = $(this);
+					var checkingTab = $(this).prev();
+					// 23.04.07 추가
+					var selectedTabWrap = selectedTab.closest('.nst_ui_tabswitch');
+					var idx = $('.nst_tab_item2', selectedTabWrap).index(selectedTab);
+					var tabCon = selectedTabWrap.next('.nst_tab_content2').find('.nst_tab_cont');
+					tabCon = tabCon.not(selectedTabWrap.next('.nst_tab_content2').find('.nst_tab_content2 .nst_tab_cont'));
+
+					tabCon.hide().eq(idx).show();
+					// //23.04.07 추가
+					$.each( _this.find('.nst_tab_item2'), function(i,v){
+						$(this).attr({
+							'aria-selected':'false',
+							'aria-label': $(v).find('.nst_inner').text()
+						});
+					});
+
+					$.each( _this.find('.nst_tab_check'), function(i,v){
+						$(this).removeClass('active');
+					});
+					selectedTab.attr({
+						'aria-selected':'true',
+						'aria-label': $(this).find('.nst_inner').text() + ' 선택됨'
+					});
+					checkingTab.addClass('active');
+				});
+			});
+		});
+	}
+}
+
+//일반 바텀쉬트 - 사용하지말것
+function btmSheetShow(el){
+	var html = $('html');
+	var sheetLayer = $('#'+ el);
+
+	//안드로이드 일때(숫자키패드때문에 window 높이 달라지는 문제)
+	//최신버전 아닐때(네이티브 헤더 60)
+	if( $('.lowApp').length ){
+		if( $('body').attr('data-device') == 'a' ){
+			if( $('main').height() != winOriginalHeight ){
+				var mainDiffer = parseInt( winOriginalHeight - $(window).height() ,10);
+				var sheetMaxH = parseInt( ($(window).height() + mainDiffer) - 60 ,10);
+			}else{
+				var sheetMaxH = parseInt( $(window).height() - 60 ,10);
+			}
+		}
+		//아이폰일때는 영향없음
+		else{
+			var sheetMaxH = parseInt( $(window).height() - 60 ,10);
+		}
+	}
+	//최신버전 일때(웹 헤더 44)
+	else{
+		if( $('body').attr('data-device') == 'a' ){
+			if( $('main').height() != winOriginalHeight ){
+				var mainDiffer = parseInt( winOriginalHeight - $(window).height() ,10);
+				var sheetMaxH = parseInt( ($(window).height() + mainDiffer) - 44 ,10);
+			}else{
+				var sheetMaxH = parseInt( $(window).height() - 44 ,10);
+			}
+		}
+		//아이폰일때는 영향없음
+		else{
+			var sheetMaxH = parseInt( $(window).height() - 44 ,10);
+		}
+	}
+
+	html.addClass('nst_scroll_lock');
+	setTimeout(function(){
+		//nst_dimmed 중복생성방지
+		if( sheetLayer.next('.nst_dimmed').length ){
+			sheetLayer.next('.nst_dimmed').remove();
+		}
+		sheetLayer.after('<div class="nst_dimmed" aria-hidden="true"></div>').next().fadeIn().on({
+			'click':function(e){
+				btmDimClose(e.target);
+			},
+			'touchmove':function(e){
+				e.preventDefault();
+			}
+		});
+	});
+	sheetLayer.show();
+	setTimeout(function(){
+		//최대높이값 초과시
+		var scrollConH = sheetLayer.find('.nst_btmsheet_cont').prop('scrollHeight');
+		var sheetTitH = sheetLayer.find('.nst_btmsheet_tit').innerHeight();
+		var sheetBtnH = sheetLayer.find('.nst_buttons_wrap').innerHeight();
+		var sheetSumH = scrollConH + sheetTitH + sheetBtnH;
+
+		if( sheetSumH  >= sheetMaxH ){
+			
+			//console.log('내용이 많을때 '+ '\n컨텐츠높이:'+ scrollConH + '\n제목높이:'+ sheetTitH + '\n버튼높이:'+ sheetBtnH + '\n전체높이:'+ sheetSumH + '\n최대높이:'+sheetMaxH);
+			sheetLayer.css('height', sheetMaxH );
+
+			//플로팅 버튼 O
+			if( sheetLayer.find('.nst_buttons_wrap').length ){
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight': sheetMaxH - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - sheetLayer.find('.nst_buttons_wrap').innerHeight()
+				});
+			}
+			//플로팅버튼 X
+			else{
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight': sheetMaxH - sheetLayer.find('.nst_btmsheet_tit').innerHeight(),
+					'paddingBottom':'3rem'
+				});
+			}
+		}
+		//최대높이값 미만시
+		else{
+			//console.log('내용이 작을때 '+ '\n컨텐츠높이:'+ scrollConH + '\n제목높이:'+ sheetTitH + '\n버튼높이:'+ sheetBtnH + '\n전체높이:'+ sheetSumH + '\n최대높이:'+sheetMaxH);
+			
+
+			//플로팅버튼 O
+			if( sheetLayer.find('.nst_buttons_wrap').length ){
+				sheetLayer.css('height', sheetSumH );
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight':'initial'
+				});
+			}
+			//플로팅버튼 X
+			else{
+				sheetLayer.css('height', sheetSumH + 30 );
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight':'initial',
+				});
+			}
+		}
+	});
+	sheetLayer.animate({bottom:0},300, function(){
+		setTimeout(function(){
+			sheetLayer.find('.nst_btmsheet_tit').attr('tabindex','0').focus();
+		});
+	});
+}
+
+//super 적금전용 바텀쉬트 - 사용하지말것
+function btmSheetOpen(el){
+	var html = $('html');
+	var sheetLayer = $('#'+ $(el).attr('data-id') );
+
+	//안드로이드 일때(숫자키패드때문에 window 높이 달라지는 문제)
+	//최신버전 아닐때(네이티브 헤더 60)
+	if( $('.lowApp').length ){
+		if( $('body').attr('data-device') == 'a' ){
+			if( $('main').height() != winOriginalHeight ){
+				var mainDiffer = parseInt( winOriginalHeight - $(window).height() ,10);
+				var sheetMaxH = parseInt( ($(window).height() + mainDiffer) - 60 ,10);
+			}else{
+				var sheetMaxH = parseInt( $(window).height() - 60 ,10);
+			}
+		}
+		//아이폰일때는 영향없음
+		else{
+			var sheetMaxH = parseInt( $(window).height() - 60 ,10);
+		}
+	}
+	//최신버전 일때(웹 헤더 44)
+	else{
+		if( $('body').attr('data-device') == 'a' ){
+			if( $('main').height() != winOriginalHeight ){
+				var mainDiffer = parseInt( winOriginalHeight - $(window).height() ,10);
+				var sheetMaxH = parseInt( ($(window).height() + mainDiffer) - 44 ,10);
+			}else{
+				var sheetMaxH = parseInt( $(window).height() - 44 ,10);
+			}
+		}
+		//아이폰일때는 영향없음
+		else{
+			var sheetMaxH = parseInt( $(window).height() - 44 ,10);
+		}
+	}
+
+	html.addClass('nst_scroll_lock');
+	setTimeout(function(){
+		//nst_dimmed 중복생성방지
+		if( sheetLayer.next('.nst_dimmed').length ){
+			sheetLayer.next('.nst_dimmed').remove();
+		}
+		sheetLayer.after('<div class="nst_dimmed" aria-hidden="true"></div>').next().fadeIn().on({
+			'click':function(e){
+				btmDimClose(e.target);
+			},
+			'touchmove':function(e){
+				e.preventDefault();
+			}
+		});
+	});
+	sheetLayer.show();
+	setTimeout(function(){
+		//최대높이값 초과시
+		var scrollConH = sheetLayer.find('.nst_btmsheet_cont').prop('scrollHeight');
+		var sheetTitH = sheetLayer.find('.nst_btmsheet_tit').innerHeight();
+		var sheetBtnH = sheetLayer.find('.nst_buttons_wrap').innerHeight();
+		var sheetSumH = scrollConH + sheetTitH + sheetBtnH;
+
+		if( sheetSumH  >= sheetMaxH ){
+			
+			//console.log('내용이 많을때 '+ '\n컨텐츠높이:'+ scrollConH + '\n제목높이:'+ sheetTitH + '\n버튼높이:'+ sheetBtnH + '\n전체높이:'+ sheetSumH + '\n최대높이:'+sheetMaxH);
+			sheetLayer.css('height', sheetMaxH );
+
+			//플로팅 버튼 O
+			if( sheetLayer.find('.nst_buttons_wrap').length ){
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight': sheetMaxH - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - sheetLayer.find('.nst_buttons_wrap').innerHeight()
+				});
+			}
+			//플로팅버튼 X
+			else{
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight': sheetMaxH - sheetLayer.find('.nst_btmsheet_tit').innerHeight(),
+					'paddingBottom':'3rem'
+				});
+			}
+		}
+		//최대높이값 미만시
+		else{
+			//console.log('내용이 작을때 '+ '\n컨텐츠높이:'+ scrollConH + '\n제목높이:'+ sheetTitH + '\n버튼높이:'+ sheetBtnH + '\n전체높이:'+ sheetSumH + '\n최대높이:'+sheetMaxH);
+			
+
+			//플로팅버튼 O
+			if( sheetLayer.find('.nst_buttons_wrap').length ){
+				sheetLayer.css('height', sheetSumH );
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight':'initial'
+				});
+			}
+			//플로팅버튼 X
+			else{
+				sheetLayer.css('height', sheetSumH + 30 );
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight':'initial',
+				});
+			}
+		}
+	});
+	sheetLayer.animate({bottom:0},300, function(){
+		setTimeout(function(){
+			sheetLayer.find('.nst_btmsheet_tit').attr('tabindex','0').focus();
+		});
+	});
+}
+//바텀쉬트 열기 id로 호출 (사용권장)
+function btmSheetShow_id(id){
+	var html = $('html');
+	var sheetLayer = $('#'+id);
+
+	//original_btn = $('[data-id="'+ id +'"]'); //호출변수 있을때
+
+	//안드로이드 일때(숫자키패드때문에 window 높이 달라지는 문제)
+	//최신버전 아닐때(네이티브 헤더 60)
+	if( $('.lowApp').length ){
+		if( $('body').attr('data-device') == 'a' ){
+			if( $('main').height() != winOriginalHeight ){
+				var mainDiffer = parseInt( winOriginalHeight - $(window).height() ,10);
+				var sheetMaxH = parseInt( ($(window).height() + mainDiffer) - 60 ,10);
+			}else{
+				var sheetMaxH = parseInt( $(window).height() - 60 ,10);
+			}
+		}
+		//아이폰일때는 영향없음
+		else{
+			var sheetMaxH = parseInt( $(window).height() - 60 ,10);
+		}
+	}
+	//최신버전 일때(웹 헤더 44)
+	else{
+		if( $('body').attr('data-device') == 'a' ){
+			if( $('main').height() != winOriginalHeight ){
+				var mainDiffer = parseInt( winOriginalHeight - $(window).height() ,10);
+				var sheetMaxH = parseInt( ($(window).height() + mainDiffer) - 44 ,10);
+			}else{
+				var sheetMaxH = parseInt( $(window).height() - 44 ,10);
+			}
+		}
+		//아이폰일때는 영향없음
+		else{
+			var sheetMaxH = parseInt( $(window).height() - 44 ,10);
+		}
+	}
+	
+	try {
+		if (event && $(event.target).data('link-index')) {
+			sheetLayer.data('btmsheet-index', $(event.target).data('link-index'));
+		}
+	} catch (error) {
+	}
+
+	html.addClass('nst_scroll_lock');
+	setTimeout(function(){
+		//nst_dimmed 중복생성방지
+		if( sheetLayer.next('.nst_dimmed').length ){
+			sheetLayer.next('.nst_dimmed').remove();
+		}
+		sheetLayer.after('<div class="nst_dimmed" aria-hidden="true"></div>').next().fadeIn().on({
+			'click':function(e){
+				btmDimClose(e.target);
+			},
+			'touchmove':function(e){
+				e.preventDefault();
+			}
+		});
+	});
+	sheetLayer.show();
+
+	// 2022-12-26 start
+	var tab_height = 0;
+	try {
+		tab_height = typeof nstBtmSheetTabHeight == 'function' ? nstBtmSheetTabHeight(sheetLayer) : 0;
+	} catch (e) {
+	}
+	//end 2022-12-26
+
+	setTimeout(function(){
+		//최대높이값 초과시
+		var scrollConH = sheetLayer.find('.nst_btmsheet_cont').prop('scrollHeight');
+		var sheetTitH = sheetLayer.find('.nst_btmsheet_tit').innerHeight();
+		var sheetBtnH = sheetLayer.find('.nst_buttons_wrap').innerHeight();
+		var sheetSumH = scrollConH + sheetTitH + sheetBtnH + tab_height; // 2022-12-26
+
+		if( sheetSumH  >= sheetMaxH ){
+			sheetLayer.css('height', sheetMaxH );
+
+			//플로팅 버튼 O
+			if( sheetLayer.find('.nst_buttons_wrap').length ){
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight': sheetMaxH - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - sheetLayer.find('.nst_buttons_wrap').innerHeight() - tab_height // 2022-12-26
+				});
+			}
+			//플로팅버튼 X
+			else{
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight': sheetMaxH - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - tab_height, // 2022-12-26
+					'paddingBottom':'3rem'
+				});
+			}
+		}
+		//최대높이값 미만시
+		else{
+			//플로팅버튼 O
+			if( sheetLayer.find('.nst_buttons_wrap').length ){
+				sheetLayer.css('height', sheetSumH );
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight':'initial'
+				});
+			}
+			//플로팅버튼 X
+			else{
+				// 2022-12-26 start
+				//nst_btmsheet_inner에 padding-bottom:3rem 있어서 바닥이 채워지지않는 현상 처리
+				if( !sheetLayer.hasClass('nst_responsive_box') ){ //기존
+					sheetLayer.css('height', sheetSumH + 30 );
+				}else{ //채워지게
+					sheetLayer.css('height', sheetSumH );
+				}
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight':'initial',
+				});
+				//end 2022-12-26
+			}
+		}
+	});
+	sheetLayer.animate({bottom:0},300, function(){
+		setTimeout(function(){
+			sheetLayer.find('.nst_btmsheet_tit').attr('tabindex','0').focus();
+		});
+	});
+}
+// 2022-12-26 start
+//바텀쉬트 고정 높이(432px) 열기 id로 호출 (사용권장)
+function btmSheetShow_id_hfix(id){
+	var html = $('html');
+	var sheetLayer = $('#'+id);
+
+	if(!sheetLayer.hasClass('nst_account_box') && !sheetLayer.hasClass('nst_hfix_box')) {
+		return;
+	}
+	
+	html.addClass('nst_scroll_lock');
+	setTimeout(function(){
+		//nst_dimmed 중복생성방지
+		if( sheetLayer.next('.nst_dimmed').length ){
+			sheetLayer.next('.nst_dimmed').remove();
+		}
+		sheetLayer.after('<div class="nst_dimmed" aria-hidden="true"></div>').next().fadeIn().on({
+			'click':function(e){
+				btmDimClose(e.target);
+			},
+			'touchmove':function(e){
+				e.preventDefault();
+			}
+		});
+	});
+	sheetLayer.show();
+
+	var fixedValue = 432;
+	var accountSheetMax = parseInt( fixedValue, 10);
+	var tab_height = 0;
+	try {
+		tab_height = typeof nstBtmSheetTabHeight == 'function' ? nstBtmSheetTabHeight(sheetLayer) : 0;
+	} catch (e) {
+	}
+
+	setTimeout(function(){
+
+		sheetLayer.css('height', accountSheetMax );
+		if( sheetLayer.find('.nst_tab_menus') ){
+			sheetLayer.find('.nst_btmsheet_cont').css({
+				'maxHeight': accountSheetMax - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - sheetLayer.find('.nst_tab').innerHeight()
+			});
+		}
+		else{
+			sheetLayer.find('.nst_btmsheet_cont').css({
+				'maxHeight': accountSheetMax - sheetLayer.find('.nst_btmsheet_tit').innerHeight()
+			});
+		}
+	});
+	sheetLayer.animate({bottom:0},300, function(){
+		setTimeout(function(){
+			sheetLayer.find('.nst_btmsheet_tit').attr('tabindex','0').focus();
+		});
+	});
+}
+//바텀쉬트 최대 높이(432px) 열기 id로 호출 (사용권장)
+function btmSheetShow_id_hmax(id){
+	var html = $('html');
+	var sheetLayer = $('#'+id);
+
+	if(!sheetLayer.hasClass('nst_hmax_box')) {
+		return;
+	}
+
+	html.addClass('nst_scroll_lock');
+	setTimeout(function(){
+		//nst_dimmed 중복생성방지
+		if( sheetLayer.next('.nst_dimmed').length ){
+			sheetLayer.next('.nst_dimmed').remove();
+		}
+		sheetLayer.after('<div class="nst_dimmed" aria-hidden="true"></div>').next().fadeIn().on({
+			'click':function(e){
+				btmDimClose(e.target);
+			},
+			'touchmove':function(e){
+				e.preventDefault();
+			}
+		});
+	});
+	sheetLayer.show();
+
+	var fixedMaxValue = 432;
+	var fixedSheetMax = parseInt( fixedMaxValue, 10);
+	var tab_height = 0;
+	try {
+		tab_height = typeof nstBtmSheetTabHeight == 'function' ? nstBtmSheetTabHeight(sheetLayer) : 0;
+	} catch (e) {
+	}
+
+	setTimeout(function(){
+		//최대높이값 초과시
+		var scrollConH = sheetLayer.find('.nst_btmsheet_cont').prop('scrollHeight');
+		var sheetTitH = sheetLayer.find('.nst_btmsheet_tit').innerHeight();
+		var sheetBtnH = sheetLayer.find('.nst_buttons_wrap').innerHeight();
+		var sheetSumH = scrollConH + sheetTitH + sheetBtnH + tab_height;
+		
+		if( sheetSumH  >= fixedSheetMax ){
+			sheetLayer.css('height', fixedSheetMax );
+
+			//플로팅 버튼 O
+			if( sheetLayer.find('.nst_buttons_wrap').length ){
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight': fixedSheetMax - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - sheetLayer.find('.nst_buttons_wrap').innerHeight() - tab_height
+				});
+			}
+			//플로팅버튼 X
+			else{
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight': fixedSheetMax - sheetLayer.find('.nst_btmsheet_tit').innerHeight() - tab_height
+				});
+			}
+		}
+		//최대높이값 미만시
+		else{
+			//플로팅버튼 O
+			if( sheetLayer.find('.nst_buttons_wrap').length ){
+				sheetLayer.css('height', sheetSumH );
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight':'initial'
+				});
+			}
+			//플로팅버튼 X
+			else{
+				sheetLayer.css('height', sheetSumH );
+				sheetLayer.find('.nst_btmsheet_cont').css({
+					'maxHeight':'initial'
+				});
+			}
+		}
+	});
+	sheetLayer.animate({bottom:0},300, function(){
+		setTimeout(function(){
+			sheetLayer.find('.nst_btmsheet_tit').attr('tabindex','0').focus();
+		});
+	});
+}
+//end 2022-12-26
+//바텀쉬트닫기 - 사용하지말것
+function btmSheetClose(el){
+	var html = $('html');
+	var callId = $(el).parents('.nst_btmsheet').attr('id');
+	var sheetLayer = $('#'+ callId );
+
+	sheetLayer.animate({
+		'bottom': '-100%'
+	},300, function(){
+		$(this).removeClass('on').next().fadeOut().remove();
+		html.removeClass('nst_scroll_lock');
+		$('main.state_general').removeClass('scrollLock');
+		$('[data-id="'+ callId +'"]').focus();
+		sheetLayer.hide();
+	});
+}
+//바텀쉬트 딤 닫기 전용(onclick함수로 사용하지말것)
+function btmDimClose(el){
+	var html = $('html');
+	var callId = $(el).prev('.nst_btmsheet').attr('id');
+	var sheetLayer = $('#'+ callId );
+
+	sheetLayer.animate({
+		'bottom': '-100%'
+	},300, function(){
+		$(this).removeClass('on').next('.nst_dimmed').fadeOut().remove();
+		html.removeClass('nst_scroll_lock');
+		$('main.state_general').removeClass('scrollLock');
+		//$('[data-id="'+ callId +'"]').focus();
+		//$(original_btn).focus(); //클릭호출 변수로 초점처리
+		/* 20220331 추가 */
+		//console.log( sheetLayer.attr('data-btmsheet-index') );
+		
+		// 2022-12-26 start
+		if( sheetLayer.attr('data-btmsheet-index') ){
+			$('[data-link-index='+ sheetLayer.attr('data-btmsheet-index') +']').attr('tabindex', 0).focus();
+		}else{
+			$('[data-id="'+ callId +'"]').attr('tabindex', 0).focus();
+		}
+		//end 2022-12-26
+		sheetLayer.hide();
+	});
+}
+//won 적금전용 바텀쉬트(x버튼 닫기) - 사용권장(가능하면 클래스 'js_nstbtm_close'로 컨트롤)
+function nstBtmclose(el){
+	var html = $('html');
+	var callId = $(el).parents('.nst_btmsheet').attr('id');
+	var sheetLayer = $('#'+ callId );
+
+	sheetLayer.animate({
+		'bottom': '-100%'
+	},300, function(){
+		$(this).removeClass('on').next('.nst_dimmed').fadeOut().remove();
+		html.removeClass('nst_scroll_lock');
+		$('main.state_general').removeClass('scrollLock');
+		$('[data-id="'+ callId +'"]').focus();
+		sheetLayer.hide();
+	});
+}
+//바텀쉬트 닫기 (id로 컨트롤) - 사용권장
+function nstBtmclose_id(id){
+	
+	var html = $('html');
+	var sheetLayer = $('#'+id);
+
+	sheetLayer.animate({
+		'bottom': '-100%'
+	},300, function(){
+		$(this).removeClass('on').next('.nst_dimmed').fadeOut().remove();
+		html.removeClass('nst_scroll_lock');
+		$('main.state_general').removeClass('scrollLock');
+		// 2022-12-26 start
+		if( sheetLayer.attr('data-btmsheet-index') ){
+			$('[data-link-index='+ sheetLayer.attr('data-btmsheet-index') +']').attr('tabindex', 0).focus();
+		}else{
+			$('[data-id="'+ id +'"]').attr('tabindex', 0).focus();
+		}
+		//end 2022-12-26
+		sheetLayer.hide();
+	});
+}
+// 2022-12-26 start
+// 바텀쉬트 탭 있는지 확인
+function nstBtmSheetTabHeight(sheetLayer) {
+	if (!sheetLayer) {
+		return 0;
+	}
+	if(!sheetLayer.hasClass('-has_tab')) {
+		return 0;
+	}
+
+	var sheetLayer = $(sheetLayer);
+	var result = 0;
+	if( sheetLayer.find('.nst_tab_menus') ) {
+		result = sheetLayer.find('.nst_tab').innerHeight();
+	}
+	return result;
+}
+//end 2022-12-26
+
+//fixed 버튼 top 위치
+var pbCmmUIBtnFixedTop = function(){
+	var _fixedBTN_ = $(document).find('.nst_buttons_wrap.fixed');
+	if(!_fixedBTN_.length ){ return }
+  
+	var _winHeight_ = $(window).height();
+	var _btnHeight_ = _fixedBTN_.innerHeight();
+	var _btnTop_ = _winHeight_ - _btnHeight_;
+  
+	var textField_ = '.js_tf_area .nst_tf_input:not([type=radio]):not([type=checkbox])';
+  
+	$(document).on('focus', textField_ , function(){
+		setTimeout(function(){
+			addTopNum();
+		}, 100);
+		$(this).parent().focusout(function(){
+			setTimeout(function(){
+				reseTopNum();
+			}, 100);
+		});
+	});
+  
+	function addTopNum(){
+		if(_DEVICE_TYPE == _DEVICE_IOS_PHONE || _DEVICE_TYPE == _DEVICE_IOS_TABLET){
+			var _winThisHeight_ = $(window).height();
+			_btnTop_ = _winThisHeight_ - _btnHeight_;
+		}
+		if( _fixedBTN_.attr('data-set-top') === 'done'){ return; }
+		_fixedBTN_.css({'top':_btnTop_ }).attr('data-set-top','done');
+	}
+  
+	function reseTopNum(){
+		var _winThisHeight_ = $(window).height();
+		if(_winHeight_ == _winThisHeight_){
+			_fixedBTN_.css({'top':''}).attr('data-set-top','');
+		} else {
+			return false;
+		}
+	}
+}
+
+// 2023-06-14 start    비동기로 스크립트 파일 로드시 호이스팅 문제로 아래로 이동
+$(function () {
+	//fixed Button 처리
+	/*
+		기존 common_ui.js와 동일한 코드(input, fixedButton 클래스만 따라감)
+	*/
+	pbCmmUIBtnFixedTop(); 
+});
+//end 2023-06-14
+
+// 20220804 PDF약관 뷰어 UX/UI 개선 
+function owlTermsFunc(){
+    var owlTerms = $('.nst_terms_cont_wrap .owl-carousel'),
+        owlTermsLen = $('.nst_terms_cont_wrap .item').length,
+        owlTermsH = $('.nst_terms_tit_wrap').innerHeight() + $('.nst_terms_head').innerHeight() + $('.nst_buttons_wrap').innerHeight();
+    
+    var owlHeightSet = function(){
+        $('.nst_terms_cont_wrap .nst_terms_body').css('height', $(window).innerHeight() -  owlTermsH);
+        $(window).resize(function(){
+            $('.nst_terms_body').css('height', $(window).innerHeight() -  owlTermsH);
+        });
+    }
+    owlHeightSet();
+
+    var owlCount = function(evt){
+        var owlTermsPaging = $(document).find('.nst_terms_cont_wrap .nst_terms_paging');
+        owlTermsPaging.attr('aria-label','총 '+ (evt.item.count) +'개 중 '+ (evt.relatedTarget.relative(evt.item.index) + 1) +'번째 약관')
+        owlTermsPaging.html('<span class="nst_present">'+ (evt.relatedTarget.relative(evt.item.index) + 1) +'</span><em class="nst_separator"></em><span class="nst_total">' + evt.item.count + '</span>');
+    }
+
+    var owlTermsSlideOption = {
+        nav: true,
+        dots: false,
+        autoHeight: true,
+        items: 1,
+        smartSpeed : 500,
+        onInitialized : function(e){
+            $('.nst_terms_cont_wrap').prepend('<div class="nst_terms_paging"></div>');
+            owlCount(e);
+        },
+        onTranslated : function(e){
+            owlCount(e);
+        }
+    }
+
+    if(owlTermsLen > 1) {
+        owlTerms.owlCarousel(owlTermsSlideOption);
+    } 
+}
+
+$(function(){
+    if($('.nst_terms_cont_wrap').length) {owlTermsFunc();}      
+})
+
+//뉴 바텀시트 최대 높이 계산
+function nstGetBmsMaxHeight() {
+	var sheetMaxH = 0;
+	var mainDiffer = 0;
+	var headerH = 0; // 웹 or 네이티브 헤더 높이
+
+	//최신버전 아닐때(네이티브 헤더 60)
+	if( $('.lowApp').length ){
+		headerH = 60;
+	}
+	//최신버전 일때(웹 헤더 44)
+	else{
+		headerH = 44;
+	}
+	
+	if( $('body').attr('data-device') == 'a' ){
+		if( $('main').height() != winOriginalHeight ){ //메인높이와 윈도높이가 다르면
+			mainDiffer = parseInt( winOriginalHeight - $(window).height() ,10); //그 차이값을
+			sheetMaxH = parseInt( ($(window).height() + mainDiffer) - headerH ,10); //변동된 윈도높이에 더하고 네이티브or웹 헤더 높이값을 뺀 최대높이값
+		}else{
+			sheetMaxH = parseInt( $(window).height() - headerH ,10); //차이가 발생하지않으면 윈도높이 그대로
+		}
+	}
+	//아이폰일때는 영향없음
+	else{
+		sheetMaxH = parseInt( $(window).height() - headerH ,10); //차이가 발생하지않으면 윈도높이 그대로
+	}
+	return sheetMaxH;
+}
+
+
+//뉴 바텀시트 열기 id로 컨트롤
+function nstBtmSheet_show(id){
+	var html = $('html');
+	var sheetLayer = $('#'+id);
+
+	if (event) {
+		$(event.target).addClass('nst_btmsheet_target');
+	}
+
+	html.addClass('nst_scroll_lock');
+	sheetLayer.find('.sheet_dimmed').off('click.nstBtmSheet touchmove.nstBtmSheet');
+	var zi_max = nstBtmSheet_zIndexMax();
+	sheetLayer.css('z-index', zi_max).show();
+	sheetLayer.find('.sheet_dimmed').on('touchmove.nstBtmSheet', function(e){
+		e.preventDefault();
+	});
+
+	var maxh = nstGetBmsMaxHeight();
+	sheetLayer.find('.sheet_body').css('max-height', maxh);
+	
+	sheetLayer.find('.sheet_cont').animate({bottom:0},300, function(){
+		sheetLayer.find('.sheet_dimmed').off('click.nstBtmSheet').on('click.nstBtmSheet', function(e){
+			nstBtmSheet_dimmed_close(id);
+		});
+
+		var sheet_tit = sheetLayer.find('.title').innerHeight();
+
+		if( sheet_tit  > 80 ){
+			sheetLayer.find('.sheet_cont').addClass('-tit2');
+		}
+		
+		if (sheetLayer.data('sheet-focus')) {
+			$('#'+sheetLayer.data('sheet-focus')).focus();
+		} else if (sheetLayer.find('.title').length > 0) {
+			sheetLayer.find('.title').attr('tabindex','0').focus();
+		} else {
+			sheetLayer.find('.sheet_body').attr('tabindex','0').focus();
+		}
+		sheetLayer.find("input[type='text']:not('#searchText'), input[type='password'], input[type='tel'], input[type='search'], textarea").off('focus.main_scroll');
+	});
+}    
+
+//뉴 바텀시트 닫기 id로 컨트롤
+function nstBtmSheet_close(id){
+	
+	var html = $('html');
+	var sheetLayer = $('#'+id);
+
+	sheetLayer.find('.sheet_dimmed').off('click.nstBtmSheet');
+
+	sheetLayer.find('.sheet_cont').animate({bottom:'-100%'},300, function(){
+		var btms = $('.nst_dimmed:visible, .nst_btmsheet:visible, .nst_btmsheet2:visible');
+		if (btms.length == 1) {
+			html.removeClass('nst_scroll_lock');
+			$('main.state_general').removeClass('scrollLock');
+		}	
+		sheetLayer.removeAttr('style').find('.sheet_cont').removeAttr('style');
+		if ($('.nst_btmsheet_target').length > 0) {
+			$('.nst_btmsheet_target').attr('tabindex', 0).focus().removeClass('nst_btmsheet_target');
+		}
+
+		sheetLayer.hide();
+	});
+}
+
+//뉴 바텀시트 딤드 클릭시 닫기
+function nstBtmSheet_dimmed_close(id){
+	
+	var html = $('html');
+	var sheetLayer = $('#'+id);
+
+	sheetLayer.find('.sheet_dimmed').off('click.nstBtmSheet');
+
+	sheetLayer.find('.sheet_cont').animate({bottom:'-100%'},300, function(){
+		var btms = $('.nst_dimmed:visible, .nst_btmsheet:visible, .nst_btmsheet2:visible');
+		if (btms.length == 1) {
+			html.removeClass('nst_scroll_lock');
+			$('main.state_general').removeClass('scrollLock');
+		}	
+		sheetLayer.removeAttr('style').find('.sheet_cont').removeAttr('style');
+		if ($('.nst_btmsheet_target').length > 0) {
+			$('.nst_btmsheet_target').attr('tabindex', 0).focus().removeClass('nst_btmsheet_target');
+		}
+
+		sheetLayer.hide();
+	});
+}
+
+//뉴 바텀시트 z-index 
+function nstBtmSheet_zIndexMax() {
+	var zi_arr = [];
+	$('.nst_dimmed:visible, .nst_btmsheet:visible, .nst_btmsheet2:visible').each(function () {
+		var $me = $(this);
+		var m_zi = $me.css('z-index');
+		var zi = isNaN(m_zi) ? 0 : m_zi;
+		zi_arr.push(zi);
+	})
+	var max = Math.max.apply(null, zi_arr);
+	max = isFinite(max) ? max : 0;
+	max = max < 300 ? 300 : (max + 5);
+	return max;
+}
+
+// 뉴 바텀시트 클래스로
+var jsNstBtmSheet = function () {
+	$('.js_nst_btmsheet2').off('click.jsNstBtmSheet').on('click.jsNstBtmSheet', function () {
+		// 2023-06-01 start
+		if($(this).data('sheet-disabled') == true) {
+			return;
+		}
+		//end 2023-06-01
+		var sheetId = $(this).data('id');
+		nstBtmSheet_show(sheetId);
+		$('#'+sheetId + ' .js_nst_btmsheet2_close').off('click.jsNstBtmSheet').on('click.jsNstBtmSheet', function () {
+			nstBtmSheet_close(sheetId);
+		});
+	});
+}
+$(function () {
+	jsNstBtmSheet();
+});
+
+// 뉴 바텀시트 리스트 클릭시
+var jsNstBtmSheetList = function () {
+	$('.js_nst_btmsheet_list li a').off('click.jsNstBtmSheetList').on('click.jsNstBtmSheetList', function () {
+		var $me = $(this);
+		$me.closest('li').addClass('active').siblings().removeClass('active');
+		
+		var dataId = $me.parents('.nst_btmsheet2').attr('id');
+		$('.newST [data-id=' + dataId + ']').addClass('selected').find('.nst_selectbox_text').text($('span', $me).text());
+
+		nstBtmSheet_close(dataId);
+	})
+}
+
+//더보기 230324 
+function moreShow(){
+	$('.js_nst_more').off('click.n2commonUi').on('click.n2commonUi', function(){
+		var $m_cont = $(this).parent().siblings('.js_more_con');
+		if($m_cont.hasClass('nst_hide')){
+			$(this).addClass('on').text('접기').attr({'aria-expanded':'true','title':'내용닫기'});
+			$m_cont.removeClass('nst_hide');
+		}else{
+			$(this).removeClass('on').text('더보기').attr({'aria-expanded':'false','title':'내용열기'});
+			$m_cont.addClass('nst_hide');
+		}
+	});
+}
+
+function nstBtmSheet_show_custom(id) {
+	var sheetLayer = $('#'+id);
+	sheetLayer.find('.sheet_body').removeAttr('style').css('height', $(window).height() - 200);
+	nstBtmSheet_show(id);
+}
+
+// 2023-05-03 start 바텀쉬트 일반/고령자 모드
+function nstBtmSheet_show_mod01(id) {
+	var sheetLayer = $('#'+id);
+	sheetLayer.find('.sheet_body').removeAttr('style').addClass('-h_fix');
+	nstBtmSheet_show(id);
+}
+function nstBtmSheet_show_mod02(id) {
+	var sheetLayer = $('#'+id);
+	sheetLayer.find('.sheet_body').removeClass('-h_fix');
+	nstBtmSheet_show_custom(id)
+}
+//end 2023-05-03
+
+// 2023-05-17 start
+$.fn.nstVslider = function (opt) {
+    var $me = $(this);
+    var $inner = $('.nst_vslider_inner', $me);
+    var $items = $('.slider_item', $me);
+    var ITV_KEY = 'nstVsliderItv';
+    var itv = $me.data(ITV_KEY);
+	var item_h = $items.innerHeight();
+	var def_opt = {
+		delay: 2000,
+        duration: 800
+	}
+	$.extend(def_opt, opt);
+
+    $me.css({
+        'height': item_h
+    });
+    
+    clearInterval(itv);
+    $me.removeData(ITV_KEY);
+    itv = setInterval(function () {
+        doSlide();
+    }, def_opt.delay);
+    $me.data(ITV_KEY, itv);
+
+    function doSlide() {
+        $inner.css({
+            'top': 0
+        });
+        $inner.stop().animate({
+            'top': -item_h
+        }, def_opt.duration, function () {
+            $inner.append($('.slider_item', $me).eq(0)).css({
+                'top': 0
+            });
+        });
+    }
+}
+//end 2023-05-17
+
+// 2023-06-09 start
+function nstOffEvent(obj, ev) {
+	if($('.frame_pageWrap').hasClass('n2commonUi')) {
+		$(obj).off(ev);
+	}
+}
+//end 2023-06-09
+
+// start 2023-08-03 접근성 관련 스크립트 추가
+function accessibility(){
+	$('.nst_share_list').find('li').find('.nst_kakao').attr('aria-label', '카카오톡 새창으로 열림');
+	$('.nst_share_list').find('li').find('.nst_sms').attr('aria-label', 'SMS 새창으로 열림');
+	$('.nst_share_list').find('li').find('.nst_share').attr('aria-label', '공유하기 새창으로 열림');
+}
+
+// end 2023-08-03 접근성 관련 스크립트 추가
+
+
