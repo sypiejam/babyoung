@@ -1,0 +1,109 @@
+import {useDispatch, useSelector } from "react-redux";
+import styled from "styled-components";
+//import { bottomSheetAction } from "../../store/bottomSheetReducer";
+import { StyledDimmed } from '../dimmed/Dimmed';
+import {useEffect, useRef, useState} from "react";
+import { bottomSheetAction } from "../../store/bottomSheetReducer";
+
+/**
+ * 
+ * @name BottomSheetFrame
+ * @role 바텀시트를 감싸는 상위 컴퍼넌트입니다.
+ * 
+ */ 
+
+function BottomSheetFrame() {
+
+    //const dispatch = useDispatch();
+    const {title, message : children, state} = useSelector(state => state.bottomSheetReducer);
+    const bottomRef = useRef();
+    const [animation, setAnimation] = useState(true);
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        document.body.classList.add("hidden");
+
+    return () => {
+        if(!document.querySelector(".react-layer")) {
+            document.body.classList.remove("hidden");
+        }
+    }
+    },[])
+
+    const onCloseBottom = (e) => {
+        
+            if(!bottomRef.current.contains(e.target)) {
+                setAnimation(false);
+                setTimeout(()=>{
+                    dispatch(bottomSheetAction({
+                        title : "",
+                        message : null,
+                        state : null
+                    }))
+                },600)
+                
+            }
+        
+    }
+
+    return (
+        <StyledBtmSheetWrap>
+            <StyledDimmed onClick={onCloseBottom} />
+            <StyledBtmSheetCont ref={bottomRef} animation={animation}>
+                <>
+                    {title}
+                </>
+                <>
+                    {children}
+                </>
+            </StyledBtmSheetCont>
+        </StyledBtmSheetWrap>
+    )
+}
+
+const StyledBtmSheetWrap = styled.div`
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;                     
+    z-index:100;
+    font-size:1.5rem;
+`;
+
+const StyledBtmSheetCont = styled.div`
+    position:absolute;
+    left:0;
+    bottom:-100%;// 2023-05-25 수정
+    width:100%;
+    min-height:17.4rem;// 퍼블검수 1차 : min-height 값 수정(0814)
+    border-radius:1rem 1rem 0 0;
+    background-color:#fff;
+    animation:${props => props.animation ? "BtmSlideUp" : "BtmSlideDown"} .6s ease-out forwards;// 2023-05-25 추가
+
+    // 2023-05-25 btm_fixed, keyframes 추가
+    .btm_fixed {
+        position:absolute;
+    }
+
+    @keyframes BtmSlideUp {
+        0% {
+            bottom:-100%;
+        }
+        100% {
+            bottom:0;
+        }
+    }
+
+    @keyframes BtmSlideDown {
+        0% {
+            bottom:0;
+        }
+        100% {
+            bottom:-100%;
+            
+        }
+    }  
+`;
+
+export default BottomSheetFrame;
