@@ -1,0 +1,22 @@
+import styled from 'styled-components';
+
+function DialogHeader({ title }) {
+
+    return (
+        <StyledDialogHead>
+            <strong>{title}</strong>
+        </StyledDialogHead>
+    );
+}
+
+const StyledDialogHead = styled.div`
+    margin-bottom:0.8rem;
+
+    > strong {
+        display:inline-block;
+        font-size:1.6rem;
+        font-weight:500;
+    }
+`;
+
+export default DialogHeader;
