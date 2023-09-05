@@ -1,0 +1,31 @@
+/**
+ * @name CalendarField 
+ * @role input CalendarField 단일 컴포넌트
+ * @props status(string) - disabled(비활성화), readOnly(읽기만 가능 할 경우), error 상태일 경우
+ * @props title(string) - input 속성인 title에 사용되는 문구
+ * @props defaultValue(string) - value 값이 존재할 경우 사용
+ * @props onClick(function) - 클릭 이벤트 
+ * @props placeholder(string) - placeholder가 "YYYY.MM.DD"가 아닐 경우 사용. //2023-06-05 추가
+ **/ 
+
+function CalendarField({ status, defaultValue, title, onClick ,placeholder }) {//2023-06-05 placeholder 추가
+    const classNames = [
+        "inp_field",
+        (status==="disabled") ? ` disabled` : "",
+        (status==="readOnly") ? ` readonly` : "",
+        (status==="error") ? ` is-error` : "",
+    ].join("");
+
+    return  ( 
+        <div className={classNames} role="button" onClick={onClick}>
+            <div className="inp_item">
+                {/* 2023-07-24 type="text" => inputMode="none", 2023-06-05 input placeholder 추가 */}
+                <input inputMode="none" className="inp_text" defaultValue={defaultValue} placeholder={`${placeholder ? placeholder : "YYYY.MM.DD"}`} title={title}  disabled={(status === "disabled"? "disabled" : "")} readOnly={(status === "readOnly"? "readOnly" : "")} /> 
+            </div>
+            <div className="field_item"><i className="ico_date"></i></div>
+        </div>
+
+    )
+}
+
+export default CalendarField;
