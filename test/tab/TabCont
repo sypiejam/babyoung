@@ -1,0 +1,29 @@
+import styled from 'styled-components';
+
+/**
+ * 
+ * @name TabCont 
+ * @role 선택된 탭 컨텐츠를 보여줍니다.
+ * @props tabcont(object) : 보여져야할 탭정보를 object형태로 넘겨줍니다.
+*/
+
+function TabCont({children, tabcont}){
+    return(
+        <>
+            <StyledTabCont tabcont={tabcont}>
+                {children}
+            </StyledTabCont>
+        </>
+    )
+}
+
+const StyledTabCont = styled.div.attrs(({tabcont}) => ({
+    role : tabcont && 'tabpanel', 
+    tabIndex : tabcont && 0 , 
+    id : tabcont?.tabPanel,
+    'aria-labelledby' : tabcont?.id
+}))`
+    padding:0;
+`
+ 
+export default TabCont
