@@ -1,0 +1,74 @@
+import { useTranslation } from "react-i18next"; // 2023-05-19 추가
+import SmallLoadingBar from "./pageController/SmallLoadingBar";
+import styled from "styled-components";
+
+/**
+ * 
+ * @name BoxIconItem 
+ * @role Icon이 추가된 정보가 필요할 경우 박스형태로 묶어서 사용합니다. (환율정보)
+ * @props flag(string) : 국가별 아이콘 적용할 경우 국가별 클래스를 넣어줍니다. (ex. flag="kr")
+ * @props title(string) : 항목의 타이틀값을 기재합니다.
+ * @props exprice(string) : 타입이 exinfo일 경우 금액을 기재합니다.
+ * @props exnum(string) : 타입이 exinfo일 경우 적용환율을 기재합니다.
+ * @props loading(boolean) - 타입이 exinfo일 때 smallloadingbar가 노출 될 경우 넣어줍니다.
+ * @props className(string) : 사용 페이지 내에서 디자인을 위해 더블 클래스가 필요할 경우 추가합니다.
+ * @props children : 하위 태그 요소가 있을 경우 기재합니다. // 2023-05-30 추가
+ * @props boxLabel(string) : 타이틀이 있을 경우 기재합니다. // 2023-05-30 추가
+ * 
+ */
+
+function BoxIconItem({ flag, title, exprice, exnum, loading, className, children, boxLabel }) { // 2023-05-30 boxLabel, children 추가
+    const {t} = useTranslation(); // 2023-05-19 추가
+    return (
+        <StyledBoxIconItem className={className}>
+            {
+                !loading &&
+                <>  {/* 2023-05-30 boxLabel 추가 */}
+                    { boxLabel &&
+                        <div className="exchange_tit">
+                            <strong className="title_lv3">{boxLabel}</strong>
+                        </div>
+                    }
+                    <div className="exchange_item">
+                        <div className="flag_wrap">
+                            { flag && <i className={`ico_flag md ${flag}`} title={title}></i> }{/* 2023-07-04 클래스 수정 sm => md */}
+                            <span className="nation">{title}</span>
+                        </div>
+
+                        <div className="listbox_desc">
+                            <span className="price">{exprice}</span>
+                            <span className="exinfo">
+                                {t("fx0301_0047")}{/* 2023-05-19 번역코드 적용 */}
+                                <em className="num">{exnum}</em>
+                            </span>
+                        </div>
+                    </div>
+                    {children}{/* 2023-05-30 children 추가 */}
+                </>
+                
+            }
+            {
+                loading &&
+                <>
+                    <div className="loadingbox">
+                        <SmallLoadingBar type="center"/>
+                    </div>
+                </>
+            }
+        </StyledBoxIconItem>
+    );
+}
+
+const StyledBoxIconItem = styled.div`
+    min-height:7.9rem; // 2023-05-19 수정
+    margin-top:1.6rem;
+    border:1px solid #e4eaf2;
+    border-radius:0.6rem;
+    background-color:#fff;
+
+    .loadingbox {
+        padding:2.8rem;
+    }
+`;
+
+export default BoxIconItem;
