@@ -1,0 +1,38 @@
+import { useTranslation } from "react-i18next";
+import BottomSheetHead from "../../../../../common/components/bottomSheet/BottomSheetHead";
+import BottomSheetBody from "../../../../../common/components/bottomSheet/BottomSheetBody";
+import BottomSheetInner from "../../../../../common/components/bottomSheet/BottomSheetInner";
+import { FloatingButtonWrap, ButtonWrap, Button } from "../../../../../common/components/button/index";
+
+// 추가인증 유의사항 안내
+function SMJ1A04P00_btm(){
+    const {t} = useTranslation();
+    return(
+        <>
+            <BottomSheetHead title={t('co0804_0012')} btnClose />
+            <BottomSheetBody hasFixed>
+                <BottomSheetInner type="desc">
+                    <ul className="bullet">
+                        <li className="bullet_item">{t('co0804_0013')}</li>
+                        <li className="bullet_item">
+                            <em className="fw500">{t('co0804_0014')}</em>
+                            <ul className="bullet">
+                                <li className="bullet_disc">{t('co0804_0015')}</li>
+                                <li className="bullet_disc">{t('co0804_0016')}</li>
+                                <li className="bullet_disc">{t('co0804_0017')}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </BottomSheetInner>
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <Button tag="button" text={t("co0804_0018")} status="primary" btnClass="btn_timer" disabled />{/* 타이머 5초 후 확인 버튼으로 전환 */}
+                        {/* <Button tag="button" text={t("co1501_0010")} status="primary" btnClass="btn_timer" /> */}
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </BottomSheetBody>
+        </>
+    );
+}
+
+export default SMJ1A04P00_btm;
