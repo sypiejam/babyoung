@@ -1,0 +1,34 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import BottomSheetHead from "../../../../../common/components/bottomSheet/BottomSheetHead";
+import BottomSheetBody from "../../../../../common/components/bottomSheet/BottomSheetBody";
+import BottomSheetInner from "../../../../../common/components/bottomSheet/BottomSheetInner";
+import { FloatingButtonWrap, ButtonWrap, Button, CustomA } from "../../../../../common/components/button/index";
+import NormalTextField from "../../../../../common/components/input/textField/NormalTextField";
+
+function SMJ1I01P00_btm(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+
+    return(
+        <>
+            <BottomSheetHead title={t("fx0301_0619")} />
+            <BottomSheetBody hasFixed>
+                <BottomSheetInner type="desc">
+                    <p>48, Sogong-ro, Jung-gu, Seoul, Republic of Korea</p>
+                    <div className="mt16">
+                        <NormalTextField type="text" placeholder={t("fx0301_0135")} />
+                    </div>
+                </BottomSheetInner>
+                <FloatingButtonWrap>
+                    <ButtonWrap wfix>
+                        <Button tag="button" text={t("co0200_0009")} status="negative" />{/* 2023-07-31 status 수정 gray => negative */}
+                        <CustomA type="styled" href="#none" text={t("co1501_0010")} callback={()=> navigate(".")} status="primary" />
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </BottomSheetBody>
+        </>
+    );
+}
+
+export default SMJ1I01P00_btm;
