@@ -1,0 +1,83 @@
+import styled from 'styled-components'
+
+/**
+ * 
+ * @name Step 
+ * @role 가입프로세스에서 진행상태를 나타냅니다.
+ * @props process(object) : step의 진행상황을 나타내며 {cur : 현재스탭, total : 토탈스탭} 을 지정합니다.
+ * @props title(string) : 필수속성으로 step의 타이틀을 기재합니다.
+ * @props subTxt(string) - 설명글이 있는 경우 기재합니다.
+ * @props children(string) - 하위 태그 요소가 있을 경우 기재합니다. // 2023-05-18 children 추가
+ * 
+ */
+
+function Step({process, title, subTxt, children}){ // 2023-05-18 children 추가
+    return(
+        <>
+            <div className="step_wrap">
+                {
+                    process && 
+                    <StyledStepProgress aria-label={process.total + '단계 중' + process.cur + '단계'}>
+                        <div className="d-flex" aria-hidden="true">
+                            <span className="cur">{process.cur}</span>
+                            <span className="seperator"></span>
+                            <span className="total">{process.total}</span>
+                        </div>
+                    </StyledStepProgress>
+                }
+                <StyledStepText>
+                    <h2 className="step_tit">{title}</h2>
+                    {subTxt && <p className="step_desc">{subTxt}</p>}
+                </StyledStepText>
+                {children}
+            </div>
+        </>
+    )
+}
+
+// 퍼블검수 1차 : 디자인 변경 반영(css 전체반영해주세요)
+const StyledStepProgress = styled.div`
+    margin-bottom:0.8rem;
+    .d-flex {
+        display:flex;
+        align-items:center;
+    }
+    .cur {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:1.8rem;
+        height:1.8rem;
+        border-radius:0.4rem;
+        background:#1056c3;
+        font-weight:500;
+        font-size:1.3rem;
+        color:#fff;
+        text-align:center;
+    }
+    .seperator {
+        display:block;
+        width:1.4rem;
+        height:2.4rem;
+        margin:0 0.2rem;
+        background:url(/images/com/ic_slash.png) no-repeat 0 0 / 100%; //2023-05-16 이미지 적용
+    }
+    .total {
+        display:block;
+        font-weight:500;
+        font-size:1.3rem;
+        color:#686e75;
+    }
+   
+`
+const StyledStepText = styled.div`
+    .step_tit{
+        margin-bottom:0.8rem;
+        font-weight:700;
+        font-size:2rem;
+    }
+    .step_desc{
+        font-size:1.5rem;
+    }
+`
+export default Step
