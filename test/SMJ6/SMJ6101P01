@@ -1,0 +1,101 @@
+import { useState } from 'react';
+import { useTranslation } from "react-i18next";
+import PopupFrame from "../../../../../common/components/popup/PopupFrame";
+import PopupHeader from "../../../../../common/components/popup/PopupHeader";
+import PopupContainer from "../../../../../common/components/popup/PopupContainer";
+import { ButtonWrap, CustomA, FloatingButtonWrap } from '../../../../../common/components/button';
+import { TabCont, TabMenu } from '../../../../../common/components/tab/index';
+
+function SMJ6101P01(){
+    const {t} = useTranslation();
+
+    const [tabIdx, setTabIdx] = useState(0);
+    const [tabInfo, setTabInfo] = useState([
+        {tabname : t("ce0101_0020"), id: "tab1", tabPanel: 'tab01Panel'}, 
+        {tabname : t("ce0101_0031"), id: "tab2", tabPanel: 'tab02Panel'}, 
+    ]);
+    return(
+        <>
+            <PopupFrame>
+                <PopupHeader type="normal" title={t("ce0101_0019")} />
+                <PopupContainer hasFixed={(tabIdx===0)? true : false}>
+                    <div className="tab_wrap">
+                        <div className="tab_head">
+                            <TabMenu tabInfo={tabInfo} tabIdx={tabIdx} onClick={setTabIdx} />
+                        </div>
+                        <TabCont tabcont={tabInfo[tabIdx]}>
+                            { // tab1
+                                tabIdx === 0 &&
+                                <>
+                                    <div className='dvgroup first'>
+                                        <div className='bulletbox'>
+                                            <div className='title_wrap'>
+                                                <strong className='title_h3'>{t('ce0101_0021')}</strong>
+                                            </div>
+                                            <ul className='bullet'>
+                                                <li className='bullet_number'><span className='num'>1.</span>{t('ce0101_0022')}</li>
+                                                <li className='bullet_number'><span className='num'>2.</span>{t('ce0101_0023')}
+                                                    <ul className='bullet'>
+                                                        <li className='bullet_dash'>
+                                                            {t('ce0101_0024')}<br/>
+                                                            {t('ce0101_0025')}<br/>
+                                                            {t('ce0101_0026')}
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div> 
+                                    <div className='dvgroup last'>
+                                        <div className='bulletbox'>
+                                            <div className='title_wrap'>
+                                                <strong className='title_h3'>{t('fx0401_0017')}</strong>{/* 퍼블검수 1차 : 번역코드 수정 */}
+                                            </div>
+                                            <ul className='bullet'>
+                                                <li className='bullet_disc'>{t('ce0101_0028')}</li>
+                                                <li className='bullet_disc'>{t('ce0101_0029')}</li>
+                                                <li className='bullet_disc'>{t('ce0101_0030')}</li>
+                                            </ul>
+                                        </div>  
+                                    </div>
+                                </>
+                            }
+                            { // tab2
+                                tabIdx === 1 &&
+                                <div className='dvgroup only'>{/* 퍼블검수 1차 : "first last" -> "only" 클래스네임 변경 */}
+                                    <div className='bulletbox'>
+                                        <ul className='bullet'>
+                                            <li className='bullet_number'><span className='num'>1.</span>{t('ce0101_0032')}</li>
+                                            <li className='bullet_number'><span className='num'>2.</span>{t('ce0101_0033')}</li>
+                                            <li className='bullet_number'><span className='num'>3.</span>{t('ce0101_0034')}</li>
+                                            <li className='bullet_number'><span className='num'>4.</span>{t('ce0101_0035')}</li>
+                                            <li className='bullet_number'><span className='num'>5.</span>{t('ce0101_0036')}</li>
+                                            <li className='bullet_number'><span className='num'>6.</span>{t('ce0101_0037')}</li>
+                                            <li className='bullet_number'><span className='num'>7.</span>{t('ce0101_0038')}</li>
+                                            <li className='bullet_number'><span className='num'>8.</span>{t('ce0101_0039')}</li>
+                                            <li className='bullet_number'><span className='num'>9.</span>{t('ce0101_0040')}</li>
+                                            <li className='bullet_number'><span className='num'>10.</span>{t('ce0101_0041')}</li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                            }
+                        </TabCont>
+                              
+                    </div>
+                    { // tab1
+                        (tabIdx === 0)&&
+                        <>
+                            <FloatingButtonWrap>
+                                <ButtonWrap>
+                                    <CustomA type="styled" text={t('ce0101_0013')} status="primary" />
+                                </ButtonWrap>
+                            </FloatingButtonWrap>        
+                        </>
+                    } 
+                </PopupContainer>
+            </PopupFrame>
+        </>
+    )
+}
+
+export default SMJ6101P01;
