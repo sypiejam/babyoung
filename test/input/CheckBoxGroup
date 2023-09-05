@@ -1,0 +1,88 @@
+import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next"; // 2023-05-31 추가
+import CheckBox from "./CheckBox";
+
+/**
+ * @name CheckBoxGroup 
+ * @role 여러개의 checkbox를 쓸때 감싸는 컴포넌트
+ * @props allCheck(boolean) - 전체 선택 기능을 사용할지 여부
+ * @props count(string) - 내부 checkbox의 갯수
+ * @props isFolded(boolean) - 전체선택 클릭시 내부가 접히는지 여부
+ * @props flexClass - 전체선택의 내부 checkbox가 flex모드일때 class명 변경
+ * @props checkTitle - 전체 선택 타이틀 default="전체 선택" 
+ **/ 
+function CheckBoxGroup({children, allCheck, count, isFolded, flexClass, checkTitle}) {
+
+    const [checkArray, setCheckArray] = useState([]);
+    const formRef = useRef();
+    const listRef = useRef();
+    const {t} = useTranslation();// 2023-05-31 추가
+
+    const onStackCheckArray = (id, checked) => {
+        if(id === "checkall") {
+            const listItem = flexClass ? formRef.current.querySelector(`.${flexClass}`) : formRef.current.querySelector(".selection_list")
+            if(checked === true) {
+                let TrueArray = [];
+                for(let i=0; i < listItem.childNodes.length; i++) {
+                    
+                        listItem.childNodes[i].getElementsByTagName("input")[0].checked = true;
+                        TrueArray.push(listItem.childNodes[i].getElementsByTagName("input")[0].id)
+                        if(isFolded) {
+                            listRef.current.style.height = "0px";
+                        }
+                }
+                setCheckArray(TrueArray);
+                
+            } else {
+                for(let i=0; i < listItem.childNodes.length; i++) {
+                  
+                        listItem.childNodes[i].getElementsByTagName("input")[0].checked = false;
+                        if(isFolded) {
+                            listRef.current.style.height = "auto";
+                        }
+                }
+                setCheckArray([]);
+            }
+        } else {
+            if(checked && !checkArray.includes(id)) {
+                setCheckArray([...checkArray, id])
+            }
+            else {
+                let newSelectedValues = checkArray.filter((v) => v !== id);
+
+                setCheckArray(newSelectedValues)
+            }
+        }
+    }
+
+    useEffect(()=>{
+        console.log(checkArray);
+        if(allCheck) {
+            if(checkArray.length === Number(count)) {
+                formRef.current.querySelector("#checkall").checked = true;
+            } else {
+                formRef.current.querySelector("#checkall").checked = false;
+            }
+        }
+        
+    },[checkArray])
+
+    return (
+        <form ref={formRef} onChange={(e) => onStackCheckArray(e.target.id, e.target.checked)} >
+
+            {allCheck && <div className="selections_item all">
+                                <div className="inner">
+                                    <div className="selection">
+                                        <CheckBox type="normalSt" name="checkall" id="checkall" text={checkTitle ? checkTitle : t("fx0301_0077")} />{/* 2023-05-31 번역코드 적용 */}
+                                    </div>
+                                </div>
+                        </div>}
+            <ul className={flexClass ? flexClass : "selection_list"} style={{overflow : "hidden"}} ref={listRef}>
+                {children}
+            </ul>
+            
+        </form>
+    );
+}
+
+export default CheckBoxGroup;
