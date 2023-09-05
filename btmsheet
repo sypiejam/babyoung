@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Bottom Sheet</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/lib/jquery-2.1.0.min.js"></script>
+<!-- <script type="text/javascript" src="/js/nonetouch/com/renewal/_new2/common_ui.js"></script> -->
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Bottom Sheet</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Bottom Sheet(바텀시트)</strong>
+            </div>
+            <div class="dvgroup">
+                <button type="button" class="btn_outlined btn_small" data-roll="slide-on" data-link="btmSheet001"><span>기본형</span></button>
+                <button type="button" class="btn_outlined btn_small" data-roll="slide-on" data-link="btmSheet002"><span>출금계좌 선택(하단버튼없음)</span></button>
+                <button type="button" class="btn_outlined btn_small" data-roll="slide-on" data-link="btmSheet003"><span>출금계좌(탭,하단버튼없음)</span></button>
+                <button type="button" class="btn_outlined btn_small" data-roll="slide-on" data-link="btmSheet004"><span>통화선택(탭,하단버튼없음)</span></button>
+            </div>
+
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+
+    <div class="btmsheet" id="btmSheet001">
+        <div class="btmsheet_head">
+            <strong class="title_h1">Select a withdrawal account</strong>
+            <button type="button" class="ico_close btn_close" data-roll="slide-off"><span class="blind">닫기</span></button>
+        </div>
+        <div class="btmsheet_body has_fixed"><!-- btm_fixed 여부에 따라서 has_fixed 클래스 추가 -->
+            <!--
+                .높이 기본 : btmsheet_cont 높이 : 전체화면(360x800)의 60%(480) 이하 / 일반리스트 버튼 적용시 5개, 버튼 미적용시 6개
+                .높이 유동 클래스 hauto : 최대 높이 header 밑
+                .높이 고정/탭 클래스 tabfix : 탭이 들어간 목록 5개, 버튼 없음
+                .출금계좌 클래스 account : 하단버튼없는 계좌목록
+            -->
+            <div class="inner">
+                <ul class="listbox">
+                    <li class="listbox_list">
+                        <a href="javascript:void(0);" class="listbox_item anchor">
+                            <span class="listbox_tit">Enter your content</span>
+                        </a>
+                    </li>
+                    <li class="listbox_list">
+                        <input type="radio" name="radio" id="radio00" class="blind listbox_inp" checked>
+                        <label for="radio00" class="listbox_item label">
+                            <span>Content is selected Checked</span>
+                        </label>
+                    </li>
+                    <li class="listbox_list">
+                        <input type="radio" name="radio" id="radio01" class="blind listbox_inp">
+                        <label for="radio01" class="listbox_item label">
+                            <i class="ci_bank ci_bank_020"></i>
+                            <span>Woori Bank</span>
+                        </label>
+                    </li>
+                    <li class="listbox_list">
+                        <input type="radio" name="radio" id="radio02" class="blind listbox_inp">
+                        <label for="radio02" class="listbox_item label">
+                            <i class="ci_bank ci_bank_007"></i>
+                            <span class="list_title">Shinhan Bank</span>
+                        </label>
+                    </li>
+                    <li class="listbox_list">
+                        <input type="radio" name="radio" id="radio03" class="blind listbox_inp">
+                        <label for="radio03" class="listbox_item label">
+                            <i class="ci_bank ci_bank_023"></i>
+                            <span class="list_title">스탠다드차타드</span>
+                        </label>
+                    </li>
+                    <li class="listbox_list">
+                        <input type="radio" name="radio" id="radio04" class="blind listbox_inp">
+                        <label for="radio04" class="listbox_item label">
+                            <i class="ci_bank ci_bank_011"></i>
+                            <span class="list_title">농협</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="btm_fixed">
+                <div class="btn_wrap">
+                    <div class="d-flex">
+                        <a href="javascript:void(0);" class="btn_primary btn_large"><span>확인</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 출금계좌 선택(하단버튼없음) -->
+    <div class="btmsheet" id="btmSheet002">
+        <div class="btmsheet_head">
+            <strong class="title_h1">Select a withdrawal account</strong>
+            <button type="button" class="ico_close btn_close" data-roll="slide-off"><span class="blind">닫기</span></button>
+        </div>
+        <div class="btmsheet_body btm_account">
+            <div class="inner">
+                <ul class="listbox">
+                    <li class="listbox_list">
+                        <a href="javascript:void(0);" class="listbox_item">
+                            <div class="account_wrap">
+                                <div class="account_box">
+                                    <i class="ci_bank lg ci_bank_020"></i>
+                                    <div class="inner">
+                                        <span class="account_name">외화보통예금</span>
+                                        <span class="account_num">USD 1002-456-890123</span>
+                                    </div>
+                                </div>
+                                <div class="account_btm">
+                                    <span class="txt">ចំនួនទឹកប្រាក់ដែលមានសម្រាប់ការកាត់ចេញ</span><div class="break"><span class="cur">USD</span><strong class="num">10,000.00</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="listbox_list">
+                        <a href="javascript:void(0);" class="listbox_item">
+                            <div class="account_wrap">
+                                <div class="account_box">
+                                    <i class="ci_bank lg ci_bank_020"></i>
+                                    <div class="inner">
+                                        <span class="account_name">외화보통예금</span>
+                                        <span class="account_num">USD 1002-456-890123</span>
+                                    </div>
+                                </div>
+                                <div class="account_btm">
+                                    <span class="txt">출금가능금액</span><div class="break"><span class="cur">USD</span><strong class="num">10,000.00</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="listbox_list">
+                        <a href="javascript:void(0);" class="listbox_item">
+                            <div class="account_wrap">
+                                <div class="account_box">
+                                    <i class="ci_bank lg ci_bank_020"></i>
+                                    <div class="inner">
+                                        <span class="account_name">Woori bank</span>
+                                        <span class="account_num">1002-456-890123</span>
+                                    </div>
+                                </div>
+                                <div class="account_btm">
+                                    <span class="txt">Available funds</span><div class="break"><span class="cur">KRW</span><strong class="num">999,999,999</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- //출금계좌 선택(하단버튼없음) -->
+
+    <!-- 출금계좌(탭,하단버튼없음) -->
+    <div class="btmsheet" id="btmSheet003">
+        <div class="btmsheet_head">
+            <strong class="title_h1">Select a withdrawal account</strong>
+            <button type="button" class="ico_close btn_close" data-roll="slide-off"><span class="blind">닫기</span></button>
+        </div>
+        <div class="btmsheet_body tabfix">
+            <div class="inner nospace">
+                <div class="tab_head">
+                    <a href="#none" class="tab_item is-active"><span class="tab_txt">Woori bank</span></a>
+                    <a href="#none" class="tab_item"><span class="tab_txt">Other institutions</span></a>
+                </div>
+                <div class="tab_body">
+                    <div class="tab_panel">
+                        <div class="listbox">
+                            <div class="listbox_list">
+                                <a href="#none" class="listbox_item">
+                                    <div class="account_wrap">
+                                        <div class="account_box">
+                                            <i class="ci_bank lg ci_bank_020"></i>
+                                            <div class="inner">
+                                                <span class="account_name">Woori bank Woori bank Woori bank Woori bank Woori bank</span>
+                                                <span class="account_num">1002-456-890123</span>
+                                                <span class="account_nick">Account Name Account Name Account Name Account Name</span>
+                                            </div>
+                                        </div>
+                                        <div class="account_btm">
+                                            <span class="txt">Transferable amount</span><div class="break"><span class="cur">KRW</span><strong class="num">999,999,999</strong></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="listbox_list">
+                                <div class="listbox_item">
+                                    <div class="account_wrap">
+                                        <div class="account_box">
+                                            <i class="ci_bank lg ci_bank_003"></i>
+                                            <div class="inner">
+                                                <span class="account_name">IBK</span>
+                                                <span class="account_num">123456-78-912345</span>
+                                                <span class="account_nick">Account Nameee</span>
+                                                <span class="account_nick">Nicknamess</span>
+                                            </div>
+                                            <span class="chk_star">
+                                                <input type="checkbox" id="chkStar" class="blind">
+                                                <label for="chkStar" class="ico_star"><span class="blind">즐겨찾기 등록</span></label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab_panel" style="display:none">
+                        탭영역 2
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //출금계좌(탭,하단버튼없음) -->
+
+    <!-- 통화선택(탭,하단버튼없음) -->
+    <div class="btmsheet" id="btmSheet004">
+        <div class="btmsheet_head">
+            <strong class="title_h1">통화선택</strong>
+            <button type="button" class="ico_close btn_close" data-roll="slide-off"><span class="blind">닫기</span></button>
+        </div>
+        <div class="btmsheet_body tabfix">
+            <div class="inner nospace">
+                <div class="tab_head">
+                    <a href="#none" class="tab_item is-active"><span class="tab_txt">주요통화</span></a>
+                    <a href="#none" class="tab_item"><span class="tab_txt">기타통화</span></a>
+                </div>
+                <div class="tab_body">
+                    <div class="tab_panel">
+                        <ul class="listbox">
+                            <li class="listbox_list">
+                                <input type="radio" name="currency" id="radio0101" class="blind listbox_inp">
+                                <label for="radio0101" class="listbox_item label">
+                                    <i class="ico_flag us"></i>
+                                    <span>USD 미국 달러</span>
+                                </label>
+                            </li>
+                            <li class="listbox_list">
+                                <input type="radio" name="currency" id="radio0102" class="blind listbox_inp">
+                                <label for="radio0102" class="listbox_item label">
+                                    <i class="ico_flag eu"></i>
+                                    <span>EUR 유럽 유로</span>
+                                </label>
+                            </li>
+                            <li class="listbox_list">
+                                <input type="radio" name="currency" id="radio0103" class="blind listbox_inp">
+                                <label for="radio0103" class="listbox_item label">
+                                    <i class="ico_flag ca"></i>
+                                    <span>CAD 캐나다 달러</span>
+                                </label>
+                            </li>
+                            <li class="listbox_list">
+                                <input type="radio" name="currency" id="radio0104" class="blind listbox_inp">
+                                <label for="radio04" class="listbox_item label">
+                                    <i class="ico_flag jp"></i>
+                                    <span>GBP 영국 파운드</span>
+                                </label>
+                            </li>
+                            <li class="listbox_list">
+                                <input type="radio" name="currency" id="radio0105" class="blind listbox_inp">
+                                <label for="radio0105" class="listbox_item label">
+                                    <i class="ico_flag cn"></i>
+                                    <span>CHY 중국</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab_panel" style="display:none">
+                        탭영역 2
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //통화선택(탭,하단버튼없음) -->
+
+    <!-- <div class="btmsheet" id="">
+        <div class="dimmed"></div>
+        <div class="btmsheet_cont">
+            <div class="btmsheet_head">
+                <strong class="title_h1">Title</strong>
+                <button type="button" class="ico_close btn_close"><span class="blind">닫기</span></button>
+            </div>
+            <div class="btmsheet_body">
+                <div class="inner">
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+<!-- 퍼블 확인용 -->
+<script>
+$(function(){
+    if($(['*[data-roll=slide-on]'].length)){
+        let btmSht = $('.btmsheet');
+        let slideOn = '*[data-roll=slide-on]';
+        let slideOff = '*[data-roll=slide-off]';
+        let dimm = '<div class="dimmed"></div>';
+
+        $(slideOn).on('click', function(){
+            let href = $(this).attr('data-link');
+            $('body').css({overflow:"hidden"});
+            $('.wrap').append(dimm);
+            $('#'+href).addClass('is-active');
+        });
+        $(slideOff).on('click', function(){
+            $('.dimmed').remove();
+            $('body').removeAttr("style");
+            btmSht.removeClass('is-active');
+        })
+    }
+});
+</script>
+<!-- //퍼블 확인용 -->
+</body>
+</html>
