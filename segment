@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Segment Control</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Segment Control</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Segment Control(세그먼트)</strong>
+            </div>
+            <div class="dvgroup">
+                <div class="descbox">
+                    <p><em class="fw500">Selected</em> : Default 항목이 기본적으로 활성화된 상태</p>
+                    <p><em class="fw500">Normal</em> : Default가 없는 상태이며, 사용자 선택된 값 없이 직접 컨트롤 해야하는 민감한 항목에 사용</p>
+                    <p><em class="fw500">Disabled</em> : 선택되어 있는 상태를 사용자가 확인할 수 있지만 변경할 수 없는 상태이다.</p>
+                </div>
+            </div>
+            <div class="dvgroup">
+                <div class="segment_wrap">
+                    <div class="title_wrap">
+                        <em class="title_lv3">Selected</em>
+                    </div>
+                    <div class="segment col2"><!--컬럼 갯수에 따라 지정 .col2, .col3 .col4-->
+                        <input type="radio" name="segmentSelect" id="segmentSelect01" class="segment_inp" checked>
+                        <label for="segmentSelect01" class="segment_item" role="radio" aria-checked="true"><span class="inner">고객 직접해지</span></label>
+                        <input type="radio" name="segmentSelect" id="segmentSelect02" class="segment_inp">
+                        <label for="segmentSelect02" class="segment_item" role="radio" aria-checked="false"><span class="inner">만기 자동해지</span></label>
+                        <div class="segment_indicator"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dvgroup">
+                <div class="segment_wrap">
+                    <div class="title_wrap">
+                        <em class="title_lv3">Normal</em>
+                    </div>
+                    <div class="segment col2"><!--컬럼 갯수에 따라 지정 .col2, .col3 .col4-->
+                        <input type="radio" name="segmentNormal" id="segmentNormal01" class="segment_inp">
+                        <label for="segmentNormal01" class="segment_item" role="radio" aria-checked="true"><span class="inner">고객 직접해지</span></label>
+                        <input type="radio" name="segmentNormal" id="segmentNormal02" class="segment_inp">
+                        <label for="segmentNormal02" class="segment_item" role="radio" aria-checked="false"><span class="inner">만기 자동해지</span></label>
+                        <div class="segment_indicator"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dvgroup">
+                <div class="segment_wrap">
+                    <div class="title_wrap">
+                        <em class="title_lv3">disabled</em>
+                    </div>
+                    <div class="segment col2"><!--컬럼 갯수에 따라 지정 .col2, .col3 .col4-->
+                        <input type="radio" name="segmentDisabl" id="segmentDisabl01" class="segment_inp" checked disabled>
+                        <label for="segmentDisabl01" class="segment_item push" role="radio" aria-checked="true"><span class="inner">고객 직접해지</span></label>
+                        <input type="radio" name="segmentDisabl" id="segmentDisabl02" class="segment_inp" disabled>
+                        <label for="segmentDisabl02" class="segment_item" role="radio" aria-checked="false"><span class="inner">만기 자동해지</span></label>
+                        <div class="segment_indicator"></div>
+                    </div>
+                    <div class="segment_panel">
+                        <div class="field_wrap">
+                            <em class="inp_title">Subject</em>
+                            <div class="inp_field">
+                                <div class="inp_item">
+                                    <input type="text" class="inp_text" value="" placeholder="Hit Text" title="Hit Text">
+                                    <div class="inp_delete">
+                                        <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="txt_error">
+                                <p>Enter an error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+</body>
+</html>
