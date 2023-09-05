@@ -1,0 +1,26 @@
+import { useTranslation } from "react-i18next";
+import BottomSheetHead from "../../../../../common/components/bottomSheet/BottomSheetHead";
+import BottomSheetBody from "../../../../../common/components/bottomSheet/BottomSheetBody";
+import BottomSheetInner from "../../../../../common/components/bottomSheet/BottomSheetInner";
+import BtmsheetListItem from "../../../../../common/components/list/BtmsheetListItem";
+
+// (B)전화번호선택
+function SMJ1A02P01(){
+    const {t} = useTranslation();
+    return(
+        <>
+            <BottomSheetHead title={t('co0802_0003')} btnClose />
+            <BottomSheetBody>
+                <BottomSheetInner>
+                    <ul className="listbox">
+                        <BtmsheetListItem type="radio" name="SMJ1A02P01" id="SMJ1A02P01_opt01" title={<><span className="listbox_tit">Mobile</span><span className="listbox_txt">010-****-1100</span></>} chkicon chk />
+                        <BtmsheetListItem type="radio" name="SMJ1A02P01" id="SMJ1A02P01_opt02" title={<><span className="listbox_tit">Home</span><span className="listbox_txt">02-***-1100</span></>} chkicon />
+                        <BtmsheetListItem type="radio" name="SMJ1A02P01" id="SMJ1A02P01_opt03" title={<><span className="listbox_tit">Workplace</span><span className="listbox_txt">02-****-1200</span></>} chkicon />
+                    </ul>
+                </BottomSheetInner>
+            </BottomSheetBody>
+        </>
+    );
+}
+
+export default SMJ1A02P01;
