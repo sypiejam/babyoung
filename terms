@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>약관</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">약관</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Terms(약관)</strong>
+            </div>
+            <div class="dvgroup">
+                <div class="selections_wrap">
+                    <div class="selections_box multi">
+                        <div class="selections_item all">
+                            <div class="inner">
+                                <div class="selection">
+                                    <input type="checkbox" name="checkall" id="checkall" class="check_normal" disabled>
+                                    <label for="checkall">Full consent</label>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="selection_list">
+                            <li class="selections_item">
+                                <div class="inner">
+                                    <div class="selection">
+                                        <input type="checkbox" name="check" id="check01" class="check_small" checked>
+                                        <label for="check01">[Required] Personal information collection/ use agreement</label> <!-- co1501_0021 -->
+                                    </div>
+                                    <a href="javascript:;" role="button" class="ico_arrow small">
+                                        <span class="blind">바로가기</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="selections_item">
+                                <div class="inner">
+                                    <div class="selection">
+                                        <input type="checkbox" name="check" id="check02" class="check_small" disabled checked>
+                                        <label for="check02">[Required] Consent to Processing of Unique Identifiable Information</label>
+                                    </div>
+                                    <a href="javascript:;" role="button" class="ico_arrow small">
+                                        <span class="blind">바로가기</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="selections_item">
+                                <div class="inner">
+                                    <div class="selection">
+                                        <input type="checkbox" name="check" id="check02" class="check_small">
+                                        <label for="check02">[必須] 金融決済院の認証書業務での身元確認のための個人(信用)情報及びその他の情報収集・利用に同意 </label>
+                                    </div>
+                                    <a href="javascript:;" role="button" class="ico_arrow small">
+                                        <span class="blind">바로가기</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="selections_item">
+                                <div class="inner">
+                                    <div class="selection">
+                                        <input type="checkbox" name="check" id="check03" class="check_small st" disabled>
+                                        <label for="check03">[Required] Identity Verification Service</label> <!-- co1501_0023 -->
+                                    </div>
+                                    <a href="javascript:;" role="button" class="ico_arrow small">
+                                        <span class="blind">바로가기</span>
+                                    </a>
+                                </div>
+                                <div class="selection_desc">
+                                    <p>???????????????????????????????????????????????????????????????????????????????????????????????????????????????? ?????? In accordance with the Personal Information Protection Act and the Act on the Use and Protection of Credit Information, the Company and its business trustees will process (collect, use, inquire, and provide) your sensitive information (illness and injury information) and unique indentification information (resident registration number, alien registration number, driver's license) as follows in response to your individual consent to the above personal (credit) information.</p>
+                                </div>
+                                <ul class="selection_list">
+                                    <li class="selections_item">
+                                        <div class="inner">
+                                            <div class="selection">
+                                                <input type="checkbox" name="check" id="checkDep2_1" class="check_small" checked>
+                                                <label for="checkDep2_1">[2dep] Personal information collection/ use agreement</label> 
+                                            </div>
+                                            <a href="javascript:;" role="button" class="ico_arrow small">
+                                                <span class="blind">바로가기</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="selections_item">
+                                        <div class="inner">
+                                            <div class="selection">
+                                                <input type="checkbox" name="check" id="checkDep2_2" class="check_small">
+                                                <label for="checkDep2_2">[2dep] Agree to Terms of Service</label>
+                                            </div>
+                                            <a href="javascript:;" role="button" class="ico_arrow small">
+                                                <span class="blind">바로가기</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="selections_item">
+                                <div class="inner">
+                                    <div class="selection">
+                                        <input type="checkbox" name="check" id="check04" class="check_small">
+                                        <label for="check04">[Required] Agree to Terms of Service</label> <!-- co1501_0024 -->
+                                    </div>
+                                    <a href="javascript:;" role="button" class="ico_arrow small">
+                                        <span class="blind">바로가기</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="selections_box single">
+                        <div class="selections_item">
+                            <div class="inner">
+                                <div class="selection">
+                                    <input type="checkbox" name="checkall" id="check_01" class="check_normal">
+                                    <label for="check_01">개인(신용)정보 수집이용제공 동의(우리청년약속 통장)</label>
+                                </div>
+                                <a href="javascript:;" role="button" class="ico_arrow">
+                                    <span class="blind">바로가기</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="selections_box single">
+                        <div class="selections_item">
+                            <div class="inner">
+                                <div class="selection">
+                                    <input type="checkbox" name="checkall" id="check_01" class="check_normal">
+                                    <label for="check_01">[必須] 金融決済院の認証書業務での身元確認のための個人(信用)情報及びその他の情報収集・利用に同意 </label>
+                                </div>
+                                <a href="javascript:;" role="button" class="ico_arrow">
+                                    <span class="blind">바로가기</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="selections_box multi">
+                        <div class="selections_item">
+                            <div class="inner">
+                                <div class="selection">
+                                    <input type="checkbox" name="checkall" id="check_02" class="check_normal">
+                                    <label for="check_02">Full consent Full consent</label>
+                                </div>
+                                <a href="javascript:;" role="button" class="ico_arrow">
+                                    <span class="blind">바로가기</span>
+                                </a>
+                            </div>
+                            <div class="selection_desc">
+                                <p>자격조건 충족 후 매달 급여이체 및 청약저축 납입시 1만원 캐시백을 신청할 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="selections_box multi">
+                        <div class="selections_item all">
+                            <div class="inner">
+                                <div class="selection">
+                                    <input type="checkbox" name="checkall" id="checkall2" class="check_normal" disabled>
+                                    <label for="checkall2">Full consent</label>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list_half">
+                            <li class="chk_item">
+                                <input type="checkbox" name="check" id="check_03" class="check_small" checked>
+                                <label for="check_03">전화(휴대폰)</label>
+                            </li>
+                            <li class="chk_item">
+                                <input type="checkbox" name="check" id="check_04" class="check_small" disabled checked>
+                                <label for="check_04">SMS</label>
+                            </li>
+                            <li class="chk_item">
+                                <input type="checkbox" name="check" id="check_05" class="check_small" disabled>
+                                <label for="check_05">이메일</label>
+                            </li>
+                        </ul>
+                    </div> 
+                    <div class="selections_box single">
+                        <div class="selections_item">
+                            <div class="inner a-center">
+                                <div class="selection">
+                                    <input type="checkbox" name="checkall" id="check_06" class="check_normal">
+                                    <label for="check_06">관리점 및 추천직원 </label>
+                                </div>
+                                <a href="javascript:;" role="button" class="link_arr">
+                                    <em>김우리(서울주택시공사공사)</em>
+                                    <span class="blind">바로가기</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>                                       
+                </div>
+            </div>                      
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+</body>
+</html>
