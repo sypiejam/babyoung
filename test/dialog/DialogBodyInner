@@ -1,0 +1,6 @@
+function DialogBodyInner({ children }){
+
+    return <div className="inner">{children}</div>;
+}
+
+export default DialogBodyInner;
