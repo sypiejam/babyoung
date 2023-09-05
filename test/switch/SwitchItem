@@ -1,0 +1,49 @@
+import styled from 'styled-components';
+
+/**
+ * 
+ * @name SwitchItem 
+ * @role 주로 시스템 설정, 알림 설정과 같은 단일옵션의 선택/미선택(on/off) 기능으로 사용합니다.
+ * @props name(boolean) : 항목별로 고유한 name을 설정합니다.
+ * @props title(string) : 항목의 타이틀값을 기재합니다.
+ * @props subtxt(string) : 부가텍스트가 들어가는 경우 넣어줍니다.
+ * @props onChange(function) : onChange이벤트가 발생될 때 수행할 함수입니다.
+ * @props chk(boolean) : checked의 값이 boolean형태로 넘어옵니다. 
+ * @props disabled(boolean) : disabled일때 설정합니다.
+ * @props info(boolean) : title에 도움말이 들어가는 경우 boolean값으로 넣어줍니다.
+ * @props callback(function) : callback함수 
+ * @props tag(string) : 리스트가 아닌 다른형태의 태그가 필요할 때 넣어줍니다(default : li / 예시 : tag="div")
+ */
+
+function SwitchItem({name, title, onChange, chk, disabled, info, callback, tag, subtxt}){ // 2023-05-23 info, callback 추가 // 2023-05-30 tag props 추가
+    return(
+        <>
+            <StyledSwitchItem className="switch_cont" as={tag}> {/* 2023-05-30 tag props 추가 */}
+                {/* 2023-05-23 마크업 수정 st */}
+                <div className="switch_item">
+                    {/* 2023-06-15 마크업 수정 st */}
+                    <div className="title_lv3">
+                        {title && <strong className="keytit">{title}</strong>} {/* 2023-06-19 strong 오타수정 */}
+                        {subtxt &&<span className='subtxt'>{subtxt}</span>} {/* 2023-06-07 subtxt 추가 */}
+                        {info && <button type="button" className="ico_help" onClick={()=>callback()}><span className="blind">도움말</span></button>}
+                    </div>
+                    {/* 2023-06-15 마크업 수정 end */}
+                    <label className='switch_box'>
+                        <input type="checkbox" name={name} className="switch" onChange={onChange} checked={chk} disabled={disabled} title={title} /> {/* 2023-08-01 title={title} 추가 */}
+                        <span className="switch_ball" aria-hidden="true"></span>
+                    </label>
+                </div>
+                {/* 2023-05-23 마크업 수정 end */}
+            </StyledSwitchItem>
+        </>
+    )
+}
+
+export const StyledSwitchItem = styled.li` // 2023-05-23 css 수정 
+    border-bottom:1px solid #f2f5f9;
+    &:last-child{
+        border-bottom:0;
+    }
+    // 2023-06-15 style common.css 으로 이동 
+`
+export default SwitchItem
