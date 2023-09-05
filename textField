@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Text Field</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/lib/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/renewal/lib/lottie.min.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/renewal/lib/lottie-player.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Text Field</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Text Field(텍스트필드)</strong>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">기본형</em>
+                </div>
+                <div class="field_wrap"><!-- 에러시 클래스 is-error 추가 -->
+                    <div class="title_wrap help_wrap">
+                        <em class="inp_title">Subject</em>
+                        <button type="button" class="ico_info btn_info"><span class="blind">도움말</span></button>
+                    </div>
+                    <div class="inp_field">
+                        <div class="inp_item">
+                            <input type="text" class="inp_text" value="" placeholder="Hit Text" title="Hit Text" />
+                            <div class="inp_delete">
+                                <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="txt_error">
+                        <p>Enter an error message</p>
+                    </div>
+                </div>
+
+                <div class="field_wrap"><!-- 에러시 클래스 is-error 추가 -->
+                    <em class="inp_title">Loading</em>
+                    <div class="inp_field">
+                        <!-- loading -->
+                        <div class="loadingbox tc">
+                            <div class="loading">
+                                <div class="lottieplayer" aria-hidden="true">
+                                    <lottie-player 
+                                        src="/wglb/motion/loding_small.json" 
+                                        background="transparent" 
+                                        speed="1" 
+                                        autoplay loop>
+                                    </lottie-player>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //loading -->
+                        <div class="inp_item">
+                            <input type="text" class="inp_text" value="" placeholder="Hit Text" title="Hit Text" />
+                            <div class="inp_delete">
+                                <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="txt_error">
+                        <p>Enter an error message</p>
+                    </div>
+                </div>
+
+                <div class="field_wrap">
+                    <em class="inp_title">Readonly</em>
+                    <div class="inp_field readonly"><!-- 읽기만 가능 할 경우 클래스 readonly 추가 -->
+                        <div class="inp_readonly">
+                            <p>Apply when all data needs to be exposed Apply when all data needs to be exposed</p>
+                        </div>
+                        <!-- <div class="inp_item">
+                            <input type="text" class="inp_text" value="Apply when all data needs to be exposed" placeholder="Hit Text" title="Hit Text" readonly />
+                            <div class="inp_delete">
+                                <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="field_wrap">
+                    <em class="inp_title">Disabled</em>
+                    <div class="inp_field disabled"><!-- 비활성화 클래스 disabled 추가 -->
+                        <div class="inp_item">
+                            <input type="text" class="inp_text" value="Text" placeholder="Hit Text" title="Hit Text" disabled />
+                            <div class="inp_delete">
+                                <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field_wrap"><!-- 에러시 클래스 is-error 추가 -->
+                    <em class="inp_title">2분할</em>
+                    <div class="field_flex">
+                        <div class="inp_field">
+                            <div class="inp_item">
+                                <input type="text" class="inp_text" value="Text" placeholder="Hit Text" title="Hit Text" />
+                                <div class="inp_delete"><button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button></div>
+                            </div>
+                        </div>
+                        <div class="inp_field is-error"><!-- 2분할은 필요에 따라 is-error 별도 지정 -->
+                            <div class="inp_item">
+                                <input type="text" class="inp_text" value="Text" placeholder="Hit Text" title="Hit Text" />
+                                <div class="inp_delete"><button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="txt_error is-active"><!-- 2분할은 필요에 따라 is-active 별도 지정 -->
+                        <p>Enter an error message</p>
+                    </div>
+                </div>
+
+                <div class="field_wrap is-error"><!-- 에러시 클래스 is-error 추가 -->
+                    <em class="inp_title">Error Message</em>
+                    <div class="inp_field">
+                        <div class="inp_item">
+                            <input type="text" class="inp_text" value="Input Text" placeholder="Placeholder" title="Placeholder" />
+                            <div class="inp_delete">
+                                <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="txt_error">
+                        <p>Enter an error message</p>
+                    </div>
+                    <div class="txt_helper tl">
+                        <p>Enter an additional description.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">트레일형</em>
+                </div>
+                <div class="field_wrap"><!-- 에러시 클래스 is-error 추가 -->
+                    <em class="inp_title">Password</em>
+                    <div class="inp_field pw_field">
+                        <div class="inp_password">
+                            <div class="inp_item">
+                                <input type="password" class="inp_text" value="12345" placeholder="" title="Password" readonly />
+                                <span class="inp_word">4 characters</span>
+                                <div class="inp_delete"><button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button></div>
+                            </div>
+                            <div class="inp_pwshadow"><!-- 입력 완료 상태 filled 추가 -->
+                                <i class="item"></i>
+                                <i class="item"></i>
+                                <i class="item"></i>
+                                <i class="item"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="txt_error">
+                        <p>Enter an error message</p>
+                    </div>
+                </div>
+
+                <div class="field_wrap">
+                    <em class="inp_title">뒷자리 모두 숨김</em>
+                    <div class="inp_field">
+                        <div class="inp_item">
+                            <input type="number" class="inp_text" value="881211" placeholder="date of birth" title="date of birth" />
+                            <div class="inp_delete"><button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button></div>
+                        </div>
+                        <div class="inp_tilde ico_dash"></div>
+                        <div class="inp_item"><input type="password" class="inp_text hide" value="0000000" title="주민등록번호 뒷번호 7자리" maxlength="7" readonly/></div>
+                    </div>
+                    <div class="inp_field">
+                        <div class="inp_item">
+                            <input type="number" class="inp_text" value="881212" placeholder="date of birth" title="date of birth" />
+                            <div class="inp_delete"><button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button></div>
+                        </div>
+                        <div class="inp_tilde ico_dash"></div>
+                        <div class="inp_item"><input type="password" class="inp_text hide ts" value="0000000" title="주민등록번호 뒷번호 7자리" maxlength="7" readonly/></div>
+                    </div>
+                    <div class="inp_field">
+                        <div class="inp_item">
+                            <input type="number" class="inp_text" value="881213" placeholder="date of birth" title="date of birth" />
+                            <div class="inp_delete"><button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button></div>
+                        </div>
+                        <div class="inp_tilde ico_dash"></div>
+                        <div class="inp_item"><input type="password" class="inp_text hide" value="1234567" title="주민등록번호 뒷번호 7자리" maxlength="7" readonly/></div>
+                    </div>
+                </div>
+
+                <div class="field_wrap">
+                    <em class="inp_title">뒤 1자리 입력</em>
+                    <div class="field_flex inp_field">
+                        <div class="inp_item">
+                            <input type="number" class="inp_text" value="" placeholder="생년월일 6자리" title="생년월일 6자리">
+                            <div class="inp_delete"><button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button></div>
+                        </div>
+                        <div class="inp_tilde ico_dash"></div>
+                        <div class="inp_item">
+                            <input type="number" class="inp_text id_num" value="" placeholder="●" title="주민번호 뒷자리 첫자리 입력" maxlength="1">
+                            <input type="password" class="inp_text pw" value="" placeholder="******" title="주민등록번호 뒷자리 나머지 6자리" maxlength="6" readonly>
+                        </div>
+                    </div>
+                    <div class="txt_error">
+                        <p>Enter an error message</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">금액형</em>
+                </div>
+                <div class="field_wrap is-error">
+                    <em class="inp_title">외화입력</em>
+                    <div class="inp_field inp_amount">
+                        <div class="field_item amount_unit">
+                            <em>USD</em>
+                        </div>
+                        <div class="d-flex amount_item">
+                            <div class="inp_item">
+                                <input type="text" class="inp_text" inputmode="numeric" value="100" title="이체 금액" />
+                                <div class="inp_delete">
+                                    <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                                </div>
+                            </div>
+                            <div class="inp_tilde ico_dot"></div>
+                            <div class="inp_item">
+                                <input type="number" class="inp_text inp_decimal" value="00" title="이체 금액 소수점 이하 두자리" />
+                                <div class="inp_delete">
+                                    <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                                </div>
+                            </div>
+                            <div class="inp_unit per">%</div>
+                        </div>
+                    </div>
+                    <div class="txt_error">
+                        <p class="tr">Enter an error message</p>
+                    </div>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">원화입력</em>
+                    <div class="txt_amount">
+                        <em class="num">900</em><span class="unit">Billion</span>
+                    </div>
+                    <div class="inp_field inp_amount">
+                        <div class="field_item amount_unit">
+                            <em>KRW</em>
+                        </div>
+                        <div class="inp_item amount_item">
+                            <input type="text" class="inp_text" value="123,456" inputmode="decimal" placeholder="Placeholder" title="이체 금액" />
+                            <div class="inp_delete">
+                                <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="txt_amount btm">
+                        <span class="unit">Balance</span><span class="unit">KRW</span><em class="num">9,999,000</em>
+                    </div>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">Title</em>
+                    <div class="field_flex">
+                        <div class="inp_field">
+                            <div class="inp_item"><input type="text" class="inp_text tr" value="" placeholder="금액입력" title="금액입력" /></div>
+                            <!-- 금액입력 우측정렬 일때 클래스 tr 추가 (letter spacing 0)-->
+                        </div>
+                        <div class="ico_wave"></div>
+                        <div class="inp_field">
+                            <div class="inp_item"><input type="text" class="inp_text tr" value="1,000,000" placeholder="금액입력" title="금액입력" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">일정선택형</em>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">날짜 선택</em>
+                    <div class="inp_field" role="button">
+                        <div class="inp_item"><input inputmode="none" class="inp_text" value="2023.04.10" placeholder="YYYY.MM.DD" title="조회 시작일" readonly /></div>
+                        <div class="field_item"><i class="ico_date"></i></div>
+                    </div>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">기간 선택</em>
+                    <div class="field_flex">
+                        <div class="inp_field disabled" role="button">
+                            <div class="inp_item"><input inputmode="none" class="inp_text" value="2023.04.17" placeholder="YYYY.MM.DD" title="조회 시작일" disabled /></div>
+                            <div class="field_item"><i class="ico_date"></i></div>
+                        </div>
+                        <div class="ico_wave"></div>
+                        <div class="inp_field" role="button">
+                            <div class="inp_item"><input inputmode="none" class="inp_text" value="" placeholder="YYYY.MM.DD" title="조회 종료일" readonly /></div>
+                            <div class="field_item"><i class="ico_date"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">시간 선택</em>
+                    <div class="field_flex">
+                        <div class="inp_field disabled" role="button">
+                            <div class="inp_item"><input inputmode="none" class="inp_text" value="09" placeholder="Time" title="조회 시작 시간" readonly /></div>
+                            <div class="field_item"><i class="ico_time"></i></div>
+                        </div>
+                        <div class="inp_field" role="button">
+                            <div class="inp_item"><input inputmode="none" class="inp_text" value="17" placeholder="Minutes" title="조회 종료 시간" readonly /></div>
+                            <div class="field_item"><i class="ico_time"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">날짜 + 시간</em>
+                    <div class="field_flex">
+                        <div class="inp_field" role="button">
+                            <div class="inp_item"><input inputmode="none" class="inp_text" value="2023.05.03" placeholder="YYYY.MM.DD" title="날짜 선택" readonly /></div>
+                            <div class="field_item"><i class="ico_date"></i></div>
+                        </div>
+                        <div class="inp_field inp_select disabled">
+                            <button type="button" class="inp_select_item" title="시간 선택" disabled>
+                                <div class="inp_select_value">8 AM</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">이메일</em>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">Email address</em>
+                    <div class="inp_field">
+                        <div class="inp_item">
+                            <input type="email" class="inp_text" value="woori" placeholder="Please enter your email." title="Please enter your email." />
+                            <div class="inp_delete">
+                                <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="txt_error">
+                        <p>Enter an error message</p>
+                    </div>
+                    <div class="autocomplete is-active">
+                        <ul role="listbox" id="listBox">
+                            <li class="autocomplete_item" role="option" id="option01"><span><em class="fc-blue02">woori</em>@gmail.com</span></li>
+                            <li class="autocomplete_item" role="option" id="option02"><span><em class="fc-blue02">woori</em>@naver.com</span></li>
+                            <li class="autocomplete_item" role="option" id="option03"><span><em class="fc-blue02">woori</em>@daum.net</span></li>
+                            <li class="autocomplete_item" role="option" id="option04"><span><em class="fc-blue02">woori</em>@hanmail.net</span></li>
+                            <li class="autocomplete_item" role="option" id="option05"><span><em class="fc-blue02">woori</em>@nate.com</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">기타(etc.)</em>
+                </div>
+                <div class="field_wrap">
+                    <em class="inp_title">Certificate number</em>
+                    <div class="field_flex inp_field">
+                        <input type="number" inputmode="numeric" class="inp_text tc" min="" max="" value="" placeholder="" title="" />
+                        <div class="inp_tilde ico_dash"></div>
+                        <input type="number" inputmode="numeric" class="inp_text tc" value="" placeholder="" title="" />
+                        <div class="inp_tilde ico_dash"></div>
+                        <input inputmode="none" class="inp_text tc" value="" placeholder="" title="" />
+                    </div>
+                </div>
+
+                <div class="address_field">
+                    <div class="field_wrap">
+                        <div class="title_flex link_wrap">
+                            <em class="inp_title">Address</em>
+                            <a href="javascript:void(0);" class="link_arr arr_right"><span>Address Search</span></a>
+                        </div>
+                        <div class="inp_field">
+                            <div class="inp_item">
+                                <input type="text" class="inp_text" value="48, Sogong-ro" placeholder="도로명 주소" title="도로명 주소" />
+                                <div class="inp_delete">
+                                    <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                                </div>
+                            </div>
+                            <!-- <div class="field_item">
+                                <button type="button"div class="ico_search inp_button"><span class="blind">검색</span></button>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="field_wrap">
+                        <em class="inp_title">시/군/구</em>
+                        <div class="inp_field readonly">
+                            <div class="inp_item">
+                                <input type="text" class="inp_text" value="Jung-gu" placeholder="시/군/구" title="시/군/구" readonly />
+                                <div class="inp_delete">
+                                    <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inp_field readonly">
+                            <div class="inp_item">
+                                <input type="text" class="inp_text" value="Seoul" placeholder="자치시/도" title="자치시/도" readonly />
+                                <div class="inp_delete">
+                                    <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inp_field readonly">
+                            <div class="inp_item">
+                                <input type="text" class="inp_text" value="04631" placeholder="우편번호" title="우편번호" readonly />
+                                <div class="inp_delete">
+                                    <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="txt_error">
+                            <p>Enter an error message</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dvgroup">
+                    <div class="field_wrap">
+                        <em class="inp_title">Cell phone number</em>
+                        <div class="field_flex"><!-- 2단 비대칭형 클래스 asym 추가 : 첫번째 inp_field width 120 -->
+                            <div class="inp_field inp_select">
+                                <button type="button" class="inp_select_item" title="통신사 선택" readonly>
+                                    <div class="inp_select_value">SKT</div>
+                                </button>
+                            </div>
+                            <div class="inp_field">
+                                <div class="inp_item">
+                                    <input type="tel" class="inp_text" value="" placeholder="01012345678" title="휴대폰번호" />
+                                    <div class="inp_delete">
+                                        <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="txt_error">
+                            <p>Enter an error message</p>
+                        </div>
+                    </div>
+                    <div class="field_wrap mb16">
+                        <em class="inp_title">Mobile phone number</em>
+                        <div class="field_flex a-end">
+                            <div class="inp_field">
+                                <div class="inp_item">
+                                    <input type="tel" class="inp_text" value="" placeholder="Enter number only" title="Enter number only">
+                                    <div class="inp_delete">
+                                        <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_wrap">
+                                <a href="javascript:void(0);" class="btn_outlined btn_medium btn_request"><span>Authentication Request</span></a>
+                            </div>
+                        </div>
+                        <div class="txt_error">
+                            <p>Enter an error message</p>
+                        </div>
+                    </div>
+                    <div class="field_wrap is-error">
+                        <div class="field_flex">
+                            <div class="inp_field">
+                                <div class="inp_item">
+                                    <input type="number" class="inp_text" value="123456" placeholder="Enter numbers only" title="인증번호" style="z-index: 22;"/>
+                                    <div class="inp_delete">
+                                        <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                                    </div>
+                                </div>
+                                <div class="field_item">
+                                    <!-- <div class="inp_unit count">03:00</div> -->
+                                    <div class="inp_unit timeout">Authentication timeout</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">텍스트에어리어</em>
+                </div>
+                <div class="field_wrap"><!-- 에러시 클래스 is-error 추가 -->
+                    <em class="inp_title">Textarea</em>
+                    <textarea name="" class="inp_txtarea" id="" cols="30" rows="5" placeholder="Enter the content."></textarea>
+                    <div class="inp_guide">
+                        <span>0/2,000</span>
+                    </div>
+                    <div class="txt_helper tl">
+                        <p class="bullet_disc">Enter an additional description.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+<!-- 퍼블 확인용 : 삭제버튼 -->
+<script>
+    $(document).on('focusin', '.inp_field', function(e){
+        let inputTxt = $(this).find('.inp_text');
+        let clearBtn = $(this).find('.inp_delete');
+
+        clearBtn.click(function(){
+            inputTxt.val('').text('');
+            inputTxt.focus();
+        })
+    });
+</script>
+<!-- //퍼블 확인용 : 삭제버튼 -->
+</body>
+</html>
