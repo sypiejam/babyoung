@@ -41,5 +41,19 @@
     </div>
     <!-- //container -->
 </div>
+<script>
+let containerPdSet = () => {
+    const btmFixedChk = document.querySelector('.btm_fixed')
+    const container =  document.querySelector('.container') || document.querySelector('.pop_container')
+    
+    if(btmFixedChk){
+        container.classList.add('has_fixed')
+    } else {
+        container.classList.remove('has_fixed')
+    }
+}
+document.addEventListener('DOMContentLoaded', containerPdSet)
+window.addEventListener('resize', containerPdSet)
+</script>
 </body>
 </html>
