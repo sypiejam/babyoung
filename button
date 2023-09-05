@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Button</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<style>
+    [class*=btn_icon]::before {background-color:tomato;}
+    .link_icon::before {background-color:yellowgreen;}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Button</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <!-- content -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h2">Button(버튼)</strong>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">1. Link Button</em>
+                </div>
+                <div class="title_wrap">
+                    <em class="title_lv3">1-1. Small</em>
+                </div>
+                <div class="link_wrap">
+                    <a href="javascript:void(0);" class="link_line"><span>link</span></a><br>
+                    <a href="javascript:void(0);" class="link_line fc-blue01"><span>link</span></a><br>
+                    <a href="javascript:void(0);" class="link_arr arr_right"><span>link</span></a><br>
+                    <a href="javascript:void(0);" class="link_arr arr_toggle"><span>link</span></a><br>
+                    <a href="javascript:void(0);" class="link_icon"><span>link</span></a>
+                </div>
+                <div class="link_wrap">
+                    <button type="button" class="link_line"><span>link</span></button><br>
+                    <button type="button" class="link_line fc-blue01"><span>link</span></button><br>
+                    <button type="button" class="link_arr arr_right"><span>link</span></button><br>
+                    <button type="button" class="link_arr arr_toggle"><span>link</span></button><br>
+                    <button type="button" class="link_icon"><span>link</span></button>
+                </div>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_lv3">1-2. Medium</em>
+                </div>
+                <div class="more_wrap">
+					<button type="button" class="link_arr btn_more"><span>More</span></button>
+				</div>
+            </div>
+
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">2. Ground Button</em>
+                </div>
+                <div class="title_wrap">
+                    <em class="title_lv3">2-1. Small</em>
+                </div>
+                <div class="btn_wrap">
+                    <div class="d-flex">
+                        <a href="javascript:void(0);" class="btn_primary btn_small"><span>S</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_blue btn_small"><span>S</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_gray btn_small"><span>S</span></a>
+                        <a href="javascript:void(0);" class="btn_outlined btn_small"><span>S</span></a>
+                        <a href="javascript:void(0);" class="btn_ghost btn_small"><span>S</span></a>
+                    </div>
+                </div>
+                <br>
+                <div class="btn_wrap">
+                    <div class="d-flex">
+                        <a href="javascript:void(0);" class="btn_primary btn_small btn_icon_phone"><span>S</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_blue btn_small btn_icon_phone"><span>S</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_gray btn_small btn_icon_phone"><span>S</span></a>
+                        <a href="javascript:void(0);" class="btn_outlined btn_small btn_icon_phone"><span>S</span></a>
+                        <a href="javascript:void(0);" class="btn_ghost btn_small btn_icon_phone"><span>S</span></a>
+                    </div>
+                </div>
+                <br>
+                <div class="btn_wrap">
+                    <div class="d-flex">
+                        <a href="javascript:void(0);" class="btn_primary btn_small disabled"><span>S</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_blue btn_small disabled"><span>S</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_gray btn_small disabled"><span>S</span></a>
+                        <a href="javascript:void(0);" class="btn_outlined btn_small disabled"><span>S</span></a>
+                        <a href="javascript:void(0);" class="btn_ghost btn_small disabled"><span>S</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_lv3">2-2. Medium</em>
+                </div>
+                <div class="btn_wrap">
+                    <div class="d-flex">
+                        <a href="javascript:void(0);" class="btn_primary btn_medium"><span>M</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_blue btn_medium"><span>M</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_gray btn_medium"><span>M</span></a>
+                        <a href="javascript:void(0);" class="btn_outlined btn_medium"><span>M</span></a>
+                        <a href="javascript:void(0);" class="btn_ghost btn_medium"><span>M</span></a>
+                    </div>
+                </div>
+                <br>
+                <div class="btn_wrap">
+                    <div class="d-flex">
+                        <a href="javascript:void(0);" class="btn_primary btn_medium btn_icon_search"><span>M</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_blue btn_medium btn_icon_search"><span>M</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_gray btn_medium btn_icon_search"><span>M</span></a>
+                        <a href="javascript:void(0);" class="btn_outlined btn_medium btn_icon_search"><span>M</span></a>
+                        <a href="javascript:void(0);" class="btn_ghost btn_medium btn_icon_search"><span>M</span></a>
+                    </div>
+                </div>
+                <br>
+                <div class="btn_wrap">
+                    <div class="d-flex">
+                        <a href="javascript:void(0);" class="btn_primary btn_medium disabled"><span>M</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_blue btn_medium disabled"><span>M</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_gray btn_medium disabled"><span>M</span></a>
+                        <a href="javascript:void(0);" class="btn_outlined btn_medium disabled"><span>M</span></a>
+                        <a href="javascript:void(0);" class="btn_ghost btn_medium disabled"><span>M</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_lv3">2-3. Large</em>
+                </div>
+                <div class="btn_wrap">
+                    <div class="d-flex">
+                        <a href="javascript:void(0);" class="btn_primary btn_large"><span>L</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_blue btn_large"><span>L</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_gray btn_large"><span>L</span></a>
+                        <a href="javascript:void(0);" class="btn_outlined btn_large"><span>L</span></a>
+                        <a href="javascript:void(0);" class="btn_ghost btn_large"><span>L</span></a>
+                    </div>
+                </div>
+                <br>
+                <div class="btn_wrap">
+                    <div class="d-flex">
+                        <a href="javascript:void(0);" class="btn_primary btn_large btn_icon_star"><span>L</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_blue btn_large btn_icon_star"><span>L</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_gray btn_large btn_icon_star"><span>L</span></a>
+                        <a href="javascript:void(0);" class="btn_outlined btn_large btn_icon_star"><span>L</span></a>
+                        <a href="javascript:void(0);" class="btn_ghost btn_large btn_icon_star"><span>L</span></a>
+                    </div>
+                </div>
+                <br>
+                <div class="btn_wrap">
+                    <div class="d-flex">
+                        <a href="javascript:void(0);" class="btn_primary btn_large disabled"><span>L</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_blue btn_large disabled"><span>L</span></a>
+                        <a href="javascript:void(0);" class="btn_contained_gray btn_large disabled"><span>L</span></a>
+                        <a href="javascript:void(0);" class="btn_outlined btn_large disabled"><span>L</span></a>
+                        <a href="javascript:void(0);" class="btn_ghost btn_large disabled"><span>L</span></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">3. Floating Button</em>
+                </div>
+                <div class="btm_fixed" style="position:relative;padding:0;"><!-- 가이드 컨텐츠에서 보여주기 위한 inline style -->
+                    <div class="btn_wrap">
+                        <div class="d-flex">
+                            <a href="javascript:void(0);" class="btn_primary"><span>primary</span></a>
+                            <a href="javascript:void(0);" class="btn_secondary"><span>secondary</span></a>
+                            <a href="javascript:void(0);" class="btn_negative"><span>negative</span></a>
+                            <a href="javascript:void(0);" class="btn_warning"><span>warning</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+        </div>
+        <!-- //content -->
+
+        <!-- floating buttom -->
+        <div class="btm_fixed">
+            <div class="btn_wrap">
+                <div class="d-flex asym"><!-- 2단 비대칭형 클래스 asym 추가 -->
+                    <a href="javascript:void(0);" class="btn_secondary"><span>이전</span></a>
+                    <a href="javascript:void(0);" class="btn_primary"><span>다음</span></a>
+                </div>
+            </div>
+        </div>
+        <!-- //floating buttom -->
+    </div>
+    <!-- //container -->
+</div>
+</body>
+</html>
