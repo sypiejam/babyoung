@@ -1,0 +1,69 @@
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import PopupFrame from "../../../../../common/components/popup/PopupFrame"
+import PopupHeader from "../../../../../common/components/popup/PopupHeader"
+import PopupContainer from "../../../../../common/components/popup/PopupContainer"
+import SearchField from "../../../../../common/components/input/textField/SearchField";
+import Nodata from '../../../../../common/components/empty/Empty'
+import { CustomA } from '../../../../../common/components/button';
+import NormalListLinkItem from '../../../../../common/components/list/NormalListLinkItem'
+
+function SMJ1E01P00(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+
+    const dummyemployeeData = [  // 결과가 검색되었을때 직원더미정보
+        {name : '직원명1', department : '직원이 소속된 지점명1'},
+        {name : '직원명2', department : '직원이 소속된 지점명2'},
+        {name : '직원명3', department : '직원이 소속된 지점명3'}
+    ]
+    const [selectdata, setSelectData] = useState(null); // 검색된 결과에서 직원 선택시 저장할 state
+    console.log(selectdata)
+    return(
+        <>
+            <PopupFrame>
+                <PopupHeader type="normal" title={t("co1200_0001")} />
+                <PopupContainer hasFixed>
+                    <div className="tab_wrap">
+                        <div className="tab_head">
+                            <CustomA href="#none" btnClass="tab_item is-active" callback={()=> navigate("/SMJ1E01P00")}><span className="tab_txt">{t("co1200_0002")}</span></CustomA>
+                            <CustomA href="#none" btnClass="tab_item" callback={()=> navigate("/SMJ1E02P00")}><span className="tab_txt">{t("co1200_0003")}</span></CustomA>
+                        </div>
+                        <div className="tabcont">
+                            <h2 className="blind">{t("co1200_0002")}</h2>
+                            <div className="dvgroup first">
+                                <div className="field_wrap is-error"> {/* <!-- 에러시 클래스 is-error 추가 --> */}
+                                    <SearchField title={t("co1200_0004")} icoText="직원명 검색" />
+                                    <div className="txt_error">
+                                        <p>Enter an error message</p>{/* 2023-06-16 클래스 tr 삭제 */} {/* <!-- 에러메시지 : 코드 미수급 --> */}
+                                    </div>
+                                    <div className="txt_helper">
+                                        <p className="bullet_disc">{t("co1200_0005")}</p>
+                                        <p className="bullet_disc">{t("co1200_0006")}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* 2023-06-16 마크업 수정 */}
+                            <hr className="hr full thick" />
+                            {/* 검색결과가 있는 경우 */}
+                            <ul className="listbox mb0"> {/* 2023-05-31 태그수정 div > ul */}
+                                {
+                                    dummyemployeeData.map((data,idx)=>(
+                                        <NormalListLinkItem key={idx} type="radio" name="employeeList" id={'data'+ idx} title={data.name} subtxt={data.department} 
+                                        onChange={()=>setSelectData(data.name)} arrow /> 
+                                    ))
+                                }
+                            </ul>
+                            {/* 검색결과가 없는 경우 */}
+                            <Nodata txt={t("co1200_0007")} />
+                            {/* //2023-06-16 마크업 수정 */}
+                        </div>
+                    </div>
+                </PopupContainer>
+            </PopupFrame>
+        </>
+    )
+}
+
+export default SMJ1E01P00
