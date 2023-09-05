@@ -1,0 +1,73 @@
+import styled, {css} from "styled-components";
+
+/**
+ * @name ButtonWrap 
+ * @role Button 컨포넌트를 감싸는 상위 컴포넌트로 레이아웃 관련해서 사용
+ * @props grid(boolean) - Grid 유형 (medium button에서 레이아웃예외 적용이 필요할시)
+ * @props wauto(boolean) - 버튼 텍스트 길이에 따라 가변되어야 할 때
+ * @props col(boolean) - 버튼 column 스타일
+ * @props wfix(boolean) - 2단 비대칭형 레이아웃 (플로팅 버튼에서만 사용)
+ * @props children - 하위 태그 요소 (Button 컴포넌트)
+ * @props className - 기타 디자인 요소를 적용하기 위한 클래스 // 2023-05-31 추가
+ **/ 
+
+function ButtonWrap({grid, wauto, col, wfix, children, className}) { // 2023-05-31 className 추가
+
+    return  <StyledButtonWrap grid={grid} wauto={wauto} col={col} wfix={wfix} className={className}> {/* 2023-05-31 className 추가 */}
+    <div className="d-flex">
+        {children}
+    </div>
+  </StyledButtonWrap>
+  }
+   
+// 퍼블검수 1차 : 디자인 수정반영(css 전체반영해주세요)
+const StyledButtonWrap = styled.div`
+    & + &{
+        margin-top:0.8rem;
+    }
+    .d-flex{
+        display:flex;
+        flex-direction:${({col})=> col ? `column` :`row`};
+        align-items:${({grid})=> grid ? `stretch` :`center`};
+        width:100%;
+    } 
+    .d-flex [class*="btn_"]:last-child{
+        ${({wfix})=> wfix && 
+        css`
+            flex:7;
+        `};
+    }
+    .d-flex [class*="btn_"]:first-child{
+        ${({wfix})=> wfix && 
+        css`
+            flex:3;
+        `};
+    }
+    .d-flex .btn_md,.d-flex .btn_lg{
+        ${({wauto})=> wauto && 
+        css`
+            width:auto;
+        `};
+    }
+    .d-flex .btn_lg{ //2023-05-19 추가
+        ${({col})=> col && 
+        css`
+           min-height:4.9rem;
+           height:auto;
+           padding:1.3rem 1.6rem;
+        `};
+    }
+    .d-flex .btn_md{//2023-05-19 추가
+        align-self:${({grid})=> grid ? `stretch` :`auto`};
+    }
+    .d-flex [class*="btn_"] ~ [class*="btn_"] {
+        margin-left:0.8rem;
+        ${({col})=> col && 
+        css`
+            margin-left:0;
+            margin-top:0.8rem;
+        `};
+    }
+`;
+
+export default ButtonWrap;
