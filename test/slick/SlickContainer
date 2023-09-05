@@ -1,0 +1,71 @@
+import { useEffect, useState } from "react";
+import Slider from "react-slick";
+import styled from "styled-components";
+
+/**
+ * 
+ * @name SlickContainer 
+ * @role slider 컴포넌트입니다. 필요한 옵션을 추가할 수 있습니다.
+ * @props arrows(boolean) - 이전, 다음 arrow가 필요한 경우 추가합니다.
+ * 
+ */
+
+function SlickContainer({ arrows, children }) {
+
+    const [totalPage, setTotalPage] = useState();
+
+    let settings = {
+        dots : true,
+        arrows : true,
+        speed : 500,
+        infinite : false,
+        slidesToShow : 1,
+        slidesToScroll : 1,
+        centerMode : true,
+        centerPadding : "0px",
+        dotsClass: "paging_custom", // dots 타입(메인 상단계좌 사용) : dots_custom, paging 타입(약관상세 사용) : paging_custom
+        onInit : () => {
+            const slide = document.querySelectorAll('.terms_body .slick-slide:not(.slick-cloned)');
+            setTotalPage(slide.length)
+        },
+        customPaging : (i) => {
+            return (
+                <>
+                    <span className="blind">{`총${totalPage}개의 중 현재${i+1}번째 약관`}</span>
+                    <div className="terms_paging" aria-hidden="true">
+                        <span className="current">{i+1}</span>
+                        <span className="seperator"></span>
+                        <span className="total">{totalPage}</span>
+                    </div>
+                </>
+            )
+        },
+    }
+   
+    settings.arrows = arrows ? true : false;
+
+    useEffect(()=>{
+        if(arrows) {
+            document.querySelector('.terms_head').classList.add('head_flex')
+        } else {
+            document.querySelector('.terms_head').classList.remove('head_flex')
+        }
+    }, [arrows]);
+
+    return (
+        <StyledSlider {...settings}>
+            {children}
+        </StyledSlider>
+    );
+}
+
+const StyledSlider = styled(Slider)`
+    height:calc(100vh - 22.8rem);
+
+    .slick-list {
+        overflow-y:auto;
+        height:100%;
+    }
+`;
+
+export default SlickContainer;
