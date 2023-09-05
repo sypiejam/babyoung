@@ -1,0 +1,64 @@
+import { useTranslation } from "react-i18next"
+
+/**
+ * 
+ * @name AccBalance
+ * @role 거래내역 상단에 잔액정보를 담고있는 컴퍼넌트입니다..
+ * @props detail(string) - 적요정보가 있는경우 넘겨줍니다.(거래내역 상세 적요)
+ * @props detailSum(string) - 거래내역 금액을 넘겨줍니다.(거래내역 상세, detailSum="100,000,000")
+ * @props cur(string) - 통화정보를 넘겨줍니다. cur="usd"
+ * @props balance(string) - 잔액정보를 넘겨줍니다. balance="100,000,000"
+ * @props evaluate(string) - 펀드평가금액이 있는경우 넘겨줍니다 evaluate="100,000,000"
+ * @props unevaluate(string) - 펀드평가금액이 없는경우 넘겨줍니다 unevaluate="금일미고시"
+ * @props duedate(string) - 만기일자를 넘겨받습니다. duedate="2023 07 07"
+ * @props overdue(boolean) - 만기일자를 경과한 경우 boolean형태로 넘겨줍니다.
+ * @props btmtxt(string) - 대출한도 또는 평가금액 텍스트를 넘겨줍니다. btmtxt="대출한도"
+ * @props btmData(string) - 대출한도 또는 평가금액 데이터가 있는경우 넘겨줍니다. btmData="100,000,000"
+ * 
+ */ 
+
+function AccBalance({detail, detailSum, cur , balance, evaluate, unevaluate, duedate, overdue, btmtxt, btmData}){
+    const {t} = useTranslation();
+    return (
+        <>
+            {/* 잔액 2023-06-02 추가 */}
+            {
+                <>
+                    {detail && <div className="detail">{detail}</div>}
+                    <div className={`top_info${unevaluate ? ' no_rate' : ''}`}>
+                        {(evaluate || unevaluate) && <span className="txt">{t("bk0101_0093")}</span>}
+                        {detail && <span className="blind">{t("bk0101_0151")}</span>} {/* 퍼블검수 1차 : 번역코드 수정 */}
+                        {balance && <span className="blind">{t("fx0601_0024")}</span>} {/* 잔액 2023-06-14 추가 */}
+                        <span className="data">
+                            {balance && <><span className="cur">{cur}</span><strong className="sum">{balance}</strong></>}
+                            {detailSum && <><span className="cur">{cur}</span><strong className="sum">{detailSum}</strong></>}
+                            {evaluate && <><span className="cur">{cur}</span><strong className="sum">{evaluate}</strong></>}
+                            {/* 퍼블검수 1차 : unevaluate일때 cur추가 */}
+                            {unevaluate && <><span className="cur">{cur}</span><strong className="sum">{unevaluate}</strong></>}
+                        </span> 
+                    </div>
+                </>
+            }
+            {/* 만기일 / 만기경과 클래스 : over */}
+            {
+                duedate && 
+                <div className={`btm_info${overdue ? ' over' : ''}`}>
+                    <span className="txt">{t("bk0101_0060")}</span>
+                    <span className="data">{duedate}</span>
+                </div>
+            }
+            {/* 대출한도, 평가금액 2023-06-02 추가 */}
+            {
+                btmData && 
+                <div className="btm_info">
+                    <span className="txt">{btmtxt}</span>
+                    <span className="data">
+                        <span className="cur">{cur}</span><strong className="sum">{btmData}</strong>
+                    </span>
+                </div>
+            }
+        </>
+    )
+}
+
+export default AccBalance;
