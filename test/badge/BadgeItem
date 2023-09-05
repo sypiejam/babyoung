@@ -1,0 +1,26 @@
+/**
+ * 
+ * @name BadgeItem
+ * @role badge 컴포넌트이며, 리스트 및 세부 컨텐츠에서 분류 상새를 표시할 때 사용.
+ * @props color(string) - badge 상태에 따라 red, green, yellow, orange, navy, disabled 타입으로 넣어줍니다. 기본타입은 default 입니다. (ex. color="red")
+ * @props text(string) -최소 2자이상 텏트 입력
+ * 
+ */ 
+
+function BadgeItem({ color, text }) {
+    const classNames = [
+        "badge_item",
+        (color==="red") ? ` red` : "",
+        (color==="green") ? ` green` : "",
+        (color==="yellow") ? ` yellow` : "",
+        (color==="orange") ? ` orange` : "",
+        (color==="navy") ? ` navy` : "",
+        (color==="disabled") ? ` disabled` : ""
+    ].join("");
+    
+    return (
+        <span className={classNames}>{text}</span>
+    );
+}
+
+export default BadgeItem;
