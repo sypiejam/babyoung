@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Flash Message</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/renewal/lib/lottie.min.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/renewal/lib/lottie-player.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Flash Message</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Flash Message(플래시메시지)</strong>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_lv3">완료</em>
+                </div>
+                <div class="result">
+                    <div class="result_ico">
+                        <div class="lottieplayer" aria-hidden="true">
+                            <lottie-player 
+                                src="/img/nonetouch/pib/_new2/motion/img_flash_done.json" 
+                                background="transparent" 
+                                speed="1" 
+                                autoplay>
+                            </lottie-player>
+                        </div>
+                    </div>
+                    <strong class="result_tit">Please enter your content</strong>
+                    <p class="result_txt">Please enter your content</p>
+                </div>
+            </div>
+            <hr class="hr">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_lv3">오류</em>
+                </div>
+                <div class="result">
+                    <div class="result_ico">
+                        <div class="lottieplayer" aria-hidden="true">
+                            <lottie-player 
+                                src="/img/nonetouch/pib/_new2/motion/img_flash_error.json" 
+                                background="transparent" 
+                                speed="1" 
+                                autoplay>
+                            </lottie-player>
+                        </div>
+                    </div>
+                    <strong class="result_tit">Please enter your content</strong>
+                    <p class="result_txt">Please enter your content lease enter your contentlease enter your content</p>
+                </div>
+            </div>
+            <hr class="hr">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_lv3">오류안내</em>
+                </div>
+                <div class="result">
+                    <div class="result_ico">
+                        <div class="lottieplayer" aria-hidden="true">
+                            <lottie-player 
+                                src="/img/nonetouch/pib/_new2/motion/img_flash_warning01.json" 
+                                background="transparent" 
+                                speed="1" 
+                                autoplay>
+                            </lottie-player>
+                        </div>
+                    </div>
+                    <strong class="result_tit">Please enter your contentlease enter your content lease enter your content</strong>
+                    <p class="result_txt">Please enter your content</p>
+                    <div class="descbox bg">
+                        <span>[BEDDP02446] Enter error code</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+</body>
+</html>
