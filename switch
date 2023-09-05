@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Switch</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/lib/jquery-2.1.0.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Switch</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Switch(스위치)</strong>
+            </div>
+            <div class="dvgroup">
+                <div class="descbox">
+                    <p>스위치는 주로 시스템 설정, 알림 설정과 같은 단일옵션의 선택/미선택(ON/OFF) 기능으로 사용한다.</p>
+                    <p>디폴트 옵션을 제공하며, 누를 즉시 효화가 발생한다.</p>
+                </div>
+
+                <ul class="listbox">
+                    <li class="switch_cont">
+                        <div class="switch_item">
+                            <div class="title_lv3">
+                                <strong class="keytit">Enabled</strong>
+                                <span class="subtxt">Sub text</span>
+                            </div>
+                            <label class="switch_box">
+                                <input type="checkbox" name="switch01" class="switch">
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="switch_cont">
+                        <div class="switch_item">
+                            <div class="title_lv3"><strong class="keytit">Disabled On</strong></div>
+                            <label class="switch_box">
+                                <input type="checkbox" name="switch02" class="switch" checked disabled>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="switch_cont">
+                        <div class="switch_item">
+                            <div class="title_lv3"><strong class="keytit">Disabled Off</strong></div>
+                            <label class="switch_box">
+                                <input type="checkbox" name="switch03" class="switch" disabled>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="switch_cont">
+                        <div class="switch_item">
+                            <div class="title_lv3">
+                                <strong class="keytit">1depth</strong>
+                            </div>
+                            <label class="switch_box">
+                                <input type="checkbox" name="switch04" class="switch">
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                        <ul class="switchgroup">
+                            <li class="switch_cont">
+                                <div class="switch_item">
+                                    <div class="title_lv3"><strong class="keytit">2depth-1</strong></div>
+                                    <label class="switch_box">
+                                        <input type="checkbox" name="switch04-1" class="switch">
+                                        <div class="ball"></div>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="switch_cont">
+                                <div class="switch_item">
+                                    <div class="title_lv3"><strong class="keytit">2depth-2</strong></div>
+                                    <label class="switch_box">
+                                        <input type="checkbox" name="switch04-2" class="switch">
+                                        <div class="ball"></div>
+                                    </label class="switch_box">
+                                </div>
+                            </li>
+                            <li class="switch_cont">
+                                <div class="switch_item">
+                                    <div class="title_lv3"><strong class="keytit">2depth-3</strong></div>
+                                    <label class="switch_box">
+                                        <input type="checkbox" name="switch04-3" class="switch">
+                                        <div class="ball"></div>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="switch_cont">
+                        <div class="switch_item">
+                            <div class="title_lv3"><strong class="keytit">1depth On</strong><button type="button" class="ico_help btn_help"><span class="blind">도움말</span></button></div>
+                            <label class="switch_box">
+                                <input type="checkbox" name="switch05" class="switch" checked>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="hr full thick">
+            <div class="dvgroup mt0">
+                <div class="switch_item">
+                    <div class="title_lv3"><strong class="keytit">추천직원</strong></div>
+                    <label class="switch_box">
+                        <input type="checkbox" name="switch05" class="switch btn_switch" checked>
+                        <div class="ball"></div>
+                    </label>
+                </div>
+                <div class="field_wrap sch_popup">
+                    <div class="inp_field sch_field filled">
+                        <input type="search" class="inp_text inp_search" value="Search name" placeholder="Search name" title="" readonly>
+                        <div class="field_item">
+                            <button type="button" div="" class="ico_search inp_button"><span class="blind">검색</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="switch_item">
+                    <div class="title_lv3">
+                        <strong class="keytit">만기 전체 알림</strong>
+                        <button type="button" class="ico_help btn_help"><span class="blind">도움말</span></button>
+                    </div>
+                    <label class="switch_box">
+                        <input type="checkbox" name="switch06" class="switch btn_switch">
+                        <div class="ball"></div>
+                    </label>
+                </div>
+                <div class="field_wrap" style="display: none;">
+                    <em class="inp_title">날짜 + 시간</em>
+                    <div class="field_flex">
+                        <div class="inp_field" role="button">
+                            <div class="inp_item"><input type="text" class="inp_text" value="2023.05.03" placeholder="YYYY.MM.DD" title="날짜 선택" readonly></div>
+                            <div class="field_item"><i class="ico_date"></i></div>
+                        </div>
+                        <div class="inp_field inp_select">
+                            <button type="button" class="inp_select_item" title="시간 선택">
+                                <div class="inp_select_value">8 AM</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+
+<!-- 퍼블 확인용 -->
+<script>
+    $('.btn_switch').click(function() {
+        $(this).parents('.switch_item').next('.field_wrap').toggle();
+    })
+</script>
+<!-- //퍼블 확인용 -->
+</body>
+</html>
