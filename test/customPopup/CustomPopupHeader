@@ -1,0 +1,19 @@
+import styled from 'styled-components';
+
+function CustomPoupHader({ children }) {
+
+    return <StyledCustomHader>{children}</StyledCustomHader>;
+}
+
+const StyledCustomHader = styled.div`
+
+    > .custom_header {
+        position:static;
+        padding:0;
+        height:auto;
+        margin-bottom:1.2rem;
+        border-bottom:0;
+    }
+`;
+
+export default CustomPoupHader;
