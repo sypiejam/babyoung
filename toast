@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Toast</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Toast</h1>
+            <a href="javascript:;" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Toast(토스트)</strong>
+            </div>
+            <!-- SMJ1503P00 토스트 팝업 -->
+            <p>네이티브 : 2023-06-12 화면타입 변경</p>
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+
+    <div class="toastbox is-active">
+        <div class="inner">
+            <p class="toastbox_txt">텍스트를 입력하세요텍스트를 입력하세요 텍스트를 입력하세요</p>
+            <div class="btn_wrap toastbox_btn"><a href="javascript:;" class="btn_ghost btn_small btn_toast"><span>보러가기</span></a></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
