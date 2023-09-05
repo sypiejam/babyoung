@@ -1,0 +1,33 @@
+import styled from 'styled-components'
+
+/**
+ * 
+ * @name Container 
+ * @role 컨텐츠를 감싸며 페이지 여백을 설정합니다.
+ * @props hasFixed(boolean) - 하단에 fixed버튼이 제공되는 경우 속성을 추가하여 하단여백을 추가합니다.
+ * @props isFull(boolean) - 레이아웃 가로여백없이 full로 사용할 경우 추가하는 속성입니다.
+ */
+
+function Container({children, hasFixed, isFull}){
+    return(
+        <>
+            <StyledContainer hasFixed={hasFixed}>
+                <StyledContent className={isFull ? 'full_content' : ''}>
+                    {children}
+                </StyledContent>
+            </StyledContainer>
+        </>
+    )
+}
+
+const StyledContainer = styled.div`
+    padding: ${({hasFixed})=> hasFixed ? '0 0 11.2rem' : '0 0 3.2rem'}
+`
+const StyledContent = styled.div`
+    padding:0 2rem;
+    &.full_content{
+        padding:0;
+    }
+`
+
+export default Container
