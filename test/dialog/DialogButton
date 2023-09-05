@@ -1,0 +1,46 @@
+import FloatingButtonWrap from '../button/FloatingButtonWrap';
+import { ButtonWrap, Button } from '../button/index'; // 2023-05-17 수정
+
+/**
+ * 
+ * @name DialogButton
+ * @role 다이얼로그 버튼 컴포넌트입니다.
+ * @props btnType(string) - confirm, alert, warning 타입을 선택하여 넣어줍니다.
+ * @props btn1 - 버튼1에 들어갈 텍스트
+ * @props btn2 - 버튼2에 들어갈 텍스트
+ * @props onClick1 - 버튼1에 매칭 할 클릭함수
+ * @props onClick2 - 버튼1에 매칭 할 클릭함수
+ * 
+ */ 
+
+function DialogButton({ btnType, btn1, btn2, onClick1, onClick2 }) {
+
+    return (
+        <>
+            <FloatingButtonWrap btnType={btnType}>
+                {
+                    btnType === "confirm" &&
+                    <ButtonWrap wfix>
+                        <Button tag="button" text={btn1} status="negative" onClick={onClick1} />{/* 2023-07-31 negative 변경 */}
+                        <Button tag="button" text={btn2} status="primary" onClick={onClick2} />
+                    </ButtonWrap>
+                }
+                {
+                    btnType === "alert" &&
+                    <ButtonWrap>
+                        <Button tag="button" text={btn1} status="primary" onClick={onClick1} />
+                    </ButtonWrap>
+                }
+                {
+                    btnType === "warning" &&
+                    <ButtonWrap wfix>
+                        <Button tag="button" text={btn1} status="negative" onClick={onClick1} />{/* 2023-07-31 negative 변경 */}
+                        <Button tag="button" text={btn2} status="warning" onClick={onClick2} />
+                    </ButtonWrap>
+                }
+            </FloatingButtonWrap>
+        </>
+    );
+}
+
+export default DialogButton;
