@@ -1,0 +1,177 @@
+import { useEffect, useState} from "react";
+
+function IbChartComponent({data}) {
+    const [beforeData, setBeforeData ]= useState(0);
+    const lineChartOption = {
+        "chart": {
+            "animation": true, // 애니메이션 효과 사용여부
+            "type": "area", // 영역 차트 사용
+            "marginRight" : 30
+        },
+        "tooltip" : { // 표 hover 시 툴팁 
+            "enabled" : false // 툴팁 사용안함
+        },
+        "plotOptions":{ // 차트의 시리즈에 대한 구성 옵션 설정
+            "series" : { 
+                // start highchart area 부분의 gradient 작업 부분
+                fillColor : {
+                    linearGradient:{x1: 0, x2 : 0, y1: 0, y2 : 1}, // 영역 x1, x2, y1, y2
+                    stops : [
+                        // 입력형식 [number, color]
+
+                        // param 설명
+                        // number (0 : 시작, 0.5 : 중간, 1 : 끝)
+                        // color 예시 #a9d4ff
+
+                        // eslint-disable-next-line no-undef
+                        [0, Highcharts.color("#1490ef").setOpacity(0.5).get('rgba')], // start 0
+                        // eslint-disable-next-line no-undef
+                        [0.5, Highcharts.color("#1490ef").setOpacity(0.3).get('rgba')], // end 1
+                        // eslint-disable-next-line no-undef
+                        [1, Highcharts.color("#1490ef").setOpacity(0.1).get('rgba')], // end 1
+                    ]
+                },
+                shadow: false
+                // end highchart area 부분의 gradient 작업 부분
+            },
+        },
+        
+        "colors": ["#1490EF"], // #0072ff
+        "legend": {
+            "enabled": false // 하단 레이어 비노출
+        },
+        "yAxis": { // y축에 대한 내용
+            startOnTick : true,
+            endOnTick : true,
+
+            lineWidth : 0, // y축의 너비 설정
+            // visible : false, // y축이 전체가 없어짐
+            "title": {
+                "text": ""
+            },
+            "labels" : { 
+                // y축 라벨에 대한 콤마 처리부분
+                "formatter" : function () {
+                    const regexp = /\B(?=(\d{3})+(?!\d))/g;
+                    return this.value.toString().replace(regexp, ',');
+                },
+
+                // 라벨 정렬 부분 주석처리
+                //
+                //  align : 'left',
+                //  x : 3,
+                //  y : 16,
+                //
+                
+            },
+
+            // start y축 라벨에 해당하는 grid선 제공 부분
+            "gridLineDashStyle": "dash", // 스타일 부분 dash : 짧은 점선
+            "gridLineWidth": 1, // 선의 너비
+            "gridLineColor": "#EBEFF5", // 선의 색상
+            // end y축 라벨에 해당하는 grid선 제공 부분
+        },
+        
+    };
+
+    useEffect(() => {
+        console.log('돕니다');
+        if(beforeData === data.date.length) {
+            console.log('같음');
+            return;
+        }
+
+        // 차트 객체 생성 
+         // eslint-disable-next-line no-undef
+         createIBChart( "lineChart", "lineChart", { 
+            // 차트의 크기를 결정하는 부분
+            width: "100%",
+            height: "18.3rem"
+        });
+       
+        // eslint-disable-next-line no-undef
+        lineChart.setOptions(lineChartOption, {append : true});
+
+        console.log('useEffect ::: ' ,data);
+
+        const dataOptions = {
+            "xAxis" : {
+                type : 'category',
+                // 배열 데이터가 들어가는 부분
+                "categories" : data.date,
+
+                // y축과 그래프의 gap 을 없애기 위한 처리
+                min : 0.5,
+                max : data.date.length - 1.5,
+                // x축으로부터 그래프를 띄우기 위한 속성 offset
+                offset : 0,
+
+                labels:{
+                    rotation : 0,
+                    style :{
+                        color: "#333a40",
+                        fontSize: "1.2rem",
+                        fontWeight: "500",
+                        fontFamily : "Noto",
+                    },
+                     y : 25
+                },
+                lineColor : "#E1E6EC"
+            },
+            "yAxis": {
+                // TODO : data에 따라서 변경되어야하는 y축 최소,최대 값
+                min : 1260,
+                max : 1360,
+                labels :{
+                    style : {
+                        color: "#848a92",
+                        fontSize: "1.1rem",
+                        fontWeight: "400",
+                        fontFamily : "Noto",
+                    }
+                }
+            },
+            "series" : [{
+                "name" : "환율",
+                "data" : data.exchangeRate, // 환율 배열 데이터
+                marker : {
+                    enabled : false // marker 사용 안함 처리
+                }
+            },
+            {
+                type : 'scatter', // 점만 표시해서 보여주는 부분
+                name : '환율점',
+                // 데이터의 홀수 부분만 scatter로 노출되도록 설정 (추후 변경예정)
+                data : data.exchangeRate.map((item, index) => {
+                    if(index % 2 !== 0) {
+                        return null;
+                    }else {
+                        return item;
+                    }
+                }),
+                // 마커 속성 설정 부분
+                marker : { 
+                    fillColor : 'white', // 마커의 색상
+                    symbol : 'circle', // 마커의 생김새
+                    radius : 5, // 마커의 크기
+                    lineWidth : 2, // 마커 테두리 너비
+                    // eslint-disable-next-line no-undef
+                    lineColor : "#1490EF" // 마커 테두리 색상
+                }
+            }]
+        }
+
+        // TODO : script 받아왔을 때 실행 시키면 됩니다.
+        // eslint-disable-next-line no-undef
+        lineChart.setOptions(dataOptions, {append : true, redraw : true});
+        setBeforeData(data.date.length);
+      }, [data])
+
+    return (
+        <>
+            <div id="lineChart"> </div>
+        </>
+    )
+}
+
+export default IbChartComponent;
