@@ -1,0 +1,73 @@
+import styled, {css} from 'styled-components';
+import {Children, cloneElement} from 'react';
+
+/**
+ * 
+ * @name SegmentWrap 
+ * @role 세그먼트들을 감싸는 컴퍼넌트입니다.
+ * @props groupname(string) : 세그먼트 그룹명을 설정하며 페이지 내 여러개의 세그먼트들이 사용되는 경우 그룹별로 고유한 이름을 설정합니다.
+ * @props activeIdx(number) : 인덱스값을 관리하는 useState()를 만들어 activeIdx에 값을 부여합니다. ex)const [segidx, setSegmentIdx] = useState(); activeIdx={segidx}
+*/
+
+function SegmentWrap({children, groupname, activeIdx}){
+    return(
+        <>
+            <StyledSegmentWrap col={children.length}>
+                {Children.map(children, (child, idx) => 
+                    cloneElement(child, {groupname, activeIdx, idx})
+                )}
+                <div className="segment_indigator"></div>
+            </StyledSegmentWrap>
+        </>
+    )
+}
+
+const StyledSegmentWrap = styled.div`
+    position:relative;
+    display:flex;
+    align-items:center;
+    border:1px solid #d5dbe3;
+    border-radius:0.6rem;
+    > input:checked + label{
+        background:#fff;
+        color:#151c22;
+        font-weight:500;
+        transition:all 0.2s 0.3s ease; // 2023-08-30 css추가
+    }
+    > input:disabled + label{
+        color:#c4cbd3;
+        opacity:0.8;
+    }
+    .segment_indigator{
+        transition:left 0.5s;
+    }
+    ${props => props.col && css`
+        > input:checked ~ .segment_indigator{
+            position:absolute;
+            top:-0.1rem;
+            bottom:-0.1rem;
+            left:-0.1rem;
+            width:${props=> `calc(100% / ${props.col} + 0.1rem)`};
+            border:1px solid #686e75;
+            border-radius:0.6rem;
+        }
+        > input:first-of-type:checked ~ .segment_indigator{
+            width:${props=> `calc(100% / ${props.col} + 0.2rem)`};
+        }
+        > input:nth-of-type(2):checked ~ .segment_indigator{
+            left:calc(100% / ${props.col})
+        }
+        > input:nth-of-type(3):checked ~ .segment_indigator{
+            left:calc(100% / ${props.col} * 2)
+        }
+        > input:nth-of-type(4):checked ~ .segment_indigator{
+            left:calc(100% / ${props.col} * 3);
+        }
+    `}
+    > input:disabled ~ .segment_indigator{
+        border-color:#d5dbe3;
+    }
+    
+`
+
+export default SegmentWrap
