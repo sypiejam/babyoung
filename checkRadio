@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Checkbox/RadioButton</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Checkbox/RadioButton</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Checkbox(체크박스)</strong>
+            </div>
+            <div class="dvgroup ">
+                <div class="title_wrap">
+                    <em class="title_h2">Normal</em>
+                </div>
+                <div class="list_half">
+                    <div class="chk_item">
+                        <input type="checkbox" name="Normal" id="NormalEnabledOn" class="check_normal" checked>
+                        <label for="NormalEnabledOn">Enabled On</label>
+                    </div>
+                    <div class="chk_item">
+                        <input type="checkbox" name="Normal" id="NormalDisabledOn" class="check_normal" disabled checked>
+                        <label for="NormalDisabledOn">Disabled On</label>
+                    </div>
+                    <div class="chk_item">
+                        <input type="checkbox" name="Normal" id="NormalEnabledOff" class="check_normal">
+                        <label for="NormalEnabledOff">Enabled Off</label>
+                    </div>
+                    <div class="chk_item">
+                        <input type="checkbox" name="Normal" id="NormalDisabledOff" class="check_normal" disabled>
+                        <label for="NormalDisabledOff">Disabled Off</label>
+                    </div>
+                    <div class="chk_item">
+                        <input type="checkbox" name="Normal" id="NormalEnabledStrong" class="check_normal st" checked>
+                        <label for="NormalEnabledStrong">Enabled 강조형</label>
+                    </div>
+                </div>
+                <hr class="hr mg16">
+                <div class="title_wrap">
+                    <em class="title_h2">Small</em>
+                </div>
+                <div class="list_half">
+                    <div class="chk_item">
+                        <input type="checkbox" name="Small" id="SmallEnabledOn" class="check_small" checked>
+                        <label for="SmallEnabledOn">Small Enabled On</label>
+                    </div>
+                    <div class="chk_item">
+                        <input type="checkbox" name="Small" id="SmallDisableOn" class="check_small" disabled checked>
+                        <label for="SmallDisableOn">Small Disable On</label>
+                    </div>
+                    <div class="chk_item">
+                        <input type="checkbox" name="Small" id="SmallEnabledOff" class="check_small">
+                        <label for="SmallEnabledOff">Small Enabled Off</label>
+                    </div>
+                    <div class="chk_item">
+                        <input type="checkbox" name="Small" id="SmallDisableOff" class="check_small" disabled>
+                        <label for="SmallDisableOff">Small Disable Off</label>
+                    </div>
+                </div>
+
+                <hr class="hr mg16">
+                <div class="title_wrap">
+                    <em class="title_h2">1Depth 기본형</em>
+                </div>
+                <div class="selection">
+                    <input type="checkbox" name="depth" id="depth001" class="check_normal">
+                    <label for="depth001">Enter adescription</label>
+                    <button type="button" class="ico_help btn_help"><span class="blind">도움말</span></button>
+                </div>
+
+                <hr class="hr mg16">
+                <div class="title_wrap">
+                    <em class="title_h2">링크 있는 경우</em>
+                </div>
+                <div class="selections_item">
+                    <div class="inner">
+                        <div class="selection">
+                            <input type="checkbox" name="" id="isLink" class="check_normal st">
+                            <label for="isLink">Information</label>
+                        </div>
+                        <a href="javascript:void(0);" role="button" class="ico_arrow">
+                            <span class="blind">바로가기</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="selections_item">
+                    <div class="inner">
+                        <div class="selection">
+                            <input type="checkbox" name="agree" id="agree001" class="check_small">
+                            <label for="agree001">use agreement</label>
+                        </div>
+                        <a href="javascript:void(0);" role="button" class="ico_arrow small">
+                            <span class="blind">바로가기</span>
+                        </a>
+                    </div>
+                </div>
+
+                <hr class="hr mg16">
+                <div class="title_wrap">
+                    <em class="title_h2">확인/동의(약관)</em>
+                </div>
+                <div class="selections_box">
+                    <div class="selections_item">
+                        <div class="inner">
+                            <div class="selection">
+                                <input type="checkbox" name="terms" id="terms001" class="check_normal st">
+                                <label for="terms001">개인(신용)정보 수집이용제공 동의(우리청년약속 통장)</label>
+                            </div>
+                            <a href="javascript:void(0);" role="button" class="ico_arrow">
+                                <span class="blind">바로가기</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="hr full thick">
+            <div class="thead_wrap">
+                <strong class="title_h1">Radio Button(라디오 버튼)</strong>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">Normal</em>
+                </div>
+                <div class="list_half">
+                    <div class="chk_item">
+                        <input type="radio" name="radioE" id="RadioEnabledOn" class="radio_normal" checked>
+                        <label for="RadioEnabledOn">Enabled On</label>
+                    </div>
+                    <div class="chk_item">
+                        <input type="radio" name="radioD" id="RadioDisabledOn" class="radio_normal" disabled checked>
+                        <label for="RadioDisabledOn">Disabled On</label>
+                    </div>
+                    <div class="chk_item">
+                        <input type="radio" name="radioE" id="RadioEnabledOff" class="radio_normal">
+                        <label for="RadioEnabledOff">Enabled Off</label>
+                    </div>
+                    <div class="chk_item">
+                        <input type="radio" name="radioD" id="RadioDisabledOff" class="radio_normal" disabled>
+                        <label for="RadioDisabledOff">Disabled Off</label>
+                    </div>
+                </div>
+                <div class="dvgroup">
+                    <div class="title_wrap mb16">
+                        <em class="title_lv3">영역 사이 간격</em>
+                    </div>
+                    <ul class="list_radio">
+                        <li class="chk_item">
+                            <input type="radio" name="radioLi" id="RadioOpt01" class="radio_normal" checked>
+                            <label for="RadioOpt01">Options 001</label>
+                        </li>
+                        <li class="chk_item">
+                            <input type="radio" name="radioLi" id="RadioOpt02" class="radio_normal">
+                            <label for="RadioOpt02">Options 002</label>
+                        </li>
+                        <li class="chk_item">
+                            <input type="radio" name="radioLi" id="RadioOpt03" class="radio_normal">
+                            <label for="RadioOpt03">Options 003</label>
+                        </li>
+                        <li class="chk_item">
+                            <input type="radio" name="radioLi" id="RadioOpt04" class="radio_normal">
+                            <label for="RadioOpt04">Options 004</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <hr class="hr mg16">
+                <div class="title_wrap">
+                    <em class="title_h2">서브카피형</em>
+                </div>
+                
+                <div class="title_wrap mb16">
+                    <em class="title_lv3">Title</em>
+                </div>
+                <div class="selections_item">
+                    <div class="chk_item">
+                        <input type="radio" name="radioES" id="RadioEnabledStrong" class="radio_normal st" checked>
+                        <label for="RadioEnabledStrong">agreement</label>
+                    </div>
+                    <div class="selection_desc">
+                        <p>In accordance with the Personal Information Protection Act and the Act on the Use and Protection of Credit Information</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+</body>
+</html>
