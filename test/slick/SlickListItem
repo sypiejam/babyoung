@@ -1,0 +1,22 @@
+import styled from "styled-components";
+
+/**
+ * 
+ * @name SlickListItem 
+ * @role slick 리스트 컴포넌트입니다.
+ * @props pdf - pdf영역일때 추가합니다.
+ * 
+ */
+
+function SlickListItem({ children, pdf }) {
+
+    return <StyledSlickItem pdf={pdf}>{children}</StyledSlickItem>;
+}
+
+const StyledSlickItem = styled.div`
+    overflow:hidden;
+    height:100%;
+    padding:${({pdf}) => pdf ? 0 : `2.4rem 1.6rem 0`};
+`;
+
+export default SlickListItem;
