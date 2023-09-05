@@ -1,0 +1,47 @@
+import { SIZES, StyledButton, VARIANTS } from "./Button";
+
+/**
+ * @name CustomA 
+ * @role A태그 컨포넌트
+ * @props type(null | string) -  null | "styled"(styledButton을 의미), null일때는 href,callback함수, text만 넣어주면 된다. 
+ * @props href(string) - a태그에 하이퍼링크가 가리키는 URL
+ * @props text - 버튼 내용
+ * @props callback - a태그를 눌렀을때 실행시킬 함수
+ * @props size(string) - a태그 사이즈 따라 sm(small), md(medium), lg(large) (플로팅 버튼에서는 사용하지 않음)
+ * @props status(string) - 해당하는 status를 넣어서 사용합니다.
+ *            /Floating Button의 경우 -> primary, secondary, negative, warning
+ *            /Ground Button의 경우 -> primary, blue(contained blue), gray(contained gray), outlined, ghost
+ * @props icon(string) - 지정된 icon이름을 넣어서 사용합니다. (ex. phone)
+ * @props disabled(boolean) - disabled 상태일때 사용
+ * @props btnClass(string) - 버튼에 사용할 클래스 네임 / 컴포넌트로 정의된 스타일 외에 더블클래스를 줘서 사용해야 할 때 클래스 네임을 넣어 사용
+ * @props children(string) - 일반 a태그안에 마크업으로 넣어줍니다. 
+ * 
+ **/ 
+
+function CustomA({type, href, text, callback, size, status, icon, disabled, btnClass, children}) {
+    const sizeStyle = SIZES[size];
+    const variantStyle = VARIANTS[status];
+    const classNames = ( size ? (icon ? `btn_${size} btn_icon_${icon}` : `btn_${size}`) : `btn_${status}`) + (btnClass? ` ${btnClass}`:"");
+
+    const onCallbackA = (e, callback) => {
+       e.preventDefault();
+       callback(); 
+    }
+
+    return (
+        <>
+            {/* 2023-06-16 수정 */}
+            {
+                type === "styled" ? 
+                <StyledButton href={href ? href : "#none"} className={`${classNames}${disabled ? ' disabled' : ""}`} sizeStyle={sizeStyle} variantStyle={variantStyle} onClick={(e)=> onCallbackA(e, callback)}>{/* 접근성검수 : href 조건 추가 */}
+                <span>{text}</span>
+                </StyledButton>
+                :
+                <a href={href} className={btnClass} onClick={(e)=> onCallbackA(e, callback)}>{children}</a>
+            }
+            
+        </>
+    );
+}
+
+export default CustomA;
