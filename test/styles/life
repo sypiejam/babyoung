@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* life.css 우리글로벌뱅킹 재구축 : 생활편의(SMJ4) */
+
+/* 출국만기보험금지급신청 */
+.icon_smj4101 {background-image:url(/public/images/life/img_departure_maturity_Insurance_payments.png);}
+.iife_apply_list {margin:2.4rem 0;}
+.iife_apply_list .btn_wrap {margin:2.4rem 0 3.2rem;}
+
+/* 우리WON투게더 */
+.img_smj4103 {width:13.5rem;height:14.5rem;margin:12rem auto 0;background:url(/public/images/life/img_wontogether.png) no-repeat 0 0 / 100%;}
+
+/* 나의 송금내역조회 */
+.life_title_wrap {margin:2.4rem 0;text-align:right;}
+.life_title_wrap .title_sub {color:#4c5459;font-size:1.5rem;}
+.life_title_wrap .title_num {margin-top:0.4rem;color:#151c22;font-size:2.2rem;font-weight:500;}
+.life_title_wrap .title_num em {margin-right:0.4rem;color:#333a40;font-size:1.8rem;}
