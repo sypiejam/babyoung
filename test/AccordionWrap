@@ -1,0 +1,99 @@
+import styled, { css } from "styled-components";
+/**
+ * @name AccordionWrap
+ * @role AccordionItem컴포넌트 상위 wrapper
+ * @props children - 하위 태그 요소 (AccordionItem 컴포넌트)
+ * @props type(string) - round 타입일때 'round' 넣어서 사용 // 2023-05-25 추가
+ * @props border(string) - wrapper 상위 border가 없을 경우 'none'을 넣어서 사용  //2023-05-25 추가
+ */
+
+function AccordionWrap({type,children,border}) { // 2023-05-25 border 추가
+    return(
+        <StyledAccordion border={border} className={`accordion_wrap${type==='round'? " accordion_"+type : "" }`}> {/* 2023-05-25 border 추가 / 2023-05-25 type추가 /230518 accordion_wrap className 추가 */}
+            {children}
+        </StyledAccordion>
+    )
+}
+
+const StyledAccordion = styled.div`
+position:relative;
+padding-top:0.4rem;
+
+&.accordion_round{ // 2023-05-25 추가
+    .accordion_item {
+        padding:0 1.9rem;
+        border:1px solid #c4cbd3;
+        border-radius:0.6rem;
+    }
+    .accordion_head {
+        overflow:hidden;
+        padding:1.6rem 2.4rem 1.6rem 0;
+        border:0;
+    }
+    .accordion_head::after {
+        top:1.5rem;
+    }
+    .accordion_body {
+        padding:0.8rem 0 1.6rem;
+        border-top:1px solid #d5dbe3;
+    }
+    &::before{
+        display:none;
+    }
+}
+
+&::before {
+    content:'';
+    position:absolute;
+    top:0;
+    right:-2rem;
+    left:-2rem;
+    display:block;
+    height:0.4rem;
+    background-color:#f2f5f9;
+}
+${({border})=> border===`none` && 
+css`
+    padding-top:0rem;
+  &::before {
+    display:none;
+  }
+`} //2023-05-30 padding-top 추가
+& .accordion_head {
+    position:relative;
+    display:block;
+    width:100%;
+    padding:2rem 3.2rem 2rem 0; //2023-05-18 수정
+    border-bottom:1px solid #f2f5f9;
+    color:#333a40;
+    font-size:1.7rem; //2023-06-07 수정
+    font-weight:500;
+    text-align:left;
+    &::after{
+        content:'';
+        position:absolute;
+        display:block;
+        width:2.4rem;
+        height:2.4rem;
+        top:2rem;
+        right:0;
+        background-image:url(/images/com/ic_arrow_normal_down_enabled.png);
+        background-repeat:no-repeat;
+        background-size:100%;
+    }
+}
+& .is-active {
+    border-bottom:0;
+}
+& .is-active::after{
+    background-image:url(/images/com/ic_arrow_normal_up_enabled.png);
+}
+& .accordion_body {
+    position:relative;
+    padding:1.6rem 0 3.2rem; //2023-05-18 수정
+    color:#4c5459;
+    border-bottom:1px solid #f2f5f9;
+}
+`
+
+export default AccordionWrap;
