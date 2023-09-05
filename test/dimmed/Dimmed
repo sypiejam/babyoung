@@ -1,0 +1,13 @@
+import styled from 'styled-components';
+
+export const StyledDimmed = styled.div.attrs({
+    className : "react-layer"
+})`
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color:#151c22;
+    opacity:0.4;
+`;
