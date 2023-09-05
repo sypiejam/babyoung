@@ -1,0 +1,27 @@
+/**
+ * @name SlideController 
+ * @role 슬라이드 컨트롤러
+ * @props refTarget(string) : useRef적용영역
+ * @props banner(string) : 
+*/
+
+function SlideController({refBannerControl, refBanner}){
+    const play = () => {
+        refBannerControl.current.slickPause()
+        refBanner.current.querySelector('.ico_pause').style.display = 'none'
+        refBanner.current.querySelector('.ico_play').style.display = 'block'
+    }
+    const pause = () => {
+        refBannerControl.current.slickPlay()
+        refBanner.current.querySelector('.ico_pause').style.display = 'block'
+        refBanner.current.querySelector('.ico_play').style.display = 'none'
+    }
+    
+    return (
+        <div className="btn_control">
+            <button type="button" className="ico_pause" onClick={play}><span className="blind">pause</span></button>
+            <button type="button" className="ico_play" onClick={pause}><span className="blind">play</span></button>
+        </div>
+    )
+}
+export default SlideController;
