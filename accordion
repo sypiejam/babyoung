@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Accordion</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Accordion</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <strong class="title_h1">Accordion(아코디언)</strong>
+            </div>
+            <div class="descbox">
+                <p>Accordion은 기본적으로 모든 콘텐츠 패널이 닫힌 상태에서 시작한다.</p>
+            </div>
+            <div class="dvgroup">
+                <div class="accordion">
+                    <div class="accordion_item">
+                        <!-- accordion_head 버튼 클릭시 is-active 클래스 추가  -->
+                        <a href="#none" class="accordion_head is-active" title="내용열기" role="button">
+                            Title
+                        </a>
+                        <div class="accordion_body">
+                            <ul class="bullet">
+                                <li class="bullet_disc">You must have a Woori Bank e-finance ID to issue/reissue a certificate.</li>
+                                <li class="bullet_disc">Please note that existing certificates stored on your PC or smartphone will be destroyed when you issue/reissue a certificate.</li>
+                                <li class="bullet_disc">인증서를 발급/재발급</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <a href="#none" class="accordion_head" title="내용열기" role="button">
+                            Title
+                        </a>
+                        <div class="accordion_body">
+                            <div>
+                                <p>Accordion은 기본적으로 모든 콘텐츠 패널이 닫힌 상태에서 시작한다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <a href="#none" class="accordion_head" title="내용열기" role="button">
+                            Title
+                        </a>
+                        <div class="accordion_body">
+                            <p>Accordion은 기본적으로 모든 콘텐츠 패널이 닫힌 상태에서 시작한다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="hr full thick">
+            <div class="dvgroup">
+                <div class="accordion_round">
+                    <div class="accordion_item">
+                        <!-- accordion_head 버튼 클릭시 is-active 클래스 추가  -->
+                        <button type="button" class="accordion_head is-active" title="내용열기" role="button">
+                            <strong class="flt">toggle</strong>
+                            <span class="frt">Select</span>
+                        </button>
+                        <div class="accordion_body">
+                            <ul class="listnoti graybox">
+                                <li class="infolist_item">
+                                    <span class="infolist_lt">입금</span><em class="infolist_rt">USD 0</em>
+                                </li>
+                                <li class="infolist_item">
+                                    <span class="infolist_lt">출금</span><em class="infolist_rt fc-point01">-USD 7,000,999.00</em>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+<script>
+    /* 화면 확인용 */
+    (()=>{
+        const item = document.querySelectorAll('.accordion_item');
+
+        for(let i=0;i < item.length; i++){
+            
+            item[i].querySelector('.accordion_head').addEventListener('click',()=>{
+                let itemOn = item[i].querySelector('.accordion_head').classList.contains('is-active');
+
+                if(!itemOn){
+                    item[i].querySelector('.accordion_head').classList.add('is-active');
+                }else{
+                    item[i].querySelector('.accordion_head').classList.remove('is-active');
+                }
+            });
+        }
+    })();
+</script>
+</body>
+</html>
