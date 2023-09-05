@@ -1,0 +1,33 @@
+/**
+ * 
+ * @name TabMenu 
+ * @role 동일한 페이지 내에서 컨텐츠가 전환될 때 사용합니다.
+ * @props tabInfo(object) : 탭에대한 정보를 담아 object형태로 넘겨줍니다.
+ * @props tabIdx(number) : 현재 활성화된 탭의 인덱스 정보입니다..
+ * @props onClick(function) : 탭클릭시 실행될 함수입니다.
+ * @props disabled(boolean) : 탭이 비활성화 되어야하는 경우 넣어줍니다.
+ */
+
+function TabMenu({tabInfo, tabIdx, onClick, disabled}){
+    return(
+        <>
+            {
+                tabInfo.map((tab, idx) => (
+                    <button 
+                        key={idx} 
+                        type="button"
+                        className={`tab_item${(tabIdx === idx) ? ' is-active' : ''}`} 
+                        role="tab" 
+                        aria-selected={(tabIdx === idx) ? true : false} 
+                        aria-controls={tab.tabPanel} 
+                        id={tab.id} 
+                        disabled={tab.disabled}
+                        onClick={() => onClick(idx)}><span className={tab.complete === true ? 'tab_txt complete' : "tab_txt"}>{tab.tabname}</span>
+                    </button>
+                ))
+            }
+        </>
+    )
+}
+ 
+export default TabMenu
