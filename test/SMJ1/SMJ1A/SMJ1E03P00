@@ -1,0 +1,33 @@
+import { useTranslation } from "react-i18next";
+import BottomSheetHead from '../../../../../common/components/bottomSheet/BottomSheetHead'
+import BottomSheetBody from '../../../../../common/components/bottomSheet/BottomSheetBody'
+import BottomSheetInner from '../../../../../common/components/bottomSheet/BottomSheetInner'
+import BtmsheetListItem from '../../../../../common/components/list/BtmsheetListItem'
+
+function SMJ1E03P00({data, setSelectData}){ // 0
+    const {t} = useTranslation();
+    return(
+        <>
+            <BottomSheetHead title={t("co1200_0011")} btnClose /> 
+            <BottomSheetBody>
+                <BottomSheetInner>
+                    <div className="listbox">
+                        {
+                            data.map((data,idx)=>(
+                                <BtmsheetListItem 
+                                    type="radio" 
+                                    key={idx} 
+                                    name="data" 
+                                    id={'data'+ idx} 
+                                    title={data} 
+                                    onchange={()=> setSelectData(data)}
+                                />
+                            ))
+                        }
+                    </div>
+                </BottomSheetInner>
+            </BottomSheetBody>
+        </>
+    )
+}
+export default SMJ1E03P00
