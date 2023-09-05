@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Empty</title>
+<link rel="stylesheet" href="/wglb/css/common.css">
+<link rel="stylesheet" href="/wglb/css/components.css">
+<script type="text/javascript" src="/wglb/js/layout.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <!-- headder -->
+    <header class="header">
+        <div class="header_fixed">
+            <h1 class="header_tit">Empty</h1>
+            <a href="javascript:void(0);" class="btn_back" aria-label="이전화면으로 이동"></a>
+            <button type="button" class="btn_menu" aria-label="전체메뉴"></button>
+        </div>
+    </header>
+    <!-- //headder -->
+    <!-- container -->
+    <div class="container"> <!-- btm_fixed_area 여부에 따라서 has_fixed 클래스 제어 -->
+        <div class="content">
+            <div class="thead_wrap">
+                <div class="title_wrap">
+                    <strong class="title_h1">Empty(결과없음)</strong>
+                </div>
+            </div>
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">기본형</em>
+                </div>
+                <div class="nodata basic">
+                    <p class="nodata_txt">Please enter your content.</p>
+                </div>
+            </div>
+            <hr class="hr">
+            <div class="dvgroup">
+                <div class="title_wrap">
+                    <em class="title_h2">강조형</em>
+                </div>
+                <div class="nodata large login">
+                    <p class="nodata_txt">After you log in check if you've won</p>
+                </div>
+
+                <div class="nodata large certi">
+                    <p class="nodata_txt">After you log in check if you've won</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+</body>
+</html>
