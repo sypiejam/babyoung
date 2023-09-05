@@ -1,0 +1,79 @@
+import{useState, useEffect} from "react";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import Calendar from "react-calendar";
+import { bottomSheetAction } from "../../common/store/bottomSheetReducer";
+import BottomSheetHead from './bottomSheet/BottomSheetHead'
+import BottomSheetBody from './bottomSheet/BottomSheetBody'
+import BottomSheetInner from './bottomSheet/BottomSheetInner'
+import FloatingButtonWrap from './button/FloatingButtonWrap'
+import ButtonWrap from './button/ButtonWrap'
+import Button from './button/Button'
+
+function CalendarNormal(){
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    const [value, onChange] = useState();
+    const [tit, setTit] = useState('날짜선택'); // {t(co1001_0001)}
+    const dayArray = ["SUN","MON", "TUE", "WED", "THU","FRI","SAT"];
+    useEffect(()=>{
+        //console.log(value)
+    },[value])
+
+    return (
+        <>
+            <BottomSheetHead title={tit} btnClose /> {/* {t(co1001_0001)} */}
+            <BottomSheetBody hasFixed hType="hauto"> {/* 2023-05-23 hType 위치 변경 */}
+                <BottomSheetInner nospace>
+                    {/* 2023-08-03 StyleModalCalendar 마크업 삭제 */}
+                    <Calendar
+                        onChange={onChange}
+                        value={value}
+                        calendarType="US"
+                        next2Label={null}
+                        prev2Label={null}
+                        prevAriaLabel="prev"
+                        nextAriaLabel="next"
+                        navigationAriaLabel="select month"
+                        minDate={new Date()}
+                        // 디자인 개별(기획/개발)요청 처리 현황 반영(월선택 > 날짜선택)
+                        // onDrillUp={(value, event)=>(
+                        //     setTit('월선택') // {t(co1001_0001)}
+                        // )}
+                        // onClickMonth={(value, event)=>(
+                        //     setTit('날짜선택') // {t(co1001_0009)}
+                        // )}
+                        navigationLabel={({date,view}) =>  (
+                            <>
+                                {date.getFullYear()}
+                                {view === "month" ? <span className="cal_month">.{`${(date.getMonth()+ 1) <= 9 ? "0" :""}${date.getMonth()+ 1}`}</span> : ""}
+                                {/* 2023-08-03 월영역 앞에 .추가 */}                                
+                            </>)     
+                        }
+                        minDetail="year"
+                        formatDay={(locale, date) => <span>{date.getDate()}</span>}
+                        formatShortWeekday={(locale,date) => dayArray[(new Date(date).getDay())]}
+                        formatMonth={(locale, date) => <span>{date.getMonth() + 1}</span>} // 디자인 개별(기획/개발)요청 처리 현황 반영(M삭제)
+                        showNeighboringMonth={false}
+                        showFixedNumberOfWeeks={false}
+                        tileClassName={({date}) => date.getDay() === 6 ? "saturday" :null}
+                        // activeStartDate={value}
+                        
+                        // onClickMonth={(value) =>{
+                        //     setValue(value)
+                        // }}
+                    />
+                </BottomSheetInner>
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <Button tag="button" status="primary" text="확인" onClick={()=>{
+                            dispatch(bottomSheetAction({}))
+                        }} /> {/* {t(co1501_0010)} */}
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </BottomSheetBody>
+        </>
+    );
+}
+
+export default CalendarNormal;
