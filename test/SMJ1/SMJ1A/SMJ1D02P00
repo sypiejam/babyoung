@@ -1,0 +1,50 @@
+import { useTranslation } from "react-i18next";
+import PopupFrame from "../../../../../common/components/popup/PopupFrame"
+import PopupHeader from "../../../../../common/components/popup/PopupHeader"
+import PopupContainer from "../../../../../common/components/popup/PopupContainer"
+import { FloatingButtonWrap, ButtonWrap, Button } from "../../../../../common/components/button/index";
+import SlickFrame from "../../../../../common/components/slick/SlickFrame";
+import SlickContainer from "../../../../../common/components/slick/SlickContainer";
+import SlickListItem from "../../../../../common/components/slick/SlickListItem";
+
+import WgbTerms from "./WgbTerms";
+
+function SMJ1D02P00(){
+    const {t} = useTranslation();
+
+    return(  
+        <>
+            <PopupFrame>
+                <PopupHeader type="normal" title="Read the terms and conditions" />
+                <PopupContainer hasFixed isFull>
+                    {/* 2023-08-22 마크업 추가 st */}
+                    <button type="button" className="btn_termsdown">
+                        <span className="blind">약관 및 상품설명서 다운로드</span>
+                    </button>
+                    {/* //2023-08-22 마크업 추가 end */}
+                    <div className="terms_head">
+                        <h2 className="title_lv3">[약관] 약관 타이틀 약관 초과시에는 말줄임약관 타이틀 약관 초과시에는 말줄임</h2>
+                    </div>
+                    <div className="terms_body"> 
+                        <SlickFrame>
+                            <SlickContainer arrows> {/* 2023-08-22 arrows 변경 */}
+                                <SlickListItem>
+                                    <WgbTerms />
+                                </SlickListItem> {/* 2023-08-22 pdf 추가 */}
+                                <SlickListItem pdf>약관 PDF 출력영역</SlickListItem>
+                                <SlickListItem>약관 PDF 출력영역</SlickListItem>
+                            </SlickContainer>
+                        </SlickFrame>
+                    </div>
+                    <FloatingButtonWrap>
+                        <ButtonWrap>
+                            <Button tag="button" text={t("co1501_0020")} status="primary" /> {/* 2023-08-22 번역코드 수정 */}
+                        </ButtonWrap>
+                    </FloatingButtonWrap>
+                </PopupContainer>
+            </PopupFrame>
+        </>
+    );
+}
+
+export default SMJ1D02P00;
