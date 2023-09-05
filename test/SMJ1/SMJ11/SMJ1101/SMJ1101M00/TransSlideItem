@@ -1,0 +1,24 @@
+import { CustomA } from "../../../../../common/components/button"
+
+/**
+ * @name TransSlideItem 
+ * @role 최근이체내역 
+ * @props target(string) : 이체대상
+ * @props cur(string) : 통화 
+ * @props sum(string) : 이체금액 
+ * @props callback(string) : 이체페이지로 이동
+*/
+
+function TransSlideItem({target, cur, sum, callback}){
+    return (
+        <li className="trans_item">
+            <CustomA href="#none" btnClass="trans_link" callback={callback}>
+                <span className="trans_info">
+                    <span className="trans_target">{target}</span>
+                    <span className="trans_sum"><span className="cur">{cur}</span> <strong className="sum">{sum}</strong></span>
+                </span>
+            </CustomA>
+        </li>
+    )
+}
+export default TransSlideItem;
