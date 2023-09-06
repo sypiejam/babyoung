@@ -78,8 +78,7 @@
 .m-acc_slider .btn_setting {position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;padding:0 2rem;font-weight:400;font-size:1.5rem;color:#333a40;}
 .m-acc_slider .btn_setting::before {content:'';display:block;width:2.4rem;height:2.4rem;margin:0 auto 0.8rem;background:url(/public/images/com/ic_edit.png) no-repeat 0 0 / 100%;}
 .m-acc_slider .ico_accset {z-index:10;position:absolute;top:2.4rem;right:1rem;}
-.m-sec_rate {margin:3.2rem 0 0 0;}
-.m-sec_trans ~ .m-sec_rate {margin-top:3.2rem;}
+.m-sec_rate {min-height:2rem;margin:3.2rem 0 0 0;}
 .m-sec_rate .m-skeleton {left:2rem;right:2rem;height:2rem;border-radius:0.6rem;}
 .m-rate_slider {position:relative;opacity:0;}
 .m-loaded .m-rate_slider {-webkit-animation:opacityeffect 1s both;animation:opacityeffect 1s both;}
