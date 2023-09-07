@@ -1,0 +1,196 @@
+import {useState} from 'react'
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import BottomSheetHead from '../../../../../common/components/bottomSheet/BottomSheetHead';
+import BottomSheetBody from '../../../../../common/components/bottomSheet/BottomSheetBody';
+import BottomSheetInner from '../../../../../common/components/bottomSheet/BottomSheetInner';
+import AccountListItem from '../../../../../common/components/list/AccountListItem';
+import { TabCont, TabMenu } from '../../../../../common/components/tab/index';
+import Nodata from '../../../../../common/components/empty/Empty'; //2023-07-14 추가
+
+function SMJ2201P02(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+
+    const [tabIdx, setTabIdx] = useState(0); // 입금계좌선택 탭인덱스 관리state
+    const [tabInfo, setTabInfo] = useState([ // 입금계좌선택 탭정보 관리state 2023-06-13 tab3 추가
+        {tabname : t('bk0201_0005'), id: "tab1", tabPanel: 'tab01Panel'}, 
+        {tabname : t('bk0201_0006'), id: "tab2", tabPanel: 'tab02Panel'}, 
+        {tabname : t('bk0201_0007'), id: "tab3", tabPanel: 'tab03Panel'}, 
+    ]);
+    const [dataArr, setDataArr] =useState([
+        [
+            {
+                type : "star",
+                bankCode : "092",
+                accName : "토스뱅크",
+                accNum : "1002-233-123456",
+                accNick : "Woori kim",
+            },
+            {
+                type : "star",
+                bankCode : "090",
+                accName : "카카오뱅크",
+                accNum : "1002-233-123456",
+                accNick : "Woori kim",
+            },
+            {
+                type : "star",
+                bankCode : "020",
+                accName : "우리은행",
+                accNum : "1002-233-123456",
+                accNick : "Woori kim",
+            },
+            {
+                type : "star",
+                bankCode : "092",
+                accName : "토스뱅크",
+                accNum : "1002-233-123456",
+                accNick : "Woori kim",
+            },
+            {
+                type : "star",
+                bankCode : "090",
+                accName : "카카오뱅크",
+                accNum : "1002-233-123456",
+                accNick : "Woori kim",
+            },
+            {
+                type : "star",
+                bankCode : "020",
+                accName : "우리은행",
+                accNum : "1002-233-123456",
+                accNick : "Woori kim",
+            }
+        ],
+        [
+            {
+                type : "star",
+                bankCode : "020",
+                accName : "우리은행",
+                accNum : "1002-233-123456",
+                accNick : "Woori kim",
+            },
+            {
+                type : "star",
+                bankCode : "092",
+                accName : "토스뱅크",
+                accNum : "1002-233-123456",
+                accNick : "Woori kim",
+            },
+            {
+                type : "star",
+                bankCode : "090",
+                accName : "카카오뱅크",
+                accNum : "1002-233-123456",
+                accNick : "Woori kim",
+            },
+            {
+                type : "star",
+                bankCode : "092",
+                accName : "토스뱅크",
+                accNum : "1002-233-123456",
+                accNick : "Woori kim",
+            },
+            {
+                type : "star",
+                bankCode : "090",
+                accName : "카카오뱅크",
+                accNum : "1002-233-123456",
+                accNick : "Woori kim",
+            },
+            {
+                type : "star",
+                bankCode : "020",
+                accName : "우리은행",
+                accNum : "1002-233-123456",
+                accNick : "Woori kim",
+            }
+        ],        
+        [
+            {
+                type : "normal",
+                bankCode : "020",
+                accName : "우리은행",
+                accNum : "1002-233-123456",
+                btmText : t('bk0201_0020'),
+                money : "999,999,999,999,999"
+            },
+            {
+                type : "normal",
+                bankCode : "020",
+                accName : "우리은행",
+                accNum : "1002-233-123456",
+                btmText : t('bk0201_0020'),
+                money : "999,999,999,999,999"
+            },
+            {
+                type : "normal",
+                bankCode : "020",
+                accName : "우리은행",
+                accNum : "1002-233-123456",
+                btmText : t('bk0201_0020'),
+                money : "999,999,999,999,999"
+            },
+            {
+                type : "normal",
+                bankCode : "020",
+                accName : "우리은행",
+                accNum : "1002-233-123456",
+                btmText : t('bk0201_0020'),
+                money : "999,999,999,999,999"
+            },
+            {
+                type : "normal",
+                bankCode : "020",
+                accName : "우리은행",
+                accNum : "1002-233-123456",
+                btmText : t('bk0201_0020'),
+                money : "999,999,999,999,999"
+            },                                        
+        ]
+    ]); // 계좌 리스트 2023-06-13 tab2 내용 추가
+
+    const onChange=()=>{
+        //즐겨찾기 체크시 실행될 내용
+    }
+    const ClickEvent=()=>{
+        //내 계좌 선택시  callback으로 넘겨줄 함수
+        navigate(".");
+    }
+    return(
+        <>
+            <BottomSheetHead title={t("bk0201_0021")} btnClose />
+            <BottomSheetBody hType="tabfix">
+                <BottomSheetInner nospace>
+                    <div className="tab_wrap popup_tab">
+                        <div className="tab_head" role="tablist">
+                            <TabMenu tabInfo={tabInfo} tabIdx={tabIdx} onClick={setTabIdx} />
+                        </div>                       
+                        <TabCont tabcont={tabInfo[tabIdx]}>
+                            <div className="tab_body">
+                                <ul className="list_wrap">
+                                    {
+                                        dataArr[tabIdx].map((data, idx)=>(
+                                            <AccountListItem key={idx} type={data.type} callback={ClickEvent} starId={`${tabInfo[tabIdx].id}${idx}`} bankCode={data.bankCode} accName={data.accName} accNum={data.accNum} accNick={data.accNick} btmText={data.btmText} money={data.money} onChange={onChange}/>
+                                        ))
+                                    }
+                                </ul>
+                                {/* 2023-07-14 계좌 없을 경우 노출되는 케이스 추가 S */}
+                                {tabIdx === 0 &&
+                                    <Nodata txt={t("bk0201_0103")}/>
+                                }
+                                {tabIdx === 1 &&
+                                    <Nodata txt={t("bk0206_0024")}/>
+                                }
+                                {/* 2023-07-14 계좌 없을 경우 노출되는 케이스 추가 E */}
+                            </div>                            
+                        </TabCont>
+                    </div>
+                </BottomSheetInner>
+            </BottomSheetBody>
+        </>
+    )
+}
+
+export default SMJ2201P02;
