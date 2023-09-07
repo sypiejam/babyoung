@@ -1,0 +1,76 @@
+import {useState} from 'react'
+import { useTranslation } from "react-i18next";
+import BottomSheetHead from '../../../../../common/components/bottomSheet/BottomSheetHead';
+import BottomSheetBody from '../../../../../common/components/bottomSheet/BottomSheetBody';
+import BottomSheetInner from '../../../../../common/components/bottomSheet/BottomSheetInner';
+import { TabCont, TabMenu } from '../../../../../common/components/tab/index';
+import NormalTextField from '../../../../../common/components/input/textField/NormalTextField';
+import CheckBox from '../../../../../common/components/input/CheckBox';
+import { ButtonWrap, CustomA, FloatingButtonWrap } from '../../../../../common/components/button';
+import Nodata from '../../../../../common/components/empty/Empty';
+import { TagWrap,TagItem } from '../../../../../common/components/tag/index';
+
+function SMJ2201P10(){
+    const {t} = useTranslation();
+
+    const [tabIdx, setTabIdx] = useState(0); // 입금계좌선택 탭인덱스 관리state
+    const [tabInfo, setTabInfo] = useState([ // 입금계좌선택 탭정보 관리state
+        {tabname : '직접입력', id: "tab1", tabPanel: 'tab01Panel'}, 
+        {tabname : t('bk0201_0041'), id: "tab2", tabPanel: 'tab02Panel'}, 
+    ]);
+
+    return(
+        <>
+            <BottomSheetHead title={t("bk0201_0040")} btnClose />
+            <BottomSheetBody hType="auto" hasFixed={tabIdx===0? true : false}>
+                <BottomSheetInner nospace>
+                    <div className="tab_wrap popup_tab">
+                        <div className="tab_head" role="tablist">
+                            <TabMenu tabInfo={tabInfo} tabIdx={tabIdx} onClick={setTabIdx} />
+                        </div>
+                        <TabCont tabcont={tabInfo[tabIdx]}>
+                            <div className={`tab_body${(tabIdx === 0)? " pt16 pb24" : ""}`}> {/* 퍼블검수 1차 : tabIdx === 0 일때 클래스 네임 " pb0" -> " pt16 pb24"으로 변경*/}
+                            { // tab1
+                                (tabIdx === 0)&&
+                                <>
+                                    {/* 퍼블검수 1차 : <div className="field_wrap mg24"> 삭제 */}
+                                        <NormalTextField placeholder="내 통장 표기(8자 이내)"/>
+                                        <div className="selection mt24">
+                                            <CheckBox type="normalSt" id="check_SMJ2201P10" text={t('bk0201_0042')}/>
+                                        </div>
+                                    {/* 퍼블검수 1차 : </div> 삭제 */}
+                                </>
+                            }
+                            { // tab2
+                                (tabIdx === 1)&&
+                                <>
+                                    <Nodata txt={t('bk0201_0044')}/>{/* D : 등록된 문구가 없는 경우 */}
+                                    <div className="mt16">{/* 퍼블검수 1차 : 클래스 네임 mt24 -> mt16변경 */}
+                                        <TagWrap>
+                                            <TagItem title={t('bk0201_0045')} btnDelete/>
+                                            <TagItem title={t('bk0201_0046')} btnDelete/>
+                                            <TagItem title={t('bk0201_0045')} btnDelete/>
+                                        </TagWrap>
+                                    </div>
+                                </>
+                            }
+                            </div>
+                        </TabCont>
+                    </div>
+                </BottomSheetInner>
+                { // tab1
+                    (tabIdx === 0)&&
+                    <>
+                        <FloatingButtonWrap>
+                            <ButtonWrap>
+                                <CustomA type="styled" text={t('co1501_0010')} status="primary" />
+                            </ButtonWrap>
+                        </FloatingButtonWrap>        
+                    </>
+                }                
+            </BottomSheetBody>
+        </>
+    )
+}
+
+export default SMJ2201P10;
