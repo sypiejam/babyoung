@@ -1,0 +1,115 @@
+import {useState} from 'react'
+import { useTranslation } from "react-i18next";
+import BottomSheetHead from '../../../../../common/components/bottomSheet/BottomSheetHead';
+import BottomSheetBody from '../../../../../common/components/bottomSheet/BottomSheetBody';
+import BottomSheetInner from '../../../../../common/components/bottomSheet/BottomSheetInner';
+import BtmsheetListItem from '../../../../../common/components/list/BtmsheetListItem';
+import TabCont from '../../../../../common/components/tab/TabCont'; //2023-05-22 경로 수정
+import TabMenu from '../../../../../common/components/tab/TabMenu'; //2023-05-22 경로 수정
+
+function SMJ3101P02(){
+    const {t} = useTranslation();
+
+    const [tabIdx, setTabIdx] = useState(0); // 통화선택탭인덱스 관리state
+    const [tabInfo, setTabInfo] = useState([ // 통화선택탭정보 관리state
+        {tabname : '주요통화', id: "tab1", tabPanel: 'tab01Panel'}, 
+        {tabname : '기타통화', id: "tab2", tabPanel: 'tab02Panel'}, 
+    ]);
+    const [selectdata, setSelectData] = useState([]);
+    const [dataArr, setDataArr] =useState([
+        [
+            {
+                title : "US Dollar",
+                flag : "us",
+                chk : false
+            },
+            {
+                title : "Japanese Yen",
+                flag : "jp",
+                chk : false
+            },
+            {
+                title : "European Euro",
+                flag : "eu",
+                chk : false
+            },
+            {
+                title : "Chinese Yuan",
+                flag : "cn",
+                chk : false
+            },
+            {
+                title : "British Pound",
+                flag : "gb",
+                chk : false
+            },
+        ],
+        [
+            {
+                title : "Australian Dollar",
+                flag : "au",
+                chk : false
+            },
+            {
+                title : "Canadian Dollar",
+                flag : "ca",
+                chk : false
+            },
+            {
+                title : "Swiss Franc",
+                flag : "ch",
+                chk : false
+            },
+            {
+                title : "Danish Krone",
+                flag : "dk",
+                chk : false
+            },
+            {
+                title : "Hong Kong Dollar",
+                flag : "hk",
+                chk : false
+            },
+            {
+                title : "Indonesian Rupiah",
+                flag : "id",
+                chk : false
+            }
+        ]
+    ]); // 국가 , 선택 상태 정보
+    const onchange = (e,data) => {
+        setSelectData(data.title)
+        const copy = [...dataArr][tabIdx];
+        copy.map((item, idx)=>(
+            item.chk = (e.target.value === item.title) && true
+        ))
+        setDataArr([...dataArr, copy])
+    }
+    return(
+        <>
+            <BottomSheetHead title="통화선택" btnClose />
+            <BottomSheetBody hType="tabfix"> {/* 2023-05-23 hType 추가 */}
+                <BottomSheetInner nospace>
+                    <div className="tab_wrap popup_tab">
+                        <div className="tab_head" role="tablist">
+                            <TabMenu tabInfo={tabInfo} tabIdx={tabIdx} onClick={setTabIdx} />
+                        </div>                       
+                        <TabCont tabcont={tabInfo[tabIdx]}>
+                            <div className="tab_body">
+                                <ul className="list_wrap">
+                                    {
+                                        dataArr[tabIdx].map((data, idx)=>(
+                                            <BtmsheetListItem key={idx} type="radio" chkicon name={`selectflag${tabIdx}`} id={data.flag} title={data.title} onchange={(e)=> onchange(e, data)} flagcode={data.flag} chk={data.chk} />
+                                        ))
+                                    }
+                                </ul>
+                            </div>                            
+                        </TabCont>
+                    </div>
+                </BottomSheetInner>
+            </BottomSheetBody>
+        </>
+    )
+}
+
+export default SMJ3101P02;
