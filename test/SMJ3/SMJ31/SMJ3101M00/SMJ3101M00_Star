@@ -1,0 +1,22 @@
+/*******************************************************************************
+ * @업무명:     MY 환율
+ * @업무설명:   MY 환율
+ * @파일명:     SMJ3101M00_Star.js
+ * @작성자:     yoojin
+ * @작성일:     2023.05.31
+ * *******************************변경이력***************************************
+ * 번호     작업자           작업일           변경내용
+ * ----     -------         ----------      ------------------------------------
+ * 1        yoojin          2023.05.31      최초작성
+ ******************************************************************************/
+
+const SMJ3101M00Star = ({ index, checked, clickStar }) => {
+    return (
+        <span className="chk_star listbox_favor">
+            <input checked={checked} type="checkbox" id={`chkStar${index}`} className="blind" onChange={() => clickStar(index)}/>{/* 즐겨찾기 아이콘 checked on/off시 토스트 팝업 노출 */}
+            <label htmlFor={`chkStar${index}`} className="ico_star"><span className="blind">즐겨찾기 등록</span></label>
+        </span>
+    )
+}
+
+export default SMJ3101M00Star
