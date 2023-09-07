@@ -1,0 +1,220 @@
+import { useTranslation } from "react-i18next"
+import { useDispatch } from "react-redux"
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer"
+import Wrap from '../../../../../common/components/layout/Wrap'
+import Header from "../../../../../common/components/layout/Header"
+import Container from '../../../../../common/components/layout/Container'
+import { AccordionWrap, AccordionItem } from "../../../../../common/components/accordion"
+import Nodata from "../../../../../common/components/empty/Empty"
+import AccList from "../../AccList"
+import SMJ2102P02 from '../SMJ2102P02/SMJ2102P02'
+
+function SMJ2102M03(){ // 입출금, 외화신탁, 특정금전신탁, 퇴직연금(IRP), ISA신탁형, ISA일임형, 일반펀드, 연금저축펀드, MMF펀드, 외화펀드, 외화입출식
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+
+    const settingBtmsheetEvt = () => { //조건설정 바텀시트
+        dispatch(bottomSheetAction({
+            title: "",
+            message : <SMJ2102P02 />,
+            state : null
+        })) 
+    }
+    return(
+        <>
+            <Wrap>
+                <Header back menu title={t("bk0101_0158")} />
+                <Container>
+                    <div className="acc_wrap">
+                        <div className="condition big">
+                            <h2 className="blind">거래내역 정렬조건</h2>
+                            <div className="inner">
+                                <div className="item">
+                                    <span className="selected">전체</span> 
+                                    <span className="selected">최신순</span> 
+                                </div>
+                                <div className="atr">
+                                    <button type="button" className="ico_setting" onClick={settingBtmsheetEvt}><span className="blind">조건설정</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="acc_search">
+                            <span className="search_terms">3개월</span>
+                            <span className="search_terms"><span>2023 00 00</span> <span className="unit">~</span> <span>2023 00 00</span></span>
+                        </div>
+
+                        <div className="acc_result">
+                            <AccordionWrap type="round">
+                                <AccordionItem title={
+                                        <>
+                                            <strong className="flt">{t("bk0101_0169")}</strong>
+                                            <span className="frt">
+                                                <span className="blind">{t("bk0101_0001")}</span> {/* 총 */}
+                                                <span className="cur">+ KRW</span><span className="sum">2,841,229</span>
+                                            </span>
+                                        </>
+                                    }>   
+                                    <ul className="listnoti graybox">
+                                        <li className="infolist_item">
+                                            <span className="infolist_lt">{t("bk0101_0088")}</span>
+                                            <span className="infolist_rt"><span className="cur">KRW</span><span className="sum">0</span></span>
+                                        </li> {/* 금엑+ : 0일때 */}
+                                        <li className="infolist_item">
+                                            <span className="infolist_lt">{t("bk0101_0088")}</span>
+                                            <span className="infolist_rt acc_plus"><span className="cur">+ KRW</span><span className="sum">2,841,229</span></span> {/* 금엑+ : acc_plus */}
+                                        </li>
+                                        <li className="infolist_item">
+                                            <span className="infolist_lt">{t("cs0202_0011")}</span>
+                                            <span className="infolist_rt acc_minus"><span className="cur">- KRW</span><span className="sum">2,841,229</span></span> {/* 금엑- : acc_minus */}
+                                        </li>
+                                    </ul>
+                                </AccordionItem>
+                            </AccordionWrap>
+                        </div>
+
+                        <div className="acc_list">
+                            {/* 검색결과가 있는 경우 */}
+                            {/* 입출금, 외화신탁, 특정금전신탁, 퇴직연금(IRP), ISA신탁형, ISA일임형, 일반펀드, 연금저축펀드, MMF펀드, 외화펀드, 외화입출식 */}
+                            <ul>
+                                {/* 입출금 */}
+                                <AccList 
+                                    date="2023 12 13" 
+                                    briefs="국민 김우리국민"
+                                    increase="minus" 
+                                    cur="KRW" 
+                                    sum="999,999,999,999,999" 
+                                    time="00:00:00" 
+                                    txt={t("fx0601_0024")}
+                                    balanceCur="KRW"
+                                    balance="999,999,999,999,999" 
+                                />
+                                {/* 외화신탁 */}
+                                <AccList 
+                                    date="2023 12 13" 
+                                    briefs="이자입금"
+                                    increase="plus" 
+                                    cur="USD" 
+                                    sum="100,000,000,000" 
+                                    time="00:00:00" 
+                                    txt={t("fx0601_0024")} 
+                                    balanceCur="USD"
+                                    balance="100,000,000,000" 
+                                />
+                                {/* 특정금전신탁 */}
+                                <AccList 
+                                    date="2023 12 13" 
+                                    briefs="입금"
+                                    increase="plus" 
+                                    cur="USD" 
+                                    sum="1,000,000,000" 
+                                    time="00:00:00" 
+                                    txt={t("fx0601_0024")} 
+                                    balanceCur="USD"
+                                    balance="100,000,000" 
+                                />
+                                {/* 퇴직연금(IRP) */}
+                                <AccList 
+                                    date="2023 12 13" 
+                                    briefs="양승환"
+                                    increase="plus" 
+                                    cur="KRW" 
+                                    sum="1,000,000,000" 
+                                    time="00:00:00" 
+                                    txt={t("fx0601_0024")}
+                                    balanceCur="KRW" 
+                                    balance="100,000,000" 
+                                />
+                                {/* ISA신탁형 */}
+                                <AccList 
+                                    date="2023 12 13" 
+                                    briefs="입금"
+                                    increase="plus" 
+                                    cur="KRW" 
+                                    sum="1,000,000,000" 
+                                    time="00:00:00" 
+                                    txt={t("fx0601_0024")}
+                                    balanceCur="KRW" 
+                                    balance="100,000,000" 
+                                />
+                                {/* ISA일임형 */}
+                                <AccList 
+                                    date="2023 12 13" 
+                                    briefs="입금"
+                                    increase="plus" 
+                                    cur="KRW" 
+                                    sum="1,000,000,000" 
+                                    time="00:00:00" 
+                                    txt={t("fx0601_0024")}
+                                    balanceCur="KRW" 
+                                    balance="100,000,000" 
+                                />
+                                {/* 일반펀드 */}
+                                <AccList 
+                                    date="2023 12 13" 
+                                    briefs="거래정보가 길게 들어갔을 경우 말줄임처리됩니다"
+                                    increase="plus" 
+                                    cur="KRW" 
+                                    sum="999,999,999,999,999" 
+                                    time="00:00:00" 
+                                    txt={t("bk0101_0093")}
+                                    balanceCur="KRW"
+                                    balance="100,000,000" 
+                                />
+                                {/* 연금저축펀드 */}
+                                <AccList 
+                                    date="2023 12 13" 
+                                    briefs="키움프론티어개인용"
+                                    increase="plus" 
+                                    cur="KRW" 
+                                    sum="1,000,000,000" 
+                                    time="00:00:00" 
+                                    txt={t("bk0101_0093")}
+                                    balanceCur="KRW"
+                                    balance="100,000,000" 
+                                />
+                                {/* MMF펀드 */}
+                                <AccList 
+                                    date="2023 12 13" 
+                                    briefs="입금"
+                                    increase="plus" 
+                                    cur="KRW" 
+                                    sum="1,000,000,000" 
+                                    time="00:00:00" 
+                                    txt={t("bk0101_0093")}
+                                    balanceCur="KRW"
+                                    balance="100,000,000" 
+                                />
+                                {/* 외화펀드 */}
+                                {/* 퍼블검수 1차 : 외화펀드 briefs항목 추가 */}
+                                <AccList 
+                                    date="2023 12 13" 
+                                    briefs={t("bk0101_0090")}
+                                    traded="73.000"
+                                    txt={t("bk0101_0091")}
+                                    balance="9,739,000" 
+                                />
+                                {/* 외화입출식 */}
+                                <AccList 
+                                    date="2023 12 13" 
+                                    briefs="입금"
+                                    increase="plus" 
+                                    cur="KRW" 
+                                    sum="1,000,000,000" 
+                                    time="00:00:00" 
+                                    txt={t("bk0101_0093")}
+                                    balance="9,739,000" 
+                                    balanceCur="KRW"
+                                    branch="거래점출력"
+                                />
+                            </ul>
+                            {/* 검색결과가 없는 경우 */}
+                            <Nodata txt={t('co1200_0007')} />
+                        </div>
+                    </div>
+                </Container>
+            </Wrap>
+        </>
+    )
+}
+export default SMJ2102M03
