@@ -1,0 +1,209 @@
+
+import { useTranslation } from "react-i18next"
+import { useDispatch } from "react-redux"
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer"
+import { dialogAction } from "../../../../../common/store/dialogReducer"
+import { toastAction } from "../../../../../common/store/toastReducer"
+import { useState } from "react"
+import PopupFrame from "../../../../../common/components/popup/PopupFrame"
+import PopupHeader from "../../../../../common/components/popup/PopupHeader"
+import PopupContainer from "../../../../../common/components/popup/PopupContainer"
+import BottomSheetHead from "../../../../../common/components/bottomSheet/BottomSheetHead"
+import BottomSheetBody from "../../../../../common/components/bottomSheet/BottomSheetBody"
+import BottomSheetInner from "../../../../../common/components/bottomSheet/BottomSheetInner"
+import { SegmentWrap, SegmentControl } from "../../../../../common/components/segment/index"
+import { FloatingButtonWrap, ButtonWrap, Button } from "../../../../../common/components/button"
+import Notice from "../../../../../common/components/Notice";// 2023-07-13 추가
+import SMJ5202P02 from "../SMJ5202P02/SMJ5202P02"
+
+function SMJ5202P01(){ // 입출금 알림설정 팝업
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    const [segmentIdx01, setSegmentIdx01] = useState(0); //알림 대상 선택 segment
+    const [segmentIdx02, setSegmentIdx02] = useState(0); //잔액 표시 여부 segment
+    const [segmentIdx03, setSegmentIdx03] = useState(0); //알림 금액 설정 segment
+    const [segmentIdx04, setSegmentIdx04] = useState(0); //자동이체 알림 시간 segment
+
+    const BtmsheetEvt = (poptitle) => { // 알림시간 설정 바텀시트
+        dispatch(bottomSheetAction({
+            title: "",
+            message : <SMJ5202P02 poptitle={poptitle} />,
+            state : null
+        })) 
+    }
+    const dialogEvt = () => { // 변경버튼 클릭시 : 변경내용 없을경우
+        dispatch(dialogAction({
+            type : "alert",
+            title: <>{t('cs0201_0039')}<br/>{t('cs0201_0040')}</>, 
+            message : "",
+            btn1 : t("co0200_0010"),
+            btn2 : "",
+            onClick1 : ()=>{
+                dispatch(dialogAction({}))
+            },
+            onClick2 : (e)=>{
+                toastEvt(t("cs0201_0011"))
+                dispatch(dialogAction({}))
+            }
+        }))
+    }
+    const toastEvt = (toastText) =>{ // 변경버튼 클릭시 : 변경완료된 경우 
+        dispatch(toastAction({
+            option: "true",
+            title: toastText,
+            btnName : ""
+        }))
+    }
+    return(
+        <>
+            <PopupFrame>
+                <PopupHeader type="normal" title={t("cs0201_0015")} /> 
+                <PopupContainer hasFixed>
+                    {/* 알림 대상 선택 */}
+                    <div className="dvgroup first">
+                        <div className="segment_wrap">
+                            <div className="title_wrap">
+                                <em className="title_lv3">{t("cs0201_0016")}</em>
+                            </div>
+                            <SegmentWrap groupname="segmentItem01" activeIdx={segmentIdx01}>
+                                <SegmentControl id="segmentItem01_1" title={t("cs0201_0017")} onChange={setSegmentIdx01} />
+                                <SegmentControl id="segmentItem01_2" title={t("cs0201_0018")} onChange={setSegmentIdx01} />
+                                <SegmentControl id="segmentItem01_3" title={t("cs0201_0019")} onChange={setSegmentIdx01} />
+                            </SegmentWrap>
+                        </div>
+                    </div>
+    
+                    {/* 잔액 표시 여부 */}
+                    <div className="dvgroup">
+                        <div className="segment_wrap">
+                            <div className="title_wrap help_wrap">{/* 퍼블검수 1차 : 클래스 수정 d-flex => help_wrap */}
+                                <em className="title_lv3">{t("cs0201_0020")}</em>
+                                <button type="button" className="ico_info" onClick={()=> dispatch(bottomSheetAction({
+                                    title: null,
+                                    message : <SMJ5202P01BtmSheet title={t("cs0201_0020")} bullet={[t("cs0201_0032")]} />,
+                                    state : null
+                                }))}><span className="blind">도움말</span></button>
+                            </div>
+                            <SegmentWrap groupname="segmentItem02" activeIdx={segmentIdx02}>
+                                <SegmentControl id="segmentItem02_1" title={t("cs0201_0021")} onChange={setSegmentIdx02} />
+                                <SegmentControl id="segmentItem02_2" title={t("cs0201_0022")} onChange={setSegmentIdx02} />
+                            </SegmentWrap>
+                        </div>
+                    </div>
+    
+                    {/* 알림 금액 설정 */}
+                    <div className="dvgroup">
+                        <div className="segment_wrap">
+                            <div className="title_wrap">
+                                <em className="title_lv3">{t("cs0201_0023")}</em>
+                            </div>
+                            <SegmentWrap groupname="segmentItem03" activeIdx={segmentIdx03}>
+                                <SegmentControl id="segmentItem03_1" title={t("cs0201_0024")} onChange={setSegmentIdx03} />
+                                <SegmentControl id="segmentItem03_2" title={t("cs0201_0025")} onChange={setSegmentIdx03} />
+                            </SegmentWrap>
+                            {
+                                segmentIdx03 === 1 &&
+                                <>
+                                    <div className="segment_panel">
+                                        <div className="field_wrap"> {/* 에러시 is-error클래스 추가 */}
+                                            <div className="inp_field inp_amount">
+                                                <div className="field_item amount_unit"><em>KRW</em></div>
+                                                <div className="inp_item amount_item">
+                                                    <input type="text" className="inp_text" inputMode="numberic" placeholder={t("cs0201_0036")} title={t("cs0201_0036")} />
+                                                    <div className="inp_delete"><button type="button" className="ico_delete inp_button"><span className="blind">삭제</span></button></div>
+                                                </div>
+                                            </div>
+                                            <div className="txt_error">
+                                                <p className="tr">Enter an error message</p>
+                                            </div>
+                                            <div className="txt_helper tl">
+                                                <p className="bullet_disc">{t("cs0201_0038")}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </>
+                            }
+                        </div>
+                    </div>
+                        
+                    {/* 알림 시간 설정 */}
+                    <div className="field_wrap">
+                        <div className="title_wrap help_wrap">{/* 퍼블검수 1차 : 클래스 수정 d-flex => help_wrap */}
+                            <em className="title_lv3">{t("cs0201_0026")}</em>
+                            <button type="button" className="ico_info" onClick={()=> dispatch(bottomSheetAction({
+                                title: null,
+                                message : <SMJ5202P01BtmSheet title={t("cs0201_0026")} bullet={[t("cs0201_0067")]} />,
+                                state : null
+                            }))}><span className="blind">도움말</span></button>
+                        </div>
+                        <div className="field_flex">
+                            <div className="inp_field" role="button" onClick={()=> BtmsheetEvt(t("cs0201_0068"))}>
+                                <div className="inp_item">
+                                    <input type="text" className="inp_text" placeholder="00" title="알림 시작시간" readOnly />
+                                </div>
+                                <div className="field_item"><i className="ico_time"></i></div>
+                            </div>
+                            <div className="inp_field" role="button" onClick={()=> BtmsheetEvt(t("cs0201_0069"))}>
+                                <div className="inp_item">
+                                    <input type="text" className="inp_text" placeholder="24" title="알림 종료시간" readOnly />
+                                </div>
+                                <div className="field_item"><i className="ico_time"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    {/* 자동이체 알림 시간 */}
+                    <div className="dvgroup">
+                        <div className="segment_wrap">
+                            <div className="title_wrap help_wrap">{/* 퍼블검수 1차 : 클래스 수정 d-flex => help_wrap */}
+                                <em className="title_lv3">{t("cs0201_0028")}</em>
+                                <button type="button" className="ico_info" onClick={()=> dispatch(bottomSheetAction({
+                                    title: null,
+                                    message : <SMJ5202P01BtmSheet title={t("cs0201_0028")} bullet={[t("cs0201_0040")]} />,
+                                    state : null
+                                }))}><span className="blind">도움말</span></button>
+                            </div>
+                            <SegmentWrap groupname="segmentItem04" activeIdx={segmentIdx04}>
+                                <SegmentControl id="segmentItem04_1" title={<>{t("cs0201_0029")}<span className="d-block">{t("cs0201_0030")}</span></>} onChange={setSegmentIdx04} />
+                                <SegmentControl id="segmentItem04_2" title={t("cs0201_0031")} onChange={setSegmentIdx04} />
+                            </SegmentWrap>
+                        </div>
+                    </div>
+
+                    {/* 알아두세요 */}
+                    {/* 2023-07-13 마크업 변경 st */}
+                    <Notice>
+                        <p className="bullet_item">{t("cs0201_0034")}</p>
+                    </Notice>
+                    {/* 2023-07-13 마크업 변경 end */}
+                </PopupContainer>
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <Button tag="button" text={t('cs0201_0035')} status="primary" /> {/* 변경내용 없을 경우 : dialogEvt 호출 / 변경내용 있는경우 : dialogEvt 호출 */}
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </PopupFrame>
+        </>
+    )
+}
+
+export function SMJ5202P01BtmSheet({title, bullet}){
+    return(
+        <>
+            <BottomSheetHead title={title} btnClose/>
+            <BottomSheetBody>
+                <BottomSheetInner type="desc">
+                    {/* 퍼블검수 1차 : 마크업 수정 st */}
+                    {
+                        bullet.map((elem, key)=>(
+                            <p className="bullet_item" key={key}>{elem}</p>
+                        ))
+                    }
+                    {/* //퍼블검수 1차 : 마크업 수정 end */}
+                </BottomSheetInner>
+            </BottomSheetBody>
+        </>
+    );
+}
+
+export default SMJ5202P01
