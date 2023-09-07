@@ -1,0 +1,91 @@
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer";
+import CustomA from "../../../../../common/components/button/CustomA";
+import Dropdown from "../../../../../common/components/dropdown/Dropdown";
+import NormalTextField from "../../../../../common/components/input/textField/NormalTextField";
+import SMJ2201P01 from "../SMJ2201P01/SMJ2201P01";
+import SMJ2201P02 from "../SMJ2201P02/SMJ2201P02";
+import SMJ2201P05 from "../SMJ2201P05/SMJ2201P05";
+import { ButtonWrap, FloatingButtonWrap } from "../../../../../common/components/button"; //2023-06-08 추가
+function SMJ2201M00(){
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    return(
+        <Wrap>
+            <Header back menu title={t("bk0201_0001")} />
+            <Container hasFixed>{/* 2023-06-08 hasFixed 속성 추가 */}
+                <div className="dvgroup only">{/* 퍼블검수 1차 : "first last" -> "only" 클래스네임 변경 */}
+                    <Dropdown type="account" status="filled" title={t('bk0201_0002')} accountBtm accountNum="9,999,999,999.00" btmText={t('bk0201_0003')} onClick={()=> dispatch(bottomSheetAction({
+                                    title: null,
+                                    message : <SMJ2201P01 />,
+                                    state : null
+                                }))} hint={`${t("bk0201_0002")} ${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */} {/* 출금계좌선택 바텀시트 호출 */}
+                        <i className="ci_bank lg ci_bank_020"></i>
+                        <div className="inner">
+                            <span className="account_name">Woori bank</span>
+                            <span className="account_num">1002-456-890123</span>
+                        </div>
+                    </Dropdown>
+                    {/* 2023-06-07 마크업 수정 S */}
+                    <Dropdown type="icon" fieldClass="mb16" status="filled" custTit={<div className="title_float link_wrap">{/* 퍼블검수 1차 : 클래스네임 title_flex -> title_float 으로 변경 */}
+                        <em className="inp_title">{t("bk0201_0004")}</em>
+                        <CustomA href="#none" btnClass="link_arr arr_right" callback={()=>{
+                            dispatch(bottomSheetAction({
+                                title: "",
+                                message : <SMJ2201P02/>,
+                                state : null
+                            }))
+                            }}>
+                            <span>{t("bk0201_0005")} / {t("bk0201_0006")} / {t("bk0201_0007")}</span>
+                        </CustomA>
+                    </div>} onClick={()=>{
+                        dispatch(bottomSheetAction({
+                            title: "",
+                            message : <SMJ2201P05 />,
+                            state : null
+                        }))
+                        }} hint={`${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */} {/* 입금은행 바텀시트 호출 */}
+                        <i className="ci_bank ci_bank_020"></i>
+                        <span className="inp_select_value">우리은행</span>
+                    </Dropdown>
+                    {/* 2023-06-07 마크업 수정 E */}                                   
+                    <div className="field_wrap">
+                        <NormalTextField type="number" placeholder={t("bk0201_0009")}/>
+                    </div>
+                    <div className="field_wrap is-error"> {/* 에러시 클래스 is-error 추가 */}
+                        <div className="txt_amount">
+                            <em className="num">900</em><span className="unit">Billion</span>
+                        </div>
+                        <div className="inp_field inp_amount">
+                            <div className="field_item amount_unit">
+                                <em>KRW</em>
+                            </div>
+                            <div className="inp_item amount_item">
+                                <input type="text" className="inp_text" defaultValue="999,999,999,999,999" placeholder={t('bk0201_0010')} title={t('bk0201_0010')} />
+                                <div className="inp_delete">
+                                    <button type="button" className="ico_delete inp_button"><span className="blind">{t('ce0104_0502')}</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="txt_error">
+                            <p className="tr">{t('bk0201_0012')}</p>{/* 퍼블검수 1차 : 클래스 네임 tr 추가 */}{/* 2023-06-20 클래스 제거 */}
+                        </div>
+                    </div>
+                </div>
+                {/* S : 2023-06-08 추가 */}
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <CustomA type="styled" disabled text={t('co1501_0010')} status="primary"/> {/* 퍼블검수 1차 : disabled 속성 추가 */}
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+                {/* E : 2023-06-08 추가 */}
+            </Container>
+        </Wrap>
+    )
+}
+
+export default SMJ2201M00;
