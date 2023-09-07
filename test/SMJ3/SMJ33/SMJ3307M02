@@ -1,0 +1,130 @@
+import { useState, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { popupAction } from "../../../../../common/store/popupReducer"; // 퍼블검수 1차 : 추가
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import { FloatingButtonWrap, ButtonWrap, CustomA } from "../../../../../common/components/button/index";
+import Step from "../../../../../common/components/Step";
+import Dropdown from "../../../../../common/components/dropdown/Dropdown";
+import SearchField from "../../../../../common/components/input/textField/SearchField";
+import BoxIconItem from "../../../../../common/components/BoxIconItem";
+import SegmentWrap from "../../../../../common/components/segment/SegmentWrap";
+import SegmentControl from "../../../../../common/components/segment/SegmentControl";
+import SMJ3307P14 from "../SMJ3307P14/SMJ3307P14";
+import SMJ3307P16 from "../SMJ3307P16/SMJ3307P16";
+import SMJ3307P31 from "../SMJ3307P31/SMJ3307P31"; // 퍼블검수 1차 : 추가
+import SwitchItem from "../../../../../common/components/switch/SwitchItem";
+
+function SMJ3307M02(){
+    const dispatch = useDispatch();
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    const [segmentIdx, setSegmentIdx] = useState();
+    const scrollRef = useRef();
+    const [switchToggle, setSwitchToggle] = useState(false); 
+    const switchOnChange = () => {
+        setSwitchToggle(!switchToggle);
+        setTimeout(()=>(
+            !switchToggle && window.scrollTo({top:document.documentElement.scrollHeight - window.innerHeight, behavior:"smooth"})
+        ),300) 
+    };
+
+    return(
+        <>
+            <Wrap>
+                <Header title={t("fx0301_0001")} back menu />
+                <Container hasFixed>
+                    <Step process={{cur : 2, total : 6}}  title={t("fx0301_0420")} />
+                    <Dropdown type="normal" status="filled" title={t("fx0301_0031")} hint={`${t("fx0301_0031")} ${t("fx0301_0045")}`} onClick={()=>{
+                        dispatch(bottomSheetAction({
+                            title: "",
+                            message : <SMJ3307P14 />,
+                            state : null
+                        }))
+                    }}> {/* 퍼블검수 1차 : hint 번역코드 수정 */} {/* 송금목적(SMJ3307P14) bottomsheet 호출 : default 지급증빙서류미제출송금 */}
+                        <div className="inp_select_value">{t("fx0301_0050")}</div>
+                    </Dropdown>
+                    <div className="field_wrap sch_popup"> {/* 퍼블검수 1차 : sch_popup 추가 */}
+                        <em className="inp_title">{t("fx0301_0032")}</em>
+                        <SearchField title={t("fx0301_0046")} defaultValue="미국(United States)" readOnly /> {/* 송금국가 tab시 송금국가검색 호출(화면ID : SMJ3307P15)*/}
+                    </div>
+                    <Dropdown type="icon" status="filled" title={t("fx0301_0033")} hint={`${t("fx0301_0033")} ${t("fx0301_0045")}`} onClick={()=>{
+                        dispatch(bottomSheetAction({
+                            title: "",
+                            message : <SMJ3307P16 />,
+                            state : null
+                        }))
+                    }}> {/* 퍼블검수 1차 : hint 번역코드 추가 */} {/* 통화(SMJ3307P16) bottomsheet 호출 : default 미국 */}
+                        <i className="ico_flag us"></i> 
+                        <div className="inp_select_value">{t("fx0301_0401")}</div>
+                    </Dropdown>
+                    <div className="field_wrap mb0">
+                        <em className="inp_title">{t("fx0301_0034")}</em>
+                        <div className="inp_field inp_amount">
+                            <div className="d-flex amount_item">
+                                <div className="inp_item">
+                                    <input type="number" className="inp_text" inputMode="decimal" title={t("fx0301_0035")} placeholder={t("fx0301_0035")} /> {/* 퍼블검수 1차 : type 수정, inputMode 추가 */}
+                                    <div className="inp_delete">
+                                        <button type="button" className="ico_delete inp_button"><span className="blind">{t("fx0303_0006")}</span></button>
+                                    </div>
+                                </div>
+                                <div className="inp_tilde ico_dot"></div>
+                                <div className="inp_item">
+                                    <input type="number" className="inp_text inp_decimal" inputMode="decimal" defaultValue="00" title="이체 금액 소수점 이하 두자리" /> {/* 퍼블검수 1차 : type 수정, inputMode 추가 */}
+                                    <div className="inp_delete">
+                                        <button type="button" className="ico_delete inp_button"><span className="blind">{t("fx0303_0006")}</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="txt_error">
+                            <p className="tr">{t("fx0301_0048")}</p>
+                        </div>
+                    </div>
+                    <BoxIconItem flag="us" title="USD" exprice="1,000,000,000" exnum="1,205.60" />
+                    <div className="dvgroup last">
+                        <div className="title_wrap help_wrap"> {/* 퍼블검수 1차 : 클래스명 help_wrap 변경 */}
+                            <strong className="title_lv3">{t("fx0301_0036")}</strong>
+                            {/* 퍼블검수 1차 : a => button 마크업 변경 st */}
+                            <button type="button" className="ico_help btn_help" onClick={()=> 
+                                dispatch(popupAction({
+                                title: "",
+                                message : <SMJ3307P31 />,
+                                state : null
+                            }))}><span className="blind">도움말</span></button>
+                            {/* //퍼블검수 1차 : a => button 마크업 변경 end */}
+                        </div>
+                        <SegmentWrap groupname="IntermediaryFee" activeIdx={segmentIdx}>
+                            <SegmentControl id="segmentItem01" title={t("fx0301_0037")} onChange={setSegmentIdx} />
+                            <SegmentControl id="segmentItem02" title={t("fx0301_0038")} onChange={setSegmentIdx} />
+                        </SegmentWrap>
+                    </div>
+
+                    <div className="switchbox">
+                        <SwitchItem tag="div" title={t("ls0101_0040")} name="switch" onChange={switchOnChange} />
+                        {
+                            switchToggle &&
+                            <div className="field_wrap sch_popup" ref={scrollRef}>
+                                <SearchField title={t("ls0101_0045")} icoText="직원찾기 검색" readOnly /> {/* 공통 직원찾기(SMJ1E01P00) 팝업 호출 */}
+                            </div>
+                        } 
+                    </div>
+
+                    <FloatingButtonWrap>
+                        <ButtonWrap wfix>
+                            <CustomA type="styled" href="#none" text={t("ce0103_0308")} callback={()=> navigate(".")} status="negative" /> {/* 퍼블검수 1차 : status 변경 */}
+                            <CustomA type="styled" href="#none" text={t("fx0301_0039")} callback={()=> navigate(".")} status="primary" disabled />
+                        </ButtonWrap>
+                    </FloatingButtonWrap>
+                </Container>
+            </Wrap>
+        </>
+    );
+}
+
+
+export default SMJ3307M02;
