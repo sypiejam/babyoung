@@ -1,0 +1,68 @@
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import Step from "../../../../../common/components/Step";
+import { FloatingButtonWrap, ButtonWrap, CustomA } from "../../../../../common/components/button/index";
+import Notice from "../../../../../common/components/Notice";
+import { SegmentControl, SegmentWrap } from "../../../../../common/components/segment";
+
+function SMJ6111M02(){
+    const {t} = useTranslation();
+    const [segmentIdx01, setSegmentIdx01] = useState(0);
+
+    return(
+        <>
+            <Wrap>
+                <Header title={t('ce0101_0005')} back menu />
+                <Container hasFixed>
+                    <Step process={{cur : 2, total : 2}} title={t('ce0101_0005')} />
+                    <div className="dvgroup">
+                        <SegmentWrap groupname="인증서" activeIdx={segmentIdx01}>
+                            <SegmentControl id="segmentItem01_1" title={t("ce0104_0314")} onChange={setSegmentIdx01} />
+                            <SegmentControl id="segmentItem01_2" title={t("ce0104_0315")} onChange={setSegmentIdx01} />
+                        </SegmentWrap>                    
+                        <div className="segment_panel">
+                            <div className="table_wrap">
+                                <div className="table tbl_round">
+                                    <table>
+                                        <caption>{t('ce0104_0108')}, {t('ce0103_0303')}</caption>
+                                        <colgroup>
+                                            <col style={{width:"40%"}}/>
+                                            <col/>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">{t('ce0104_0108')}</th>
+                                                <td>CINUK</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">{t('ce0103_0303')}</th>
+                                                <td>950109-1******</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>          
+                        </div>
+                    </div>
+                    <Notice>
+                        <ul className="bullet">
+                            <li className="bullet_disc">{t("ce0104_0309")}</li>
+                            <li className="bullet_disc">{t("ce0104_0310")}</li>
+                        </ul>
+                    </Notice>
+                    <FloatingButtonWrap>
+                        <ButtonWrap wfix>
+                            <CustomA type="styled" text={t('ce0103_0308')} status="negative"/>
+                            <CustomA type="styled" text={segmentIdx01===0 ? t('ce0104_0316') : t('ce0104_0317')} status="primary"/>
+                        </ButtonWrap>
+                    </FloatingButtonWrap>
+                </Container>
+            </Wrap>
+        </>
+    );
+}
+
+export default SMJ6111M02;
