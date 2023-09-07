@@ -1,0 +1,145 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import { ButtonWrap, FloatingButtonWrap, CustomA } from "../../../../../common/components/button/index";
+import Dropdown from "../../../../../common/components/dropdown/Dropdown";
+import CalendarField from "../../../../../common/components/input/textField/CalendarField";
+import { SegmentControl, SegmentWrap } from "../../../../../common/components/segment/index";
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer";
+import CalendarNormal from "../../../../../common/components/CalendarNormal";
+import IbChartComponent from "../../../../../common/components/ibChart/ibChartComponent";
+//2023-06-09 삭제 import MoreBtn from "../../../../../common/components/pageController/MoreBtn";
+import SMJ3101P02 from "../SMJ3101P02/SMJ3101P02";
+
+function SMJ3101M01(){
+    const dispatch = useDispatch();
+    const {t} = useTranslation();
+    const [active, setActive] = useState(0);
+    const chartTestData = { 
+        date : ["22.11", "22.12", "23.01", "23.02", "23.03", "23.04"], 
+        exchangeRate : [1283,1287,1299,1312,1324,1353], 
+    } // chart data
+    const navigate = useNavigate();
+    const [tableActive, setTableActive] = useState(false);
+
+    return(
+        <Wrap>
+            <Header back menu title={t("fx0100_0001")} />
+            <Container hasFixed>
+                <div className="dvgroup first">
+                    <Dropdown type="icon" status="filled" title={t("fx0202_0004")} hint={t("fx0202_0004")} onClick={()=>{
+                        dispatch(bottomSheetAction({
+                            title: "",
+                            message : <SMJ3101P02 />,
+                            state : null
+                        }))
+                        }}>
+                        <i className="ico_flag se"></i>
+                        <span className="inp_select_value">SEK(Swedish Krona)</span>
+                    </Dropdown>
+                    <div className="field_wrap">
+                        <em className="inp_title">{t("fx0205_0007")}</em>
+                        <CalendarField status="" title={t("fx0205_0007")} defaultValue="2023 04 19" onClick={()=>{
+                            dispatch(bottomSheetAction({
+                                title: "",
+                                message : <CalendarNormal />,
+                                state : null
+                            }))
+                            }}/>
+                    </div>
+                    <div className="table_wrap">
+                        <div className="table tbl_round">
+                            <table>
+                                <caption>{t("fx0100_0019")}, {t("fx0100_0017")}, {t("fx0100_0006")} </caption>{/* 퍼블검수 1차 : 번역코드 수정 */}
+                                <colgroup>
+                                    <col style={{width:"40%"}}/>{/* 퍼블검수 1차 : width 값 수정 */}
+                                    <col/>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">{t("fx0100_0019")}</th>
+                                        <td>2023 01 01 00:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">{t("fx0100_0017")}</th>{/* 퍼블검수 1차 : 번역코드 수정 */}
+                                        <td>250회</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">{t("fx0100_0006")}</th>
+                                        <td>120.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            {tableActive &&
+                                <>
+                                    <table>
+                                        <caption>{t("fx0100_0014")} {t("fx0100_0020")} {t("fx0100_0021")} {t("fx0100_0022")} {t("fx0100_0023")} {t("fx0100_0024")}</caption>
+                                        <colgroup>
+                                            <col style={{width:"40%"}}/>{/* 퍼블검수 1차 : width 값 수정 */}
+                                            <col/>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">{t("fx0100_0014")}</th>
+                                                <td>120.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">{t("fx0100_0020")}</th>
+                                                <td>120.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">{t("fx0100_0021")}</th>
+                                                <td>120.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">{t("fx0100_0022")}</th>
+                                                <td>120.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">{t("fx0100_0023")}</th>
+                                                <td>120.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">{t("fx0100_0024")}</th>
+                                                <td>120.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>                                
+                                </>
+                            }
+                            {/* 2023-06-09 마크업 수정 */}
+                            <div className="tbl_bottom link_wrap d-float">
+                                <button type="button" className={`link_arr arr_toggle${tableActive===true?" is-active" : ""}`} onClick={()=>setTableActive(!tableActive)}><span>{(tableActive)? t('bk0201_0083') : t('bk0201_0080')}</span></button>
+                            </div>
+                            {/* //2023-06-09 마크업 수정 */}
+                        </div>
+                    </div>
+                </div>
+                <div className="dvgroup last">
+                    <div className="exc_chart">
+                        <SegmentWrap activeIdx={active}>
+                            <SegmentControl id="segment1" title={t("fx0304_0017")} onChange={setActive}/>
+                            <SegmentControl id="segment2" title={t("fx0304_0018")} onChange={setActive}/>
+                            <SegmentControl id="segment3" title={t("fx0304_0019")} onChange={setActive}/>
+                        </SegmentWrap>
+                        <div className="ib_chart">
+                            <IbChartComponent data={chartTestData}/>
+                        </div>
+                    </div>
+                </div>
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <CustomA type="styled" href="#none" text={t("fx0100_0025")} callback={()=> navigate(".")} status="secondary"/>
+                        <CustomA type="styled" href="#none" text={t("fx0301_0001")} callback={()=> navigate(".")} status="primary"/>
+                    </ButtonWrap>
+                </FloatingButtonWrap>                
+            </Container>
+        </Wrap>
+    )
+}
+
+export default SMJ3101M01;
