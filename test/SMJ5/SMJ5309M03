@@ -1,0 +1,200 @@
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import BadgeItem from "../../../../../common/components/badge/BadgeItem";
+import NormalListLinkItem from '../../../../../common/components/list/NormalListLinkItem';
+import { ButtonWrap, Button, CustomA } from "../../../../../common/components/button/index";
+import CheckBox from "../../../../../common/components/input/CheckBox";
+
+// 이벤트 상세
+function SMJ5309M03(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    return(
+        <Wrap>
+            <Header back menu title={t('cs0306_0011')} />
+            <Container>
+                <div className="details details_event">{/* 2023-07-28 클래스 수정 details_evnt => details_event */}
+                    <div className="notilist">
+                        <div className="custbox_list">
+                            <NormalListLinkItem tag="div" type="div" title="우리글로벌뱅킹 해외송금 개편 기념 한도조회 이벤트 제목">
+                                {/* 진행중 이벤트 D-DAY st */}
+                                <div className="custbox_top">
+                                    <BadgeItem text="D-20" />
+                                </div>
+                                {/* 진행중 이벤트 D-DAY end */}
+                            </NormalListLinkItem>
+                            <div className="infocusto">
+                                {/* 진행중 이벤트 기간 st */}
+                                <span className="date">2023.10.22 ~ 2023.11.20</span>
+                                {/* 진행중 이벤트 기간 end */}
+    
+                                {/* 종료 이벤트 진행기간, 발표일 st */}
+                                <div className="infolist_item">
+                                    <span className="infolist_lt">{t('cs0306_0005')}</span>
+                                    <span className="infolist_rt num">2023.10.22 ~ 2023.11.20</span>
+                                </div>
+                                <div className="infolist_item">
+                                    <span className="infolist_lt">{t('cs0306_0006')}</span>
+                                    <span className="infolist_rt num">2023.12.27</span>
+                                </div>
+                                {/* 종료 이벤트 진행기간, 발표일 end */}
+    
+                                {/* 당첨자 상세 당첨내역, 발표일 st */}
+                                <div className="infolist_item">
+                                    <span className="infolist_lt">{t('cs0306_0016')}</span>
+                                    <span className="infolist_rt">starbucks Americano</span>
+                                </div>
+                                <div className="infolist_item">
+                                    <span className="infolist_lt">{t('cs0306_0006')}</span>
+                                    <span className="infolist_rt num">2023.12.27</span>
+                                </div>
+                                {/* 당첨자 상세 당첨내역, 발표일 end */}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="dvgroup last">
+                        <div className="details_cont">
+                            {/* 관리자 화면에 등록된 내용 출력 */}
+                            {/* 퍼블 참고용 : 개발에 적용하지 않습니다 st */}
+                            {/* 이벤트 상세
+                            <div style={{width:'10px', height:'300px', backgroundColor:'aqua'}}></div> */}
+                            {/* //퍼블 참고용 : 개발에 적용하지 않습니다 end */}
+{/* 2023-08-02 관리자 등록 템플릿 st */}
+{/* 2023-08-24 마크업 수정 st */}
+<div className="evt_lookout">
+    <p>준법감시인 심의필 2023-5584(2023.06.30 ~ 2023.12.31)</p>
+</div>
+<div className="evt_images">
+    <img src="/images/dummy_img.png" alt="" className="img" />
+</div>
+<div className="evt_template">
+    <div className="evt_toparea">
+        <div className="evt_keyvisual">
+            <strong className="title_h1">
+{`우리 친구해요!!
+우리글로벌뱅킹과 더 친해지고 
+선물 받아가세요~~!!`}
+            </strong>
+        </div>
+        <div className="evt_duration">
+            <BadgeItem text="Event Duration" />
+            <em className="date">2022.10.22 ~ 2022.11.20</em>
+        </div>
+    </div>
+    {/* //evt_toparea */}
+    <div className="evt_midarea">
+<div className="textarea">
+{`우리글로벌뱅킹과 카카오톡 친구하고 선물받기!
+신세계상품권 50만원
+올리브영 기프트카드 3만원권
+메가커피 아이스아메리카노
+
+선물받는 법
+Step1. 카카오톡 친구하기 버튼을 누른다.
+Step2. 창의 오른쪽 채널 추가 버튼 클릭!
+Step3. 우리가 보내는 메시지의 응모하기 클릭
+Step4. 인사말 선택 후 응모하기 클릭하며 완료!`}
+</div>
+    </div>
+    {/* //evt_midarea */}
+</div>
+<div className="evt_btmarea">
+    {/* 마케팅 수집동의 st */}
+    <div className="dvgroup">
+        <div className="evt_consent">
+<p className="textarea">
+{`마케팅수집동의 영역
+마케팅수집동의 마케팅수집동의`}
+</p>
+        </div>
+        <div className="selections_item">
+            <div className="selection">
+                <CheckBox type="normalSt" name="evtCheck" id="evtMarketing" text="동의합니다." />
+            </div>
+        </div>
+    </div>
+    {/* //마케팅 수집동의 end */}
+    <div className="dvgroup">
+        <ButtonWrap>
+            <CustomA type="styled" size="lg" href="#none" text="자세히보기" callback={()=> navigate(".")} status="primary" />
+        </ButtonWrap>
+    </div>
+    {/* 당첨자 리스트 st */}
+    <div className="dvgroup">
+        <div className="title_wrap">
+            <strong className="title_h4">당첨자 리스트</strong>
+        </div>
+        <div className="table_wrap">
+            <div className="table tbl_basic col">
+                <table>
+                    <caption>이름, 아이디</caption>{/* 접근성검수 : 표의구성 caption 추가 */}
+                    <colgroup>
+                        <col style={{width:"55%"}} />
+                        <col />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">이름</th>
+                            <th scope="col">아이디</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>이보라</td>
+                            <td>purplelee</td>
+                        </tr>
+                        <tr>
+                            <td>김우리</td>
+                            <td>woorikim</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {/* //당첨자 리스트 end */}
+    {/* 유의사항 st */}
+    <hr className="hr full thick" />
+    <div className="notibox">
+        <strong className="notibox_tit">유의사항</strong>
+        <div className="notibox_cont">
+<p className="textarea">
+{`1. 유의사항 영역 유의사항 유의사항
+2. 유의사항유의사항
+유의사항유의사항`}
+</p>
+        </div>
+    </div>
+    {/* //유의사항 end */}
+</div>
+{/* //evt_btmarea */}
+{/* //2023-08-24 마크업 수정 end */}
+{/* //2023-08-02 관리자 등록 템플릿 end */}
+                        </div>
+                    </div>
+                    <div className="share_wrap">
+                        <div className="share_tit">{t('cs0306_0012')}</div>
+                        <div className="share_box">
+                            <button type="button" className="share_item">
+                                <i className="ico_kakao lg"></i>{/* 2023-08-04 클래스 수정 md => lg */}
+                                <span className="share_txt">{t('cs0306_0013')}</span>
+                            </button>
+                            <button type="button" className="share_item">
+                                <i className="ico_sms lg"></i>{/* 2023-08-04 클래스 수정 md => lg */}
+                                <span className="share_txt">{t('cs0306_0014')}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <ButtonWrap>
+                    <CustomA type="styled" size="lg" href="#none" text={t('cs0305_0002')} callback={()=> navigate(".")} status="outlined" />
+                </ButtonWrap>
+            </Container>
+        </Wrap>
+    )
+}
+
+export default SMJ5309M03;
