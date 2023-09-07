@@ -1,0 +1,113 @@
+import {useState} from 'react'
+import { useTranslation } from "react-i18next";
+import BottomSheetHead from '../../../../../common/components/bottomSheet/BottomSheetHead';
+import BottomSheetBody from '../../../../../common/components/bottomSheet/BottomSheetBody';
+import BottomSheetInner from '../../../../../common/components/bottomSheet/BottomSheetInner';
+import { TabCont, TabMenu } from '../../../../../common/components/tab/index';
+import BtmsheetListItem from '../../../../../common/components/list/BtmsheetListItem'; // 퍼블검수 1차 : BtmsheetListItem 추가
+
+function SMJ2201P05(){
+    const {t} = useTranslation();
+
+    const [tabIdx, setTabIdx] = useState(0); // 입금계좌선택 탭인덱스 관리state
+    const [tabInfo, setTabInfo] = useState([ // 입금계좌선택 탭정보 관리state
+        {tabname : t('bk0201_0027'), id: "tab1", tabPanel: 'tab01Panel'}, 
+        {tabname : t('bk0201_0028'), id: "tab2", tabPanel: 'tab02Panel'}, 
+    ]);
+    const [selectdata, setSelectData] = useState([]); // 퍼블검수 1차 : 추가
+
+    const [dataArr, setDataArr] =useState([ // 퍼블검수 1차 : data 값에 'chk : false' 추가
+        [
+            {
+                iconCode : "020",
+                bankNeme : "우리은행",
+                chk : false
+            },
+            {
+                iconCode : "004",
+                bankNeme : "국민은행",
+                chk : false
+            },
+            {
+                iconCode : "011",
+                bankNeme : "농협",
+                chk : false
+            },
+            {
+                iconCode : "021",
+                bankNeme : "신한은행",
+                chk : false
+            },
+            {
+                iconCode : "081",
+                bankNeme : "하나은행",
+                chk : false
+            }          
+        ],
+        [
+            {
+                iconCode : "247",
+                bankNeme : "NH투자증권",
+                chk : false
+            },
+            {
+                iconCode : "261",
+                bankNeme : "교보증권",
+                chk : false
+            },
+            {
+                iconCode : "230",
+                bankNeme : "미래에셋증권",
+                chk : false
+            },
+            {
+                iconCode : "240",
+                bankNeme : "삼성증권",
+                chk : false
+            },
+            {
+                iconCode : "243",
+                bankNeme : "한국투자증권",
+                chk : false
+            }     
+        ]
+    ]); // 은행, 증권사 정보
+
+    const onchange = (e,data) => { // 퍼블검수 1차 : 추가
+        setSelectData(data.title)
+        const copy = [...dataArr][tabIdx];
+        copy.map((item, idx)=>(
+            item.chk = (e.target.value === item.title) && true
+        ))
+        setDataArr([...dataArr, copy])
+    }
+    return(
+        <>
+            <BottomSheetHead title={t('bk0201_0026')} btnClose />
+            <BottomSheetBody hType="tabfix">
+                <BottomSheetInner nospace>
+                    <div className="tab_wrap popup_tab">
+                        <div className="tab_head" role="tablist">
+                            <TabMenu tabInfo={tabInfo} tabIdx={tabIdx} onClick={setTabIdx} />
+                        </div>                       
+                        <TabCont tabcont={tabInfo[tabIdx]}>
+                            <div className="tab_body">
+                                {/* 퍼블검수 1차 : 디자인 변경으로 마크업 수정 (버튼 타입 리스트에서 체크리스트 형태로 변경) st */}
+                                <ul className="list_wrap">
+                                    {
+                                        dataArr[tabIdx].map((data, idx)=>(
+                                            <BtmsheetListItem key={idx} type="radio" chkicon name={`${tabInfo[tabIdx].tabname}`} id={`${tabInfo[tabIdx].tabPanel}_${data.iconCode}`} title={data.bankNeme} onchange={(e)=> onchange(e, data)} cicode={data.iconCode} chk={data.chk} />
+                                        ))
+                                    }
+                                {/* 퍼블검수 1차 : 디자인 변경으로 마크업 수정 end */}
+                                </ul>
+                            </div>                            
+                        </TabCont>
+                    </div>
+                </BottomSheetInner>
+            </BottomSheetBody>
+        </>
+    )
+}
+
+export default SMJ2201P05;
