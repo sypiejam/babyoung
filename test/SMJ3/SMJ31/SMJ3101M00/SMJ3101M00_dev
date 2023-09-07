@@ -1,0 +1,239 @@
+import { useState, useEffect, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+import Container from '../../../../../common/components/layout/Container'
+import Header from '../../../../../common/components/layout/Header'
+import Wrap from '../../../../../common/components/layout/Wrap'
+import useApi from '../../../../../common/hooks/useApi'
+import useLayerUtil from '../../../../../common/hooks/useLayerUtil'
+import useRouter from '../../../../../common/hooks/useRouter'
+import useUserInfo from '../../../../../common/hooks/useUserInfo'
+import DateUtil from '../../../../../common/modules/DateUtils'
+import SMJ3101M00Country from './SMJ3101M00_Country'
+import SMJ3101M00Notice from './SMJ3101M00_Notice'
+
+const SMJ3101M00 = () => {
+    const {t} = useTranslation()
+    const [isLoading, callApi] = useApi()
+    const [userInfo] = useUserInfo()
+    const router = useRouter()
+    const [showLayer, hideLayer] = useLayerUtil()
+    const [login, setLogin] = useState(false)               // 로그인 여부
+    const [checkLogin, setCheckLogin] = useState(false)     // 로그인 여부 확인
+    const [list, setList] = useState([])
+    const [myCnt, setMyCnt] = useState()
+    const notice = [t("fx0100_0002"), t("fx0100_0003"), t("fx0100_0004")]
+
+    /**
+     * @role 로그인 여부 확인
+     */
+    useEffect(() => {
+        if(userInfo) {
+            setCheckLogin(true)
+            setLogin(userInfo.isLogin)
+        }
+    }, [userInfo])
+
+    /**
+     * @role promise 조회
+     */
+    const inquirePromise = useCallback((url, param) => {
+        const promise = new Promise((resolve, reject) => {
+            const req = {
+                url: url,
+                data: param,
+                loadingBar: true,
+                callback: {
+                    SUCCESS: (res) => resolve(res),
+                    FAIL: (e) => reject(e),
+                    NEED_LOGIN: () => console.log('NEED_LOGIN')
+                }
+            }
+            callApi(req)
+        })
+        return promise
+    }, [])
+
+    /**
+     * @role 환율 조회
+     */
+    const inquireExchangeRate = useCallback(async () => {
+        try {
+            // 모든 환율 조회
+            let url = '/smj/smj/fxc/FXCExchangeRate/inqExchangeRate'
+            let param = {
+                basDt: DateUtil.getDate('yyyyMMdd')
+            }
+            console.log('inqExchangeRate param: ' + JSON.stringify(param, null, 4))
+
+            const all = await inquirePromise(url, param)
+            console.log('all: ' + JSON.stringify(all, null, 4))
+
+            // MY 환율 조회
+            if(userInfo.isLogin) {
+                url = '/smj/smj/fxc/FXCExchangeRate/inqMyExchangeRate'
+                param = {
+                    userId: userInfo.userId
+                }
+                console.log('inqMyExchangeRate param: ' + JSON.stringify(param, null, 4))
+
+                const my = await inquirePromise(url, param)
+                console.log('my: ' + JSON.stringify(my, null, 4))
+
+                makeList(all.subList, my)
+            } else {
+                makeList(all.subList, [])
+            }
+        } catch(e) {
+            console.log('FAIL: ' + JSON.stringify(e, null, 4))
+        }
+    }, [inquirePromise, userInfo])
+
+    useEffect(() => {
+        console.log('checkLogin: ' + checkLogin)
+        if(checkLogin) {
+            inquireExchangeRate()
+        }
+    }, [checkLogin, inquireExchangeRate])
+
+    /**
+     * @role 목록 만들기
+     */
+    const makeList = (all, my) => {
+        const myList = Object.values(my)
+        setMyCnt(Number(myList[myList.length - 1]))
+
+        const top = []
+        const others = []
+        for(let i = 0; i < all.length; i++) {
+            if(myList.includes(all[i].natCode)) {
+                all[i].checked = true
+                top.push(all[i])
+            } else {
+                all[i].checked = false
+                others.push(all[i])
+            }
+        }
+        const list = top.concat(others)
+        list.splice(list.length - 2)
+        console.log('makeList: ' + JSON.stringify(list, null, 4))
+        setList(list)
+    }
+
+    /**
+     * @role MY환율
+     */
+    const clickStar = (index) => {
+        if(!login) {
+            showAlert(t('fx0100_0009'))
+            return
+        }
+
+        // MY환율 5개 이상인 경우
+        if(myCnt === 5 && !list[index].checked) {
+            showAlert(t('fx0100_0011'))
+            return
+        }
+
+        let my = []
+        for(let i = 0; i < 5; i++) {
+            if(list[i].checked) {
+                my.push(list[i].natCode)
+            } else {
+                break
+            }
+        }
+
+        if(list[index].checked) {       // 해제
+            my.splice(index, 1)
+        } else {                        // 등록
+            my.push(list[index].natCode)
+        }
+
+        const param = {}
+        param.useYn = 'Y'
+
+        for(let i = 0; i < my.length; i++) {
+            const id = 'crcd' + (i + 1)
+            param[id] = my[i]
+        }
+        console.log('param: ' + JSON.stringify(param, null, 4))
+        registerMyExchangeRate(param, index, my)
+    }
+
+    /**
+     * @role alert
+     */
+    const showAlert = useCallback(msg => {
+        showLayer.openDialog({
+            type: 'alert',
+            title: msg,
+            btn1: t('fx0100_0010'),
+            onClick1: () => {
+                hideLayer.deleteDialog()
+            }
+        })
+    }, [showLayer, hideLayer, t])
+
+    /**
+     * @role MY 환율 등록/해제
+     */
+    const registerMyExchangeRate = (param, index) => {
+        const req = {
+            url: '/smj/smj/fxc/FXCExchangeRate/updateMyExchangeRate',
+            data: param,
+            loadingBar: true,
+            callback: {
+                SUCCESS: () => registerMyExchangeRateCallback(index),
+                FAIL: (err) => console.log(JSON.stringify(err, null, 4)),
+                NEED_LOGIN: () => console.log('NEED_LOGIN')
+            }
+        }
+        callApi(req)
+    }
+
+    /**
+     * @role MY 환율 등록/해제 콜백
+     */
+    const registerMyExchangeRateCallback = (index) => {
+        const msg = list[index].checked ? 'fx0100_0008' : 'fx0100_0007'
+        showLayer.openToastMessage({
+            title: t(msg),
+            option: true,
+            onClick: () => {
+                hideLayer.deleteToastMessage()
+            }
+        })
+
+        // 상태 업데이트
+        //setMyCnt(my)
+        //setList(list.map((item, idx) => idx === index ? { ...item, checked: !item.checked } : item))
+
+        inquireExchangeRate()
+    }
+
+    /**
+     * @role 상세 화면 이동
+     */
+    const goDetail = (item) => {
+        router.goPage('SMJ3101M01', item, 0)
+    }
+
+    return (
+        <Wrap>
+            <Header back menu title={t("fx0100_0001")} />
+            <Container>
+                {/* 2023-05-26 마크업 수정 */}
+                <ul className="listbox lastnobrd mg0">
+                    {list.map((item, index) => (
+                        <SMJ3101M00Country item={item} key={index} index={index} clickStar={clickStar} goDetail={goDetail} />
+                    ))}
+                </ul>
+                {/* //2023-05-26 마크업 수정 */}
+
+                <SMJ3101M00Notice notice={notice} />
+            </Container>
+        </Wrap>
+    )
+}
+
+export default SMJ3101M00
