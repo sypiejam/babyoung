@@ -1,0 +1,43 @@
+/*******************************************************************************
+ * @업무명:     통화 목록
+ * @업무설명:   통화 목록
+ * @파일명:     SMJ3101M00_Country.js
+ * @작성자:     yoojin
+ * @작성일:     2023.05.31
+ * *******************************변경이력***************************************
+ * 번호     작업자           작업일           변경내용
+ * ----     -------         ----------      ------------------------------------
+ * 1        yoojin          2023.05.31      최초작성
+ ******************************************************************************/
+
+import CustomA from "../../../../../common/components/button/CustomA"
+import SMJ3101M00 from "./SMJ3101M00_Star"
+import { getMenuUrl } from '../../../../../common/modules/commonRouter'
+import { useTranslation } from "react-i18next"
+import StringUtil from "../../../../../common/modules/StringUtils"
+
+const SMJ3101M00Country = ({ item, index, clickStar, goDetail }) => {
+    const {t} = useTranslation()
+    const { natCode, natName, natCode2, sbBasRt, checked } = item
+    
+    return (
+        <li className="listbox_list">
+            <CustomA href={getMenuUrl('SMJ3101M01')} btnClass="listbox_item anchor" callback={()=> goDetail(item)}>
+                <div className="exlist">
+                    <i className={`ico_flag ${natCode2}`}></i>
+                    <div className="listbox_desc">
+                        <div className="d-flex">
+                            <span className="listbox_tit">{natCode}({t(natName)})</span>
+                        </div>
+                        <div className="btm">
+                            <span className="listbox_txt fc-blue01">{StringUtil.addComma(sbBasRt, 2)}</span>
+                        </div>
+                    </div>
+                </div>
+            </CustomA>
+            <SMJ3101M00 index={index} checked={checked} clickStar={clickStar} />
+        </li>
+    )
+}
+
+export default SMJ3101M00Country
