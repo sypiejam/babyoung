@@ -1,0 +1,208 @@
+
+import { useTranslation } from "react-i18next"
+import { useDispatch } from "react-redux"
+import { useState } from "react"
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer"
+import { dialogAction } from "../../../../../common/store/dialogReducer"
+import { toastAction } from "../../../../../common/store/toastReducer"
+import PopupFrame from "../../../../../common/components/popup/PopupFrame"
+import PopupHeader from "../../../../../common/components/popup/PopupHeader"
+import PopupContainer from "../../../../../common/components/popup/PopupContainer"
+import Dropdown from "../../../../../common/components/dropdown/Dropdown"
+import { SegmentWrap, SegmentControl } from "../../../../../common/components/segment/index"
+import { FloatingButtonWrap, ButtonWrap, Button } from "../../../../../common/components/button"
+import Notice from "../../../../../common/components/Notice";// 2023-07-13 추가
+import SMJ5202P06 from "../SMJ5202P06/SMJ5202P06"
+import SMJ3101P02 from "../../../../SMJ3/SMJ31/SMJ3101/SMJ3101P02/SMJ3101P02"
+
+function SMJ5202P04(){ // 환율 알림설정 팝업
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    const BtmsheetEvt1 = () => { //통화선택 바텀시트
+        dispatch(bottomSheetAction({
+            title: "",
+            message : <SMJ3101P02 />,
+            state : null
+        })) 
+    }
+    const BtmsheetEvt2 = () => { //환율종류 바텀시트
+        dispatch(bottomSheetAction({
+            title: "",
+            message : <SMJ5202P06 />,
+            state : null
+        })) 
+    }
+    const whenToNotify = [ // 통지일
+        {type : 'chk', id : 'whentodnotifyopt01', title : t("co1001_0003")},
+        {type : 'chk', id : 'whentodnotifyopt02', title : t("co1001_0004")},
+        {type : 'chk', id : 'whentodnotifyopt03', title : t("co1001_0005")},
+        {type : 'chk', id : 'whentodnotifyopt04', title : t("co1001_0006")},
+        {type : 'chk', id : 'whentodnotifyopt05', title : t("co1001_0007")},
+    ];
+    const [whenToNotifyValueChk, setWhenToNotifyValueChk] = useState([]); // 선택된 통지일관리 state
+    const chkSingle = (chk, id) => { // 요일선택시
+        if(chk){
+            setWhenToNotifyValueChk(prev => [...prev, id])
+        } else {
+            setWhenToNotifyValueChk(whenToNotifyValueChk.filter((el)=> el !== id))
+        }
+    }
+    const chkAll = (chk) => { // 매일선택시
+        if(chk) {
+            const idArr = [];
+            whenToNotify.forEach((el)=> idArr.push(el.id))
+            setWhenToNotifyValueChk(idArr)
+        } else {
+            setWhenToNotifyValueChk([])
+        }
+    }
+    const [segmentIdx01, setSegmentIdx01] = useState(0); //통지시간 segment
+
+    const dialog = () => { // 해지버튼 클릭시
+        dispatch(dialogAction({
+            type : "confirm",
+            title: "환율알림을 해지할까요?", 
+            message : "",
+            btn1 : t('co0200_0009'),
+            btn2 : t('co1501_0010'), 
+            onClick1 : ()=>{
+                dispatch(dialogAction({}))
+            },
+            onClick2 : (e)=>{
+                toastEvt(t("cs0201_0060"))
+                dispatch(dialogAction({}))
+            }
+        }))
+    }
+    const toastEvt = (toastText) =>{ // 환율알림이 등록되거나 해지되는 경우
+        dispatch(toastAction({
+            option: "true",
+            title: toastText,
+            btnName : ""
+        }))
+    }
+    return(
+        <>
+            <PopupFrame>
+                <PopupHeader type="normal" title={t("cs0201_0044")} /> 
+                <PopupContainer hasFixed>
+                    {/* 기설정 상태에서 노출 */}
+                    <div className="dvgroup first">
+                        <div className="title_wrap">
+                            <em className="inp_title">{t("cs0201_0044")}</em>
+                        </div>
+                        <div className="table_wrap">
+                            <div className="table tbl_round mt0">
+                                <table>
+                                    <caption>{t("cs0201_0044")}</caption>
+                                    <colgroup>
+                                        <col style={{width:'65%'}} />
+                                        <col />
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">{t("cs0201_0056")}</th>
+                                            <td>2022.11.01</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    {/* 통화선택(최대 2개) */}
+                    <div className="dvgroup first">
+                        <div className="field_wrap is-error"> {/* 동일통화선택시 is-error 클래스 추가 */}
+                            <em className="inp_title">{t("cs0201_0045")}</em>
+                            <div className="field_flex">
+                                <div className="inp_field inp_select">
+                                    <button type="button" className="inp_select_item" title={t("cs0201_0045")} onClick={BtmsheetEvt1}>
+                                        <div className="inp_select_value">{t("ls0101_0052")}</div>
+                                    </button>
+                                </div>
+                                <div className="inp_field inp_select">
+                                    <button type="button" className="inp_select_item" title={t("cs0201_0045")} onClick={BtmsheetEvt1}>
+                                        <div className="inp_select_value">{t("ls0101_0052")}</div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div className="txt_error">
+                                <p>선택하신 2개의 통화가 같습니다. 서로 다른 통화를 선택하세요.</p> {/* 동일통화선택시 error문구(번역미수급) */}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 환율종류 */}
+                    <div className="dvgroup">
+                        <Dropdown type="normal" title={t("cs0201_0046")} onClick={BtmsheetEvt2}>
+                            <span className="inp_select_value">{t("ls0101_0052")}</span>
+                        </Dropdown> 
+                    </div>  
+
+                    {/* 통지일 */}
+                    <div className="dvgroup">
+                        <div className="title_wrap">
+                            <em className="inp_title">{t("cs0201_0047")}</em>
+                        </div>
+                        <ul className="list_half">
+                            <li className="chk_item">
+                                <input type="checkbox" name="whentodnotify" id="whentodnotifyAll" className="check_normal" onChange={(e)=> chkAll(e.target.checked)} checked={whenToNotifyValueChk.length === whenToNotify.length} />
+                                <label htmlFor="whentodnotifyAll">{t("cs0201_0048")}</label>
+                            </li>
+                            {
+                                whenToNotify.map((list, key)=>(
+                                    <li className="chk_item" key={key}>
+                                        <input type="checkbox" name="whentodnotify" id={list.id} className="check_normal" onChange={(e)=> chkSingle(e.target.checked , list.id)} checked={whenToNotifyValueChk.includes(list.id)} />
+                                        <label htmlFor={list.id}>{list.title}</label>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                        {/* 퍼블검수 1차 : 디자인 변경 반영 st */}
+                        <div className="txt_helper">
+                            <p className="bullet_disc">{t("cs0201_0066")}</p>
+                        </div>
+                        {/* //퍼블검수 1차 : 디자인 변경 반영 end */}
+                    </div>
+                    
+                    {/* 통지시간 */}
+                    <div className="dvgroup">
+                        <div className="segment_wrap">
+                            <div className="title_wrap">
+                                <em className="title_lv3">{t("cs0201_0049")}</em>
+                            </div>
+                            <SegmentWrap groupname="segmentItem01" activeIdx={segmentIdx01}>
+                                <SegmentControl id="segmentItem01_1" title={t("cs0201_0050")} onChange={setSegmentIdx01} />
+                                <SegmentControl id="segmentItem01_2" title={t("cs0201_0051")} onChange={setSegmentIdx01} />
+                                <SegmentControl id="segmentItem01_3" title={t("cs0201_0052")} onChange={setSegmentIdx01} />
+                            </SegmentWrap>
+                        </div>
+                    </div>
+
+                    {/* 알아두세요 */}
+                    {/* 2023-07-13 마크업 변경 st */}
+                    <Notice>
+                        <ul className="bullet">
+                            <li className="bullet_disc">{t("cs0201_0053")}</li>
+                            <li className="bullet_disc">{t("cs0201_0054")}</li>
+                            <li className="bullet_disc">{t("cs0201_0055")}</li>
+                        </ul>
+                    </Notice>
+                    {/* 2023-07-13 마크업 변경 end */}
+                </PopupContainer>
+                <FloatingButtonWrap>
+                    {/* 미설정시 */}
+                    <ButtonWrap>
+                        <Button tag="button" text={t('ce103_0144')} status="primary" /> {/* 등록시 onClick=>() toastEvt(t('cs201_0071')) */}
+                    </ButtonWrap>
+                    {/* 설정시 */}
+                    {/* <ButtonWrap wfix>
+                        <Button tag="button" text={t('cs0201_0058')} status="negative" /> 해지시 onClick={dialog} //퍼블검수 1차 : status 수정 gray => negative
+                        <Button tag="button" text={t('cs0201_0035')} status="primary" /> 변경시 onClick=>() toastEvt(t('cs201_0059'))
+                    */}
+                </FloatingButtonWrap>
+            </PopupFrame>
+        </>
+    )
+}
+
+export default SMJ5202P04
