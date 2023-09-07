@@ -1,0 +1,298 @@
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { toastAction } from "../../../../../common/store/toastReducer";
+import PopupFrame from "../../../../../common/components/popup/PopupFrame"
+import PopupHeader from "../../../../../common/components/popup/PopupHeader"
+import PopupContainer from "../../../../../common/components/popup/PopupContainer"
+import { FloatingButtonWrap, ButtonWrap, Button } from "../../../../../common/components/button/index";
+import styled from 'styled-components'
+
+// 언어설정
+function SMJ5414P00(){
+    const dispatch = useDispatch();
+    const {t} = useTranslation();
+   
+    return(
+        <>
+            <PopupFrame>
+                <PopupHeader type="normal" title={t("cs0401_0003")} />
+                <PopupContainer hasFixed>
+                    <StyledLangWrap>
+                        <div className="title_wrap">
+                            <strong className="title_h3">{t("cs0401_0008")}</strong>{/* 2023-07-21 태그 수정 h2 => strong, 2023-06-05 클래스 수정 title_h2 => title_h3 */}
+                        </div>
+                        {/* 
+                            ## 클래스명 국가 :lang(언어코드)
+                            ch 중국 :lang(zh)
+                            id 인도네시아 :lang(id)
+                            jp 일본 :lang(ja)
+                            kh 캄보디아 :lang(km)
+                            kr 한국 :lang(ko)
+                            mn 몽골 :lang(mn)
+                            ru 러시아 :lang(ru)
+                            th 태국 :lang(th)
+                            us 미국 :lang(en)
+                            vn 베트남 :lang(vi)
+                            ## 2023-07-19 7개 국가 추가
+                            ph 필리핀 :lang(tl)
+                            uz 우즈베키스탄 :lang(uz)
+                            lk 스리랑카 :lang(si)
+                            bd 방글라데시 :lang(bn)
+                            pk 파키스탄(rtl) :lang(ur)
+                            np 네팔 :lang(ne)
+                            mm 미얀마 :lang(my)
+                        */}
+                        <div className="lang_box">
+                            <StyledLangItemGroup>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_zh" value="zh" name="language" />
+                                    <label htmlFor="lang_zh" className="lang_chkitem">
+                                        <i className="ico_flag cn"></i>
+                                        <span className="text">{t("cs0302_0006")}</span>
+                                        {/* 중국어 */}
+                                    </label>
+                                </StyledLangItem>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_en" value="en" name="language" />
+                                    <label htmlFor="lang_en" className="lang_chkitem">
+                                        <i className="ico_flag us"></i>
+                                        <span className="text">{t("cs0302_0004")}</span>
+                                        {/* 영어 */}
+                                    </label>
+                                </StyledLangItem>
+                            </StyledLangItemGroup>
+                            <StyledLangItemGroup>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_ja" value="ja" name="language" />
+                                    <label htmlFor="lang_ja" className="lang_chkitem">
+                                        <i className="ico_flag jp"></i>
+                                        <span className="text">{t("cs0302_0012")}</span>
+                                        {/* 일본어 */}
+                                    </label>
+                                </StyledLangItem>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_vi" value="vi" name="language" />
+                                    <label htmlFor="lang_vi" className="lang_chkitem">
+                                        <i className="ico_flag vn"></i>
+                                        <span className="text">{t("cs0302_0007")}</span>
+                                        {/* 베트남어 */}
+                                    </label>
+                                </StyledLangItem>
+                            </StyledLangItemGroup>
+                            <StyledLangItemGroup>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_mn" value="mn" name="language" />
+                                    <label htmlFor="lang_mn" className="lang_chkitem">
+                                        <i className="ico_flag mn"></i>
+                                        <span className="text">{t("cs0302_0011")}</span>
+                                        {/* 몽골어 */}
+                                    </label>
+                                </StyledLangItem>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_id" value="id" name="language" />
+                                    <label htmlFor="lang_id" className="lang_chkitem">
+                                        <i className="ico_flag id"></i>
+                                        <span className="text">{t("cs0302_0013")}</span>
+                                        {/* 인도네시아어 */}
+                                    </label>
+                                </StyledLangItem>
+                            </StyledLangItemGroup>
+                            <StyledLangItemGroup>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_th" value="th" name="language" />
+                                    <label htmlFor="lang_th" className="lang_chkitem">
+                                        <i className="ico_flag th"></i>
+                                        <span className="text">{t("cs0302_0010")}</span>
+                                        {/* 태국어 */}
+                                    </label>
+                                </StyledLangItem>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_ru" value="ru" name="language" />
+                                    <label htmlFor="lang_ru" className="lang_chkitem">
+                                        <i className="ico_flag ru"></i>
+                                        <span className="text">{t("cs0302_0009")}</span>
+                                        {/* 러시아어 */}
+                                    </label>
+                                </StyledLangItem>
+                            </StyledLangItemGroup>
+                            <StyledLangItemGroup>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_km" value="km" name="language" />
+                                    <label htmlFor="lang_km" className="lang_chkitem">
+                                        <i className="ico_flag kh"></i>
+                                        <span className="text">{t("cs0302_0014")}</span>
+                                        {/* 캄보디아어 */}
+                                    </label>
+                                </StyledLangItem>
+                            {/* 2023-07-19 언어추가 st */}
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_tl" value="tl" name="language" />
+                                    <label htmlFor="lang_tl" className="lang_chkitem">
+                                        <i className="ico_flag ph"></i>
+                                        <span className="text">{t("cs0401_0009")}</span>
+                                        {/* 필리핀어 */}
+                                    </label>
+                                </StyledLangItem>
+                            </StyledLangItemGroup>
+                            <StyledLangItemGroup>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_uz" value="uz" name="language" />
+                                    <label htmlFor="lang_uz" className="lang_chkitem">
+                                        <i className="ico_flag uz"></i>
+                                        <span className="text">{t("cs0401_0010")}</span>
+                                        {/* 우즈베키스탄 */}
+                                    </label>
+                                </StyledLangItem>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_si" value="si" name="language" />
+                                    <label htmlFor="lang_si" className="lang_chkitem">
+                                        <i className="ico_flag lk"></i>
+                                        <span className="text">{t("cs0401_0011")}</span>
+                                        {/* 스리랑카어 */}
+                                    </label>
+                                </StyledLangItem>
+                            </StyledLangItemGroup>
+                            <StyledLangItemGroup>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_bn" value="bn" name="language" />
+                                    <label htmlFor="lang_bn" className="lang_chkitem">
+                                        <i className="ico_flag bd"></i>
+                                        <span className="text">{t("cs0401_0012")}</span>
+                                        {/* 방글라데시어 */}
+                                    </label>
+                                </StyledLangItem>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_ur" value="ur" name="language" />
+                                    <label htmlFor="lang_ur" className="lang_chkitem">
+                                        <i className="ico_flag pk"></i>
+                                        <span className="text">{t("cs0401_0013")}</span>
+                                        {/* 파키스탄어 */}
+                                    </label>
+                                </StyledLangItem>
+                            </StyledLangItemGroup>
+                            <StyledLangItemGroup>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_ne" value="ne" name="language" />
+                                    <label htmlFor="lang_ne" className="lang_chkitem">
+                                        <i className="ico_flag np"></i>
+                                        <span className="text">{t("cs0401_0014")}</span>
+                                        {/* 네팔어 */}
+                                    </label>
+                                </StyledLangItem>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_my" value="my" name="language" />
+                                    <label htmlFor="lang_my" className="lang_chkitem">
+                                        <i className="ico_flag mm"></i>
+                                        <span className="text">{t("cs0401_0015")}</span>
+                                        {/* 미얀마어 */}
+                                    </label>
+                                </StyledLangItem>
+                            </StyledLangItemGroup>
+                            <StyledLangItemGroup>
+                                <StyledLangItem>
+                                    <input type="radio" id="lang_ko" value="ko" name="language" defaultChecked />
+                                    <label htmlFor="lang_ko" className="lang_chkitem">
+                                        <i className="ico_flag kr"></i>
+                                        <span className="text">{t("cs0302_0016")}</span>
+                                        {/* 한국어 */}
+                                    </label>
+                                </StyledLangItem>
+                            </StyledLangItemGroup>
+                            {/* 2023-07-19 언어추가 end */}
+                        </div>
+                    </StyledLangWrap>
+
+                    <FloatingButtonWrap>
+                        <ButtonWrap>
+                            <Button
+                                tag="button"
+                                text={t("fx0100_0010")}
+                                status="primary"
+                                onClick={() => {
+                                dispatch(toastAction({
+                                    option: "true", // 2023-05-22 option 추가 
+                                    title: "언어설정 변경완료되었습니다.",
+                                    btnName: "",
+                                    onClick: "",
+                                }))}
+                            }/> {/* t('cs0402_0001') */}
+                        </ButtonWrap>
+                    </FloatingButtonWrap>
+                </PopupContainer>
+            </PopupFrame>
+        </>
+    )
+}
+
+const StyledLangWrap = styled.div`
+
+    .title_wrap {
+        margin:2.4rem 0 1.2rem;
+    }
+`;
+
+const StyledLangItemGroup = styled.div`
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+
+    & + & {
+        margin-top:1.6rem;
+    }
+`;
+
+const StyledLangItem = styled.div`
+    position:relative;
+    width:calc(50% - 0.8rem); //2023-07-19 수정
+
+    & + & {
+        margin-left:1.6rem;
+    }
+
+    .ico_flag {
+        width:3.6rem;
+        height:3.6rem;
+    }
+
+    input {
+        display:none;
+        position:absolute;
+        z-index:-1;
+        opacity:0;
+
+        &:checked + .lang_chkitem {
+            border:2px solid #1490EF;
+        }
+    }
+
+    .lang_chkitem {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        min-width:11.2rem;
+        height:11.3rem;
+        padding:0 2rem;
+        border:1px solid #e4eaf2;
+        border-radius:0.6rem;
+        box-sizing:border-box;
+
+        .text {
+            display:block;
+            width:100%;
+            margin-top:0.8rem;
+            color:#151c22;
+            font-size:1.5rem;
+            font-weight:400;
+            line-height:1.4;
+            text-align:center;
+            word-break:break-word; // 2023-05-24 word-break 추가
+        }
+
+        @media only screen and (max-width:320px) {
+            padding:0;
+        }
+    }
+`;
+
+export default SMJ5414P00;
