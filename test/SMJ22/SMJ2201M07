@@ -1,0 +1,175 @@
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import CustomA from "../../../../../common/components/button/CustomA";
+import Dropdown from "../../../../../common/components/dropdown/Dropdown";
+import SwitchItem from "../../../../../common/components/switch/SwitchItem";
+import CalendarField from "../../../../../common/components/input/textField/CalendarField";
+import CheckBox from "../../../../../common/components/input/CheckBox";
+//import { AccordionItem, AccordionWrap } from "../../../../../common/components/accordion"; 퍼블검수 1차 : 아코디언 삭제
+import { ButtonWrap, FloatingButtonWrap } from "../../../../../common/components/button";
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer";
+import CalendarNormal from "../../../../../common/components/CalendarNormal";
+import SMJ2201P08 from "../SMJ2201P08/SMJ2201P08";
+import SMJ2201P12 from "../SMJ2201P12/SMJ2201P12";
+import NormalTextField from "../../../../../common/components/input/textField/NormalTextField";
+import SMJ2201P13 from "../SMJ2201P13/SMJ2201P13";
+import SMJ2201P14 from "../SMJ2201P14/SMJ2201P14";
+import Notice from "../../../../../common/components/Notice"; //퍼블검수 1차 : Notice 추가
+
+function SMJ2201M07(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [switchBox, setSwitchBox] = useState(false);
+
+    return(
+        <Wrap>
+            <Header back menu title={t("bk0201_0001")} />
+            <Container hasFixed>
+                <div className="dvgroup first"> 
+                    <Dropdown type="account" status="filled" title={t('bk0201_0002')} accountBtm accountNum="9,999,999,999.00" btmText={t('bk0201_0003')} hint={`${t("bk0201_0002")} ${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */}
+                        <i className="ci_bank lg ci_bank_020"></i>
+                        <div className="inner">
+                            <span className="account_name">Woori bank</span>
+                            <span className="account_num">1002-456-890123</span>
+                        </div>
+                    </Dropdown>
+                    <Dropdown type="icon" fieldClass="mb16" status="filled" custTit={ <div className="title_float link_wrap">{/* 퍼블검수 1차 : title_flex -> title_float 클래스 네임 변경 */}
+                            <em className="inp_title">{t("bk0201_0004")}</em>
+                            <CustomA href="#none" btnClass="link_arr arr_right" callback={()=> dispatch(bottomSheetAction({
+                                title: null,
+                                message : <SMJ2201P08/>,
+                                state : null
+                            }))} >
+                                <span>{t("bk0201_0005")}/{t("bk0201_0006")}/{t("bk0201_0007")}</span>
+                            </CustomA>
+                        </div>} hint={`${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */}
+                        <i className="ci_bank ci_bank_020"></i>
+                        <span className="inp_select_value">우리은행</span>
+                    </Dropdown>
+                    <div className="field_wrap">
+                        <NormalTextField type="number" placeholder={t('bk0201_0009')} defaultValue="1002000123123" />
+                    </div>
+                    <div className="field_wrap">
+                        <div className="txt_amount">
+                            <em className="num">900</em><span className="unit">Billion</span>
+                        </div>
+                        <div className="inp_field inp_amount">
+                            <div className="field_item amount_unit">
+                                <em>KRW</em>
+                            </div>
+                            <div className="inp_item amount_item">
+                                <input type="text" className="inp_text" defaultValue="999,999,999,999,999" placeholder={t('bk0201_0010')} title={t('bk0201_0010')} />
+                                <div className="inp_delete">
+                                    <button type="button" className="ico_delete inp_button"><span className="blind">{t('ce0104_0502')}</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="dvgroup">
+                    {/* 2023-06-20 마크업수정 S */}
+                    <div className="trf_table">
+                        <button type="button" className="trf_tr">
+                            <div className="trf_tr_inner">
+                                <span className="trf_th">{t('bk0201_0029')}</span>
+                                <span className="trf_td">김우리</span>
+                            </div>
+                        </button>
+                        <button type="button" className="trf_tr">
+                            <div className="trf_tr_inner">
+                                <span className="trf_th">{t('bk0201_0030')}</span>
+                                <span className="trf_td">김우리</span>
+                            </div>
+                        </button>
+                        <div className="trf_tr">
+                            <div className="trf_tr_inner">
+                                <span className="trf_th">{t('bk0201_0031')}</span>
+                                <span className="trf_td">
+                                    <div className="inp_item">
+                                        <input type="text" className="inp_text tr" placeholder="보험회사, 기업 등" title={t('bk0201_0031')} />
+                                        <div className="inp_delete">
+                                            <button type="button" className="ico_delete inp_button"><span className="blind">삭제</span></button>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div className="trf_tr col2">
+                            <SwitchItem tag="div" name="switch" title={t('bk0201_0032')} info onChange={()=>setSwitchBox(!switchBox)} callback={()=>{
+                            dispatch(bottomSheetAction({
+                                title: "",
+                                message : <SMJ2201P13 />,
+                                state : null
+                            }))}}/>
+                            {// 예약이체 스위치 on
+                                switchBox&&
+                                <div className="field_wrap">
+                                    <div className="field_flex">
+                                        <CalendarField defaultValue="" onClick={()=>{
+                                        dispatch(bottomSheetAction({
+                                            title: "",
+                                            message : <CalendarNormal />,
+                                            state : null
+                                        }))}}/>
+                                        <div className="inp_field inp_select"> {/* D : 시간이 선택되면 filled 클래스 추가 */}
+                                            <button type="button" className="inp_select_item" title="시간 선택" onClick={()=>{
+                                                dispatch(bottomSheetAction({
+                                                    title: "",
+                                                    message : <SMJ2201P12 />,
+                                                    state : null
+                                                }))}}>
+                                                <div className="inp_select_value">8~9a.m.</div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div className="trf_tr col2 selection">
+                            <CheckBox type="normal" name="checkBox" id="check01" text={t('bk0201_0033')}/>
+                            <button type="button" className="ico_help btn_help" onClick={()=>{
+                                dispatch(bottomSheetAction({
+                                    title: "",
+                                    message : <SMJ2201P14 />,
+                                    state : null
+                                }))}}>
+                                <span className="blind">도움말</span>
+                            </button>{/* 퍼블검수 1차 : CustomA 컴포넌트 -> button 태그로 변경 / btnClass -> className 으로 변경 / href 삭제 / type="button" 추가 / callback -> onClick 으로 변경  */}
+                        </div>
+                    </div>
+                    {/* 2023-06-20 마크업수정 E */}
+                </div>
+                {/* 퍼블검수 1차 : 알아두세요 아코디언 -> Notice 컴포넌트로 변경 st */}
+                <Notice>
+                    <ul className="bullet">
+                        <li className="bullet_disc">{t('bk0201_0035')}
+                            <ul className="bullet">
+                                <li className="bullet_dash">{t('bk0201_0036')}</li>
+                            </ul>
+                        </li>
+                        <li className="bullet_disc">{t('bk0201_0037')}
+                            <ul className="bullet">
+                                <li className="bullet_dash">{t('bk0201_0038')}</li>
+                                <li className="bullet_dash">{t('bk0201_0039')}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </Notice>
+                {/* 퍼블검수 1차 : 알아두세요 아코디언 -> Notice 컴포넌트로 변경 end */}
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <CustomA type="styled" href="#none" text={t("co1501_0010")} callback={()=> navigate(".")} status="primary" />
+                    </ButtonWrap>
+                </FloatingButtonWrap>                           
+            </Container>
+        </Wrap>
+    )
+}
+
+export default SMJ2201M07;
