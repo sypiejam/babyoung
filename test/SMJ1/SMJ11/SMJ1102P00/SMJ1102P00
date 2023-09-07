@@ -1,0 +1,138 @@
+import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
+import { useState } from "react"
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import PopupFrame from "../../../../../common/components/popup/PopupFrame"
+import PopupHeader from "../../../../../common/components/popup/PopupHeader"
+import PopupContainer from "../../../../../common/components/popup/PopupContainer"
+import Nodata from "../../../../../common/components/empty/Empty"
+import { FloatingButtonWrap, ButtonWrap, Button } from "../../../../../common/components/button"
+
+function SMJ1102P00(){ // 대표계좌설정
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    const [accountShowList, setAccountShowList] = useState([
+        {id : 'showaccount1', accountName : '노출계좌명1', accountNumber : '111111-111-111111', accountNickname : '계좌별명1', checked : 'checked', disabled : 'disabled'},
+        {id : 'showaccount2', accountName : '노출계좌명2', accountNumber : '222222-222-222222', accountNickname : '계좌별명2', checked : 'checked', disabled : ''},
+        {id : 'showaccount3', accountName : '노출계좌명3', accountNumber : '333333-333-333333', accountNickname : '계좌별명3', checked : 'checked', disabled : ''},
+        {id : 'showaccount4', accountName : '노출계좌명4', accountNumber : '444444-444-444444', accountNickname : '계좌별명4', checked : 'checked', disabled : ''}
+    ])
+
+    const [accountHideList, setAccountHideList] = useState([
+        {id : 'hideaccount1', accountName : '숨김계좌명1', accountNumber : '111111-111-111111', accountNickname : '숨김계좌별명1'},
+        {id : 'hideaccount2', accountName : '숨김계좌명2', accountNumber : '222222-222-222222', accountNickname : '숨김계좌별명2'},
+        {id : 'hideaccount3', accountName : '숨김계좌명3', accountNumber : '333333-333-333333', accountNickname : '숨김계좌별명3'},
+    ])
+    const onDragEnd = (result) => {
+        if(!result.destination) return;
+        const items = [...accountShowList];
+        const [reorderedItem] = items.splice(result.source.index,1);
+        items.splice(result.destination.index, 0, reorderedItem)
+        setAccountShowList(items);
+    };
+    return(
+        <>
+           <PopupFrame>
+                <PopupHeader type="normal" title={t("ma0600_0001")} />
+                <PopupContainer hasFixed>
+                    <div className="dvgroup first">
+                        <ul className="bullet">
+                            <li className="bullet_disc">{t("ma0600_0002")}</li>
+                            <li className="bullet_disc"><span className="ico_list"></span><span className="vm ml4">{t("ma0600_0003")}</span></li>
+                        </ul>
+                    </div>
+                        <div className="m-account_set">
+                            {/* 홈에 보이는 계좌 */}
+                            <div className="m-account_show">
+                            <hr className="hr full thick" />
+                            <div className="m-account_head">
+                                <strong className="">{t("ma0600_0004")}</strong>
+                                <span className="count">4</span>
+                            </div>
+                            <DragDropContext onDragEnd={onDragEnd}>
+                                <div className="m-account_body">
+                                    <Droppable droppableId="m-account_list">
+                                        {(provided, snapshot) => (
+                                            <ul className="m-account_list" ref={provided.innerRef} {...provided.droppableProps}>
+                                                {accountShowList.map(({id, accountNumber, accountName, accountNickname, checked,disabled}, index)=>(
+                                                    <Draggable key={id} draggableId={id} index={index}>
+                                                        {(provided, snapshot) => {
+                                                            let transform = provided.draggableProps.style.transform;
+                                                            let isdragging = '';
+                                                            if(snapshot.isDragging && transform) {
+                                                                transform = transform.replace(/\(.+\,/,"(0,");
+                                                                isdragging = " isdragging"
+                                                            } else {
+                                                                isdragging = ""
+                                                            }
+                                                            return(
+                                                                <li 
+                                                                    className={`chk_inner${isdragging}`}
+                                                                    key={id}
+                                                                    ref={provided.innerRef} 
+                                                                    {...provided.draggableProps}
+                                                                    {...provided.dragHandleProps} 
+                                                                    style={{...provided.draggableProps.style, transform}}
+                                                                >
+                                                                    <div className="chk_item">
+                                                                        <input type="checkbox" name="Normal" id={id} className="check_normal" defaultChecked disabled={disabled} />
+                                                                        <label htmlFor={id}>
+                                                                            <span className="name">{accountName}</span>
+                                                                            <span className="account">{accountNumber}</span>
+                                                                            <span className="nickname">{accountNickname}</span>
+                                                                        </label>
+                                                                    </div>
+                                                                </li>
+                                                            )
+                                                        }}
+                                                    </Draggable>
+                                                ))}
+                                                {provided.placeholder}
+                                            </ul>
+                                        )}
+                                    </Droppable>
+                                    {/* 계좌 없을경우 */}
+                                    <Nodata txt={t("ma0600_0005")} />
+                                </div>
+                            </DragDropContext>
+                        </div>
+                        {/* 홈에 보이지 않는 계좌 */}
+                        <div className="m-account_hide">
+                            <hr className="hr full thick" />
+                            <div className="m-account_head">
+                                <strong className="">{t("ma0600_0006")}</strong>
+                                <span className="count">2</span>
+                            </div>
+                            <div className="m-account_body">
+                                <ul>
+                                    {
+                                        accountHideList.map(({id, accountNumber, accountName, accountNickname}, index)=>(
+                                            <li className="chk_inner" key={id}>
+                                                <div className="chk_item">
+                                                    <input type="checkbox" name="Normal" id={id} className="check_normal" />
+                                                    <label htmlFor={id}>
+                                                        <span className="name">{accountName}</span>
+                                                        <span className="account">{accountNumber}</span>
+                                                        <span className="nickname">{accountNickname}</span>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                                {/* 계좌 없을경우 */}
+                                <Nodata txt={t("bk0101_0006")} /> {/* 2023-08-25 번역코드 변경 */} 
+                            </div>
+                        </div>
+                    </div>
+                    <FloatingButtonWrap>
+                        <ButtonWrap>
+                            <Button tag="button" text={t("ma0600_0007")} onClick={()=> navigate(".")} status="primary" />
+                        </ButtonWrap>
+                    </FloatingButtonWrap>
+                </PopupContainer>
+            </PopupFrame>
+        </>
+    )
+}
+export default SMJ1102P00
