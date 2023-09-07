@@ -1,0 +1,121 @@
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import Nodata from "../../../../../common/components/empty/Empty";
+import SMJ3311P02 from "../../SMJ3311/SMJ3311P02/SMJ3311P02";
+import NormalListLinkItem from "../../../../../common/components/list/NormalListLinkItem";
+import Notice from "../../../../../common/components/Notice";
+
+function SMJ3311M00(){
+    const dispatch = useDispatch();
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    
+    return(
+        <Wrap>
+            <Header back menu title={t("fx0301_0011")} />
+            <Container>
+                <div className="exc_wrap">
+                    <div className="condition big sticky">{/* 2023-06-26 sticky 클래스 추가 */}
+                        <div className="inner">
+                            <div className="atl"> {/* 퍼블검수 1차 : 클래스명 수정 */}
+                                <em className="date_str">2022.01.01</em> ~ <em className="date_end">2022.01.31</em>
+                            </div>
+                            <div className="atr">
+                                {/* 퍼블검수 1차 : a => button 마크업 변경 st */}
+                                <button type="button" className="ico_setting" onClick={()=> 
+                                    dispatch(bottomSheetAction({
+                                        title: "",
+                                        message : <SMJ3311P02 />,
+                                        state : null
+                                    }))
+                                }>{/* onClick={상세검색팝업 호출} */}
+                                    <span className="blind">{t("bk0101_0164")}</span>
+                                </button>
+                                {/* //퍼블검수 1차 : a => button 마크업 변경 end */}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* 송금내역 결과가 있는 경우 */}
+                    <ul className="list_box lastnobrd">{/* 2023-06-26 lastnobrd 클래스 추가 */}
+                        <NormalListLinkItem tag="li" type="a" arrow callback={()=> navigate("/SMJ3311M01")}>{/* callback={송금상세 이동} */}
+                            <div className="exc_custbox_tit">
+                                <span className="txt_caption">2022.09.27</span>
+                                <strong className="item_tit">FDT01022000813</strong>
+                            </div>
+                            <div className="exc_custbox_btm">
+                                <ul>
+                                    <li className="infolist_item">
+                                        <span className="infolist_rt">USD 30,000,000,000</span>
+                                    </li>
+                                    <li className="infolist_item">
+                                        <span className="infolist_rt">KIM WOORI</span>
+                                    </li>
+                                    <li className="infolist_item">
+                                        <span className="infolist_rt fc-blue02">{t("fx0305_0008")}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </NormalListLinkItem>
+                        <NormalListLinkItem tag="li" type="a" arrow>
+                            <div className="exc_custbox_tit">
+                                <span className="txt_caption">2022.09.27</span>
+                                <strong className="item_tit">FDT01022000813</strong>
+                            </div>
+                            <div className="exc_custbox_btm">
+                                <ul>
+                                    <li className="infolist_item">
+                                        <span className="infolist_rt">USD 30,000,000,000</span>
+                                    </li>
+                                    <li className="infolist_item">
+                                        <span className="infolist_rt">KIM WOORI</span>
+                                    </li>
+                                    <li className="infolist_item">
+                                        <span className="infolist_rt fc-blue02">{t("fx0305_0009")}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </NormalListLinkItem>
+                        <NormalListLinkItem tag="li" type="a" arrow>
+                            <div className="exc_custbox_tit">
+                                <span className="txt_caption">2022.09.27</span>
+                                <strong className="item_tit">FDT01022000813</strong>
+                            </div>
+                            <div className="exc_custbox_btm">
+                                <ul>
+                                    <li className="infolist_item">
+                                        <span className="infolist_rt">USD 30,000,000,000</span>
+                                    </li>
+                                    <li className="infolist_item">
+                                        <span className="infolist_rt">KIM WOORI</span>
+                                    </li>
+                                    <li className="infolist_item">
+                                        <span className="infolist_rt fc-blue02">{t("fx0305_0010")}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </NormalListLinkItem>
+                    </ul>
+
+                    {/* 송금내역 결과가 없는 경우 */}
+                    <Nodata txt={t("fx0304_0005")} />
+
+                    <Notice>
+                        {/* 퍼블검수 1차 : 마크업 변경 st */}
+                        <div className="bullet">
+                            <p className="bullet_item">{t("fx0305_0001")}</p>
+                        </div>
+                        {/* //퍼블검수 1차 : 마크업 변경 end */}
+                    </Notice>
+                </div>
+            </Container>
+        </Wrap>
+    )
+}
+
+export default SMJ3311M00;
