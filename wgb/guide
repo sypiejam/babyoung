@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>우리글로벌뱅킹 재구축</title>
+<link rel="stylesheet" href="listmap.css">
+</head>
+<body>
+	<div class="header">
+		<h1 class="title">
+			<span class="title_brand">우리은행</span><span class="title_sub">우리글로벌뱅킹 컴포넌트</span>
+		</h1>
+		<div class="tabs"><select class="selectbox"></select></div>
+		<div class="dashboard">
+			<div class="dashboard_test" title="수정중">-</div>
+			<div class="dashboard_done re_done" title="완료">-</div>
+			<div class="dashboard_count" title="전체페이지 중 ">
+				<span class="dashboard_done">-</span>
+				<span class="dashboard_total">-</span>
+				<span class="dashboard_percent">-</span>
+				<span class="dashboard_thumb"></span>
+			</div>
+		</div>
+	</div>
+	<div class="contents">
+
+		<h2 class="heading">Components</h2>
+		<div>
+			<table>
+				<colgroup>
+					<col style="width:150px;">
+					<col>
+					<col>
+					<col>
+					<col style="width:300px">
+					<col>
+					<col>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th class="depth1">DEPTH1</th>
+						<th class="depth2">DEPTH2</th>
+						<th class="page">PAGE</th>
+						<th class="type">TYPE</th>
+						<th class="file">FILE</th>
+						<th class="progress">PROGRESS</th>
+						<th class="date">DATE</th>
+						<th class="author">AUTHOR</th>
+						<th class="note">NOTE</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- <tr>
+						<td class="depth1">화면명</td>
+						<td class="depth2"></td>
+						<td class="page"></td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">page ID</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr> -->
+					<tr>
+						<td class="depth1">Style Guide</td>
+						<td class="depth2"></td>
+						<td class="page"></td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">styleGuide</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Layout</td>
+						<td class="depth2">Page</td>
+						<td class="page">레이아웃</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">layout</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Layout</td>
+						<td class="depth2">Popup</td>
+						<td class="page">팝업</td>
+						<td class="type">
+							<span title="page|alert|popup|link">popup</span>
+						</td>
+						<td class="file">layoutPopup</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Button</td>
+						<td class="depth2"></td>
+						<td class="page">버튼</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">button</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Title</td>
+						<td class="depth2"></td>
+						<td class="page">타이틀</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">title</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Text Container</td>
+						<td class="depth2"></td>
+						<td class="page">텍스트 컨테이너</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">textContainer</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Page Controller</td>
+						<td class="depth2"></td>
+						<td class="page">페이지 컨트롤러</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">pageController</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Table</td>
+						<td class="depth2"></td>
+						<td class="page">테이블</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">table</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">List</td>
+						<td class="depth2"></td>
+						<td class="page">리스트</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">list</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Text Field</td>
+						<td class="depth2"></td>
+						<td class="page">텍스트 필드</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">textField</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Search Field</td>
+						<td class="depth2"></td>
+						<td class="page">서치 필드</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">searchField</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Switch</td>
+						<td class="depth2"></td>
+						<td class="page">스위치</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">switch</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Dropdown</td>
+						<td class="depth2"></td>
+						<td class="page">드롭다운</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">dropdown</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Bullet</td>
+						<td class="depth2"></td>
+						<td class="page">블릿</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">bullet</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Badge</td>
+						<td class="depth2"></td>
+						<td class="page">뱃지</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">badge</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Tag</td>
+						<td class="depth2"></td>
+						<td class="page">태그</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">tag</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Checkbox/RadioButton</td>
+						<td class="depth2"></td>
+						<td class="page">체크박스/라디오버튼</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">checkRadio</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Segment Control</td>
+						<td class="depth2"></td>
+						<td class="page">세그먼트</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">segment</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Terms</td>
+						<td class="depth2"></td>
+						<td class="page">약관</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">terms</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>					
+					<tr>
+						<td class="depth1">Empty</td>
+						<td class="depth2"></td>
+						<td class="page">결과없음</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">empty</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Flash Message</td>
+						<td class="depth2"></td>
+						<td class="page">플래시 메시지</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">flashMsg</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Share</td>
+						<td class="depth2"></td>
+						<td class="page">공유</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">share</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Notice</td>
+						<td class="depth2"></td>
+						<td class="page">알아두세요</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">notice</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Tab</td>
+						<td class="depth2"></td>
+						<td class="page">탭</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">tab</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Bottom Sheet</td>
+						<td class="depth2"></td>
+						<td class="page">바텀시트</td>
+						<td class="type">
+							<span title="page|alert|popup|link">btmsheet</span>
+						</td>
+						<td class="file">btmsheet</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Dialog/Dimmed</td>
+						<td class="depth2"></td>
+						<td class="page">다이얼로그/딤드</td>
+						<td class="type">
+							<span title="page|alert|popup|link">alert</span>
+						</td>
+						<td class="file">dialog</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Toast</td>
+						<td class="depth2"></td>
+						<td class="page">토스트</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">toast</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Accordion</td>
+						<td class="depth2"></td>
+						<td class="page">아코디언</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">accordion</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Top Area</td>
+						<td class="depth2"></td>
+						<td class="page">탑 에어리어</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">topArea</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+					<tr>
+						<td class="depth1">Icon</td>
+						<td class="depth2"></td>
+						<td class="page">아이콘</td>
+						<td class="type">
+							<span title="page|alert|popup|link">page</span>
+						</td>
+						<td class="file">icon</td>
+						<td class="progress">
+							<span title="해당없음|작업전|보류|작업중|검수중|수정중|완료"></span>
+						</td>
+						<td class="date"></td>
+						<td class="author"></td>
+						<td class="note"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+	<iframe src="" frameborder="0" id="iframe"></iframe>
+	<script type="text/javascript" src="/js/nonetouch/com/renewal/lib/jquery-3.3.1.min.js"></script>
+	<script src="listmap.js"></script>
+</body>
+</html>
