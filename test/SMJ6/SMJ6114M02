@@ -1,0 +1,114 @@
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import { FloatingButtonWrap, ButtonWrap, CustomA } from "../../../../../common/components/button";
+import { BadgeItem, BadgeWrap } from "../../../../../common/components/badge";
+import Nodata from "../../../../../common/components/empty/Empty";
+import Notice from "../../../../../common/components/Notice"; //2023-08-16 추가
+
+function SMJ6114M02(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+
+    return(
+        <Wrap>
+            <Header title={t("ce0101_0009")} back menu />
+            <Container hasFixed>
+                <div className="dvgroup first">{/* 2023-08-16 div.dvgroup.first 추가 */}
+                    <div className="certify_wrap">{/* 2023-08-16 mt24 클래스 네임 제거 */}
+                        <div className="title_wrap mb12">
+                            <strong className="title_h3">{t("ce0104_0405")}</strong>
+                        </div>
+                        <ul className="baselist">
+                            <li className="listbox_item">
+                                <input type="radio" name="certify" id="certifyItem01" className="radio_round radio_normal" />
+                                <label htmlFor="certifyItem01">
+                                    <div className="certify_flex">
+                                        <div className="certify_info">
+                                            <div className="certify_info_tit">
+                                                <strong className="title_h3">yessign(우리은행)</strong>
+                                            </div>
+                                            <div className="certify_info_txt">
+                                                <p className="text">은행/보험용</p>
+                                                <span className="date">2022.09.08~2023.09.08</span>
+                                            </div>
+                                            <BadgeWrap>
+                                                <BadgeItem color="" text={t("ce0104_0611")} />
+                                            </BadgeWrap>
+                                        </div>
+                                    </div>
+                                </label>
+                            </li>
+                            <li className="listbox_item">
+                                <input type="radio" name="certify" id="certifyItem02" className="radio_round radio_normal" />
+                                <label htmlFor="certifyItem02">
+                                    <div className="certify_flex">
+                                        <div className="certify_info">
+                                            <div className="certify_info_tit">
+                                                <strong className="title_h3">yessign(우리은행)</strong>
+                                            </div>
+                                            <div className="certify_info_txt">
+                                                <p className="text">은행/보험용</p>
+                                                <span className="date">2022.09.08~2023.09.08</span>
+                                            </div>
+                                            <BadgeWrap>
+                                                <BadgeItem color="red" text={t("ce0104_0612")} />
+                                            </BadgeWrap>
+                                        </div>
+                                    </div>
+                                </label>
+                            </li>
+                            <li className="listbox_item">
+                                <input type="radio" name="certify" id="certifyItem03" className="radio_round radio_normal" disabled />
+                                <label htmlFor="certifyItem03">
+                                    <div className="certify_flex">
+                                        <div className="certify_info">
+                                            <div className="certify_info_tit">
+                                                <strong className="title_h3">yessign(우리은행)</strong>
+                                            </div>
+                                            <div className="certify_info_txt">
+                                                <p className="text">은행/보험용</p>
+                                                <span className="date">2022.09.08~2023.09.08</span>
+                                                <span className="date"></span>
+                                            </div>
+                                            <BadgeWrap>
+                                                <BadgeItem color="disabled" text="20 Days left" />
+                                            </BadgeWrap>
+                                        </div>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {/* 폐기할 대상 인증서가 없는 경우 */}
+                <Nodata type="large" txt={t("ce0104_0614")} icon="certi" />
+                
+                {/* 2023-08-16 알아두세요 추가 st */}
+                <Notice>
+                    <div className="bulletbox">
+                        <ul className="bullet">
+                            <li className="bullet_disc">{t("ce0104_0863")}</li>
+                            <li className="bullet_disc">{t("ce0104_0864")}</li>
+                            <li className="bullet_disc">{t("ce0104_0865")}</li>
+                            {/* <li className="bullet_disc">{t("ce0104_0866")}</li> 2023-08-25 기획반영 삭제 */}
+                        </ul>
+                    </div>
+                </Notice>
+                {/* 2023-08-16 알아두세요 추가 end */}
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <CustomA type="styled" href="#none" text={t("ce0104_0605")} callback={()=> navigate(".")} status="primary" />
+                        {/* 인증서가 없는 경우 확인 버튼 노출
+                            <CustomA type="styled" href="#none" text={t("co1501_0010")} callback={()=> navigate(".")} status="primary" />
+                        */}
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default SMJ6114M02;
