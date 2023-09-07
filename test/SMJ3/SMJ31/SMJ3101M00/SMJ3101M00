@@ -1,0 +1,134 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import CustomA from "../../../../../common/components/button/CustomA";
+import Notice from "../../../../../common/components/Notice";// 2023-07-13 추가
+// import Nodata from "../../../../../common/components/empty/Empty";
+
+function SMJ3101M00(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    return(
+        <Wrap>
+            <Header back menu title={t("fx0100_0001")} />
+            <Container>
+                {/* 2023-05-26 마크업 수정 */}
+                <ul className="listbox lastnobrd mg0">
+                    <li className="listbox_list">
+                        <CustomA href="" btnClass="listbox_item anchor" callback={()=> navigate(".")}>
+                            <div className="exlist">
+                                <i className="ico_flag us"></i>
+                                <div className="listbox_desc">
+                                    <div className="d-flex">
+                                        <span className="listbox_tit">US Dollar</span>
+                                    </div>
+                                    <div className="btm">
+                                        <span className="listbox_txt fc-blue01">1,312.20</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </CustomA>
+                        <span className="chk_star listbox_favor">
+                            <input type="checkbox" id="chkStar1" className="blind"/>{/* 즐겨찾기 아이콘 checked on/off시 토스트 팝업 노출 */}
+                            <label htmlFor="chkStar1" className="ico_star"><span className="blind">즐겨찾기 등록</span></label>
+                        </span>
+                    </li>      
+                    <li className="listbox_list">
+                        <CustomA href="" btnClass="listbox_item anchor" callback={()=> navigate(".")}>
+                            <div className="exlist">
+                                <i className="ico_flag jp"></i>
+                                <div className="listbox_desc">
+                                    <div className="d-flex">
+                                        <span className="listbox_tit">Japanese Yen</span>
+                                    </div>
+                                    <div className="btm">
+                                        <span className="listbox_txt fc-blue01">1,312.20</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </CustomA>
+                        <span className="chk_star listbox_favor">
+                            <input type="checkbox" id="chkStar2" className="blind"/>
+                            <label htmlFor="chkStar2" className="ico_star"><span className="blind">즐겨찾기 등록</span></label>
+                        </span>
+                    </li>
+                    <li className="listbox_list">
+                        <CustomA href="" btnClass="listbox_item anchor" callback={()=> navigate(".")}>
+                            <div className="exlist">
+                                <i className="ico_flag se"></i>
+                                <div className="listbox_desc">
+                                    <div className="d-flex">
+                                        <span className="listbox_tit">Swedish Krona</span>
+                                    </div>
+                                    <div className="btm">
+                                        <span className="listbox_txt fc-blue01">1,312.20</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </CustomA>
+                        <span className="chk_star listbox_favor">
+                            <input type="checkbox" id="chkStar3" className="blind"/>
+                            <label htmlFor="chkStar3" className="ico_star"><span className="blind">즐겨찾기 등록</span></label>
+                        </span>
+                    </li>
+                    <li className="listbox_list">
+                        <CustomA href="" btnClass="listbox_item anchor" callback={()=> navigate(".")}>
+                            <div className="exlist">
+                                <i className="ico_flag hk"></i>
+                                <div className="listbox_desc">
+                                    <div className="d-flex">
+                                        <span className="listbox_tit">Hong Kong Dollar</span>
+                                    </div>
+                                    <div className="btm">
+                                        <span className="listbox_txt fc-blue01">1,312.20</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </CustomA>
+                        <span className="chk_star listbox_favor">
+                            <input type="checkbox" id="chkStar4" className="blind"/>
+                            <label htmlFor="chkStar4" className="ico_star"><span className="blind">즐겨찾기 등록</span></label>
+                        </span>
+                    </li>  
+                    <li className="listbox_list">
+                        <CustomA href="" btnClass="listbox_item anchor" callback={()=> navigate(".")}>
+                            <div className="exlist">
+                                <i className="ico_flag gb"></i>
+                                <div className="listbox_desc">
+                                    <div className="d-flex">
+                                        <span className="listbox_tit">British Pound</span>
+                                    </div>
+                                    <div className="btm">
+                                        <span className="listbox_txt fc-blue01">1,312.20</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </CustomA>
+                        <span className="chk_star listbox_favor">
+                            <input type="checkbox" id="chkStar5" className="blind"/>
+                            <label htmlFor="chkStar5" className="ico_star"><span className="blind">즐겨찾기 등록</span></label>
+                        </span>
+                    </li>                                                            
+                </ul>
+                {/* //2023-05-26 마크업 수정 */}
+
+                {/* 검색결과가 없는 경우
+                <Nodata txt={t("co1200_0007")} /> */}
+
+                {/* 2023-07-13 마크업 변경 st */}
+                <Notice>
+                    <ul className="bullet">
+                        <li className="bullet_disc">{t("fx0100_0002")}</li>
+                        <li className="bullet_disc">{t("fx0100_0003")}</li>
+                        <li className="bullet_disc">{t("fx0100_0004")}</li>
+                    </ul>
+                </Notice>
+                {/* 2023-07-13 마크업 변경 end */}
+            </Container>
+        </Wrap>
+    )
+}
+
+export default SMJ3101M00;
