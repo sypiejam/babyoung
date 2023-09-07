@@ -1,0 +1,513 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer";
+import { FloatingButtonWrap, ButtonWrap, CustomA } from "../../../../../common/components/button/index";
+// import { AccordionWrap, AccordionItem } from "../../../../../common/components/accordion"; 퍼블검수 1차 : 삭제
+import Notice from "../../../../../common/components/Notice"; // 퍼블검수 1차 : 추가
+import { SegmentWrap, SegmentControl } from "../../../../../common/components/segment/index";
+import NormalTextField from "../../../../../common/components/input/textField/NormalTextField";
+import PasswordField from "../../../../../common/components/input/textField/PasswordField";
+import Dropdown from "../../../../../common/components/dropdown/Dropdown";
+import BoxIconItem from "../../../../../common/components/BoxIconItem";
+import SMJ2206P05 from "../../SMJ2206/SMJ2206P05/SMJ2206P05";
+import SMJ2206P06 from "../../SMJ2206/SMJ2206P06/SMJ2206P06";
+import SMJ2207P05 from "../SMJ2207P05/SMJ2207P05";
+import SMJ2207P06 from "../SMJ2207P06/SMJ2207P06"; // SWIFT안내 바텀시트
+import SMJ2207P07 from "../SMJ2207P07/SMJ2207P07";
+import SMJ2207P08 from "../SMJ2207P08/SMJ2207P08";
+
+function SMJ2207M00(){
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [segmentIdx01, setSegmentIdx01] = useState(0); //출금계좌 segment
+    const [segmentIdx02, setSegmentIdx02] = useState(0); //이체금액 segment
+
+    return(
+        <>
+            <Wrap>
+                <Header title={t("bk0206_0001")} back menu />
+                <Container hasFixed>
+                    <div className="dvgroup first">
+                        <div className="title_wrap">
+                            <em className="inp_title">{t("bk0201_0002")}</em>
+                        </div>
+                        <SegmentWrap groupname="출금계좌" activeIdx={segmentIdx01}>
+                            <SegmentControl id="segmentItem01_1" title={t("bk0205_0008")} onChange={setSegmentIdx01} />
+                            <SegmentControl id="segmentItem01_2" title={t("bk0205_0009")} onChange={setSegmentIdx01} />
+                            <SegmentControl id="segmentItem01_3" title={t("bk0205_0010")} onChange={setSegmentIdx01} />
+                        </SegmentWrap>
+                        {/* s : 원화계좌 tab : segmentItem01_1*/}
+                        { 
+                            segmentIdx01 === 0 &&
+                            <>
+                                <div className="segment_panel">
+                                    {/* 2023-06-07 <div className="field_wrap"> 삭제 */}
+                                    {/* D : 선택한 계좌가 없을 시 노출 */}
+                                    <Dropdown type="account" fieldClass="mb0" hint={`${t("bk0201_0002")} ${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */}
+                                        <div className="inner">
+                                            <span className="inp_select_value">{t('bk0203_0029')}</span>
+                                        </div>
+                                    </Dropdown>
+                                    {/* D : 선택한 계좌가 있을 시 노출
+                                        <Dropdown type="account" fieldClass="mb0" status="filled" accountBtm accountNum="00" hint={`${t("bk0201_0002")} ${t('bk0203_0029')}`}> 퍼블검수 1차 : hint 속성 추가
+                                                <i className="ci_bank lg ci_bank_020"></i>
+                                            <div className="inner">
+                                                <span className="account_name">Woori bank</span>
+                                                <span className="account_num">1002-456-890123</span>
+                                            </div>
+                                        </Dropdown>                                        
+                                    */}
+                                    <div className="txt_helper">
+                                        <p className="bullet_disc">{t("bk0206_0002")}</p>
+                                    </div>  
+                                </div>                  
+                            </>
+                        }
+                        {/* e : 원화계좌 tab : segmentItem01_1*/}                        
+                        {/* s : 외화계좌 tab : segmentItem01_2*/}
+                        { 
+                            segmentIdx01 === 1 &&
+                            <>
+                                <div className="segment_panel">
+                                    {/* 2023-06-07 <div className="field_wrap"> 삭제 */}
+                                    {/* D : 선택한 계좌가 없을 시 노출
+                                    <Dropdown type="account" hint={`${t("bk0201_0002")} ${t('bk0203_0029')}`}> 퍼블검수 1차 : hint 속성 추가
+                                        <div className="inner">
+                                            <span className="inp_select_value">{t("bk0205_0021")}</span>
+                                        </div>
+                                    </Dropdown>
+                                        */}
+                                    {/* D : 선택한 계좌가 있을 시 노출 */}
+                                    <Dropdown type="account" status="filled" accountBtm accountNum="999,999,999,999,999" hint={`${t("bk0201_0002")} ${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */}
+                                        <i className="ci_bank lg ci_bank_020"></i>
+                                        <div className="inner">
+                                            <span className="account_name">Woori bank</span>
+                                            <span className="account_num">1002-456-890123</span>
+                                        </div>
+                                    </Dropdown>
+                                    {/* s : 출금계좌 외화MMDA PLUS 이자 지금식 계좌인 경우 */}
+                                    {/* 2023-06-07 마크업 수정 S */}
+                                    {/* D : 선택한 계좌가 없을 시 노출 */}
+                                    <Dropdown type="account" custTit={<div className="title_wrap help_wrap"> {/* 퍼블검수 1차 : 클래스 네임 변경 "d-flex mb8" -> "title_wrap help_wrap"*/}
+                                        <em className="inp_title">{t("bk0205_0026")}</em>{/* 퍼블검수 1차 : mr4 클래스 네임 삭제 */}
+                                        <button type="button" className="ico_help btn_help" onClick={()=> dispatch(bottomSheetAction({
+                                                title: null,
+                                                message : <SMJ2206P05 />,
+                                                state : null
+                                            }))}>
+                                            <span className="blind">도움말</span>
+                                        </button>{/* 퍼블검수 1차 : CustomA 컴포넌트 -> button 태그로 변경 / btnClass -> className 으로 변경 / href 삭제 / type="button" 추가 / callback -> onClick 으로 변경  */}
+                                    </div>} hint={`${t("bk0205_0026")} ${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */}
+                                        <div className="inp_select_value">{t('bk0205_0019')}</div>
+                                    </Dropdown> 
+                                    {/* D : 선택한 계좌가 있을 시 노출
+                                    <Dropdown type="account" status="filled" accountBtm accountNum="000" custTit={<div className="title_wrap help_wrap"> 퍼블검수 1차 : 클래스 네임 변경 "d-flex mb8" -> "title_wrap help_wrap"
+                                        <em className="inp_title">{t("bk0205_0026")}</em> 퍼블검수 1차 : mr4 클래스 네임 삭제
+                                        <button type="button" className="ico_help btn_help" onClick={()=> dispatch(bottomSheetAction({
+                                                title: null,
+                                                message : <SMJ2206P05 />,
+                                                state : null
+                                            }))}>
+                                            <span className="blind">도움말</span>
+                                        </button>
+                                    </div>} hint={`${t("bk0205_0026")} ${t('bk0203_0029')}`}> 퍼블검수 1차 : hint 속성 추가
+                                        <i className="ci_bank lg ci_bank_020"></i>
+                                        <div className="inner">
+                                            <span className="account_name">Woori bank</span>
+                                            <span className="account_num">1002-456-890123</span>
+                                        </div>
+                                    </Dropdown>  
+                                    */}  
+                                    {/* 2023-06-07 마크업 수정 E */}
+                                    {/* e : 출금계좌 외화MMDA PLUS 이자 지금식 계좌인 경우 */}
+                                </div>                     
+                            </>
+                        }                               
+                        {/* e : 외회계좌 tab : segmentItem01_2*/}         
+                        {/* s : 원화/외화 계좌 tab : segmentItem01_3*/}
+                        { 
+                            segmentIdx01 === 2 &&
+                            <>
+                                <div className="segment_panel">
+                                    {/* D : 외화 출금계좌/ 선택한 계좌가 없을 시 노출*/}
+                                    <Dropdown type="account" title={t("bk0205_0027")} hint={`${t("bk0205_0027")} ${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */}
+                                        <div className="inner">
+                                            <span className="inp_select_value">{t("bk0205_0021")}</span>
+                                        </div>
+                                    </Dropdown>
+                                        
+                                    {/* D : 외화 출금계좌/ 선택한 계좌가 있을 시 노출 
+                                    <Dropdown type="account" title={t("bk0205_0027")} status="filled" accountBtm accountNum="00" hint={`${t("bk0205_0027")} ${t('bk0203_0029')}`}> 퍼블검수 1차 : hint 속성 추가 
+                                        <i className="ci_bank lg ci_bank_020"></i>
+                                        <div className="inner">
+                                            <span className="account_name">Woori bank</span>
+                                            <span className="account_num">1002-456-890123</span>
+                                        </div>
+                                    </Dropdown>     */}  
+                                    <div className="field_wrap">
+                                        <em className="inp_title">{t("bk0205_0025")}</em>
+                                        <PasswordField title={t("bk0205_0025")}/>
+                                    </div>
+                                    {/* s : 출금계좌 외화MMDA PLUS 이자 지금식 계좌인 경우 */}
+                                    {/* 2023-06-07 마크업 수정 S */}
+                                    {/* D : 선택한 계좌가 없을 시 노출 */}
+                                    <Dropdown type="account" custTit={<div className="title_wrap help_wrap"> {/* 퍼블검수 1차 : 클래스 네임 변경 "d-flex mb8" -> "title_wrap help_wrap"*/}
+                                        <em className="inp_title">{t("bk0205_0026")}</em>{/* 퍼블검수 1차 : mr4 클래스 네임 삭제 */}
+                                        <button type="button" className="ico_help btn_help" onClick={()=> dispatch(bottomSheetAction({
+                                                title: null,
+                                                message : <SMJ2206P05 />,
+                                                state : null
+                                            }))}>
+                                            <span className="blind">도움말</span>
+                                        </button>{/* 퍼블검수 1차 : CustomA 컴포넌트 -> button 태그로 변경 / btnClass -> className 으로 변경 / href 삭제 / type="button" 추가 / callback -> onClick 으로 변경  */}
+                                    </div>} hint={`${t("bk0205_0026")} ${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */}
+                                        <div className="inp_select_value">{t('bk0205_0019')}</div>
+                                    </Dropdown>
+                                    {/* D : 선택한 계좌가 있을 시 노출
+                                    <Dropdown type="account" status="filled" accountBtm accountNum="000" custTit={<div className="title_wrap help_wrap"> 퍼블검수 1차 : 클래스 네임 변경 "d-flex mb8" -> "title_wrap help_wrap"
+                                        <em className="inp_title">{t("bk0205_0026")}</em> 퍼블검수 1차 : mr4 클래스 네임 삭제
+                                        <button type="button" className="ico_help btn_help" onClick={()=> dispatch(bottomSheetAction({
+                                                title: null,
+                                                message : <SMJ2206P05 />,
+                                                state : null
+                                            }))}>
+                                            <span className="blind">도움말</span>
+                                        </button>
+                                    </div>} hint={`${t("bk0205_0026")} ${t('bk0203_0029')}`}> 퍼블검수 1차 : hint 속성 추가
+                                        <i className="ci_bank lg ci_bank_020"></i>
+                                        <div className="inner">
+                                            <span className="account_name">Woori bank</span>
+                                            <span className="account_num">1002-456-890123</span>
+                                        </div>
+                                    </Dropdown>  
+                                    */}
+                                    {/* 2023-06-07 마크업 수정 E */}
+                                    {/* e : 출금계좌 외화MMDA PLUS 이자 지금식 계좌인 경우 */}                                     
+                                    {/* D : 원화 출금계좌/ 선택한 계좌가 없을 시 노출
+                                    <Dropdown type="account" title={t("bk0205_0028")}>
+                                        <div className="inp_select_value">{t("bk0201_0019")}</div>
+                                    </Dropdown> */}
+                                    {/* D : 원화 출금계좌/ 선택한 계좌가 있을 시 노출*/}  
+                                    <Dropdown type="account" fieldClass="mb0" title={t("bk0205_0028")} status="filled" accountBtm accountNum="999,999,999,999,999" hint={`${t("bk0205_0028")} ${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */}
+                                        <i className="ci_bank lg ci_bank_020"></i>
+                                        <div className="inner">
+                                            <span className="account_name">Woori bank</span>
+                                            <span className="account_num">1002-456-890123</span>
+                                        </div>
+                                    </Dropdown>
+                                    <div className="txt_helper">
+                                        <p className="bullet_disc">{t("bk0205_0029")}</p>
+                                    </div>                                                     
+                                    <div className="field_wrap mt32">
+                                        <em className="inp_title">{t("bk0205_0025")}</em>
+                                        <PasswordField title={t("bk0205_0025")}/>
+                                    </div>                    
+                                </div>                     
+                            </>
+                        }                               
+                        {/* e : 원화/외화 계좌 tab : segmentItem01_3*/}                                           
+                    </div>
+                    <div className="dvgroup">
+                        {/* 2023-06-07 마크업 수정 S */}
+                        {/* D : 선택한 통화가 없을 시 노출 */}
+                        <Dropdown type="icon" title={t("bk0205_0012")} hint={`${t("bk0205_0012")} ${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */}
+                            <span className="inp_select_value">{t("bk0203_0029")}</span>
+                        </Dropdown>       
+                        {/* D : 선택한 통화가 있을 시 노출
+                            <Dropdown type="icon" status="filled" title={t("bk0205_0012")} hint={`${t("bk0205_0012")} ${t('bk0203_0029')}`}> 퍼블검수 1차 : hint 속성 추가
+                                <i className="ico_flag us"></i>
+                                <span className="inp_select_value">USD</span>
+                            </Dropdown>                       
+                        */}
+                        {/* 2023-06-07 마크업 수정 E */}
+                        <div className="title_wrap">{/* 퍼블검수 1차 : mb6 클래스 네임 삭제 */}
+                            <em className="inp_title">{t("bk0201_0078")}</em>
+                        </div>
+                        <SegmentWrap groupname="이체금액" activeIdx={segmentIdx02}>
+                            <SegmentControl id="segmentItem02_1" title={t("bk0205_0013")} onChange={setSegmentIdx02} />
+                            <SegmentControl id="segmentItem02_2" title={t("bk0205_0014")} onChange={setSegmentIdx02} />
+                        </SegmentWrap>
+                        {/* s : 외화로 입력 tab : segmentItem02_1 */}
+                        {
+                            segmentIdx02 === 0 &&
+                            <>
+                                <div className="segment_panel">
+                                    <div className="field_wrap mb0 is-error">{/* 퍼블검수 1차 : 하단에 BoxIconItem 없는 케이스에는 mb0 클래스 제거 */}{/* D : 최소 이체금액 이하로 입력한 경우 is-error 클래스 추가 */}
+                                        <div className="inp_field inp_amount">
+                                            {/* 퍼블검수 1차 : 디자인 반영 st */}
+                                            <div className="field_item amount_unit">
+                                                <em>USD</em>
+                                            </div>
+                                            {/* 퍼블검수 1차 : 디자인 반영 end */}
+                                            <div className="d-flex amount_item">
+                                                <div className="inp_item">
+                                                    <input type="text" className="inp_text" defaultValue="" placeholder={t("bk0205_0015")} title={t("bk0205_0015")} />
+                                                    <div className="inp_delete">
+                                                        <button type="button" className="ico_delete inp_button"><span className="blind">{t("fx0303_0006")}</span></button>
+                                                    </div>
+                                                </div>
+                                                <div className="inp_tilde ico_dot"></div>
+                                                <div className="inp_item">
+                                                    <input type="text" className="inp_text inp_decimal" defaultValue="00" title="이체 금액 소수점 이하 두자리" />
+                                                    <div className="inp_delete">
+                                                        <button type="button" className="ico_delete inp_button"><span className="blind">{t("fx0303_0006")}</span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* s : 최소 이체금액 이하로 입력한 경우 */}
+                                        <div className="txt_error">
+                                            <p className="tr">{t('bk0206_0003')}</p>{/* 퍼블검수 1차 : 클래스 네임 tr 추가 */}{/* 2023-06-20 클래스 제거 */}
+                                        </div>                                   
+                                        {/* e : 최소 이체금액 이하로 입력한 경우 */}
+                                    </div>
+                                    {/* s : 환산 완료시 노출 // */}
+                                    <BoxIconItem flag="us" title="USD" exprice="1,000,000,000" exnum="1,205.60" loading />
+                                    <div className="txt_helper">
+                                        <p className="bullet_disc">{t("bk0205_0020")}</p>
+                                        <p className="bullet_disc">{t("bk0206_0015")}</p>
+                                    </div>  
+                                    {/* // e : 환산 완료시 노출 */}
+                                    {/* s : 원화/외화 계좌 선택 탭에서 이체금액 자동계산 시 노출 case */}
+                                    <div className="field_wrap mt32">
+                                        <em className="inp_title">{t('bk0205_0030')}</em>
+                                        <div className="inp_field inp_amount">
+                                            {/* 퍼블검수 1차 : 디자인 반영 st */}
+                                            <div className="field_item amount_unit">
+                                                <em>USD</em>
+                                            </div>
+                                            {/* 퍼블검수 1차 : 디자인 반영 end */}                                            
+                                            <div className="d-flex amount_item">
+                                                <div className="inp_item">
+                                                    <input type="text" className="inp_text" defaultValue="" placeholder={t("bk0205_0015")} title={`${t('bk0205_0030')} ${t("bk0205_0015")}`} />{/* 퍼블검수 1차 : title 속성 값 변경 */}
+                                                    <div className="inp_delete">
+                                                        <button type="button" className="ico_delete inp_button"><span className="blind">{t("fx0303_0006")}</span></button>
+                                                    </div>
+                                                </div>
+                                                <div className="inp_tilde ico_dot"></div>
+                                                <div className="inp_item">
+                                                    <input type="text" className="inp_text inp_decimal" defaultValue="00" title="이체 금액 소수점 이하 두자리" />
+                                                    <div className="inp_delete">
+                                                        <button type="button" className="ico_delete inp_button"><span className="blind">{t("fx0303_0006")}</span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                    <div className="field_wrap">
+                                        <em className="inp_title">{t('bk0205_0031')}</em>
+                                        <div className="inp_field inp_amount">
+                                            <div className="field_item amount_unit">
+                                                <em>KRW</em>
+                                            </div>
+                                            <div className="inp_item amount_item">
+                                                <input type="text" className="inp_text" inputMode="decimal" placeholder={t("bk0205_0015")} title={`${t('bk0205_0031')} ${t("bk0205_0015")}`}/>{/* 퍼블검수 1차 : title 속성 값 변경 */}
+                                                <div className="inp_delete">
+                                                    <button type="button" className="ico_delete inp_button"><span className="blind">{t("fx0303_0006")}</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* e : 원화/외화 계좌 선택 탭에서 이체금액 자동계산 시 노출 case */}
+                                    
+                                    <Dropdown type="normal" title={t("bk0202_0032")} onClick={()=> dispatch(bottomSheetAction({
+                                        title: null,
+                                        message : <SMJ2207P07 />,
+                                        state : null
+                                    }))}  hint={`${t("bk0202_0032")} ${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */}
+                                        <div className="inp_select_value">{t("bk0203_0029")}</div>
+                                    </Dropdown>
+                                    <div className="field_wrap">
+                                        {/* 2023-08-08 입금계좌 자주 버튼 추가 S */}
+                                        <div className="title_float link_wrap">{/* 퍼블검수 1차 : title_flex -> title_float 클래스 네임 변경 */}
+                                            <em className="inp_title">{t("bk0205_0041")}</em>
+                                            <CustomA href="#none" btnClass="link_arr arr_right" callback={()=> dispatch(bottomSheetAction({
+                                                title: null,
+                                                message : <SMJ2207P08/>,
+                                                state : null
+                                            }))} >
+                                                <span>{t("bk0201_0006")}</span>
+                                            </CustomA>
+                                        </div>
+                                        {/* 2023-08-08 입금계좌 자주 버튼 추가 E */}
+                                        <NormalTextField type="number" status="" placeholder={t("bk0201_0009")}/>
+                                    </div>
+                                    {/*  s : 외화출금계좌 탭에서 수수료 출금계좌 노출 case  */}
+                                    {/* 2023-06-07 마크업 수정 */}                                        
+                                    {/* D : 선택한 계좌가 없을 시 노출 */}
+                                    <Dropdown type="account" custTit={<div className="title_wrap help_wrap"> {/* 퍼블검수 1차 : 클래스 네임 변경 "d-flex mb8" -> "title_wrap help_wrap"*/}
+                                        <em className="inp_title">{t("bk0205_0024")}</em>{/* 퍼블검수 1차 : mr4 클래스 네임 삭제 */}
+                                        <button type="button" className="ico_help btn_help" onClick={()=> dispatch(bottomSheetAction({
+                                                title: null,
+                                                message : <SMJ2206P06 />,
+                                                state : null
+                                            }))} >
+                                            <span className="blind">도움말</span>
+                                        </button>{/* 퍼블검수 1차 : CustomA 컴포넌트 -> button 태그로 변경 / btnClass -> className 으로 변경 / href 삭제 / type="button" 추가 / callback -> onClick 으로 변경  */}
+                                    </div>} hint={`${t("bk0205_0024")} ${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */}
+                                        <div className="inp_select_value">수수료 출금계좌 선택</div>
+                                    </Dropdown>
+                                    {/* D : 선택한 계좌가 있을 시 노출
+                                    <Dropdown type="account" status="filled" accountBtm accountNum="000" custTit={<div className="title_wrap help_wrap">  퍼블검수 1차 : 클래스 네임 변경 "d-flex mb8" -> "title_wrap help_wrap"
+                                        <em className="inp_title">{t("bk0205_0024")}</em> 퍼블검수 1차 : mr4 클래스 네임 삭제 
+                                        <button type="button" className="ico_help btn_help" onClick={()=> dispatch(bottomSheetAction({
+                                                title: null,
+                                                message : <SMJ2206P06 />,
+                                                state : null
+                                            }))} >
+                                            <span className="blind">도움말</span>
+                                        </button>
+                                    </div>} hint={`${t("bk0205_0024")} ${t('bk0203_0029')}`}>
+                                        <i className="ci_bank lg ci_bank_020"></i>
+                                        <div className="inner">
+                                            <span className="account_name">Woori bank</span>
+                                            <span className="account_num">1002-456-890123</span>
+                                        </div>
+                                    </Dropdown>  
+                                    */} 
+                                    {/* 2023-06-07 마크업 수정 */}
+                                    <div className="field_wrap">
+                                        <em className="inp_title">{t("bk0205_0025")}</em>
+                                        <PasswordField title={t("bk0205_0025")}/>
+                                    </div>      
+                                    {/*  e : 외화출금계좌 탭에서 수수료 출금계좌 노출 case  */}
+                                    <div className="field_wrap">
+                                        <em className="inp_title">{t("bk0201_0095")}</em>
+                                        <NormalTextField type="text" status="" placeholder={t("bk0206_0009")}/>
+                                    </div>
+                                    <div className="field_wrap">
+                                        <em className="inp_title">{t("bk0201_0094")}</em>
+                                        <NormalTextField type="text" status="" placeholder={t("bk0206_0009")}/>
+                                    </div>
+                                    <div className="field_wrap">
+                                        <em className="inp_title">{t("bk0203_0037")}</em>
+                                        <NormalTextField type="number" status="" placeholder={t("bk0203_0038")}/>
+                                    </div>
+                                    {/* s : SWIFT 송금 방식일 경우 노출 */}
+                                    <div className="field_wrap">
+                                        <div className="title_wrap help_wrap"> {/* 퍼블검수 1차 : 클래스 네임 변경 "d-flex mb0" 삭제, "help_wrap"추가 */}
+                                            <em className="inp_title">{t("bk0206_0010")}</em>
+                                            <button type="button" className="ico_help btn_help" onClick={()=> dispatch(bottomSheetAction({
+                                                    title: null,
+                                                    message : <SMJ2207P05 />,
+                                                    state : null
+                                                }))}>
+                                                <span className="blind">도움말</span>
+                                            </button>{/* 퍼블검수 1차 : CustomA 컴포넌트 -> button 태그로 변경 / btnClass -> className 으로 변경 / href 삭제 / type="button" 추가 / callback -> onClick 으로 변경  */}{/* 추가 이체 정보 안내 바텀시트 호출 */}
+                                        </div>
+                                        <NormalTextField type="number" status="" placeholder={t("bk0206_0011")}/>
+                                    </div>
+                                    {/* e : SWIFT 송금 방식일 경우 노출 */}
+                                </div>
+                            </>
+                        }
+                        {/* e : 외화로 입력 tab : segmentItem02_1 */} 
+                        {/* s : 원화로 입력 tab : segmentItem02_2 */}
+                        {
+                            segmentIdx02 === 1 &&
+                            <>
+                                <div className="segment_panel">
+                                    <div className="field_wrap mb0">
+                                        <div className="inp_field inp_amount">
+                                            <div className="field_item amount_unit">
+                                                <em>KRW</em>
+                                            </div>
+                                            <div className="inp_item amount_item">
+                                                <input type="text" className="inp_text" defaultValue="" inputMode="decimal" placeholder={t("bk0205_0015")} title={t("bk0205_0015")}/>
+                                                <div className="inp_delete">
+                                                    <button type="button" className="ico_delete inp_button"><span className="blind">{t("fx0303_0006")}</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* s : 환산 완료시 노출 // */}
+                                    <BoxIconItem flag="us" title="USD" exprice="1,000,000,000" exnum="1,205.60" />
+                                    <div className="txt_helper">
+                                        <p className="bullet_disc">{t("bk0205_0020")}</p>
+                                    </div>  
+                                    {/* // e : 환산 완료시 노출 */}
+                                    <Dropdown fieldClass="mt32" type="normal" title={t("bk0202_0032")} onClick={()=> dispatch(bottomSheetAction({
+                                        title: null,
+                                        message : <SMJ2207P07 />,
+                                        state : null
+                                    }))} hint={`${t("bk0202_0032")} ${t('bk0203_0029')}`}>{/* 퍼블검수 1차 : hint 속성 추가 */}{/* 2023-08-08 자주 버튼 삭제로 인해 custTit 속성 삭제 / title 속성 추가 */}
+                                        <div className="inp_select_value">{t("bk0203_0029")}</div>
+                                    </Dropdown>
+                                    <div className="field_wrap">
+                                        {/* 2023-08-08 입금계좌 자주 버튼 추가 S */}
+                                        <div className="title_float link_wrap">{/* 퍼블검수 1차 : title_flex -> title_float 클래스 네임 변경 */}
+                                            <em className="inp_title">{t("bk0205_0041")}</em>
+                                            <CustomA href="#none" btnClass="link_arr arr_right" callback={()=> dispatch(bottomSheetAction({
+                                                title: null,
+                                                message : <SMJ2207P08/>,
+                                                state : null
+                                            }))} >
+                                                <span>{t("bk0201_0006")}</span>
+                                            </CustomA>
+                                        </div>
+                                        {/* 2023-08-08 입금계좌 자주 버튼 추가 E */}
+                                        <NormalTextField type="number" status="" placeholder={t("bk0201_0009")}/>
+                                    </div>
+                                    <div className="field_wrap">
+                                        <em className="inp_title">{t("bk0201_0095")}</em>
+                                        <NormalTextField type="text" status="" placeholder={t("bk0206_0009")}/>
+                                    </div>
+                                    <div className="field_wrap">
+                                        <em className="inp_title">{t("bk0201_0094")}</em>
+                                        <NormalTextField type="text" status="" placeholder={t("bk0206_0009")}/>
+                                    </div>
+                                    <div className="field_wrap">
+                                        <em className="inp_title">{t("bk0203_0037")}</em>
+                                        <NormalTextField type="number" status="" placeholder={t("bk0203_0038")}/>
+                                    </div>
+                                    {/* s : SWIFT 송금 방식일 경우 노출 */}
+                                    <div className="field_wrap">
+                                        <div className="title_wrap help_wrap"> {/* 퍼블검수 1차 : 클래스 네임 "d-flex mb0" 삭제, "help_wrap"추가 */}
+                                            <em className="inp_title">{t("bk0206_0010")}</em>
+                                            <button type="button" className="ico_help btn_help" onClick={()=> dispatch(bottomSheetAction({
+                                                    title: null,
+                                                    message : <SMJ2207P05 />,
+                                                    state : null
+                                                }))}>
+                                                <span className="blind">도움말</span>{/* 퍼블검수 1차 : 오타 수정 */}
+                                            </button>{/* 퍼블검수 1차 : CustomA 컴포넌트 -> button 태그로 변경 / btnClass -> className 으로 변경 / href 삭제 / type="button" 추가 / callback -> onClick 으로 변경  */}{/* 추가 이체 정보 안내 바텀시트 호출 */}
+                                        </div>
+                                        <NormalTextField type="number" status="" placeholder={t("bk0206_0011")}/>
+                                    </div>
+                                    {/* e : SWIFT 송금 방식일 경우 노출 */}
+                                </div>
+                            </>
+                        }
+                        {/* e : 원화로 입력 tab : segmentItem02_2 */}                                     
+                    </div> 
+                    <Notice>
+                        <div className="bulletbox">
+                            <ul className="bullet">
+                                <li className="bullet_disc">{t("bk0206_0004")}</li>
+                                <li className="bullet_disc">{t("bk0206_0005")}</li>
+                                <li className="bullet_disc">{t("bk0206_0006")}</li>
+                                <li className="bullet_disc">{t("bk0206_0007")}</li>
+                                <li className="bullet_disc">{t("bk0206_0008")}</li>
+                            </ul>
+                        </div>
+                    </Notice>
+                    <FloatingButtonWrap>
+                        <ButtonWrap>
+                            <CustomA type="styled" href="#none" text={t("co1501_0040")} callback={()=> navigate(".")} status="primary" disabled /> {/* D : 활설화시 disabled 속성 제거 */}
+                            {/* SWIFT 방식으로만 가능할 경우 SWIFT안내 바텀시트 호출 */}
+                        </ButtonWrap>
+                    </FloatingButtonWrap>
+                </Container>
+            </Wrap>
+        </>
+    );
+}
+
+
+export default SMJ2207M00;
