@@ -1,0 +1,146 @@
+import {useState} from "react";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import Container from "../../../../../common/components/layout/Container";
+import Header from "../../../../../common/components/layout/Header";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Nodata from "../../../../../common/components/empty/Empty";
+import { CustomA } from "../../../../../common/components/button";
+import { TabCont, TabMenu } from '../../../../../common/components/tab/index';
+import SMJ2208P06 from "../SMJ2208P06/SMJ2208P06";
+import SMJ2208P07 from "../SMJ2208P07/SMJ2208P07";
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer";
+
+function SMJ2208M00(){
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+
+    const [tabIdx, setTabIdx] = useState(0);
+    const [tabInfo, setTabInfo] = useState([
+        {tabname : t("bk0205_0007"), id: "tab1", tabPanel: "tab01Panel"}, 
+        {tabname : t("bk0207_0002"), id: "tab2", tabPanel: "tab02Panel"}, 
+    ]);
+
+    return(
+        <Wrap>
+            <Header back menu title={t("bk0207_0001")} />
+            <Container>
+                <div className="tab_wrap">
+                    <div className="tab_head">
+                        <TabMenu tabInfo={tabInfo} tabIdx={tabIdx} onClick={setTabIdx} />
+                    </div>
+                    {tabIdx === 0 &&
+                        <>
+                            {/* S : 우리은행으로 외화이체 case */}
+                            <div className="tab_scroll">
+                                <div className="tab_dep2">
+                                    <ul className="tab_list">
+                                        <li className="tab_item">
+                                            <CustomA href="#" btnClass="tab_btn is-active"><span className="tab_txt">{t("bk0207_0003")}</span></CustomA>{/* D : 선택시 is-active 클래스 토글 */}
+                                        </li>
+                                        <li className="tab_item">
+                                            <CustomA href="#" btnClass="tab_btn"><span className="tab_txt">{t("bk0207_0004")}</span></CustomA>{/* D : 선택시 is-active 클래스 토글 */}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <hr className="hr full"/>
+                            {/* E : 우리은행으로 외화이체 case */}
+                        </>
+                    }
+                    <div className="pd24">{/* 퍼블검수 1차 : pd16 -> pd24로 클래스 변경 */}
+                        <div className="bullet">{/* 퍼블검수 1차 : ul -> div 태그 변경 */}
+                            <p className="bullet_item">{t("bk0207_0005")}</p>{/* 퍼블검수 1차 : li -> p 태그 변경 */}
+                        </div>
+                    </div>
+                    <div className="condition big">
+                        <div className="inner">
+                            <div className="atl">{/* 퍼블검수 1차 : 클래스 네임 변경 tl -> atl */}
+                                <em className="date_str">2022.01.01</em> ~ <em className="date_end">2022.01.31</em>
+                            </div>
+                            <div className="atr">
+                                <button type="button" className="ico_setting" onClick={()=> {
+                                    dispatch(bottomSheetAction({
+                                        title: "",
+                                        message : tabIdx===0? <SMJ2208P06 /> : <SMJ2208P07 /> ,
+                                        state : null
+                                    }))
+                                    }}><span className="blind">조회기간 설정</span>
+                                </button>{/* 퍼블검수 1차 : CustomA 컴포넌트 -> button 태그로 변경 / btnClass -> className, 클래스 값도 변경 / href 삭제 / type="button" 추가 / callback -> onClick 으로 변경 / span.blind 내용 변경 */}
+                            </div>                            
+                        </div>
+                    </div>
+                    <TabCont tabcont={tabInfo[tabIdx]}>
+                        <div className="tab_body">
+                            <ul className="trf_refer_list">
+                            {tabIdx === 0 &&
+                                <>
+                                    {/* S : 우리은행으로 외화이체 case */}
+                                    <li className="trf_list_item">
+                                        <CustomA href="#" btnClass="trf_list_link">
+                                            <div className="trf_list_info">
+                                                <span className="info_item day">2020.10.10</span>
+                                                <span className="info_item name">Kim Woori</span>{/* 퍼블검수 1차 : 클래스네임 'name' 추가 */}
+                                            </div>
+                                            <div className="trf_list_num">
+                                                <span><em>USD</em>9,999,000,000.00</span>
+                                            </div>
+                                        </CustomA>
+                                    </li>
+                                    <li className="trf_list_item">
+                                        <CustomA href="#" btnClass="trf_list_link">
+                                            <div className="trf_list_info">
+                                                <span className="info_item day">2020.10.10</span>
+                                                <span className="info_item name">Kim Woori</span>{/* 퍼블검수 1차 : 클래스네임 'name' 추가 */}
+                                            </div>
+                                            <div className="trf_list_num">
+                                                <span><em>USD</em>9,999,000,000.00</span>
+                                            </div>
+                                        </CustomA>
+                                    </li>
+                                    {/* E : 우리은행으로 외화이체 case */}
+                                </>
+                            }
+                            {tabIdx === 1 &&
+                                <>
+                                {/* S : 다른은행으로 외촤이체 case */}
+                                <li className="trf_list_item">
+                                    <CustomA href="#" btnClass="trf_list_link">
+                                        <div className="trf_list_info">
+                                            <span className="info_item day">2020.10.10</span>
+                                            <span className="info_item account">FDK29822001002</span>{/* 퍼블검수 1차 : 'account' 클래스네임 추가 */}
+                                            <span className="info_item">KOOKMIN BANK</span>
+                                            <span className="info_item">Kim Woori</span>
+                                        </div>
+                                        <div className="trf_list_num">
+                                            <span><em>USD</em>9,999,000,000.00</span>
+                                        </div>
+                                    </CustomA>
+                                </li>
+                                <li className="trf_list_item">
+                                    <CustomA href="#" btnClass="trf_list_link">
+                                        <div className="trf_list_info">
+                                            <span className="info_item day">2020.10.10</span>
+                                            <span className="info_item account">FDK29822001002</span>{/* 퍼블검수 1차 : 'account' 클래스네임 추가 */}
+                                            <span className="info_item">KOOKMIN BANK</span>
+                                            <span className="info_item">Kim Woori</span>
+                                        </div>
+                                        <div className="trf_list_num">
+                                            <span><em>USD</em>9,999,000,000.00</span>
+                                        </div>
+                                    </CustomA>
+                                </li>
+                                {/* E : 다른은행으로 외촤이체 case */}
+                                </>
+                            }
+                            </ul>
+                            <Nodata txt={t("bk0207_0006")}/>{/* D : 이체내역 조회 결과 없는 경우 */}
+                        </div>                            
+                    </TabCont>                    
+                </div>
+            </Container>
+        </Wrap>
+    )
+}
+
+export default SMJ2208M00;
