@@ -1,0 +1,429 @@
+
+function Listmap(selector){
+	// this.$type = $(selector).find('td.type span');
+	// this.$file = $(selector).find('td.file');
+	// this.$progress = $(selector).find('td.progress span');
+
+	this.compile();
+}
+Listmap.prototype.compile = function(){
+	for(var i = 0, len = $('tbody tr').length; i < len; i++){
+		var type = $(this.$type[i]),
+			file = $(this.$file[i]),
+			progress = $(this.$progress[i]),
+
+			fileText = file.text(),
+			// progressText = progress.text(),
+			progressType = null;
+		
+		type.removeAttr('title');
+
+		if (type.text() == 'popup') {
+			type.addClass('popup');
+		} else if (type.text() == 'alert') {
+			type.addClass('alert');
+		}
+		
+		file.html('<a href="http://dsmpib.wooribank.com/nwspub/wglb/_tit/' + fileText + '.html" target="_blank">' + fileText + '</a>').removeAttr('title');
+	}
+}
+
+
+
+function dashBoard(){
+	this.init();
+	this.draw();
+}
+dashBoard.prototype.init = function(){
+	this.totalCount = $('tbody tr').length - ($('tr.none').length + $('.progress.none').length),
+	this.deferCount = $('.progress.defer').length,
+	this.testCount = $('.progress.test').length,
+	this.doneCount = $('.progress.done').length,
+	this.percent = (this.doneCount / this.totalCount) * 100;
+}
+dashBoard.prototype.draw = function(){
+	var $this = this;
+
+	$('.dashboard_defer').text(this.deferCount);
+	$('.dashboard_test').text(this.testCount);
+	$('.dashboard_done').text(this.doneCount);
+	$('.dashboard_total').text(this.totalCount);
+	$('.dashboard_percent').text(this.percent.toFixed(1));
+	setTimeout(function(){
+		$('.dashboard_thumb').css('width', $this.percent+'%');
+	}, 1000);
+
+
+	
+}
+//new dashBoard();
+
+//移댄뀒怨좊━��씠 異붽��섎㈃ 媛앹껜�� �ｌ뼱二쇱꽭��.
+var $href = {
+	'怨듯넻' : 'common',
+	//'�먯삁湲�': 'ye',
+	//'�먯쟻湲�': 'won',
+	// '湲덉쑖嫄곕옒' : 'account',
+	// '�먯궛愿�由�': 'asset',
+	// '�곹뭹': 'prod',
+	// '��異�': 'loan',
+	// '�덈궡/吏���': 'svc',
+	// '�앺솢�쒗깮': 'benefit',
+	// '�명솕�섏쟾': 'exchange',
+	// '遺�媛��쒕퉬��': 'add',
+	// '�몄쬆/蹂댁븞': 'certify',
+	// '�ㅼ�以� �щ젰': 'pub_cal',
+	'媛��대뱶': 'guide'
+};
+
+function nav(){
+	this.init();
+	this.addEvent();
+}
+nav.prototype.addEvent = function(){
+	$('.selectbox').change(function(e){
+		//location.href = location.host + $(e.currentTarget).val();
+
+
+		var clickHref = $(e.currentTarget).val();
+		var pathName = location.pathname;
+		var pathNameLen = pathName.length;
+		var replaceStart = pathName.indexOf( pathName.split('/')[ pathName.split('/').length-1 ] );
+		//console.log( clickHref ); //�대┃�� href
+		//console.log( pathName );  //origin�쒖쇅�� pathname
+		//console.log( replaceStart ); //�꾩옱 location�먯꽌 page name �쒖옉�꾩튂
+		//console.log( pathName.replace( pathName.substring(replaceStart, pathNameLen), clickHref ) ); //href 移섑솚
+
+		location.href = location.origin + pathName.replace( pathName.substring(replaceStart, pathNameLen), clickHref );
+	});
+	
+	var pathName = location.pathname;
+	var locationPageName = pathName.split('/')[ pathName.split('/').length-1 ].split('.')[0];
+
+	//console.log( locationPageName ); //�꾩옱 location page name
+	var selArr = [];
+	for(var i in $href){
+		selArr.push( $href[i] );
+	}
+	//console.log( selArr.indexOf(locationPageName) );
+	$('.selectbox').find('option:eq('+ selArr.indexOf(locationPageName) +')').attr('selected','selected');
+
+
+}
+
+nav.prototype.init = function(){
+	for(var i in $href){
+		$('<option>', {
+			value: $href[i] +'.html',
+			'data-opt': location.pathname.split('/')[ location.pathname.split('/').length -1 ].split('.')[0],
+			text: i
+		}).appendTo( $('.selectbox') );
+	}
+
+	var fileArr = [];
+	var fileArr2 = [];
+	$('tbody .file').each(function(){
+		//console.log( $(this).text() );
+		fileArr.push( $(this).text() );
+	});
+	//console.log( fileArr );
+	$(fileArr).each(function(i,v){
+		//console.log(v);
+		fileArr2.push( 'component/' + v + '.html' );
+	});
+	//console.log(fileArr2);
+
+	if( location.hostname == 'dsmpib.wooribank.com' ){
+		$('tbody .file').each(function(num){
+			// $(this).text('').append('<a href="http://dsmpib.wooribank.com/nwspub'+ fileArr2[num] +'" target="_blank">'+ fileArr[num] +'</a>').append('<span data-target="http://dsmpib.wooribank.com/nwspub'+fileArr2[num]+'" class="btn-preview">&#128241</span>');
+			$(this).text('').append('<a href="/nwspub/wglb/'+ fileArr2[num] +'" target="_blank">'+ fileArr[num] +'</a>').append('<span data-target="http://dsmpib.wooribank.com/nwspub'+fileArr2[num]+'" class="btn-preview">&#128241</span>');
+			// [210414] yyg 異붽�
+		});
+	}else{
+		$('tbody .file').each(function(num){
+			$(this).text('').append('<a href="'+ fileArr2[num] +'" target="_blank">'+ fileArr[num] +'</a>').append('<span data-target="'+fileArr2[num]+'" class="btn-preview">&#128241</span>');
+			// [210414] yyg 異붽�
+		});
+	}
+	
+	function fnDashboardText(tbody) {
+		var progressText = null;
+		var $tbody = $(tbody);
+		$(tbody).find('.progress').each(function(num){
+			progressText = $(this).find('span').text();
+			switch( progressText ){
+				case '�대떦�놁쓬':
+					$(this).addClass('none');
+					break;
+				case '�묒뾽��':
+					$(this).addClass('before');
+					break;
+				case '蹂대쪟':
+					$(this).addClass('defer');
+					break;
+				case '�묒뾽以�':
+					$(this).addClass('doing');
+					break;
+				case '寃��섏쨷':
+					$(this).addClass('standby');
+					break;
+				case '�섏젙以�':
+					$(this).addClass('test');
+					break;
+				case '�꾨즺':
+					$(this).addClass('done');
+					break;
+			}
+		});
+
+		var dashboard_text = {};
+		dashboard_text.doingNum = $tbody.find('.progress.doing').length, //�대떦�놁쓬 媛쒖닔
+		dashboard_text.noneNum = $tbody.find('.progress.none').length, //�대떦�놁쓬 媛쒖닔
+		dashboard_text.beforeNum = $tbody.find('.progress.before').length, //�묒뾽�� 媛쒖닔
+		dashboard_text.doneNum = $tbody.find('.progress.defer').length, //�꾨즺 媛쒖닔
+		dashboard_text.standbyNum = $tbody.find('.progress.standby').length, //寃��섏쨷 媛쒖닔
+		dashboard_text.testNum = $tbody.find('.progress.test').length, // �섏젙以� 媛쒖닔
+		dashboard_text.doneNum = $tbody.find('.progress.done').length, //�꾨즺 媛쒖닔
+		dashboard_text.totalNum = $tbody.find('tr').length - ($tbody.find('tr.none').length + $tbody.find('.progress.none').length), //移댄뀒怨좊━蹂� �뚯씪 媛쒖닔
+		dashboard_text.percentNum = ( dashboard_text.doneNum / dashboard_text.totalNum ) * 100;
+		
+		$('.dashboard_doing').text( dashboard_text.doingNum );
+		$('.dashboard_test').text( dashboard_text.standbyNum );
+		$('.dashboard_done').text( dashboard_text.doneNum );
+		$('.dashboard_total').text( dashboard_text.totalNum );
+		$('.dashboard_percent').text( dashboard_text.percentNum.toFixed(1) );
+		$('.dashboard_thumb').width(dashboard_text.percentNum.toFixed(1) + '%');
+	}
+	
+	if($('.dashboard .dashboard_doing').length == 0) {
+		$('.dashboard').prepend('<div class="dashboard_doing" title="�묒뾽以�">-</div>');	
+	}
+	$('.dashboard').prepend('<div class="dashboard_sel"></div>');
+	$('.dashboard_sel').append('<select><option>�꾩껜</option></select>').css('margin-left', 0);
+	$('.contents .heading').each(function(i, v){
+		$('.dashboard_sel select').append(`<option>${$(v).text()}</option>`);
+	});
+	
+	fnDashboardText($('.contents tbody'));
+
+	$('.dashboard_sel select').width(100).on('change', function() {
+		var oidx = $(this).find('option:selected').index();
+		if(oidx == 0) {
+			fnDashboardText($('.contents tbody'));
+			$(window).scrollTop(0);
+		} else {
+			fnDashboardText( $(`.contents .heading:eq(${oidx-1})`).next('div').find('tbody') );
+			var wstop = $(`.contents .heading:eq(${oidx-1})`).offset().top -150;
+			$(window).scrollTop(wstop);
+		}
+	});
+
+	$('.dashboard').prepend('<div class="dashboard_sel2"></div>');
+	var $dsel2 = $('.dashboard_sel2').append('<select><option>�꾩껜</option></select>').css('margin-left', 0).find('select');
+	var $au_arr = $('.contents tbody .author');
+	var name_arr = [];
+	$au_arr.each((i, v) => {
+		if(name_arr.indexOf( $(v).text() ) == -1) name_arr.push($(v).text());
+	});
+	name_arr.sort();
+	name_arr.forEach(name => {
+		$dsel2.append(`<option>${name}</option>`);
+	});
+	$dsel2.on('change', function(){
+		var $me = $(this);
+		var oidx = $me.find('option:selected').index();
+		var $sibsel = $('.dashboard_sel select');
+		$sibsel.find('option:eq(0)').prop('selected', true).end().trigger('change');
+		$(window).scrollTop(0);
+		if(oidx == 0) {
+			$sibsel.prop('disabled', false);
+			$('.contents .heading').show();
+			$('.contents table').show().find('tr').show();
+		} else {
+			$sibsel.prop('disabled', true);
+			$('.contents tbody tr').hide();
+			$au_arr.each((i,v) => {
+				if($(v).text() == $me.val()) {
+					$(v).closest('tr').show().closest('table').show().parent().prev('.heading').show();
+				}
+			});
+			$('.contents table').each((i,v) => {
+				if($('tbody tr:visible', v).length == 0) {
+					$(v).hide().parent().prev('.heading').hide();
+				}
+			})
+		}
+	});
+	
+
+	// 20媛쒖뵫 �닿린 
+	// var $hbtn = $('<button class="hbtn">20媛� �닿린</button>');
+    // $('.heading:eq(0)').append($hbtn);
+    // var lcnt = 0;
+    // $hbtn.on('click', function(){
+    //     var $links = $('td.file a').slice(lcnt, lcnt+20).each(function(){
+            
+    //         window.open($(this).attr('href'));
+    //     });
+    //     lcnt = lcnt + 20;
+	// });
+
+	var doc_click_cnt = 0;
+	var $btn_preview = $('<button class="btn_preview">20媛쒖뿴湲�</button>').css({
+		position: 'fixed',
+		right: 0,
+		top: 0,
+		'z-index': 110
+	});
+	var $input_start = $('<input type="text" class="link_start" placeholder="�쒖옉 踰덊샇">').css({
+		position: 'fixed',
+		right: 116,
+		top: 0,
+		width: 50,
+		'z-index': 110
+	});
+	var $input_end = $('<input type="text" class="link_end" placeholder="�� 踰덊샇">').css({
+		position: 'fixed',
+		right: 62,
+		top: 0,
+		width: 50,
+		'z-index': 110
+	});
+
+	$('body').prepend($btn_preview);
+	$('body').prepend($input_end);
+	$('body').prepend($input_start);
+	
+	$input_end.on('keydown', function(e){
+		if (e.keyCode == 13) {
+			$btn_preview.click();
+		}
+	});
+
+	setTimeout(() => {
+		var doc_ids = $('td.file a');
+		doc_ids.find('em').remove();
+		doc_ids.each(function(i, v){
+			$(v).prepend($(`<em>${i}. </em>`))
+		});
+
+		$btn_preview.on('click', function(){
+
+			doc_ids = $('td.file a');
+
+			if ( $input_start.val() != null && $input_start.val() != '' && $input_end.val() != null && $input_end.val() != '' ) {
+
+				var start = Number($input_start.val());
+				var end = Number($input_end.val());
+				
+				if ( start >= end ) {
+					alert('�쒖옉, �� 踰덊샇 �쒖꽌 �뺤씤');
+				} else {
+					doc_ids.slice(start, end+1).each(function(){
+						window.open($(this).attr('href'));
+					});
+				}
+
+				$input_start.val('');
+				$input_end.val('');
+
+			} else {
+				
+				doc_ids.slice(doc_click_cnt, doc_click_cnt+20).each(function(){
+					window.open($(this).attr('href'));
+				});
+				doc_click_cnt = doc_click_cnt+20;
+
+				if (doc_click_cnt >= doc_ids.length) {
+					alert('留덉�留됯퉴吏� �대┝');
+				}
+
+			}
+
+		});
+
+		$('.ui_tabMenu > li > a').each(function(){
+			if($(this).attr('href') === '#listTab1_2'){
+				$(this).trigger('click')
+			};
+		});
+
+	}, 1000);
+ 
+}
+
+// $(function(){
+	new nav();
+// });
+
+function footPrint() {
+	this.addEvent();
+}
+footPrint.prototype.addEvent = function(){
+	$('.table').bind('click','a',this.onClick);
+}
+footPrint.prototype.onClick = function(e){
+	$(e.target).parents('tr').addClass('footprint').siblings().removeClass('footprint');
+	$(e.target).attr('title', '理쒓렐�� 蹂� ��ぉ').parents('tr').siblings().find('.name').removeAttr('title');
+}
+new footPrint();
+
+$(window).on('scroll', function() {
+    $('.heading').each(function() {
+        if($(window).scrollTop() >= $(this).offset().top - 190) {
+            var id = $(this).attr('id');
+            
+            $('.tabs a[href="#'+ id +'"]').addClass('active').siblings().removeClass('active');
+        }
+    });
+});
+
+
+$(window).resize(function(){
+	if( $(this).innerWidth() <= 640 ){
+		$('#iframe').remove();
+		
+	}else{
+		$('#iframe').remove();
+		$('<iframe frameborder="0" id="iframe" class=""></iframe>').appendTo( $('body') );
+		$('.header').animate({'height':'auto'}).find('.tabs').show();
+		$(".file").each(function(){
+			$(".file").find('a').removeAttr('style');
+			$(this).find('a').on({
+				'mouseenter':function(){
+					$("#iframe").attr('src', $(this).attr('href') ).addClass('active').show();
+					$(this).css('background-color', 'yellow');
+				},
+				'mouseleave':function(){
+					$("#iframe").removeAttr('src').removeClass('active').hide();
+					$(".file").find('a').removeAttr('style');
+				},
+				'focusin':function(){
+					$("#iframe").attr('src', $(this).attr('href') ).addClass('active').show();
+					$(this).css('background-color', 'yellow');
+				}
+			});
+		});
+		
+	}
+}).trigger('resize');
+
+
+function closePreview(){
+	$('.btn-preview.open').removeClass('open');
+	$('.mobile-preview').hide();
+}
+$(function(){
+	$('body').append(
+		'<div class="mobile-preview"><a href="javascript:closePreview();" class="btn-close">&#10006;</a><iframe frameborder="0" id="mobileView" style="border: 0" width="375" height="667"></iframe></div>'
+	)
+	$('.btn-preview').click(function(){
+		$this = $(this);
+		$('#mobileView').attr('src', $this.attr('data-target'));
+		if($('.mobile-preview').css('display') == 'none'){
+			$('.mobile-preview').show();
+		}
+		$('.btn-preview.open').removeClass('open');
+		$this.addClass('open');
+	});
+})
