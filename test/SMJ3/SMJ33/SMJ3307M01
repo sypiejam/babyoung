@@ -1,0 +1,69 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import CheckBox from "../../../../../common/components/input/CheckBox";
+import { FloatingButtonWrap, ButtonWrap, CustomA } from "../../../../../common/components/button/index";
+import Step from "../../../../../common/components/Step";
+import CheckBoxGroup from "../../../../../common/components/input/CheckBoxGroup";
+
+function SMJ3307M01(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    return(
+        <>
+            <Wrap>
+                <Header title={t("fx0301_0001")} back menu />
+                <Container hasFixed>
+                    <Step process={{cur : 1, total : 6}}  title={t("fx0301_0076")} />
+                    <div className="selections_wrap">
+                        <div className="selections_box"> {/* 퍼블검수 1차 : 클래스 multi 삭제 */}
+                            <CheckBoxGroup allCheck count="3">
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox type="small" name="check" id="check01" text={t("fx0301_0079")} />
+                                        </div>
+                                        <CustomA href="#none" btnClass="ico_arrow small" callback={()=> navigate(".")}>
+                                            <span className="blind">바로가기</span>
+                                        </CustomA>
+                                    </div>
+                                </li>
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox type="small" name="check" id="check02" text={t("fx0301_0080")} />
+                                        </div>
+                                        <CustomA href="#none" btnClass="ico_arrow small" callback={()=> navigate(".")}>
+                                            <span className="blind">바로가기</span>
+                                        </CustomA>
+                                    </div>
+                                </li>
+                                <li className="selections_item">
+                                    <div className="inner"> 
+                                        <div className="selection">
+                                            <CheckBox type="small" name="check" id="check03" text={t("fx0301_0081")} />
+                                        </div>
+                                        <CustomA href="#none" btnClass="ico_arrow small" callback={()=> navigate(".")}>
+                                            <span className="blind">바로가기</span>
+                                        </CustomA>
+                                    </div>
+                                </li>
+                            </CheckBoxGroup>
+                        </div>
+                    </div>
+                    <FloatingButtonWrap>
+                        <ButtonWrap wfix>
+                            <CustomA type="styled" href="#none" text={t("fx0301_0065")} callback={()=> navigate(".")} status="negative" /> {/* 퍼블검수 1차 : status 변경 */}
+                            <CustomA type="styled" href="#none" text={t("fx0301_0039")} callback={()=> navigate(".")} status="primary" />
+                        </ButtonWrap>
+                    </FloatingButtonWrap>
+                </Container>
+            </Wrap>
+        </>
+    );
+}
+
+
+export default SMJ3307M01;
