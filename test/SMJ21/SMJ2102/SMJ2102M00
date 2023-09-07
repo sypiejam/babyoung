@@ -1,1 +1,153 @@
 
+import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer"
+import Wrap from '../../../../../common/components/layout/Wrap'
+import Header from "../../../../../common/components/layout/Header"
+import Container from '../../../../../common/components/layout/Container'
+import { CustomA } from "../../../../../common/components/button"
+import Nodata from "../../../../../common/components/empty/Empty"
+import SMJ2102P02 from "../SMJ2102P02/SMJ2102P02"
+import AccList from "../../AccList"
+import AccAccount from "../../AccAccount"
+import AccBalance from "../../AccBalance"
+
+function SMJ2102M00(){ // 입출금
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const settingBtmsheetEvt = () => { //조건설정 바텀시트
+        dispatch(bottomSheetAction({
+            title: "",
+            message : <SMJ2102P02 />,
+            state : null
+        })) 
+    }
+    
+    return (
+        <>
+            <Wrap>
+                <Header back menu title={t("bk0101_0158")} />
+                <Container>
+                    <div className="acc_wrap">
+                        <div className="acc_summary">
+                            <AccAccount badge={t("bk0101_0022")} account="1001-000-091234" product="입출금상품명" />
+                            {/* <BadgeWrap>
+                                <span className="blind">{t("bk0101_0021")}</span>
+                                <BadgeItem color="disabled" text={t("bk0101_0022")} />
+                            </BadgeWrap>
+                            <div className="d-flex">
+                                <div className="acc_num">
+                                    <span className="blind">{t("bk0101_0085")}</span><span>1001-000-091234</span>
+                                </div>
+                                <button type="button" className="acc_copy" onClick={toastEvt}><span className="blind">계좌번호 복사</span></button>
+                            </div>
+                            <div className="acc_name">상품명</div> */}
+                            <div className="acc_balance">
+                                <AccBalance cur="KRW" balance="15,000,000" duedate="2023.05.01" overdue btmtxt={t("bk0101_0159")} btmData="15,000,000" />
+                                {/* 2023-06-02 btmtxt, btmData props 변경 */}
+                            </div>
+                            {/* <div className="acc_balance">
+                                <div className="top_info">
+                                    <span className="blind">{t("fx0601_0024")}</span>
+                                    <span className="data"><span className="cur">KRW</span><strong className="sum">15,000,000</strong></span>
+                                </div>
+                                <div className="btm_info">
+                                    <span className="txt">{t("bk0101_0060")}</span>
+                                    <span className="data">2023 05 01</span>
+                                </div>
+                                <div className="btm_info over">
+                                    <span className="txt">{t("bk0101_0214")}</span>
+                                    <span className="data">2023 05 01</span>
+                                </div>
+                                <div className="btm_info">
+                                    <span className="txt">{t("0101_0159")}</span>
+                                    <span calssName="data"><span className="cur">KRW</span><strong className="sum">15,000,000</strong></span>
+                                </div>
+                            </div> */}
+                            <div className="btn_wrap">
+                                <CustomA type="styled" size="lg" href="#none" text={t("bk0101_0025")} status="blue" callback={()=> navigate(".")} /> {/* callback={계좌상세 팝업 호출} */}
+                                <CustomA type="styled" size="lg" href="#none" text={t("bk0201_0067")} callback={()=> navigate(".")} status="primary" /> {/* 이체페이지로 이동 */}
+                            </div>
+                        </div>
+
+                        <div className="condition big">
+                            <h2 className="blind">조회기간 설정</h2>
+                            <div className="inner">
+                                <div className="tc monthbox">
+                                        <div className="inner">
+                                            <div className="selected"><em className="year">2023</em>.<em className="month">01</em></div> {/* 퍼블검수 1차 : 년도와 달사이에 dot추가 */}
+                                        <button type="button" className="btn_prev"><span className="ico_arrow lt"><span className="blind">다음 달</span></span></button> 
+                                        <button type="button" className="btn_next"><span className="ico_arrow"><span className="blind">이전 달</span></span></button> {/* 비활성화 button에 disabled속성 추가 */}
+                                    </div>
+                                </div>
+                                <div className="atr">
+                                    <button type="button" className="ico_setting" onClick={settingBtmsheetEvt}><span className="blind">조건설정</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="acc_list">
+                            {/* 검색결과가 있는 경우 */}
+                            <ul>
+                                {/* 리스트 클릭시 거래상세팝업 호출 */}
+                                {/* <li>
+                                    <CustomA href="#none" btnClass="acc_list_item"> 
+                                        <div className="top_item">
+                                            <div className="date_area">
+                                                <span className="blind">{t("cs0202_0005")}</span><span className="date">2023 05 23</span>
+                                            </div>
+                                        </div>
+                                        <div className="mid_item">
+                                            <div className="txt_area">
+                                                <strong className="briefs">적요</strong>
+                                            </div>
+                                            <div className="sum_area acc_plus">
+                                                <span className="cur">KRW</span><span className="sum">1,000,000,000</span>
+                                            </div>
+                                        </div>
+                                        <div className="btm_item">
+                                            <div className="time_area">00:00:00</div>
+                                            <div className="balance_area">
+                                                <span className="txt">{t("bk0101_0093")}</span><span className="d-inblk"><span className="cur">KRW</span><span className="sum">1,000,000,000</span></span>
+                                            </div>
+                                        </div>
+                                    </CustomA>
+                                </li> */}
+                                {/* 입출금 */}
+                                <AccList 
+                                    date="2023.12.13" 
+                                    briefs="적요 매우 긴 텍스트 존재"
+                                    increase="plus" 
+                                    cur="KRW" 
+                                    sum="999,999,999,999,999" 
+                                    time="00:00:00" 
+                                    txt={t("fx0601_0024")}
+                                    balanceCur="KRW"
+                                    balance="999,999,999,999,999" 
+                                />
+                                <AccList 
+                                    date="2023.12.13" 
+                                    briefs="국민 김우리국민"
+                                    increase="minus" 
+                                    cur="KRW" 
+                                    sum="999,999,999,999,999" 
+                                    time="00:00:00" 
+                                    txt={t("fx0601_0024")}
+                                    balanceCur="KRW"
+                                    balance="999,999,999,999,999" 
+                                />
+                            </ul>
+                            {/* 검색결과가 없는 경우 */}
+                            <Nodata txt={t('bk0101_0160')} />
+                        </div>
+                    </div>
+                </Container>
+            </Wrap>
+        </>
+    )
+}
+
+export default SMJ2102M00
