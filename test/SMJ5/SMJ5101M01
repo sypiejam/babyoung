@@ -1,0 +1,353 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { popupAction } from "../../../../../common/store/popupReducer";
+import { bottomSheetAction } from "../../../../../common/store/bottomSheetReducer";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import NormalTextField from "../../../../../common/components/input/textField/NormalTextField";
+import { FloatingButtonWrap, ButtonWrap, CustomA } from "../../../../../common/components/button";
+import { SegmentControl, SegmentWrap } from "../../../../../common/components/segment";
+import CheckBox from "../../../../../common/components/input/CheckBox";
+import EmailTextField from "../../../../../common/components/input/textField/EmailTextField";
+import Notice from "../../../../../common/components/Notice";
+import Dropdown from "../../../../../common/components/dropdown/Dropdown";
+import SMJ1I01P00 from "../../../../SMJ1/SMJ1I/SMJ1I01/SMJ1I01P00/SMJ1I01P00";
+import SMJ5101P02 from "../SMJ5101P02/SMJ5101P02";
+import SMJ5101P04 from "../SMJ5101P04/SMJ5101P04";
+import SMJ5101P05 from "../SMJ5101P05/SMJ5101P05";
+
+function SMJ5101M01(){
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [receiveSegmentIdx, setReceiveSegmentIdx] = useState(0);
+    const [emailSegmentIdx01, setEmailSegmentIdx01] = useState(1);
+    const [emailSegmentIdx02, setEmailSegmentIdx02] = useState(1);
+    const [postalAddrSegmentIdx, setPostalAddrSegmentIdx] = useState(1);
+
+    return(
+        <Wrap>
+            <Header title={t("cs0101_0002")} back menu />
+            <Container hasFixed>
+                <div className="dvgroup first">
+                    <div className="table_wrap">
+                        <div className="table tbl_round">
+                            <table>
+                                <caption>{t("co1501_0051")}, {t("co1501_0025")}</caption>
+                                <colgroup>
+                                    <col style={{width:"40%"}} />
+                                    <col />
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">{t("co1501_0051")}</th>
+                                        <td>CINUK5052</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">{t("co1501_0025")}</th>
+                                        <td>김우리(KIM WOORI)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 연락처 전화번호 */}
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <div className="title_float link_wrap"> {/* 퍼블검수 1차 : 클래스명 title_float 변경 */}
+                            <strong className="title_lv3">{t("cs0101_0007")}</strong>
+                            <CustomA href="#none" btnClass="link_arr arr_right" callback={()=>
+                                dispatch(popupAction({
+                                    title: "",
+                                    message : <SMJ5101P04 />,
+                                    state : null
+                                }))
+                            }>{/* 전화번호변경(SMJ5101P04) 팝업 호출 */}
+                                <span> {t("cs0101_0008")}</span>
+                            </CustomA>
+                        </div>
+                    </div>
+                    <div className="field_optionbox">
+                        <div className="field_wrap">
+                            <label htmlFor="phoneNumber01" className="inp_title">{t("co0802_0003")}</label>
+                            <NormalTextField type="number" id="phoneNumber01" status="readOnly" placeholder={t("ls0101_0043")} defaultValue="010-***-1234"/>{/* 저장된 번호일때 status값 readOnly / 직적입력일때는 빈값  */}
+                        </div>
+                        <div className="field_wrap">
+                            <label htmlFor="phoneNumber02" className="inp_title">{t("cs0101_0009")}</label>
+                            <NormalTextField type="number" id="phoneNumber02" status="readOnly" placeholder={t("ls0101_0043")} defaultValue="031-***-1234"/>{/* 저장된 번호일때 status값 readOnly / 직적입력일때는 빈값  */}
+                        </div>
+                        <div className="field_wrap">
+                            <label htmlFor="phoneNumber03" className="inp_title">{t("cs0101_0010")}</label>
+                            <NormalTextField type="number" id="phoneNumber03" status="readOnly" placeholder={t("ls0101_0043")} defaultValue="070-***-1234"/>{/* 저장된 번호일때 status값 readOnly / 직적입력일때는 빈값  */}
+                        </div>
+                        <div className="field_wrap">
+                            <label htmlFor="phoneNumber04" className="inp_title">{t("cs0101_0011")}</label>
+                            <NormalTextField type="number" id="phoneNumber04" status="disabled" defaultValue="-"/>{/* 저장된 번호일때 status값 readOnly / 직적입력일때는 빈값  */}
+                        </div>
+                    </div>  
+                </div>
+
+                {/* SMS 수신여부 */}
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <em className="inp_title">{t("cs0101_0012")}</em>
+                    </div>
+                    <SegmentWrap groupname="receiveSMS" activeIdx={receiveSegmentIdx}>
+                        <SegmentControl id="receiveSegment01" title={t("cs0101_0013")} onChange={setReceiveSegmentIdx} />
+                        <SegmentControl id="receiveSegment02" title={t("cs0101_0014")} onChange={setReceiveSegmentIdx} />
+                    </SegmentWrap>
+                </div>
+
+                {/* 전화수신거부(중복선택 가능) */}
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <em className="inp_title">{t("cs0101_0015")}</em>
+                    </div>
+                    <div className="list_half">
+                        <div className="chk_item">
+                            <CheckBox type="normal" id="checkitem1_1" name="doNotCallChk" text={t("co0802_0013")} />
+                        </div>
+                        <div className="chk_item">
+                            <CheckBox type="normal" id="checkitem1_2" name="doNotCallChk" text={t("co0802_0014")} />
+                        </div>
+                        <div className="chk_item">
+                            <CheckBox type="normal" id="checkitem1_3" name="doNotCallChk" text={t("co0802_0004")} />
+                        </div>
+                    </div>
+                </div>
+
+                {/* 자택주소 */}
+                <div className="field_wrap address_field">
+                    <div className="title_wrap">
+                        <div className="title_float link_wrap"> {/* 퍼블검수 1차 : 클래스명 title_float 변경 */}
+                            <em className="inp_title">{t("cs0101_0016")}</em> {/* 퍼블검수 1차 : 번역코드 수정 */}
+                            <CustomA href="#none" btnClass="link_arr arr_right" callback={()=>
+                                dispatch(popupAction({
+                                    title: "",
+                                    message : <SMJ1I01P00 />,
+                                    state : null
+                                }))
+                            }>
+                                <span> {t("fx0301_0114")}</span>
+                            </CustomA>
+                        </div>
+                    </div>
+                    <NormalTextField status="readOnly" placeholder={t("fx0301_0629")} defaultValue="04631, SOUTH KOREA Seoul Jung-gu 48, Sogong-ro 48"/>
+                    <NormalTextField status="readOnly" placeholder={t("fx0301_0143")} />
+                </div>   
+
+                {/* 이메일 */}
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <em className="inp_title">{t("ls0101_0049")}</em>
+                    </div>
+                    <SegmentWrap groupname="email" activeIdx={emailSegmentIdx01}>
+                        <SegmentControl id="emailSegment01" title={t("ls0101_0041")} onChange={setEmailSegmentIdx01} />
+                        <SegmentControl id="emailSegment02" title={t("ls0101_0042")} onChange={setEmailSegmentIdx01} />
+                    </SegmentWrap>
+                    {
+                        emailSegmentIdx01 === 0 &&
+                        <div className="segment_panel">
+                            <div className="field_wrap">
+                                <EmailTextField status="" placeholder={t("fx0304_0027")} errorMsg={t("ls0101_0050")} defaultValue="KIMWR@woori.com" />
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                {/* 이메일 수신여부 */}
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <em className="inp_title">{t("cs0101_0017")}</em>
+                    </div>
+                    <SegmentWrap groupname="emailSubscription" activeIdx={emailSegmentIdx02}>
+                        <SegmentControl id="emailSegment03" title={t("cs0101_0013")} onChange={setEmailSegmentIdx02} />
+                        <SegmentControl id="emailSegment04" title={t("cs0101_0014")} onChange={setEmailSegmentIdx02} />
+                    </SegmentWrap>
+                </div>
+
+                {/* 상품서비스 안내수단 */}
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <div className="title_float link_wrap">
+                            <em className="inp_title">{t("cs0101_0018")}</em>
+                            <CustomA href="#none" btnClass="link_arr arr_right" callback={()=>
+                                dispatch(popupAction({
+                                    title: "",
+                                    message : <SMJ5101P05 />,
+                                    state : null
+                                }))
+                            }>{/* 상품서비스 안내동의(SMJ5101P05) 팝업 호출 */}
+                                <span> {t("cs0101_0019")}</span>
+                            </CustomA>
+                        </div>
+                    </div>
+                    <ul className="selection_list mt16">
+                        <li className="selections_item">
+                            <div className="chk_item">
+                                <CheckBox type="normal" id="checkitem2_1" name="prdServiceChk" text={t("cs0101_0020")} isDisabled />
+                            </div>
+                        </li>
+                        <li className="selections_item">
+                            <div className="chk_item">
+                                <CheckBox type="normal" id="checkitem2_2" name="prdServiceChk" text={t("cs0101_0021")} isDisabled />
+                            </div>
+                        </li>
+                        <li className="selections_item">
+                            <div className="chk_item">
+                                <CheckBox type="normal" id="checkitem2_3" name="prdServiceChk" text={t("co0802_0004")} isDisabled />
+                            </div>
+                        </li>
+                        <li className="selections_item">
+                            <div className="chk_item">
+                                <CheckBox type="normal" id="checkitem2_4" name="prdServiceChk" text={t("cs0101_0022")} isDisabled />
+                            </div>
+                        </li>
+                        <li className="selections_item">
+                            <div className="chk_item">
+                                <CheckBox type="normal" id="checkitem2_5" name="prdServiceChk" text={t("cs0101_0023")} isDisabled />
+                            </div>
+                        </li>
+                        <li className="selections_item">
+                            <div className="chk_item">
+                                <CheckBox type="normal" id="checkitem2_6" name="prdServiceChk" text={t("cs0101_0024")} isDisabled />
+                            </div>
+                        
+                            <div className="list_half mt0">
+                                <div className="chk_item">
+                                    <input type="radio" name="radio" id="radioChkDepItem01" className="check_small" defaultChecked disabled />
+                                    <label htmlFor="radioChkDepItem01">{t("co0802_0013")}</label>
+                                </div>
+                                <div className="chk_item">
+                                    <input type="radio" name="radio" id="radioChkDepItem02" className="check_small" disabled />
+                                    <label htmlFor="radioChkDepItem02">{t("co0802_0014")}</label>
+                                </div>
+                                <div className="chk_item">
+                                    <input type="radio" name="radio" id="radioChkDepItem03" className="check_small" disabled />
+                                    <label htmlFor="radioChkDepItem03">{t("cs0101_0025")}</label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                {/* 예금관련 우편물 발송처 */}
+                <Dropdown type="icon" title={t("cs0101_0026")} hint={`${t("cs0101_0026")} ${t("ls0101_0052")}`} onClick={()=>{
+                    dispatch(bottomSheetAction({
+                        title: "",
+                        message : <SMJ5101P02 />,
+                        state : null
+                    }))
+                }}> {/* 예금관련 우편물 발송처(SMJ5101P02) 바텀시트 호출 */}
+                    <span className="inp_select_value">{t("ls0101_0052")}</span>
+                </Dropdown>
+
+                {/* 예금관련 우편물 발송처 > 실거주지 선택 시 : 상세주소입력 노출 */}
+                <div className="field_wrap address_field">
+                    <div className="title_wrap">
+                        <div className="title_float link_wrap">
+                            <em className="inp_title">{t("fx0301_0619")}</em> {/* 퍼블검수 1차 : 번역코드 수정 */}
+                            <CustomA href="#none" btnClass="link_arr arr_right" callback={()=>
+                                dispatch(popupAction({
+                                    title: "",
+                                    message : <SMJ1I01P00 />,
+                                    state : null
+                                }))
+                            }>
+                                <span> {t("fx0301_0114")}</span>
+                            </CustomA>
+                        </div>
+                    </div>
+                    <NormalTextField status="readOnly" placeholder={t("fx0301_0629")} />
+                    <NormalTextField status="readOnly" placeholder={t("fx0301_0143")} />
+                </div>
+
+                {/* 여신관련 우편물 발송처 */}
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <em className="inp_title">{t("cs0101_0027")}</em>
+                    </div>
+                    <SegmentWrap groupname="postalAddress" activeIdx={postalAddrSegmentIdx}>
+                        <SegmentControl id="postalAddrSegment01" title={t("co0802_0013")} onChange={setPostalAddrSegmentIdx} />
+                        <SegmentControl id="postalAddrSegment02" title={t("co0802_0014")} onChange={setPostalAddrSegmentIdx} />
+                    </SegmentWrap>
+                </div>
+
+                {/* 직장정보 */}
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <div className="title_float">
+                            <strong className="title_lv3">{t("cs0101_0028")}</strong>
+                            <button type="button" className="btn_refresh">
+                                <div className="d-flex">
+                                    <i className="ico_refresh mr4"></i>
+                                    <span className="title_lv3">{t("cs0101_0029")}</span>
+                                </div>
+                            </button> 
+                        </div>
+                    </div>
+                    <div className="field_optionbox">
+                        <div className="field_wrap">
+                            <em className="inp_title">{t("cs0101_0030")}</em>
+                            <NormalTextField type="text" status="" placeholder={t("cs0101_0031")} />
+                        </div>
+                        <div className="field_wrap">
+                            <em className="inp_title">{t("cs0101_0032")}</em>
+                            <NormalTextField type="text" status="" placeholder={t("cs0101_0033")} />
+                        </div>
+                        <div className="field_wrap">
+                            <em className="inp_title">{t("cs0101_0034")}</em>
+                            <NormalTextField type="text" status="" placeholder={t("cs0101_0035")} />
+                        </div>
+                        <div className="field_wrap address_field">
+                            <div className="title_wrap">
+                                <div className="title_float link_wrap">
+                                    <em className="inp_title">{t("cs0101_0036")}</em>
+                                    <CustomA href="#none" btnClass="link_arr arr_right" callback={()=>
+                                        dispatch(popupAction({
+                                            title: "",
+                                            message : <SMJ1I01P00 />,
+                                            state : null
+                                        }))
+                                    }>
+                                        <span> {t("fx0301_0114")}</span>
+                                    </CustomA>
+                                </div>
+                            </div>
+                            <NormalTextField status="" placeholder={t("ls0101_0043")} />
+                            <div className="mt16">
+                                <label htmlFor="detailaddress" className="blind">{t("fx0301_0619")}</label>
+                                <NormalTextField status="" id="detailaddress" />
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+
+                {/* 알아두세요 */}
+                <Notice>
+                    <ul className="bullet">
+                        <li className="bullet_disc">{t("cs0101_0037")}</li>
+                        <li className="bullet_disc">{t("cs0101_0038")}<br/>{t("cs0101_0039")}</li>
+                        <li className="bullet_disc">{t("cs0101_0040")}<br/>{t("cs0101_0041")}</li>
+                        <li className="bullet_disc">{t("cs0101_0042")}<br/>{t("cs0101_0043")}</li>
+                        <li className="bullet_disc">{t("cs0101_0069")}</li> {/* 2023-08-11 기획 수정반영 : 알아두세요 문구 추가 */}
+                    </ul>
+                </Notice>
+
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <CustomA type="styled" href="#none" text={t("co1501_0010")} callback={()=> navigate(".")} status="primary" />
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </Container>
+        </Wrap>
+    );
+}
+
+
+export default SMJ5101M01;
