@@ -1,0 +1,66 @@
+import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { popupAction } from "../../../../../common/store/popupReducer";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import { AccordionWrap, AccordionItem } from "../../../../../common/components/accordion/index";
+import { ButtonWrap, Button, CustomA } from "../../../../../common/components/button/index";
+import SMJ3307P13 from "../SMJ3307P13/SMJ3307P13";
+
+function SMJ3307M00(){
+    const dispatch = useDispatch();
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    return(
+        <>
+            <Wrap>
+                <Header title={t("fx0301_0001")} back menu />
+                <Container>
+                    <div className="toparea bg">
+                        <div className="title_wrap"> {/* 퍼블검수 1차 : 클래스 d-flex 삭제 */}
+                            <strong className="title_h1">{t("fx0301_0001")}</strong>
+                            {/* 퍼블검수 1차 : a => button 마크업 변경 st */}
+                            <button type="button" className="ico_help btn_help" onClick={()=>
+                                dispatch(popupAction({
+                                    title: "",
+                                    message : <SMJ3307P13 />,
+                                    state : null
+                                }))
+                            }>{/* 해외송금이용안내(SMJ3307P13) 팝업 호출 */}
+                                <span className="blind">도움말</span>
+                            </button>
+                            {/* //퍼블검수 1차 : a => button 마크업 변경 end */}
+                        </div>
+                        <div className="toparea_desc">
+                            <p className="txt">{t("fx0301_0002")}</p>
+                            <div className="icon_smj3307 lg img"></div>
+                        </div>
+                    </div>
+                    <AccordionWrap>
+                        <AccordionItem title={t("fx0301_0001")} open>
+                            <p className="mb24">{t("fx0301_0004")}</p>
+                            <ButtonWrap col>
+                                <CustomA type="styled" href="#none" text={t("fx0301_0005")} callback={()=> navigate(".")} status="outlined" size="lg"/>
+                                <CustomA type="styled" href="#none" text={t("fx0301_0006")} callback={()=> navigate(".")} status="outlined" size="lg"/>
+                                <CustomA type="styled" href="#none" text={t("fx0301_0007")} callback={()=> navigate(".")} status="outlined" size="lg"/>
+                            </ButtonWrap>
+                        </AccordionItem>
+                        <AccordionItem title={t("fx0301_0008")}>
+                            <p className="mb24">{t("fx0301_0009")}</p>
+                            <ButtonWrap col>
+                                <CustomA type="styled" href="#none" text={t("fx0301_0010")} callback={()=> navigate(".")} status="outlined" size="lg"/>
+                                <Button status="outlined" tag="button" size="lg" text={t("fx0301_0011")} />
+                                <Button status="outlined" tag="button" size="lg" text={t("fx0301_0012")} />
+                            </ButtonWrap>
+                        </AccordionItem>
+                    </AccordionWrap>
+                </Container>
+            </Wrap>
+        </>
+    );
+}
+
+
+export default SMJ3307M00;
