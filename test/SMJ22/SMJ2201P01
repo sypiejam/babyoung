@@ -1,0 +1,28 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import BottomSheetHead from "../../../../../common/components/bottomSheet/BottomSheetHead";
+import BottomSheetBody from "../../../../../common/components/bottomSheet/BottomSheetBody";
+import BottomSheetInner from "../../../../../common/components/bottomSheet/BottomSheetInner";
+import AccountListItem from "../../../../../common/components/list/AccountListItem";
+
+function SMJ2201P01(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+
+    return(
+        <>
+            <BottomSheetHead title={t('bk0201_0019')} btnClose/>
+            <BottomSheetBody>
+                <BottomSheetInner>
+                    <ul className="listbox">
+                        <AccountListItem type="normal" callback={()=> navigate(".")} bankCode="020" accName="상품명 한줄이상 말줄임 상품명 한줄이상 말줄임" accNum="1002-456-890123" money="999,999,999,999,999" btmText={t("bk0201_0020")}/>
+                        <AccountListItem type="normal" callback={()=> navigate(".")} bankCode="020" accName="상품명 한줄이상 말줄임" accNum="1002-456-890123" money="999,999,999,999,999" btmText={t("bk0201_0020")}/>
+                        <AccountListItem type="normal" callback={()=> navigate(".")} bankCode="020" accName="상품명 한줄이상 말줄임" accNum="1002-456-890123" money="999,999,999,999,999" btmText={t("bk0201_0020")}/>
+                    </ul>
+                </BottomSheetInner>
+            </BottomSheetBody>
+        </>
+    );
+}
+
+export default SMJ2201P01;
