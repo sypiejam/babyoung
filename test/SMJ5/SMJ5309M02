@@ -1,0 +1,77 @@
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+// import BadgeItem from "../../../../../common/components/badge/BadgeItem";
+import NormalListLinkItem from '../../../../../common/components/list/NormalListLinkItem';
+import { ButtonWrap, CustomA } from "../../../../../common/components/button/index";
+import Nodata from '../../../../../common/components/empty/Empty';
+
+// 당첨자목록
+function SMJ5309M02(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    return(
+        <Wrap>
+            <Header back menu title={t('cs0306_0001')} />
+            <Container>
+                <div className="tab_wrap">
+                    <div className="tab_head">
+                        <CustomA href="#none" btnClass="tab_item" callback={()=> navigate("/SMJ5/SMJ53/SMJ5309/SMJ5309M00")}><span className="tab_txt">{t("cs0306_0002")}</span></CustomA>
+                        <CustomA href="#none" btnClass="tab_item" callback={()=> navigate("/SMJ5/SMJ53/SMJ5309/SMJ5309M01")}><span className="tab_txt">{t("cs0306_0003")}</span></CustomA>
+                        <CustomA href="#none" btnClass="tab_item is-active" callback={()=> navigate("/SMJ5/SMJ53/SMJ5309/SMJ5309M02")}><span className="tab_txt">{t("cs0306_0004")}</span></CustomA>
+                    </div>
+                    <div className="tabcont">
+                        <h2 className="blind">{t("cs0306_0004")}</h2>
+                        {/* 로그아웃 상태일 경우 st */}
+                        <div className="empty_login">
+                            <Nodata type="large" txt={t("cs0306_0007")} icon="login" />
+                            <ButtonWrap>
+                                <CustomA type="styled" size="lg" href="#none" text={t('cs0306_0008')} callback={()=> navigate(".")} status="primary" />
+                            </ButtonWrap>
+                        </div>
+                        {/* 로그아웃 상태일 경우 end */}
+
+                        <div className="notilist">
+                            <ul>
+                                <li className="custbox_list">
+                                    <NormalListLinkItem tag="div" type="a" title="우리글로벌뱅킹 당첨자목록" callback={()=> navigate("/SMJ5/SMJ53/SMJ5309/SMJ5309M03")} arrow />
+                                    {/* 퍼블검수 1차 : Badge 삭제 */}
+                                    <ul className="infocusto">
+                                        <li className="infolist_item">
+                                            <span className="infolist_lt">{t('cs0306_0005')}</span>
+                                            <span className="infolist_rt num">2023.10.22 ~ 2023.11.20</span>
+                                        </li>
+                                        <li className="infolist_item">
+                                            <span className="infolist_lt">{t('cs0306_0006')}</span>
+                                            <span className="infolist_rt num">2022.12.27</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li className="custbox_list">
+                                    <NormalListLinkItem tag="div" type="a" title="당첨자목록 제목" callback={()=> navigate("/SMJ5/SMJ53/SMJ5309/SMJ5309M03")} arrow />
+                                    <ul className="infocusto">
+                                        <li className="infolist_item">
+                                            <span className="infolist_lt">{t('cs0306_0005')}</span>
+                                            <span className="infolist_rt num">2023.10.22 ~ 2023.11.20</span>
+                                        </li>
+                                        <li className="infolist_item">
+                                            <span className="infolist_lt">{t('cs0306_0006')}</span>
+                                            <span className="infolist_rt num">2022.12.27</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* 검색결과 없는 경우 */}
+                        <Nodata txt={<>{t("cs0306_0009")}<br />{t("cs0306_0010")}</>} />
+                    </div>
+                </div>
+            </Container>
+        </Wrap>
+    )
+}
+
+export default SMJ5309M02;
