@@ -1,0 +1,109 @@
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import BottomSheetHead from '../../../../../common/components/bottomSheet/BottomSheetHead'
+import BottomSheetBody from '../../../../../common/components/bottomSheet/BottomSheetBody'
+import BottomSheetInner from '../../../../../common/components/bottomSheet/BottomSheetInner'
+import { bottomSheetSecondLayerAction } from "../../../../../common/store/bottomSheetSecondLayerReducer";
+import CalendarField from "../../../../../common/components/input/textField/CalendarField";
+import CalendarNormal from "../../../../../common/components/CalendarNormal";
+import { SegmentWrap, SegmentControl } from '../../../../../common/components/segment/index'
+import { AccordionWrap, AccordionItem } from "../../../../../common/components/accordion/index";
+import NormalTextField from "../../../../../common/components/input/textField/NormalTextField";
+import { FloatingButtonWrap, ButtonWrap, CustomA } from "../../../../../common/components/button";
+
+function SMJ2102P02(){ // 입출금 조회
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [terms, setTerms] = useState(0); // 기간선택
+    const [category, setCaterogy] = useState(0); // 거래구분
+    const [sort, setSort] = useState(0); // 정렬순서
+    return(
+        <>
+            <BottomSheetHead title={t("bk0101_0164")} btnClose /> 
+            <BottomSheetBody hasFixed hType="hauto">
+                <BottomSheetInner>
+                    <div className="pb24">
+                        <div className="mt16"> {/* 2023-07-21 클래스 변경 */}
+                            <div className="title_wrap">
+                                <strong className="title_lv3">{t("bk0101_0165")}</strong>
+                            </div>
+                            {/* 기간선택 (3개월, 6개월, 1년, 직접입력) */}
+                            <SegmentWrap activeIdx={terms}>
+                                <SegmentControl id="SMJ2102P02_terms01" title={t("bk0202_0045")} onChange={setTerms} /> 
+                                <SegmentControl id="SMJ2102P02_terms02" title={t("bk0202_0046")} onChange={setTerms} /> 
+                                <SegmentControl id="SMJ2102P02_terms03" title={t("bk0101_0166")} onChange={setTerms} /> 
+                                <SegmentControl id="SMJ2102P02_terms04" title={t("bk0201_0025")} onChange={setTerms} />
+                            </SegmentWrap>
+                            <div className="periodwrap">
+                                <div className="segment_panel">
+                                    <div className="field_flex">
+                                        <CalendarField status="" title="시작일 선택" defaultValue="2023.05.23" onClick={()=>{
+                                            dispatch(bottomSheetSecondLayerAction({
+                                                title: "",
+                                                message : <CalendarNormal />,
+                                                state : null
+                                            }))
+                                        }}/>
+                                        <span className="ico_wave"><span className="blind">~</span></span>
+                                        <CalendarField status="" title="종료일 선택" defaultValue="2023.05.23" onClick={()=>{
+                                            dispatch(bottomSheetSecondLayerAction({
+                                                title: "",
+                                                message : <CalendarNormal />,
+                                                state : null
+                                            }))
+                                        }}/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="dvgroup">
+                            {/* 거래구분 (전체, 입금, 출금) */}
+                            <div className="title_wrap">
+                                <strong className="title_lv3">{t("bk0101_0027")}</strong>
+                            </div>
+                            <SegmentWrap activeIdx={category}>
+                                <SegmentControl id="SMJ2102P02_category01" title={t("bk0101_0011")} onChange={setCaterogy} />
+                                <SegmentControl id="SMJ2102P02_category02" title={t("bk0101_0088")} onChange={setCaterogy} /> 
+                                <SegmentControl id="SMJ2102P02_category03" title={t("cs0202_0011")} onChange={setCaterogy} />
+                            </SegmentWrap>
+                        </div>
+    
+                        <div className="acc_toggle">
+                            <AccordionWrap>
+                                {/* 상세조건검색 */}
+                                <AccordionItem title={t("bk0101_0167")}> 
+                                    {/* 정렬순서 (최신순, 과거순) */}
+                                    <div className="title_wrap">
+                                        <strong className="title_lv3">{t("bk0101_0051")}</strong> 
+                                    </div>
+                                    <SegmentWrap activeIdx={sort}>
+                                        <SegmentControl id="SMJ2102P02_sort01" title={t("bk0101_0052")} onChange={setSort} /> 
+                                        <SegmentControl id="SMJ2102P02_sort02" title={t("bk0101_0053")} onChange={setSort} />
+                                    </SegmentWrap>
+                                    {/* 금액 설정 */}
+                                    <div className="dvgroup last">
+                                        <strong className="title_lv3">{t("bk0101_0168")}</strong>
+                                        <div className="field_flex">
+                                            <NormalTextField defaultValue="" placeholder={t("bk0201_0010")} />
+                                            <span className="ico_wave"><span className="blind">~</span></span>
+                                            <NormalTextField defaultValue="" placeholder={t("bk0201_0010")} />
+                                        </div>
+                                    </div>
+                                </AccordionItem>
+                            </AccordionWrap>
+                        </div>
+                    </div>
+                </BottomSheetInner>
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <CustomA type="styled" href="#none" text={t("fx0701_0071")} callback={()=> navigate(".")} status="primary" /> {/* t('co0400_0003') */}
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </BottomSheetBody>
+        </>
+    )
+}
+export default SMJ2102P02
