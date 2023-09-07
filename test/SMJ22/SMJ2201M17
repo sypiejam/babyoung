@@ -1,0 +1,107 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Container from "../../../../../common/components/layout/Container";
+import FlashMsg from "../../../../../common/components/flashMessage/FlashMsg";
+import { ButtonWrap, FloatingButtonWrap, CustomA } from "../../../../../common/components/button/index";// 2023-05-19 버튼 import 축약
+
+function SMJ2201M17(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    const [tableActive, setTableActive] = useState(false);
+
+    return(
+        <Wrap>
+            <Container hasFixed>
+                <FlashMsg type="complete" className={"first"} title={t('bk0201_0076')}></FlashMsg>
+                {/* 퍼블검수 1차 : 디자인 위치 변경으로 마크업 수정 st */}
+                <div className="title_wrap">
+                    <strong className="title_h3">
+                        <span className="chk_star mr8">
+                            <input type="checkbox" id="chkStar" className="blind" />
+                            <label htmlFor="chkStar" className="ico_star"><span className="blind">즐겨찾기 등록</span></label>
+                        </span>
+                        <span className="vm">Woori Kim</span>
+                    </strong>
+                </div>
+                {/* // 퍼블검수 1차 : 디자인 위치 변경으로 마크업 수정 end */}
+                <div className="table_wrap">
+                    <div className="table tbl_list">
+                        <table>
+                            <caption>{t('bk0201_0077')}, {t('bk0201_0078')}</caption>
+                            <colgroup>
+                                <col style={{width:"40%"}}/>{/* 퍼블검수 1차 : width 값 40%로 변경 */}
+                                <col/>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">{t('bk0201_0077')}</th>
+                                    <td>우리은행<br/>1002-757-123456</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">{t('bk0201_0078')}</th>
+                                    <td><em className="fc-blue02">KRW <span className="d-inblk">999,999,999,999,999</span></em></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        {   tableActive&&
+                            <table>
+                                <caption>{t('bk0201_0002')}, {t('bk0101_0136')}, {t('bk0201_0069')}, {t('bk0201_0063')}, {t('bk0201_0064')}, {t('bk0201_0082')}</caption>
+                                <colgroup>
+                                    <col style={{width:"40%"}}/>{/* 퍼블검수 1차 : width 값 40%로 변경 */}
+                                    <col/>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">{t('bk0201_0002')}</th>
+                                        <td>우리은행<br/>1002-757-123456</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">{t('bk0101_0136')}</th>
+                                        <td>{t('bk0101_0084')}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">{t('bk0201_0069')}</th>
+                                        <td>2022.05.05 즉시</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">{t('bk0201_0063')}</th>
+                                        <td>없음</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">{t('bk0201_0064')}</th>
+                                        <td>없음</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">{t('bk0201_0082')}</th>
+                                        <td>
+                                            <div className="link_wrap">
+                                                <CustomA href="" btnClass="link_line">{t('co1501_0010')}</CustomA>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        }
+                    </div>
+                    <div className="tbl_bottom link_wrap d-float">
+                        <button type="button" className="link_icon btn_share"><span>{t('bk0201_0079')}</span></button>{/* 퍼블검수 1차 : 번역코드 추가 */}
+                        <button type="button" className={`link_arr arr_toggle${tableActive===true?" is-active" : ""}`} onClick={()=>setTableActive(!tableActive)}><span>{(tableActive)? t('bk0201_0083') : t('bk0201_0080')}</span></button>
+                    </div>                    
+                </div>
+                <ButtonWrap className="mt32" col>{/* 퍼블검수 1차 : col 속석 추가 */}
+                    <CustomA type="styled" size="lg" status="outlined" text={t('bk0201_0066')} />{/* 퍼블검수 1차 : size md->lg 변경 */}
+                    <CustomA type="styled" size="lg" status="outlined" text={t('bk0201_0081')} />{/* 퍼블검수 1차 : size md->lg 변경 */}
+                </ButtonWrap>
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <CustomA type="styled" href="#none" text={t('bk0101_0070')} callback={()=> navigate(".")} status="primary" />
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </Container>
+        </Wrap>
+    )
+}
+
+export default SMJ2201M17;
