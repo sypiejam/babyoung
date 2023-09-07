@@ -3,7 +3,7 @@
 
 /* 대표계좌설정 */
 .m-account_hide {margin:3.2rem 0 0;}
-.m-account_head {display:flex;justify-content:space-between;padding:2rem 0;border-bottom:1px solid #f2f5f9;}
+.m-account_head {display:flex;justify-content:space-between;min-height:6rem;padding:2rem 0;border-bottom:1px solid #f2f5f9;}
 .m-account_head .title {font-weight:500;font-size:1.7rem;color:#333a40;}
 .m-account_head .count {min-width:3.8rem;margin-left:0.8rem;color:#1056c3;font-weight:500;font-size:1.8rem;text-align:right;}
 .m-account_body .name {display:block;color:#151c22;}
@@ -11,6 +11,7 @@
 .m-account_body .nickname {display:block;margin-top:0.8rem;font-size:1.3rem;color:#848a92;}
 .m-account_body .chk_inner {position:relative;margin:0 -2rem;padding:0 2rem;background:#fff;}
 .m-account_show .chk_inner::before {content:'';position:absolute;top:1.6rem;right:2rem;width:2.4rem;height:2.4rem;background:url(/public/images/com/ic_list_enabled.png) no-repeat 0 0 / 100%;}
+.m-account_body {min-height:15.7rem;}
 .m-account_body .chk_inner:only-child::before {content:none;}
 .m-account_body .chk_inner label {width:100%;}
 .m-account_body .chk_item {padding:1.6rem 0;border-bottom:1px solid #f2f5f9;}
@@ -38,7 +39,7 @@
 .m-allmenu_top .menu_name {display:block;font-size:1.4rem;color:#333a40;line-height:1.2;}
 .m-allmenu_top .menu_box img {display:block;width:4rem;height:4rem;margin:0 auto 0.8rem;}
 .m-allmenu_btm .menu_box {margin:4rem 0 4.8rem;}
-.m-allmenu_btm .menu_title {display:flex;align-items:center;padding:0 0 0.8rem 0;font-size:1.4rem;color:#686e75;border-bottom:1px solid #f2f5f9;}
+.m-allmenu_btm .menu_title {display:flex;align-items:center;margin:0 -0.4rem;padding:0 0 0.8rem 0;font-size:1.4rem;color:#686e75;border-bottom:1px solid #f2f5f9;}
 .m-allmenu_btm .menu_title img {width:3.2rem;height:3.2rem;margin-right:0.2rem;}
 .m-allmenu_btm .menu_name {flex:1;}
 .m-allmenu_btm .menu_list li {margin-top:2.4rem;}
@@ -55,13 +56,13 @@
 .m-top_head .user_info {display:flex;justify-content:space-between;font-weight:500;font-size:1.6rem;}
 .m-top_head .welcome_msg {opacity:0;}
 .m-loaded .m-top_head .welcome_msg {-webkit-animation:opacityeffect 1s both;animation:opacityeffect 1s both;}
-.m-top_head .user_name {position:relative;display:inline;padding-left:0.2rem;font-weight:500;}
+.m-top_head .user_name {position:relative;display:inline;padding-left:0.4rem;font-weight:500;}
 .m-top_head .underline {text-decoration:underline;text-decoration-skip-ink:none;}
 .m-top_head .alarm_msg {flex:1;margin-left:1.2rem;}
 .m-top_head .btn_alarm {display:block;width:2.4rem;height:2.4rem;margin-left:auto;background:url(/public/images/com/ic_header_alarm.png) no-repeat 0 0 / 100%;}
 .m-top_head .btn_alarm.is-active {background:url(/public/images/com/ic_header_alarm_on.png) no-repeat 0 0 / 100%;}
 .m-top_body {position:relative;}
-.m-acc_slider {overflow:hidden;position:relative;color:#fff;opacity:0;}
+.m-acc_slider {overflow:hidden;position:relative;min-height:15.7rem;color:#fff;opacity:0;}
 .m-loaded .m-acc_slider {-webkit-animation:opacityeffect 1s both;animation:opacityeffect 1s both;}
 .m-acc_slider .slick-list {overflow:visible;margin-left:2rem;}
 .m-acc_slider .slick-slide {position:relative;display:inline-block;padding-right:2rem;vertical-align:top;}
@@ -78,15 +79,17 @@
 .m-acc_slider .btn_setting {position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;padding:0 2rem;font-weight:400;font-size:1.5rem;color:#333a40;}
 .m-acc_slider .btn_setting::before {content:'';display:block;width:2.4rem;height:2.4rem;margin:0 auto 0.8rem;background:url(/public/images/com/ic_edit.png) no-repeat 0 0 / 100%;}
 .m-acc_slider .ico_accset {z-index:10;position:absolute;top:2.4rem;right:1rem;}
-.m-sec_rate {min-height:2rem;margin:3.2rem 0 0 0;}
+.m-sec_rate {min-height:2rem;margin:3.2rem 0 0 0;} 
 .m-sec_rate .m-skeleton {left:2rem;right:2rem;height:2rem;border-radius:0.6rem;}
 .m-rate_slider {position:relative;opacity:0;}
 .m-loaded .m-rate_slider {-webkit-animation:opacityeffect 1s both;animation:opacityeffect 1s both;}
 .m-rate_slider {display:flex;white-space:nowrap;}
 .m-rate_items {display:flex;align-items:center;}
-.m-rate_items.original {-webkit-animation:rollingRateOriginal 16s linear infinite;animation:rollingRateOriginal 16s linear infinite;}
-.m-rate_items.clone {position:absolute;transform:translateX(100%);-webkit-animation:rollingRateClone 16s linear infinite;animation:rollingRateClone 16s linear infinite;}
-.m-rate_items.clone2 {position:absolute;transform:translateX(200%);-webkit-animation:rollingRateClone2 16s linear infinite;animation:rollingRateClone2 16s linear infinite;}
+.m-loaded .m-rate_items.original {-webkit-animation:rollingRateOriginal 16s 1s linear infinite;animation:rollingRateOriginal 16s 1s linear infinite;}
+.m-rate_items.clone {position:absolute;transform:translateX(100%);}
+.m-loaded .m-rate_items.clone {-webkit-animation:rollingRateClone 16s 1s linear infinite;animation:rollingRateClone 16s 1s linear infinite;}
+.m-rate_items.clone2 {position:absolute;transform:translateX(200%);}
+.m-loaded .m-rate_items.clone2 {-webkit-animation:rollingRateClone2 16s 1s linear infinite;animation:rollingRateClone2 16s 1s linear infinite;}
 .m-rate_slider .rate_item {display:flex;align-items:center;font-size:1.4rem;}
 .m-rate_slider .rate_item {margin-left:2.4rem;}
 .m-rate_slider .rate_item .ico_flag {width:1.6rem;height:1.6rem;}
@@ -115,10 +118,10 @@
 .m-trans_list .trans_item {scroll-snap-align:start;scroll-margin:0.8rem;padding-left:2rem;}
 .m-trans_list .trans_item:not(:first-child) {padding-left:0.8rem;}
 .m-trans_list .trans_item:last-child {padding-right:2rem;}
-.m-trans_list .trans_link {position:relative;display:flex;align-items:center;min-width:11.2rem;height:5.8rem;padding:1rem 1.6rem;background:#e4eaf2;border-radius:0.8rem;}
+.m-trans_list .trans_link {position:relative;display:flex;align-items:center;height:5.8rem;padding:1rem 1.6rem;background:#e4eaf2;border-radius:0.8rem;}
 .m-trans_list .trans_info {position:relative;padding-top:2rem;}
 .m-trans_list .trans_target {overflow:hidden;position:absolute;top:0;left:0;right:0;font-size:1.4rem;color:#333a40;white-space:nowrap;text-overflow:ellipsis;}
-.m-trans_list .trans_sum {display:block;font-size:1.3rem;color:#4c5459;}
+.m-trans_list .trans_sum {display:block;min-width:8rem;font-size:1.3rem;color:#4c5459;}
 .m-sec_shortcut {margin:3.2rem 0 0 0;}
 .m-shortcut_box {display:flex;flex-wrap:wrap;justify-content:center;margin:-0.4rem 0;padding:0 1.6rem;}
 .m-shortcut_box li {position:relative;width:calc(50% - 0.8rem);margin:0.4rem;background:#fff;border-radius:1rem;}
