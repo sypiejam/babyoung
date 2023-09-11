@@ -1,0 +1,18 @@
+import { combineReducers } from "redux";
+import popupReducer from "./popupReducer";
+import bottomSheetReducer from "./bottomSheetReducer";
+import toastReducer from "./toastReducer";
+import customPopupReducer from "./customPopupReducer";
+import dialogReducer from "./dialogReducer";
+import bottomSheetSecondLayerReducer from "./bottomSheetSecondLayerReducer";
+
+const RootReducer  = combineReducers({
+    popupReducer,
+    bottomSheetReducer,
+    toastReducer,
+    customPopupReducer,
+    dialogReducer,
+    bottomSheetSecondLayerReducer
+});
+
+export default RootReducer;
