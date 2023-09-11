@@ -1,0 +1,44 @@
+/**
+ * @name ToastReducer 
+ * @role 토스트 메시지를 띄우기 위한 리덕스
+ * @initialState title - string, 토스트 메시지에 들어갈 텍스트, 해당 값의 유무에 따라 토스트 메시지 노출 여부 결정
+ * @initialState option - boolean, 페이지 하단에 버튼이 있는지 여부
+ * @initialState btnName - string, 토스트 메시지 우측에 있는 버튼의 텍스트
+ * @initialState onClick - func, 토스트 메시지 우측에 있는 버튼에 대한 onClick 함수
+ **/ 
+
+const initialState = {
+    title: "",
+    option : "",
+    btnName : "",
+    onClick : null
+}
+
+export const toastAction = (data) => {
+    return {
+        type : "TOAST",
+        data : data
+    }
+}
+
+const toastReducer = (state = initialState, action) => {
+    switch(action.type) {
+        case "TOAST" : {
+            return {
+                ...state,
+                title : action.data.title,
+                option : action.data.option,
+                btnName : action.data.btnName,
+                onClick : action.data.onClick
+            }
+        }
+
+        default : {
+            return {
+                ...state
+            }
+        }
+    }
+}
+
+export default toastReducer;
