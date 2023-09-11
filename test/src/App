@@ -1,0 +1,10 @@
+import RouteRoute from "./common/routes";
+import "./common/styles/style.css"
+
+function App() {
+  return (
+    <RouteRoute />
+  );
+}
+
+export default App;
