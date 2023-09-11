@@ -1,0 +1,72 @@
+import { useSelector } from "react-redux";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PopupWebContainer from "../components/popup/PopupWebContainer";
+import ExamplePage from "../../pages/example/index";
+import BottomSheetFrame from "../components/bottomSheet/BottomSheetFrame";
+import ToastFrame from "../components/toastMessage/ToastFrame";
+import CustomPopupFrame from "../components/customPopup/CustomPopupFrame";
+import DialogFrame from "../components/dialog/DialogFrame";
+import BottomSheetFrameSecondLayer from "../components/bottomSheetSecondLayer/BottomSheetFrameSecondLayer";
+import IndexPage from "../../pages/example/indexPage";
+import { Suspense } from "react";
+import IndexMenuInfo from "../../assets/IndexMenuInfo.json";
+import LanguageChangeBtn from "../../pages/example/languageChangeBtn";
+import SMJ1702M00 from "../../pages/SMJ1/SMJ17/SMJ1702/SMJ1702M00/SMJ1702M00";
+import React from "react";
+
+function RouteRoute() {
+
+    const { message : popMessage} = useSelector(state => state.popupReducer);
+    const {message : bottomMessage} = useSelector(state => state.bottomSheetReducer);
+    const {message : bottomSecondMessage} = useSelector(state => state.bottomSheetSecondLayerReducer);
+    const {title : toastTitle} = useSelector(state => state.toastReducer);
+    const {message : customMessage} = useSelector(state => state.customPopupReducer);
+    const {title : dialogTitle} = useSelector(state => state.dialogReducer);
+
+
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<IndexPage />} />
+                <Route path="/example" element={<ExamplePage />} />
+                {
+                    IndexMenuInfo.map((item)=>(
+                        item.MENU_LIST.map((item2, index2)=>(
+                            item2.IS_ROUTE === "Y" &&
+                            <Route path={item2.MENU_URL_ADR} element={<DynamicComponent path={item2.MENU_URL_ADR} menuId={item2.MENU_ID}  />} key={item2.MENU_ID + index2}/>
+                        ))
+                    ))
+                }
+                <Route path="*" element={<SMJ1702M00 />} key="route_error" />
+            </Routes>
+            { popMessage ? <PopupWebContainer /> : "" }
+            { bottomMessage ? <BottomSheetFrame /> : "" }
+            {bottomSecondMessage ? <BottomSheetFrameSecondLayer /> : ""}
+            { toastTitle ? <ToastFrame /> : "" }
+            { customMessage ? <CustomPopupFrame /> : "" }
+            { dialogTitle ? <DialogFrame /> : "" }
+            <LanguageChangeBtn />
+        </BrowserRouter>
+    )
+}
+
+export const DynamicComponent = React.memo( function DynamicComponent({path, menuId, key}) {
+    console.log(path);
+    const DynamicComponent = React.lazy(()=>import(`../../pages${path}/${menuId}`).catch(e => ({default : SMJ1702M00}) ));
+
+    return (
+        <>
+           {
+            DynamicComponent !== SMJ1702M00  ?
+                <Suspense>
+                    <DynamicComponent />
+                </Suspense>
+                :
+                <SMJ1702M00 />
+               
+           }
+        </>
+    );
+})
+
+export default RouteRoute;
