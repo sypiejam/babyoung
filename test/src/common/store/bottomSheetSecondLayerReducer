@@ -1,0 +1,41 @@
+/**
+ * @name BottomSheetReducerSecondLayer 
+ * @role 바텀시트 위에 바텀시트를 띄우기 위한 리덕스
+ * @initialState title - string, 바텀시트의 타이틀
+ * @initialState message - components, 바텀시트 내부에 들어가는 컴포넌트, 해당 값 유무에 따라 바텀시트 노출 여부 결정
+ * @initialState state - any, 바텀시트를 띄우기 위해 필요한 state
+ **/
+
+const initialState = {
+    title: "",
+    message : null,
+    state : null
+}
+
+export const bottomSheetSecondLayerAction = (data) => {
+    return {
+        type : "BOTTOMSECOND",
+        data : data
+    }
+}
+
+const bottomSheetSecondLayerReducer = (state = initialState, action) => {
+    switch(action.type) {
+        case "BOTTOMSECOND" : {
+            return {
+                ...state,
+                title : action.data.title,
+                message : action.data.message,
+                state : action.data.state
+            }
+        }
+
+        default : {
+            return {
+                ...state
+            }
+        }
+    }
+}
+
+export default bottomSheetSecondLayerReducer;
