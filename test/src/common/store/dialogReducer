@@ -1,0 +1,53 @@
+/**
+ * @name DialogReducer 
+ * @role 다이얼로그를 띄우기 위한 리덕스
+ * @initialState type - "confirm" | "alert" | "warning", 다이얼로그의 버튼 타입
+ * @initialState title - string, 다이얼로그의 타이틀, 해당 값의 유무에 따라 다이얼로그 노출 여부 결정
+ * @initialState message - string | components, 다이얼로그 타이틀 하단에 들어갈 문구 또는 컴포넌트
+ * @initialState btn1 - string, 다이얼로그 왼쪽에 있는 버튼의 텍스트
+ * @initialState btn2 - string, 다이얼로그 오른쪽에 있는 버튼의 텍스트
+ * @initialState onClick1 - func, 다이얼로그 왼쪽에 있는 버튼의 onClick 함수
+ * @initialState onClick2 - func, 다이얼로그 오른쪽에 있는 버튼의 onClick 함수
+ **/ 
+
+const initialState = {
+    type : "",
+    title: "",
+    message : "",
+    btn1 : "",
+    btn2 : "",
+    onClick1 : "",
+    onClick2 : ""
+}
+
+export const dialogAction = (data) => {
+    return {
+        type : "DIALOG",
+        data : data
+    }
+}
+
+const dialogReducer = (state = initialState, action) => {
+    switch(action.type) {
+        case "DIALOG" : {
+            return {
+                ...state,
+                type : action.data.type,
+                title : action.data.title,
+                message : action.data.message,
+                btn1 : action.data.btn1,
+                btn2 : action.data.btn2,
+                onClick1 : action.data.onClick1,
+                onClick2 : action.data.onClick2
+            }
+        }
+
+        default : {
+            return {
+                ...state
+            }
+        }
+    }
+}
+
+export default dialogReducer;
