@@ -1,0 +1,41 @@
+/**
+ * @name CustomPopupReducer 
+ * @role 커스텀 팝업을 띄우기 위한 리덕스
+ * @initialState title - string, 커스텀 팝업의 타이틀
+ * @initialState message - components, 커스텀 팝업 내부에 들어가는 컴포넌트, 해당 값 유무에 따라 커스텀 팝업 노출 여부 결정
+ * @initialState state - any, 커스텀 팝업 페이지를 띄우기 위해 필요한 state
+ **/
+
+const initialState = {
+    title: "",
+    message : null,
+    state : null
+}
+
+export const customPopupAction = (data) => {
+    return {
+        type : "CUSTOM",
+        data : data
+    }
+}
+
+const customPopupReducer = (state = initialState, action) => {
+    switch(action.type) {
+        case "CUSTOM" : {
+            return {
+                ...state,
+                title : action.data.title,
+                message : action.data.message,
+                state : action.data.state
+            }
+        }
+
+        default : {
+            return {
+                ...state
+            }
+        }
+    }
+}
+
+export default customPopupReducer;
