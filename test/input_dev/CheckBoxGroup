@@ -1,0 +1,117 @@
+import { useRef, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
+import CheckBox from "./CheckBox";
+
+/**
+ * @name CheckBoxGroup 
+ * @role 여러개의 checkbox를 쓸때 감싸는 컴포넌트
+ * @props allCheck(boolean) - 전체 선택 기능을 사용할지 여부
+ * @props count(string) - 내부 checkbox의 갯수
+ * @props isFolded(boolean) - 전체선택 클릭시 내부가 접히는지 여부
+ * @props value(String Array) - 현재 선택값 정보
+ * @props setValue - 현재값 변경 함수
+ * @props flexClass - 전체선택의 내부 checkbox가 flex모드일때 class명 변경
+ * @props depsArray - deps가 들어간 checkBox를 사용할때 deps checkBox의 id를 전부 String Array로 보내기 
+ **/ 
+function CheckBoxGroup({children, allCheck, count, isFolded, value, setValue, flexClass, checkTitle, depsArray}) {
+
+    const formRef = useRef();
+    const listRef = useRef();
+    const {t} = useTranslation();// 2023-05-31 추가
+
+    const onStackCheckArray = (id, checked) => {
+        if(depsArray ? !depsArray.includes(id) : true) {
+            if(id === "checkall") {
+                const listItem = flexClass ? formRef.current.querySelector(`.${flexClass}`) : formRef.current.querySelector(".selection_list")
+                if(checked === true) {
+                    let TrueArray = [];
+                    for(let i=0; i < listItem.childNodes.length; i++) {    
+                                if(listItem.childNodes[i].className.includes("selections_item"))  {                                           
+                                    TrueArray.push(listItem.childNodes[i].getElementsByTagName("input")[0].id)
+                    }                                      
+                            if(isFolded) {
+                                listRef.current.style.height = "0px";
+                            }
+                    }
+                    setValue(TrueArray);
+                    
+                } else {
+                    for(let i=0; i < listItem.childNodes.length; i++) {
+                      
+                            
+                            if(isFolded) {
+                                listRef.current.style.height = "auto";
+                            }
+                    }
+                    setValue([]);
+                }
+            } else {
+                if(checked && !value.includes(id)) {
+                    setValue([...value, id])
+                }
+                else {
+                    let newSelectedValues = value.filter((v) => v !== id);
+    
+                    setValue(newSelectedValues)
+                }
+            }
+        }
+    }
+
+    useEffect(()=>{
+        console.log('value 변경', value, count);
+        const listItem2 = flexClass ? formRef.current.querySelector(`.${flexClass}`) : formRef.current.querySelector(".selection_list")
+            if(value.length === Number(count)) {
+                if(allCheck) {
+                formRef.current.querySelector("#checkall").checked = true;
+                }
+                if(isFolded) {
+                    listRef.current.style.height = "0px";
+                }
+                for(let i=0; i < listItem2.childNodes.length; i++) {
+                    if(listItem2.childNodes[i].className.includes("selections_item"))  {                                           
+                        listItem2.childNodes[i].getElementsByTagName("input")[0].checked = true;
+                    }  
+                    
+                }
+            } else {
+                if(allCheck) {
+                formRef.current.querySelector("#checkall").checked = false;
+                }
+                for(let i=0; i < listItem2.childNodes.length; i++) {
+                    if(listItem2.childNodes[i].className.includes("selections_item"))  {
+                        console.log(listItem2.childNodes[i].getElementsByTagName("input")[0].id);
+                        if(!value.includes(listItem2.childNodes[i].getElementsByTagName("input")[0].id)) {
+                            listItem2.childNodes[i].getElementsByTagName("input")[0].checked = false;
+                        } else {
+                            
+                            listItem2.childNodes[i].getElementsByTagName("input")[0].checked = true;
+                        }
+                    } 
+                    
+                }
+            }
+        
+        
+        
+    },[allCheck, value, count])
+
+    return (
+        <form ref={formRef} onChange={(e) => onStackCheckArray(e.target.id, e.target.checked)} >
+
+            {allCheck && <div className="selections_item all">
+                                <div className="inner">
+                                    <div className="selection">
+                                        <CheckBox type="normalSt" name="checkall" id="checkall" text={checkTitle ? checkTitle : t("fx0301_0077")} />
+                                    </div>
+                                </div> 
+                        </div>}
+            <ul className={flexClass ? flexClass : "selection_list"} style={isFolded && {overflow : "hidden"}} ref={listRef}>
+                {children}
+            </ul>
+            
+        </form>
+    );
+}
+
+export default CheckBoxGroup;
