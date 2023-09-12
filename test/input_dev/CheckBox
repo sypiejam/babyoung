@@ -1,0 +1,30 @@
+/**
+ * @name CheckBox 
+ * @role input checkbox 단일 컴포넌트
+ * @props type(string) - normal(normal 타입), normalSt(normal 강조형 타입), small(small 타입), smallSt(small 강조형 타입) 구분
+ * @props id(string) - id값으로 label의 for의 값과 동일하게 사용
+ * @props name(string) - name
+ * @props isChecked(boolean) - checked된 상태일 경우
+ * @props isDisabled(boolean) - disabled 상태일 경우
+ * @props text(string) - label 안에 들어가는 문구
+ * @props labelClass(string) - 텍스트 스타일이 달라질 경우
+ * @props onChange(Fn) 
+ **/ 
+
+function CheckBox({type,id,name,isChecked,isDisabled,text,labelClass,onChange}) {
+    const classNames = [
+        (type==="normal") ? `check_normal` : "",
+        (type==="normalSt") ? `check_normal st` : "",
+        (type==="small") ? `check_small` : "",
+        (type==="smallSt") ? `check_small st` : "",//2023-06-09 smallSt 추가
+    ].join("");
+
+    return(
+        <>
+            <input type="checkbox" name={name} id={id} className={classNames} defaultChecked={isChecked} disabled={isDisabled} onChange={onChange}/>
+            <label htmlFor={id} className={labelClass}>{text}</label>        
+        </>
+    )
+}
+
+export default CheckBox;
