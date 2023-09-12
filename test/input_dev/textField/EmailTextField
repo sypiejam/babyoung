@@ -1,0 +1,175 @@
+import { useState, useRef, useEffect } from 'react';
+import styled from "styled-components";
+import { useTranslation } from "react-i18next";
+
+/**
+ * @name EmailTextField 
+ * @role input EmailTextField 단일 컴포넌트
+ * @props setValue(function): onChange를 통해 입력된 input value 값 
+ * @props value(string): 특정 값 지정
+ * @props onChange(function)
+ * @props status(string): disabled(비활성화), error 상태일 경우
+ * @props errorMsg(string): 에러 메세지 내용
+ * @props inputRef
+ * @props 그 외 input attributes
+ * @example
+ *  
+ *     ■ value props 활용
+       const [inputEmailValue, setInputEmailValue] = useState(); // 직접 지정할 특정 값
+       const [changeEmailValue, setChangeEmailValue] = useState(); // onChange를 통한 입력 값
+  
+       <EmailTextField 
+                setValue={value => {
+                    setChangeEmailValue(value);
+                    setInputEmailValue(null); // ※ value(직접 입력 값) null 처리 필수
+                }}
+                value={inputEmailValue}
+        />
+        [결과출력] onChange 이벤트를 통해 얻어진 value 값 : {changeEmailValue} / 지정한 value 값 : {inputEmailValue}
+ **/ 
+function EmailTextField({ setValue, value, onChange, status, errorMsg, inputRef, ...rest }) {
+    const { t } = useTranslation();
+    const inputElRef = useRef();
+
+    const classNames = [
+        "inp_field",
+        (status==="disabled") ? ` disabled` : "",
+        (status==="error") ? ` is-error` : "",
+    ].join("");
+
+    const totalEmailDomainArray = ['gmail.com', 'naver.com', 'daum.net', 'hanmail.net', 'nate.com']
+
+    const [emailId, setEmailId] = useState();
+    const [inputEmailValue, setInputEmailValue] = useState();
+    const [emailDomainArray, setEmailDomainArray] = useState(totalEmailDomainArray);
+    const [selectedItem, setSelectedItem] = useState('');
+    const [showEmailList, setShowEmailList] = useState(false);
+
+    const handleInputChangeEvent = e => {
+        const inputValue = e.target.value;
+        
+        setSelectedItem('');
+        setInputEmailValue(inputValue);
+        setEmailId(splitEmailAddress(inputValue, 'emailId'));
+        setShowEmailList(inputValue ? true : false);
+
+        if(inputValue.includes('@')) {
+            const inputDomain = splitEmailAddress(inputValue, 'domain')
+            setEmailDomainArray(totalEmailDomainArray.filter(domain => domain.startsWith(inputDomain)));    
+        }
+
+        onChange && onChange(e);
+    }
+
+    useEffect(() => {
+        setValue && setValue(inputEmailValue)
+    }, [inputEmailValue]);
+
+    useEffect(() => {
+        if(value) {
+            setInputEmailValue(value);
+        }
+    }, [value])
+
+    const handleEmailLiClickEvent = (event, domain) => {
+        setInputEmailValue(splitEmailAddress(inputEmailValue, 'emailId') + domain)
+        setSelectedItem(event.currentTarget.id);
+        setShowEmailList(false);
+    }
+
+    const splitEmailAddress = (value, splitValue) => {
+        let inputValue = value;
+
+        if(inputValue.includes('@')) {
+            const splitKey = {'emailId': 0, 'domain': 1}
+            inputValue = inputValue.split('@', 2)[splitKey[splitValue]];
+        }
+
+        return inputValue;
+    }
+
+    const handleDeleteButton = e => {
+        setValue('');
+        setInputEmailValue('');
+        setShowEmailList(false);
+
+        focusRef(e);
+    }
+
+    const focusRef = e => {
+        if(inputRef) { // 상위 컴포넌트에서 ref를 참조할 경우
+            const inputElement = e.target.parentElement.previousSibling;
+            inputElement.focus();
+        } else {
+            inputElRef.current.focus();
+        }
+    }
+
+    return  ( 
+        <StyledEmail>
+            <div className={classNames}>
+                <div className="inp_item">
+                    {/* D : 이메일 목록 노출시 aria-expanded="true", 미노출시 aria-expanded="false" 
+                        이메일자동완성 옵션선택시 aria-activedescendant="autocomplete_item 옵션의 id값" */}
+                    <input 
+                        type="email" 
+                        className="inp_text" 
+                        value={(value || value === '') ? value : (inputEmailValue || '')} 
+                        title={rest.placeholder} 
+                        ref={inputRef || inputElRef}
+                        disabled={(status === "disabled" ? true : false)} 
+                        onChange={handleInputChangeEvent} 
+                        onKeyUp={e => {
+                            if(e.key === 'Enter') {
+                                e.target.blur();
+                            }
+                        }}
+                        role="combobox" 
+                        aria-autocomplete="list" 
+                        aria-expanded={inputEmailValue ? true : false} 
+                        aria-owns="listBox" 
+                        aria-activedescendant={selectedItem} 
+                        {...rest}
+                    />
+                    <div className="inp_delete">
+                        <button type="button" className="ico_delete inp_button" onClick={handleDeleteButton} onTouchEnd={handleDeleteButton}><span className="blind">{t('ce0104_0502')}</span></button>
+                    </div>
+                </div>
+            </div>
+            {(status === "error") &&
+                <div className="txt_error">
+                    <p>{errorMsg}</p>
+                </div>
+            }
+            {
+                showEmailList && 
+                    <div className="autocomplete">
+                        <ul role="listbox" id="listBox">
+                            {/* D : 이메일자동완성 옵션선택시 aria-selected="true" 미선택시 aria-selected="false" */}
+                            { 
+                                emailDomainArray.map((domain, index) => {
+                                    const id = `option${index + 1}`;
+                                    return <li id={id} 
+                                                key={index} 
+                                                className="autocomplete_item" 
+                                                role="option" 
+                                                aria-selected={selectedItem === id ? true : false} 
+                                                onClick={e => handleEmailLiClickEvent(e, '@'+domain)}>
+                                                    <span><em className="fc-blue02">{emailId}</em>{'@'+domain}</span>
+                                            </li>
+                                })
+                            }
+                        </ul>
+                    </div>
+            }
+        </StyledEmail>
+    )
+}
+
+const StyledEmail = styled.div`
+    .txt_error, .autocomplete {
+        display:block;
+    }
+`;
+
+export default EmailTextField;
