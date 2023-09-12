@@ -1,0 +1,69 @@
+import { useRef } from "react";
+import useLayerUtil from "../../../../common/hooks/useLayerUtil";
+
+import CalendarNormal from "../../CalendarNormal";
+
+/**
+ * @name CalendarField 
+ * @role input CalendarField 단일 컴포넌트
+ * @props status(string): disabled(비활성화), readOnly(읽기만 가능 할 경우), error 상태일 경우
+ * @props setValue(function): 선택한 날짜
+ * @props placeholder(string): placeholder 입력 (default: "YYYY.MM.DD")
+ * @props calendarMinDate(date): calendar에서 선택할 수 있는 최소 날짜
+ * @props calendarMaxDate(date): calendar에서 선택할 수 있는 최대 날짜
+ * @props 그 외 input attributes
+ * @example
+ *          const [dateValue, setDateValue] = useState();
+ *          <CalendarField setValue={setDateValue} title="시작일 선택" defaultValue="2023.05.29" />
+ **/ 
+function CalendarField({ status, value, setValue, placeholder, calendarMinDate, calendarMaxDate, ...rest }) {
+    const inputRef = useRef();
+    const [openLayer,_] = useLayerUtil();
+
+    const classNames = [
+        "inp_field",
+        (status==="disabled") ? ` disabled` : "",
+        (status==="readOnly") ? ` readonly` : "",
+        (status==="error") ? ` is-error` : "",
+    ].join("");
+
+    const selectedDateEvent = params => {
+        if(params?.result) {
+            setValue && setValue(params?.result);
+        }
+    }
+
+    const handleInputClickEvent = e => {
+        inputRef.current.blur();
+        openLayer.openBottomSheet({
+            message : <CalendarNormal />,
+            state : {
+                defaultValue : value,
+                minDate : calendarMinDate,
+                maxDate : calendarMaxDate
+            },
+            callback : selectedDateEvent
+        })
+    }
+
+    return  ( 
+        <div className={classNames} role="button" onClick={handleInputClickEvent}>
+            <div className="inp_item">
+                <input  type="text"
+                        inputMode="none"
+                        className="inp_text" 
+                        ref={inputRef} 
+                        value={value || ''} 
+                        onChange={selectedDateEvent} 
+                        placeholder={`${placeholder ? placeholder : "YYYY.MM.DD"}`} 
+                        disabled={(status === "disabled" ? true : false)} 
+                        readOnly={(status === "readOnly" ? true : false)} 
+                        {...rest}
+                />
+            </div>
+            <div className="field_item"><i className="ico_date"></i></div>
+        </div>
+    )
+}
+
+export default CalendarField;
