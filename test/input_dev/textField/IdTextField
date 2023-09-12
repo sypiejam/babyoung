@@ -1,0 +1,168 @@
+import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import StringUtil from "../../../modules/StringUtils";
+
+/**
+ * @name IdTextField 
+ * @role input 주민등록번호 입력 컴포넌트
+ * @props type(string): 'visible': 뒷자리 첫 자리 입력할 수 있는 타입 / 'hidden': 뒷자리가 모두 hidden 된 타입
+ * @props status(string): disabled(비활성화), readOnly(읽기만 가능 할 경우), error 상태일 경우
+ * @props placeholder(string): 주민번호 앞 6자리 input 속성에 쓰이는 placeholder, title 문구
+ * @props value(function): 입력한 value 값
+ * @props defaultValue(object): { firstValue(string): 첫 번째 Input Value , secondValue(string): 두 번째 Input Value }
+ * @props onChange(function)
+ * @props onClickSecondField(function): 두 번째 필드 onClick 이벤트
+ * @props securityKeypadMode(boolean): 보안키패드 사용 모드
+ * @props 그 외 input attributes
+ * @example
+ *       ■ defaultValue (value에 특정 값 세팅) 사용방법
+ *       const [changeValue, setChangeValue] = useState(); // input onChange 이벤트를 통해 얻어진 value 값
+ *       const [firstInputValue, setFirstInputValue] = useState('초기값'); // 첫번째 Input Value
+ *       const [secondInputValue, setSecondInputValue] = useState('초기값'); // 두번째 Input Value
+ * 
+ *       <IdTextField
+ *                type="visible"
+ *                value={value => {
+ *                           setChangeValue(value); 
+ *                           setFirstIdValue(null); // ※ null 처리 필수
+ *                           setSecondIdValue(null); // ※ null 처리 필수
+ *                }}
+ *                defaultValue= {{
+ *                      firstValue: firstIdValue,
+ *                      secondValue: secondIdValue,
+ *                }}
+ *        />
+ * 
+ *       <IdTextField
+ *                type="hidden"
+ *                value={value => {
+ *                           setChangeValue(value); 
+ *                           setFirstIdValue(null); // ※ null 처리 필수
+ *                }}
+ *                defaultValue= {{
+ *                      firstValue: firstIdValue,
+ *                }}
+ *        />
+ *          
+ *        [결과출력] value 값 : {changeValue}
+ * 
+ **/ 
+function IdTextField({ type, status, value, defaultValue, onChange, onClickSecondField, securityKeypadMode, ...rest }) {
+    const {t} = useTranslation();
+    const firstInputRef = useRef();
+    const secondInputRef = useRef();
+
+    const classNames = [
+        "inp_field",
+        (status==="disabled") ? ` disabled` : "",
+        (status==="error") ? ` is-error` : "",
+        (type==="visible") ? ` field_flex` : "",
+    ].join("");
+
+    const [firstValue, setFirstValue] = useState(defaultValue?.firstValue || '');
+    const [secondValue, setSecondValue] = useState(defaultValue?.secondValue || '');
+
+    const handleFirstInputChangeEvent = e => {
+        const { value } = e.target;
+        const MAX_LENGTH = 6;
+        if(value.length === MAX_LENGTH) {
+            if(type === 'visible') secondInputRef.current.focus();
+        }
+
+        if(checkTextFormat(e, firstValue)) {
+            setFirstValue(value);
+        }
+
+        onChange && onChange(e);
+    }
+
+    const handleSecondInputChangeEvent = e => {
+        if(checkTextFormat(e, secondValue)) {
+            setSecondValue(e.target.value);
+        }
+    }
+
+    const checkTextFormat = (event, value) => {
+        const isNotNumberRegExp = /[^0-9]/g;
+        if(event.nativeEvent.data && isNotNumberRegExp.test(event.nativeEvent.data)) {
+            event.preventDefault();
+            event.target.value = value;
+            return;
+        }
+
+        return true;
+    }
+
+    const handleDeleteButton = () => {
+        setFirstValue('');
+        firstInputRef.current.focus();
+    }
+
+    useEffect(() => { 
+        if(defaultValue) {
+            const { firstValue: firstDefaultValue, secondValue: secondDefaultValue } = defaultValue;
+            if(firstDefaultValue || secondDefaultValue) {
+                setFirstValue(firstDefaultValue)
+                setSecondValue(secondDefaultValue)
+            }
+        }
+    }, [defaultValue])
+
+    useEffect(() => {
+        value && value(String((firstValue || '')) + String((secondValue || '')));
+    }, [firstValue, secondValue, value])
+
+    return  ( 
+        <div className={classNames}>
+            <div className="inp_item">
+                <input type="text"
+                        className="inp_text" 
+                        inputMode="numeric"
+                        title={rest.placeholder} 
+                        ref={firstInputRef}
+                        maxLength={6}
+                        value={firstValue || ''}
+                        onChange={handleFirstInputChangeEvent} 
+                        {...rest}
+                />
+                <div className="inp_delete">
+                    <button type="button" className="ico_delete inp_button" onClick={handleDeleteButton} onTouchEnd={handleDeleteButton}><span className="blind">삭제</span></button> {/* {t(ce0104_0502)} */}
+                </div>
+            </div>
+            <div className="inp_tilde ico_dash"></div>
+            <div className="inp_item">
+                {
+                    type === 'hidden' &&
+                        <input type="password" 
+                            className="inp_text hide" 
+                            inputMode="none"
+                            value={securityKeypadMode ? secondValue : StringUtil.makeDummyString(7, '0')} 
+                            title="주민등록번호 뒷번호 7자리"
+                            maxLength="7" 
+                            onChange={handleSecondInputChangeEvent}
+                            onClick={onClickSecondField}
+                            readOnly
+                        />
+                }
+                {
+                    type === 'visible' &&
+                    <>
+                        <input type="text" 
+                                title="주민번호 뒷자리 첫자리 입력"
+                                inputMode="numeric" 
+                                value={secondValue || ''}
+                                className="inp_text id_num" 
+                                placeholder="●"  
+                                maxLength="1"
+                                onChange={handleSecondInputChangeEvent} 
+                                ref={secondInputRef}
+                        />
+                        <input type="password" className="inp_text pw" defaultValue="" placeholder="******" title="주민등록번호 뒷자리 나머지 6자리" maxLength="6" readOnly/>
+                    </>
+                }          
+            </div>
+        </div>
+    )
+}
+
+export default IdTextField;
