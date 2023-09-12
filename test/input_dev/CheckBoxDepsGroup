@@ -1,0 +1,86 @@
+import {useRef, useEffect} from "react";
+
+/**
+ * @name CheckBoxDepsGroup 
+ * @role 여러개의 depth가 있는 checkbox를 쓸때 감싸는 컴포넌트
+ * @props setState(func) - deps checkBox를 관리하는 setState 함수
+ * @props count(string) - 내부 checkbox의 갯수
+ * @props value(String Array) - 내부 deps checkBox의 값(state)
+ * @props value(String Array) - 현재 선택값 정보
+ * @props setGroupSetState(func) - checkBoxGroup값을 관리하는 setState 함수
+ * @props groupValue(string Array) - checkBoxGroup의 값(state)
+ * @props upperCheckId(string) - CheckBoxDepsGroup 바로 위의 checkBox의 id
+ **/
+function CheckBoxDepsGroup({children, setState, value, count, setGroupSetState, groupValue, upperCheckId}) {
+
+    const depsRef = useRef();
+
+    const onDepsChange = (e) => {
+        if(e.target.checked === false) {
+            let trueCount = 0;
+            for(let i=0; i < depsRef.current.childNodes.length; i++) {
+                if(depsRef.current.childNodes[i].getElementsByTagName("input")[0].checked === false) {
+                    trueCount = trueCount  +1;
+                }
+            }
+            if(trueCount < Number(count) ) {
+                setGroupSetState(prev => prev.filter(v => v!== upperCheckId))
+            }
+            setState(prev => prev.filter(v => v!== e.target.id));
+        } else {
+            let falseCount = 0;
+            for(let i=0; i < depsRef.current.childNodes.length; i++) {
+                if(depsRef.current.childNodes[i].getElementsByTagName("input")[0].checked === true) {
+                    falseCount = falseCount  +1;
+                }
+            }
+            if(falseCount === Number(2) ) {
+                setGroupSetState(prev => [...prev, upperCheckId])
+            }
+            setState(prev => [...prev, e.target.id]);
+        }  
+    }
+
+    useEffect(()=>{
+        console.log('deps', value);
+    },[value])
+
+    useEffect(()=>{
+        for(let i=0; i < depsRef.current.childNodes.length; i++) {
+            console.log(depsRef.current.childNodes[i].getElementsByTagName("input")[0].addEventListener("change",(e) =>  onDepsChange(e)));
+        }
+    },[])
+
+    useEffect(()=>{ 
+        const listItem2 = depsRef.current
+        if(groupValue.includes(upperCheckId)) {
+            for(let i=0; i < listItem2.childNodes.length; i++) {
+                
+                    listItem2.childNodes[i].getElementsByTagName("input")[0].checked = true;
+                    if(!value.includes(listItem2.childNodes[i].getElementsByTagName("input")[0].id)) {
+                        setState(prev => [...prev, listItem2.childNodes[i].getElementsByTagName("input")[0].id])
+                    }    
+            }
+            
+        }
+        else {
+            for(let i=0; i < listItem2.childNodes.length; i++) {
+                    if(!value.includes(listItem2.childNodes[i].getElementsByTagName("input")[0].id)) {
+                        listItem2.childNodes[i].getElementsByTagName("input")[0].checked = false;
+                        setState(prev => prev.filter(v => v!== listItem2.childNodes[i].getElementsByTagName("input")[0].id));
+                    } else if(value.length === 2) {
+                        listItem2.childNodes[i].getElementsByTagName("input")[0].checked = false;
+                        setState(prev => prev.filter(v => v!== listItem2.childNodes[i].getElementsByTagName("input")[0].id));
+                    }
+            }
+        }   
+    },[groupValue])
+
+    return (
+            <ul className="selection_list" ref={depsRef}>
+            {children}
+            </ul>
+    );
+}
+
+export default CheckBoxDepsGroup;
