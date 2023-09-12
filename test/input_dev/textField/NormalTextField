@@ -1,0 +1,198 @@
+import { useState, useRef, useEffect, cloneElement } from "react";
+import { useTranslation } from "react-i18next";
+import StringUtil from "../../../modules/StringUtils";
+import SmallLoadingBar from "../../pageController/SmallLoadingBar";
+
+/**
+ * @name NormalTextField 
+ * @role input NormalTextField 단일 컴포넌트
+ * @props id(string): id 값
+ * @props type(string): input type에 따라 알맞은 타입 설정 (디폴트값 text, 숫자값을 받을 때는 number로 설정)
+ * @props status(string): disabled(비활성화), readOnly(읽기만 가능 할 경우/defaultValue 값 필수), error 상태일 경우
+ * @props defaultValue(string): 기본 value 값 (※ 단 settingValue 사용 시 settingValue의 초기값이 없을 경우 적용된다.)
+ * @props loading(boolean): smallloadingbar가 노출 되는 경우
+ * @props value(function): input 입력 값을 함수를 통해 가져온다.
+ * @props onChange(function)
+ * @props settingValue(string): input 값 지정
+ * @props maxLength(number): 텍스트 최대 입력 길이
+ * @props inputRef(object): input ref 참조
+ * @props focusEvent(function): input value 값을 입력했을 경우 다음 엘리먼트에 focus를 주기 위한 함수. ※ maxLength가 존재하는 경우에만 실행 됨
+ * @props onClick(function): onClick 이벤트
+ * @props numberOnly(boolean): 숫자 형식의 값만 입력하고 싶을 경우
+ * @props formatType(string): 입력 값의 포멧 형식을 지정 (※주의 input type='text' 필수) (types: 'number')
+ * @props securityKeypadMode(boolean): 보안키패드를 위해 input을 readonly 형식으로 변환한다. (※주의 status props와 동시 사용하지 않는다.)
+ * @props className - 기타 디자인 요소를 적용하기 위한 클래스
+ * @props 그 외 input attributes
+ * @example
+ *       ■ input value 값 직접 세팅 시 활용방법
+ *       const [changeValue, setChangeValue] = useState(); // input onChange 이벤트를 통해 얻어진 value 값 추출 시 사용
+ *       const [inputValue, setInputValue] = useState('0000'); // 직접 input에 세팅할 value 값, 초기값은 default 값이 된다. (참고: defaultValue 보다 우선 순위)
+ * 
+ *       <NormalTextField
+ *                    settingValue={inputValue}
+ *                    value={value => {
+ *                                  setChangeValue(value); 
+ *                                  setInputValue(null); // ※ inputValue(직접 입력 값) null 처리 필수
+ *                    }}
+ *        />
+ *        [결과출력] onChange 이벤트를 통해 얻어진 value 값 : {changeValue} / inputValue를 통해 얻어진 value 값 : {inputValue}
+ * 
+ *        ■ focusEvent 활용
+ *            const inputRef = useRef([]);
+ *            const handleInputFocus = index => {
+ *                    inputRef.current[index+1].focus(); // 다음 엘리먼트를 index 값으로 참조
+ *            }
+ *            return (
+ *                <NormalTextField type="number" maxLength={4} inputRef={el => inputRef.current[0] = el} focusEvent={() => handleInputFocus(0)}/>
+ *                <NormalTextField type="number" maxLength={4} inputRef={el => inputRef.current[1] = el} focusEvent={() => handleInputFocus(1)}/>
+ *            )
+ **/ 
+function NormalTextField({ children, ...props }) {
+    const classNames = [
+        "inp_field",
+        (props?.securityKeypadMode ? ` pw_field` : ""),
+        (props?.status==="disabled") ? ` disabled` : "",
+        (props?.status==="readOnly") ? ` readonly` : "",
+        (props?.status==="error") ? ` is-error` : "",
+    ].join("");
+
+    const [inputElementType, setInputElementType] = useState('default');
+    useEffect(() => {
+        const { status, readOnly, securityKeypadMode } = props;
+        if(readOnly || status === 'readOnly') {
+            setInputElementType('readOnly');
+        } else if (securityKeypadMode) {
+            setInputElementType('securityKeypadMode');
+        } else {
+            setInputElementType('default');
+        }
+    }, [])
+
+    return  ( 
+        <div className={classNames}>
+            { !props?.loading && <CustomInputElement elementType={inputElementType} {...props} /> }
+            { children }
+            { props?.loading &&
+                    <div className="loadingbox">
+                        <SmallLoadingBar type="center"/>
+                    </div>
+            }
+        </div>
+    )
+}
+export default NormalTextField;
+
+export const CustomInputElement = ({ elementType, ...props}) => {
+    return ( 
+        {
+            'default': cloneElement(<InputElement {...props} />),
+            'securityKeypadMode': cloneElement(<InputElement {...props} />, { readOnly: true }),
+            'readOnly': <div className="inp_readonly">
+                            {props?.settingValue || (props?.defaultValue || <span className="placeholder">{props?.placeholder}</span>)}
+                        </div>,
+        }[elementType]
+    )
+}
+
+export const InputElement = ({ type, status, defaultValue, value, onChange, settingValue, maxLength, inputRef, focusEvent, numberOnly, formatType, securityKeypadMode, className, ...rest }) => {
+    const {t} = useTranslation();
+    const inputElRef = useRef();
+
+    const [inputValue, setInputValue] = useState(defaultValue || '');
+    const handleInputChangeEvent = e => {
+        const { formatValue, originalValue } = valueFormatter(formatType, e.target.value);
+
+        if((maxLength > 0) && originalValue.length === maxLength) {
+            focusEvent && focusEvent();
+        }
+
+        if(((maxLength > 0) && originalValue.length > maxLength)
+            || (formatType === 'number' && originalValue.length > 15) // 금액 입력 시 15자로 제한
+        ){
+            e.preventDefault();
+            e.target.value = originalValue.slice(0, maxLength);
+            return;
+        }
+
+        value && value(formatValue);
+        setInputValue(formatValue);
+
+        onChange && onChange(e);
+    };
+
+    const valueFormatter = (formatType, value) => {
+        let formatValue = value;
+        let originalValue = value; 
+
+        switch (formatType) {
+            case 'number': {
+                formatValue = StringUtil.delComma(value);
+                formatValue = StringUtil.addComma(formatValue);
+                formatValue = formatValue === 0 ? '' : formatValue; 
+                originalValue = StringUtil.delComma(value);
+                break;
+            }
+            default: {}
+        }
+        return { formatValue, originalValue };
+    };
+
+    const clickTextDeleteButton = e => {
+        if(inputRef) { // 상위 컴포넌트에서 ref를 참조할 경우
+            const inputElement = e.target.parentElement.previousSibling;
+            inputElement.focus();
+        } else {
+            inputElRef.current.focus();
+        }
+        setInputValue('');
+        value && value('');
+    }
+
+    useEffect(() => {
+        const defaultInputValue = settingValue || defaultValue
+        defaultInputValue && (value && value(defaultInputValue))
+    }, [])
+
+    useEffect(() => {
+        settingValue && setInputValue(settingValue);
+    }, [settingValue]);
+
+    return (
+        <div className="inp_item">
+            <input  title={rest?.placeholder} 
+                    className={`inp_text ${className ? className : ""}`}
+                    type={type ? (formatType ? 'text' : type) : 'text'} 
+                    ref={inputRef || inputElRef}
+                    value={(settingValue || settingValue === '') ? settingValue : (inputValue || '')}
+                    onChange={handleInputChangeEvent}
+                    disabled={(status === "disabled" ? true : false)}
+                    onInput={e => {
+                            const isNotNumberRegExp = /[^0-9]/g;
+                            const onlyNumberTypeCase = (type === 'number') || (type === 'tel') || numberOnly || (formatType === 'number');
+                            if((onlyNumberTypeCase && (e.nativeEvent.data && isNotNumberRegExp.test(e.nativeEvent.data)))) {
+                                e.preventDefault();
+                                e.target.value = inputValue;
+                                return;
+                            }
+                        }
+                    }
+                    onKeyUp={e => {
+                        if(e.key === 'Enter') {
+                            e.target.blur();
+                        }
+                    }}
+                    {...rest}
+            />
+            <div className="inp_delete">
+                <button 
+                    type="button" 
+                    className="ico_delete inp_button" 
+                    onClick={clickTextDeleteButton} 
+                    onTouchEnd={clickTextDeleteButton}
+                >
+                    <span className="blind">{t('ce0104_0502')}</span>
+                </button>
+            </div>
+        </div>
+    )
+}
