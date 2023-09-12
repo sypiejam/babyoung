@@ -1,0 +1,86 @@
+import { useRef, useState } from "react";
+
+/**
+ * 
+ * @name SearchField
+ * @role SearchField 컴포넌트입니다.
+ * @props boxtype(string): 박스형일 경우 searchbox 추가합니다.
+ * @props title(string): 타이틀 내용입력시 title, placeholder 동일한 값이 추가됩니다.
+ * @props defaultValue: value
+ * @props disabled(boolean): 비활성화시 disabled 추가합니다.
+ * @props icoText: hidden text 추가합니다. (ex. icoText="영업점 검색")
+ * @props setValue(function): 입력한 value 값
+ * @props inputValue(string): input에 값 입력
+ * @props onChange(function)
+ * @props clickButtonEvent(function): 검색 버튼 클릭 이벤트
+ * @props onFocus(boolean): input Focus 여부
+ * @props placeholder(string): placeholder 값
+ * @props onlyClickEventMode(boolean): 입력 이벤트는 불가하며 클릭만 가능한 상태로 전환
+ * @props 그 외 input attributes
+ * @example
+ *      ■ inputValue 사용 방법
+ *       const [changeValue, setChangeValue] = useState(); // input onChange 이벤트를 통해 얻어진 value 값 추출 시 사용
+ *       const [inputValue, setInputValue] = useState('Input Value'); // 직접 input에 세팅할 value 값 
+ * 
+ *       <SearchField title="Search Field" 
+ *                    inputValue={inputValue}
+ *                    setValue={value => {
+ *                                  setChangeValue(value); 
+ *                                  setInputValue(null); // ※ inputValue(직접 입력 값) null 처리 필수
+ *                    }}
+*        />
+ *       [결과출력] onChange 이벤트를 통해 얻어진 value 값 : {changeValue} / inputValue를 통해 얻어진 value 값 : {inputValue}
+ */ 
+function SearchField({ boxtype, icoText, setValue, inputValue, onChange, clickButtonEvent, placeholder, onlyClickEventMode, ...rest }) {
+    const inputRef = useRef();
+
+    const classNames = [
+        "inp_field ",
+        onlyClickEventMode ? ` pw_field` : '', 
+        boxtype ? ` searchbox` : "",
+        rest.disabled ? ` disabled` : "",
+    ].join("");
+
+    const [changeValue, setChangeValue] = useState(rest.defaultValue);
+    const handleInputChangeEvent = e => {
+        setValue && setValue(e.target.value);
+        setChangeValue(e.target.value);
+
+        onChange && onChange(e);
+    }
+
+    const handleOnKeyDownEvent = e => {
+        if(e.key === 'Enter') {
+            clickButtonEvent && clickButtonEvent();
+        }
+    }
+
+    const clickSearchButtonEvent = e => {
+        clickButtonEvent && clickButtonEvent();
+        onlyClickEventMode && rest.onClick();
+    }
+
+    return (
+        <>
+            <div className={classNames} boxtype={boxtype}>
+                <input 
+                    type={onlyClickEventMode ? 'text' : 'search'}
+                    className="inp_text inp_search"
+                    ref={inputRef}
+                    placeholder={!placeholder ? rest.title : placeholder}
+                    value={(inputValue || inputValue ==='') ? inputValue : (changeValue || '')} 
+                    onKeyDown={handleOnKeyDownEvent} 
+                    onChange={handleInputChangeEvent}
+                    readOnly={(rest.readOnly || onlyClickEventMode) ? true : false}
+                    {...rest}
+                />
+                {boxtype === "searchbox" && <div className="border"></div>}
+                <div className="field_item">
+                    <button type="button" className="ico_search inp_button" onClick={clickSearchButtonEvent}><span className="blind">{icoText}</span></button>
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default SearchField;
