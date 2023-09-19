@@ -9,7 +9,7 @@ import { StyledDimmed } from "../dimmed/Dimmed";
  * @props hauto(boolean) - 팝업화면에서 전체화면 저장하기 기능 시 사용 (ex.SMJ2202P03)
  */
 
-function PopupFrame({children, hauto}) {
+function PopupFrame({children, ariaHidden, hauto}) {
 
     useEffect(()=>{
         if(!hauto){
@@ -22,17 +22,18 @@ function PopupFrame({children, hauto}) {
             document.body.classList.remove("hidden");
         }
     }
-    },[])
+    },[hauto])
 
     return (
         <>
             {
                 !hauto &&
                 <>
-                    <StyledDimmed />
+                    <StyledDimmed className="popup-dimmed" />
                 </>
             }
-            <PopupFrameStyle scroll={window.scrollY} className="popup_layer" hauto={hauto}>
+            //<PopupFrameStyle scroll={window.scrollY} className="popup_layer">
+            <PopupFrameStyle aria-hidden={ariaHidden ? true :false} className="popup_layer ariaItem" hauto={hauto}>
             {children}
             </PopupFrameStyle>
         </>
