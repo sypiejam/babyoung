@@ -42,15 +42,15 @@ function PopupFrame({children, ariaHidden, hauto}) {
 
 const PopupFrameStyle = styled.div`
     z-index:60;
-    position : ${props => props.hauto ? 'static' : 'absolute'};
+    position : ${props => props.hauto ? 'static' : 'fixed'};
     //top : ${props => props.scroll}px;
     top : 0;
     left : 0;
     width : 100%;
     height : ${props => props.hauto ? 'auto' : '100%'};
     overflow : auto;
-    background:#fff;
-    font-size:1.5rem;
+    background: #fff;
+    font-size: 1.5rem;
 `;
 
 export default PopupFrame
