@@ -6,13 +6,17 @@ import { StyledDimmed } from "../dimmed/Dimmed";
  * 
  * @name PopupFrame 
  * @role 팝업페이지를 감싸는 상위 컴퍼넌트입니다.
+ * @props hauto(boolean) - 팝업화면에서 전체화면 저장하기 기능 시 사용 (ex.SMJ2202P03)
  */
 
-function PopupFrame({children}) {
+function PopupFrame({children, hauto}) {
 
     useEffect(()=>{
-        document.body.classList.add("hidden");
-
+        if(!hauto){
+            document.body.classList.add("hidden");
+        }else{
+            document.body.classList.remove("hidden");
+        }
     return () => {
         if(!document.querySelector(".react-layer")) {
             document.body.classList.remove("hidden");
@@ -22,8 +26,13 @@ function PopupFrame({children}) {
 
     return (
         <>
-            <StyledDimmed />
-            <PopupFrameStyle scroll={window.scrollY} className="popup_layer">{/* 2023-07-21 클래스 추가 */}
+            {
+                !hauto &&
+                <>
+                    <StyledDimmed />
+                </>
+            }
+            <PopupFrameStyle scroll={window.scrollY} className="popup_layer" hauto={hauto}>
             {children}
             </PopupFrameStyle>
         </>
@@ -31,12 +40,13 @@ function PopupFrame({children}) {
 }
 
 const PopupFrameStyle = styled.div`
-    z-index:60; // 23-07-13 z-index수정
-    position : absolute;
-    top : ${props => props.scroll}px;
+    z-index:60;
+    position : ${props => props.hauto ? 'static' : 'absolute'};
+    //top : ${props => props.scroll}px;
+    top : 0;
     left : 0;
     width : 100%;
-    height : 100%;
+    height : ${props => props.hauto ? 'auto' : '100%'};
     overflow : auto;
     background:#fff;
     font-size:1.5rem;
