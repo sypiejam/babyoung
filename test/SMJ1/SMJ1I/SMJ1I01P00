@@ -35,11 +35,7 @@ function SMJ1I01P00(){
                     </div>
                     <div className="dvgroup">
                         <div className="field_wrap">
-                            <SearchField title={t("fx0301_0617")} icoText="주소 검색" />
-                            <div className="txt_helper">
-                                <p className="bullet_disc">{t("fx0301_0131")}</p>
-                                {/*2023-06-12 영문으로 검색시 노출 문구 추가 <p className="bullet_disc">{t("fx0301_0632")}</p> */}
-                            </div>
+                            <SearchField title={segmentIdx === 0 ? t("fx0301_0617") : t("fx0301_0618")} icoText={`${t("ce0104_0120")} ${t("cs0303_0045")}`} />
                         </div>
                         <div className="descbox bg">
                             <ul className="bullet">
