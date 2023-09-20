@@ -12,17 +12,15 @@ import { StyledDimmed } from "../dimmed/Dimmed";
 function PopupFrame({children, ariaHidden, hauto}) {
 
     useEffect(()=>{
-        if(!hauto){
-            document.body.classList.add("hidden");
-        }else{
+        if(hauto){
             document.body.classList.remove("hidden");
         }
-    return () => {
-        if(!document.querySelector(".react-layer")) {
-            document.body.classList.remove("hidden");
+        return () => {
+            if(!document.querySelector(".react-layer")) {
+                document.body.classList.remove("hidden");
+            }
         }
-    }
-    },[hauto])
+    },[])
 
     return (
         <>
@@ -33,18 +31,17 @@ function PopupFrame({children, ariaHidden, hauto}) {
                 </>
             }
             //<PopupFrameStyle scroll={window.scrollY} className="popup_layer">
-            <PopupFrameStyle aria-hidden={ariaHidden ? true :false} className="popup_layer ariaItem" hauto={hauto}>
-            {children}
+            <PopupFrameStyle aria-hidden={ariaHidden ? true : false} scroll={window.scrollY} className="popup_layer ariaItem" hauto={hauto}>
+                {children}
             </PopupFrameStyle>
         </>
     )
 }
 
 const PopupFrameStyle = styled.div`
-    z-index:60;
+    z-index: 60;
     position : ${props => props.hauto ? 'static' : 'fixed'};
-    //top : ${props => props.scroll}px;
-    top : 0;
+    top : ${props => props.scroll}px;
     left : 0;
     width : 100%;
     height : ${props => props.hauto ? 'auto' : '100%'};
