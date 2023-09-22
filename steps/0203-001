@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>월별 걸음정보</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<!-- 기존 css -->
+<link rel="stylesheet" href="/css/nonetouch/pib/common.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/prdt_recommend.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_account.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_tax.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_transfer.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_fx.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_goods2.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_cs.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_authorized.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_mypage.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_setup.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/chart.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/blog.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/consent_form.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/content.css">
+<!-- 기존 js -->
+<script src="/js/nonetouch/com/lib/jquery-2.1.0.min.js"></script>
+<script src="/js/nonetouch/com/renewal/lib/jquery-ui.js"></script>
+<script src="/js/nonetouch/com/renewal/lib/owl.carousel.js"></script>
+<script src="/js/nonetouch/com/renewal/common_ui.js"></script>
+
+<!-- 신규 리소스 -->
+<link rel="stylesheet" type="text/css" href="/css/nonetouch/pib/_new2/common.css">
+<link rel="stylesheet" type="text/css" href="/css/nonetouch/pib/_new2/life.css"> <!-- 개발 추가 요청 --> 
+<script type="text/javascript" src="/js/nonetouch/com/renewal/_new2/common_ui.js"></script>
+</head>
+<body>
+<div class="frame_container">
+	<!-- @frame_pageWrap : 퍼블영역
+		-----------------------------------
+		data-page-type="general" 기본
+		data-page-type="sub-main" 서브메인
+		data-page-type="finish"  완료페이지
+		data-page-type="fail"    결과-실패
+		data-page-type="popup"   팝업(레이어아님)
+		-----------------------------------
+	-->
+	<!-- ==================== 새 가이드 시작 ==================== -->
+	<div class="frame_pageWrap newST" data-top-option="" data-page-type="general"> <!-- newST 클래스 추가 --->
+		<main role="main">
+			<div class="page_container">
+                <!-- view_area(스크롤 영역) -->
+                <div class="view_area">
+                    <!-- 2021 new STYLE TYPE -->
+                    <div id="nst_wrapper">
+                        <!-- header 퍼블용(개발시 기존 공통 헤더사용 필요!) -->
+                        <div id="nst_header">
+                            <div class="nst_header_wrap fixed">
+                                <div class="nst_header">
+                                    <h1 class="nst_header_title">월별 걸음정보</h1>
+                                    <a href="javascript:;" class="nst_header_prev" aria-label="이전화면으로 이동"></a>
+                                    <button type="button" class="nst_header_menu typ_set" aria-label="서비스 메뉴"></button><!-- 20221115 클래스 수정 : typ_dot => typ_set -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //header -->
+                        <!-- container -->
+                        <div id="nst_container" class="nst_container">
+                            <!-- content -->
+                            <div id="nst_content" class="nst_content nst_wbank">
+
+                                <!-- 컨텐츠시작 -->
+                                <div class="nst_steps_month">
+                                    <div class="nst_chart_wrap">
+                                        <div class="nst_month_box"> 
+                                            <div class="inner">
+                                                <span class="month">2022.08</span>
+                                                <button type="button" class="btn_prev"><span class="nst_blind">이전 달로 이동</span></button>
+                                                <button type="button" class="btn_next" disabled><span class="nst_blind">다음 달로 이동</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="nst_average">
+                                            <span class="nst_average_tit">8월 평균걸음</span>
+                                            <div class="inner">
+                                                <strong class="nst_average_step">2,812</strong>
+                                                <span class="nst_average_unit">걸음</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- 차트영역 -->
+                                        <div id="nstStepsMonth" class="nst_chart_steps"></div>
+                                        <!-- //차트영역 -->
+                                    </div>
+                                </div>
+                                <!-- //컨텐츠끝 -->
+                                
+                            </div>
+                            <!-- //content -->
+                        </div>
+                        <!-- //container -->
+                    </div>
+                    <!-- //2021 new STYLE TYPE -->
+                </div>
+                <!-- //view_area(스크롤 영역) -->
+            </div>
+        </main>
+	</div>
+	<!-- // ==================== 새 가이드 끝 ==================== -->
+	<!-- //@frame_pageWrap : 퍼블영역 -->
+</div>
+<script type="text/javascript" src="/js/nonetouch/com/HighCharts/highcharts.js"></script>
+<script>
+    // 차트
+    var myStepChart;
+    var stepChartConfig = {
+        chart : {
+            // type: 'column',
+            renderTo: 'nstStepsMonth', //div ID 값
+            backgroundColor: '#fff',
+
+            //zoomType: 'x', //확대
+            style: {
+                fontFamily: '"RobotoNew", "Noto Sans CJK KR"',
+            }
+        },
+        title : {
+            text: null,
+        },
+        credits: {
+            enabled: false
+        },
+        accessibility: {
+            announceNewData: {
+                enabled: true
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                marker: {
+                    enabled: false
+                },
+            },
+            column: {
+                pointPadding: 0.1,
+                borderWidth: 0
+            },
+        },
+        tooltip: {
+            shadow: false,
+            useHTML: true,
+            outside: true,
+            borderWidth: '0',
+            borderRadius: '6',
+            backgroundColor: '#4c5459',
+            style: {
+                padding: '10',
+                color: '#fff',
+                fontWeight: '300',
+                fontSize: '13px'
+            },
+            formatter: false,
+            xDateFormat: '<span style="font-weight:400;font-size:14px;">%m.%d</span>',
+            pointFormat: '<span>{series.name} :</span> <span>{point.y}</span> <br><span>목표 걸음수 :</span> <span>4,000</span>'
+        },
+        
+        yAxis : {
+            title: '',
+            labels: {
+                format: '{value:,.0f}', //걸음수
+                x: -15,
+                style: {
+                    fontSize: '12px',
+                    color: '#848a92'
+                }
+            },
+            gridLineWidth: false,
+            // gridLineColor: '#f2f2f2',
+
+            plotBands: [{
+                borderColor: 'red'
+            }],
+            plotLines: [{
+                value: 2812, //일평균 걸음수
+                color: '#8ccdff',
+                width: 1,
+                dashStyle: 'ShortDash',
+                // zIndex: 7,
+                // label: {
+                //     text: '일평균 걸음수',
+                //     align: 'right',
+                //     style: {
+                //         color: 'red',
+                //     }
+                // }
+            }]
+            
+        },
+
+        xAxis : {
+            // 0 = 1월
+            // 11 = 12월
+            type: 'datetime',
+            lineColor: '#c4cbd3',
+            // tickColor: 'red',
+            tickLength: false, //Tick marks 노출
+            min: Date.UTC(2022,8,1),
+            max: Date.UTC(2022,8,30),
+            // tickPositions: [Date.UTC(2022,8,1), Date.UTC(2022,8,10), Date.UTC(2022,8,20), Date.UTC(2022,8,30)], //특정 노출 날짜 지정(Tick marks)
+
+            tickPixelInterval: 50,
+
+            labels: {
+                format: '{value:%e}',
+                style: {
+                    fontSize: '12px',
+                    color: '#848a92'
+                }
+            }
+        },
+
+        series : [
+            {
+                name: '당일 걸음수',
+                type: 'column',
+                //color: '#1490ef', //목표걸음수 성공한 경우 막대차트 컬러
+                color: '#c4cbd3', //기본 막대차트 컬러
+                allowPointSelect: true,
+                states: {
+                    select: {color:'#1056c3',borderWidth:0,borderColor:null}
+                },
+                data: [
+                    [Date.UTC(2022,8,1),1800],
+                    [Date.UTC(2022,8,2),9460],
+                    [Date.UTC(2022,8,3),1451],
+                    [Date.UTC(2022,8,4),2550],
+                    [Date.UTC(2022,8,5),1256],
+                    [Date.UTC(2022,8,6),4523],
+                    [Date.UTC(2022,8,7),1954],
+                    [Date.UTC(2022,8,8),2052],
+                    [Date.UTC(2022,8,9),6233],
+                    [Date.UTC(2022,8,10),2065],
+                    [Date.UTC(2022,8,11),1548],
+                    [Date.UTC(2022,8,12),1355],
+                    [Date.UTC(2022,8,13),1945],
+                    [Date.UTC(2022,8,14),2404],
+                    [Date.UTC(2022,8,15),1853],
+                    [Date.UTC(2022,8,16),1634],
+                    [Date.UTC(2022,8,17),2317],
+                    [Date.UTC(2022,8,18),2318],
+                    [Date.UTC(2022,8,19),1551],
+                    [Date.UTC(2022,8,20),4214],
+                    [Date.UTC(2022,8,21),2212],
+                    [Date.UTC(2022,8,22),4316],
+                    [Date.UTC(2022,8,23),3220],
+                    [Date.UTC(2022,8,24),2351],
+                    [Date.UTC(2022,8,25),3235],
+                    [Date.UTC(2022,8,26),3121],
+                    [Date.UTC(2022,8,27),2434],
+                    [Date.UTC(2022,8,28),1343],
+                    [Date.UTC(2022,8,29),5212],
+                    [Date.UTC(2022,8,30),2435],
+                ]
+            }
+        ]
+    };
+    myStepChart = new Highcharts.Chart(stepChartConfig);
+</script>
+</body>
+</html>
