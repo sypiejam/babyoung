@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>만보기 홈</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<!-- 기존 css -->
+<link rel="stylesheet" href="/css/nonetouch/pib/common.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/prdt_recommend.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_account.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_tax.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_transfer.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_fx.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_goods2.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_cs.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_authorized.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_mypage.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_setup.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/chart.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/blog.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/consent_form.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/content.css">
+<!-- 기존 js -->
+<script src="/js/nonetouch/com/lib/jquery-2.1.0.min.js"></script>
+<script src="/js/nonetouch/com/renewal/lib/jquery-ui.js"></script>
+<script src="/js/nonetouch/com/renewal/lib/owl.carousel.js"></script>
+<script src="/js/nonetouch/com/renewal/common_ui.js"></script>
+
+<!-- 신규 리소스 -->
+<link rel="stylesheet" type="text/css" href="/css/nonetouch/pib/_new2/common.css">
+<link rel="stylesheet" type="text/css" href="/css/nonetouch/pib/_new2/life.css"> <!-- 개발 추가 요청 --> 
+<script type="text/javascript" src="/js/nonetouch/com/renewal/_new2/common_ui.js"></script>
+<!-- 20221117 개발 추가 요청 -->
+<script type="text/javascript" src="/js/nonetouch/com/renewal/lib/lottie.min.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/renewal/lib/lottie-player.js"></script>
+<!-- //20221117 개발 추가 요청 -->
+</head>
+<body>
+<div class="frame_container">
+	<!-- @frame_pageWrap : 퍼블영역
+		-----------------------------------
+		data-page-type="general" 기본
+		data-page-type="sub-main" 서브메인
+		data-page-type="finish"  완료페이지
+		data-page-type="fail"    결과-실패
+		data-page-type="popup"   팝업(레이어아님)
+		-----------------------------------
+	-->
+	<!-- ==================== 새 가이드 시작 ==================== -->
+	<div class="frame_pageWrap newST" data-top-option="" data-page-type="general"> <!-- newST 클래스 추가 --->
+		<main role="main">
+			<div class="page_container">
+                <!-- view_area(스크롤 영역) -->
+                <div class="view_area">
+                    <!-- 2021 new STYLE TYPE -->
+                    <div id="nst_wrapper">
+                        <!-- header 퍼블용(개발시 기존 공통 헤더사용 필요!) -->
+                        <div id="nst_header">
+                            <div class="nst_header_wrap fixed">
+                                <div class="nst_header">
+                                    <h1 class="nst_header_title">만보기</h1>
+                                    <a href="javascript:;" class="nst_header_prev" aria-label="이전화면으로 이동"></a>
+                                    <button type="button" class="nst_header_menu typ_set" aria-label="서비스 메뉴"></button><!-- 20221115 클래스 수정 : typ_dot => typ_set -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //header -->
+                        <!-- container -->
+                        <div id="nst_container" class="nst_container">
+                            <!-- content -->
+                            <div id="nst_content" class="nst_content nst_wbank">
+
+                                <!-- 컨텐츠시작 -->
+                                <!-- 20221115 마크업 수정 -->
+                                <div class="nst_steps_wrap">
+                                    <div class="nst_box_con nst_first_con">
+                                        <!-- 1구간 : 걸음수 0 ~ 3,333 -->
+                                        <p class="nst_title_h1 nst_steps_title">
+                                            <span class="nst_blk">아자! 힘내세요~</span>
+                                            오늘도 열심히 걸어보아요!
+                                        </p>
+                                        <!-- 2구간 : 걸음수 3,334 ~ 6,666
+                                        <p class="nst_title_h1 nst_steps_title">
+                                            <span class="nst_blk">느려도 할 수 있어요~</span>
+                                            끝까지 포기하지 마세요!
+                                        </p> -->
+                                        <!-- 3구간 : 걸음수 6,667 ~ 9,999
+                                        <p class="nst_title_h1 nst_steps_title">
+                                            <span class="nst_blk">역시 걷기왕,</span>
+                                            목표까지 얼마 남지 않았어요!
+                                        </p> -->
+                                        <p class="nst_mission_desc">목표까지 <em class="num">7,188</em>걸음 남았어요!</p>
+
+                                        <!-- 4구간 : 걸음수 10,000 (목표달성 했을 경우) -->
+                                        <!-- <p class="nst_title_h1 nst_steps_title">
+                                            <span class="nst_blk">축하드려요~</span>
+                                            오늘의 목표를 달성하셨습니다!
+                                        </p>
+                                        <p class="nst_mission_desc">오늘 목표보다 <em class="num">999</em>걸음 더 걸으셨어요!</p> -->
+                                    </div>
+                                    
+                                    <div class="nst_box_con">
+                                        <div class="nst_steps_chart">
+                                            <div class="nst_chart_box">
+                                                <svg class="nst_chart_svg" viewBox="0 0 100 100">
+                                                    <circle class="nst_circle nst_circle_base" cx="50" cy="50" r="48" fill="transparent" stroke="#f7f9fc" stroke-width="4" stroke-dasharray="301.44" stroke-dashoffset="73.8528" />
+                                                    <circle class="nst_circle nst_circle_ani" cx="50" cy="50" r="48" fill="transparent" stroke="#1490ef" stroke-width="4" stroke-dasharray="301.44" stroke-dashoffset="301.44" />
+                                                </svg>    
+                                            </div>
+                                            <div class="nst_steps_info">
+                                                <a href="javascript:;" class="nst_steps_count">
+                                                    <span class="nst_count_tit">현재 걸음 수</span>
+                                                    <strong class="nst_count_value">2,812</strong>
+                                                </a><!-- '월별 걸음정보'로 이동 : SCAMA0212-0203-001 -->
+                                                <div class="nst_steps_refresh">
+                                                    <button type="button" class="nst_refresh_btn">08.23 17:40</button>
+                                                </div>
+                                                <!-- 20221117 lottie 적용 -->
+                                                <div class="nst_steps_icon" aria-hidden="true">
+                                                    <!-- 1구간 -->
+                                                    <div class="nst_lottie_walking01">
+                                                        <lottie-player 
+                                                            src="/img/nonetouch/pib/_new2/motion/img_walking_01_face.json"
+                                                            background="transparent" 
+                                                            speed="1" 
+                                                            autoplay loop>
+                                                        </lottie-player>
+                                                    </div>
+                                                    <!-- 2구간 -->
+                                                    <div class="nst_lottie_walking02">
+                                                        <lottie-player 
+                                                            src="/img/nonetouch/pib/_new2/motion/img_walking_02_turtle.json"
+                                                            background="transparent" 
+                                                            speed="1" 
+                                                            autoplay loop>
+                                                        </lottie-player>
+                                                    </div>
+                                                    <!-- 3구간 -->
+                                                    <div class="nst_lottie_walking03">
+                                                        <lottie-player 
+                                                            src="/img/nonetouch/pib/_new2/motion/img_walking_03_shoes.json"
+                                                            background="transparent" 
+                                                            speed="1" 
+                                                            autoplay loop>
+                                                        </lottie-player>
+                                                    </div>
+                                                    <!-- 4구간 -->
+                                                    <div class="nst_lottie_walking04">
+                                                        <lottie-player 
+                                                            src="/img/nonetouch/pib/_new2/motion/img_walking_04_trophy.json"
+                                                            background="transparent" 
+                                                            speed="1" 
+                                                            autoplay loop>
+                                                        </lottie-player>
+                                                    </div>
+                                                </div>
+                                                <!-- //20221117 lottie 적용 -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="nst_box_con nst_bundle">
+                                        <ul class="nst_steps_today">
+                                            <li class="nst_today_item">
+                                                <em class="nst_today_title nst_today_time">시간</em>
+                                                <div class="nst_today_value">
+                                                    <div class="nst_time_hour"><strong class="num">2</strong>h</div><strong class="num">30</strong>m
+                                                </div>
+                                            </li>
+                                            <li class="nst_today_item">
+                                                <em class="nst_today_title nst_today_distance">거리</em>
+                                                <div class="nst_today_value">
+                                                    <strong class="num">2.2</strong>Km
+                                                </div>
+                                            </li>
+                                            <li class="nst_today_item">
+                                                <em class="nst_today_title nst_today_calories">소모 열량</em>
+                                                <div class="nst_today_value">
+                                                    <strong class="num">2,156</strong>Kcal
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="nst_ad_slider_wrap nst_pb_slider mt32">
+                                        <div class="nst_ad_slider">
+                                            <div class="nst_slider_remote">
+                                                <button type="button" class="nst_slider_control"></button>
+                                                <div id="adCount" class="nst_slider_count"><span></span></div>
+                                            </div>
+                                            <button type="button" class="nst_slider_prev"><span class="nst_blind">이전 슬라이드</span></button>
+                                            <div class="owl-carousel">
+                                                <div class="nst_slider_item">
+                                                    <a href="javascript:;" class="nst_item_inner">
+                                                        <img src="/img/nonetouch/pib/_new2/image/img_pbmain_banner.png" alt="컨시어지 이벤트 이미지" class="item_img">
+                                                        <div class="item_txt_wrap">
+                                                            <strong class="item_tit">WON컨시어지 고객님만!</strong>
+                                                            <span class="item_txt">컨시어지 이벤트<br>모두 보러가기</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="nst_slider_item">
+                                                    <a href="javascript:;" class="nst_item_inner">
+                                                        <img src="/img/nonetouch/pib/_new2/image/img_pbmain_banner.png" alt="컨시어지 이벤트 이미지" class="item_img">
+                                                        <div class="item_txt_wrap">
+                                                            <strong class="item_tit">WON컨시어지 고객님만!</strong>
+                                                            <span class="item_txt">컨시어지 이벤트<br>모두 보러가기</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="nst_slider_item">
+                                                    <a href="javascript:;" class="nst_item_inner">
+                                                        <img src="/img/nonetouch/pib/_new2/image/img_pbmain_banner.png" alt="컨시어지 이벤트 이미지" class="item_img">
+                                                        <div class="item_txt_wrap">
+                                                            <strong class="item_tit">WON컨시어지 고객님만!</strong>
+                                                            <span class="item_txt">컨시어지 이벤트<br>모두 보러가기</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="nst_slider_next"><span class="nst_blind">다음 슬라이드</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //20221115 마크업 수정 -->
+                                <!-- //컨텐츠끝 -->
+                                
+                            </div>
+                            <!-- //content -->
+                        </div>
+                        <!-- //container -->
+                    </div>
+                    <!-- //2021 new STYLE TYPE -->
+                </div>
+                <!-- //view_area(스크롤 영역) -->
+            </div>
+        </main>
+	</div>
+	<!-- // ==================== 새 가이드 끝 ==================== -->
+	<!-- //@frame_pageWrap : 퍼블영역 -->
+</div>
+<script>
+    // 20221115 js 수정
+    let flag = 10000; // 만점 기준이 되는 만보수 setting
+    function getLength(step) {
+        var maxR = 301.44;
+        var minR = 73.8528;
+        var round = maxR - minR;
+        var per = (step / flag) >= 1 ? 100 : (step / flag) * 100;
+        var aniPer = (round * per / 100);
+        aniPer = maxR - aniPer;
+        return aniPer;
+    }
+    function stepMaker(step){
+        $('svg .nst_circle_ani').stop().animate({
+            'stroke-dashoffset': getLength(step)
+        },900);
+    }
+    stepMaker(2812); // 걸음수 
+</script>
+
+<script type="text/javascript">
+	/* 슬라이드 배너 */
+	var pbSlide = (function(){
+	var owl_ad = $('.nst_ad_slider_wrap .owl-carousel');
+	var owl_adLen = $('.nst_ad_slider_wrap .nst_slider_item').length;
+	var financeOption = {
+		loop: true,
+		nav: true, 
+		autoplay: true,
+		autoplayTimeout: 2500,
+		autoplaySpeed: 400,
+		dots: false, 
+		responsive:{0:{items: 1}},
+		stagePadding: 20, 
+		margin:20, 
+		onTranslated: function(e){
+			accActiveFocus(e);
+			ttlCount(e);
+
+			var $slider_wrap = $(e.target).parents('.nst_ad_slider_wrap'); 
+			if( $slider_wrap.find('.nst_slider_control.nst_play').length ){
+				owl_ad.trigger('stop.owl.autoplay');
+			}else{
+				owl_ad.trigger('stop.owl.autoplay');
+				owl_ad.trigger('play.owl.autoplay');
+			}
+
+			// 처음 로딩시 추가한 클래스 삭제
+			$(e.target).find('.owl-item').removeClass('firstBanner initActive');
+
+			// 이전 다음
+			fnBtnNav($(e.target).parents('.nst_ad_slider_wrap'));
+
+			// 인디케이터 있을때
+			if (financeOption.dots) {
+				$slider_wrap.find('.owl-dots .owl-dot').removeAttr('aria-label');
+				$slider_wrap.find('.owl-dots .owl-dot.active').attr('aria-label', "현재 슬라이드");
+			}
+			
+		},
+		onInitialized: function(e){
+			accActiveFocus(e);
+			ttlCount(e);
+
+			// autoplay 버튼
+			var $slider_wrap = $(e.target).parents('.nst_ad_slider_wrap'); 
+			var $play_stop = $slider_wrap.find('.nst_slider_control');
+			if ($play_stop.length) {
+				$play_stop.removeClass('nst_play').removeClass('nst_stop');
+				if (financeOption.autoplay) {
+					$play_stop.addClass('nst_stop').attr('aria-label','일시정지');
+				} else {
+					$play_stop.addClass('nst_play').attr('aria-label','재생');
+				}
+
+				$play_stop.on('click', function(){
+					if( $(this).hasClass('nst_stop') ){
+						$(this).removeClass('nst_stop').addClass('nst_play').attr('aria-label','재생');
+						owl_ad.trigger('stop.owl.autoplay');
+					}
+					else if( $(this).hasClass('nst_play') ){
+						$(this).removeClass('nst_play').addClass('nst_stop').attr('aria-label','일시정지');
+						owl_ad.trigger('play.owl.autoplay');
+					}
+				});
+			}
+
+			// 이전 다음
+			fnBtnNav($slider_wrap);
+
+			// 인디케이터 있을때
+			if (financeOption.dots) {
+				$slider_wrap.addClass('nst_dots_true');
+				
+				$slider_wrap.find('.owl-dots .owl-dot').each(function(i, v){
+					$(v).removeAttr('aria-label').find('span').text( (i+1) + '번 슬라이드' );
+				});
+				$slider_wrap.find('.owl-dots .owl-dot.active').attr('aria-label', "현재 슬라이드");
+			}
+			
+			// 처음 로딩시 모션동작
+			$(e.target).find('.owl-item.active').addClass('firstBanner');
+			setTimeout(function(){
+				$(e.target).find('.firstBanner').addClass('initActive');
+			},100);
+		}
+	}
+	function attachEvent(){
+
+		//칼라지정값 처리 (객체 배열로 들어온다고함)
+		var colorCode = [
+			{"background":"#997965"},
+			{"background":"#071d65"},
+			{"background":"#1d870c"}
+		];
+		$('.nst_ad_slider_wrap').find('.nst_slider_item').each(function(i){
+			$(this).css( colorCode[i] );
+		});
+		
+		if( owl_adLen < 2 ){
+			owl_ad.addClass('nst_just1');
+			owl_ad.trigger('destroy.owl.carousel').removeClass('owl-carousel');
+			$('.nst_ad_slider_wrap .nst_slider_remote').hide();
+			$('.nst_ad_slider_wrap .nst_slider_prev').hide();
+			$('.nst_ad_slider_wrap .nst_slider_next').hide();
+		}else{
+			owl_ad.owlCarousel(financeOption);
+			$('.nst_ad_slider_wrap .nst_slider_prev').click(function(){
+				owl_ad.trigger('stop.owl.autoplay');
+				owl_ad.trigger('play.owl.autoplay');
+				owl_ad.trigger('prev.owl.carousel');
+				accActiveBtnFocus(owl_ad);
+			});
+			$('.nst_ad_slider_wrap .nst_slider_next').click(function(){
+				owl_ad.trigger('stop.owl.autoplay');
+				owl_ad.trigger('play.owl.autoplay');
+				owl_ad.trigger('next.owl.carousel');
+				accActiveBtnFocus(owl_ad);
+			});
+			
+		}
+	}
+	function ttlCount(evt){
+		$('#adCount span').html( '<span class="nst_present">'+ (evt.relatedTarget.relative(evt.item.index) + 1) +'</span> / <span class="nst_total"> ' + evt.item.count + '</span>' );
+	}
+	function fnBtnNav(sliderWrap){
+		var $slider_wrap = $(sliderWrap);
+		var $btn_prev = $slider_wrap.find('.nst_slider_prev');
+		var $btn_next = $slider_wrap.find('.nst_slider_next');
+		var $owl_prev = $slider_wrap.find('.owl-prev');
+		var $owl_next = $slider_wrap.find('.owl-next');
+		
+		if ($owl_prev.hasClass('disabled')) {
+			$btn_prev.addClass('disabled').attr('disabled');
+		} else {
+			$btn_prev.removeClass('disabled').removeAttr('disabled');
+		}
+
+		if ($owl_next.hasClass('disabled')) {
+			$btn_next.addClass('disabled').attr('disabled');
+		} else {
+			$btn_next.removeClass('disabled').removeAttr('disabled');
+		}
+	}
+	return {
+		init: function(){
+			/* 스켈레톤 처리 예시(참고만) */
+			// setTimeout(function(){
+			//     $('.nst_ad_slider_wrap .-main_skeleton').fadeOut();
+			//     attachEvent();
+			// },500);
+			attachEvent();
+		}
+	};
+})();
+
+$(function(){
+    pbSlide.init();
+    $('.nst_pb .nst_header_wrap .nst_header .nst_header_title').addClass("nst_pb_img");//헤더 타이틀 이미지 addClass 
+});
+
+// 접근성처리
+function accActiveFocus(evt){
+    $(evt.target).find('.owl-item:not(".active")').attr('aria-hidden','true').find('*').attr('aria-hidden','true');
+    $(evt.target).find('.owl-item.active').removeAttr('aria-hidden').find('*').removeAttr('aria-hidden');
+}
+function accActiveBtnFocus(obj){
+    $(obj).find('.owl-item:not(".active")').attr('aria-hidden','true').find('*').attr('aria-hidden','true');
+    $(obj).find('.owl-item.active').removeAttr('aria-hidden').find('*').removeAttr('aria-hidden');
+}	
+
+
+</script>
+</body>
+</html>
