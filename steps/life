@@ -1,0 +1,77 @@
+@charset "utf-8";
+/** -----------------------
+  * @ 파일 : /_new2/life.css
+  * @ 구분 : 생활혜택
+  * -----------------------
+**/
+
+.nst_header_menu.typ_set {background-image:url(/img/nonetouch/pib/_new2/icon/ic_header_set.png);}
+
+/* 만보기_홈 */
+.nst_steps_wrap {padding:2.4rem 0 0;}
+.nst_steps_title {display:block;max-height:6.6rem;margin-bottom:1.2rem;font-weight:500;}
+.nst_mission_desc {display:block;text-align:left;font-weight:400;font-size:1.5rem;line-height:2.4rem;color:#848a92;}
+.nst_mission_desc .num {font-weight:500;font-size:1.6rem;letter-spacing:0;color:#333a40;}
+/* 20221115 차트 변경 */
+.nst_steps_chart {position:relative;}
+.nst_chart_box {position:relative;width:24rem;height:24rem;margin:0 auto;}
+.nst_chart_svg {position:relative;transform:rotate(134deg);z-index:1;}
+.nst_chart_svg .nst_circle {stroke-linecap:round;}
+.nst_chart_svg .nst_circle_base {stroke:#f7f9fc;}
+.nst_wbank .nst_steps_info {position:absolute;top:4rem;left:50%;width:16rem;margin-left:-8rem;text-align:center;z-index:10;}
+.nst_wbank .nst_steps_count {display:block;margin-bottom:0.4rem;}
+.nst_wbank .nst_count_tit {display:inline-block;margin-right:-1.4rem;font-weight:500;color:#848a92;}
+.nst_wbank .nst_count_tit::after {content:'';display:inline-block;width:1.4rem;height:2.4rem;margin-left:1px;vertical-align:top;background:url(/img/nonetouch/pib/_new2/icon/ic_arrow_small_right_enabled.png) no-repeat 50% 50% / 100%;}
+.nst_wbank .nst_count_value {display:block;font-size:3.6rem;line-height:3.5rem;letter-spacing:0;}
+.nst_wbank .nst_refresh_btn {position:relative;display:inline-block;padding-right:3.2rem;font-weight:400;font-size:1.3rem;line-height:2.5rem;letter-spacing:0;color:#a1a9b2;}
+.nst_wbank .nst_refresh_btn::after {content:'';position:absolute;top:0;right:0;display:inline-block;width:2.4rem;height:2.4rem;color:#848a92;background:url(/img/nonetouch/pib/_new2/icon/ic_refresh.png) no-repeat center;background-size:100%;vertical-align:middle;}
+.nst_wbank .nst_steps_icon {overflow:hidden;width:16rem;height:12rem;margin-top:-0.8rem;}
+.nst_steps_today {overflow:hidden;font-size:0;}
+.nst_today_item {display:table;width:100%;height:5.6rem;margin-top:-1px;border-bottom:1px solid #f2f5f9;}
+.nst_today_item:first-child {margin-top:3.2rem;}
+.nst_today_title {position:relative;display:table-cell;text-align:left;font-weight:400;font-size:1.5rem;color:#333a40;vertical-align:middle;}
+.nst_today_title::before {content:'';display:inline-block;width:3.2rem;height:3.2rem;margin-right:0.4rem;vertical-align:-1rem;background-repeat:no-repeat;background-position:0 0;background-size:100%;box-sizing:border-box;}
+.nst_today_value {display:table-cell;text-align:right;font-weight:400;font-size:1.6rem;line-height:2.4rem;letter-spacing:0;color:#000;vertical-align:middle;}
+.nst_today_value .num {margin-right:0.2rem;font-weight:500;font-size:2rem;vertical-align:-1px;color:#151c22;}
+.nst_today_value .nst_time_hour {display:inline-block;margin-right:0.6rem;}
+.nst_today_time::before {background-image:url(/img/nonetouch/pib/_new2/icon/ic_life_time.png);}
+.nst_today_distance::before {background-image:url(/img/nonetouch/pib/_new2/icon/ic_life_distance.png);}
+.nst_today_calories::before {background-image:url(/img/nonetouch/pib/_new2/icon/ic_life_calories.png);}
+.nst_steps_banner {overflow:hidden;display:block;border-radius:1rem;}
+
+/* 만보기_목표 설정 */
+.nst_tf_noti {padding:0.5rem 0;font-size:1.3rem;color:#151c22;}
+.nst_tf_area.error .nst_tf_noti {color:#e5483d;}
+
+/* 만보기_설정 */
+.nst_steps_set {margin-top:-0.8rem;}
+.nst_steps_set .nst_list.link2 {padding:0;}
+.nst_steps_set .nst_list.link2 .nst_list_link::after{display:none;}
+
+/* 만보기_구글계정 연계 안내 */
+.nst_google_btn {height:4rem;margin-top:16.0rem;padding:0.7rem 1.5rem;border:0;border-radius:0.3rem;box-shadow:0 1px 3px rgba(0, 0, 0, 0.2);}
+.nst_google_btn .nst_google {padding-left:4.4rem;font-size:1.4rem;letter-spacing:0;}
+.nst_google_btn .nst_google::before {background-image:url(/img/nonetouch/pib/_new2/icon/ic_google.png);}
+
+/* 만보기_신체활동 동의 안내 */
+.nst_steps_access .nst_tit_type2 {letter-spacing:-.75px;}
+.nst_access_visual {display:block;width:12rem;height:12rem;margin:3.2rem auto 4rem;border-radius:3.2rem;background:#f7f9fc url(/img/nonetouch/pib/_new2/image/img_walking_health.png) no-repeat 50% 50% / 9rem auto;}
+
+/* 만보기_월별 걸음정보 */
+.nst_steps_month {margin-bottom:-3.2rem;}
+.nst_month_box {text-align:center;padding:2.4rem 0;}
+.nst_month_box .inner {position:relative;width:170px;margin:0 auto;}
+.nst_month_box .month {line-height:3.3rem;font-weight:500;font-size:2.4rem;letter-spacing:0;}
+.nst_month_box [class^='btn_'] {position:absolute;top:0;height:100%;width:3.3rem;}
+.nst_month_box [class^='btn_']::before {content:'';display:block;width:1.4rem;height:2.4rem;margin:0 auto;background-position:0 0;background-repeat:no-repeat;background-size:100%;}
+.nst_month_box .btn_prev {left:0;}
+.nst_month_box .btn_next {right:0;}
+.nst_month_box .btn_prev::before {background-image:url(/img/nonetouch/pib/_new2/icon/ic_arrow_normal_left_enabled.png);}
+.nst_month_box .btn_next::before {background-image:url(/img/nonetouch/pib/_new2/icon/ic_arrow_normal_right_enabled.png);}
+.nst_month_box .btn_prev:disabled::before {background-image:url(/img/nonetouch/pib/_new2/icon/ic_arrow_normal_left_disabled.png);}
+.nst_month_box .btn_next:disabled::before {background-image:url(/img/nonetouch/pib/_new2/icon/ic_arrow_normal_right_disabled.png);}
+.nst_average {margin-bottom:1.6rem;text-align:center;}
+.nst_average_tit {font-weight:300;font-size:1.4rem;color:#848a92;}
+.nst_average_step {line-height:3.8rem;font-weight:500;font-size:3.2rem;letter-spacing:0;}
+.nst_average_unit {font-weight:500;font-size:1.7rem;letter-spacing:-0.6px;vertical-align:text-bottom;}
+.nst_chart_steps {height:calc(100vh - 23.3rem);margin:0 1rem;}
