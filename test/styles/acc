@@ -61,7 +61,7 @@
 .acc_main_list .accordion_item {border:1px solid #d5dbe3;border-radius:0.6rem;}
 .acc_main_list .accordion_item ~ .accordion_item {margin-top:1.6rem;} 
 .acc_main_list .accordion_wrap .accordion_body {padding:0;border-bottom:0;}
-.acc_infomation .acc_balance {margin-top:0.4rem;}
+.acc_infomation .acc_balance {margin-top:0.4rem;text-align:left;}
 .acc_infomation .type {color:#1056c3;}
 .acc_infomation .data {display:flex;align-items:center;}
 .acc_infomation .cur {font-weight:400;font-size:1.3rem;color:#686e75;}
@@ -71,19 +71,23 @@
 .acc_typanel .typanel_link {display:block;padding:2.4rem 2rem;}
 .acc_typanel .btn_wrap {margin-bottom:2.4rem;padding:0 2rem;}
 .acc_typanel .acc_name {padding-right:2.2rem;font-size:1.4rem;color:#686e75;}
-.acc_typanel .acc_num {font-weight:500;font-size:1.6rem;color:#151c22;}
+.acc_typanel .acc_num {padding-right:2rem;font-weight:500;font-size:1.6rem;color:#151c22;}
 .acc_typanel .acc_balance {margin-top:1.6rem;}
 .acc_typanel .cur {font-weight:500;font-size:1.6rem;}
 .acc_typanel .sum {font-size:2.2rem;}
-.acc_typanel .rate_info {margin-top:0;font-size:1.4rem;}
-.acc_typanel .rate_info .txt {margin:0;font-weight:400;font-size:1.3rem;color:#a1a9b2;}
-.acc_typanel .rate_info .data {font-size:1.4rem;font-weight:500;}
-.acc_typanel .rate_info .rate {margin:0;}
-.acc_typanel .ico_accset {z-index:10;position:absolute;right:1rem;top:2.4rem;}
+.acc_typanel .btm_info {margin-top:0;font-size:1.4rem;}
+.acc_typanel .btm_info .txt {margin:0;font-weight:400;font-size:1.3rem;color:#a1a9b2;}
+.acc_typanel .btm_info .data {font-size:1.4rem;font-weight:500;}
+.acc_typanel .btm_info .cur {font-weight:400;font-size:1.3rem;color:#686e75;}
+.acc_typanel .btm_info .sum {margin-left:0.2rem;font-weight:500;font-size:1.4rem;color:#686e75;}
+.acc_typanel .btm_info .rate {margin:0;}
+.acc_typanel .ico_accset {z-index:10;position:absolute;right:0.4rem;top:1.8rem;width:3.6rem;height:3.6rem;background-size:2.4rem;background-position:50%;}
 
 /* 거래내역조회(리스트) */
 .acc_list_item {width:100%;padding:2.4rem 0;border-bottom:1px solid #f2f5f9;}
+.acc_list_item .date_area {height:1.8rem;}
 .acc_list_item .date {display:inline-block;color:#686e75;font-weight:500;}
+.acc_list_item .time {display:block;height:1.8rem;}
 .acc_list_item .count {display:inline-block;margin-left:0.4rem;color:#848a92;}
 .acc_list_item .txt {display:inline-block;}
 .acc_list_item .cur {display:inline-block;margin-left:0.4rem;}
@@ -107,6 +111,7 @@
 .acc_loan_list .infolist_tit .infolist_lt {font-weight:700;font-size:1.5rem;color:#4c5459;}
 .acc_loan_list .acc_list_item .date {display:block;margin-bottom:1.6rem;font-weight:400;font-size:1.5rem;color:#151c22;}
 .acc_loan_list .acc_list_item .infolist_rt {font-size:1.6rem;}
+.acc_loan_list .date_area {height:auto;}
 
 /* 거래내역조건설정팝업 */
 .acc_toggle .accordion_wrap {padding-top:0;}
