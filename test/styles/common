@@ -218,7 +218,7 @@
 .chk_star input:checked+label {background-image:url(/public/images/com/ic_star_on.png);}
 
 /* flag 알파벳순 */
-.ico_flag {border-radius:50%;box-shadow:0 0 0 1px rgba(0, 0, 0, 0.1) inset;}
+.ico_flag {border-radius:50%;background-image:url(/public/images/icon/flag/ic_flag_etc.png);}
 .ico_flag.ae {background-image:url(/public/images/icon/flag/ic_flag_are.png);}/*아랍에미리트*/
 .ico_flag.ar {background-image:url(/public/images/icon/flag/ic_flag_arg.png);}/*아르헨티나*/
 .ico_flag.at {background-image:url(/public/images/icon/flag/ic_flag_aut.png);}/*오스트리아*/
@@ -438,6 +438,38 @@
 .lg.ci_bank_295 {background-image:url(/public/images/icon/bank/lg/ic_bank_999.png);}/* 가상금융기관 */
 .lg.ci_bank_484 {background-image:url(/public/images/icon/bank/lg/ic_bank_999.png);}/* 국세청  */
 .lg.ci_bank_000 {background-image:url(/public/images/icon/bank/lg/ic_bank_999.png);}/* 국세 */
+/* 해외은행 */
+.ci_bank_aboc {background-image:url(/public/images/icon/bank/lg/ic_bank_aboc.png);}
+.ci_bank_aeb {background-image:url(/public/images/icon/bank/lg/ic_bank_aeb.png);}
+.ci_bank_ang {background-image:url(/public/images/icon/bank/lg/ic_bank_ang.png);}
+.ci_bank_bar {background-image:url(/public/images/icon/bank/lg/ic_bank_bar.png);}
+.ci_bank_bbva {background-image:url(/public/images/icon/bank/lg/ic_bank_bbva.png);}
+.ci_bank_bm {background-image:url(/public/images/icon/bank/lg/ic_bank_bm.png);}
+.ci_bank_boc {background-image:url(/public/images/icon/bank/lg/ic_bank_boc.png);}
+.ci_bank_bon {background-image:url(/public/images/icon/bank/lg/ic_bank_bon.png);}
+.ci_bank_bons {background-image:url(/public/images/icon/bank/lg/ic_bank_bons.png);}
+.ci_bank_botm {background-image:url(/public/images/icon/bank/lg/ic_bank_botm.png);}
+.ci_bank_cal {background-image:url(/public/images/icon/bank/lg/ic_bank_cal.png);}
+.ci_bank_csfb {background-image:url(/public/images/icon/bank/lg/ic_bank_csfb.png);}
+.ci_bank_dbs {background-image:url(/public/images/icon/bank/lg/ic_bank_dbs.png);}
+.ci_bank_ib {background-image:url(/public/images/icon/bank/lg/ic_bank_ib.png);}
+.ci_bank_iob {background-image:url(/public/images/icon/bank/lg/ic_bank_iob.png);}
+.ci_bank_lbw {background-image:url(/public/images/icon/bank/lg/ic_bank_lbw.png);}
+.ci_bank_mb {background-image:url(/public/images/icon/bank/lg/ic_bank_mb.png);}
+.ci_bank_mbl {background-image:url(/public/images/icon/bank/lg/ic_bank_mbl.png);}
+.ci_bank_msbi {background-image:url(/public/images/icon/bank/lg/ic_bank_msbi.png);}
+.ci_bank_nab {background-image:url(/public/images/icon/bank/lg/ic_bank_nab.png);}
+.ci_bank_nbop {background-image:url(/public/images/icon/bank/lg/ic_bank_nbop.png);}
+.ci_bank_rbos {background-image:url(/public/images/icon/bank/lg/ic_bank_rbos.png);}
+.ci_bank_sboi {background-image:url(/public/images/icon/bank/lg/ic_bank_sboi.png);}
+.ci_bank_sg {background-image:url(/public/images/icon/bank/lg/ic_bank_sg.png);}
+.ci_bank_smbc {background-image:url(/public/images/icon/bank/lg/ic_bank_smbc.png);}
+.ci_bank_ssbatc {background-image:url(/public/images/icon/bank/lg/ic_bank_ssbatc.png);}
+.ci_bank_ubaf {background-image:url(/public/images/icon/bank/lg/ic_bank_ubaf.png);}
+.ci_bank_uboc {background-image:url(/public/images/icon/bank/lg/ic_bank_uboc.png);}
+.ci_bank_ubsag {background-image:url(/public/images/icon/bank/lg/ic_bank_ubsag.png);}
+.ci_bank_uob {background-image:url(/public/images/icon/bank/lg/ic_bank_uob.png);}
+.ci_bank_wfb {background-image:url(/public/images/icon/bank/lg/ic_bank_wfb.png);}
 
 [class^="ico_"].md {width:3.6rem;height:3.6rem;}/* icon 36x36 */
 [class^="ico_"].lg {width:5.4rem;height:5.4rem;}/* icon 54x54 */
@@ -492,8 +524,8 @@
 .title_wrap .link_arr {font-size:1.4rem;color:#848a92;}
 .title_wrap.first {margin-top:2.4rem;}
 .title_float {overflow:hidden;}
-.title_float>:first-child {float:left;}
 .title_float>:last-child {float:right;}
+.title_float>:first-child {float:left;}
 .title_float .title_wrap {margin-bottom:0;}
 .title_float .title_wrap [class*='title'],
 .title_float [class*='title']:first-child {padding-top:1px;}
@@ -811,6 +843,7 @@
 .field_wrap {position:relative;margin-bottom:3.2rem;}
 .field_wrap:last-child {margin-bottom:0;}
 .field_wrap .title_wrap {margin-bottom:0;}
+.field_wrap+.boxicon_comp {margin-top:-1.6rem;}/* 이체 input 필드 하단에 BoxIconItem 위치시 사용 */
 .field_item {display:flex;align-items:center;margin-left:0.8rem;margin-bottom:-3px;}
 .field_item:first-child {margin-left:0;}
 
@@ -824,6 +857,7 @@
 .inp_field {position:relative;display:flex;align-items:center;min-height:4.4rem;border-bottom:2px solid #d5dbe3;}
 .inp_field:focus-within {border-color:#1490ef;}
 .inp_field+.inp_field {margin-top:1.6rem;}
+.inp_field+.inp_select {width:calc(50% - 0.8rem);}
 .inp_field>.inp_item {flex:1;}
 .inp_field .loadingbox {position:absolute;top:50%;width:100%;margin-top:-1rem;z-index:2;}
 .inp_field .ico_dot {margin:0;}
@@ -935,7 +969,8 @@ input:read-only:focus-within+.inp_delete {display:none;}
 .autocomplete_item {padding:0.8rem 0;color:#333a40;}
 
 /* search field */
-input[type="search"]::-webkit-search-cancel-button {display:block;width:2.4rem;height:2.4rem;margin:0;background:url(/public/images/com/ic_close.png) no-repeat 0 0 / 100%;}
+input[type="search"] {-webkit-appearance:searchfield;}
+input[type="search"]::-webkit-search-cancel-button {display:block;width:2.4rem;height:2.4rem;margin:0;background:url(/public/images/com/ic_close.png) no-repeat 0 0 / 100%;-webkit-appearance:searchfield-cancel-button;}
 .sch_field.filled:focus-within {border-color:#d5dbe3;}
 .sch_field .field_item {margin-right:-0.4rem;margin-left:0;}
 .sch_field .ico_search {width:3.2rem;height:3.2rem;background-position:50% 50%;background-size:2.4rem 2.4rem;}
@@ -951,6 +986,7 @@ input[type="search"]::-webkit-search-cancel-button {display:block;width:2.4rem;h
 .is-error .inp_search+.border {border-color:#e5483d;}
 .sch_popup .inp_search {width:calc(100% - 3.2rem);}
 .sch_popup .inp_button {position:absolute;top:0;right:0;bottom:0;left:0;display:block;width:100%;height:100%;background-position:100% 50%;background-size:2.4rem 2.4rem;}
+.sch_popup input[type="search"]::-webkit-search-cancel-button {display:none;}
 
 /* address field */
 .address_field .readonly {border-color:#d5dbe3;}
@@ -1101,13 +1137,14 @@ input:checked+.list_item .listbox_txt {color:#1490ef;}
 .flag_wrap {display:flex;align-items:center;}
 .flag_wrap .nation {margin-left:0.8rem;font-size:1.7rem;vertical-align:middle;color:#151c22;}
 .flag_wrap .code {margin-left:0.8rem;vertical-align:middle;color:#151c22;}
-.exchange_item {display:flex;align-items:center;justify-content:space-between;width:100%;padding:1.5rem;color:#333a40;}
-.exchange_item .listbox_desc {width:calc(100% - 8rem);text-align:right;}
+.exchange_item {display:flex;align-items:center;justify-content:space-between;width:100%;min-height:7.7rem;padding:1.5rem;color:#333a40;}
+.exchange_item .listbox_desc {width:calc(100% - 10rem);text-align:right;}
 .exchange_item .price {display:block;font-size:1.6rem;}
 .exchange_item .exinfo {display:block;margin-top:0.4rem;font-size:1.3rem;color:#848a92;}
 .exchange_item .exinfo .num {display:inline-block;margin-left:0.4rem;font-size:calc(100% + 0.1rem);}
-.exchange_tit {margin-bottom:-0.7rem;padding:1.5rem 1.6rem 0;}
-.exchange_btm {padding:0 1.6rem;}
+.exchange_tit {padding:1.5rem 1.6rem 0;}
+.exchange_tit+.exchange_item {padding:0.8rem 1.5rem 1.6rem;}
+.exchange_btm {padding:0 1.5rem;}
 .exchange_btm .infolist_item {margin:0;padding:1.2rem 0;border-top:1px solid #f2f5f9;}
 .exchange_btm .infolist_lt {color:#4c5459;}
 
@@ -1190,7 +1227,7 @@ input:checked+.list_item .listbox_txt {color:#1490ef;}
 .optionbox input:checked+.option_lb {animation:btnOutLineActive 0.2s;}
 @keyframes btnOutLineActive { 
     from {background:transparent;}
-    to {background:linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05), #fff);}
+    to {background:-webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), #fff;background:linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), #fff;}
 }
 
 /* 최종 비밀번호 오류_아이디 */
@@ -1321,18 +1358,8 @@ input:checked+.list_item .listbox_txt {color:#1490ef;}
     .react-calendar__month-view {padding:0 0.6rem;}
 }
 
-/* 약관 HTML */
-.wgb_termswrap .title_h1 {display:block;margin-bottom:3.2rem;font-weight:700;}
-.wgb_termswrap .title_h3 {display:block;margin-top:3.2rem;margin-bottom:0.8rem;}
-.wgb_termswrap .title_h3:first-child {margin-top:0;}
-.wgb_termswrap .table_wrap {margin:1.2rem 0;}
-.wgb_termswrap .underline {text-decoration:underline;}
-.wgb_termswrap ul+ul {margin-top:1.6rem;}
-.wgb_termswrap li>ul,
-.wgb_termswrap li+li,
-.wgb_termswrap dd+dd,
-.wgb_termswrap dd li>ol {margin-top:0.8rem;}
-.wgb_termswrap dl {margin:1.6rem 0;}
-.wgb_termswrap dl:first-child {margin-top:0;}
-.wgb_termswrap dt {margin-bottom:0.4rem;font-weight:500;font-size:1.6rem;}
-.wgb_termswrap a {color:#1490ef;text-decoration:underline;}
+/* 우리won로고(다른은행계좌조회, 상품몰로 이동하는 브릿지페이지에서 사용) */
+.img_bi_wooriwon {width:9.6rem;height:9.6rem;margin:12rem auto 0;background:url(/public/images/com/bi_wooriwon.png) no-repeat 0 0 / 100%;}
+
+/* 송금국가검색 */
+.countrylist .ico_flag.md {width:2.4rem;height:2.4rem;}/*몰도바*/
