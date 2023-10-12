@@ -22,7 +22,7 @@ function Button({ size, tag, status, icon, text , disabled, onClick, btnClass })
     const classNames = ( size ? (icon ? `btn_${size} btn_icon_${icon}` : `btn_${size}`) : `btn_${status}`) + (btnClass? ` ${btnClass}`:"");
 
      
-    return(<StyledButton as={tag} className={classNames} sizeStyle={sizeStyle} variantStyle={variantStyle} disabled={disabled} onClick={onClick}>
+    return(<StyledButton as={tag ? tag : 'button'} className={classNames} sizeStyle={sizeStyle} variantStyle={variantStyle} disabled={disabled} onClick={onClick}>
         <span>{text}</span>
     </StyledButton>)
 }
