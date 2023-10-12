@@ -11,6 +11,11 @@
 <script type="text/javascript" src="/wglb/js/layout.js"></script>
 <script type="text/javascript" src="/js/nonetouch/com/lib/jquery-2.1.0.min.js"></script>
 <!-- <script type="text/javascript" src="/js/nonetouch/com/renewal/_new2/common_ui.js"></script> -->
+<style>
+body.hidden {overflow:hidden;position:absolute;top:0;right:0;bottom:0;left:0;-webkit-overflow-scrolling:unset;overscroll-behavior:none;}
+body.hidden .dimmed {position:fixed;}
+.container.has_fixed {padding-bottom:3.2rem;}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -35,11 +40,60 @@
                 <button type="button" class="btn_outlined btn_small" data-roll="slide-on" data-link="btmSheet003"><span>출금계좌(탭,하단버튼없음)</span></button>
                 <button type="button" class="btn_outlined btn_small" data-roll="slide-on" data-link="btmSheet004"><span>통화선택(탭,하단버튼없음)</span></button>
             </div>
-
+            <div style="width:100px; height: 200px; background-color: aqua;"></div>
+            <div style="width:100px; height: 200px; background-color: blueviolet;"></div>
+            <div style="width:100px; height: 200px; background-color: yellowgreen;"></div>
+            <button type="button" class="btn_outlined btn_small" data-roll="slide-on" data-link="btmSheetTT"><span>테스트6</span></button>
+            <div style="width:100px; height: 200px; background-color: tomato;"></div>
         </div>
         <!-- //content -->
     </div>
     <!-- //container -->
+   <div class="btmsheet" id="btmSheetTT" style="background-color: aqua;">
+        <div class="btmsheet_head">
+            <strong class="title_h1">통장표기 테스트3</strong>
+            <button type="button" class="ico_close btn_close" data-roll="slide-off"><span class="blind">닫기</span></button>
+        </div>
+        <div class="btmsheet_body has_fixed">
+            <div class="inner nospace">
+                <div class="tab_head">
+                    <a href="#none" class="tab_item is-active"><span class="tab_txt">직접입력</span></a>
+                    <a href="#none" class="tab_item"><span class="tab_txt">자주쓰는문구</span></a>
+                </div>
+                <div class="tab_body pt16 pb24" style="background-color: bisque;">
+                    <div class="tab_panel" style="background-color: aquamarine;">
+                        <div class="field_wrap">
+                            <div class="inp_field">
+                                <div class="inp_item">
+                                    <input type="text" class="inp_text" value="" placeholder="받는 분 통장 표기(10자 이내)" title="받는 분 통장 표기(10자 이내)" />
+                                    <div class="inp_delete">
+                                        <button type="button" class="ico_delete inp_button"><span class="blind">삭제</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="txt_error">
+                                <p>Enter an error message</p>
+                            </div>
+                        </div>
+                        <div class="chk_item mt24">
+                            <input type="checkbox" name="Normal" id="NormalEnabled" class="check_normal st" >
+                            <label for="NormalEnabled">자주쓰는 문구로 등록</label>
+                        </div>
+                    </div>
+                    <div class="tab_panel" style="display:none">
+                        탭영역 2
+                    </div>
+                </div>
+            </div>
+            <div class="btm_fixed" style="background-color: blueviolet;">
+                <div class="btn_wrap">
+                    <div class="d-flex">
+                        <a href="javascript:void(0);" class="btn_primary btn_large"><span>확인</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="btmsheet" id="btmSheet001">
         <div class="btmsheet_head">
@@ -318,13 +372,13 @@ $(function(){
 
         $(slideOn).on('click', function(){
             let href = $(this).attr('data-link');
-            $('body').css({overflow:"hidden"});
+            $('body').addClass('hidden');
             $('.wrap').append(dimm);
             $('#'+href).addClass('is-active');
         });
         $(slideOff).on('click', function(){
             $('.dimmed').remove();
-            $('body').removeAttr("style");
+            $('body').removeClass('hidden');
             btmSht.removeClass('is-active');
         })
     }
