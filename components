@@ -75,8 +75,8 @@
 .btn_contained_blue:active{background:linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05)), #e9f3ff;}
 .btn_contained_blue.disabled,
 .btn_contained_blue[disabled]{color:rgba(16,86,195,0.3);}
-.btn_contained_gray{background:#f2f5f9;color:#333a40;}
-.btn_contained_gray:active{background:linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05)), #f2f5f9;}
+.btn_contained_gray{background:#e4eaf2;color:#333a40;}
+.btn_contained_gray:active{background:linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05)), #e4eaf2;}
 .btn_contained_gray.disabled,
 .btn_contained_gray[disabled]{color:rgba(51,58,64,0.3);}
 .btn_outlined{background:#fff;border:1px solid #d5dbe3;color:#333a40;}
