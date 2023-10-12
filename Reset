@@ -71,3 +71,5 @@ input::-webkit-search-results-button,
 input::-webkit-search-results-decoration {display:none;-webkit-appearance:none;}
 textarea:disabled {opacity:1;background-color:transparent;color:#f2f5f9;-webkit-text-fill-color:rgba(242,245,249,1);}
 textarea:disabled::placeholder {color:#d5dbe3;-webkit-text-fill-color:rgba(213,219,227,1);}
+
+:lang(my) {letter-spacing:0;line-height:2;}/* 미얀마 */
