@@ -240,67 +240,67 @@ lottie 모션 /public/images/motion/
 .chk_star .ico_star {margin:0;}
 .chk_star input:checked+label {background-image:url(/img/nonetouch/pib/_new2/icon/ic_star_on.png);}
 
-/* flag */
-.ico_flag {border-radius:50%;box-shadow:0 0 0 1px rgba(0, 0, 0, 0.1) inset;}
-.ico_flag.ae {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_are.png);}/*아랍에미리트*/
-.ico_flag.ar {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_arg.png);}/*아르헨티나*/
-.ico_flag.at {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_aut.png);}/*오스트리아*/
-.ico_flag.au {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_aus.png);}/*오스트레일리아(호주)*/
-.ico_flag.eu {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_eur.png);}/*유럽*/
-.ico_flag.bd {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_bgd.png);}/*방글라데시*/
-.ico_flag.be {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_bel.png);}/*벨기에*/
-.ico_flag.bh {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_bhr.png);}/*바레인*/
-.ico_flag.bn {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_brn.png);}/*브루나이*/
-.ico_flag.br {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_bra.png);}/*브라질*/
-.ico_flag.ca {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_can.png);}/*캐나다*/
-.ico_flag.ch {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_che.png);}/*스위스*/
-.ico_flag.cn {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_chn.png);}/*중국*/
-.ico_flag.cz {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_cze.png);}/*체코*/
-.ico_flag.de {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_deu.png);}/*독일*/
-.ico_flag.dk {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_dnk.png);}/*덴마크*/
-.ico_flag.eg {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_egy.png);}/*이집트*/
-.ico_flag.es {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_esp.png);}/*스페인*/
-.ico_flag.fi {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_fin.png);}/*핀란드*/
-.ico_flag.fj {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_fji.png);}/*피지*/
-.ico_flag.fr {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_fra.png);}/*프랑스*/
-.ico_flag.gb {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_gbr.png);}/*영국*/
-.ico_flag.hk {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_hkg.png);}/*홍콩*/
-.ico_flag.hu {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_hun.png);}/*헝가리*/
-.ico_flag.id {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_idn.png);}/*인도네시아*/
-.ico_flag.il {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_isr.png);}/*이스라엘*/
-.ico_flag.in {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_ind.png);}/*인도*/
-.ico_flag.it {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_ita.png);}/*이탈리아*/
-.ico_flag.jo {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_jor.png);}/*요르단*/
-.ico_flag.jp {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_jpn.png);}/*일본*/
-.ico_flag.kh {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_khm.png);}/*캄보디아*/
-.ico_flag.kr {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_kor.png);}/*대한민국*/
-.ico_flag.kw {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_kwt.png);}/*쿠웨이트*/
-.ico_flag.kz {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_kaz.png);}/*카자흐스탄*/
+/* flag box-shadow:0 0 0 1px rgba(0, 0, 0, 0.1) inset; */
+.ico_flag {border-radius:50%;background-image:url(/public/images/icon/flag/ic_flag_etc.png);}
+.ico_flag.ae {background-image:url(/public/images/icon/flag/ic_flag_are.png);}/*아랍에미리트*/
+.ico_flag.ar {background-image:url(/public/images/icon/flag/ic_flag_arg.png);}/*아르헨티나*/
+.ico_flag.at {background-image:url(/public/images/icon/flag/ic_flag_aut.png);}/*오스트리아*/
+.ico_flag.au {background-image:url(/public/images/icon/flag/ic_flag_aus.png);}/*오스트레일리아(호주)*/
+.ico_flag.eu {background-image:url(/public/images/icon/flag/ic_flag_eur.png);}/*유럽*/
+.ico_flag.bd {background-image:url(/public/images/icon/flag/ic_flag_bgd.png);}/*방글라데시*/
+.ico_flag.be {background-image:url(/public/images/icon/flag/ic_flag_bel.png);}/*벨기에*/
+.ico_flag.bh {background-image:url(/public/images/icon/flag/ic_flag_bhr.png);}/*바레인*/
+.ico_flag.bn {background-image:url(/public/images/icon/flag/ic_flag_brn.png);}/*브루나이*/
+.ico_flag.br {background-image:url(/public/images/icon/flag/ic_flag_bra.png);}/*브라질*/
+.ico_flag.ca {background-image:url(/public/images/icon/flag/ic_flag_can.png);}/*캐나다*/
+.ico_flag.ch {background-image:url(/public/images/icon/flag/ic_flag_che.png);}/*스위스*/
+.ico_flag.cn {background-image:url(/public/images/icon/flag/ic_flag_chn.png);}/*중국*/
+.ico_flag.cz {background-image:url(/public/images/icon/flag/ic_flag_cze.png);}/*체코*/
+.ico_flag.de {background-image:url(/public/images/icon/flag/ic_flag_deu.png);}/*독일*/
+.ico_flag.dk {background-image:url(/public/images/icon/flag/ic_flag_dnk.png);}/*덴마크*/
+.ico_flag.eg {background-image:url(/public/images/icon/flag/ic_flag_egy.png);}/*이집트*/
+.ico_flag.es {background-image:url(/public/images/icon/flag/ic_flag_esp.png);}/*스페인*/
+.ico_flag.fi {background-image:url(/public/images/icon/flag/ic_flag_fin.png);}/*핀란드*/
+.ico_flag.fj {background-image:url(/public/images/icon/flag/ic_flag_fji.png);}/*피지*/
+.ico_flag.fr {background-image:url(/public/images/icon/flag/ic_flag_fra.png);}/*프랑스*/
+.ico_flag.gb {background-image:url(/public/images/icon/flag/ic_flag_gbr.png);}/*영국*/
+.ico_flag.hk {background-image:url(/public/images/icon/flag/ic_flag_hkg.png);}/*홍콩*/
+.ico_flag.hu {background-image:url(/public/images/icon/flag/ic_flag_hun.png);}/*헝가리*/
+.ico_flag.id {background-image:url(/public/images/icon/flag/ic_flag_idn.png);}/*인도네시아*/
+.ico_flag.il {background-image:url(/public/images/icon/flag/ic_flag_isr.png);}/*이스라엘*/
+.ico_flag.in {background-image:url(/public/images/icon/flag/ic_flag_ind.png);}/*인도*/
+.ico_flag.it {background-image:url(/public/images/icon/flag/ic_flag_ita.png);}/*이탈리아*/
+.ico_flag.jo {background-image:url(/public/images/icon/flag/ic_flag_jor.png);}/*요르단*/
+.ico_flag.jp {background-image:url(/public/images/icon/flag/ic_flag_jpn.png);}/*일본*/
+.ico_flag.kh {background-image:url(/public/images/icon/flag/ic_flag_khm.png);}/*캄보디아*/
+.ico_flag.kr {background-image:url(/public/images/icon/flag/ic_flag_kor.png);}/*대한민국*/
+.ico_flag.kw {background-image:url(/public/images/icon/flag/ic_flag_kwt.png);}/*쿠웨이트*/
+.ico_flag.kz {background-image:url(/public/images/icon/flag/ic_flag_kaz.png);}/*카자흐스탄*/
 .ico_flag.lk {background-image:url(/public/images/icon/flag/ic_flag_lka.png);}/*스리랑카*/
-.ico_flag.mm {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_mmr.png);}/*미얀마*/
-.ico_flag.mn {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_mng.png);}/*몽골*/
-.ico_flag.mx {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_mex.png);}/*멕시코*/
-.ico_flag.my {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_mys.png);}/*말레이시아*/
-.ico_flag.nl {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_nld.png);}/*네덜란드*/
-.ico_flag.no {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_nor.png);}/*노르웨이*/
-.ico_flag.np {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_npl.png);}/*네팔*/
-.ico_flag.nz {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_nzl.png);}/*뉴질랜드*/
-.ico_flag.ph {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_phl.png);}/*필리핀*/
-.ico_flag.pk {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_pak.png);}/*파키스탄*/
-.ico_flag.pl {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_pol.png);}/*폴란드*/
-.ico_flag.pt {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_prt.png);}/*포르투갈*/
-.ico_flag.qa {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_qat.png);}/*카타르*/
-.ico_flag.ru {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_rus.png);}/*러시아*/
-.ico_flag.sa {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_sau.png);}/*사우디아라비아*/
-.ico_flag.se {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_swe.png);}/*스웨덴*/
-.ico_flag.sg {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_sgp.png);}/*싱가포르*/
-.ico_flag.th {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_tha.png);}/*태국*/
-.ico_flag.tr {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_tur.png);}/*터키*/
-.ico_flag.tw {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_twn.png);}/*타이완(대만)*/
-.ico_flag.us {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_usa.png);}/*미국*/
+.ico_flag.mm {background-image:url(/public/images/icon/flag/ic_flag_mmr.png);}/*미얀마*/
+.ico_flag.mn {background-image:url(/public/images/icon/flag/ic_flag_mng.png);}/*몽골*/
+.ico_flag.mx {background-image:url(/public/images/icon/flag/ic_flag_mex.png);}/*멕시코*/
+.ico_flag.my {background-image:url(/public/images/icon/flag/ic_flag_mys.png);}/*말레이시아*/
+.ico_flag.nl {background-image:url(/public/images/icon/flag/ic_flag_nld.png);}/*네덜란드*/
+.ico_flag.no {background-image:url(/public/images/icon/flag/ic_flag_nor.png);}/*노르웨이*/
+.ico_flag.np {background-image:url(/public/images/icon/flag/ic_flag_npl.png);}/*네팔*/
+.ico_flag.nz {background-image:url(/public/images/icon/flag/ic_flag_nzl.png);}/*뉴질랜드*/
+.ico_flag.ph {background-image:url(/public/images/icon/flag/ic_flag_phl.png);}/*필리핀*/
+.ico_flag.pk {background-image:url(/public/images/icon/flag/ic_flag_pak.png);}/*파키스탄*/
+.ico_flag.pl {background-image:url(/public/images/icon/flag/ic_flag_pol.png);}/*폴란드*/
+.ico_flag.pt {background-image:url(/public/images/icon/flag/ic_flag_prt.png);}/*포르투갈*/
+.ico_flag.qa {background-image:url(/public/images/icon/flag/ic_flag_qat.png);}/*카타르*/
+.ico_flag.ru {background-image:url(/public/images/icon/flag/ic_flag_rus.png);}/*러시아*/
+.ico_flag.sa {background-image:url(/public/images/icon/flag/ic_flag_sau.png);}/*사우디아라비아*/
+.ico_flag.se {background-image:url(/public/images/icon/flag/ic_flag_swe.png);}/*스웨덴*/
+.ico_flag.sg {background-image:url(/public/images/icon/flag/ic_flag_sgp.png);}/*싱가포르*/
+.ico_flag.th {background-image:url(/public/images/icon/flag/ic_flag_tha.png);}/*태국*/
+.ico_flag.tr {background-image:url(/public/images/icon/flag/ic_flag_tur.png);}/*터키*/
+.ico_flag.tw {background-image:url(/public/images/icon/flag/ic_flag_twn.png);}/*타이완(대만)*/
+.ico_flag.us {background-image:url(/public/images/icon/flag/ic_flag_usa.png);}/*미국*/
 .ico_flag.uz {background-image:url(/public/images/icon/flag/ic_flag_uzb.png);}/*우주베키스탄*/
-.ico_flag.vn {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_vnm.png);}/*베트남*/
-.ico_flag.za {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_zaf.png);}/*남아프리카공화국*/
+.ico_flag.vn {background-image:url(/public/images/icon/flag/ic_flag_vnm.png);}/*베트남*/
+.ico_flag.za {background-image:url(/public/images/icon/flag/ic_flag_zaf.png);}/*남아프리카공화국*/
 .ico_flag.etc {background-image:url(/public/images/icon/flag/ic_flag_etc.png);box-shadow:unset;}/*기타*/
 
 /* icon bank ci */
@@ -425,10 +425,11 @@ lottie 모션 /public/images/motion/
 .title_wrap .link_arr {font-size:1.4rem;color:#848a92;}
 .content>.title_wrap:first-child, .title_wrap.first {margin-top:2.4rem;}
 .title_float {overflow:hidden;}
-.title_float>:first-child {float:left;}
 .title_float>:last-child {float:right;}
+.title_float>:first-child {float:left;}
 .title_float .title_wrap {margin-bottom:0;}
-.title_float .title_wrap [class*='title'] {padding-top:1px;}
+/* .title_float .title_wrap [class*='title'] {padding-top:1px;} */
+.title_float [class*='title']:first-child {padding-top:1px;}
 .title_float .link_arr {height:auto;padding-right:1.8rem;text-align:right;}
 /* .title_float .link_arr span {margin-top:-1px;} */
 .title_float .arr_right::after {position:absolute;right:0;top:calc(50% - 1.2rem);}
@@ -660,13 +661,14 @@ details.notibox {}
 .flag_wrap {display:flex;align-items:center;}
 .flag_wrap .nation {margin-left:0.8rem;font-size:1.7rem;vertical-align:middle;color:#151c22;}
 .flag_wrap .code {margin-left:0.8rem;vertical-align:middle;color:#151c22;}
-.exchange_item {display:flex;align-items:center;justify-content:space-between;width:100%;padding:1.5rem;color:#333a40;}
-.exchange_item .listbox_desc {width:calc(100% - 8rem);text-align:right;}
+.exchange_item {display:flex;align-items:center;justify-content:space-between;width:100%;min-height:7.7rem;padding:1.5rem;color:#333a40;}
+.exchange_item .listbox_desc {width:calc(100% - 10rem);text-align:right;}
 .exchange_item .price {display:block;font-size:1.6rem;letter-spacing:0;}
 .exchange_item .exinfo {display:block;margin-top:0.4rem;font-size:1.3rem;color:#848a92;}
 .exchange_item .exinfo .num {display:inline-block;margin-left:0.4rem;font-size:calc(100% + 0.1rem);}
-.exchange_tit {margin-bottom:-0.7rem;padding:1.5rem 1.6rem 0;}
-.exchange_btm {padding:0 1.6rem;}
+.exchange_tit {padding:1.5rem 1.6rem 0;}
+.exchange_tit+.exchange_item {padding:0.8rem 1.5rem 1.6rem;}
+.exchange_btm {padding:0 1.5rem;}
 .exchange_btm .infolist_item {margin:0;padding:1.2rem 0;border-top:1px solid #f2f5f9;}
 .exchange_btm .infolist_lt {color:#4c5459;}
 
@@ -745,7 +747,7 @@ details.notibox {}
 .account_btm .txt {display:inline-block;font-size:1.4rem;}
 .account_btm .break {display:inline-block;font-weight:500;}
 .account_btm .cur {margin-left:0.8rem;}
-.account_btm .num {margin-left:0.4rem;/*font-size:calc(100% + 0.1rem);letter-spacing:0;*/}
+.account_btm .num {margin-left:0.4rem;font-size:calc(100% + 0.1rem);line-height:1.2;/* letter-spacing:0; */}
 .listbox_item .account_wrap {margin:-0.2rem 0;}
 
 /* Badge */
@@ -953,6 +955,7 @@ input[type="search"]::-webkit-search-cancel-button {display:block;width:2.4rem;h
 .is-error .inp_search+.border {border-color:#e5483d;}
 .sch_popup .inp_search {width:calc(100% - 3.2rem);}
 .sch_popup .inp_button {position:absolute;top:0;right:0;bottom:0;left:0;display:block;width:100%;height:100%;background-position:100% 50%;background-size:2.4rem 2.4rem;}
+.sch_popup input[type="search"]::-webkit-search-cancel-button {display:none;}
 
 /* address field */
 .address_field .readonly {border-color:#d5dbe3;}
