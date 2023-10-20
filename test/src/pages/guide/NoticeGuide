@@ -1,0 +1,29 @@
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import Notice from "../../common/components/Notice";
+
+function NoticeGuide() {
+    return (
+        <Wrap>
+            <Header title="알아두세요" back menu />
+            <Container>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">Notice</h2>
+                </div>
+                <Notice>
+                    <ul className="bullet">
+                        <li className="bullet_disc">목록형 문단 1개 이상으로 이루어진 목록 구성에 활용한다.</li>
+                        <li className="bullet_disc">일반형, Bullet형 리스트, 숫자 리스트 등 Bullet 컴포넌트에서 정의된 콘텐츠 내에서 자유롭게 구성한다.</li>
+                    </ul>
+                    <div className="descbox">
+                        <p>단문형 단문의 문장으로 적용시 활용한다. Bullet 컴포넌트의 일반형을 사용하여 구성한다.</p>
+                        <p>Notice을 적용할 때는 상단에 Thick Divider를 배치하여 상단 영역 간의 명확한 구분이 되도록 한다.</p>
+                    </div>
+                </Notice>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default NoticeGuide;
