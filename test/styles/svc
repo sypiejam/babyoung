@@ -41,10 +41,17 @@
 .branchlist .listbox {margin:0;}
 .branchlist .custbox_list>div {padding-bottom:0;}
 .branchlist .placeinfo {margin:0.8rem 0 0;}
+.branchlist .btn_wrap {margin:2.4rem 0 0.8rem;}
 .placeinfo {color:#686e75;}
 .placeinfo_dist {display:inline-block;}
 .placeinfo .link_wrap+.placeinfo_dist {margin-top:0.8rem;}
 .placeinfo .bullet {margin-top:1.6rem;}
+
+/* 영업점위치보기 */
+.map_btmsheet {overflow:hidden;position:fixed;left:0;bottom:0;width:100%;min-height:15.3rem;max-height:calc(100% - 6rem);border-radius:1rem 1rem 0 0;background-color:#fff;}
+.map_btmsheet_head {display:flex;padding:2.4rem 2rem 1.2rem 2rem;}
+.map_btmsheet_head .title_h1 {flex:1;font-size:1.8rem;}
+.map_btmsheet_body>.inner {margin:1.6rem 0 3.2rem;padding:0 2rem;}
 
 /* 방문예약내역 */
 .visit_top {padding:2.4rem 0;align-items:flex-start;}
@@ -75,9 +82,10 @@
 .mobile_pin [class^='icon_regist'] {display:block;width:6.2rem;height:6.2rem;margin:0 auto 0.8rem;background-size:100%;}
 .mobile_pin .icon_regist01 {background-image:url(/public/images/svc/img_alien_registration_card.png);}
 .mobile_pin .icon_regist02 {background-image:url(/public/images/svc/img_alien_registration_card_not.png);}
-.mpinpad .custbox_item {display:flex;flex-direction:row-reverse;margin-right:0.8rem;padding-bottom:0;}
+.mpinpad .custbox_item {display:flex;flex-direction:row-reverse;padding-bottom:0;}
 .mpinpad .custbox_item .item_tit {flex:1;margin-right:2rem;}
 .mpinpad .badge_wrap {margin:0;}
+.mpinpad .btn_wrap {margin:2.4rem 0 0.8rem;}
 
 /* 공지사항 */
 .notilist .infocusto .infolist_lt {flex:0 0 36%;}
@@ -91,6 +99,7 @@
 .evt_template .textarea {white-space:pre-wrap;}
 .evt_lookout {margin-bottom:0.8rem;font-size:1.2rem;color:#848a92;}
 .evt_toparea {color:#fff;}
+.evt_btmarea {margin-top:3.2rem;}
 .evt_keyvisual {padding:1.6rem;text-align:center;background-color:#7170de;}
 .evt_keyvisual::before {content:'';display:block;width:5.6rem;height:5.6rem;margin:0 auto 0.8rem;background:url(/public/images/svc/img_event_preview_top.png) no-repeat 0 0 / 100%;}
 .evt_keyvisual .title_h1 {white-space:pre-wrap;color:#fff;}
