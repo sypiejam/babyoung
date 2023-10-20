@@ -1,0 +1,316 @@
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import { FloatingButtonWrap, ButtonWrap, Button, CustomA } from "../../common/components/button/index";
+import NormalListLinkItem from "../../common/components/list/NormalListLinkItem";
+import BoxIconItem from "../../common/components/BoxIconItem";
+import BtmsheetListItem from "../../common/components/list/BtmsheetListItem";
+import BadgeItem from "../../common/components/badge/BadgeItem";
+import { bottomSheetAction } from "../../common/store/bottomSheetReducer";
+import SMJ2102P02 from "../SMJ2/SMJ21/SMJ2102/SMJ2102P02/SMJ2102P02";
+
+function ListGuide() {
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    //조건설정 바텀시트
+    const settingBtmsheetEvt = () => {
+        dispatch(bottomSheetAction({
+            title: "",
+            message : <SMJ2102P02 />,
+            state : null
+        })) 
+    }
+    return (
+        <Wrap>
+            <Header title="리스트" back menu />
+            <Container>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h1">1. 일반형</strong>
+                    </div>
+                    <ul className="baselist">
+                        <NormalListLinkItem type="div" title="List Type &#34;div&#34;" />
+                        <NormalListLinkItem type="a" title="List Type &#34;a&#34;" arrow callback={()=> navigate(".")} />
+                    </ul>
+                    <ul className="listbox">
+                        <BtmsheetListItem type="radio" name="btmsheetList" id="ITEM01" title="Btmsheet List Type &#34;radio&#34;" chkicon />
+                        <BtmsheetListItem type="radio" name="btmsheetList" id="ITEM02" title="Btmsheet List Type &#34;radio&#34; Checked" chkicon chk />
+                        <BtmsheetListItem type="radio" name="btmsheetList" id="ITEM03" title="Btmsheet List Type &#34;radio&#34; icon Bank" cicode="020" chkicon />
+                        <BtmsheetListItem type="radio" name="btmsheetList" id="ITEM04" title="Btmsheet List Type &#34;radio&#34; icon Flag" flagcode="us" chkicon />
+                    </ul>
+                    <br/>
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-1. 활용</strong>
+                    </div>
+                    <ul>
+                        <BtmsheetListItem type="radio" name="btmsheetList" id="CUSTOM01" title={<><span className="listbox_tit">Home</span><span className="listbox_txt">02-***-1100</span></>} />
+                    </ul>
+                    {/* 환율조회 SMJ3101M00 */}
+                    <ul>
+                        <li className="listbox_list">
+                            <CustomA btnClass="listbox_item anchor" callback={()=> navigate(".")}>
+                                <div className="exlist">
+                                    <i className="ico_flag us"></i>
+                                    <div className="listbox_desc">
+                                        <div className="d-flex">
+                                            <span className="listbox_tit">US Dollar</span>
+                                        </div>
+                                        <div className="btm">
+                                            <span className="listbox_txt fc-blue01">1,312.20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </CustomA>
+                            <span className="chk_star listbox_favor">
+                                <input type="checkbox" id="chkStar1" className="blind"/>
+                                <label htmlFor="chkStar1" className="ico_star"><span className="blind">즐겨찾기 등록</span></label>
+                            </span>
+                        </li>
+                    </ul>
+                    {/* 방문예약완료 SMJ5307M06 */}
+                    <div className="custlist">
+                        <a href="tel:" className="custlist_item">
+                            <div className="d-flex">
+                                <i className="ico_tel"></i><em className="tit">Ansan Foreigner Financial Center</em>
+                            </div>
+                            <span className="txt">031-000-000</span>
+                        </a>
+                    </div>
+                </div>
+
+                <hr className="hr full thick" />
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h1">2. 목록 상단 상태</strong>
+                    </div>
+                    <div className="captgroup">
+                        <span className="txt">신청일</span>
+                        <span className="txt num">2023.12.12</span>
+                    </div>
+                    <div className="condition">
+                        <div className="inner">
+                            <em>2023년 1월 13일</em>
+                        </div>
+                    </div>
+                    <hr className="mg8"/>
+                    <div className="condition bg">
+                        <div className="inner">
+                            <span className="txt">조회기준</span><em className="num">2023.11.25 13:33:18</em>
+                        </div>
+                    </div>
+                    <hr className="mg8"/>
+                    <div className="condition bg">
+                        <div className="inner">
+                            <em className="txt">검색결과 총 2건</em>
+                        </div>
+                    </div>
+
+                    <hr className="mg16"/>
+
+                    <div className="condition big">
+                        <div className="inner">
+                            <div className="atl">
+                                <button type="button" className="ico_search"><span className="blind">찾기</span></button>
+                            </div>
+                            <div className="tc">
+                                <em className="date_str">2023.01.01</em> ~ <em className="date_end">2023.01.31</em>
+                            </div>
+                            <div className="atr">
+                                <button type="button" className="ico_setting" onClick={settingBtmsheetEvt}><span className="blind">검색조건설정</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr className="mg8"/>
+                    <div className="condition big">
+                        <div className="inner">
+                            <div className="atl">
+                                <em className="dvh">3Month</em>
+                                <em className="num">2023.01.01</em>
+                            </div>
+                            <div className="atr">
+                                <button type="button" className="ico_setting"><span className="blind">검색조건설정</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr className="mg8"/>
+                    <div className="condition big">
+                        <div className="inner">
+                            <div className="atr">
+                                <span className="txt vm">장애인 편의시설</span>
+                                <button type="button" className="ico_setting"><span className="blind">검색조건설정</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr className="mg8"/>
+                    <div className="condition big">
+                        <div className="inner">
+                            <div className="tc monthbox">
+                                <div className="inner">
+                                    <div className="selected">
+                                        <em className="year">2023</em>
+                                        <em className="month">01</em>
+                                    </div>
+                                    <button type="button" className="btn_prev"><span className="ico_arrow lt"><span className="blind">다음달</span></span></button>
+                                    <button type="button" className="btn_next" disabled><span className="ico_arrow"><span className="blind">이전달</span></span></button>
+                                </div>
+                            </div>
+                            <div className="atr">
+                                <button type="button" className="ico_search"><span className="blind">찾기</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr className="hr full thick" />
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h1">3. 영업점방문/공지사항</strong>
+                    </div>
+                    {/* 영업점찾기 SMJ5306M01 */}
+                    <div className="branchlist">
+                        <ul className="listbox">
+                            {/* 외국인특화 st */}
+                            <li className="custbox_list">
+                                <NormalListLinkItem tag="div" type="div" title="안산외국인금융센터" subtxt="경기도 안산시 단원구 다문화2길 2(원곡동)">
+                                    <div className="custbox_top">
+                                        <div className="d-flex">
+                                            <span className="label">Foreigners only</span>
+                                            <span className="label">Open on Sundays</span>
+                                        </div>
+                                    </div>
+                                </NormalListLinkItem>
+                                <div className="placeinfo">
+                                    <div className="link_wrap">
+                                        <CustomA btnClass="link_line fc-blue01" href="tel:" callback={()=> navigate(".")}><span>02-2002-3000</span></CustomA>
+                                    </div>
+                                </div>
+                                <ButtonWrap className="btn_wrap">
+                                    <Button status="outlined" tag="button" size="lg" text={t('cs0303_0033')} />
+                                </ButtonWrap>
+                            </li>
+                            <li className="custbox_list">
+                                <NormalListLinkItem tag="div" type="div" title={
+                                    <>
+                                        <i className="ico_flag cn"></i>
+                                        <span>의정부금융센터</span>
+                                    </>
+                                } subtxt="경기도 의정부시 시민로 58(의정부동)">
+                                </NormalListLinkItem>
+                                <div className="placeinfo">
+                                    <div className="link_wrap">
+                                        <CustomA btnClass="link_line fc-blue01" href="tel:" callback={()=> navigate(".")}><span>02-2002-3000</span></CustomA>
+                                    </div>
+                                </div>
+                                <ButtonWrap className="btn_wrap">
+                                    <Button status="outlined" tag="button" size="lg" text={t('cs0303_0033')} />
+                                </ButtonWrap>
+                            </li>
+                            {/* //외국인특화 end */}
+                            {/* 영업점 st */}
+                            <li className="custbox_list">
+                                <NormalListLinkItem tag="div" type="div" title="안산외국인금융센터" subtxt="경기도 안산시 단원구 다문화2길 2(원곡동)" />
+                                <div className="placeinfo">
+                                    <em className="placeinfo_dist">98m</em>
+                                    <div className="convlist">
+                                        <em className="convlist_item convlist_parking">{t("cs0303_0037")}</em>
+                                        <em className="convlist_item convlist_toilet">{t("cs0303_0038")}</em>
+                                        <em className="convlist_item convlist_slope">{t("cs0303_0039")}</em>
+                                        <em className="convlist_item convlist_elevator">{t("cs0303_0040")}</em>
+                                        <em className="convlist_item convlist_ringbell">{t("cs0303_0041")}</em>
+                                    </div>
+                                </div>
+                                <ButtonWrap className="btn_wrap">
+                                    <Button status="outlined" tag="button" size="lg" text={t('cs0303_0033')} />
+                                </ButtonWrap>
+                            </li>
+                            {/* //영업점 end */}
+                            {/* ATM st */}
+                            <li className="custbox_list">
+                                <NormalListLinkItem tag="div" type="div" title="Namdaemun Market Branch" subtxt="25-8 Namdaemun Market-gil, Jung-gu, Seoul" />
+                                <ul className="infocusto mt8">
+                                    <li className="infolist_item">
+                                        <span className="infolist_lt">{t("cs0303_0043")}</span>
+                                        <span className="infolist_rt">CJ제일제당 본사 1층 로비</span>
+                                    </li>
+                                    <li className="infolist_item">
+                                        <span className="infolist_lt">{t("cs0303_0044")}</span>
+                                        <span className="infolist_rt num">08:00 ~ 23:00</span>
+                                    </li>
+                                </ul>
+                                <ButtonWrap className="btn_wrap">
+                                    <Button status="outlined" tag="button" size="lg" text={t('cs0303_0033')} />
+                                </ButtonWrap>
+                            </li>
+                            {/* //ATM end */}
+                        </ul>
+                    </div>
+
+                    {/* 직원찾기 SMJ1E01P00 */}
+                    <ul className="listbox">
+                        <NormalListLinkItem type="radio" name="employeeList" id="ID01001" title="직원명1" subtxt="직원이 소속된 지점명1" arrow />
+                    </ul>
+
+                    {/* 공지사항 SMJ5308M00, 이벤트 SMJ5309M00 */}
+                    <div className="notilist">
+                        <ul>
+                            <li className="custbox_list">
+                                <NormalListLinkItem tag="div" type="a" title="우리글로벌뱅킹 공지사항 Notice Title" callback={()=> navigate(".")} arrow>
+                                    <div className="custbox_top"><BadgeItem text="Notice" /></div>
+                                </NormalListLinkItem>
+                                <div className="infocusto">
+                                    <span className="date">2023.10.22</span>
+                                </div>
+                            </li>
+                            <li className="custbox_list">
+                                <NormalListLinkItem tag="div" type="a" title="러시아 머니그램 해외송금중단 안내 공지사항" callback={()=> navigate(".")} arrow />
+                                <div className="infocusto">
+                                    <span className="date">2023.12.12</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr className="hr full thick" />
+                <div className="dvgroup last">
+                    <div className="title_wrap">
+                        <strong className="title_h1">4. 박스형</strong>
+                    </div>
+                    <BoxIconItem flag="us" title="USD" exprice="999.99" exnum="1,205.60" />
+                    <BoxIconItem flag="kr" title="KRW" exprice="999,999,999,999,999" exnum="1,205.60" boxLabel="총 출금 금액">
+                        <div className="exchange_btm">
+                            <ul>
+                                <li className="infolist_item">
+                                    <span className="infolist_lt">송금수수료</span>
+                                    <div className="infolist_rt">
+                                        <em>KRW <span className="d-inblk">10,000</span></em>
+                                    </div>
+                                </li>
+                                <li className="infolist_item">
+                                    <span className="infolist_lt">은행코드</span>
+                                    <div className="infolist_rt">
+                                        <div className="flag_wrap">
+                                            <span className="ico_flag us"><span className="blind">USA</span></span>
+                                            <span className="code">NBNYUS31XXX</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </BoxIconItem>
+                    <div className="txt_helper">
+                        <p className="bullet_disc">실제 이체 시 환율 변도엥 의해 출금금액이 달라질 수 있습니다.</p>
+                    </div>
+                </div>
+                <br/><br/>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default ListGuide;
