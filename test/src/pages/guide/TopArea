@@ -1,0 +1,76 @@
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import { ButtonWrap, Button, CustomA } from "../../common/components/button/index";
+import { popupAction } from "../../common/store/popupReducer";
+import LayoutPopup from "./LayoutPopup";
+
+function TopArea() {
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    return (
+        <Wrap>
+            <Header title="탑 에어리어" back menu />
+            <Container>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">Top Area</h2>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">1. 기본형</strong>
+                    </div>
+                    <div className="toparea bg">
+                        <div className="title_wrap">
+                            <strong className="title_h1">기본형은 아이콘을 적용하는 것을 기본으로 한다</strong>
+                            <button type="button" className="ico_help btn_help" onClick={()=>
+                                dispatch(popupAction({
+                                    title: "",
+                                    message : <LayoutPopup />,
+                                    state : null
+                                }))
+                            }>
+                                <span className="blind">도움말</span>
+                            </button>
+                        </div>
+                        <div className="toparea_desc">
+                            <p className="txt">서비스를 소개하는 Index 성격의 화면 상단에 사용한다. 서브카피는 2줄을 권장한다. 다국어 특성상 높이는 고정으로 사용하지 않는다.</p>
+                            <div className="icon_smj6101 lg img"></div>
+                        </div>
+                        <ButtonWrap className="btn_wrap">
+                            <CustomA type="styled" href="#none" text="Button" callback={()=> navigate(".")} status="outlined" size="lg"/>
+                        </ButtonWrap>
+                    </div>
+                </div>
+                
+                <hr className="hr full thick" />
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">2. 요약형</strong>
+                    </div>
+                    <div className="toparea bg">
+                        <div className="title_wrap">
+                            <strong className="title_h1">서비스를 안내하는 페이지에 사용</strong>
+                        </div>
+                        <div className="toparea_desc">
+                            <p className="txt">서브카피는 3줄까지 사용을 권창한다. 다국어 특성상 높이는 고정으로 사용하지 않는다.</p>
+                        </div>
+                    </div>
+                    <div className="toparea">
+                        <div className="title_wrap">
+                            <strong className="title_h1">Top Area(탑 에어리어) 요약형 한글의 경우 타이틀은 2줄</strong>
+                        </div>
+                        <div className="toparea_desc">
+                            <p className="txt">배경없음. 서브카피는 3줄까지 사용을 권창한다. 다국어 특성상 높이는 고정으로 사용하지 않는다.</p>
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default TopArea;
