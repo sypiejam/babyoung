@@ -1,0 +1,72 @@
+import { useTranslation } from "react-i18next";
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import { AccordionWrap, AccordionItem } from "../../common/components/accordion/index";
+
+function AccordionGuide() {
+    const {t} = useTranslation();
+    return (
+        <Wrap>
+            <Header title="아코디언" back menu />
+            <Container>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">Accordion</h2>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">1. 기본형</strong>
+                    </div>
+                    <AccordionWrap>
+                        <AccordionItem title="아코디언 타이틀1" open>
+                            <div>아코디언 컨텐츠1</div>
+                        </AccordionItem>
+                        <AccordionItem title="아코디언 타이틀2">
+                            <div>아코디언 컨텐츠2</div>
+                        </AccordionItem>
+                        <AccordionItem title="아코디언 타이틀3">
+                            <div>아코디언 컨텐츠3</div>
+                        </AccordionItem>
+                    </AccordionWrap>
+                </div>
+                
+                <hr className="hr full thick" />
+                <div className="dvgroup last">
+                    <div className="title_wrap">
+                        <strong className="title_h2">2. 라운드형</strong>
+                    </div>
+                    <div className="acc_result">
+                        <AccordionWrap type="round">
+                            <AccordionItem title={
+                                <>
+                                    <strong className="flt">{t("bk0101_0169")}</strong>
+                                    <span className="frt">
+                                        <span className="blind">{t("bk0101_0001")}</span> {/* 총 */}
+                                        <span className="cur">+ KRW</span><span className="sum">2,841,229</span>
+                                    </span>
+                                </>
+                            }>   
+                            <ul className="listnoti graybox">
+                                <li className="infolist_item">
+                                    <span className="infolist_lt">{t("bk0101_0088")}</span>
+                                    <span className="infolist_rt"><span className="cur">KRW</span><span className="sum">0</span></span>
+                                </li> {/* 금엑+ : 0일때 */}
+                                <li className="infolist_item">
+                                    <span className="infolist_lt">{t("bk0101_0088")}</span>
+                                    <span className="infolist_rt acc_plus"><span className="cur">+ KRW</span><span className="sum">2,841,229</span></span> {/* 금엑+ : acc_plus */}
+                                </li>
+                                <li className="infolist_item">
+                                    <span className="infolist_lt">{t("cs0202_0011")}</span>
+                                    <span className="infolist_rt acc_minus"><span className="cur">- KRW</span><span className="sum">2,841,229</span></span> {/* 금엑- : acc_minus */}
+                                </li>
+                            </ul>
+                            </AccordionItem>
+                        </AccordionWrap>
+                    </div>
+                </div>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default AccordionGuide;
