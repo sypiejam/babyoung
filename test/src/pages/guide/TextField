@@ -1,0 +1,364 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import BottomSheetHead from "../../common/components/bottomSheet/BottomSheetHead";
+import BottomSheetBody from "../../common/components/bottomSheet/BottomSheetBody";
+import BottomSheetInner from "../../common/components/bottomSheet/BottomSheetInner";
+import { bottomSheetAction } from "../../common/store/bottomSheetReducer";
+import { FloatingButtonWrap, ButtonWrap, Button, CustomA } from "../../common/components/button/index";
+import NormalTextField from "../../common/components/input/textField/NormalTextField";
+import PasswordField from "../../common/components/input/textField/PasswordField";
+import IdTextField from "../../common/components/input/textField/IdTextField";
+import { bottomSheetSecondLayerAction } from "../../common/store/bottomSheetSecondLayerReducer";
+import CalendarField from "../../common/components/input/textField/CalendarField";
+import CalendarNormal from "../../common/components/CalendarNormal";
+import EmailTextField from "../../common/components/input/textField/EmailTextField";
+import SMJ5202P02 from "../SMJ5/SMJ52/SMJ5202/SMJ5202P02/SMJ5202P02";
+
+function TextField() {
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    // 알림시간 설정 바텀시트
+    const BtmsheetEvt = (poptitle) => {
+        dispatch(bottomSheetAction({
+            title: "",
+            message : <SMJ5202P02 poptitle={poptitle} />,
+            state : null
+        })) 
+    }
+    return (
+        <Wrap>
+            <Header title="텍스트필드, 캘린더" back menu />
+            <Container>
+                <div className="thead_wrap">
+                    <strong className="title_h1">1. 기본형</strong>
+                </div>
+                <div className="dvgroup">
+                    <div className="field_wrap">
+                        <em className="inp_title">Subject</em>
+                        <NormalTextField type="text" status="" inputMode="" placeholder="Hit Text" />
+                    </div>
+                    <div className="field_wrap">
+                        <em className="inp_title">loading</em>
+                        <NormalTextField type="text" status="" inputMode="" placeholder="Hit Text" loading />
+                    </div>
+                    <div className="field_wrap">
+                        <em className="inp_title">Readonly</em>
+                        <NormalTextField type="text" status="readOnly" inputMode="" placeholder="Hit Text" defaultValue="Apply when all data needs to be exposed Apply when all data needs to be exposed" />
+                    </div>
+                    <div className="field_wrap">
+                        <em className="inp_title">Disabled</em>
+                        <NormalTextField type="text" status="disabled" inputMode="" placeholder="Hit Text" defaultValue="Text" />
+                    </div>
+                    <div className="field_wrap">
+                        <em className="inp_title">2분할</em>
+                        <div className="field_flex">
+                            <NormalTextField type="text" status="" inputMode="" placeholder="Hit Text" defaultValue="Text 1" />
+                            <NormalTextField type="text" status="" inputMode="" placeholder="Hit Text" defaultValue="Text 2" />
+                        </div>
+                    </div>
+                    <div className="field_wrap is-error">
+                        <em className="inp_title">Error Message</em>
+                        <NormalTextField type="text" status="" inputMode="" placeholder="Hit Text" defaultValue="Input Text" />
+                        <div className="txt_error">
+                            <p>Enter an error message</p>
+                        </div>
+                        <div className="txt_helper tl">
+                            <p>Enter an additional description.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr className="hr full thick" />
+                <div className="thead_wrap">
+                    <strong className="title_h1">2. 트레일형</strong>
+                </div>
+                <div className="dvgroup">
+                    <div className="field_wrap">
+                        <em className="inp_title">Password</em>
+                        <PasswordField subText="4 characters" status="" />
+                        <PasswordField itemNum="8" status="" />
+                    </div>
+                    <div className="field_wrap">
+                        <em className="inp_title">뒷자리 모두 숨김</em>
+                        <IdTextField type="hidden" placeholder="등록번호 입력" />
+                    </div>
+                    <div className="field_wrap">
+                        <em className="inp_title">뒤 1자리 입력</em>
+                        <IdTextField type="visible" placeholder="생년월일 6자리" />
+                    </div>
+                </div>
+
+                <hr className="hr full thick" />
+                <div className="thead_wrap">
+                    <strong className="title_h1">3. 금액형</strong>
+                </div>
+                <div className="dvgroup">
+                    <div className="field_wrap">{/* 에러시 클래스 is-error 추가 */}
+                        <em className="inp_title">외화입력</em>
+                        <div className="inp_field inp_amount">
+                            <div className="field_item amount_unit">
+                                <em>USD</em>
+                            </div>
+                            <div className="d-flex amount_item">
+                                <div className="inp_item">
+                                    <input type="text" inputMode="numeric" className="inp_text" defaultValue="100" title="이체 금액" />
+                                    <div className="inp_delete"><button type="button" className="ico_delete inp_button"><span className="blind">Delete</span></button></div>
+                                </div>
+                                <div className="inp_tilde ico_dot"></div>
+                                <div className="inp_item">
+                                    <input type="number" className="inp_text inp_decimal" defaultValue="00" title="이체 금액 소수점 이하 두자리" />
+                                    <div className="inp_delete"><button type="button" className="ico_delete inp_button"><span className="blind">Delete</span></button></div>
+                                </div>
+                                <div className="inp_unit per">%</div>
+                            </div>
+                        </div>
+                        <div className="txt_error">
+                            <p className="tr">Enter an error message</p>
+                        </div>
+                    </div>
+                    <div className="field_wrap">{/* 에러시 클래스 is-error 추가 */}
+                        <em className="inp_title">원화입력</em>
+                        <div className="txt_amount">
+                            <em className="num">900</em><span className="unit">Billion</span>
+                        </div>
+                        <div className="inp_field inp_amount">
+                            <div className="field_item amount_unit">
+                                <em>KRW</em>
+                            </div>
+                            <div className="inp_item amount_item">
+                                <input type="text" inputMode="numeric" className="inp_text" defaultValue="999,999,999,999,999" placeholder="Enter Amount" title="Enter Amount" />
+                                <div className="inp_delete"><button type="button" className="ico_delete inp_button"><span className="blind">Delete</span></button></div>
+                            </div>
+                        </div>
+                        <div className="txt_amount btm">
+                            <span className="unit">Balance</span><span className="unit">KRW</span><em className="num">9,999,000</em>
+                        </div>
+                        <div className="txt_error">
+                            <p className="tr">Enter an error message</p>
+                        </div>
+                    </div>
+                    <div className="field_wrap">
+                        <em className="inp_title">Title</em>
+                        {/* 금액입력 우측정렬 일때 클래스 tr 추가 (letter spacing 0) */}
+                        <div className="field_flex">
+                            <div className="inp_field">
+                                <div className="inp_item">
+                                    <input type="text" inputMode="numeric" className="inp_text tr" defaultValue="" placeholder="금액입력" title="금액입력" />
+                                    <div className="inp_delete"><button type="button" className="ico_delete inp_button"><span className="blind">Delete</span></button></div>
+                                </div>
+                            </div>
+                            <div className="ico_wave"></div>
+                            <div className="inp_field">
+                                <div className="inp_item">
+                                    <input type="text" inputMode="numeric" className="inp_text tr" defaultValue="1,000,000" placeholder="금액입력" title="금액입력" />
+                                    <div className="inp_delete"><button type="button" className="ico_delete inp_button"><span className="blind">Delete</span></button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr className="hr full thick" />
+                <div className="thead_wrap">
+                    <strong className="title_h1">4. 일정선택형</strong>
+                </div>
+                <div className="dvgroup">
+                    <div className="field_wrap">
+                        <em className="inp_title">날짜 선택</em>
+                        <CalendarField status="" title="날짜 선택" placeholder="YYYY.MM.DD" defaultValue="2023.11.09" onClick={()=>{
+                            dispatch(bottomSheetSecondLayerAction({
+                                title: "",
+                                message : <CalendarNormal />,
+                                state : null
+                            }))
+                        }}/>
+                    </div>
+                    <div className="field_wrap">
+                        <em className="inp_title">기간 선택</em>
+                        <div className="field_flex">
+                            <CalendarField status="" title={t('bk0203_0012')} placeholder={t('bk0203_0012')} defaultValue="" />
+                            <span className="ico_wave"><span className="blind">~</span></span>
+                            <CalendarField status="" title={t('bk0203_0013')} placeholder={t('bk0203_0013')} defaultValue="" />
+                        </div>
+                    </div>
+                    <div className="field_wrap">
+                        <div className="title_wrap help_wrap">
+                            <em className="title_lv3">시간 선택</em>
+                            <button type="button" className="ico_info" 
+                                onClick={()=>{
+                                    dispatch(bottomSheetAction({
+                                        title: null,
+                                        message : <SMJ5202P01BtmSheet title={t("cs0201_0026")} bullet={[t("cs0201_0067")]} />,
+                                        state : null
+                                    }))
+                                }}>
+                                <span className="blind">도움말</span>
+                            </button>
+                        </div>
+                        <div className="field_flex">
+                            <div className="inp_field" role="button" onClick={()=> BtmsheetEvt(t("cs0201_0068"))}>
+                                <div className="inp_item">
+                                    <input type="text" className="inp_text" placeholder="00" title="알림 시작시간" readOnly />
+                                </div>
+                                <div className="field_item"><i className="ico_time"></i></div>
+                            </div>
+                            <div className="inp_field" role="button" onClick={()=> BtmsheetEvt(t("cs0201_0069"))}>
+                                <div className="inp_item">
+                                    <input type="text" className="inp_text" placeholder="24" title="알림 종료시간" readOnly />
+                                </div>
+                                <div className="field_item"><i className="ico_time"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="field_wrap">
+                        <em className="inp_title">날짜 + 시간</em>
+                        <div className="field_flex">
+                            <CalendarField status="" title="날짜 선택" placeholder="YYYY.MM.DD" defaultValue="2023.05.03" />
+                            <div className="inp_field inp_select disabled">
+                                <button type="button" className="inp_select_item" title="시간 선택" disabled>
+                                    <div className="inp_select_value">8 AM</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr className="hr full thick" />
+                <div className="thead_wrap">
+                    <strong className="title_h1">5. 이메일</strong>
+                </div>
+                <div className="dvgroup">
+                    {/* !!! 이메일 입력시 하단에 이메일예시 노출 기능 pub에서는 안됨. 개발에만 적용되어 있음 !!! */}
+                    <EmailTextField status="" placeholder="이메일을 입력해주세요" errorMsg="" />
+                </div>
+
+                <hr className="hr full thick" />
+                <div className="thead_wrap">
+                    <strong className="title_h1">6. 기타</strong>
+                </div>
+                <div className="dvgroup">
+                    <div className="field_wrap">
+                        <em className="inp_title">Certificate number</em>
+                        <div className="field_flex inp_field">
+                            <input type="number" inputMode="numeric" className="inp_text tc" min="" max="" defaultValue="" placeholder="" title="" />
+                            <div className="inp_tilde ico_dash"></div>
+                            <input type="number" inputMode="numeric" className="inp_text tc" defaultValue="" placeholder="" title="" />
+                            <div className="inp_tilde ico_dash"></div>
+                            <input inputMode="none" className="inp_text tc" defaultValue="" placeholder="" title="" />
+                        </div>
+                    </div>
+                    <div className="address_field">
+                        <div className="field_wrap">
+                            <div className="title_float link_wrap">
+                                <em className="inp_title">Address</em>
+                                <CustomA href="#none" btnClass="link_arr arr_right">
+                                    <span>Address Search</span>
+                                </CustomA>
+                            </div>
+                            <div className="inp_field">
+                                <div className="inp_item">
+                                    <input type="text" className="inp_text" defaultValue="48, Sogong-ro" placeholder="도로명 주소" title="도로명 주소" />
+                                    <div className="inp_delete">
+                                        <button type="button" className="ico_delete inp_button"><span className="blind">삭제</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="field_wrap">
+                            <em className="inp_title">시/군/구</em>
+                            <div className="inp_field readonly">
+                                <div className="inp_item">
+                                    <input type="text" className="inp_text" defaultValue="Jung-gu" placeholder="시/군/구" title="시/군/구" readOnly />
+                                    <div className="inp_delete">
+                                        <button type="button" className="ico_delete inp_button"><span className="blind">삭제</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="inp_field readonly">
+                                <div className="inp_item">
+                                    <input type="text" className="inp_text" defaultValue="Seoul" placeholder="자치시/도" title="자치시/도" readOnly />
+                                    <div className="inp_delete">
+                                        <button type="button" className="ico_delete inp_button"><span className="blind">삭제</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="inp_field readonly">
+                                <div className="inp_item">
+                                    <input type="text" className="inp_text" defaultValue="04631" placeholder="우편번호" title="우편번호" readOnly />
+                                    <div className="inp_delete">
+                                        <button type="button" className="ico_delete inp_button"><span className="blind">삭제</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="txt_error">
+                                <p>Enter an error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr className="mt32" />
+                    <div className="field_wrap">
+                        <em className="inp_title">인증요청</em>
+                        <div className="field_flex request">
+                            <NormalTextField type="tel" status="" defaultValue="123456789" placeholder={t('co1501_0044')} />
+                            <div className="btn_wrap">
+                                <Button tag="button" size="md" status="outlined" btnClass="btn_request" text={t('co1501_0032')} />
+                            </div>
+                        </div>
+                        <div className="txt_error">
+                            <p>Enter an error message</p>
+                        </div>
+                    </div>
+                    <div className="field_wrap">
+                        <em className="inp_title">인증번호</em>
+                        <NormalTextField type="number" inputMode="numeric" status="" placeholder={t('co1501_0034')}>
+                            <div className="field_item"><div className="inp_unit count">03:00</div></div>
+                            {/* <div className="field_item"><div className="inp_unit timeout">{t("co0701_0007")}</div></div> */}
+                        </NormalTextField>
+                    </div>
+                </div>
+
+                <hr className="hr full thick" />
+                <div className="thead_wrap">
+                    <strong className="title_h1">7. 텍스트에어리어</strong>
+                </div>
+                <div className="field_wrap">
+                    <em className="inp_title">Textarea</em>
+                    <textarea name="" className="inp_txtarea" id="" cols="30" rows="5" placeholder="Enter the content."></textarea>
+                    <div className="inp_guide">
+                        <span>0/2,000</span>
+                    </div>
+                    <div className="txt_helper tl">
+                        <p className="bullet_disc">Enter an additional description.</p>
+                    </div>
+                </div>
+                <br/><br/><br/>
+            </Container>
+        </Wrap>
+    );
+}
+
+export function SMJ5202P01BtmSheet({title, bullet}){
+    return(
+        <>
+            <BottomSheetHead title={title} btnClose/>
+            <BottomSheetBody>
+                <BottomSheetInner type="desc">
+                    {/* 퍼블검수 1차 : 마크업 수정 st */}
+                    {
+                        bullet.map((elem, key)=>(
+                            <p className="bullet_item" key={key}>{elem}</p>
+                        ))
+                    }
+                    {/* //퍼블검수 1차 : 마크업 수정 end */}
+                </BottomSheetInner>
+            </BottomSheetBody>
+        </>
+    );
+}
+export default TextField;
