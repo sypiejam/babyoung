@@ -1,0 +1,388 @@
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+
+function Icon() {
+    // icon size dummy color
+    const bgGray = {
+        backgroundColor: 'gray'
+    }
+    const icoSize = {
+        backgroundColor: 'yellowgreen'
+    }
+    const iconSize = {
+        backgroundColor: 'green'
+    }
+    return (
+        <Wrap>
+            <Header title="아이콘" back menu />
+            <Container>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">Icon</h2>
+                </div>
+                <div className="descbox">
+                    <p>클래스명만 사용하세요.</p>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">size 24x24</strong>
+                    </div>
+                    <div className="mg16">
+                        <i className="ico_info"></i>
+                        <i className="ico_info_white" style={bgGray}></i>
+                        <i className="ico_help"></i>
+                        <i className="ico_help_white" style={bgGray}></i>
+                        <i className="ico_help_black"></i>
+                        <i className="ico_delete"></i>
+                        <i className="ico_search"></i>
+                        <i className="ico_date"></i>
+                        <i className="ico_time"></i>
+                        <i className="ico_wave"></i>
+                        <span className="chk_star">
+                            <input type="checkbox" id="chkStar" className="blind" />
+                            <label htmlFor="chkStar" className="ico_star"><span className="blind">즐겨찾기 등록</span></label>
+                        </span>
+                        <i className="ico_del"></i>
+                        <i className="ico_tel"></i>
+                        <i className="ico_chatbot"></i>
+                        <i className="ico_email"></i>
+                        <i className="ico_fnq"></i>
+                        <i className="ico_talk"></i>
+                        <i className="ico_video"></i>
+                        <i className="ico_more"></i>
+                        <i className="ico_accset"></i>
+                        <i className="ico_setting"></i>
+                        <i className="ico_refresh"></i>
+                        <i className="ico_list"></i>
+                    </div>
+                    <div className="title_wrap">
+                        <strong className="title_h2">arrow 14x24</strong>
+                    </div>
+                    <div className="mg16">
+                        <i className="ico_arrow"></i>
+                        <i className="ico_arrow small"></i>
+                        <i className="ico_arrow lt"></i>
+                        <i className="ico_arrow lt small"></i>
+                        <i className="ico_arrow up"></i>
+                        <i className="ico_arrow up small"></i>
+                        <i className="ico_arrow dw"></i>
+                        <i className="ico_arrow dw small"></i>
+                    </div>
+                    <div className="title_wrap">
+                        <strong className="title_h2">bank</strong>
+                    </div>
+                    <div className="mg16">
+                        {/* 은행 CI
+                            002	산업은행
+                            003	기업은행
+                            004	국민은행
+                            005	외환은행
+                            007	수협은행
+                            008	수출입은행
+                            011	농협
+                            012	지역농축협
+                            018	농협
+                            020	우리은행
+                            021	신한은행
+                            023	SC제일은행
+                            026	신한은행
+                            027	한국씨티은행
+                            031	대구은행
+                            032	부산은행
+                            034	광주은행
+                            035	제주은행
+                            037	전북은행
+                            039	경남은행
+                            045	새마을금고
+                            048	신협
+                            050	저축은행
+                            053	시티은행
+                            054	HSBC은행
+                            055	도이치은행
+                            056	ABN-AMRO
+                            057	JP모간체이스은행
+                            060	BOA(뱅크오브아메리카)
+                            061	비엔피파리바은행
+                            062	중국공상은행
+                            063	중국은행
+                            064	산림조합
+                            067	중국건설은행
+                            071	우체국
+                            081	하나은행
+                            088	신한은행
+                            089	케이뱅크
+                            090	카카오뱅크
+                            092	토스뱅크
+                            099	금융결제원
+                            209	유안타증권
+                            218	KB증권
+                            221	상상인증권
+                            224	BNK증권
+                            225	IBK투자증권
+                            226	KB증권(구KB투자)
+                            227	다올투자증권
+                            230	미래에셋증권
+                            238	미래에셋증권
+                            240	삼성증권
+                            243	한국투자증권
+                            247	NH투자증권
+                            261	교보증권
+                            262	하이투자증권
+                            263	현대차증권
+                            264	키움증권
+                            265	이베스트투자증권
+                            266	SK증권
+                            267	대신증권
+                            268	아이엠투자증권
+                            269	한화투자증권
+                            270	하나증권
+                            271	토스증권
+                            278	신한투자증권
+                            279	DB금융투자
+                            280	유진투자증권
+                            287	메리츠증권
+                            288	카카오페이증권
+                            289	NH농협증권
+                            290	부국증권
+                            291	신영증권
+                            292	케이프투자증권
+                            294	한국포스증권
+                            295	가상금융기관
+                            484	국세청 
+                        */}
+                        <i className="ci_bank lg ci_bank_002"></i>
+                        <i className="ci_bank lg ci_bank_003"></i>
+                        <i className="ci_bank ci_bank_004"></i>
+                        <i className="ci_bank ci_bank_005"></i>
+                        <i className="ci_bank ci_bank_007"></i>
+                        <i className="ci_bank ci_bank_008"></i>
+                        <i className="ci_bank ci_bank_011"></i>
+                        <i className="ci_bank ci_bank_012"></i>
+                        <i className="ci_bank ci_bank_018"></i>
+                        <i className="ci_bank ci_bank_020"></i>
+                        <i className="ci_bank ci_bank_021"></i>
+                        <i className="ci_bank ci_bank_023"></i>
+                        <i className="ci_bank ci_bank_026"></i>
+                        <i className="ci_bank ci_bank_027"></i>
+                        <i className="ci_bank ci_bank_031"></i>
+                        <i className="ci_bank ci_bank_032"></i>
+                        <i className="ci_bank ci_bank_034"></i>
+                        <i className="ci_bank ci_bank_035"></i>
+                        <i className="ci_bank ci_bank_037"></i>
+                        <i className="ci_bank ci_bank_039"></i>
+                        <i className="ci_bank ci_bank_045"></i>
+                        <i className="ci_bank ci_bank_048"></i>
+                        <i className="ci_bank ci_bank_050"></i>
+                        <i className="ci_bank ci_bank_053"></i>
+                        <i className="ci_bank ci_bank_054"></i>
+                        <i className="ci_bank ci_bank_055"></i>
+                        <i className="ci_bank ci_bank_056"></i>
+                        <i className="ci_bank ci_bank_057"></i>
+                        <i className="ci_bank ci_bank_060"></i>
+                        <i className="ci_bank ci_bank_061"></i>
+                        <i className="ci_bank ci_bank_062"></i>
+                        <i className="ci_bank ci_bank_063"></i>
+                        <i className="ci_bank ci_bank_064"></i>
+                        <i className="ci_bank ci_bank_067"></i>
+                        <i className="ci_bank ci_bank_071"></i>
+                        <i className="ci_bank ci_bank_081"></i>
+                        <i className="ci_bank ci_bank_088"></i>
+                        <i className="ci_bank ci_bank_089"></i>
+                        <i className="ci_bank ci_bank_090"></i>
+                        <i className="ci_bank ci_bank_092"></i>
+                        <i className="ci_bank ci_bank_099"></i>
+                        <i className="ci_bank ci_bank_209"></i>
+                        <i className="ci_bank ci_bank_218"></i>
+                        <i className="ci_bank ci_bank_221"></i>
+                        <i className="ci_bank ci_bank_224"></i>
+                        <i className="ci_bank ci_bank_225"></i>
+                        <i className="ci_bank ci_bank_226"></i>
+                        <i className="ci_bank ci_bank_227"></i>
+                        <i className="ci_bank ci_bank_230"></i>
+                        <i className="ci_bank ci_bank_238"></i>
+                        <i className="ci_bank ci_bank_240"></i>
+                        <i className="ci_bank ci_bank_243"></i>
+                        <i className="ci_bank ci_bank_247"></i>
+                        <i className="ci_bank ci_bank_261"></i>
+                        <i className="ci_bank ci_bank_262"></i>
+                        <i className="ci_bank ci_bank_263"></i>
+                        <i className="ci_bank ci_bank_264"></i>
+                        <i className="ci_bank ci_bank_265"></i>
+                        <i className="ci_bank ci_bank_266"></i>
+                        <i className="ci_bank ci_bank_267"></i>
+                        <i className="ci_bank ci_bank_268"></i>
+                        <i className="ci_bank ci_bank_269"></i>
+                        <i className="ci_bank ci_bank_270"></i>
+                        <i className="ci_bank ci_bank_271"></i>
+                        <i className="ci_bank ci_bank_278"></i>
+                        <i className="ci_bank ci_bank_279"></i>
+                        <i className="ci_bank ci_bank_280"></i>
+                        <i className="ci_bank ci_bank_287"></i>
+                        <i className="ci_bank ci_bank_288"></i>
+                        <i className="ci_bank ci_bank_289"></i>
+                        <i className="ci_bank ci_bank_290"></i>
+                        <i className="ci_bank ci_bank_291"></i>
+                        <i className="ci_bank ci_bank_292"></i>
+                        <i className="ci_bank ci_bank_294"></i>
+                        <i className="ci_bank ci_bank_295"></i>
+                        <i className="ci_bank ci_bank_484"></i>
+                    </div>
+                    <div className="title_wrap">
+                        <strong className="title_h2">flag</strong>
+                    </div>
+                    <div className="mg16">
+                        {/* 국기별 클래스 알파벳순
+                            ae 아랍에미리트
+                            ar 아르헨티나
+                            at 오스트리아
+                            au 오스트레일리아(호주)
+                            eu 유럽
+                            bd 방글라데시
+                            be 벨기에
+                            bh 바레인
+                            bn 브루나이 //2023-08-29 추가
+                            br 브라질
+                            ca 캐나다
+                            ch 스위스
+                            cn 중국
+                            cz 체코
+                            de 독일
+                            dk 덴마크
+                            eg 이집트
+                            es 스페인
+                            fi 핀란드
+                            fj 피지
+                            fr 프랑스
+                            gb 영국
+                            hk 홍콩
+                            hu 헝가리
+                            id 인도네시아
+                            in 인도
+                            il 이스라엘
+                            it 이탈리아
+                            jo 요르단
+                            jp 일본
+                            kh 캄보디아
+                            kr 대한민국
+                            kw 쿠웨이트
+                            kz 카자흐스탄
+                            lk 스리랑카 //2023-07-20 추가
+                            mn 몽골
+                            mm 미얀마
+                            mx 멕시코
+                            my 말레이시아
+                            nl 네덜란드
+                            no 노르웨이
+                            np 네팔
+                            nz 뉴질랜드
+                            ph 필리핀
+                            pk 파키스탄
+                            pl 폴란드
+                            pt 포르투갈
+                            qa 카타르
+                            ru 러시아
+                            sa 사우디아라비아
+                            se 스웨덴
+                            sg 싱가포르
+                            th 태국
+                            tr 터키
+                            tw 타이완
+                            us 미국
+                            uz 우즈베키스탄
+                            vn 베트남
+                            za 남아프리카공화국
+                            etc 기타
+                        */}
+                        <i className="ico_flag md ae"><span className="blind">United Arab Emirates</span></i>
+                        <i className="ico_flag md ar"><span className="blind">Argentina</span></i>
+                        <i className="ico_flag at"><span className="blind">Austria</span></i>
+                        <i className="ico_flag au"><span className="blind">Australia</span></i>
+                        <i className="ico_flag eu"><span className="blind">European Union</span></i>
+                        <i className="ico_flag bd"><span className="blind">Bangladesh</span></i>
+                        <i className="ico_flag be"><span className="blind">Belgium</span></i>
+                        <i className="ico_flag bh"><span className="blind">Bahrain</span></i>
+                        <i className="ico_flag bn"><span className="blind">Brunei Darussalam</span></i>
+                        <i className="ico_flag br"><span className="blind">Brazil</span></i>
+                        <i className="ico_flag ca"><span className="blind">Canada</span></i>
+                        <i className="ico_flag ch"><span className="blind">Switzerland</span></i>
+                        <i className="ico_flag cn"><span className="blind">China</span></i>
+                        <i className="ico_flag cz"><span className="blind">Czech</span></i>
+                        <i className="ico_flag de"><span className="blind">Germany</span></i>
+                        <i className="ico_flag dk"><span className="blind">Denmark</span></i>
+                        <i className="ico_flag eg"><span className="blind">Egypt</span></i>
+                        <i className="ico_flag es"><span className="blind">Spain</span></i>
+                        <i className="ico_flag fi"><span className="blind">Finland</span></i>
+                        <i className="ico_flag fj"><span className="blind">Fiji</span></i>
+                        <i className="ico_flag fr"><span className="blind">France</span></i>
+                        <i className="ico_flag gb"><span className="blind">United Kingdom</span></i>
+                        <i className="ico_flag hk"><span className="blind">Hongkong</span></i>
+                        <i className="ico_flag hu"><span className="blind">Hungary</span></i>
+                        <i className="ico_flag id"><span className="blind">Indonesia</span></i>
+                        <i className="ico_flag il"><span className="blind">Israel</span></i>
+                        <i className="ico_flag in"><span className="blind">India</span></i>
+                        <i className="ico_flag it"><span className="blind">Italy</span></i>
+                        <i className="ico_flag jo"><span className="blind">Jordan</span></i>
+                        <i className="ico_flag jp"><span className="blind">Japan</span></i>
+                        <i className="ico_flag kh"><span className="blind">Cambodia</span></i>
+                        <i className="ico_flag kr"><span className="blind">Republic of Korea</span></i>
+                        <i className="ico_flag kw"><span className="blind">Kuwait</span></i>
+                        <i className="ico_flag kz"><span className="blind">Kazakhstan</span></i>
+                        <i className="ico_flag lk"><span className="blind">Sri Lanka</span></i>{/* 2023-07-20 추가 */}
+                        <i className="ico_flag mm"><span className="blind">Myanmar</span></i>
+                        <i className="ico_flag mn"><span className="blind">Mongolia</span></i>
+                        <i className="ico_flag mx"><span className="blind">Mexico</span></i>
+                        <i className="ico_flag my"><span className="blind">Malaysia</span></i>
+                        <i className="ico_flag nl"><span className="blind">Netherlands</span></i>
+                        <i className="ico_flag no"><span className="blind">Norway</span></i>
+                        <i className="ico_flag np"><span className="blind">Nepal</span></i>
+                        <i className="ico_flag nz"><span className="blind">New Zealand</span></i>
+                        <i className="ico_flag ph"><span className="blind">Philippines</span></i>
+                        <i className="ico_flag pk"><span className="blind">Pakistan</span></i>
+                        <i className="ico_flag pl"><span className="blind">Poland</span></i>
+                        <i className="ico_flag pt"><span className="blind">Portugal</span></i>
+                        <i className="ico_flag qa"><span className="blind">Qatar</span></i>
+                        <i className="ico_flag ru"><span className="blind">Russia</span></i>
+                        <i className="ico_flag sa"><span className="blind">Saudi Arabia</span></i>
+                        <i className="ico_flag se"><span className="blind">Sweden</span></i>
+                        <i className="ico_flag sg"><span className="blind">Singapore</span></i>
+                        <i className="ico_flag th"><span className="blind">Thailand</span></i>
+                        <i className="ico_flag tr"><span className="blind">Turkiye</span></i>
+                        <i className="ico_flag tw"><span className="blind">Taiwan</span></i>
+                        <i className="ico_flag us"><span className="blind">United States</span></i>
+                        <i className="ico_flag uz"><span className="blind">Uzbek</span></i>
+                        <i className="ico_flag vn"><span className="blind">Vietnam</span></i>
+                        <i className="ico_flag za"><span className="blind">South Africa</span></i>
+                        <i className="ico_flag a1"><span className="blind">기타 (아시아)</span></i>
+                        <i className="ico_flag a2"><span className="blind">기타 (동남아)</span></i>
+                        <i className="ico_flag a3"><span className="blind">기타 (중동)</span></i>
+                    </div>
+                </div>
+                <div className="dvgroup last">
+                    <div className="title_wrap">
+                        <strong className="title_h2">Size</strong>
+                    </div>
+                    <div>
+                        {/* ico_{클래스명} */}
+                        <div className="title_wrap"><em className="title_lv3">36x36</em></div>
+                        <div className="mb16"><i className="ico_classname md" style={icoSize}></i></div>
+                        <div className="title_wrap"><em className="title_lv3">54x54</em></div>
+                        <div className="mb16"><i className="ico_classname lg" style={icoSize}></i></div>
+                        <div className="title_wrap"><em className="title_lv3">64x64</em></div>
+                        <div className="mb16"><i className="ico_classname xl" style={icoSize}></i></div>
+                    </div>
+                    <div>
+                        {/* icon_{클래스명} */}
+                        <div className="title_wrap"><em className="title_lv3">72x72</em></div>
+                        <div className="mb16"><i className="icon_classname sm" style={iconSize}></i></div>
+                        <div className="title_wrap"><em className="title_lv3">112x112</em></div>
+                        <div className="mb16"><i className="icon_classname" style={iconSize}></i></div>
+                        <div className="title_wrap"><em className="title_lv3">136x136</em></div>
+                        <div className="mb16"><i className="icon_classname lg" style={iconSize}></i></div>
+                    </div>
+                </div>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default Icon;
