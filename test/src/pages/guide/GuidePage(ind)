@@ -1,0 +1,44 @@
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import GuidePageInfo from "./IndexGuideInfo.json";
+import IndexListLinkItem from "../example/indexListLinkItem";
+import { bottomSheetAction } from "../../common/store/bottomSheetReducer";
+import { DynamicComponent2 } from "../../common/routes";
+
+function GuidePage() {
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    return (
+        <Wrap>
+            <Header title="우리글로벌뱅킹 퍼블리싱 컴포넌트 가이드" />
+            <Container>
+                {
+                    GuidePageInfo.map((item, index) => (
+                        item.MENU_TYPE === "B" ?
+                            <IndexListLinkItem title={`${item.MENU_NM} / ${item.MENU_TYPE}`} key={item.MENU_NM + index} onClick={() =>{ 
+                                // navigate(item.MENU_URL_ADR)
+                                dispatch(bottomSheetAction({
+                                    message : <DynamicComponent2 path={item.MENU_URL_ADR}  />,
+                                    state : null
+                                }))
+                            }}/>
+                            : item.MENU_TYPE === "D" ?
+                            ""
+                            :
+                            <IndexListLinkItem title={`${item.MENU_NM} / ${item.MENU_TYPE}`} key={item.MENU_NM + index} onClick={() =>{ 
+                                navigate(item.MENU_URL_ADR)  
+                            }}/>
+                    ))
+                }
+            </Container>
+        </Wrap>
+        );
+    }
+
+export default GuidePage;
