@@ -1,0 +1,157 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import { FloatingButtonWrap, ButtonWrap, Button, CustomA } from "../../common/components/button/index";
+
+function ButtonGuide() {
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    return (
+        <Wrap>
+            <Header title="버튼" back menu />
+            <Container hasFixed>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">1. Ground Button</h2>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-1. Text Type</strong>
+                    </div>
+                    <CustomA type="styled" size="lg" text="Enabled" callback={()=> navigate(".")} status="outlined" />
+                    <br/>
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-2. Text + Icon Type</strong>
+                    </div>
+                    <Button tag="button" size="lg" icon="tel" text="1599-5000" status="outlined" />
+                    <br/>
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-3. Primary</strong>
+                    </div>
+                    <ButtonWrap col>
+                        <CustomA type="styled" size="lg" text="Enabled" callback={()=> navigate(".")} status="primary" />
+                        <Button tag="button" size="lg" text="Disabled" callback={()=> navigate(".")} status="primary" disabled />
+                    </ButtonWrap>
+                    <br/>
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-4. Contained bule</strong>
+                    </div>
+                    <ButtonWrap col>
+                        <CustomA type="styled" size="lg" text="Enabled" callback={()=> navigate(".")} status="blue" />
+                        <Button tag="button" size="lg" text="Disabled" callback={()=> navigate(".")} status="blue" disabled />
+                    </ButtonWrap>
+                    <br/>
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-5. Contained gray</strong>
+                    </div>
+                    <ButtonWrap col>
+                        <CustomA type="styled" size="lg" text="Enabled" callback={()=> navigate(".")} status="gray" />
+                        <Button tag="button" size="lg" text="Disabled" callback={()=> navigate(".")} status="gray" disabled />
+                    </ButtonWrap>
+                    <br/>
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-6. Outlined</strong>
+                    </div>
+                    <ButtonWrap col>
+                        <CustomA type="styled" size="lg" text="Enabled" callback={()=> navigate(".")} status="outlined" />
+                        <Button tag="button" size="lg" text="Disabled" callback={()=> navigate(".")} status="outlined" disabled />
+                    </ButtonWrap>
+                    <br/>
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-7. Ghost</strong>
+                    </div>
+                    <ButtonWrap col>
+                        <CustomA type="styled" size="lg" text="Enabled" callback={()=> navigate(".")} status="ghost" />
+                        <Button tag="button" size="lg" text="Disabled" callback={()=> navigate(".")} status="ghost" disabled />
+                    </ButtonWrap>
+                    <br/>
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-8. Size</strong>
+                    </div>
+                    <div>
+                        <div className="title_wrap">
+                            <strong className="title_lv3">Small</strong>
+                        </div>
+                        <ButtonWrap>
+                            <Button tag="button" size="sm" text="Small" status="outlined" />
+                            <Button tag="button" size="sm" text="Small" icon="tel" status="outlined" />
+                        </ButtonWrap>
+                        <br/>
+                        <div className="title_wrap">
+                            <strong className="title_lv3">Medium</strong>
+                        </div>
+                        <ButtonWrap wauto>
+                            <Button tag="button" size="md" text="Medium" status="outlined" />
+                            <Button tag="button" size="md" text="Medium" icon="tel" status="outlined" />
+                        </ButtonWrap>
+                        <ButtonWrap>
+                            <Button tag="button" size="md" text="Medium Width 100%" status="outlined" />
+                        </ButtonWrap>
+                        <br/>
+                        <div className="title_wrap">
+                            <strong className="title_lv3">Large</strong>
+                        </div>
+                        <ButtonWrap>
+                            <Button tag="button" size="lg" text="Large" status="outlined" />
+                        </ButtonWrap>
+                    </div>
+                </div>
+
+                <hr className="hr full thick" />
+                <div className="thead_wrap">
+                    <h2 className="title_h1">2. Text Button</h2>
+                </div>
+                <div className="dvgroup last">
+                    <div className="title_wrap">
+                        <strong className="title_h2">2-1. Text Type</strong>
+                    </div>
+                    <div className="link_wrap">
+                        <a href="#none" className="link_line"><span>link</span></a><br/>
+                        <a href="#none" className="link_line fc-blue01"><span>link</span></a><br/>
+                    </div>
+                    <br/>
+                    <div className="title_wrap">
+                        <strong className="title_h2">2-2. Text + Icon Type</strong>
+                    </div>
+                    <div className="link_wrap">
+                        <a href="#none" className="link_arr arr_right"><span>link</span></a>
+                        <a href="#none" className="link_arr arr_toggle"><span>link</span></a>
+                        <a href="#none" className="link_icon btn_icon_delete"><span>link</span></a>
+                    </div>
+                </div>
+                <div style={{height:'250px'}}></div>
+                
+                {/* Floating Button st */}
+                <FloatingButtonWrap>
+                    {/* 1단 */}
+                    <ButtonWrap>
+                        <Button tag="button" text="primary" status="primary" />
+                    </ButtonWrap>
+                    {/* 2단 대칭 */}
+                    <ButtonWrap>
+                        <Button tag="button" text="Secondary" status="secondary" />
+                        <Button tag="button" text="primary" status="primary" />
+                    </ButtonWrap>
+                    {/* 2단 비대칭 긍정 + 긍정 */}
+                    <ButtonWrap wfix>
+                        <Button tag="button" text="secondary" status="secondary" />
+                        <Button tag="button" text="primary" status="primary" />
+                    </ButtonWrap>
+                    {/* 2단 비대칭 부정 + 긍정 */}
+                    <ButtonWrap wfix>
+                        <Button tag="button" text="Negative" status="negative" />
+                        <Button tag="button" text="primary" status="primary" />
+                    </ButtonWrap>
+                    {/* Warning */}
+                    <ButtonWrap>
+                        <Button tag="button" text="Warning" status="warning" />
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+                {/* //Floating Button end */}
+            </Container>
+        </Wrap>
+    );
+}
+
+export default ButtonGuide;
