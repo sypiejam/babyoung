@@ -1,0 +1,50 @@
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import Nodata from "../../common/components/empty/Empty";
+import FlashMsg from "../../common/components/flashMessage/FlashMsg";
+
+function EmptyFlash() {
+    return (
+        <Wrap>
+            <Header title="결과없음, 플래시메시지" back menu />
+            <Container>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">1. Empty</h2>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-1. 기본형</strong>
+                    </div>
+                    <Nodata txt="결과없음 안내문구" />
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-2. 강조형</strong>
+                    </div>
+                    <Nodata type="large" icon="login" txt="결과없음 강조형" />
+                    <Nodata type="large" icon="certi" txt="결과없음 강조형" />
+                </div>
+
+                <hr className="hr full thick"/>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">2. flash Message</h2>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">2-1. 완료</strong>
+                    </div>
+                    <FlashMsg type="complete" className={"first"} title="설정 완료" message="설정이 처리되었습니다." />
+                </div>
+                <div className="dvgroup last">
+                    <div className="title_wrap">
+                        <strong className="title_h2">2-2. 실패</strong>
+                    </div>
+                    <FlashMsg type="error" className={"first"} title="연결오류" message="일시적인 오류로 서비스가 연결되지 않았습니다. 잠시후 다시 시도해 주시기 바랍니다." errorCode="[BEDDP02446] 오류코드 입력" />
+                </div>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default EmptyFlash;
