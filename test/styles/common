@@ -78,6 +78,14 @@
 .pb48 {padding-bottom:4.8rem !important;}
 .prl20 {padding:0 2rem !important;}
 
+.fs13 {font-size:1.3rem !important;}
+.fs14 {font-size:1.4rem !important;}
+.fs15 {font-size:1.5rem !important;}
+.fs16 {font-size:1.6rem !important;}
+.fs17 {font-size:1.7rem !important;}
+.fs18 {font-size:1.8rem !important;}
+.fs19 {font-size:1.9rem !important;}
+
 .fw700 {font-weight:700 !important;}
 .fw500 {font-weight:500 !important;}
 .fw400 {font-weight:400 !important;}
@@ -98,13 +106,13 @@
 .fc-white {color:#fff !important;}
 .fc-blue01 {color:#1490ef !important;}
 .fc-blue01::before,
-.fc-blue01::after {background:#1490ef !important;color:#1490ef !important;}
+.fc-blue01::after {background-color:#1490ef !important;color:#1490ef !important;}
 .fc-blue02 {color:#1056c3 !important;}
 .fc-blue02::before,
-.fc-blue02::after {background:#1056c3 !important;color:#1056c3 !important;}
+.fc-blue02::after {background-color:#1056c3 !important;color:#1056c3 !important;}
 .fc-blue03 {color:#0b3497 !important;}
 .fc-blue03::before,
-.fc-blue03::after {background:#0b3497 !important;color:#0b3497 !important;}
+.fc-blue03::after {background-color:#0b3497 !important;color:#0b3497 !important;}
 .fc-point01 {color:#e5483d !important;}
 .fc-point02 {color:#fff27d !important;}
 
@@ -126,7 +134,7 @@
 .d-inlin {display:inline !important;}
 
 /* display float */
-.d-float>*{float:left !important;}
+.d-float>* {float:left !important;}
 .d-float>:last-child {float:right !important;}
 .d-float::after {content:'';display:block;clear:both;}
 .d-float .link_wrap {margin-left:1.6rem !important;}
@@ -281,7 +289,8 @@
 .ico_flag.etc {background-image:url(/public/images/icon/flag/ic_flag_etc.png);box-shadow:unset;}/*기타*/
 
 /* icon bank ci 24x24 */
-.ci_bank {display:inline-block;width:2.4rem;height:2.4rem;border-radius:50%;background-repeat:no-repeat;background-size:100%;}
+.ci_bank {display:inline-block;width:2.4rem;height:2.4rem;border-radius:50%;background-repeat:no-repeat;background-size:100%;background-image:url(/public/images/icon/bank/ic_bank_default.png);}
+.ci_bank.lg {width:3.6rem;height:3.6rem;}
 .ci_bank_002 {background-image:url(/public/images/icon/bank/ic_bank_002.png);}/* 산업은행 */
 .ci_bank_003 {background-image:url(/public/images/icon/bank/ic_bank_003.png);}/* 기업은행 */
 .ci_bank_004 {background-image:url(/public/images/icon/bank/ic_bank_004.png);}/* 국민은행 */
@@ -359,117 +368,38 @@
 .ci_bank_295 {background-image:url(/public/images/icon/bank/ic_bank_999.png);}/* 가상금융기관 */
 .ci_bank_484 {background-image:url(/public/images/icon/bank/ic_bank_999.png);}/* 국세청  */
 .ci_bank_000 {background-image:url(/public/images/icon/bank/ic_bank_999.png);}/* 국세 */
-/* icon bank ci 36x36 */
-.ci_bank.lg {width:3.6rem;height:3.6rem;}
-.lg.ci_bank_002 {background-image:url(/public/images/icon/bank/lg/ic_bank_002.png);}/* 산업은행 */
-.lg.ci_bank_003 {background-image:url(/public/images/icon/bank/lg/ic_bank_003.png);}/* 기업은행 */
-.lg.ci_bank_004 {background-image:url(/public/images/icon/bank/lg/ic_bank_004.png);}/* 국민은행 */
-.lg.ci_bank_005 {background-image:url(/public/images/icon/bank/lg/ic_bank_081.png);}/* 외환은행 */
-.lg.ci_bank_007 {background-image:url(/public/images/icon/bank/lg/ic_bank_007.png);}/* 수협은행 */
-.lg.ci_bank_008 {background-image:url(/public/images/icon/bank/lg/ic_bank_008.png);}/* 수출입은행 */
-.lg.ci_bank_011 {background-image:url(/public/images/icon/bank/lg/ic_bank_011.png);}/* 농협 */
-.lg.ci_bank_012 {background-image:url(/public/images/icon/bank/lg/ic_bank_012.png);}/* 지역농축협 */
-.lg.ci_bank_018 {background-image:url(/public/images/icon/bank/lg/ic_bank_012.png);}/* 농협 */
-.lg.ci_bank_020 {background-image:url(/public/images/icon/bank/lg/ic_bank_020.png);}/* 우리은행 */
-.lg.ci_bank_021 {background-image:url(/public/images/icon/bank/lg/ic_bank_021.png);}/* 신한은행 */
-.lg.ci_bank_023 {background-image:url(/public/images/icon/bank/lg/ic_bank_023.png);}/* SC제일은행 */
-.lg.ci_bank_026 {background-image:url(/public/images/icon/bank/lg/ic_bank_026.png);}/* 신한은행 */
-.lg.ci_bank_027 {background-image:url(/public/images/icon/bank/lg/ic_bank_027.png);}/* 한국씨티은행 */
-.lg.ci_bank_031 {background-image:url(/public/images/icon/bank/lg/ic_bank_031.png);}/* 대구은행 */
-.lg.ci_bank_032 {background-image:url(/public/images/icon/bank/lg/ic_bank_032.png);}/* 부산은행 */
-.lg.ci_bank_034 {background-image:url(/public/images/icon/bank/lg/ic_bank_034.png);}/* 광주은행 */
-.lg.ci_bank_035 {background-image:url(/public/images/icon/bank/lg/ic_bank_035.png);}/* 제주은행 */
-.lg.ci_bank_037 {background-image:url(/public/images/icon/bank/lg/ic_bank_037.png);}/* 전북은행 */
-.lg.ci_bank_039 {background-image:url(/public/images/icon/bank/lg/ic_bank_039.png);}/* 경남은행 */
-.lg.ci_bank_045 {background-image:url(/public/images/icon/bank/lg/ic_bank_045.png);}/* 새마을금고 */
-.lg.ci_bank_048 {background-image:url(/public/images/icon/bank/lg/ic_bank_048.png);}/* 신협 */
-.lg.ci_bank_050 {background-image:url(/public/images/icon/bank/lg/ic_bank_050.png);}/* 저축은행 */
-.lg.ci_bank_053 {background-image:url(/public/images/icon/bank/lg/ic_bank_053.png);}/* 시티은행 */
-.lg.ci_bank_054 {background-image:url(/public/images/icon/bank/lg/ic_bank_054.png);}/* HSBC은행 */
-.lg.ci_bank_055 {background-image:url(/public/images/icon/bank/lg/ic_bank_055.png);}/* 도이치은행 */
-.lg.ci_bank_056 {background-image:url(/public/images/icon/bank/lg/ic_bank_056.png);}/* ABN-AMRO */
-.lg.ci_bank_057 {background-image:url(/public/images/icon/bank/lg/ic_bank_057.png);}/* JP모간체이스은행 */
-.lg.ci_bank_060 {background-image:url(/public/images/icon/bank/lg/ic_bank_060.png);}/* BOA(뱅크오브아메리카) */
-.lg.ci_bank_061 {background-image:url(/public/images/icon/bank/lg/ic_bank_061.png);}/* 비엔피파리바은행 */
-.lg.ci_bank_062 {background-image:url(/public/images/icon/bank/lg/ic_bank_062.png);}/* 중국공상은행 */
-.lg.ci_bank_063 {background-image:url(/public/images/icon/bank/lg/ic_bank_063.png);}/* 중국은행 */
-.lg.ci_bank_064 {background-image:url(/public/images/icon/bank/lg/ic_bank_064.png);}/* 산림조합 */
-.lg.ci_bank_067 {background-image:url(/public/images/icon/bank/lg/ic_bank_067.png);}/* 중국건설은행 */
-.lg.ci_bank_071 {background-image:url(/public/images/icon/bank/lg/ic_bank_071.png);}/* 우체국 */
-.lg.ci_bank_081 {background-image:url(/public/images/icon/bank/lg/ic_bank_081.png);}/* 하나은행 */
-.lg.ci_bank_088 {background-image:url(/public/images/icon/bank/lg/ic_bank_088.png);}/* 신한은행 */
-.lg.ci_bank_089 {background-image:url(/public/images/icon/bank/lg/ic_bank_089.png);}/* 케이뱅크 */
-.lg.ci_bank_090 {background-image:url(/public/images/icon/bank/lg/ic_bank_090.png);}/* 카카오뱅크 */
-.lg.ci_bank_092 {background-image:url(/public/images/icon/bank/lg/ic_bank_092.png);}/* 토스뱅크 */
-.lg.ci_bank_099 {background-image:url(/public/images/icon/bank/lg/ic_bank_999.png);}/* 금융결제원 */
-.lg.ci_bank_209 {background-image:url(/public/images/icon/bank/lg/ic_bank_209.png);}/* 유안타증권 */
-.lg.ci_bank_218 {background-image:url(/public/images/icon/bank/lg/ic_bank_218.png);}/* KB증권 */
-.lg.ci_bank_221 {background-image:url(/public/images/icon/bank/lg/ic_bank_221.png);}/* 상상인증권 */
-.lg.ci_bank_224 {background-image:url(/public/images/icon/bank/lg/ic_bank_224.png);}/* BNK증권 */
-.lg.ci_bank_225 {background-image:url(/public/images/icon/bank/lg/ic_bank_225.png);}/* IBK투자증권 */
-.lg.ci_bank_226 {background-image:url(/public/images/icon/bank/lg/ic_bank_004.png);}/* KB증권(구KB투자) */
-.lg.ci_bank_227 {background-image:url(/public/images/icon/bank/lg/ic_bank_227.png);}/* 다올투자증권 */
-.lg.ci_bank_230 {background-image:url(/public/images/icon/bank/lg/ic_bank_238.png);}/* 미래에셋증권 */
-.lg.ci_bank_238 {background-image:url(/public/images/icon/bank/lg/ic_bank_238.png);}/* 미래에셋증권 */
-.lg.ci_bank_240 {background-image:url(/public/images/icon/bank/lg/ic_bank_240.png);}/* 삼성증권 */
-.lg.ci_bank_243 {background-image:url(/public/images/icon/bank/lg/ic_bank_243.png);}/* 한국투자증권 */
-.lg.ci_bank_247 {background-image:url(/public/images/icon/bank/lg/ic_bank_247.png);}/* NH투자증권 */
-.lg.ci_bank_261 {background-image:url(/public/images/icon/bank/lg/ic_bank_261.png);}/* 교보증권 */
-.lg.ci_bank_262 {background-image:url(/public/images/icon/bank/lg/ic_bank_262.png);}/* 하이투자증권 */
-.lg.ci_bank_263 {background-image:url(/public/images/icon/bank/lg/ic_bank_263.png);}/* 현대차증권 */
-.lg.ci_bank_264 {background-image:url(/public/images/icon/bank/lg/ic_bank_264.png);}/* 키움증권 */
-.lg.ci_bank_265 {background-image:url(/public/images/icon/bank/lg/ic_bank_265.png);}/* 이베스트투자증권 */
-.lg.ci_bank_266 {background-image:url(/public/images/icon/bank/lg/ic_bank_266.png);}/* SK증권 */
-.lg.ci_bank_267 {background-image:url(/public/images/icon/bank/lg/ic_bank_267.png);}/* 대신증권 */
-.lg.ci_bank_268 {background-image:url(/public/images/icon/bank/lg/ic_bank_268.png);}/* 아이엠투자증권 */
-.lg.ci_bank_269 {background-image:url(/public/images/icon/bank/lg/ic_bank_269.png);}/* 한화투자증권 */
-.lg.ci_bank_270 {background-image:url(/public/images/icon/bank/lg/ic_bank_270.png);}/* 하나증권 */
-.lg.ci_bank_271 {background-image:url(/public/images/icon/bank/lg/ic_bank_271.png);}/* 토스증권 */
-.lg.ci_bank_278 {background-image:url(/public/images/icon/bank/lg/ic_bank_278.png);}/* 신한투자증권 */
-.lg.ci_bank_279 {background-image:url(/public/images/icon/bank/lg/ic_bank_279.png);}/* DB금융투자 */
-.lg.ci_bank_280 {background-image:url(/public/images/icon/bank/lg/ic_bank_280.png);}/* 유진투자증권 */
-.lg.ci_bank_287 {background-image:url(/public/images/icon/bank/lg/ic_bank_287.png);}/* 메리츠증권 */
-.lg.ci_bank_288 {background-image:url(/public/images/icon/bank/lg/ic_bank_288.png);}/* 카카오페이증권 */
-.lg.ci_bank_289 {background-image:url(/public/images/icon/bank/lg/ic_bank_011.png);}/* NH농협증권 */
-.lg.ci_bank_290 {background-image:url(/public/images/icon/bank/lg/ic_bank_290.png);}/* 부국증권 */
-.lg.ci_bank_291 {background-image:url(/public/images/icon/bank/lg/ic_bank_291.png);}/* 신영증권 */
-.lg.ci_bank_292 {background-image:url(/public/images/icon/bank/lg/ic_bank_292.png);}/* 케이프투자증권 */
-.lg.ci_bank_294 {background-image:url(/public/images/icon/bank/lg/ic_bank_294.png);}/* 한국포스증권 */
-.lg.ci_bank_295 {background-image:url(/public/images/icon/bank/lg/ic_bank_999.png);}/* 가상금융기관 */
-.lg.ci_bank_484 {background-image:url(/public/images/icon/bank/lg/ic_bank_999.png);}/* 국세청  */
-.lg.ci_bank_000 {background-image:url(/public/images/icon/bank/lg/ic_bank_999.png);}/* 국세 */
 /* 해외은행 */
-.ci_bank_aboc {background-image:url(/public/images/icon/bank/lg/ic_bank_aboc.png);}
-.ci_bank_aeb {background-image:url(/public/images/icon/bank/lg/ic_bank_aeb.png);}
-.ci_bank_ang {background-image:url(/public/images/icon/bank/lg/ic_bank_ang.png);}
-.ci_bank_bar {background-image:url(/public/images/icon/bank/lg/ic_bank_bar.png);}
-.ci_bank_bbva {background-image:url(/public/images/icon/bank/lg/ic_bank_bbva.png);}
-.ci_bank_bm {background-image:url(/public/images/icon/bank/lg/ic_bank_bm.png);}
-.ci_bank_boc {background-image:url(/public/images/icon/bank/lg/ic_bank_boc.png);}
-.ci_bank_bon {background-image:url(/public/images/icon/bank/lg/ic_bank_bon.png);}
-.ci_bank_bons {background-image:url(/public/images/icon/bank/lg/ic_bank_bons.png);}
-.ci_bank_botm {background-image:url(/public/images/icon/bank/lg/ic_bank_botm.png);}
-.ci_bank_cal {background-image:url(/public/images/icon/bank/lg/ic_bank_cal.png);}
-.ci_bank_csfb {background-image:url(/public/images/icon/bank/lg/ic_bank_csfb.png);}
-.ci_bank_dbs {background-image:url(/public/images/icon/bank/lg/ic_bank_dbs.png);}
-.ci_bank_ib {background-image:url(/public/images/icon/bank/lg/ic_bank_ib.png);}
-.ci_bank_iob {background-image:url(/public/images/icon/bank/lg/ic_bank_iob.png);}
-.ci_bank_lbw {background-image:url(/public/images/icon/bank/lg/ic_bank_lbw.png);}
-.ci_bank_mb {background-image:url(/public/images/icon/bank/lg/ic_bank_mb.png);}
-.ci_bank_mbl {background-image:url(/public/images/icon/bank/lg/ic_bank_mbl.png);}
-.ci_bank_msbi {background-image:url(/public/images/icon/bank/lg/ic_bank_msbi.png);}
-.ci_bank_nab {background-image:url(/public/images/icon/bank/lg/ic_bank_nab.png);}
-.ci_bank_nbop {background-image:url(/public/images/icon/bank/lg/ic_bank_nbop.png);}
-.ci_bank_rbos {background-image:url(/public/images/icon/bank/lg/ic_bank_rbos.png);}
-.ci_bank_sboi {background-image:url(/public/images/icon/bank/lg/ic_bank_sboi.png);}
-.ci_bank_sg {background-image:url(/public/images/icon/bank/lg/ic_bank_sg.png);}
-.ci_bank_smbc {background-image:url(/public/images/icon/bank/lg/ic_bank_smbc.png);}
-.ci_bank_ssbatc {background-image:url(/public/images/icon/bank/lg/ic_bank_ssbatc.png);}
-.ci_bank_ubaf {background-image:url(/public/images/icon/bank/lg/ic_bank_ubaf.png);}
-.ci_bank_uboc {background-image:url(/public/images/icon/bank/lg/ic_bank_uboc.png);}
-.ci_bank_ubsag {background-image:url(/public/images/icon/bank/lg/ic_bank_ubsag.png);}
-.ci_bank_uob {background-image:url(/public/images/icon/bank/lg/ic_bank_uob.png);}
-.ci_bank_wfb {background-image:url(/public/images/icon/bank/lg/ic_bank_wfb.png);}
+.ci_bank_aboc {background-image:url(/public/images/icon/bank/ic_bank_aboc.png);}
+.ci_bank_aeb {background-image:url(/public/images/icon/bank/ic_bank_aeb.png);}
+.ci_bank_ang {background-image:url(/public/images/icon/bank/ic_bank_ang.png);}
+.ci_bank_bar {background-image:url(/public/images/icon/bank/ic_bank_bar.png);}
+.ci_bank_bbva {background-image:url(/public/images/icon/bank/ic_bank_bbva.png);}
+.ci_bank_bm {background-image:url(/public/images/icon/bank/ic_bank_bm.png);}
+.ci_bank_boc {background-image:url(/public/images/icon/bank/ic_bank_boc.png);}
+.ci_bank_bon {background-image:url(/public/images/icon/bank/ic_bank_bon.png);}
+.ci_bank_bons {background-image:url(/public/images/icon/bank/ic_bank_bons.png);}
+.ci_bank_botm {background-image:url(/public/images/icon/bank/ic_bank_botm.png);}
+.ci_bank_cal {background-image:url(/public/images/icon/bank/ic_bank_cal.png);}
+.ci_bank_csfb {background-image:url(/public/images/icon/bank/ic_bank_csfb.png);}
+.ci_bank_dbs {background-image:url(/public/images/icon/bank/ic_bank_dbs.png);}
+.ci_bank_ib {background-image:url(/public/images/icon/bank/ic_bank_ib.png);}
+.ci_bank_iob {background-image:url(/public/images/icon/bank/ic_bank_iob.png);}
+.ci_bank_lbw {background-image:url(/public/images/icon/bank/ic_bank_lbw.png);}
+.ci_bank_mb {background-image:url(/public/images/icon/bank/ic_bank_mb.png);}
+.ci_bank_mbl {background-image:url(/public/images/icon/bank/ic_bank_mbl.png);}
+.ci_bank_msbi {background-image:url(/public/images/icon/bank/ic_bank_msbi.png);}
+.ci_bank_nab {background-image:url(/public/images/icon/bank/ic_bank_nab.png);}
+.ci_bank_nbop {background-image:url(/public/images/icon/bank/ic_bank_nbop.png);}
+.ci_bank_rbos {background-image:url(/public/images/icon/bank/ic_bank_rbos.png);}
+.ci_bank_sboi {background-image:url(/public/images/icon/bank/ic_bank_sboi.png);}
+.ci_bank_sg {background-image:url(/public/images/icon/bank/ic_bank_sg.png);}
+.ci_bank_smbc {background-image:url(/public/images/icon/bank/ic_bank_smbc.png);}
+.ci_bank_ssbatc {background-image:url(/public/images/icon/bank/ic_bank_ssbatc.png);}
+.ci_bank_ubaf {background-image:url(/public/images/icon/bank/ic_bank_ubaf.png);}
+.ci_bank_uboc {background-image:url(/public/images/icon/bank/ic_bank_uboc.png);}
+.ci_bank_ubsag {background-image:url(/public/images/icon/bank/ic_bank_ubsag.png);}
+.ci_bank_uob {background-image:url(/public/images/icon/bank/ic_bank_uob.png);}
+.ci_bank_wfb {background-image:url(/public/images/icon/bank/ic_bank_wfb.png);}
 
 [class^="ico_"].md {width:3.6rem;height:3.6rem;}/* icon 36x36 */
 [class^="ico_"].lg {width:5.4rem;height:5.4rem;}/* icon 54x54 */
@@ -560,9 +490,10 @@
 .txt_footnote::before {content:'';position:absolute;top:-1px;left:0;display:block;width:1.4rem;height:2.2rem;background:url(/public/images/com/ic_footnote.png) no-repeat 0 0 / 100%;}
 .txt_footnote.fc-point01::before {background-image:url(/public/images/com/ic_footnote_red.png);}
 .txt_info {position:relative;padding-left:2.8rem;}
-.txt_info::before {content:'';position:absolute;top:-0.2rem;left:0;display:block;width:2.4rem;height:2.4rem;background:url(/public/images/com/ic_information.png) no-repeat 0 0 / 100%;}
+.txt_info::before {content:'';position:absolute;top:-0.1rem;left:0;display:block;width:2.4rem;height:2.4rem;background:url(/public/images/com/ic_information.png) no-repeat 0 0 / 100%;}
+.txt_info.fc-blue02::before {background-image:url(/public/images/com/ic_information_blue.png);background-color:unset !important;}
 .txt_help {position:relative;padding-left:2.8rem;}
-.txt_help::before {content:'';position:absolute;top:-0.2rem;left:0;display:block;width:2.4rem;height:2.4rem;background:url(/public/images/com/ic_question.png) no-repeat 0 0 / 100%;}
+.txt_help::before {content:'';position:absolute;top:-0.1rem;left:0;display:block;width:2.4rem;height:2.4rem;background:url(/public/images/com/ic_question.png) no-repeat 0 0 / 100%;}
 .txt_amount {text-align:right;font-size:1.4rem;color:#848a92;}
 .txt_amount.btm {margin-top:0.4rem;font-size:1.5rem;}
 .txt_amount .num {font-size:calc(100% + 0.1rem);}
@@ -582,7 +513,7 @@
 [class^='bullet_'] {position:relative;display:block;padding-left:2rem;text-align:left;}
 [class^='bullet_']+[class^='bullet_'] {margin-top:0.8rem;}
 [class^='bullet_'].fc-point01::before,
-[class^='bullet_'].fc-point01::after {background:#e5483d;color:#e5483d;}
+[class^='bullet_'].fc-point01::after {background-color:#e5483d;color:#e5483d;}
 .bullet_item {padding:0;}
 .bullet_disc .bullet {margin-top:0.8rem;}
 .bullet_disc::before {content:'';position:absolute;top:0.9rem;left:0.5rem;display:block;width:0.4rem;height:0.4rem;border-radius:50%;background:#686e75;}
@@ -875,6 +806,9 @@
 .field_flex>:first-child {margin-left:0;}
 .field_flex>:last-child {margin-right:0;}
 .field_flex.inp_field .inp_text {flex:1;}
+.field_flex.request {align-items:flex-end;}
+.field_flex.request .inp_field:focus-within {border-color:#d5dbe3;}
+.field_flex.request input:read-only:focus-within {border-bottom:0;margin-bottom:0;}
 
 .inp_item {display:flex;align-items:center;width:100%;min-height:4.2rem;}
 .inp_item>* {float:left;}
@@ -942,6 +876,9 @@
 textarea:disabled {border-color:#f2f5f9;}
 input:disabled.fc-gray01 {-webkit-text-fill-color:#151c22;}
 
+.field_border .readonly,
+.field_border .readonly:focus-within {border-color:#d5dbe3;}
+
 /* field error */
 .is-error.inp_field,
 .is-error .inp_field {border-color:#e5483d;}
@@ -969,10 +906,9 @@ input:read-only:focus-within+.inp_delete {display:none;}
 .autocomplete_item {padding:0.8rem 0;color:#333a40;}
 
 /* search field */
-input[type="search"] {-webkit-appearance:searchfield;}
-input[type="search"]::-webkit-search-cancel-button {display:block;width:2.4rem;height:2.4rem;margin:0;background:url(/public/images/com/ic_close.png) no-repeat 0 0 / 100%;-webkit-appearance:searchfield-cancel-button;}
+input[type="search"]::-webkit-search-cancel-button {display:block;width:2.4rem;height:2.4rem;margin:0;background:url(/public/images/com/ic_close.png) no-repeat 0 0 / 100%;}
 .sch_field.filled:focus-within {border-color:#d5dbe3;}
-.sch_field .field_item {margin-right:-0.4rem;margin-left:0;}
+.sch_field .field_item {margin-top:-0.2rem;margin-right:-0.4rem;margin-left:0;}
 .sch_field .ico_search {width:3.2rem;height:3.2rem;background-position:50% 50%;background-size:2.4rem 2.4rem;}
 /* search 박스형 */
 .searchbox {overflow:hidden;position:relative;padding:0.6em 2rem;border:0;border-radius:0.6rem;background-color:#f7f9fc;}
@@ -1219,6 +1155,9 @@ input:checked+.list_item .listbox_txt {color:#1490ef;}
 .terms_body .slick-next:hover,
 .terms_body .slick-next:focus {background-color:#a1a9b2;}
 .terms_body .slick-disabled {display:none !important;}
+.terms_body .tab_wrap {margin-top:-2.4rem;}
+.terms_body .tab_head {margin:0 -1.6rem;}
+.terms_body .tab_body {padding:1.6rem 0;}
 
 /* 주소찾기 옵션선택 */ 
 .optionbox {display:flex;flex-wrap:wrap;margin:-0.4rem;}
@@ -1286,6 +1225,8 @@ input:checked+.list_item .listbox_txt {color:#1490ef;}
 
 /* 휴대폰 소유확인 */
 .img_sendsms {display:block;width:24.8rem;height:24.8rem;margin:-3.2rem auto 0;background:url(/public/images/cer/img_cellphone_message.png) no-repeat 0 0 / 100%;}
+/* 공통 > 로그인 > 추천직원 */
+.img_referals {display:block;width:24.8rem;height:24.8rem;margin:0 auto;background:url(/public/images/com/img_employee_referals.png) no-repeat 0 0 / 100%;}
 
 /* 신청내역조회 > 진행상태 */
 .status_wrap {display:flex;justify-content:space-between;margin-top:2.4rem;}
