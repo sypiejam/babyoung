@@ -1,111 +1,106 @@
 @charset "utf-8";
 /* trf.css 우리글로벌뱅킹 재구축 : 뱅킹>이체(SMJ22) */
-
-.trf_label_list{margin-bottom:3.2rem;}
-.trf_label_list .trf_label{padding:2.6rem 0 2.5rem;}
-.trf_label_list .trf_label ~ .trf_label {border-top:1px solid #f2f5f9;}
-.trf_label_list .trf_label button{display:flex;width:100%;justify-content: space-between;}
-.trf_label_list .trf_label .label_th{width:61%;color:#4c5459;text-align:left;line-height:1.4;}
-.trf_label_list .trf_label .label_td{width:39%;padding-left:1.6rem;color:#151c22; font-size:1.6rem;text-align: right;line-height:1.4;}
-
-.dvgroup .trf_switch_right .switch_item{padding:2.4rem 0;text-align:right;}
-.trf_view_record .trf_recordbox{padding:2.4rem 0;border-bottom:1px solid #f2f5f9;}
-.trf_view_record .trf_recordbox:last-child{border-bottom:0;}
-.trf_view_record .custbox_btm .infolist{margin-top:0;}
-.trf_view_record .custbox_tit .infolist_rt.fc-blue02{font-size: 1.6rem;}
-.trf_view_record .trf_list_item{padding-bottom:1.6rem;border-bottom:1px solid #f2f5f9;}
-.trf_view_record .trf_list_item:last-child{border-bottom:0;}
-.trf_view_record.lastline .trf_list_item:last-child{border-bottom:1px solid #f2f5f9;}
-.trf_view_record .trf_list_item .custbox_tit{padding-top:0;}
-.trf_view_record .trf_list_item .custbox_tit .infolist_lt{color:#151c22;font-size:1.7rem;font-weight:700;}
-.trf_view_record .trf_list_item .custbox_btm{padding-bottom:0.8rem;}
-.trf_view_record .trf_record_tit{position:relative;padding:0 2.2rem 0 0;margin-bottom:2.4rem;}
-.trf_view_record .trf_record_tit .trf_tit_bank{display:block;color:#151c22;font-size:1.5rem;font-weight:500;}
-.trf_view_record .trf_record_tit .trf_tit_num{display:block;margin-top:0.4rem;color:#151c22;font-size:1.7rem;font-weight:500;}
-.trf_view_record .trf_record_tit::after {content: '';position:absolute;top:50%;right:0;display:block;width:1.4rem;height:2.4rem;background:url(/public/images/com/ic_arrow_normal_right_enabled.png) no-repeat 0 0 / 100%;transform:translateY(-50%);}
-.trf_view_record .infolist_rt.trf_info_num{color:#1056c3;font-size:1.6rem;}
+.dvgroup .trf_switch_right .switch_item {padding:2.4rem 0;text-align:right;}
+.trf_view_record .trf_recordbox {padding:2.4rem 0;border-bottom:1px solid #f2f5f9;}
+.trf_view_record .trf_recordbox:last-child {border-bottom:0;}
+.trf_view_record .custbox_btm .infolist {margin-top:0;}
+.trf_view_record .custbox_tit .infolist_rt.fc-blue02 {font-size:1.6rem;}
+.trf_view_record .trf_list_item {padding-bottom:1.6rem;border-bottom:1px solid #f2f5f9;}
+.trf_view_record .trf_list_item:last-child {border-bottom:0;}
+.trf_view_record.lastline .trf_list_item:last-child {border-bottom:1px solid #f2f5f9;}
+.trf_view_record .trf_list_item .custbox_tit {padding-top:0;}
+.trf_view_record .trf_list_item .custbox_tit .infolist_lt {color:#151c22;font-size:1.7rem;font-weight:700;}
+.trf_view_record .trf_list_item .custbox_btm {padding-bottom:0.8rem;}
+.trf_view_record .trf_record_tit {position:relative;padding:0 2.2rem 0 0;margin-bottom:2.4rem;}
+.trf_view_record .trf_record_tit .trf_tit_bank {display:block;color:#151c22;font-size:1.5rem;font-weight:500;}
+.trf_view_record .trf_record_tit .trf_tit_num {display:block;margin-top:0.4rem;color:#151c22;font-size:1.7rem;font-weight:500;}
+.trf_view_record .trf_record_tit::after {content:'';position:absolute;top:50%;right:0;display:block;width:1.4rem;height:2.4rem;background:url(/public/images/com/ic_arrow_normal_right_enabled.png) no-repeat 0 0 / 100%;transform:translateY(-50%);}
+.trf_view_record .infolist_rt.trf_info_num {color:#1056c3;font-size:1.6rem;}
 
 /* SMJ2204M00 디자인 예외 케이스 적용 */
-.trf_view_record.lastline .custbox_tit{padding-bottom:1.6rem;}
-.trf_view_record.lastline .custbox_top{margin-bottom:0;}
-.trf_view_record.lastline .custbox_top .label{margin-right:0;color:#686e75;font-size:1.3rem;}
-.trf_view_record.lastline .custbox_tit .infolist{margin-top:0.4rem;}
-.trf_view_record.lastline .trf_list_item .custbox_tit .infolist_lt{font-size:1.6rem;font-weight:500;}
-.trf_view_record.lastline .custbox_tit .infolist_rt.trf_info_num{font-size:1.7rem;}
+.trf_view_record.lastline .custbox_tit {padding-bottom:1.6rem;}
+.trf_view_record.lastline .custbox_top {margin-bottom:0;}
+.trf_view_record.lastline .custbox_top .label {margin-right:0;color:#686e75;font-size:1.3rem;}
+.trf_view_record.lastline .custbox_tit .infolist {margin-top:0.4rem;}
+.trf_view_record.lastline .trf_list_item .custbox_tit .infolist_lt {font-size:1.6rem;font-weight:500;}
+.trf_view_record.lastline .custbox_tit .infolist_rt.trf_info_num {font-size:1.7rem;}
 
 /* 자주쓰는 계좌관리 SMJ2207P10 */
-.listbox.trf_account{margin-bottom:0;}
-.listbox.trf_account .listbox_list{padding:2.4rem 0;}
-.listbox.trf_account .custbox_top{margin-bottom:1.2rem;}
-.listbox.trf_account .custbox_top .label{font-size:1.3rem;}
-.listbox.trf_account .account_wrap{margin-bottom:2.4rem;}
-.listbox.trf_account .account_box .ci_bank{margin-top:0.6rem;margin-right:0.8rem;}
-.listbox.trf_account .account_box>.inner{width:calc(100% - 4rem);}
+.listbox.trf_account {margin-bottom:0;}
+.listbox.trf_account .listbox_list {padding:2.4rem 0;}
+.listbox.trf_account .custbox_top {margin-bottom:1.2rem;}
+.listbox.trf_account .custbox_top .label {font-size:1.3rem;}
+.listbox.trf_account .account_wrap {margin-bottom:2.4rem;}
+.listbox.trf_account .account_box .ci_bank {margin-top:0.6rem;margin-right:0.8rem;}
+.listbox.trf_account .account_box>.inner {width:calc(100% - 4rem);}
 
 /* 이체(입력) - Write */
-.trf_table .trf_tr{overflow:hidden;width:100%;padding:2.4rem 0;border-bottom:1px solid #f2f5f9;}
-.trf_table .trf_tr .trf_tr_inner{display:flex;align-items:center;min-height:2.4rem;}
-.trf_table .trf_th{flex:1;color:#4c5459;text-align:left;}
-.trf_table .trf_td{flex:1;margin-left:1.6rem;color:#151c22;text-align:right;}
-.trf_table .trf_td .inp_item{min-height:auto;}
-.trf_table .trf_td .inp_item .inp_text{height:auto;padding:0;font-size:1.5rem;}
-.trf_table .trf_tr:last-child{border-bottom:none;}
-.trf_table .trf_tr.col2{padding-left:0;text-align:left;}
-.trf_table .col2.selection{padding:2.4rem 0}
-.trf_table .col2 > div{border-bottom:none;}
-.trf_table .trf_tr .check_normal+label{line-height:2.2rem;}
-.trf_table .col2 .switch_item{padding:0;}
-.trf_table .col2 .field_wrap{margin-top:2.4rem;}
+.trf_table .trf_tr {overflow:hidden;width:100%;padding:2.4rem 0;border-bottom:1px solid #f2f5f9;}
+.trf_table .trf_tr .trf_tr_inner {display:flex;align-items:center;min-height:2.4rem;}
+.trf_table .trf_th {flex:1;color:#4c5459;text-align:left;}
+.trf_table .trf_td {flex:1;margin-left:1.6rem;color:#151c22;text-align:right;}
+.trf_table .trf_td .inp_item {min-height:auto;}
+.trf_table .trf_td .inp_item .inp_text {height:auto;padding:0;font-size:1.5rem;}
+.trf_table .trf_tr:last-child {border-bottom:none;}
+.trf_table .trf_tr.col2 {padding-left:0;text-align:left;}
+.trf_table .col2.selection {padding:2.4rem 0}
+.trf_table .col2>div {border-bottom:none;}
+.trf_table .trf_tr .check_normal+label {line-height:2.2rem;}
+.trf_table .col2 .switch_item {padding:0;}
+.trf_table .col2 .field_wrap {margin-top:2.4rem;}
 
 /* 추가이체 정보입력 SMJ2201M19 */
-.trf_bottom{text-align:center;}
-.trf_bottom.before{position:fixed;width:100%;left:0;bottom:0;margin:3.2rem 0rem;}
-.trf_bottom.after{margin-top:3.2rem;}
+.trf_bottom {text-align:center;}
+.trf_bottom.before {position:fixed;width:100%;left:0;bottom:0;margin:3.2rem 0rem;}
+.trf_bottom.after {margin-top:3.2rem;}
 
 /* 이체확인증 SMJ2201M22 */
-.trf_certificate{margin:8.4rem 0 1.6rem;}
-.trf_certificate + .table_wrap .table{margin-top:0;}
-.trf_amountbox{margin-top:3.2rem;}
-.trf_txt{text-align: right;}
-.trf_amount{margin-top:0.4rem;color:#333a40;font-size:1.8rem;font-weight:500;text-align:right;}
-.trf_amount span{margin-left:0.4rem;color:#151c22;font-size:2.2rem;font-weight:500;}
-.trf_btm_logo{margin-top:3.2rem;text-align:right;}
-.trf_btm_logo .logo{display:inline-block;width:11.6rem;height:3.6rem;}
-.typanel_list .listbox_txt{color:#686e75}
+.trf_certificate {margin:2.4rem 0 3.2rem;}
+.trf_certificate+.table_wrap .table {margin-top:0;}
+.trf_txt {text-align:right;}
+.trf_txt em {color:#4c5459;font-size:1.5rem;font-weight:400;}
+.trf_amount {margin-top:0.4rem;color:#333a40;font-size:2.2rem;font-weight:400;text-align:right;}
+.trf_amount span {margin-left:0.4rem;color:#151c22;font-size:2.6rem;font-weight:500;}
+.trf_btm_logo {margin-top:3.2rem;text-align:right;}
+.trf_btm_logo .logo {display:inline-block;width:11.6rem;height:3.6rem;}
+.typanel_list .listbox_txt {color:#686e75}
 /* 자동이체 등록/관리 Step2. 자동이체등록(정보입력) SMJ2204M03 */
-.trf_tit_fix{min-height:2.4rem;}
+.trf_tit_fix {min-height:2.4rem;}
 .trf_tit_fix .btn_help {margin-bottom:-1px;} 
-.trf_selection_lst, .trf_selection_lst li ~ li{margin-top:2.4rem;}
-.trf_selection_lst.radio_lst, .trf_selection_lst.radio_lst li ~ li{margin-top:1.6rem;}
-.trf_selection_lst+.field_wrap{margin-top:2.4rem;}
-.field_optionbox .trf_top_line{margin-top:2.4rem;padding:2.4rem 0 0;border-top:1px solid #e4eaf2}
+.trf_selection_lst, .trf_selection_lst li~li {margin-top:2.4rem;}
+.trf_selection_lst.radio_lst, .trf_selection_lst.radio_lst li~li {margin-top:1.6rem;}
+.trf_selection_lst+.field_wrap {margin-top:2.4rem;}
+.field_optionbox .trf_top_line {margin-top:2.4rem;padding:2.4rem 0 0;border-top:1px solid #e4eaf2;}
 
 /* 이체결과상세정보 SMJ2202P03 */
-.trf_refer_top{margin:2.4rem 0 0.8rem;}
+.trf_refer_top {margin:2.4rem 0 0.8rem;}
 .trf_refer_top .day {margin-left:0.8rem;color:#151c22;}
-.trf_refer_top .title_lv3{color:#686e75;}
+.trf_refer_top .title_lv3 {color:#686e75;}
 
 /* 외화 이체내역 조회 SMJ2208M01 */
-.trf_refer_list .trf_list_item{border-bottom:1px solid #f2f5f9;}
-.trf_refer_list .trf_list_link{display:block;padding:2.4rem 0;}
-.trf_refer_list .trf_list_info [class^="info_"]{display:block;}
-.trf_refer_list .trf_list_info [class^="info_"]+[class^="info_"]{position:relative;margin-top:0.4rem;}
-.trf_refer_list .trf_list_info .info_item{color:#848a92;font-size:1.5rem;}
-.trf_refer_list .trf_list_info .day{color:#686e75;font-size:1.3rem;font-weight:500;}
-.trf_refer_list .trf_list_info .name{padding-right:2.2rem;color:#333a40;font-size:1.5rem;font-weight:500;}
-.trf_refer_list .trf_list_info .account{padding-right:2.2rem;color:#151c22;font-size:1.6rem;font-weight:500;}
+.trf_refer_list .trf_list_item {border-bottom:1px solid #f2f5f9;}
+.trf_refer_list .trf_list_link {display:block;padding:2.4rem 0;}
+.trf_refer_list .trf_list_info [class^="info_"] {display:block;}
+.trf_refer_list .trf_list_info [class^="info_"]+[class^="info_"] {position:relative;margin-top:0.4rem;}
+.trf_refer_list .trf_list_info .info_item {color:#848a92;font-size:1.5rem;}
+.trf_refer_list .trf_list_info .day {color:#686e75;font-size:1.3rem;font-weight:500;}
+.trf_refer_list .trf_list_info .name {padding-right:2.2rem;color:#333a40;font-size:1.5rem;font-weight:500;}
+.trf_refer_list .trf_list_info .account {padding-right:2.2rem;color:#151c22;font-size:1.6rem;font-weight:500;}
 .trf_refer_list .trf_list_info .name::after,
-.trf_refer_list .trf_list_info .account::after {content: '';position:absolute;top:50%;right:0rem;display:block;width:1.4rem;height:2.4rem;background:url(/public/images/com/ic_arrow_normal_right_enabled.png) no-repeat 0 0 / 100%;transform:translateY(-50%);}
-.trf_refer_list .trf_list_num{margin-top:1.6rem;text-align:right;}
-.trf_refer_list .trf_list_num span{color:#151c22;font-size:2.2rem;font-weight:500;}
-.trf_refer_list .trf_list_num em{margin-right:0.4rem;color:#333a40;font-size:1.8rem;}
+.trf_refer_list .trf_list_info .account::after {content:'';position:absolute;top:50%;right:0rem;display:block;width:1.4rem;height:2.4rem;background:url(/public/images/com/ic_arrow_normal_right_enabled.png) no-repeat 0 0 / 100%;transform:translateY(-50%);}
+.trf_refer_list .trf_list_num {margin-top:1.6rem;text-align:right;}
+.trf_refer_list .trf_list_num span {color:#151c22;font-size:2.2rem;font-weight:500;}
+.trf_refer_list .trf_list_num em {margin-right:0.4rem;color:#333a40;font-size:1.8rem;}
 
 /* 외화 이체내역 조회 SMJ2208P03 */
-.trf_exchange_view{background-color:#f2f5f9;margin:0 -2rem;padding:2.4rem 2rem;}
-.trf_exchange_view .info_item{display:block;color:#848a92;font-size:1.3rem;}
-.trf_exchange_view .info_item.account{color:#151c22;font-size:1.6rem;font-weight:500;}
-.trf_exchange_view .info_item .day{margin-right:0.4rem;color:#686e75;font-weight:500;}
-.trf_exchange_view .info_item + .info_item{margin-top:0.4rem;}
-.trf_exchange_view .trf_exchange_num{margin-top:2.4rem;color:#333a40;font-size:2.2rem;text-align:right;}
-.trf_exchange_view .trf_exchange_num span{vertical-align:middle;}
-.trf_exchange_view .trf_exchange_num em{margin-left:0.4rem;color:#151c22;font-size:2.6rem;font-weight:500;}
+.trf_exchange_view {background-color:#f2f5f9;margin:0 -2rem;padding:2.4rem 2rem;}
+.trf_exchange_view .info_item {display:block;color:#848a92;font-size:1.3rem;}
+.trf_exchange_view .info_item.account {color:#151c22;font-size:1.6rem;font-weight:500;}
+.trf_exchange_view .info_item .day {margin-right:0.4rem;color:#686e75;font-weight:500;}
+.trf_exchange_view .info_item+.info_item {margin-top:0.4rem;}
+.trf_exchange_view .trf_exchange_num {margin-top:2.4rem;color:#333a40;font-size:2.2rem;text-align:right;}
+.trf_exchange_view .trf_exchange_num span {vertical-align:middle;}
+.trf_exchange_view .trf_exchange_num em {margin-left:0.4rem;color:#151c22;font-size:2.6rem;font-weight:500;}
+
+/* 자동이체 출금결과 조회 SMJ2205M00 */
+.trf_recordbox > .infolist {margin-top:0;}
