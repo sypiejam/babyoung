@@ -1,0 +1,68 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import { FloatingButtonWrap, ButtonWrap, Button } from "../../common/components/button/index";
+
+function Layout(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    return(
+        <Wrap>
+            <Header title="헤더 제목영역(최대 두줄이 들어갑니다)" back menu />
+            <Container hasFixed>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">Noto Sans CJK KR 모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다.</h2>
+                </div>
+                <div className="dvgroup first">
+                    {/* default : weight 700 */}
+                    <div className="title_wrap">
+                        <strong className="title_h1">타이틀h1(2rem) 700 = Level 1</strong>
+                        <br/>
+                        <strong className="title_h1 fw500">타이틀h1(2rem) + 500</strong>
+                    </div>
+                    <div className="title_wrap">
+                        <strong className="title_h2">타이틀h2(1.8rem) 500</strong>
+                        <br/>
+                        <strong className="title_h2 fw400">타이틀h2(1.8rem) + 400</strong>
+                    </div>
+                    <div className="title_wrap">
+                        <strong className="title_h3">타이틀h3(1.7rem) 700 = Level 2</strong>
+                        <br/>
+                        <strong className="title_h3 fw500">타이틀h3(1.7rem) + 500</strong>
+                        <br/>
+                        <strong className="title_h3 fw400">타이틀h3(1.7rem) + 400</strong>
+                    </div>
+                    <div className="title_wrap">
+                        <strong className="title_h4">타이틀h4(1.6rem) 700</strong>
+                        <br/>
+                        <strong className="title_h4 fw500">타이틀h4(1.6rem) + 500</strong>
+                        <br/>
+                        <strong className="title_h4 fw400">타이틀h4(1.6rem) + 400</strong>
+                    </div>
+                    <div className="title_wrap">
+                        <strong className="title_h5">타이틀h5(1.5rem) 700</strong>
+                        <br/>
+                        <strong className="title_h5 fw500">타이틀h5(1.5rem) + 500</strong>
+                        <br/>
+                        <strong className="title_h5 fw400">타이틀h5(1.5rem) + 400</strong>
+                    </div>
+                    <div className="title_wrap">
+                        <strong className="title_h6">타이틀h6(1.4rem) 500</strong>
+                        <br/>
+                        <strong className="title_h6 fw400">타이틀h6(1.4rem) + 400</strong>
+                    </div>
+                </div>
+                <FloatingButtonWrap>
+                    <ButtonWrap wfix>
+                        <Button type="styled" text={t('ce0103_0308')} callback={()=> navigate(".")} status="negative" />
+                        <Button type="styled" text={t('co1501_0010')} callback={()=> navigate(".")} status="primary" />
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </Container>
+        </Wrap>
+    )
+}
+
+export default Layout;
