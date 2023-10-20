@@ -1,0 +1,187 @@
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import CheckBox from "../../common/components/input/CheckBox";
+import RadioButton from "../../common/components/input/RadioButton";
+import SearchField from "../../common/components/input/textField/SearchField";
+import { popupAction } from "../../common/store/popupReducer";
+import { FloatingButtonWrap, ButtonWrap, Button, CustomA } from "../../common/components/button/index";
+import SMJ1E01P00 from "../SMJ1/SMJ1E/SMJ1E01/SMJ1E01P00/SMJ1E01P00";
+
+function CheckRadioSearch() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    return (
+        <Wrap>
+            <Header title="체크박스, 라디오버튼, 서치필드" back menu />
+            <Container>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">1. Checkbox</h2>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-1. Normal</strong>
+                    </div>
+                    <div className="list_half">
+                        <div className="chk_item"><CheckBox type="normal" name="NormalChk" id="NormalEnabledOn" text="Enabled On" isChecked /></div>
+                        <div className="chk_item"><CheckBox type="normal" name="NormalChk" id="NormalDisabledOn" text="Disabled On" isDisabled /></div>
+                        <div className="chk_item"><CheckBox type="normal" name="NormalChk" id="NormalEnabledOff" text="Enabled Off" /></div>
+                        <div className="chk_item"><CheckBox type="normal" name="NormalChk" id="NormalDisabledOff" text="Disabled Off"  /></div>
+                        <div className="chk_item"><CheckBox type="normalSt" name="NormalChk" id="NormalEnabledStrong" text="Enabled 강조형" isChecked /></div>
+                    </div>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-2. Small</strong>
+                    </div>
+                    <div className="list_half">
+                        <div className="chk_item"><CheckBox type="small" name="SmallChk" id="smallEnabledOn" text="Enabled On" isChecked /></div>
+                        <div className="chk_item"><CheckBox type="small" name="SmallChk" id="smallDisabledOn" text="Disabled On" isDisabled /></div>
+                        <div className="chk_item"><CheckBox type="small" name="SmallChk" id="smallEnabledOff" text="Enabled Off" /></div>
+                        <div className="chk_item"><CheckBox type="small" name="SmallChk" id="smallDisabledOff" text="Disabled Off"  /></div>
+                        <div className="chk_item"><CheckBox type="smallSt" name="SmallChk" id="smallEnabledStrong" text="Enabled 강조형" isChecked /></div>
+                    </div>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-3. 1Depth 기본형</strong>
+                    </div>
+                    <div className="selection">
+                        <CheckBox type="normal" name="depth" id="depth001" text="Enter adescription" />
+                        <button type="button" className="ico_help btn_help"><span className="blind">도움말</span></button>
+                    </div>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-4. 링크 있는 경우</strong>
+                    </div>
+                    <div className="selections_item">
+                        <div className="inner">
+                            <div className="selection">
+                                <CheckBox type="normalSt" name="check" id="check01" text="Information" />
+                            </div>
+                            <CustomA href="#none" btnClass="ico_arrow" callback={()=> navigate(".")}>
+                                <span className="blind">바로가기</span>
+                            </CustomA>
+                        </div>
+                    </div>
+                    <div className="selections_item">
+                        <div className="inner">
+                            <div className="selection">
+                                <CheckBox type="small" name="check" id="check02" text="use agreement" />
+                            </div>
+                            <CustomA href="#none" btnClass="ico_arrow small" callback={()=> navigate(".")}>
+                                <span className="blind">바로가기</span>
+                            </CustomA>
+                        </div>
+                    </div>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">1-5. 확인/동의(약관)</strong>
+                    </div>
+                    <div className="selections_box">
+                        <div className="selections_item">
+                            <div className="inner">
+                                <div className="selection">
+                                    <CheckBox type="normalSt" name="terms" id="terms01" text="Handling of Sensitive and Uniquely Identifiable Information" />
+                                </div>
+                                <CustomA href="#none" btnClass="ico_arrow" callback={()=> navigate(".")}>
+                                    <span className="blind">바로가기</span>
+                                </CustomA>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr className="hr full thick"/>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">2. Radio Botton</h2>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">2-1. Normal</strong>
+                    </div>
+                    <div className="list_half">
+                        <RadioButton name="RadioE" id="RadioEnabledOn" text="Enabled On" isChecked />
+                        <RadioButton name="RadioD" id="RadioDisabledOn" text="Disabled On" isChecked isDisabled />
+                        <RadioButton name="RadioE" id="RadioEnabledOff" text="Enabled Off" />
+                        <RadioButton name="RadioD" id="RadioDisabledOff" text="Disabled Off" isDisabled />
+                    </div>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">2-2. 영역 사이 간격</strong>
+                    </div>
+                    <div className="list_radio">
+                        <RadioButton name="radioLi" id="RadioOpt01" text="Options 001" isChecked />
+                        <RadioButton name="radioLi" id="RadioOpt02" text="Options 002" />
+                        <RadioButton name="radioLi" id="RadioOpt03" text="Options 003" />
+                        <RadioButton name="radioLi" id="RadioOpt04" text="Options 004" />
+                    </div>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">2-3. 서브카피형</strong>
+                    </div>
+                    <div className="title_wrap">
+                        <em className="title_lv3">Title</em>
+                    </div>
+                    <div className="selections_item">
+                        <RadioButton type="normalSt" name="radioES" id="RadioEnabledStrong" text="agreement" isChecked />
+                        <div className="selection_desc">
+                            <p>In accordance with the Personal Information Protection Act and the Act on the Use and Protection of Credit Information</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr className="hr full thick"/>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">3. Search Field</h2>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">3-1. 기본형</strong>
+                    </div>
+                    <div className="field_wrap"> {/* 에러시 클래스 is-error 추가 */}
+                        <em className="inp_title">Enabled</em>
+                        <SearchField title="Search name" icoText="검색" />
+                        <div className="txt_error">
+                            <p>Enter an error message</p>
+                        </div>
+                        <div className="txt_helper">
+                            <p className="bullet_disc">Enter an additional description.</p>
+                        </div>
+                    </div>
+
+                    <div className="field_wrap sch_popup">{/* 풀팝업 호출하는 경우 field_wrap에 sch_popup 클래스 추가 */}
+                        <em className="inp_title">직원찾기</em>
+                        <SearchField title="Search Popup" icoText="직원찾기 검색" readOnly callback={()=>
+                            dispatch(popupAction({
+                                title: "",
+                                message : <SMJ1E01P00 />,
+                                state : null
+                            }))
+                        }/>{/* SMJ1E01P00 직원검색팝업 호출 */}
+                        <div className="txt_error">
+                            <p>Enter an error message</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="dvgroup last">
+                    <div className="title_wrap">
+                        <strong className="title_h2">3-2. 박스형</strong>
+                    </div>
+                    <div className="field_wrap">
+                        <SearchField boxtype="searchbox" title="Search Account Holder/Subject/Account Number" icoText="검색" />
+                    </div>
+                </div>
+                <br/><br/><br/>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default CheckRadioSearch;
