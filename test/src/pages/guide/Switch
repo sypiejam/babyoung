@@ -1,0 +1,74 @@
+import { useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import { bottomSheetAction } from "../../common/store/bottomSheetReducer";
+import SwitchGroup from "../../common/components/switch/SwitchGroup";
+import SwitchItem from "../../common/components/switch/SwitchItem";
+import SearchField from "../../common/components/input/textField/SearchField";
+import SMJ2201P13 from "../SMJ2/SMJ22/SMJ2201/SMJ2201P13/SMJ2201P13";
+
+function Switch() {
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [valueChk, setvalueChk] = useState(true);
+    const scrollRef = useRef();
+    const [switchToggle, setSwitchToggle] = useState(false); 
+    const switchOnChange = () => {
+        setSwitchToggle(!switchToggle);
+        setTimeout(()=>(
+            !switchToggle && window.scrollTo({top:document.documentElement.scrollHeight - window.innerHeight, behavior:"smooth"})
+        ),300) 
+    };
+    return (
+        <Wrap>
+            <Header title="스위치" back menu />
+            <Container>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">Switch</h2>
+                </div>
+                <div className="dvgroup">
+                    <ul className="switch_wrap">
+                        <SwitchItem name="Switch101" title="1Depth Title" onChange={()=>setvalueChk(!valueChk)} chk={valueChk} />
+                        <SwitchItem name="Switch102" title="1Depth Title" info
+                            callback={()=>{dispatch(bottomSheetAction({
+                                title: "",
+                                message : <SMJ2201P13 />,
+                                state : null
+                            }))}}
+                         />
+                    </ul>
+                </div>
+                <div className="dvgroup">
+                    {/* 2depth 적용 */}
+                    <ul className="switch_wrap">
+                        <SwitchGroup name="Switch201" title="1Depth Title">
+                            <SwitchItem name="Switch20101" title="2Depth Title" subtxt="Sub text" />
+                            <SwitchItem name="Switch20102" title="2Depth Title" subtxt="Sub text" />
+                        </SwitchGroup>
+                        <SwitchItem name="Switch202" title="1Depth Title" />
+                    </ul>
+                </div>
+                <div className="dvgroup last">
+                    {/* 추천직원 */}
+                    <div className="switchbox">
+                        <SwitchItem tag="div" title="추천직원" name="switch" onChange={switchOnChange} />
+                        {
+                            switchToggle &&
+                            <div className="field_wrap sch_popup" ref={scrollRef}>
+                                <SearchField title={t("ls0101_0045")} icoText="직원찾기 검색" readOnly /> {/* 공통 직원찾기(SMJ1E01P00) 팝업 호출 */}
+                            </div>
+                        } 
+                    </div>
+                </div>
+                <br/><br/><br/>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default Switch;
