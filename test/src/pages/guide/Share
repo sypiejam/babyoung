@@ -1,0 +1,31 @@
+import { useTranslation } from "react-i18next";
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+
+function Share() {
+    const {t} = useTranslation();
+    return (
+        <Wrap>
+            <Header title="공유" back menu />
+            <Container>
+                {/* 공유하기 : 참고화면 SMJ2201P23, SMJ5309M03 */}
+                <div className="share_wrap">
+                    <div className="share_tit">{t('cs0306_0012')}</div>
+                    <div className="share_box">
+                        <button type="button" className="share_item">
+                            <i className="ico_kakao lg"></i>
+                            <span className="share_txt">{t('bk0201_0096')}</span>
+                        </button>
+                        <button type="button" className="share_item">
+                            <i className="ico_sms lg"></i>
+                            <span className="share_txt">{t('bk0201_0097')}</span>
+                        </button>
+                    </div>
+                </div>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default Share;
