@@ -1,0 +1,105 @@
+import { useState } from 'react';
+import { useTranslation } from "react-i18next";
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import { TabCont, TabMenu } from '../../common/components/tab/index';
+import { TagWrap, TagItem } from '../../common/components/tag/index';
+import { BadgeWrap, BadgeItem } from "../../common/components/badge/index";
+import { FloatingButtonWrap, ButtonWrap, Button, CustomA } from "../../common/components/button/index";
+
+function TabTagBadge() {
+    const {t} = useTranslation();
+    const [tabIdx, setTabIdx] = useState(0);
+    const [tabInfo, setTabInfo] = useState([
+        {tabname : "Tag", id: "tab1", tabPanel: 'tab01Panel'},
+        {tabname : "Badge", id: "tab2", tabPanel: 'tab02Panel'},
+    ]);
+    
+    // 페이지이동 탭 예시 화면 SMJ3310M00
+
+    return (
+        <Wrap>
+            <Header title="탭, 태그, 뱃지" back menu />
+            <Container hasFixed={(tabIdx===0)? true : false}>
+                <div className="tab_wrap">
+                    <div className="tab_head">
+                        <TabMenu tabInfo={tabInfo} tabIdx={tabIdx} onClick={setTabIdx} />
+                    </div>
+                    <TabCont tabcont={tabInfo[tabIdx]}>
+                        { // tab1
+                            tabIdx === 0 &&
+                            <>
+                                <div className="thead_wrap">
+                                    <h2 className="title_h1">Tag</h2>
+                                </div>
+                                <div className="dvgroup first">
+                                    <div className="title_wrap">
+                                        <strong className="title_h2">1. 기본형</strong>
+                                    </div>
+                                    <TagWrap>
+                                        <TagItem title="Tag Basic" />
+                                        <TagItem title="Tag" />
+                                    </TagWrap>
+                                </div>
+                                <div className="dvgroup last">
+                                    <div className="title_wrap">
+                                        <strong className="title_h2">2. 삭제버튼 있는 경우</strong>
+                                    </div>
+                                    <TagWrap>
+                                        <TagItem title="Tag" btnDelete />
+                                        <TagItem title="Tag medium if there is a delete button" btnDelete />
+                                    </TagWrap>
+                                </div>
+                            </>
+                        }
+                        { // tab2
+                            tabIdx === 1 &&
+                            <>
+                                <div className="thead_wrap">
+                                    <h2 className="title_h1">Badge</h2>
+                                </div>
+                                <div className="dvgroup first">
+                                    <div className="title_wrap">
+                                        <strong className="title_h2">1. 상태</strong>
+                                    </div>
+                                    <BadgeWrap>
+                                        <BadgeItem text="Default, Positive" />
+                                        <BadgeItem color="red" text="Caution, Denial" />
+                                        <BadgeItem color="disabled" text="Secondary, impossible" />
+                                    </BadgeWrap>
+                                </div>
+                                <div className="dvgroup last">
+                                    <div className="title_wrap">
+                                        <strong className="title_h2">2. 분류</strong>
+                                    </div>
+                                    <BadgeWrap>
+                                        <BadgeItem text="Satisfy" />
+                                        <BadgeItem color="red" text="주의" />
+                                        <BadgeItem color="green" text="다소안심" />
+                                        <BadgeItem color="yellow" text="보통" />
+                                        <BadgeItem color="orange" text="신중" />
+                                        <BadgeItem color="navy" text="Badge" />
+                                        <BadgeItem color="disabled" text="Not met" />
+                                    </BadgeWrap>
+                                </div>
+                            </>
+                        }
+                    </TabCont>
+                </div>
+                { // tab1
+                    (tabIdx === 0)&&
+                    <>
+                        <FloatingButtonWrap>
+                            <ButtonWrap>
+                                <CustomA type="styled" text="Button" status="primary" />
+                            </ButtonWrap>
+                        </FloatingButtonWrap>        
+                    </>
+                } 
+            </Container>
+        </Wrap>
+    );
+}
+
+export default TabTagBadge;
