@@ -2,23 +2,23 @@
 /* exc.css 우리글로벌뱅킹 재구축 : 외환/환전(SMJ3) */
 
 /* 환율조회 차트 */
-.exc_chart{overflow:hidden;padding:1.6rem 1.6rem 0.2rem;border:1px solid #c4cbd3;border-radius:0.6rem;}
-.exc_chart .ib_chart{margin-top:1.6rem;margin-right:-15px;}
-.exc_chart .ib_chart .highcharts-background{stroke:none;}
+.exc_chart {overflow:hidden;padding:1.6rem 1.6rem 0.2rem;border:1px solid #c4cbd3;border-radius:0.6rem;}
+.exc_chart .ib_chart {margin-top:1.6rem;margin-right:-15px;}
+.exc_chart .ib_chart .highcharts-background {stroke:none;}
 
 /* 통화선택 */
-.tab_wrap.popup_tab .tab_head{margin:0;}
-.tab_wrap.popup_tab .tab_body{overflow-y:auto;max-height:338px;padding:0 2rem 3.2rem;} /*리스트 5개가 최대로 나오게 높이 고정*/
+.tab_wrap.popup_tab .tab_head {margin:0;}
+.tab_wrap.popup_tab .tab_body {overflow-y:auto;max-height:338px;padding:0 2rem 3.2rem;} /*리스트 5개가 최대로 나오게 높이 고정*/
 
 /* 해외송금 */
-.icon_smj3307 {background-image:url("/public/images/exc/img_international_transfer.png");}
+.icon_smj3307 {background-image:url(/public/images/exc/img_international_transfer.png);}
 .exc_imgbox {overflow:hidden;margin-top:1.2rem;padding:1.2rem 2rem;border-radius:0.6rem;background-color:#f7f9fc;}
-.exc_wrap .title_wrap+.email_resultbox{margin-top:1.2rem;}
+.exc_wrap .title_wrap+.email_resultbox {margin-top:1.2rem;}
 .exc_wrap .email_resultbox {overflow-y:hidden;height:50rem;background-color:#f7f9fc;}
 .exc_wrap .email_resultbox>p {overflow-y:auto;height:100%;padding:2.4rem 2rem;}
 
 /* 캄보디아WING송금 */
-.icon_smj3927 {background-image:url("/public/images/exc/img_wing_transfer.png");}
+.icon_smj3927 {background-image:url(/public/images/exc/img_wing_transfer.png);}
 
 /* 캄보디아WING송금 > 송금내역조회 */
 .exc_wrap .txt_caption {margin-bottom:0.4rem;}
@@ -32,13 +32,12 @@
 .exc_wrap .exc_custbox_btm .infolist_rt {display:block;}
 .exc_wrap .remitbox {text-align:right;}
 .exc_wrap .remitbox .title_wrap {margin-bottom:0.4rem;}
-.exc_wrap .remit_btm .cur {display:inline-block;color: #333a40;font-size:2.1rem;}
+.exc_wrap .remit_btm .cur {display:inline-block;color:#333a40;font-size:2.1rem;}
 .exc_wrap .remit_btm .num {display:inline-block;margin-left:0.4rem;font-size:2.2rem;font-weight:500;}
 .exc_wrap .accordion_item .table {margin-top:0;}
 
 /* 캄보디아WING송금 > 최근송금 다시 보내기 */
 .exc_details .listbox {margin-bottom:0;}
-.exc_details .listbox_list:not(:first-child) {border-bottom:none;}
 .exc_details .custbox_btm {padding:2.4rem 0 0;}
 
 /* 환율계산기 */
@@ -46,7 +45,7 @@
 .exc_calc_panel {padding:1.6rem 2rem 2.4rem;border:1px solid #c4cbd3;border-radius:0.6rem;}
 .exc_calc_panel .inp_select_value {font-size:1.6rem;}
 .exc_calc_panel .inp_amount {margin-top:0;}
-.exc_calc_panel .equel {display:block;width:2.4rem;height:2.4rem;margin:3.2rem auto 3.6rem;background:url("/public/images/com/ic_sum_enabled.png") no-repeat 0 0 / 100%;}
+.exc_calc_panel .equel {display:block;width:2.4rem;height:2.4rem;margin:3.2rem auto 3.6rem;background:url(/public/images/com/ic_sum_enabled.png) no-repeat 0 0 / 100%;}
 .exc_calc_panel .txt_amount.btm {font-size:1.3rem;}
 .exc_calc_panel .txt_amount .unit:first-child {display:inline-block;margin:0;font-size:1.3rem;}
 .exc_calc_panel .txt_amount.btm .num {display:inline-block;margin-left:0.8rem;font-size:1.3rem;}
@@ -54,21 +53,16 @@
 .exc_calc_btm .btm_txt:not(:first-child) {display:inline-block;margin-left:0.3rem}
 
 /* 머니그램 */
-.icon_smj3518 {background:url("/public/images/exc/img_currency_moneygram.png") no-repeat 0 0 / 100%;}
+.icon_smj3518 {background:url(/public/images/exc/img_currency_moneygram.png) no-repeat 0 0 / 100%;}
 .exc_anchor_list {margin-top:1.6rem;}
-.exc_anchor_list li + li {margin-top:2.4rem;}
-
+.exc_anchor_list li+li {margin-top:2.4rem;}
 /* 우리ONE송금 인덱스 */
-.icon_smj3824 {background-image:url("/public/images/exc/img_currency_one_transfer.png");}
-
+.icon_smj3824 {background-image:url(/public/images/exc/img_currency_one_transfer.png);}
 /* 외국인 거래외국환은행지정 */
-.icon_smj3722 {background-image:url("/public/images/exc/img_currency_specify_foreign_bank.png");}
-
+.icon_smj3722 {background-image:url(/public/images/exc/img_currency_specify_foreign_bank.png);}
 /* 우리글로벌퀵송금 인덱스 */
-.icon_smj3413 {background-image:url("/public/images/exc/img_global_quick_transfers.png");}
-
+.icon_smj3413 {background-image:url(/public/images/exc/img_global_quick_transfers.png);}
 /* 다이렉트 송금정보변경 */
-.icon_smj4029 {background-image:url("/public/images/exc/img_change_direct_deposit_information.png");}
-
+.icon_smj4029 {background-image:url(/public/images/exc/img_change_direct_deposit_information.png);}
 /* 우리은련퀵송금 */
-.icon_smj3620 {background-image:url("/public/images/exc/img_unionpay_quick.png");}
+.icon_smj3620 {background-image:url(/public/images/exc/img_unionpay_quick.png);}
