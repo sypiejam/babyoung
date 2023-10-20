@@ -16,10 +16,12 @@ function SMJ2208M00(){
     const dispatch = useDispatch();
 
     const [tabIdx, setTabIdx] = useState(0);
-    const [tabInfo, setTabInfo] = useState([
+    // 2023-09-18 tabInfo 수정 st
+    const tabInfo = [
         {tabname : t("bk0205_0007"), id: "tab1", tabPanel: "tab01Panel"}, 
         {tabname : t("bk0207_0002"), id: "tab2", tabPanel: "tab02Panel"}, 
-    ]);
+    ];
+    // 2023-09-18 tabInfo 수정 end
 
     return(
         <Wrap>
