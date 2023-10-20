@@ -1,0 +1,77 @@
+
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { dialogAction } from "../../../../../common/store/dialogReducer";
+import { useState } from "react";
+import PopupFrame from "../../../../../common/components/popup/PopupFrame"
+import PopupHeader from "../../../../../common/components/popup/PopupHeader"
+import PopupContainer from "../../../../../common/components/popup/PopupContainer"
+import FloatingButtonWrap from "../../../../../common/components/button/FloatingButtonWrap";
+import ButtonWrap from "../../../../../common/components/button/ButtonWrap";
+import Button from "../../../../../common/components/button/Button";
+import SwitchItem from "../../../../../common/components/switch/SwitchItem";
+
+function SMJ5416P00(){
+    const {t} = useTranslation();
+    const dispatch = useDispatch();
+    
+    const [valueChk, setvalueChk] = useState([]); // 스위치 on,off 관리 state
+    const [toggle, setToggle] = useState(false); // 설정, 미설정 관리 state
+    
+    const valueChkFunc = (chk, name) => {
+        if(chk){
+            (name === 'push') ? setvalueChk(prev =>[...prev, name, 'login']) : setvalueChk(prev =>[...prev, name])
+        } else {
+            setvalueChk(valueChk.filter((el)=> el !== name))
+        }
+        (name === 'push') && setToggle((prev)=> !prev)
+       
+    }
+
+    const onChange =(chk, name, alarmMsg)=>{ // (체크여부, 스위치name, 다이얼로그메시지)
+        (!valueChk.includes(name) || !alarmMsg) ? valueChkFunc(chk, name) : 
+        dispatch(dialogAction({
+            type : "confirm",
+            title: alarmMsg, 
+            message : "",
+            btn1 : t("cs0404_0007"),
+            btn2 : t("cs0404_0008"), 
+            onClick1 : ()=>{
+                dispatch(dialogAction({}))
+            },
+            onClick2 : (e)=>{
+                valueChkFunc(chk, name)
+                dispatch(dialogAction({}))
+            }
+        }))
+    }
+
+    return(
+        <>
+            <PopupFrame>
+                <PopupHeader type="normal" title={t("cs0401_0005")} /> 
+                <PopupContainer>{/* 2023-09-15 hasFixed 삭제 */}
+                    <ul className="switch_wrap">
+                        <SwitchItem title={t("cs0404_0001")} name="push" onChange={(e)=> onChange(e.target.checked , 'push', t("cs0404_0006"))} chk={valueChk.includes('push')} />
+                        {
+                            toggle && 
+                            <>
+                                <SwitchItem title={t("cs0404_0012")} name="login" onChange={(e)=> onChange(e.target.checked , 'login')} chk={valueChk.includes('login')} />
+                                <SwitchItem title={t("cs0404_0005")} name="marketingpush" onChange={(e)=> onChange(e.target.checked , 'marketingpush', t("cs0404_0009"))} chk={valueChk.includes('marketingpush')} />
+                            </>
+                        }
+                    </ul>
+                    <hr className="hr full thick"></hr>
+                    <div className="dvgroup last">{/* 2023-09-15 last 클래스명 수정 */}
+                        <ul className="bullet">
+                            <li className="bullet_disc">{t("cs0404_0002")}</li>
+                            <li className="bullet_disc">{t("cs0404_0003")}</li>
+                        </ul>
+                    </div>
+                </PopupContainer>
+            </PopupFrame>
+        </>
+    )
+}
+
+export default SMJ5416P00
