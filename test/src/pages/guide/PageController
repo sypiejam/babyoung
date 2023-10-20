@@ -1,0 +1,54 @@
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import Step from "../../common/components/Step";
+import MoreBtn from "../../common/components/pageController/MoreBtn";
+import Pagination from "../../common/components/pageController/Pagination";
+import SmallLoadingBar from "../../common/components/pageController/SmallLoadingBar";
+import { FloatingButtonWrap, ButtonWrap, Button, CustomA } from "../../common/components/button/index";
+
+function PageController() {
+    return (
+        <Wrap>
+            <Header title="페이지 컨트롤러" back menu />
+            <Container>
+                <div className="dvgroup first">
+                    <div className="title_wrap">
+                        <strong className="title_h2">Step</strong>
+                    </div>
+                    <Step process={{cur : 1, total : 5}} title="Step Title 5단계 중 1단계">
+                        <ButtonWrap wauto>
+                            <Button size="md" btnClass="mt8" status="outlined" text="Button" />
+                        </ButtonWrap>
+                    </Step>
+                </div>
+                <hr className="hr full thick"/>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">More Button</strong>
+                    </div>
+                    <MoreBtn title="More" />
+                </div>
+                <hr className="hr full thick"/>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">Pagination</strong>
+                    </div>
+                    <Pagination />
+                    {/* 로직은 공통(개발)에서 처리 / 퍼블에서 사용할 props 없음 */}
+                </div>
+                <hr className="hr full thick"/>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h2">Infinity Scroll</strong>
+                    </div>
+                    <SmallLoadingBar />
+                    <SmallLoadingBar type="center" />
+                    <SmallLoadingBar type="right" />
+                </div>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default PageController;
