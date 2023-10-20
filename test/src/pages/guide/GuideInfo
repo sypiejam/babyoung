@@ -1,0 +1,128 @@
+[
+    {
+        "MENU_NM": "스타일 가이드",
+        "MENU_URL_ADR": "/guide/StyleGuide",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "레이아웃, 타이틀",
+        "MENU_URL_ADR": "/guide/Layout",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "레이아웃 팝업, 블릿",
+        "MENU_URL_ADR": "/guide/LayoutPopup",
+        "MENU_TYPE": "P",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "버튼",
+        "MENU_URL_ADR": "/guide/ButtonGuide",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "텍스트 컨테이너",
+        "MENU_URL_ADR": "/guide/TextContainer",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "페이지 컨트롤러",
+        "MENU_URL_ADR": "/guide/PageController",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "아코디언",
+        "MENU_URL_ADR": "/guide/AccordionGuide",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "텍스트필드, 캘린더",
+        "MENU_URL_ADR": "/guide/TextField",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "드롭다운, 바텀시트",
+        "MENU_URL_ADR": "/guide/DropdownBtmsheet",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "체크박스, 라디오버튼, 서치필드",
+        "MENU_URL_ADR": "/guide/CheckRadioSearch",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "약관",
+        "MENU_URL_ADR": "/SMJ1/SMJ1D/SMJ1D01/SMJ1D01M00",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "세그먼트",
+        "MENU_URL_ADR": "/guide/Segment",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "스위치",
+        "MENU_URL_ADR": "/guide/Switch",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "결과없음, 플래시 메시지",
+        "MENU_URL_ADR": "/guide/EmptyFlash",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "알아두세요",
+        "MENU_URL_ADR": "/guide/NoticeGuide",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "리스트",
+        "MENU_URL_ADR": "/guide/ListGuide",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "테이블",
+        "MENU_URL_ADR": "/guide/Table",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "탭, 태그, 뱃지",
+        "MENU_URL_ADR": "/guide/TabTagBadge",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "탑에어리어",
+        "MENU_URL_ADR": "/guide/TopArea",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "아이콘",
+        "MENU_URL_ADR": "/guide/Icon",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    },
+    {
+        "MENU_NM": "공유하기",
+        "MENU_URL_ADR": "/guide/Share",
+        "MENU_TYPE": "M",
+        "IS_ROUTE": "Y"
+    }
+]
