@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-function CustomPoupHader({ children }) {
+function CustomPopupHeader({ children }) {
 
     return <StyledCustomHader>{children}</StyledCustomHader>;
 }
@@ -16,4 +16,4 @@ const StyledCustomHader = styled.div`
     }
 `;
 
-export default CustomPoupHader;
+export default CustomPopupHeader;
