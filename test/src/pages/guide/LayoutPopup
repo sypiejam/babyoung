@@ -1,0 +1,51 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import PopupFrame from "../../common/components/popup/PopupFrame";
+import PopupHeader from "../../common/components/popup/PopupHeader";
+import PopupContainer from "../../common/components/popup/PopupContainer";
+import { FloatingButtonWrap, ButtonWrap, Button } from "../../common/components/button/index";
+
+function LayoutPopup(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    return(
+        <PopupFrame>
+            <PopupHeader type="normal" title="레이아웃 팝업" />
+            <PopupContainer hasFixed>
+                <div className="dvgroup only">
+                    <div className="bulletbox">
+                        <div className="title_wrap">
+                            <strong className="title_h3">Title Bullet</strong>
+                        </div>
+                        <ul className="bullet">
+                            <li className="bullet_item">Enter the content Enter the content Enter the content.</li>
+                            <li className="bullet_item fw500">Use to emphasize content.</li>
+                            <li className="bullet_item fc-blue02">Enter the content Enter the content Enter the content.</li>
+                            <li className="bullet_disc">Enter the content Enter the content Enter the content.</li>
+                            <li className="bullet_disc fc-blue02">Enter the content Enter the content Enter the content.</li>
+                            <li className="bullet_dash">Enter the content Enter the content Enter the content.</li>
+                            <li className="bullet_dash fc-blue02">Enter the content Enter the content Enter the content.</li>
+                            <li className="bullet_number"><span className="num">1.</span>Enter the content Enter the content Enter the content.
+                                <ul className="bullet">
+                                    <li className="bullet_dash fc-point01">Enter the content Enter the content Enter the content.
+                                        <p className="txt_footnote">Enter the content Enter the content Enter the content.</p>
+                                        <p className="txt_footnote fc-point01">Enter the content Enter the content Enter the content.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li className="bullet_number fc-blue02"><span className="num">2.</span>Enter the content Enter the content Enter the content.</li>
+                            <li className="bullet_number"><span className="num">99.</span>Enter the content Enter the content Enter the content.</li>
+                        </ul>
+                    </div>
+                </div>
+                <FloatingButtonWrap>
+                    <ButtonWrap>
+                        <Button type="styled" text={t('co1501_0010')} callback={()=> navigate(".")} status="primary" />
+                    </ButtonWrap>
+                </FloatingButtonWrap>
+            </PopupContainer>
+        </PopupFrame>
+    )
+}
+
+export default LayoutPopup;
