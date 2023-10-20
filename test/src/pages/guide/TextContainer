@@ -1,0 +1,246 @@
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import { FloatingButtonWrap, ButtonWrap, Button, CustomA } from "../../common/components/button/index";
+
+function TextContainer() {
+    return (
+        <Wrap>
+            <Header title="텍스트 컨테이너" back menu />
+            <Container>
+                <div className="dvgroup first">
+                    <div className="title_wrap">
+                        <strong className="title_h1">Color</strong>
+                    </div>
+                    <div className="fc-blue01">.fc-blue01 : &#35;1490ef</div>
+                    <div className="fc-blue02">.fc-blue02 : &#35;1056c3</div>
+                    <div className="fc-blue03">.fc-blue03 : &#35;0b3497</div>
+                    <div className="fc-point01">.fc-point01 : &#35;e5483d</div>
+                    <div className="fc-point02 bg-blue">.fc-point02 : &#35;fff27d / .bg-blue : &#35;0b3497</div>
+                    <div className="fc-gray01 bg-gray11">.fc-gray01 : &#35;151c22 / .bg-gray11 : &#35;f7f9fc</div>
+                    <div className="fc-gray02">.fc-gray02 : &#35;333a40</div>
+                    <div className="fc-gray03">.fc-gray03 : &#35;4c5459</div>
+                    <div className="fc-gray04">.fc-gray04 : &#35;686e75</div>
+                    <div className="fc-gray05">.fc-gray05 : &#35;848a92</div>
+                    <div className="fc-gray06">.fc-gray06 : &#35;a1a9b2</div>
+                    <div className="fc-gray07">.fc-gray07 : &#35;c4cbd3</div>
+                    <div className="fc-gray08">.fc-gray08 : &#35;d5dbe3</div>
+                    <div className="fc-gray09">.fc-gray09 : &#35;e4eaf2</div>
+                    <div className="fc-gray10">.fc-gray10 : &#35;f2f5f9</div>
+                    <div className="fc-gray11 bg-gray">.fc-gray11 : &#35;f7f9fc / .bg-gray : &#35;e4eaf2</div>
+                </div>
+                <hr className="hr full thick"/>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h1">Desc Box / color : &#35;333a40</strong>
+                    </div>
+                    <div className="descbox">
+                        <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한 사람 대한으로 길이 보전하세;</p>
+                        <strong className="title_lv3 mt8 mb4">말줄임 1줄 .tx-over</strong>
+                        <p className="tx-over">남산 위에 저 소나무 철갑을 두른 듯 바람 서리 불변함은 우리 기상일세 무궁화 삼천리 화려강산 대한 사람 대한으로 길이 보전하세</p>
+                        <strong className="title_lv3 mt8 mb4">말줄임 2줄 .tx-over.elli2</strong>
+                        <p className="tx-over elli2">가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편단심일세 무궁화 삼천리 화려강산 대한 사람 대한으로 길이 보전하세</p>
+                    </div>
+                    <hr className="hr mg16"/>
+                    <div className="descbox bg">
+                        <p>padding:1.2rem 1.6rem; Table of Tax Treaty Limitation Rates by Contracting State.</p>
+                        <div className="link_wrap tr"><button type="button" className="link_line"><span>Button</span></button></div>
+                    </div>
+                    <hr className="hr mg16"/>
+                    <div className="descbox bg wd">
+                        <ul className="bullet">
+                            <li className="bullet_disc">.descbox.bg.wd</li>
+                            <li className="bullet_disc">padding:1.6rem 2rem;</li>
+                            <li className="bullet_disc">Enter the content Enter the content Enter the content.</li>
+                        </ul>
+                    </div>
+                    <hr className="hr mg16"/>
+                    <div className="descbox bd">
+                        <div className="title_wrap">
+                            <strong className="title_h3">Title Bullet</strong>
+                        </div>
+                        <ul className="bullet">
+                            <li className="bullet_number"><span className="num">1.</span>.descbox.bd</li>
+                            <li className="bullet_number"><span className="num">2.</span>padding:1.6rem 2rem;border:1px solid &#35;d5dbe3;border-radius:0.6rem;</li>
+                            <li className="bullet_number"><span className="num">3.</span>Enter the content.</li>
+                        </ul>
+                    </div>
+                    <hr className="hr mg16"/>
+                    <div className="bordbox">
+                        <div className="title_wrap">
+                            <strong className="title_h3">.bordbox</strong>
+                        </div>
+                        <div className="graybox fc-gray04">
+                            <p>padding:2.4rem 2rem;border:1px solid #e4eaf2;border-radius:1rem;</p>
+                        </div>
+                    </div>
+                    <hr className="hr mg16"/>
+                    <div className="title_wrap">
+                        <strong className="title_h1">Gray font Box</strong>
+                    </div>
+                    <div className="graybox">
+                        <p>font-size:1.3rem; + .fc-gray&#35;&#35;</p>
+                    </div>
+                </div>
+                <hr className="hr full thick"/>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <h3 className="title_h1">Title Big</h3>
+                    </div>
+                    <div className="title_wrap">
+                        <strong className="title_h1">Level 1 = Title H1</strong>
+                    </div>
+                    <div className="title_wrap help_wrap">
+                        <strong className="title_h3">Level 2 = Title H3</strong>
+                        <button type="button" className="ico_help btn_help"><span className="blind">도움말</span></button>
+                    </div>
+                    <div className="title_wrap">
+                        <strong className="title_lv3">Level 3 (1.5rem) 400 &#35;4c5459</strong>
+                    </div>
+                    <hr className="hr mg8"/>
+                    <div className="title_wrap title_flex">
+                        <div className="d-flex">
+                            <i className="ico_flag kr"></i>
+                            <strong className="title_h2">Title Level 2</strong>
+                        </div>
+                        <div className="chk_star">
+                            <input type="checkbox" id="chkStar1" className="blind" />
+                            <label htmlFor="chkStar1" className="ico_star"><span className="blind">즐겨찾기 등록</span></label>
+                        </div>
+                    </div>
+                    <hr className="hr mg8"/>
+                    <div className="title_wrap title_flex">
+                        <strong className="title_h2">타이틀 + 버튼</strong>
+                        <ButtonWrap>
+                            <Button tag="button" size="sm" text="Delete" icon="delete" status="gray" />
+                        </ButtonWrap>
+                    </div>
+                    <hr className="hr mg8"/>
+                    <a href="#none" className="title_wrap title_flex">
+                        <strong className="title_h2">Title + Arrow</strong>
+                        <i className="ico_arrow"></i>
+                    </a>
+                </div>
+                <hr className="hr full thick"/>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <h3 className="title_h1">Title Text</h3>
+                    </div>
+                    <div className="title_wrap help_wrap">
+                        <strong className="title_lv3">타이틀 + 도움말</strong>
+                        <button type="button" className="ico_help btn_help"><span className="blind">도움말</span></button>
+                    </div>
+                    <hr className="hr mg8"/>
+                    <div className="title_wrap title_flex">
+                        <div className="d-flex">
+                            <i className="ico_flag kr"></i>
+                            <strong className="title_lv3">타이틀 + 아이콘</strong>
+                        </div>
+                        <div className="chk_star">
+                            <input type="checkbox" id="chkStar2" className="blind" />
+                            <label htmlFor="chkStar2" className="ico_star"><span className="blind">즐겨찾기 등록</span></label>
+                        </div>
+                    </div>
+                    <hr className="hr mg8"/>
+                    <div className="title_flex link_wrap">
+                        <em className="inp_title">Mobile phone number flex</em>
+                        <a href="#none" className="link_arr arr_right"><span>Change customer information</span></a>
+                    </div>
+                    <hr className="hr mg8"/>
+                    {/* !!! 아이템이 양끝에 정렬된 형태는 다국어 고려하여 겹치면 우측아이템 떨어지도록 title_float 클래스 사용 !!! */}
+                    <div className="title_float link_wrap">
+                        <em className="inp_title">Subject float Subject Subject</em>
+                        <a href="#none" className="link_arr arr_right"><span>Arrow right link</span></a>
+                    </div>
+                    <hr className="hr mg8"/>
+                    <div className="title_float link_wrap">
+                        <div className="title_wrap help_wrap">
+                            <em className="inp_title">Subject float Subject Subject Subject Subject Subject Subject</em>
+                            <button type="button" className="ico_info btn_info"><span className="blind">도움말</span></button>
+                        </div>
+                        <a href="#none" className="link_arr arr_right"><span>Arrow right link</span></a>
+                    </div>
+                    <hr className="hr mg8"/>
+                    <div className="title_wrap d-float">
+                        <strong className="title_lv3">타이틀 + 버튼은 제목 우측에 배치하되, 문구가 길어질 경우에는 제목과 버튼의 배치를 줄바꿈하여 표현할 수 있다.</strong>
+                        <div className="link_wrap">
+                            <a href="#none" className="link_arr arr_right"><span>button</span></a>
+                        </div>
+                    </div>
+                </div>
+                <hr className="hr full thick"/>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h1">Helper</strong>
+                    </div>
+                    <div>
+                        <div className="title_wrap">
+                            <strong className="title_lv3">텍스트형</strong>
+                        </div>
+                        {/* default : align right / bullet : align left
+                        Form 요소 및 그룹, 항목의 설명을 돕는 보조 텍스트로 사용 */}
+                        <div className="txt_helper">
+                            <p className="bullet_disc">Enter an additional description.</p>
+                            <p>블릿을 제거할 경우 우측 정렬</p>
+                        </div>
+                        <div>
+                            <p className="txt_caption">Text Caption 1.3rem / &#35;848a92</p>
+                        </div>
+                        {/* default : display none & align left
+                        Textfield 하단에 에러값을 입력한 경우 사용 */}
+                        <div className="is-error">
+                            <div className="txt_error">
+                                <p>Enter an error message</p>
+                            </div>
+                            <div className="txt_error">
+                                <p className="tr">Enter an error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr className="hr mg16"/>
+                    <div>
+                        <div className="title_wrap">
+                            <strong className="title_lv3">금액형</strong>
+                        </div>
+                        <div className="txt_amount">
+                            <button type="button" className="btn_refresh">
+                                <div className="d-flex"><span>Balance inquiry failed</span><i className="ico_refresh ml8"></i></div>
+                            </button>
+                        </div>
+                        {/* default : align right
+                        Textfield 상단에 입력된 금액을 나열해주는 영역 */}
+                        <div className="txt_amount">
+                            <em className="num">900</em><span className="unit">Billion</span>
+                        </div>
+                        {/* Textfield 하단에 사용자 잔액을 보여주는 영역 : 클래스 btm 추가 */}
+                        <div className="txt_amount btm">
+                            <span className="unit">Balance</span><span className="unit">KRW</span><em className="num">9,999,000</em>
+                        </div>
+                    </div>
+                </div>
+                <hr className="hr full thick"/>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h1">Footnote</strong>
+                    </div>
+                    <div className="descbox">
+                        <p className="txt_footnote">Enter the content Enter the content Enter the content.</p>
+                        <p className="txt_footnote fc-point01">Enter the content Enter the content.</p>
+                    </div>
+                </div>
+                <hr className="hr full thick"/>
+                <div className="dvgroup last">
+                    <div className="title_wrap">
+                        <strong className="title_h1">Info / Help</strong>
+                    </div>
+                    <div className="descbox">
+                        <p className="txt_info">단, 등록되어 있는 스마트폰을 통해서만 이용 가능합니다.</p>
+                        <p className="txt_help">단, 등록되어 있는 스마트폰을 통해서만 이용 가능합니다.</p>
+                    </div>
+                </div>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default TextContainer;
