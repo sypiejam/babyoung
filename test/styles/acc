@@ -12,10 +12,10 @@
 .acc_summary .acc_copy {display:block;width:2.4rem;height:2.4rem;margin:-0.1rem 0 0 0.4rem;background:url(/public/images/com/ic_copy.png) no-repeat 0 0 / 100%;}
 .acc_summary .acc_name {margin-top:0.4rem;color:#686e75;}
 .acc_summary .acc_vertual {margin-top:0.4rem;color:#686e75;font-size:1.5rem;}
-.acc_summary .acc_name ~ .acc_balance {margin-top:2.4rem}
+.acc_summary .acc_name~.acc_balance {margin-top:2.4rem;}
 .acc_summary .detail {color:#454c49;}
 .acc_summary .btn_wrap {margin-top:2.4rem}
-.acc_summary .btn_wrap [class*="btn_"] ~ [class*="btn_"] {margin-top:0.8rem}
+.acc_summary .btn_wrap [class*="btn_"]~[class*="btn_"] {margin-top:0.8rem;}
 .acc_summary.acc_detail {padding-bottom:0;}
 .acc_summary.trans_detail {padding:2.4rem 0 2rem;}
 .acc_balance {text-align:right;}
@@ -35,7 +35,6 @@
 .acc_balance .rate_info .acc_plus {color:#151c22;}
 .acc_balance .rate_info .txt {margin-right:0.4rem;font-weight:500;}
 .acc_balance .rate_info .data {font-size:1.7rem;}
-.acc_balance .rate_info .rate {margin-left:0.4rem;}
 .acc_balance .rate_info .no_rate {margin-left:0;font-size:1.5rem;color:#848a92;}
 .acc_balance .help_info .ico_help {margin-top:-0.3rem;}
 
@@ -59,7 +58,7 @@
 .acc_main_list .accordion_wrap .accordion_head::after {top:1.6rem;right:2rem;}
 .acc_main_list .accordion_head .count {display:flex;justify-content:center;align-items:center;width:2.4rem;height:2.1rem;margin:0.1rem 0 0 0.8rem;background:#f2f5f9;border-radius:10rem;font-weight:500;font-size:1.3rem;color:#686e75;}
 .acc_main_list .accordion_item {border:1px solid #d5dbe3;border-radius:0.6rem;}
-.acc_main_list .accordion_item ~ .accordion_item {margin-top:1.6rem;} 
+.acc_main_list .accordion_item~.accordion_item {margin-top:1.6rem;} 
 .acc_main_list .accordion_wrap .accordion_body {padding:0;border-bottom:0;}
 .acc_infomation .acc_balance {margin-top:0.4rem;text-align:left;}
 .acc_infomation .type {color:#1056c3;}
@@ -80,7 +79,6 @@
 .acc_typanel .btm_info .data {font-size:1.4rem;font-weight:500;}
 .acc_typanel .btm_info .cur {font-weight:400;font-size:1.3rem;color:#686e75;}
 .acc_typanel .btm_info .sum {margin-left:0.2rem;font-weight:500;font-size:1.4rem;color:#686e75;}
-.acc_typanel .btm_info .rate {margin:0;}
 .acc_typanel .ico_accset {z-index:10;position:absolute;right:0.4rem;top:1.8rem;width:3.6rem;height:3.6rem;background-size:2.4rem;background-position:50%;}
 
 /* 거래내역조회(리스트) */
@@ -98,7 +96,7 @@
 .acc_list_item .btm_item {margin-top:0.4rem;font-size:1.3rem;}
 .acc_list_item .category {overflow:hidden;display:block;text-overflow:ellipsis;white-space:nowrap;margin-top:0.2rem;font-weight:400;font-size:1.3rem;color:#848a92;}
 .acc_list_item .briefs {overflow:hidden;display:-webkit-box;width:100%;-webkit-line-clamp:2;-webkit-box-orient:vertical;white-space:pre-wrap;font-weight:500;font-size:1.5rem;color:#333a40;}
-.acc_list_item .briefs + .category {margin-top:0.4rem;}
+.acc_list_item .briefs+.category {margin-top:0.4rem;}
 .acc_list_item .txt_area {flex:1;overflow:hidden;}
 .acc_list_item .sum_area {margin-left:0.8rem;font-size:1.6rem;text-align:right;}
 .acc_list_item .time_area {margin-left:0.4rem;color:#848a92;}
@@ -116,7 +114,7 @@
 /* 거래내역조건설정팝업 */
 .acc_toggle .accordion_wrap {padding-top:0;}
 .acc_toggle .accordion_wrap::before {content:none;}
-.acc_toggle .accordion_wrap .accordion_head +.accordion_body {padding:2.4rem 0 0 0;border-bottom:0;}
+.acc_toggle .accordion_wrap .accordion_head+.accordion_body {padding:2.4rem 0 0 0;border-bottom:0;}
 .acc_toggle .accordion_wrap .accordion_head {padding:0 2.8rem 0;border:0;font-weight:400;font-size:1.5rem;color:#4c5459;text-align:right;}
 .acc_toggle .accordion_wrap .accordion_head::after {top:0;}
 .acc_toggle .accordion_wrap .inp_text {text-align:right;}
@@ -125,10 +123,10 @@
 .acc_wrap .condition .item {justify-content:flex-start;}
 .acc_search {padding:2.4rem 0 0;}
 .acc_search .search_terms {font-size:1.3rem;line-height:1.4;}
-.acc_search .search_terms ~ .search_terms {position:relative;margin-left:1rem;padding-left:1.1rem;}
-.acc_search .search_terms ~ .search_terms:before {content:'';position:absolute;top:0.5rem;left:0;width:0.1rem;height:1.1rem;background:#c4cbd3;}
-.acc_search ~ .acc_list {margin-top:2.4rem;border-top:1px solid #f2f5f9;}
-.acc_result ~ .acc_list {margin-top:0;border:none;}
+.acc_search .search_terms~.search_terms {position:relative;margin-left:1rem;padding-left:1.1rem;}
+.acc_search .search_terms~.search_terms:before {content:'';position:absolute;top:0.5rem;left:0;width:0.1rem;height:1.1rem;background:#c4cbd3;}
+.acc_search~.acc_list {margin-top:2.4rem;border-top:1px solid #f2f5f9;}
+.acc_result~.acc_list {margin-top:0;border:none;}
 .acc_result {margin-top:0.4rem;}
 .acc_result .accordion_head {padding-top:0;}
 .acc_result .accordion_head .flt {font-weight:400;font-size:1.5rem;}
@@ -137,7 +135,7 @@
 .acc_result .accordion_body {position:relative;padding:0.8rem 2rem 1.6rem;font-size:1.3rem;color:#151c22;}
 
 /* 거래상세 */
-.acc_accordion .accordion_body .tbl_list ~ .tbl_list {margin-top:3.2rem;}
+.acc_accordion .accordion_body .tbl_list~.tbl_list {margin-top:3.2rem;}
 
 /* 통장사본조회 */
 .acc_bankbook .acc_search {padding-top:3.2rem;}
@@ -147,7 +145,7 @@
 .acc_bankbook .sumbox {margin-top:0.8rem;text-align:right;}
 .acc_bankbook .sumbox .cur {margin-right:0.4rem;font-size:2.1rem;color:#333a40;}
 .acc_bankbook .sumbox .sum {font-weight:500;font-size:2.2rem;color:#151c22;}
-.acc_bankbook .listbox {margin-bottom:0}
+.acc_bankbook .listbox {margin-bottom:0;}
 .acc_bankbook .listbox_list:last-child {border-bottom:0;}
 
 /* 통장사본조회 상세 as-is소스 */
