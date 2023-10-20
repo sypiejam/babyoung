@@ -1,0 +1,239 @@
+import { useState } from "react";
+import Wrap from "../../common/components/layout/Wrap";
+import Header from "../../common/components/layout/Header";
+import Container from "../../common/components/layout/Container";
+import { FloatingButtonWrap, ButtonWrap, Button, CustomA } from "../../common/components/button/index";
+
+function Table() {
+    const [tableActive, setTableActive] = useState(false);
+    return (
+        <Wrap>
+            <Header title="테이블" back menu />
+            <Container>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">1. 기본형</h2>
+                </div>
+                <div className="dvgroup">
+                    <div className="table_wrap">
+                        <div className="table tbl_basic">
+                            <table>
+                                <colgroup>
+                                    <col style={{width:"40%"}}/>
+                                    <col/>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">국가</th>
+                                        <th scope="col">식별코드</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>미국</td>
+                                        <td>내ABANO(ROUTING NO.)(9자리)CHIPS NO.(4자리)용</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div className="table_wrap">
+                        {/* 셀의 개수가 4개 이상이거나 내용이 많을 경우 라인으로 구별 : 클래스 brd 추가 */}
+                        <div className="table tbl_basic brd">
+                            <table>
+                                <colgroup>
+                                    <col/>
+                                    <col/>
+                                    <col/>
+                                    <col/>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">국가</th>
+                                        <th scope="col">식별코드</th>
+                                        <th scope="col">국가</th>
+                                        <th scope="col">식별코드</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>미국</td>
+                                        <td>내ABANO(ROUTING NO.)(9자리)CHIPS NO.(4자리)용</td>
+                                        <td>KZ</td>
+                                        <td>카자흐스탄(Kazakhstan)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <hr className="hr full thick"/>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">2. 리스트형</h2>
+                </div>
+                <div className="dvgroup">
+                    <div className="title_wrap">
+                        <strong className="title_h3">Table title</strong>
+                    </div>
+                    <div className="table_wrap">
+                        <div className="table tbl_list">
+                            <table>
+                                <caption>Recipient's Account, Transfer Amount</caption>
+                                <colgroup>
+                                    <col style={{width:"40%"}}/>
+                                    <col/>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Recipient's Account</th>
+                                        <td>우리은행<br/>1002-757-123456</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Transfer Amount</th>
+                                        <td><em className="fc-blue02">KRW <span className="d-inblk">999,999,999,999,999</span></em></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            {   tableActive&&
+                                <table>
+                                    <caption>Withdrawal Account, Fees, Transfer Date, Transfer Confirmation</caption>
+                                    <colgroup>
+                                        <col style={{width:"40%"}}/>
+                                        <col/>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Withdrawal Account</th>
+                                            <td>우리은행<br/>1002-757-123456</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Fees</th>
+                                            <td>Account Holder</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Transfer Date</th>
+                                            <td>2022.05.05 즉시</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Transfer Confirmation</th>
+                                            <td>
+                                                <div className="link_wrap">
+                                                    <CustomA href="" btnClass="link_line">Confirm</CustomA>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            }
+                        </div>
+                        <div className="tbl_bottom link_wrap d-float">
+                            <button type="button" className="link_icon btn_share"><span>Share</span></button>
+                            <button type="button" className={`link_arr arr_toggle${tableActive===true?" is-active" : ""}`} onClick={()=>setTableActive(!tableActive)}><span>{(tableActive)? "Close" : "More"}</span></button>
+                        </div>                    
+                    </div>
+                </div>
+
+                <hr className="hr full thick"/>
+                <div className="thead_wrap">
+                    <h2 className="title_h1">3. 라운드형</h2>
+                </div>
+                <div className="dvgroup last">
+                    <div className="title_wrap">
+                        <strong className="title_h3">Table Round</strong>
+                    </div>
+                    <div className="table_wrap">
+                        <div className="table tbl_round">
+                            <table>
+                                <caption>Transfer Number, Transfer Date, Purpose of Transfer</caption>
+                                <colgroup>
+                                    <col style={{width:"50%"}} />
+                                    <col />
+                                </colgroup>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row">외화계좌 출금 예상금액</th>
+                                        <td><em className="fc-blue02">USD 100,00</em></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">원화계좌 출금 예상금액</th>
+                                        <td><em className="fc-blue02">KRW 2,500</em></td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Transfer Number</th>
+                                        <td><em className="fc-blue02">66335944</em></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Transfer Date</th>
+                                        <td>2023.01.01</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">송금액</th>
+                                        <td>USD 100.00</td>
+                                    </tr>
+                                    <tr className="nobrd">
+                                        <th scope="row">외화계좌출금</th>
+                                        <td>USD 100.00</td>
+                                    </tr>
+                                    <tr className="nobrd">
+                                        <th scope="row">원화계좌출금</th>
+                                        <td>KRW 0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Total fee amount</th>
+                                        <td><em className="fw700">KRW 27,835</em></td>
+                                    </tr>
+                                    <tr className="tbldep2">
+                                        <td colspan="2">
+                                            <ul>
+                                                <li className="tbldep2_item">
+                                                    <span className="tit">Telegraphic</span>
+                                                    <span className="txt">Exemptions</span>
+                                                </li>
+                                                <li className="tbldep2_item">
+                                                    <span className="tit">Telegraphic charges</span>
+                                                    <span className="txt">Exemptions</span>
+                                                </li>
+                                                <li className="tbldep2_item">
+                                                    <span className="tit">Relay fees</span>
+                                                    <span className="txt">KRW 2,500</span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Withdrawal account number</th>
+                                        <td>1040-000-000000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div className="table_wrap">
+                        <div className="table tbl_round">
+                            <table>
+                                <caption>Table Round</caption>
+                                <colgroup>
+                                    <col style={{width:"50%"}}/>
+                                    <col/>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                            Title<button type="button" className="ico_help btn_help"><span className="blind">도움말</span></button>
+                                        </th>
+                                        <td>Contents</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <br/><br/><br/>
+            </Container>
+        </Wrap>
+    );
+}
+
+export default Table;
