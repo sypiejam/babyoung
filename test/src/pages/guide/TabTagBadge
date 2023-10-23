@@ -30,6 +30,23 @@ function TabTagBadge() {
                         { // tab1
                             tabIdx === 0 &&
                             <>
+                                {/* 세컨드 탭 st */}
+                                <div className="tab_scroll">
+                                    <div className="tab_dep2">
+                                        <ul className="tab_list">
+                                            <li className="tab_item">
+                                                <CustomA href="#none" btnClass="tab_btn is-active"><span className="tab_txt">Ganadardamabhasa</span></CustomA>{/* D : 선택시 is-active 클래스 토글 */}
+                                            </li>
+                                            <li className="tab_item">
+                                                <CustomA href="#none" btnClass="tab_btn"><span className="tab_txt">Abcdefg</span></CustomA>
+                                            </li>
+                                            <li className="tab_item">
+                                                <CustomA href="#none" btnClass="tab_btn"><span className="tab_txt">Hijklmn Opqrstu</span></CustomA>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {/* //세컨드 탭 end */}
                                 <div className="thead_wrap">
                                     <h2 className="title_h1">Tag</h2>
                                 </div>
