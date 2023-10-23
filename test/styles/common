@@ -956,9 +956,10 @@ input[type="search"]::-webkit-search-cancel-button {display:block;width:2.4rem;h
 .tab_scroll::-webkit-scrollbar {display:none;}
 .tab_dep2 {padding:1.2rem 0;}
 .tab_dep2 .tab_list {display:flex;white-space:nowrap;}
-.tab_dep2 .tab_item {flex:unset;scroll-snap-align:start;scroll-margin:1.6rem;min-height:auto;max-height:auto;}
+.tab_dep2 .tab_item {flex:unset;scroll-snap-align:start;scroll-margin:1.8rem;min-height:auto;max-height:auto;}
+.tab_dep2 .tab_item~.tab_item {margin-left:1.8rem;}
 .tab_dep2 .tab_item:first-child {margin-left:2rem;scroll-margin:2rem;}
-.tab_dep2 .tab_item:last-child {padding-right:1.6rem;}
+.tab_dep2 .tab_item:last-child {padding-right:1.8rem;}
 .tab_dep2 .tab_txt {display:inline-block;height:3.2rem;padding:0.2rem 0.8rem;font-size:1.5rem;line-height:2.8rem;}
 .tab_dep2 .tab_btn.is-active {border-radius:0.6rem;background:rgb(228 234 242 / 70%);}
 .tab_dep2 .tab_btn.is-active::after {display:none;}
