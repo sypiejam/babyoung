@@ -14,6 +14,7 @@ function Layout(){
             <Container hasFixed>
                 <div className="thead_wrap">
                     <h2 className="title_h1">Noto Sans CJK KR 모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다.</h2>
+                    <em className="title_h1">Roboto 0123456789 숫자만 사용</em>
                 </div>
                 <div className="dvgroup first">
                     {/* default : weight 700 */}
