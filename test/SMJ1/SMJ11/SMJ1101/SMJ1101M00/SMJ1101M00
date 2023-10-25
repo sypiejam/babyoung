@@ -109,6 +109,15 @@ function SMJ1101M00(){
                                     <SlickFrame>
                                         <Slider {...accSliderSet}>
                                             <AccSlideItem 
+                                                hideSum
+                                                cicode="020" 
+                                                accNumber="111111-11-111111" 
+                                                cur="KRW" 
+                                                accSum="999,999,999,999,999" 
+                                                accDetail={()=> navigate("/SMJ2102M00")} 
+                                                accTransfer={()=> navigate("/SMJ2201M00")} 
+                                            />
+                                            <AccSlideItem 
                                                 cicode="020" 
                                                 accNumber="111111-11-111111" 
                                                 cur="KRW" 
@@ -137,7 +146,7 @@ function SMJ1101M00(){
                         <div className="m-sec_remit">
                             <p className="remit_txt">{t("ma0500_0011")}</p>
                             <div className="m-remit_banner">
-                                { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                                { !loading && <div className="m-skeleton" aria-hidden="true"><span className="inner"></span></div> }
                                 <CustomA href="#none" btnClass="remit_link" callback={()=> navigate("/SMJ3413M00")}><span>{t("ma0500_0009")}</span></CustomA> {/* 우리글로벌 퀵송금 화면으로 이동 */}
                             </div> 
                         </div>
@@ -146,7 +155,7 @@ function SMJ1101M00(){
                     {/* 최근송금(로그인 후 최근송금내역 있는 경우 노출) */}
                     {   (login && transHistory) && 
                         <div className="m-sec_trans">
-                            { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                            { !loading && <div className="m-skeleton" aria-hidden="true"><span className="inner"></span></div> }
                             <div className="m-trans_wrap">
                                 <div className="m-trans_header">
                                     <h2 className="title_h6"><span>{t("ma0500_0012")}</span></h2>
@@ -196,7 +205,7 @@ function SMJ1101M00(){
 
                     {/* 환율정보 */}
                     <div className="m-sec_rate">
-                        { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                        { !loading && <div className="m-skeleton" aria-hidden="true"><span className="inner"></span></div> }
                         <h2 className="blind">{t("ma0600_0030")}</h2>
                         <div className="m-rate_slider">
                             <ul className="m-rate_items original">
@@ -251,7 +260,7 @@ function SMJ1101M00(){
                     </div>
                     
                     <div className="m-sec_banner">
-                        { !loading && <div className="m-skeleton" aria-hidden="true"></div> }
+                        { !loading && <div className="m-skeleton" aria-hidden="true"><span className="inner"></span></div> }
                         <div className="m-banner_slider" ref={refBanner}>
                             <h2 className="blind">공지 및 이벤트</h2>
                             <SlickFrame>
@@ -288,7 +297,7 @@ function SMJ1101M00(){
                     <div className="m-tabbar_inner">
                         <div className="m-tabbar_menu">
                             <CustomA href="#none" btnClass="tab_home is-active" callback={()=> navigate("/SMJ1101M00")}><span className="txt">{t("bk0101_0008")}</span></CustomA>
-                            <CustomA href="#none" btnClass="tab_inquiry" callback={()=> navigate("/SMJ2101M00")}><span className="txt">{t("bk0101_0009")}</span></CustomA>
+                            <CustomA href="#none" btnClass="tab_inquiry" callback={()=> navigate("/SMJ2101M00")}><span className="txt">{t("ma0500_0015")}</span></CustomA>
                             <CustomA href="#none" btnClass="tab_remittance" callback={()=> navigate("/SMJ3307M00")}><span className="txt">{t("bk0101_0010")}</span></CustomA>
                             <button type="button" className="tab_allmenu" onClick={()=>
                                 dispatch(popupAction({
@@ -296,7 +305,7 @@ function SMJ1101M00(){
                                     message : <SMJ1201P00 />,
                                     state : null
                                 }))
-                            }><span className="txt">{t("bk0101_0011")}</span></button>
+                            }><span className="txt">{t("ma0500_0010")}</span></button>
                         </div>
                     </div>
                 </div>
