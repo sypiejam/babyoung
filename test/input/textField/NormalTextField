@@ -11,6 +11,7 @@ import SmallLoadingBar from "../../pageController/SmallLoadingBar";
  * @props defaultValue(string) - value 값이 존재할 경우 사용
  * @props loading(boolean) - smallloadingbar가 노출 되는 경우
  * @props className - 기타 디자인 요소를 적용하기 위한 클래스 // 2023-09-01 추가
+ * @props children - .inp_item 하단에 마크업이 필요할때 사용
  **/ 
 
 function NormalTextField({ children, type, inputMode, status, defaultValue, placeholder, loading, id, className}) {
