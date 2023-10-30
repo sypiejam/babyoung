@@ -1,0 +1,121 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import Wrap from "../../../../../common/components/layout/Wrap";
+import Header from "../../../../../common/components/layout/Header";
+import Container from "../../../../../common/components/layout/Container";
+import CheckBox from "../../../../../common/components/input/CheckBox";
+import Step from "../../../../../common/components/Step";
+import { FloatingButtonWrap, ButtonWrap, Button, CustomA } from "../../../../../common/components/button/index";
+import SearchField from "../../../../../common/components/input/textField/SearchField";
+import CheckBoxGroup from "../../../../../common/components/input/CheckBoxGroup";
+
+function SMJ1D01M00(){
+    const {t} = useTranslation();
+    const navigate = useNavigate();
+    return(
+        <>
+            <Wrap>
+                <Header title="Acceptance of departure insurance claims" back menu />
+                <Container hasFixed>
+                    <Step process={{cur : 1, total : 4}} title="Service Use Agreement" />
+                    <div className="selections_wrap">
+                        <div className="selections_box multi">
+                            {/* depsArray : 2depth 체크박스 있는경우 배열형태로 기입 */}
+                            <CheckBoxGroup allCheck count="5" depsArray={['checkDep4_1', 'checkDep4_2']}> 
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox type="small" name="check" id="check01" text="About the collection and use of personal(credit) information" />
+                                        </div>
+                                        <CustomA href="#none" btnClass="ico_arrow small" callback={()=> navigate(".")}>
+                                            <span className="blind">바로가기</span>
+                                        </CustomA>
+                                    </div>
+                                </li>
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox type="small" name="check" id="check02" text="Inquiry of personal(credit) information" />
+                                        </div>
+                                        <CustomA href="#none" btnClass="ico_arrow small" callback={()=> navigate(".")}>
+                                            <span className="blind">바로가기</span>
+                                        </CustomA>
+                                    </div>
+                                </li>
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox type="small" name="check" id="check03" text="Provision of personal(credit) information" />
+                                        </div>
+                                        <CustomA href="#none" btnClass="ico_arrow small" callback={()=> navigate(".")}>
+                                            <span className="blind">바로가기</span>
+                                        </CustomA>
+                                    </div>
+                                </li>
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <CheckBox type="small" labelClass="fw500" name="check" id="check04" text="Handling of Sensitive and Uniquely Identifiable Information" />
+                                        </div>
+                                    </div>
+                                    <div className="selection_desc">
+                                        <p>
+                                            In accordance with the Personal Information Protection Act and the Act on the Use and Protection of Credit Information, the Company and its business trustees will process (collect, use, inquire, and provide) your sensitive information (illness and injury information) and unique indentification information (resident registration number, alien registration number, driver's license) as follows in response to your individual consent to the above personal (credit) information.
+                                        </p>
+                                    </div>
+                                    <ul className="selection_list">
+                                        <li className="selections_item">
+                                            <div className="inner">
+                                                <div className="selection">
+                                                    <CheckBox type="small" name="check" id="checkDep4_1" text="Processing of illness and injury information" />
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li className="selections_item">
+                                            <div className="inner">
+                                                <div className="selection">
+                                                    <CheckBox type="small" name="check" id="checkDep4_2" text="Resident registration number-Alien registration number-Diver's license number" />
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    {/* 2depth 체크박스 개발에서 처리 : 개발 단계에서 ul 대신 CheckBoxDepsGroup 컴포넌트 사용! props는 해당 컴포넌트 주석 참고! END */}
+                                </li>
+                                <li className="selections_item">
+                                    <div className="inner">
+                                        <div className="selection">
+                                            <div className="selection">
+                                                <CheckBox type="small" labelClass="fw500" name="check" id="check05" text="Confirmation" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="selection_desc"> 
+                                        <p>
+                                            In accordance with the Personal Information Protection Act and the Act on the Utilization and Protection of Credit Information, I confirm that I have read the contents of the 'Mandatory Consent Form for Insurance Claims'in Appendix2. regarding the collection, use, inquiry, and provision of personal(credit) information and the processing of sensitive information unique indentification information.
+                                        </p>
+                                    </div>
+                                </li>
+                            </CheckBoxGroup>
+                        </div>
+                    </div>
+
+                    <div className="field_wrap is-error"> {/* <!-- 에러시 클래스 is-error 추가 --> */}
+                        <em className="inp_title">Recommended Staff and Management</em>
+                        <SearchField title="Find a location or employee" icoText="직원찾기 검색" /> {/* t("co1200_0001") */}
+                        <div className="txt_error">
+                            <p>Enter an error message</p>{/* 2023-06-22 클래스 tr 삭제 */}
+                        </div>
+                    </div>
+                    <FloatingButtonWrap>
+                        <ButtonWrap wfix>
+                        <Button tag="button" text={t("co0200_0009")} status="negative" />{/* 2023-07-31 번역코드 적용, status 수정 gray => negative */}
+                            <Button tag="button" text={t("co1501_0040")} status="primary" />
+                        </ButtonWrap>
+                    </FloatingButtonWrap>
+                </Container>
+            </Wrap>
+        </>
+    );
+}
+
+export default SMJ1D01M00;
