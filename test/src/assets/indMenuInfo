@@ -1,0 +1,3978 @@
+[
+    {
+        "IF_ID": "",
+        "IF_NAME": "메인",
+        "MENU_LIST": [
+            {
+                "MENU_ID": "SMJ1101M00",
+                "MENU_NM": "홈",
+                "MENU_URL_ADR": "/SMJ1/SMJ11/SMJ1101/SMJ1101M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1102P00",
+                "MENU_NM": "(POP)대표계좌설정",
+                "MENU_URL_ADR": "/SMJ1/SMJ11/SMJ1102/SMJ1102P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1201P00",
+                "MENU_NM": "전체메뉴",
+                "MENU_URL_ADR": "/SMJ1/SMJ12/SMJ1201/SMJ1201P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            }
+        ]
+    },
+    {
+        "IF_ID": "",
+        "IF_NAME": "공통",
+        "MENU_LIST": [
+            {
+                "MENU_ID": "SMJ1301M00",
+                "MENU_NM": "로딩",
+                "MENU_URL_ADR": "/SMJ1/SMJ13/SMJ1301/SMJ1301M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1401M00",
+                "MENU_NM": "자동로그아웃완료안내",
+                "MENU_URL_ADR": "/SMJ1/SMJ14/SMJ1401/SMJ1401M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1402P00",
+                "MENU_NM": "(BOTTOM)자동로그아웃 안내",
+                "MENU_URL_ADR": "/SMJ1/SMJ14/SMJ1402/SMJ1402P00",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1403P00",
+                "MENU_NM": "(BOTTOM)로그아웃 안내",
+                "MENU_URL_ADR": "/SMJ1/SMJ14/SMJ1403/SMJ1403P00",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1404P00",
+                "MENU_NM": "(BOTTOM)앱종료 안내",
+                "MENU_URL_ADR": "/SMJ1/SMJ14/SMJ1404/SMJ1404P00",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1602P00",
+                "MENU_NM": "장애공지",
+                "MENU_URL_ADR": "/SMJ1/SMJ16/SMJ1602/SMJ1602P00",
+                "MENU_TYPE": "D",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1603P00",
+                "MENU_NM": "기타공지",
+                "MENU_URL_ADR": "/SMJ1/SMJ16/SMJ1603/SMJ1603P00",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1702M00",
+                "MENU_NM": "서버 에러 페이지",
+                "MENU_URL_ADR": "/SMJ1/SMJ17/SMJ1702/SMJ1702M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1703M00",
+                "MENU_NM": "Native 에러 페이지",
+                "MENU_URL_ADR": "/SMJ1/SMJ17/SMJ1703/SMJ1703M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1801P00",
+                "MENU_NM": "OTP비밀번호",
+                "MENU_URL_ADR": "/SMJ1/SMJ18/SMJ1801/SMJ1801P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1802P00",
+                "MENU_NM": "보안카드일련번호/비밀번호",
+                "MENU_URL_ADR": "/SMJ1/SMJ18/SMJ1802/SMJ1802P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1803P00",
+                "MENU_NM": "보안카드일련번호/비밀번호+인증서",
+                "MENU_URL_ADR": "/SMJ1/SMJ18/SMJ1803/SMJ1803P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1804P00",
+                "MENU_NM": "디지털 OTP 인증번호",
+                "MENU_URL_ADR": "/SMJ1/SMJ18/SMJ1804/SMJ1804P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1K01P00",
+                "MENU_NM": "(POP) 금융인증서",
+                "MENU_URL_ADR": "/SMJ1/SMJ1K/SMJ1K01/SMJ1K01P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1K02P00",
+                "MENU_NM": "(POP) 우리WON인증서",
+                "MENU_URL_ADR": "/SMJ1/SMJ1K/SMJ1K02/SMJ1K02P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1901P00",
+                "MENU_NM": "휴대폰 SMS 인증(휴대폰 번호 직접 입력)",
+                "MENU_URL_ADR": "/SMJ1/SMJ19/SMJ1901/SMJ1901P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1902M00",
+                "MENU_NM": "휴대폰 본인 인증(개인정보 직접 입력)",
+                "MENU_URL_ADR": "/SMJ1/SMJ19/SMJ1902/SMJ1902M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1903P00",
+                "MENU_NM": "휴대폰 본인 인증(회원의 휴대폰번호로로 인증)",
+                "MENU_URL_ADR": "/SMJ1/SMJ19/SMJ1903/SMJ1903P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1904P00",
+                "MENU_NM": "통신사 선택",
+                "MENU_URL_ADR": "/SMJ1/SMJ19/SMJ1904/SMJ1904P00",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1A01P00",
+                "MENU_NM": "휴대폰 SMS 인증",
+                "MENU_URL_ADR": "/SMJ1/SMJ1A/SMJ1A01/SMJ1A01P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1A01P01",
+                "MENU_NM": "(BOTTOM)인증번호전송",
+                "MENU_URL_ADR": "/SMJ1/SMJ1A/SMJ1A01/SMJ1A01P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1A02P00",
+                "MENU_NM": "ARS(2채널) 인증",
+                "MENU_URL_ADR": "/SMJ1/SMJ1A/SMJ1A02/SMJ1A02P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1A02P01",
+                "MENU_NM": "(BOTTOM)전화번호선택",
+                "MENU_URL_ADR": "/SMJ1/SMJ1A/SMJ1A02/SMJ1A02P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1A03P00",
+                "MENU_NM": "1회용 인증번호",
+                "MENU_URL_ADR": "/SMJ1/SMJ1A/SMJ1A03/SMJ1A03P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1A04P00",
+                "MENU_NM": "스마트간편인증_AOS",
+                "MENU_URL_ADR": "/SMJ1/SMJ1A/SMJ1A04/SMJ1A04P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1A04P01",
+                "MENU_NM": "스마트간편인증_Ios",
+                "MENU_URL_ADR": "/SMJ1/SMJ1A/SMJ1A04/SMJ1A04P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1A04P02",
+                "MENU_NM": "해외출국사실인증",
+                "MENU_URL_ADR": "/SMJ1/SMJ1A/SMJ1A04/SMJ1A04P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1A05P00",
+                "MENU_NM": "추가인증 수단 선택",
+                "MENU_URL_ADR": "/SMJ1/SMJ1A/SMJ1A05/SMJ1A05P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1B02P02",
+                "MENU_NM": "보안 숫자 키패드",
+                "MENU_URL_ADR": "/SMJ1/SMJ1B/SMJ1B02/SMJ1B02P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1B02P03",
+                "MENU_NM": "보안 문자 키패드",
+                "MENU_URL_ADR": "/SMJ1/SMJ1B/SMJ1B02/SMJ1B02P03",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1C01P00",
+                "MENU_NM": "달력형 캘린더-일선택",
+                "MENU_URL_ADR": "/SMJ1/SMJ1C/SMJ1C01/SMJ1C01P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1C02P00",
+                "MENU_NM": "달력형 캘린더-월선택",
+                "MENU_URL_ADR": "/SMJ1/SMJ1C/SMJ1C02/SMJ1C02P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1C03P00",
+                "MENU_NM": "리스트캘린더",
+                "MENU_URL_ADR": "/SMJ1/SMJ1C/SMJ1C03/SMJ1C03P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1D01M00",
+                "MENU_NM": "약관 ",
+                "MENU_URL_ADR": "/SMJ1/SMJ1D/SMJ1D01/SMJ1D01M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1D02P00",
+                "MENU_NM": "약관 상세 팝업",
+                "MENU_URL_ADR": "/SMJ1/SMJ1D/SMJ1D02/SMJ1D02P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1E01P00",
+                "MENU_NM": "(POP)직원찾기 직원명(탭)",
+                "MENU_URL_ADR": "/SMJ1/SMJ1E/SMJ1E01/SMJ1E01P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1E02P00",
+                "MENU_NM": "(POP)직원찾기 영업점(탭)",
+                "MENU_URL_ADR": "/SMJ1/SMJ1E/SMJ1E02/SMJ1E02P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1E03P00",
+                "MENU_NM": "(BOTTOM)직원선택",
+                "MENU_URL_ADR": "/SMJ1/SMJ1E/SMJ1E03/SMJ1E03P00",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1I01P00",
+                "MENU_NM": "(POP) 주소검색",
+                "MENU_URL_ADR": "/SMJ1/SMJ1I/SMJ1I01/SMJ1I01P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1F01M00",
+                "MENU_NM": "스플래시",
+                "MENU_URL_ADR": "/SMJ1/SMJ1F/SMJ1F01/SMJ1F01M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1G01M00",
+                "MENU_NM": "앱 접근권한 안내_안드로이드",
+                "MENU_URL_ADR": "/SMJ1/SMJ1G/SMJ1G01/SMJ1G01M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1G02M00",
+                "MENU_NM": "앱 접근권한 안내_iOS",
+                "MENU_URL_ADR": "/SMJ1/SMJ1G/SMJ1G02/SMJ1G02M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H01M00",
+                "MENU_NM": "아이디 로그인",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H01/SMJ1H01M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H01P08",
+                "MENU_NM": "최종 비밀번호 오류_아이디",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H01/SMJ1H01P08",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H01M01",
+                "MENU_NM": "휴대폰 본인확인",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H01/SMJ1H01M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H01M02",
+                "MENU_NM": "아이디 찾기",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H01/SMJ1H01M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H01M03",
+                "MENU_NM": "아이디 찾기_휴대폰없을경우",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H01/SMJ1H01M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H01M04",
+                "MENU_NM": "아이디 찾기결과",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H01/SMJ1H01M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H02M11",
+                "MENU_NM": "휴대폰 소유 확인(ios일 경우)",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H02/SMJ1H02M11",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H02M05",
+                "MENU_NM": "로그인 비밀번호 재설정_정보입력",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H02/SMJ1H02M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H02M06",
+                "MENU_NM": "로그인 비밀번호 재설정_비밀번호설정",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H02/SMJ1H02M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H02M12",
+                "MENU_NM": "추천직원 (6개월이상 장기 미사용 고객)",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H02/SMJ1H02M12",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H02M07",
+                "MENU_NM": "로그인 비밀번호 재설정 완료",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H02/SMJ1H02M07",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H02M08",
+                "MENU_NM": "본인확인 추가인증",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H02/SMJ1H02M08",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H02M09",
+                "MENU_NM": "회원정보 등록",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H02/SMJ1H02M09",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H02M10",
+                "MENU_NM": "회원정보 등록 완료",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H02/SMJ1H02M10",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H03P00",
+                "MENU_NM": "(BOTTOM)다른방법으로 로그인",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H03/SMJ1H03P00",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H04M00",
+                "MENU_NM": "공동인증서 로그인",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H04/SMJ1H04M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H04M01",
+                "MENU_NM": "공동인증서 로그인_인증서 없는경우",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H04/SMJ1H04M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H04M03",
+                "MENU_NM": "최종 비밀번호 오류_공동인증서",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H04/SMJ1H04M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H04M02",
+                "MENU_NM": "금융인증서 로그인",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H04/SMJ1H04M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H04P04",
+                "MENU_NM": "(POP)금융결제원 페이지",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H04/SMJ1H04P04",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H05M00",
+                "MENU_NM": "우리WON인증서 로그인",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H05/SMJ1H05M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H05P01",
+                "MENU_NM": "(POP)우리WON인증서 정보입력",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H05/SMJ1H05P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1H05P02",
+                "MENU_NM": "(POP)우리WON인증서 인증진행",
+                "MENU_URL_ADR": "/SMJ1/SMJ1H/SMJ1H05/SMJ1H05P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1I01P00",
+                "MENU_NM": "(POP) 주소검색",
+                "MENU_URL_ADR": "/SMJ1/SMJ1I/SMJ1I01/SMJ1I01P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1J01M00",
+                "MENU_NM": "자동로그인 설정 안내",
+                "MENU_URL_ADR": "/SMJ1/SMJ1J/SMJ1J01/SMJ1J01M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1J01M01",
+                "MENU_NM": "자동로그인 설정 완료",
+                "MENU_URL_ADR": "/SMJ1/SMJ1J/SMJ1J01/SMJ1J01M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1J01P02",
+                "MENU_NM": "(POP) 자동로그인 본인확인",
+                "MENU_URL_ADR": "/SMJ1/SMJ1J/SMJ1J01/SMJ1J01P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1I01M00",
+                "MENU_NM": "스마트뱅킹 가입",
+                "MENU_URL_ADR": "/SMJ1/SMJ1I/SMJ1I01/SMJ1I01M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ1I01M01",
+                "MENU_NM": "스마트뱅킹 가입완료",
+                "MENU_URL_ADR": "/SMJ1/SMJ1I/SMJ1I01/SMJ1I01M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            }
+        ]
+    },
+    {
+        "IF_ID": "",
+        "IF_NAME": "뱅킹",
+        "MENU_LIST": [
+            {
+                "MENU_ID": "SMJ2101M00",
+                "MENU_NM": "전체 계좌 조회",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2101/SMJ2101M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2101P01",
+                "MENU_NM": "(BOTTOM)총 금액 안내",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2101/SMJ2101P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2101P02",
+                "MENU_NM": "(BOTTOM)계좌 설정",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2101/SMJ2101P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2102M00",
+                "MENU_NM": "요구불거래내역",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2102/SMJ2102M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2102P01",
+                "MENU_NM": "(POP)요구불거래내역 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2102/SMJ2102P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2102P02",
+                "MENU_NM": "(POP)요구불거래내역 조회 검색",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2102/SMJ2102P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2102M03",
+                "MENU_NM": "조회검색결과-요구불거래내역",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2102/SMJ2102M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2102M04",
+                "MENU_NM": "요구불거래내역 계좌상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2102/SMJ2102M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2103M00",
+                "MENU_NM": "적립거치식거래내역 ",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2103/SMJ2103M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2103P01",
+                "MENU_NM": "(POP)적립거치식거래내역 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2103/SMJ2103P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2103P02",
+                "MENU_NM": "(POP)적립거치식거래내역 조회 검색",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2103/SMJ2103P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2103M03",
+                "MENU_NM": "조회검색결과-적립거치식거래내역",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2103/SMJ2103M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2103M04",
+                "MENU_NM": "계좌상세-적립거치식거래내역",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2103/SMJ2103M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2104M00",
+                "MENU_NM": "외화신탁거래내역 ",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2104/SMJ2104M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2104P01",
+                "MENU_NM": "(POP)외화신탁거래내역 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2104/SMJ2104P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2104P02",
+                "MENU_NM": "(POP)외화신탁거래내역 조회 검색",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2104/SMJ2104P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2104M03",
+                "MENU_NM": "조회검색결과-외화신탁거래내역",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2104/SMJ2104M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2104M04",
+                "MENU_NM": "계좌상세-외화신탁거래내역",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2104/SMJ2104M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2105M00",
+                "MENU_NM": "원화신탁거래내역 ",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2105/SMJ2105M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2105P01",
+                "MENU_NM": "(POP)원화신탁거래내역 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2105/SMJ2105P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2105P02",
+                "MENU_NM": "(POP)원화신탁거래내역 조회 검색",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2105/SMJ2105P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2105M03",
+                "MENU_NM": "조회검색결과-원화신탁거래내역",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2105/SMJ2105M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2105M04",
+                "MENU_NM": "계좌상세-원화신탁거래내역",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2105/SMJ2105M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2106M00",
+                "MENU_NM": "펀드거래내역 ",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2106/SMJ2106M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2106P01",
+                "MENU_NM": "(POP)펀드거래내역 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2106/SMJ2106P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2106P02",
+                "MENU_NM": "(POP)펀드거래내역 조회 검색",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2106/SMJ2106P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2106M03",
+                "MENU_NM": "펀드거래내역 조회 검색 결과",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2106/SMJ2106M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2106M04",
+                "MENU_NM": "펀드거래내역 계좌 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2106/SMJ2106M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2107M00",
+                "MENU_NM": "채권거래내역 ",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2107/SMJ2107M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2107P01",
+                "MENU_NM": "(POP)채권거래내역 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2107/SMJ2107P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2107P02",
+                "MENU_NM": "(POP)채권 계좌내역 조회 검색",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2107/SMJ2107P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2107M03",
+                "MENU_NM": "채권 계좌내역 조회 검색 결과",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2107/SMJ2107M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2107M04",
+                "MENU_NM": "채권 계좌내역 계좌 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2107/SMJ2107M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2108M00",
+                "MENU_NM": "펀드플러스예금 계좌 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2108/SMJ2108M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2109M00",
+                "MENU_NM": "주거래예금 계좌 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2109/SMJ2109M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2110M00",
+                "MENU_NM": "일반대출거래내역 ",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2110/SMJ2110M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2110P01",
+                "MENU_NM": "(POP)일반대출거래내역 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2110/SMJ2110P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2110P02",
+                "MENU_NM": "(POP)일반대출거래내역 조회 검색",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2110/SMJ2110P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2110M03",
+                "MENU_NM": "일반대출거래내역 조회 검색 결과",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2110/SMJ2110M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2110M04",
+                "MENU_NM": "일반대출거래내역 계좌 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2110/SMJ2110M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2111M00",
+                "MENU_NM": "외화거래내역 ",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2111/SMJ2111M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2111P01",
+                "MENU_NM": "(POP)외화거래내역 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2111/SMJ2111P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2111P02",
+                "MENU_NM": "(POP)외화거래내역 조회 검색",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2111/SMJ2111P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2111M03",
+                "MENU_NM": "외화거래내역 조회 검색 결과",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2111/SMJ2111M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2111M04",
+                "MENU_NM": "외화거래내역 계좌 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2111/SMJ2111M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2112M00",
+                "MENU_NM": "기타거래내역 ",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2112/SMJ2112M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2112P01",
+                "MENU_NM": "(POP)기타거래내역 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2112/SMJ2112P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2112P02",
+                "MENU_NM": "(POP)기타거래내역 조회 검색",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2112/SMJ2112P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2112M03",
+                "MENU_NM": "기타거래내역 조회 검색 결과",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2112/SMJ2112M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2112M04",
+                "MENU_NM": "기타거래내역 계좌 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2112/SMJ2112M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2113M00",
+                "MENU_NM": "통장사본 조회 상세",
+                "MENU_URL_ADR": "/SMJ2/SMJ21/SMJ2113/SMJ2113M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201M00",
+                "MENU_NM": "1.정보입력",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P01",
+                "MENU_NM": "(BOTTOM) 출금계선택 우리은행",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P02",
+                "MENU_NM": "(BOTTOM) 최근/자주입금계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P03",
+                "MENU_NM": "(BOTTOM) 내계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P03",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P04",
+                "MENU_NM": "(BOTTOM) 입금계좌 직접입력",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P04",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P05",
+                "MENU_NM": "(BOTTOM) 입금은행_은행",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P05",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P06",
+                "MENU_NM": "(BOTTOM) 입금은행_증권사",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P06",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201M07",
+                "MENU_NM": "2.정보입력",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201M07",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P08",
+                "MENU_NM": "(BOTTOM) 받는 분 통장 표기_직접입력",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P08",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P09",
+                "MENU_NM": "(BOTTOM) 받는 분 통장 표기_자주쓰는 문구",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P09",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P10",
+                "MENU_NM": "(BOTTOM) 내 통장 표기_직접입력",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P10",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P11",
+                "MENU_NM": "(BOTTOM) 내 통장 표기_자주쓰는 문구",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P11",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P12",
+                "MENU_NM": "(BOTTOM) 이체 시간선택",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P12",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P13",
+                "MENU_NM": "(BOTTOM) 예약이체 안내",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P13",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P14",
+                "MENU_NM": "(BOTTOM) 월세안내",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P14",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P15",
+                "MENU_NM": "(BOTTOM) 이체 정보확인",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P15",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P16",
+                "MENU_NM": "(BOTTOM) 중복이체경고알림",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P16",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201M17",
+                "MENU_NM": "이체완료",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201M17",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201M18",
+                "MENU_NM": "이체실패",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201M18",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201M19",
+                "MENU_NM": "2. 추가이체 정보입력",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201M19",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P20",
+                "MENU_NM": "(BOTTOM) 추가이체 정보확인",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P20",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201M21",
+                "MENU_NM": "추가이체완료",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201M21",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201M22",
+                "MENU_NM": "이체확인증",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201M22",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2201P23",
+                "MENU_NM": "(POP) 공유하기",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2201/SMJ2201P23",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2202M00",
+                "MENU_NM": "이체결과 조회",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2202/SMJ2202M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2202P01",
+                "MENU_NM": "(BOTTOM) 출금계좌번호 선택",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2202/SMJ2202P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2202P02",
+                "MENU_NM": "(BOTTOM) 조회기간검색",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2202/SMJ2202P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2202P03",
+                "MENU_NM": "(POP) 이체결과 상세정보",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2202/SMJ2202P03",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2203M00",
+                "MENU_NM": "예약이체 결과 조회",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2203/SMJ2203M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2203P01",
+                "MENU_NM": "(BOTTOM) 조회기간검색",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2203/SMJ2203P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2203P02",
+                "MENU_NM": "(BOTTOM) 처리상태",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2203/SMJ2203P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2203P03",
+                "MENU_NM": "(POP) 예약이체결과상세정보",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2203/SMJ2203P03",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2203M04",
+                "MENU_NM": "예약이체취소완료",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2203/SMJ2203M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204M00",
+                "MENU_NM": "자동이체 등록/관리",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204P01",
+                "MENU_NM": "(POP) 상세내역조회",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204M02",
+                "MENU_NM": "Step1. 자동이체등록(약관동의)",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204M03",
+                "MENU_NM": "Step2. 자동이체등록(정보입력)",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204M04",
+                "MENU_NM": "Step3. 자동이체등록(정보확인)",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204M05",
+                "MENU_NM": "등록완료",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204P06",
+                "MENU_NM": "(BOTTOM) 입금계좌 안내",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204P06",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204P07",
+                "MENU_NM": "(BOTTOM) 출금계좌 안내",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204P07",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204P08",
+                "MENU_NM": "(BOTTOM) 이체주기 선택",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204P08",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204P09",
+                "MENU_NM": "(BOTTOM) 이체지정일 선택",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204P09",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204P10",
+                "MENU_NM": "(BOTTOM) 이체 시작일, 종료일",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204P10",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204P11",
+                "MENU_NM": "(BOTTOM) 타행자동이체 유의사항",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204P11",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204P12",
+                "MENU_NM": "(BOTTOM) 청약통장 자동이체 유의사항",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204P12",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2204P13",
+                "MENU_NM": "(BOTTOM) 퇴직연금계좌 자동이체 유의사항",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2204/SMJ2204P13",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2205M00",
+                "MENU_NM": "자동이체 출금결과 조회",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2205/SMJ2205M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2205P01",
+                "MENU_NM": "(BOTTOM)조회기간 검색",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2205/SMJ2205P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2206M00",
+                "MENU_NM": "1. 이체정보입력_원화출금계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2206/SMJ2206M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2206M01",
+                "MENU_NM": "1. 이체정보입력_외화출금계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2206/SMJ2206M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2206M02",
+                "MENU_NM": "1. 이체정보입력_외화출금계좌_MMDA계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2206/SMJ2206M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2206M03",
+                "MENU_NM": "1. 이체정보입력_원화+외화출금계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2206/SMJ2206M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2206P04",
+                "MENU_NM": "(BOTTOM) 입금계좌 선택_원화+외화",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2206/SMJ2206P04",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2206P05",
+                "MENU_NM": "(BOTTOM) 이자 입금 계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2206/SMJ2206P05",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2206P06",
+                "MENU_NM": "(BOTTOM) 수수료 출금 계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2206/SMJ2206P06",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2206P07",
+                "MENU_NM": "(POP)통화별 이체한도",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2206/SMJ2206P07",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2206M08",
+                "MENU_NM": "2. 이체정보 확인",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2206/SMJ2206M08",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2206M09",
+                "MENU_NM": "이체 완료",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2206/SMJ2206M09",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207M00",
+                "MENU_NM": "1. 이체정보입력_원화출금계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207M01",
+                "MENU_NM": "1. 이체정보입력_외화출금계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207M02",
+                "MENU_NM": "1. 이체정보입력_외화출금계좌_MMDA계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207M03",
+                "MENU_NM": "1. 이체정보입력_원화+외화출금계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207M04",
+                "MENU_NM": "1. 이체정보입력_원화+외화출금계좌_MMDA계좌",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207P05",
+                "MENU_NM": "(BOTTOM) 추가이체정보 안내",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207P05",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207P06",
+                "MENU_NM": "(BOTTOM) SWIFT 송금 안내",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207P06",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207P07",
+                "MENU_NM": "(BOTTOM) 입금은행 선택(국내,해외,증권사 등) ",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207P07",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207P08",
+                "MENU_NM": "(BOTTOM) 입금계좌_자주",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207P08",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207P09",
+                "MENU_NM": "(POP)자주쓰는 계좌등록",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207P09",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207P10",
+                "MENU_NM": "(POP)자주쓰는 계좌관리",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207P10",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207P11",
+                "MENU_NM": "(BOTTOM) 이체안내",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207P11",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207M12",
+                "MENU_NM": "2. 이체정보 확인",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207M12",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2207M13",
+                "MENU_NM": "이체 완료",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2207/SMJ2207M13",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2208M00",
+                "MENU_NM": "외화 이체내역 조회_우리은행으로 외화이체(원화)",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2208/SMJ2208M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2208M01",
+                "MENU_NM": "외화 이체내역 조회_우리은행으로 외화이체(외화)",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2208/SMJ2208M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2208M02",
+                "MENU_NM": "외화 이체내역 조회_다른 은행으로 외화이체",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2208/SMJ2208M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2208P03",
+                "MENU_NM": "(POP) 이체내역상세(원화계좌로 이체)",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2208/SMJ2208P03",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2208P04",
+                "MENU_NM": "(POP) 이체내역상세(외화계좌로 이체)",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2208/SMJ2208P04",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2208P05",
+                "MENU_NM": "(POP) 이체내역상세(다른 은행으로 이체)",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2208/SMJ2208P05",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2208P06",
+                "MENU_NM": "(BOTTOM) 조회기간검색_기간",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2208/SMJ2208P06",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2208P07",
+                "MENU_NM": "(BOTTOM) 조회기간검색_일자별조회",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2208/SMJ2208P07",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2208P08",
+                "MENU_NM": "(BOTTOM) 조회기간검색_이체번호조회",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2208/SMJ2208P08",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2209M00",
+                "MENU_NM": "자금이체제한 해제",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2209/SMJ2209M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2209M01",
+                "MENU_NM": "자금이체제한 해제 완료",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2209/SMJ2209M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2209P02",
+                "MENU_NM": "(POP)보이스피싱예방 사전 안내",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2209/SMJ2209P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ2209P03",
+                "MENU_NM": "(POP)보안 알림",
+                "MENU_URL_ADR": "/SMJ2/SMJ22/SMJ2209/SMJ2209P03",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            }
+        ]
+    },
+    {
+        "IF_ID": "",
+        "IF_NAME": "외환/환전",
+        "MENU_LIST": [
+            {
+                "MENU_ID": "SMJ3101M00",
+                "MENU_NM": "환율조회",
+                "MENU_URL_ADR": "/SMJ3/SMJ31/SMJ3101/SMJ3101M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3101M01",
+                "MENU_NM": "환율조회 상세",
+                "MENU_URL_ADR": "/SMJ3/SMJ31/SMJ3101/SMJ3101M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3101P02",
+                "MENU_NM": "(BOTTOM) 통화선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ31/SMJ3101/SMJ3101P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3202M00",
+                "MENU_NM": "환율계산기",
+                "MENU_URL_ADR": "/SMJ3/SMJ32/SMJ3202/SMJ3202M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3203P01",
+                "MENU_NM": "(BOTTOM) 통화선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ32/SMJ3203/SMJ3203P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3203P02",
+                "MENU_NM": "(BOTTOM) 적용환율조건",
+                "MENU_URL_ADR": "/SMJ3/SMJ32/SMJ3203/SMJ3203P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3203P03",
+                "MENU_NM": "(BOTTOM) 환율우대율",
+                "MENU_URL_ADR": "/SMJ3/SMJ32/SMJ3203/SMJ3203P03",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M00",
+                "MENU_NM": "해외송금 인덱스",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M01",
+                "MENU_NM": "해외송금 Step1. 서비스 이용동의",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M02",
+                "MENU_NM": "해외송금 Step2. 송금기본정보입력",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M03",
+                "MENU_NM": "Step3. 출금계좌정보입력(원화계좌)",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M04",
+                "MENU_NM": "Step3. 출금계좌정보입력(외화계좌)",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M05",
+                "MENU_NM": "Step3. 출금계좌정보입력(원화+외화계좌)",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M06",
+                "MENU_NM": "Step4. 보내는 분",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M07",
+                "MENU_NM": "Step5. 받는 분(기본입력정보)",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M07",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M08",
+                "MENU_NM": "Step5. 받는 분(수취은행정보)",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M08",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M09",
+                "MENU_NM": "Step5. 받는 분(추가이체정보)",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M09",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M10",
+                "MENU_NM": "Step6. 신청정보확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M10",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M11",
+                "MENU_NM": "해외송금 완료",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M11",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307M12",
+                "MENU_NM": "해외송금 오류",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307M12",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P13",
+                "MENU_NM": "(POP)해외송금이용안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P13",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P14",
+                "MENU_NM": "(BOTTOM) 송금목적선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P14",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P15",
+                "MENU_NM": "(POP) 송금국가검색",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P15",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P16",
+                "MENU_NM": "(BOTTOM) 통화선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P16",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P17",
+                "MENU_NM": "(BOTTOM) 송금가능 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P17",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P18",
+                "MENU_NM": "(BOTTOM) 송금불가 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P18",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P19",
+                "MENU_NM": "(BOTTOM) 외국인 거래외국환은행지정 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P19",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P20",
+                "MENU_NM": "(BOTTOM) 영업점방문 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P20",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P21",
+                "MENU_NM": "(BOTTOM) 출금계좌선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P21",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P22",
+                "MENU_NM": "(BOTTOM) 전화번호입력안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P22",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P23",
+                "MENU_NM": "(BOTTOM) 영문성명안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P23",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P25",
+                "MENU_NM": "(POP) SWIFT CODE 조회_조회탭",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P25",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P26",
+                "MENU_NM": "(POP) SWIFT CODE 조회_안내탭",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P26",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P27",
+                "MENU_NM": "(POP) 가상자산 관련거래 확인 / FX마진거래 확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P27",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P28",
+                "MENU_NM": "(BOTTOM) 송금전확인사항",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P28",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P29",
+                "MENU_NM": "(POP) 영문이름입력안내 ",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P29",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P30",
+                "MENU_NM": "(POP)(공통) 계좌비밀번호 입력",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P30",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P31",
+                "MENU_NM": "(POP) 중계수수료안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P31",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P32",
+                "MENU_NM": "(BOTTOM) 송금전 확인사항(유학생 / 영문명 미등록)",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P32",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P33",
+                "MENU_NM": "(POP) IBAN 코드 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P33",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P34",
+                "MENU_NM": "(POP) 사기해외송금 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P34",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P35",
+                "MENU_NM": "(POP) 이메일 통지",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P35",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3307P36",
+                "MENU_NM": "(BOTTOM) 내국인 거래외국환 은행지정안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3307/SMJ3307P36",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3308P00",
+                "MENU_NM": "(POP) 최근송금 다시보내기",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3308/SMJ3308P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3308P01",
+                "MENU_NM": "(BOTTOM) 세부정보 확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3308/SMJ3308P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3309M00",
+                "MENU_NM": "자주쓰는 해외송금",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3309/SMJ3309M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3309P01",
+                "MENU_NM": "(POP) 등록 - 송금정보",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3309/SMJ3309P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3309P02",
+                "MENU_NM": "(POP) 등록 - 받는분정보",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3309/SMJ3309P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3309P03",
+                "MENU_NM": "(BOTTOM) 세부정보확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3309/SMJ3309P03",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3309P04",
+                "MENU_NM": "(BOTTOM) 해외송금명(별명)",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3309/SMJ3309P04",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3310M00",
+                "MENU_NM": "일별 송금 조회(탭)",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3310/SMJ3310M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3310M01",
+                "MENU_NM": "연간 송금 조회(탭)",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3310/SMJ3310M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3310M02",
+                "MENU_NM": "송금내역 조회상세",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3310/SMJ3310M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3310P03",
+                "MENU_NM": "(BOTTOM) 상세검색",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3310/SMJ3310P03",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3310P04",
+                "MENU_NM": "(POP) 전신문 이메일 발송 ",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3310/SMJ3310P04",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3310P05",
+                "MENU_NM": "(POP) 해외송금 상세내역  이메일 발송 ",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3310/SMJ3310P05",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3311M00",
+                "MENU_NM": "송금추적내역",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3311/SMJ3311M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3311M01",
+                "MENU_NM": "송금추적 내역상세",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3311/SMJ3311M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3311P02",
+                "MENU_NM": "(BOTTOM) 상세검색",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3311/SMJ3311P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3311P03",
+                "MENU_NM": "(POP) 상세내역  이메일 발송 ",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3311/SMJ3311P03",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3312M00",
+                "MENU_NM": "해외송금변경신청(탭)",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3312/SMJ3312M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3312M01",
+                "MENU_NM": "해외송금변경내역 조회(탭)",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3312/SMJ3312M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3312M02",
+                "MENU_NM": "해외송금변경내역 조회상세",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3312/SMJ3312M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3312M03",
+                "MENU_NM": "송금정보 변경",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3312/SMJ3312M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3312M04",
+                "MENU_NM": "송금정보 확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3312/SMJ3312M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3312M05",
+                "MENU_NM": "변경완료",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3312/SMJ3312M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3312P06",
+                "MENU_NM": "(BOTTOM) 상세검색",
+                "MENU_URL_ADR": "/SMJ3/SMJ33/SMJ3312/SMJ3312P06",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413M00",
+                "MENU_NM": "우리글로벌퀵송금 인덱스",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413P19",
+                "MENU_NM": "(POP) 우리글로벌퀵송금 이용안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413P19",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413M01",
+                "MENU_NM": "송금금액환산",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413M02",
+                "MENU_NM": "Step1. 서비스 이용동의",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413M03",
+                "MENU_NM": "Step2. 출금계좌정보입력",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413M04",
+                "MENU_NM": "Step3. 보내는 분",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413M05",
+                "MENU_NM": "Step4. 받는 분",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413M06",
+                "MENU_NM": "Step5. 신청정보확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413M07",
+                "MENU_NM": "송금 완료",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413M07",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413M08",
+                "MENU_NM": "송금 오류",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413M08",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413P09",
+                "MENU_NM": "(BOTTOM) 송금국가선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413P09",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413P10",
+                "MENU_NM": "(BOTTOM) 송금방법선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413P10",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413P11",
+                "MENU_NM": "(BOTTOM) 송금은행선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413P11",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413P12",
+                "MENU_NM": "(BOTTOM) 송금방법안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413P12",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413P14",
+                "MENU_NM": "(BOTTOM) 외국인거래외국환은행지정 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413P14",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413P15",
+                "MENU_NM": "(BOTTOM) 영업점방문 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413P15",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413P16",
+                "MENU_NM": "(BOTTOM) 현금수취처 목록",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413P16",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413P17",
+                "MENU_NM": "(BOTTOM)송금사유선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413P17",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3413P18",
+                "MENU_NM": "(BOTTOM)수취은행",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3413/SMJ3413P18",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3414M00",
+                "MENU_NM": "최근송금목록",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3414/SMJ3414M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3414P01",
+                "MENU_NM": "(BOTTOM) 최근송금다시보내기확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3414/SMJ3414P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3415M00",
+                "MENU_NM": "일별 글로벌퀵송금 조회(탭)",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3415/SMJ3415M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3415P02",
+                "MENU_NM": "(BOTTOM) 상세검색",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3415/SMJ3415P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3415M03",
+                "MENU_NM": "글로벌퀵송금 조회상세",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3415/SMJ3415M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3416M00",
+                "MENU_NM": "글로벌퀵송금 변경 신청(탭)",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3416/SMJ3416M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3416M01",
+                "MENU_NM": "글로벌퀵송금 변경 조회(탭)",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3416/SMJ3416M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3416M02",
+                "MENU_NM": "글로벌퀵송금 변경 조회상세",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3416/SMJ3416M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3416M03",
+                "MENU_NM": "받는분정보변경",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3416/SMJ3416M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3416M04",
+                "MENU_NM": "변경정보확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3416/SMJ3416M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3416M05",
+                "MENU_NM": "변경완료",
+                "MENU_URL_ADR": "/SMJ3/SMJ34/SMJ3416/SMJ3416M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518M00",
+                "MENU_NM": "머니그램 인덱스",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518P01",
+                "MENU_NM": "(POP) 머니그램 이용안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518M02",
+                "MENU_NM": "Step1. 서비스 이용동의",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518M03",
+                "MENU_NM": "Step2. 신청정보입력",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518M04",
+                "MENU_NM": "Step3. 출금계좌정보입력",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518M05",
+                "MENU_NM": "Step4. 머니그램 수수료조회",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518M06",
+                "MENU_NM": "Step5. 받는 분",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518M07",
+                "MENU_NM": "Step6. 신청정보확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518M07",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518M08",
+                "MENU_NM": "머니그램 완료",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518M08",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518M09",
+                "MENU_NM": "머니그램 오류",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518M09",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518P10",
+                "MENU_NM": "(BOTTOM) 머니그램 가입안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518P10",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518P11",
+                "MENU_NM": "(BOTTOM) 송금용도선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518P11",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518P12",
+                "MENU_NM": "(BOTTOM) 송금가능 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518P12",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518P13",
+                "MENU_NM": "(BOTTOM) 영업점방문 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518P13",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3518P14",
+                "MENU_NM": "(BOTTOM) 송금상대국/통화 선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3518/SMJ3518P14",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3519M00",
+                "MENU_NM": "머니그램 일별조회",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3519/SMJ3519M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3519P01",
+                "MENU_NM": "(POP) 상세검색",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3519/SMJ3519P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3519M02",
+                "MENU_NM": "머니그램 조회상세",
+                "MENU_URL_ADR": "/SMJ3/SMJ35/SMJ3519/SMJ3519M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620M00",
+                "MENU_NM": "은련퀵송금 인덱스",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620P01",
+                "MENU_NM": "(POP) 은련퀵송금 이용안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620M02",
+                "MENU_NM": "Step2. 송금기본정보 입력",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620M03",
+                "MENU_NM": "Step1. 서비스 이용동의",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620M04",
+                "MENU_NM": "Step3. 출금계좌정보입력",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620M05",
+                "MENU_NM": "Step5. 받는 분/은련카드번호",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620M06",
+                "MENU_NM": "Step6. 신청정보확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620M07",
+                "MENU_NM": "송금 완료",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620M07",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620M08",
+                "MENU_NM": "송금 오류",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620M08",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620P09",
+                "MENU_NM": "(BOTTOM) 송금목적선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620P09",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620P10",
+                "MENU_NM": "(BOTTOM) 송금가능 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620P10",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620P12",
+                "MENU_NM": "(BOTTOM) 은행선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620P12",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620P14",
+                "MENU_NM": "(BOTTOM) 송금전 확인 사항",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620P14",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620P15",
+                "MENU_NM": "(BOTTOM) 외국인 거래외국환 은행지정안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620P15",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620P16",
+                "MENU_NM": "(BOTTOM) 출금계좌 비밀번호 입력",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620P16",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3620M17",
+                "MENU_NM": "Step4. 보내는 분",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3620/SMJ3620M17",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3621M00",
+                "MENU_NM": "은련퀵송금 조회",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3621/SMJ3621M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3621M01",
+                "MENU_NM": "은련퀵송금 조회상세",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3621/SMJ3621M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3621P02",
+                "MENU_NM": "(BOTTOM) 상세검색",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3621/SMJ3621P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3622M00",
+                "MENU_NM": "최근송금내역",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3622/SMJ3622M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3622P01",
+                "MENU_NM": "(BOTTOM) 최근송금다시보내기확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ36/SMJ3622/SMJ3622P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3722M00",
+                "MENU_NM": "외국인 거래외국환은행지정 인덱스",
+                "MENU_URL_ADR": "/SMJ3/SMJ37/SMJ3722/SMJ3722M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3722P01",
+                "MENU_NM": "(POP) 외국인 거래외국환은행지정 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ37/SMJ3722/SMJ3722P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3722M02",
+                "MENU_NM": "Step1. 신청 정보",
+                "MENU_URL_ADR": "/SMJ3/SMJ37/SMJ3722/SMJ3722M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3722M03",
+                "MENU_NM": "Step2. 관리점등록",
+                "MENU_URL_ADR": "/SMJ3/SMJ37/SMJ3722/SMJ3722M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3722M04",
+                "MENU_NM": "Step3. 서류 제출",
+                "MENU_URL_ADR": "/SMJ3/SMJ37/SMJ3722/SMJ3722M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3722M05",
+                "MENU_NM": "신청 완료",
+                "MENU_URL_ADR": "/SMJ3/SMJ37/SMJ3722/SMJ3722M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3722M06",
+                "MENU_NM": "신청 오류",
+                "MENU_URL_ADR": "/SMJ3/SMJ37/SMJ3722/SMJ3722M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3722P07",
+                "MENU_NM": "영업점 찾기",
+                "MENU_URL_ADR": "/SMJ3/SMJ37/SMJ3722/SMJ3722P07",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3723M00",
+                "MENU_NM": "외국인 거래외국환은행지정 조회",
+                "MENU_URL_ADR": "/SMJ3/SMJ37/SMJ3723/SMJ3723M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824M00",
+                "MENU_NM": "우리ONE해외송금 인덱스",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824M01",
+                "MENU_NM": "Step2. 송금유형선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824M02",
+                "MENU_NM": "Step3. 송금국가 및 통화선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824M03",
+                "MENU_NM": "Step5. 받는분(기본입력정보)",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824M04",
+                "MENU_NM": "Step5. 받는분(수취은행정보)",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824M05",
+                "MENU_NM": "Step5. 받는분(추가이체정보)",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824M06",
+                "MENU_NM": "송금정보저장완료",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824M07",
+                "MENU_NM": "송금정보저장오류",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824M07",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824P08",
+                "MENU_NM": "(BOTTOM) 통화선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824P08",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824P09",
+                "MENU_NM": "(POP) 우리ONE해외송금 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824P09",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824M10",
+                "MENU_NM": "Step1. 서비스 이용동의",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824M10",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824P11",
+                "MENU_NM": "(BOTTOM) 송금목적선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824P11",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824P12",
+                "MENU_NM": "(BOTTOM) 송금전 확인사항",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824P12",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824P14",
+                "MENU_NM": "(POP) 외국인거래외국한은행지정 고객확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824P14",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824P13",
+                "MENU_NM": "(BOTTOM) 외국인거래외국한은행지정 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824P13",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824M15",
+                "MENU_NM": "Step4. 보내는 분",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824M15",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3824M16",
+                "MENU_NM": "step6. 신청정보확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3824/SMJ3824M16",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3825M00",
+                "MENU_NM": "송금내역 조회",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3825/SMJ3825M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3825M01",
+                "MENU_NM": "송금내역 상세",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3825/SMJ3825M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3825P02",
+                "MENU_NM": "(POP) 상세검색",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3825/SMJ3825P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826M00",
+                "MENU_NM": "등록내역 조회",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826P01",
+                "MENU_NM": "(BOTTOM) 등록세부 정보 확인(송금보내기)",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826P02",
+                "MENU_NM": "(BOTTOM) 등록세부 정보 확인(해지하기)",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826M03",
+                "MENU_NM": "해지완료",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826P04",
+                "MENU_NM": "(BOTTOM) 등록세부 정보 확인(송금정보 변경)",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826P04",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826M05",
+                "MENU_NM": "Step1. 송금국가 및 통화선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826P06",
+                "MENU_NM": "(BOTTOM) 통화선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826P06",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826M11",
+                "MENU_NM": "Step2. 보내는분",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826M11",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826M07",
+                "MENU_NM": "Step3. 받는분(수취은행 코드)",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826M07",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826M08",
+                "MENU_NM": "Step3. 받는분(라우팅 번호)",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826M08",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826M09",
+                "MENU_NM": "Step3. 받는분(수취은행 지점명/주소)",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826M09",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826M12",
+                "MENU_NM": "Step4. 변경정보확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826M12",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3826M10",
+                "MENU_NM": "송금정보변경완료",
+                "MENU_URL_ADR": "/SMJ3/SMJ38/SMJ3826/SMJ3826M10",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3927M00",
+                "MENU_NM": "WING송금 인덱스",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3927/SMJ3927M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3927M01",
+                "MENU_NM": "송금금액환산",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3927/SMJ3927M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3927M02",
+                "MENU_NM": "Step1. 서비스 이용동의",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3927/SMJ3927M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3927M03",
+                "MENU_NM": "Step2. 출금계좌정보입력",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3927/SMJ3927M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3927M04",
+                "MENU_NM": "Step3. 보내는분",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3927/SMJ3927M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3927M05",
+                "MENU_NM": "Step4. 받는 분",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3927/SMJ3927M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3927M06",
+                "MENU_NM": "Step5. 신청정보확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3927/SMJ3927M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3927M07",
+                "MENU_NM": "송금 완료",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3927/SMJ3927M07",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3927P08",
+                "MENU_NM": "(POP)WING이용안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3927/SMJ3927P08",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3927P09",
+                "MENU_NM": "(BOTTOM) 송금용도선택",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3927/SMJ3927P09",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3927P10",
+                "MENU_NM": "(BOTTOM) 송금가능 안내",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3927/SMJ3927P10",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3928M00",
+                "MENU_NM": "WING송금조회",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3928/SMJ3928M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3928M01",
+                "MENU_NM": "WING송금조회상세",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3928/SMJ3928M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3928P02",
+                "MENU_NM": "(BOTTOM)상세검색",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3928/SMJ3928P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3929M00",
+                "MENU_NM": "최근송금다시보내기",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3929/SMJ3929M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ3929P01",
+                "MENU_NM": "(BOTTOM)최근송금다시보내기 확인",
+                "MENU_URL_ADR": "/SMJ3/SMJ39/SMJ3929/SMJ3929P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029M00",
+                "MENU_NM": "다이렉트 송금정보변경 인덱스",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029P01",
+                "MENU_NM": "(POP) 다이렉트 송금정보변경 안내",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029M02",
+                "MENU_NM": "다이렉트 송금 등록내역",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029P03",
+                "MENU_NM": "(BOTTOM) 세부정보 확인 (해외송금 다이렉트)",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029P03",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029P04",
+                "MENU_NM": "(BOTTOM) 세부정보 확인 (머니그램 다이렉트)",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029P04",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029P05",
+                "MENU_NM": "(BOTTOM) 세부정보 확인 (은련퀵 다이렉트)",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029P05",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029P06",
+                "MENU_NM": "(BOTTOM) 거래외국한지정 안내",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029P06",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029M07",
+                "MENU_NM": "Step1. 송금정보변경",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029M07",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029M08",
+                "MENU_NM": "Step2. 받는분정보변경 (해외송금 다이렉트)",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029M08",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029M09",
+                "MENU_NM": "Step2. 받는분정보변경 (머니그램 다이렉트)",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029M09",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029M10",
+                "MENU_NM": "Step3. 받는분정보변경 (은련퀵 다이렉트)",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029M10",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029M11",
+                "MENU_NM": "Step3. 변경정보확인",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029M11",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4029M12",
+                "MENU_NM": "송금정보변경완료",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4029/SMJ4029M12",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4030M00",
+                "MENU_NM": "송금내역조회",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4030/SMJ4030M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4030P01",
+                "MENU_NM": "(BOTTOM) 상세검색",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4030/SMJ4030P01",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4030M02",
+                "MENU_NM": "송금내역 조회상세(해외송금 다이렉트)",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4030/SMJ4030M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4030M03",
+                "MENU_NM": "송금내역 조회상세(머니그램 다이렉트)",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4030/SMJ4030M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4030M04",
+                "MENU_NM": "송금내역 조회상세(은련퀵 다이렉트)",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4030/SMJ4030M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4031M00",
+                "MENU_NM": "나의 송금내역조회 송금내역조회",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4031/SMJ4031M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4031M01",
+                "MENU_NM": "나의 송금내역조회 연간내역조회",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4031/SMJ4031M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4031P02",
+                "MENU_NM": "나의 송금내역조회 (BOTTOM) 상세검색",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4031/SMJ4031P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4031M03",
+                "MENU_NM": "나의 송금내역조회 송금내역 조회상세",
+                "MENU_URL_ADR": "/SMJ4/SMJ40/SMJ4031/SMJ4031M03",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            }
+        ]
+    },
+    {
+        "IF_ID": "",
+        "IF_NAME": "생활편의",
+        "MENU_LIST": [
+            {
+                "MENU_ID": "SMJ4101M00",
+                "MENU_NM": "출국만기보험금 지급신청 인덱스",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101P01",
+                "MENU_NM": "(POP) 출국만기보험금 지급신청 안내",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101M02",
+                "MENU_NM": "Step1. 서비스 이용동의",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101M03",
+                "MENU_NM": "Step2. 고객정보",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101M04",
+                "MENU_NM": "Step3. 수령방법선택",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101M05",
+                "MENU_NM": "Step4. 서류제출",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101M06",
+                "MENU_NM": "출국만기보험금지급 신청완료",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101P07",
+                "MENU_NM": "(BOTTOM)신청보험선택",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101P07",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101P08",
+                "MENU_NM": "(BOTTOM)신청사유선택",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101P08",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101P09",
+                "MENU_NM": "(BOTTOM)수령방법선택",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101P09",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101P10",
+                "MENU_NM": "(BOTTOM)공항선택",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101P10",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101P11",
+                "MENU_NM": "(BOTTOM)보험계좌선택",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101P11",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101P12",
+                "MENU_NM": "(POP) 서류제출안내",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101P12",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4101M13",
+                "MENU_NM": "서명필요안내",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4101/SMJ4101M13",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4102M00",
+                "MENU_NM": "출국만기보험금지급신청내역",
+                "MENU_URL_ADR": "/SMJ4/SMJ41/SMJ4102/SMJ4102M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4203M00",
+                "MENU_NM": "우리WON투게더",
+                "MENU_URL_ADR": "/SMJ4/SMJ42/SMJ4203/SMJ4203M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ4304M01",
+                "MENU_NM": "외국인등록증 우편 등기번호 조회",
+                "MENU_URL_ADR": "/SMJ4/SMJ43/SMJ4304/SMJ4304M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            }
+        ]
+    },
+    {
+        "IF_ID": "",
+        "IF_NAME": "안내/지원",
+        "MENU_LIST": [
+            {
+                "MENU_ID": "SMJ5101M00",
+                "MENU_NM": "내 정보",
+                "MENU_URL_ADR": "/SMJ5/SMJ51/SMJ5101/SMJ5101M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5101M01",
+                "MENU_NM": "기본정보변경",
+                "MENU_URL_ADR": "/SMJ5/SMJ51/SMJ5101/SMJ5101M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5101P02",
+                "MENU_NM": "(BOTTOM)예금관련우편물발송처",
+                "MENU_URL_ADR": "/SMJ5/SMJ51/SMJ5101/SMJ5101P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5101M03",
+                "MENU_NM": "해외정보변경",
+                "MENU_URL_ADR": "/SMJ5/SMJ51/SMJ5101/SMJ5101M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5101P04",
+                "MENU_NM": "(POP)전화정보변경",
+                "MENU_URL_ADR": "/SMJ5/SMJ51/SMJ5101/SMJ5101P04",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5101P05",
+                "MENU_NM": "(POP)상품서비스 안내동의",
+                "MENU_URL_ADR": "/SMJ5/SMJ51/SMJ5101/SMJ5101P05",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5202M00",
+                "MENU_NM": "입출금알림탭",
+                "MENU_URL_ADR": "/SMJ5/SMJ52/SMJ5202/SMJ5202M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5202P01",
+                "MENU_NM": "(POP)입출금알림 설정",
+                "MENU_URL_ADR": "/SMJ5/SMJ52/SMJ5202/SMJ5202P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5202P02",
+                "MENU_NM": "(BOTTOM)자동이체알림시간",
+                "MENU_URL_ADR": "/SMJ5/SMJ52/SMJ5202/SMJ5202P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5202P04",
+                "MENU_NM": "(POP)환율 알림 설정",
+                "MENU_URL_ADR": "/SMJ5/SMJ52/SMJ5202/SMJ5202P04",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5202P05",
+                "MENU_NM": "(BOTTOM)통화선택",
+                "MENU_URL_ADR": "/SMJ5/SMJ52/SMJ5202/SMJ5202P05",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5202P06",
+                "MENU_NM": "(BOTTOM)환율종류",
+                "MENU_URL_ADR": "/SMJ5/SMJ52/SMJ5202/SMJ5202P06",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5203M00",
+                "MENU_NM": "입출금알림 목록(탭)",
+                "MENU_URL_ADR": "/SMJ5/SMJ52/SMJ5203/SMJ5203M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5203M01",
+                "MENU_NM": "환율알림 목록(탭)",
+                "MENU_URL_ADR": "/SMJ5/SMJ52/SMJ5203/SMJ5203M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5304M00",
+                "MENU_NM": "고객센터 인덱스",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5304/SMJ5304M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5305M00",
+                "MENU_NM": "원터치상담",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5305/SMJ5305M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5306M00",
+                "MENU_NM": "외국인특화영업점",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5306/SMJ5306M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5306M01",
+                "MENU_NM": "영업점",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5306/SMJ5306M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5306P02",
+                "MENU_NM": "(POP)영업점상세",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5306/SMJ5306P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5306P03",
+                "MENU_NM": "(POP)영업점위치보기",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5306/SMJ5306P03",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5307M00",
+                "MENU_NM": "방문예약내역",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5307/SMJ5307M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5307M01",
+                "MENU_NM": "서비스 이용동의",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5307/SMJ5307M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5307M02",
+                "MENU_NM": "방문예약정보입력",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5307/SMJ5307M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5307P03",
+                "MENU_NM": "(BOTTOM) 방문시간선택",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5307/SMJ5307P03",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5307P04",
+                "MENU_NM": "(BOTTOM) 영업점선택",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5307/SMJ5307P04",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5307P05",
+                "MENU_NM": "(BOTTOM) 신청업무선택",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5307/SMJ5307P05",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5307M06",
+                "MENU_NM": "방문예약완료",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5307/SMJ5307M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5307P07",
+                "MENU_NM": "(POP)필수서류 안내-KYC등록",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5307/SMJ5307P07",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5307P08",
+                "MENU_NM": "(POP)필수서류 안내-KYC미등록",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5307/SMJ5307P08",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5308M00",
+                "MENU_NM": "공지사항",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5308/SMJ5308M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5308M01",
+                "MENU_NM": "공지사항 상세",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5308/SMJ5308M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5309M00",
+                "MENU_NM": "진행중이벤트",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5309/SMJ5309M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5309M01",
+                "MENU_NM": "종료이벤트",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5309/SMJ5309M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5309M02",
+                "MENU_NM": "당첨자목록",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5309/SMJ5309M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5309M03",
+                "MENU_NM": "이벤트상세",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5309/SMJ5309M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5310M00",
+                "MENU_NM": "서비스 이용안내 목록",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5310/SMJ5310M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5310P01",
+                "MENU_NM": "(POP)서비스 이용약관",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5310/SMJ5310P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5310P02",
+                "MENU_NM": "(POP)개인정보처리방침",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5310/SMJ5310P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5311M00",
+                "MENU_NM": "행원/인증번호 등록",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5311/SMJ5311M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5311M01",
+                "MENU_NM": "모바일핀패드 유형선택",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5311/SMJ5311M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5311M02",
+                "MENU_NM": "고객정보_외국인등록증보유",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5311/SMJ5311M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5311M03",
+                "MENU_NM": "고객정보_외국인등록증미보유",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5311/SMJ5311M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5311P04",
+                "MENU_NM": "(BOTTOM)국적선택",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5311/SMJ5311P04",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5311M05",
+                "MENU_NM": "신청완료",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5311/SMJ5311M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5312M00",
+                "MENU_NM": "인증번호내역",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5312/SMJ5312M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5312M01",
+                "MENU_NM": "주의사항동의",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5312/SMJ5312M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5312P02",
+                "MENU_NM": "인증번호안내",
+                "MENU_URL_ADR": "/SMJ5/SMJ53/SMJ5312/SMJ5312P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5413M00",
+                "MENU_NM": "설정",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5413/SMJ5413M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5414P00",
+                "MENU_NM": "(POP)언어설정",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5414/SMJ5414P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5415M00",
+                "MENU_NM": "단말기지정서비스",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5415/SMJ5415M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5415M01",
+                "MENU_NM": "단말기지정서비스 등록",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5415/SMJ5415M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5415M02",
+                "MENU_NM": "등록정보확인 및 추가인증",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5415/SMJ5415M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5415M03",
+                "MENU_NM": "단말기 지정서비스 등록완료",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5415/SMJ5415M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5415P04",
+                "MENU_NM": "(BOTTOM)이용조건 선택안내",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5415/SMJ5415P04",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5415M05",
+                "MENU_NM": "단말기지정서비스 조회",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5415/SMJ5415M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5415M06",
+                "MENU_NM": "이용조건 변경",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5415/SMJ5415M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5415M07",
+                "MENU_NM": "이용조건 변경완료",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5415/SMJ5415M07",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5416P00",
+                "MENU_NM": "(POP)알림설정",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5416/SMJ5416P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5419M00",
+                "MENU_NM": "자동로그인 설정",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5419/SMJ5419M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5417P00",
+                "MENU_NM": "(POP)앱버전관리",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5417/SMJ5417P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5418M00",
+                "MENU_NM": "서비스해지",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5418/SMJ5418M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ5418M01",
+                "MENU_NM": "서비스해지완료",
+                "MENU_URL_ADR": "/SMJ5/SMJ54/SMJ5418/SMJ5418M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            }
+        ]
+    },
+    {
+        "IF_ID": "",
+        "IF_NAME": "인증/보안",
+        "MENU_LIST": [
+            {
+                "MENU_ID": "SMJ6101M00",
+                "MENU_NM": "인증센터 인덱스",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6101/SMJ6101M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6101M01",
+                "MENU_NM": "공동인증서 발급 안내",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6101/SMJ6101M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6101P02",
+                "MENU_NM": "(BOTTOM) 다른 기관 인증서 등록",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6101/SMJ6101P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6101P03",
+                "MENU_NM": "(BOTTOM) 인증서 가져오기",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6101/SMJ6101P03",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6101P04",
+                "MENU_NM": "(BOTTOM) 인증서 내보내기",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6101/SMJ6101P04",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6101P05",
+                "MENU_NM": "(BOTTOM) 인증서 갱신",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6101/SMJ6101P05",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6101P06",
+                "MENU_NM": "(BOTTOM) 인증서 폐기",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6101/SMJ6101P06",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6102P00",
+                "MENU_NM": "(POP) 우리WON인증서 안내",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6102/SMJ6102P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6103M00",
+                "MENU_NM": "금융인증서 이용안내",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6103/SMJ6103M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6103M01",
+                "MENU_NM": "Step1. 약관동의",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6103/SMJ6103M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6103M02",
+                "MENU_NM": "Step2. 본인(신원)확인",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6103/SMJ6103M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6103P03",
+                "MENU_NM": "(BOTTOM) 알아두세요_당행보유",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6103/SMJ6103P03",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6103P04",
+                "MENU_NM": "(BOTTOM) 알아두세요_타행보유",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6103/SMJ6103P04",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6103M05",
+                "MENU_NM": "Step3. 추가인증",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6103/SMJ6103M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6103M06",
+                "MENU_NM": "클라우드_금융결제원 연결",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6103/SMJ6103M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6103M07",
+                "MENU_NM": "발급 완료",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6103/SMJ6103M07",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6105M00",
+                "MENU_NM": "약관동의",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6105/SMJ6105M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6105M01",
+                "MENU_NM": "본인(신원)확인",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6105/SMJ6105M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6105M02",
+                "MENU_NM": "등록 완료",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6105/SMJ6105M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6106M00",
+                "MENU_NM": "약관동의",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6106/SMJ6106M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6106M01",
+                "MENU_NM": "본인(신원)확인",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6106/SMJ6106M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6106M02",
+                "MENU_NM": "해제 완료",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6106/SMJ6106M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6107M00",
+                "MENU_NM": "인증서관리(외부화면)",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6107/SMJ6107M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6108P00",
+                "MENU_NM": "(BOTTOM) 클라우드 폐기 안내",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6108/SMJ6108P00",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6108M01",
+                "MENU_NM": "약관동의",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6108/SMJ6108M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6108M02",
+                "MENU_NM": "본인(신원)확인",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6108/SMJ6108M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6108M03",
+                "MENU_NM": "폐기 완료",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6108/SMJ6108M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6109M00",
+                "MENU_NM": "Step1. 약관동의",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6109/SMJ6109M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6109M01",
+                "MENU_NM": "Step2. 정보입력",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6109/SMJ6109M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6109P02",
+                "MENU_NM": "(BOTTOM)출금계좌 선택",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6109/SMJ6109P02",
+                "MENU_TYPE": "B",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6109M03",
+                "MENU_NM": "Step3. 정보확인 및 추가인증",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6109/SMJ6109M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6109M04",
+                "MENU_NM": "Step4. 고객정보 확인",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6109/SMJ6109M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6109M05",
+                "MENU_NM": "Step5. 발급정보 확인",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6109/SMJ6109M05",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6109M06",
+                "MENU_NM": "발급 완료",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6109/SMJ6109M06",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6110M00",
+                "MENU_NM": "Step1. 발급신청번호 입력",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6110/SMJ6110M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6110M01",
+                "MENU_NM": "Step2. 약관동의",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6110/SMJ6110M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6110M02",
+                "MENU_NM": "Step3. 고객정보 확인",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6110/SMJ6110M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6110M03",
+                "MENU_NM": "발급 완료",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6110/SMJ6110M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6111M00",
+                "MENU_NM": "(iOS only) 다른 기관 인증서 등록/해지안내",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6111/SMJ6111M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6111M01",
+                "MENU_NM": "본인확인",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6111/SMJ6111M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6111M02",
+                "MENU_NM": "등록/해제 선택",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6111/SMJ6111M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6111M03",
+                "MENU_NM": "완료",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6111/SMJ6111M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6112M00",
+                "MENU_NM": "본인확인",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6112/SMJ6112M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6112P01",
+                "MENU_NM": "(POP) 인증서 선택",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6112/SMJ6112P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6112P02",
+                "MENU_NM": "(POP) 인증서 선택_인증서 없는경우",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6112/SMJ6112P02",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6112M03",
+                "MENU_NM": "인증서 갱신 정보 확인",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6112/SMJ6112M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6112M04",
+                "MENU_NM": "갱신 완료",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6112/SMJ6112M04",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6113P00",
+                "MENU_NM": "(POP) 인증서 관리",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6113/SMJ6113P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6113P01",
+                "MENU_NM": "(POP) 인증서자세히보기",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6113/SMJ6113P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6114M00",
+                "MENU_NM": "Step1. 본인확인",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6114/SMJ6114M00",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6114M01",
+                "MENU_NM": "Step2. 정보확인",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6114/SMJ6114M01",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6114M02",
+                "MENU_NM": "인증서 선택",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6114/SMJ6114M02",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6114M03",
+                "MENU_NM": "폐기 완료",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6114/SMJ6114M03",
+                "MENU_TYPE": "M",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6115P00",
+                "MENU_NM": "(POP) 인증번호 탭",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6115/SMJ6115P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6116P00",
+                "MENU_NM": "(POP) PC로 내보낼 인증서 선택",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6116/SMJ6116P00",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            },
+            {
+                "MENU_ID": "SMJ6116P01",
+                "MENU_NM": "(POP) 인증번호 입력 및 내보내기",
+                "MENU_URL_ADR": "/SMJ6/SMJ61/SMJ6116/SMJ6116P01",
+                "MENU_TYPE": "P",
+                "IS_ROUTE": "Y"
+            }
+        ]
+    }
+]
