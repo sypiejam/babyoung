@@ -1,0 +1,71 @@
+import { useTranslation } from "react-i18next";
+import {useState} from "react";
+import PopupFrame from "../../../../../common/components/popup/PopupFrame"
+import PopupHeader from "../../../../../common/components/popup/PopupHeader"
+import PopupContainer from "../../../../../common/components/popup/PopupContainer"
+import { FloatingButtonWrap, ButtonWrap, Button } from "../../../../../common/components/button/index";
+import SlickFrame from "../../../../../common/components/slick/SlickFrame";
+import SlickContainer from "../../../../../common/components/slick/SlickContainer";
+import SlickListItem from "../../../../../common/components/slick/SlickListItem";
+import { TabCont, TabMenu } from '../../../../../common/components/tab/index';
+import WgbTermsSample from "./WgbTermsSample"; // 약관 HTML 샘플
+
+function SMJ1D02P00(){
+    const {t} = useTranslation();
+    const [tabIdx, setTabIdx] = useState(0); // 약관탭인덱스 관리state
+    const tabInfo =[ 
+        {tabname : "SKT", id: "tab1", tabPanel: "tab01Panel", tabUrl: "https://cert.vno.co.kr/app/agree/app_agree_m_skm.jsp?gubun=01"}, 
+        {tabname : "KT", id: "tab2", tabPanel: "tab02Panel", tabUrl: "https://cert.vno.co.kr/app/agree/app_agree_m_skm.jsp?gubun=02"},
+        {tabname : "LG U+", id: "tab3", tabPanel: "tab03Panel", tabUrl: "https://cert.vno.co.kr/app/agree/app_agree_m_skm.jsp?gubun=03"}
+    ];
+
+    return(  
+        <>
+            <PopupFrame>
+                <PopupHeader type="normal" title="Read the terms and conditions" />
+                <PopupContainer hasFixed isFull>
+                    {/* 2023-08-22 마크업 추가 st */}
+                    <button type="button" className="btn_termsdown">
+                        <span className="blind">약관 및 상품설명서 다운로드</span>
+                    </button>
+                    {/* //2023-08-22 마크업 추가 end */}
+                    <div className="terms_head">
+                        <h2 className="title_lv3">[약관] 약관 타이틀 약관 초과시에는 말줄임약관 타이틀 약관 초과시에는 말줄임</h2>
+                    </div>
+                    <div className="terms_body"> 
+                        <SlickFrame>
+                            <SlickContainer arrows> {/* 2023-08-22 arrows 변경 */}
+                                <SlickListItem>
+                                    <WgbTermsSample />{/* 약관 HTML 샘플 : 퍼블확인용 */}
+                                </SlickListItem>
+                                {/* 2023-10-11 약관 안에 탭들어가는 케이스 추가 ST */}
+                                <SlickListItem>
+                                    <div className="tab_wrap">
+                                        <div className="tab_head" role="tablist">
+                                            <TabMenu tabInfo={tabInfo} tabIdx={tabIdx} onClick={setTabIdx} />
+                                        </div>                       
+                                        <TabCont tabcont={tabInfo[tabIdx]}>
+                                            <div className="tab_body">
+                                                iframe영역
+                                            </div>                            
+                                        </TabCont>
+                                    </div>
+                                </SlickListItem>
+                                {/* 2023-10-11 약관 안에 탭들어가는 케이스 추가 END */}
+                                <SlickListItem pdf>약관 PDF 출력영역</SlickListItem> {/* 2023-08-22 pdf 추가 */}
+                                <SlickListItem pdf>약관 PDF 출력영역</SlickListItem>
+                            </SlickContainer>
+                        </SlickFrame>
+                    </div>
+                    <FloatingButtonWrap>
+                        <ButtonWrap>
+                            <Button tag="button" text={t("co1501_0020")} status="primary" /> {/* 2023-08-22 번역코드 수정 */}
+                        </ButtonWrap>
+                    </FloatingButtonWrap>
+                </PopupContainer>
+            </PopupFrame>
+        </>
+    );
+}
+
+export default SMJ1D02P00;
