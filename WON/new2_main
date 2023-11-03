@@ -1,0 +1,392 @@
+@charset "utf-8";
+/** -----------------------
+  * @ 파일 : /_new2/main.css
+  * @ 구분 : 개방형회원 메인
+  * -----------------------
+**/
+/* 스켈레톤 */
+.-main_skeleton_panel {display:none;}
+.-main_skeleton{position:absolute;left:0;top:0;right:0;bottom:0;background-color:#e4eaf2;border-radius:1rem;overflow:hidden;z-index:2;}
+.-main_skeleton::before{content:'';position:absolute;top:0;left:0;width:36rem;height:100%;background:url(/img/nonetouch/pib/_new/content/image/img_main_skeleton_lighting.png) repeat-y 0 0;background-size:36rem auto;animation:mainLoading 2s infinite linear;-webkit-animation:mainLoading 2s infinite linear;}
+@keyframes mainLoading{
+	0%{transform:translateX(-360px);}
+	50%, 100%{transform:translateX(720px);}
+}
+/* 메인해더 */
+.nst_main {position:relative;background:#f3f6fa;}
+.nst_main_header {position:relative;min-height:3.3rem;margin:0 2rem 0.8rem;padding:2.4rem 0 0.4rem;}
+.nst_main_header::before {content:'';position:absolute;top:0;right:-2rem;left:-2rem;height:17.6rem;background:linear-gradient(180deg, #fff 0%, #f2f5f9 100%);}
+.nst_header_text {position:relative;display:inline-block;max-width:calc(100% - 8.2rem);margin-top:0.4rem;font-weight:700;font-size:1.7rem;letter-spacing:-0.6px;}
+.nst_header_link {position:absolute;top:2.4rem;right:-0.4rem;font-size:0;}
+.nst_header_link > a {display:inline-block;position:relative;height:3.3rem;}
+.nst_header_link .-bell_link {width:3.4rem;background:url(/img/nonetouch/pib/_new/content/ico-bell-link.png) no-repeat center;background-size:100%;font-size:1.5rem;}
+.nst_header_link .-bell_link.-active {background:url(/img/nonetouch/pib/_new/content/ico-bell-link-on.png) no-repeat center;background-size:100%;}
+.nst_header_link .-bell_svg {background:none;width:3.3rem;}
+.nst_header_link .-profile_link {width:3.3rem;margin-right:1.6rem;background:url(/img/nonetouch/pib/_new/content/icon/ic_main_header_profile.png) no-repeat 0 0;background-size:100%;}
+
+/* 메인공통 */
+.nst_main_panel {overflow:hidden;position:relative;display:block;min-height:32.8rem;margin:0 2rem 2.4rem;}
+.nst_main_panel > .inner {display:block;width:100%;height:100%;padding:2.4rem 2rem;border-radius:1rem;}
+.nst_main_title {display:inline-block;height:2.4rem;padding:0.2rem 0.9rem 0;text-align:center;font-weight:500;font-size:1.4rem;line-height:2.2rem;border-radius:10rem;color:#848a92;background:#eff4f9;}
+.nst_main_text {display:block;margin-top:0.8rem;font-weight:500;font-size:2.2rem;line-height:3rem;letter-spacing:-0.6px;color:#333a40;}
+.nst_main_text .eng {font-size:2.3rem;line-height:2.7rem;}
+.nst_main_img {display:block;width:20.8rem;height:17.6rem;margin:-0.4rem auto -0.8rem;background-repeat:no-repeat;background-position:0 0;background-size:100%;}
+.nst_main_arrow_small {display:inline-block;font-weight:300;font-size:1.4rem;color:#fff;}/* 20221011삭제 */
+.nst_main_arrow_small::after {content:'';display:inline-block;width:1.4rem;height:2.4rem;margin-top:-0.2rem;margin-left:0.1rem;vertical-align:middle;background:url(/img/nonetouch/pib/_new2/icon/ic_easy_arrow_white.png) no-repeat 0 0 / 100%;opacity:0.8;}/* 20221011삭제 */
+
+/* 편의서비스 */
+.nst_service {overflow:hidden;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;}/* 20221124 수정 */
+.nst_service .-main_skeleton.-icon {width:5.6rem;border-radius:1.6rem;}
+.nst_service .-main_skeleton.-text01 {top:1rem;left:6.6rem;width:5.9rem;height:1.3rem;}
+.nst_service .-main_skeleton.-text02 {top:3.1rem;left:6.6rem;width:10.5rem;height:1.5rem;}
+.nst_service > .inner {padding:2rem 0;}
+.nst_service::-webkit-scrollbar {display:none;}
+.nst_service_slide {white-space:nowrap;height:5.6rem;font-size:0;}
+.nst_service_list {display:inline-block;width:20.8rem;}
+.nst_service_list:first-child {margin-left:2rem;}
+.nst_service_item {position:relative;display:table;width:100%;height:5.6rem;}
+.nst_service_icon {display:table-cell;width:5.6rem;height:5.6rem;border-radius:1.6rem;background-color:#fff;background-repeat:no-repeat;background-position:0 0;background-size:100%;-webkit-box-shadow:0 0.5rem 1.5rem rgba(0, 0, 0, 0.05);box-shadow:0 0.5rem 1.5rem rgba(0, 0, 0, 0.05);}
+.nst_service_icon_01 {background-image:url(/img/nonetouch/pib/_new2/icon/ic_easy_shortcut_01.png);}
+.nst_service_icon_02 {background-image:url(/img/nonetouch/pib/_new2/icon/ic_easy_shortcut_02.png);}
+.nst_service_icon_03 {background-image:url(/img/nonetouch/pib/_new/content/icon/ic_main_shortcut_05.png);}
+.nst_service_icon_04 {background-image:url(/img/nonetouch/pib/_new2/icon/ic_easy_shortcut_04.png);}
+.nst_service_icon_05 {background-image:url(/img/nonetouch/pib/_new2/icon/ic_easy_shortcut_05.png);}/* 20221011 마이데이터 삭제 */
+.nst_service_text {display:table-cell;vertical-align:middle;}
+.nst_service_text .desc {margin-left:1rem;padding-top:0.3rem;font-weight:400;font-size:1.3rem;letter-spacing:-0.6px;color:#4c5459;}
+.nst_service_text .bold {display:inline-block;margin-top:-1px;font-weight:500;font-size:1.5rem;color:#333a40;}
+
+/* 상품몰 바로가기 */
+.nst_products {min-height:15.2rem;}
+.nst_products > .inner {height:15.2rem;padding-top:3.2rem;background:linear-gradient(90deg, #4e9eff -16.67%, #0878ff 111.67%);}
+.nst_products_title {position:relative;font-weight:300;font-size:1.4rem;line-height:2.2rem;color:#fff;z-index:2;}
+.nst_products_img {position:absolute;top:0;right:0;width:16rem;height:15.2rem;margin:0;background-image:url(/img/nonetouch/pib/_new2/image/img_easy_productmall.png);}
+.nst_products .nst_main_text {position:relative;margin:0;font-weight:700;color:#fff;z-index:2;}
+.nst_products_text {position:relative;display:block;margin-top:0.4rem;font-weight:700;font-size:2rem;line-height:2.8rem;letter-spacing:-0.6px;}
+
+/* 환율 */
+.nst_exrate {margin:0 2rem 2.4rem;}
+.nst_exrate_anchor {position:relative;display:block;width:100%;height:2.7rem;margin-bottom:0.8rem;}
+.nst_exrate_anchor .-main_skeleton {top:0.5rem;height:1.6rem;width:22rem;}
+.nst_exrate_title {display:inline-block;padding-left:0.4rem;font-weight:700;font-size:1.7rem;line-height:2.7rem;letter-spacing:-0.6px;color:#333a40;}
+.nst_exrate_date {margin-left:0.6rem;font-weight:400;font-size:1.4rem;line-height:1.9rem;letter-spacing:0;color:#a1a9b2;vertical-align:1px;}
+.nst_exrate_arrow {position:absolute;top:calc(50% - 1.2rem);right:0;display:block;width:1.4rem;height:2.4rem;background:url(/img/nonetouch/pib/_new2/icon/ic_arrow_normal_right_enabled.png) no-repeat 50% 50% / 100%;}
+.nst_exrate_info {font-size:0;}
+.nst_exrate_info .-main_skeleton_panel {background-color:#fff;}/* 20221124 추가 */
+.nst_exrate_item {position:relative;display:inline-block;width:calc(50% - 0.6rem);height:13.8rem;padding:2.4rem 2rem 1.8rem;background:#fff;border-radius:1rem;vertical-align:top;}
+.nst_exrate_item:first-child {margin-right:1.2rem;}
+.nst_exrate_flag {display:block;width:2.4rem;height:2.4rem;border-radius:50%;background-repeat:no-repeat;background-position:0 0;background-size:100%;box-shadow:0 0 0 1px rgba(0, 0, 0, 0.1) inset;}
+.nst_exrate_flag.usd {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_usa.png);}/*미국*/
+.nst_exrate_flag.eur {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_eur.png);}/*유럽*/
+.nst_exrate_flag.jpy {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_jpn.png);}/*일본*/
+.nst_exrate_flag.cny {background-image:url(/img/nonetouch/pib/_new2/icon/flag/ic_flag_chn.png);}/*중국*/
+.nst_exrate_curr {display:block;font-weight:400;font-size:1.6rem;line-height:2.5rem;letter-spacing:-0.6px;color:#686e75;}
+.nst_exrate_spot {display:block;font-weight:500;font-size:2rem;line-height:2.8rem;letter-spacing:0;color:#333a40;}
+.nst_rolling {overflow:hidden;position:relative;}
+.nst_rolling_item {position:absolute;left:0;width:100%;background:#fff;}
+.nst_rolling_item:nth-child(2) {top:100%;opacity:0;}
+.nst_rolling_flag {width:2.4rem;height:2.4rem;}
+.nst_rolling_curr {height:2.5rem;margin-top:1.9rem;}
+.nst_rolling_spot {height:2.8rem;}
+
+/* 만보기 : 20221118 수정 */
+.nst_pedometer {min-height:19.4rem;}
+.nst_pedometer > .inner {background:#fff;min-height:19.4rem;}
+.nst_pedometer .nst_main_text {margin-top:0.8rem;font-size:1.8rem;line-height:2.5rem;}
+.nst_steps {margin-top:0.6rem;font-size:0;}
+.nst_steps_count::after {content:'';display:block;clear:both;}
+.nst_steps_text {float:left;height:3.7rem;margin-top:0.7rem;font-weight:500;font-size:1.4rem;color:#848a92;}
+.nst_steps_text .num {margin-right:0.4rem;font-size:2.6rem;letter-spacing:0;line-height:1.4;color:#333a40;vertical-align:-2px;}
+.nst_steps_lottie {float:right;width:4.8rem;height:4.8rem;margin-right:-0.8rem;}
+.nst_lottie_beginning {width:7.2rem;height:5.6rem;margin-top:-0.4rem;}
+.nst_lottie_progress {width:6.4rem;height:4.8rem;}
+.nst_steps_progress[value] {appearance:none;overflow:hidden;width:100%;height:1.2rem;border-radius:2rem;}
+.nst_steps_progress[value]::-webkit-progress-bar {background-color:#e4eaf2;}
+.nst_steps_progress[value]::-webkit-progress-value {border-radius:2rem;background:linear-gradient(90deg, #0878ff 0%, #6aa0ff 100%);transition:all 1s;}
+.nst_steps_mission {display:block;margin-top:0.2rem;text-align:right;font-weight:500;font-size:1.2rem;letter-spacing:0;line-height:1.6rem;color:#a1a9b2;}
+
+/* LCK */
+.nst_wonlck > .inner {text-align:center;background:#dfe4ff;}
+.nst_wonlck .nst_main_title {font-size:1.3rem;color:#5a6cce;background:#c6cfff;}
+.nst_wonlck .nst_main_img {background-image:url(/img/nonetouch/pib/_new2/image/img_easy_lck.png);}
+.nst_wonlck_subtxt {font-weight:400;font-size:1.5rem;color:#615ccb;}
+
+/* 투자전략 : 20221011 삭제 */
+/* 투자전략 : 20221011 추가, 20221124 삭제 */
+
+/* 선물하기 */
+.nst_gift > .inner {text-align:center;background:linear-gradient(90deg, #34c2ba -2.94%, #34c2b9 100%);}
+.nst_gift .nst_main_title {font-size:1.3rem;color:#daf0ef;background:#008d96;}
+.nst_gift .nst_main_text {color:#fff;}
+.nst_gift .nst_main_img {margin-bottom:1.6rem;background-image:url(/img/nonetouch/pib/_new2/image/img_easy_gift.png);}
+
+/* 배너 : 20221118 추가 */
+.nst_mainbnr {min-height:11rem;}
+.nst_mainbnr > .inner {position:relative;min-height:11rem;padding:3.2rem 1.6rem 3rem 8.6rem;background:#fff;letter-spacing:-0.6px;color:#333a40;}
+.nst_mainbnr_title {display:block;font-size:1.3rem;line-height:2rem;color:#4c5459;}
+.nst_mainbnr_text {display:block;font-weight:700;font-size:1.8rem;line-height:2.5rem;}
+.nst_mainbnr_text .num {font-size:1.9rem;line-height:1;letter-spacing:0;}
+.nst_mainbnr_img {position:absolute;top:calc(50% - 3.6rem);left:1.2rem;display:block;width:7.2rem;height:7.2rem;margin:0;background-repeat:no-repeat;background-position:0 0;background-size:100%;}
+.nst_savewalk_img {background-image:url(/img/nonetouch/pib/_new2/image/img_easy_walking.png);}/* 워킹적금 */
+.nst_economicnews_img {background-image:url(/img/nonetouch/pib/_new2/image/img_easy_insight.png);}/* 투자전략 */
+
+
+/* ========================== */
+/*     2023 간편회원 개편      */
+/* ========================== */
+/* 금융서비스 전환하기 */
+.nst_gowon {position:relative;display:block;min-height:20.4rem;margin:0 2rem 1.6rem;}
+.nst_gowon > .inner {display:block;height:20.4rem;padding:2.4rem 2rem;font-size:0;border-radius:1rem;box-shadow:0 1rem 2rem rgba(0, 0, 0, 0.08);background:linear-gradient(90deg, #4e9eff -16.67%, #0878ff 111.67%);}
+.nst_gowon_tit {position:relative;font-weight:300;font-size:1.4rem;line-height:2.2rem;color:#fff;z-index:1;}
+.nst_gowon_txt {position:relative;display:block;margin-top:0.4rem;font-weight:700;font-size:2.2rem;line-height:3.3rem;letter-spacing:-0.6px;color:#fff;z-index:1;}
+.nst_gowon_img {position:absolute;top:2.6rem;right:2rem;width:8.8rem;height:8.8rem;margin:0;background-image:url(/img/nonetouch/pib/_new2/image/img_opentypehome_topimg.png);}
+.nst_gowon .nst_btn_ground2 {margin-top:1.6rem;}
+
+/* 배너 H72 */
+.nst_mbanner {overflow:hidden;position:relative;min-height:7.2rem;margin:0 2rem 1.6rem;}
+.nst_mbanner > .inner {position:relative;display:block;height:7.2rem;padding:1.4rem 7rem 1.4rem 2rem;border-radius:1rem;background:#fff;letter-spacing:-0.6px;color:#333a40;}
+.nst_mbanner_tit {display:block;font-weight:700;font-size:1.5rem;letter-spacing:-0.6px;color:#151c22;}
+.nst_mbanner_txt {display:block;font-weight:400;font-size:1.3rem;line-height:2rem;color:#686e75;}
+.nst_mbanner_img {position:absolute;right:2rem;top:1.2rem;width:4.8rem;height:4.8rem;background-repeat:no-repeat;background-position:50% 50%;background-size:100%;}
+.nst_wooripay_img {background-image:url(/img/nonetouch/pib/_new2/icon/ic_opentypehome_wooripay.png);}/* 우리페이 */
+
+/* 주요지수 */
+.nst_maindex {position:relative;height:15.4rem;margin:0 2rem 1.6rem;border-radius:1rem;background-color:#fff;}
+.nst_maindex_wrap {width:100%;padding:2rem;}
+.nst_maindex_head {display:block;width:100%;height:2.4rem;margin-bottom:1.6rem;font-size:0;}
+.nst_maindex_head .title {display:inline-block;font-weight:500;font-size:1.5rem;line-height:2.4rem;letter-spacing:-0.6px;color:#151c22;}
+.nst_maindex_head .text {margin-left:0.8rem;font-weight:400;font-size:1.3rem;line-height:2rem;color:#686e75;vertical-align:1px;}
+.nst_maindex_head .text .num {font-size:1.4rem;letter-spacing:0;}
+.nst_maindex_head .arrow {float:right;display:block;width:1.4rem;height:2.4rem;background:url(/img/nonetouch/pib/_new2/icon/ic_arrow_normal_right_enabled.png) no-repeat 50% 50% / 100%;}
+.nst_maindex_body {display:flex;margin:0 -2rem;}
+.nst_maindex_item {flex:1;height:7.4rem;text-align:center;}
+.nst_maindex_item + .nst_maindex_item {border-left:1px solid #f2f5f9;}
+.nst_maindex_title {height:2rem;font-weight:500;font-size:0;color:#333a40;}
+.nst_maindex_title .txt {font-weight:500;font-size:1.4rem;line-height:2rem;}
+.nst_maindex_title .nst_exrate_flag {display:inline-block;width:1.6rem;height:1.6rem;margin:0.1rem 0.4rem 0 0;text-indent:-9999px;font-size:1px;vertical-align:top;color:transparent;}
+.nst_maindex_title .curr {display:inline-block;letter-spacing:0;}
+.nst_maindex_price {height:3.2rem;margin:0.2rem 0;}
+.nst_maindex_price .num {font-weight:600;font-size:2.2rem;line-height:3.2rem;letter-spacing:0;}
+.nst_maindex_ratio {height:1.8rem;font-size:1.3rem;color:#848a92;}
+.nst_maindex_ratio .situ {display:inline-block;font-weight:400;line-height:1.8rem;letter-spacing:0;background-repeat:no-repeat;background-position:0 50%;background-size:1.6rem auto;}
+.nst_maindex_ratio .up {padding-left:1.8rem;background-image:url(/img/nonetouch/pib/_new2/icon/ic_rate_up.png);color:#e5483d;}
+.nst_maindex_ratio .dw {padding-left:1.8rem;background-image:url(/img/nonetouch/pib/_new2/icon/ic_rate_down.png);color:#1056c3;}
+.nst_rollbox {overflow:hidden;position:relative;}
+.nst_rollbox_item {position:absolute;top:100%;width:100%;background:#fff;}
+.nst_rollbox_item:first-child {top:0;}
+
+/* 주요서비스 */
+.nst_shortcut {overflow:hidden;overflow-x:auto;margin-bottom:1.6rem;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;}
+.nst_shortcut > .inner {position:relative;height:17.2rem;}
+.nst_shortcut::-webkit-scrollbar {display:none;}
+.nst_shortcut_slide {position:absolute;right:0;white-space:nowrap;font-size:0;}
+.nst_shortcut_slide.nst_static {position:static;}
+.nst_motion .nst_shortcut_slide {-webkit-transition:all 0.7s 0.4s cubic-bezier(0.45, 0, 0.4, 1);transition:all 0.7s 0.4s cubic-bezier(0.45, 0, 0.4, 1);}
+.nst_shortcut_list {display:inline-block;width:15.6rem;height:17.2rem;margin-left:0.8rem;vertical-align:top;}
+.nst_shortcut_list:first-child {margin-left:2rem;}
+.nst_shortcut_list:last-child {margin-right:2rem;}
+.nst_shortcut_item {overflow:hidden;position:relative;width:100%;height:100%;padding:2rem;border-radius:1rem;background:#fff;}
+.nst_shortcut_badge {display:inline-block;height:2rem;padding:0 0.7rem;border:1px solid #1490ef;text-align:center;font-size:1.2rem;font-weight:700;line-height:2rem;border-radius:10rem;color:#1490ef;vertical-align:middle;}
+.nst_shortcut_desc {margin-top:0.8rem;font-size:1.5rem;letter-spacing:-0.6px;color:#333a40;}
+.nst_shortcut_desc .tit {display:block;font-weight:700;}
+.nst_shortcut_desc .txt {display:block;font-weight:400;}
+.nst_shortcut_img {position:absolute;right:2rem;bottom:2rem;width:4rem;height:4rem;}
+
+/* 만보기 */
+.nst_walkbox {min-height:18.8rem;margin:1.6rem 2rem 2.4rem;}
+.nst_walkbox > .inner {min-height:18.8rem;padding:2rem;font-size:0;}
+.nst_walkbox .nst_main_title {height:2rem;padding:0 0.9rem;font-weight:700;font-size:1.2rem;background:#e4eaf2;}
+.nst_walkbox .nst_main_text {line-height:2.8rem;}
+.nst_walkbox .nst_steps {margin-top:1.2rem;}
+.nst_walkbox .nst_steps_text {height:3.6rem;margin-top:1.2rem;}
+.nst_walkbox .nst_steps_mission {margin-bottom:-0.2rem;}
+.nst_walkbox .nst_steps_progress[value] {margin-top:0.4rem;}
+
+/* 생활혜택 */
+.nst_svclink {margin-top:-1.6rem;padding-bottom:3.5rem;}
+.nst_svclink > .inner {padding:0 2rem;}
+.nst_svclink_wrap {font-size:0;}
+.nst_svclink_list {display:inline-block;margin-left:calc((100% - 29.6rem) / 3);text-align:center;vertical-align:top;}
+.nst_svclink_list:nth-child(4n+1) {margin-left:0;}
+.nst_svclink_item {position:relative;display:block;width:7.4rem;min-height:9.3rem;margin-top:1.6rem;}
+.nst_svclink_item .-main_skeleton {height:7.4rem;}
+.nst_svclink_icon {position:relative;display:block;width:7.4rem;height:7.4rem;margin:0 auto;border-radius:1.6rem;background-color:#fff;}
+.nst_svclink_icon img {position:absolute;top:50%;left:50%;width:4rem;height:4rem;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);}
+.nst_svclink_text {display:block;max-width:7.4rem;margin:0.4rem auto 0;padding:0 0.5rem;font-weight:500;font-size:1.3rem;line-height:1.5rem;color:#333a40;}
+@media (max-width: 320px) {
+  .nst_svclink_list {margin-left:0.8rem;}
+  .nst_svclink_item {width:6.4rem;}
+  .nst_svclink_item .-main_skeleton {height:6.4rem;}
+  .nst_svclink_icon {width:6.4rem;height:6.4rem;}
+  .nst_svclink_text {width:6.4rem;padding:0;}
+}
+@media (min-width: 590px) {
+  .nst_svclink_wrap {margin-left:-0.8rem;}
+  .nst_svclink_list {margin-left:0.8rem !important;}
+}
+
+/* 20230314 홈화면 설정[S] */
+.nst_homeset {border-top:1px solid #f2f5f9;}
+.nst_homeset_item {padding:2.4rem 0;border-bottom:1px solid #f2f5f9;}
+.nst_homeset_label {width:100%;margin:0.3rem 0 0 1px;letter-spacing:-0.6px;}
+.nst_homeset_label .tit {display:inline-block;font-family:'Noto Sans CJK KR';font-weight:500;font-size:1.7rem;color:#151c22;}
+.nst_homeset_label .txt {display:block;margin-top:0.3rem;font-family:'Noto Sans CJK KR';font-weight:400;font-size:1.5rem;color:#4c5459;}
+.nst_homeset_panel {display:none;}
+.nst_homeset_thumb {width:27.2rem;height:16rem;margin:2.4rem auto 0;}
+@media (max-width: 320px){
+  .screen-hid {display:none;}
+}
+/* 20230314 홈화면 설정[E] */ 
+
+/* 이벤트 배너 : 뱅킹 메인 배너와 동일(/_new/main.css) */
+.-main_ad_wrap{position:relative;background-color:#fff}
+.-main_ad{position:relative;margin:0;z-index:2}
+.-main_ad .owl-carousel .owl-item{height:7.7rem}
+.-main_ad .owl-carousel .owl-item .item{min-height:7.7rem}
+.-main_ad .item{padding-top:.7rem;background-color:transparent}
+.-main_ad .-item_inner{height:7rem;background-color:transparent}
+.-main_ad .item img{position:absolute;left:2.4rem;bottom:1.4rem;width:6.5rem !important;height:6.5rem;}
+.-main_ad .-ad_txt{margin-top:-.7rem;padding:1.4rem 0 0 9.6rem;height:100%}
+.-main_ad .-ad_txt .-tit{display:block;font-size:1.3rem;color:transparent}
+.-main_ad .-ad_txt .-txt{display:block;margin-top:1px;font-weight:500;color:transparent}
+.-main_ad .-control{display:inline-block;width:1.9rem;height:1.9rem;margin-left:6px}
+.-main_ad .-control.-play{background:url(/img/nonetouch/pib/_new/content/ico_control_ad_play.png) no-repeat 0 0;background-size:1.9rem}
+.-main_ad .-control.-stop{background:url(/img/nonetouch/pib/_new/content/ico_control_ad_pause.png) no-repeat 0 0;background-size:1.9rem}
+.-main_ad .-main_ad_remote{position:absolute;bottom:1.7rem;right:1.7rem;z-index:2;font-size:0}
+.-main_ad .-main_ad_remote >*{vertical-align:middle;font-size:1.5rem}
+.-main_ad .-ad_count{display:inline-block;right:1.8rem;bottom:1rem;z-index:1;font-size:1.3rem;font-family:'RobotoNew';}
+.-main_ad .-ad_count >span{color:#333;z-index:2;letter-spacing:-1px;font-weight:500}
+.-main_ad .-ad_count .-total{color:#666;font-weight:300}
+.-main_ad .-slider_prev{position:absolute;left:0;top:100%;width:2rem;height:2rem;z-index:2}
+.-main_ad .-slider_next{position:absolute;right:0;top:100%;width:2rem;height:2rem;z-index:2}
+.-ad_list{position:absolute;top:0;z-index:0;width:100%;height:100%}
+.-ad_list .item{position:absolute;top:0;width:100%;height:100%}
+.-ad_list .-ad_txt{padding:1.4rem 0 0 9.6rem;margin-top:.7rem;height:7rem}
+.-ad_list .-ad_txt .-tit{display:block;color:#666;font-size:1.3rem}
+.-ad_list .-ad_txt .-txt{display:block;margin-top:1px;color:#333;font-weight:500}
+.-ad_list .item.bg1 .-ad_txt{background-color:#eee}
+.-ad_list .item.bg2 .-ad_txt{background-color:#e7f0fd}
+.-ad_list .item.bg3 .-ad_txt{background-color:#e7e7fd}
+.-ad_list .item.bg4 .-ad_txt{background-color:#fdf6e4}
+.-ad_list .item.bg5 .-ad_txt{background-color:#fde7e7}
+.-ad_list .item.bg6 .-ad_txt{background-color:#e9f6e6}
+/* 광고 롤링배너 */
+.-nst_ad_wrap{height:13.6rem;background:#eef3f8}
+.-nst_ad_wrap .-main_ad{height:100%;line-height:1.6}
+.-nst_ad_wrap .-main_ad .-main_skeleton{left:2rem;right:2rem;width:auto}
+.-nst_ad_wrap .-main_ad .owl-carousel .owl-item{height:13.6rem}
+.-nst_ad_wrap .-main_ad .item{padding:0;border-radius:1rem}
+.-nst_ad_wrap .-main_ad .item img{left:auto;right:0;bottom:0;width:13.6rem !important;height:13.6rem;}
+.-nst_ad_wrap .-main_ad .-item_inner{height:13.6rem;background:none;padding-left:1.6rem}
+.-nst_ad_wrap .-main_ad .-ad_txt{margin:0;padding:3.2rem 0 0 0;width:19.2rem}
+.-nst_ad_wrap .-main_ad .-ad_txt .-tit{color:#fff;font-size:1.3rem;font-weight:500;line-height:1.6;letter-spacing:-0.75px}
+.-nst_ad_wrap .-main_ad .-ad_txt .-txt{color:#fff;font-size:2.2rem;font-weight:700;line-height:1.2;letter-spacing:-0.6px;margin-top:initial}
+.-nst_ad_wrap .-main_ad .-ad_txt .-txt .-txt_s{color:#fff27d;font-size:2.2rem;font-weight:700;line-height:1.2}
+.-nst_ad_wrap .-main_ad .-main_ad_remote{right:2.8rem;bottom:.8rem}
+.-nst_ad_wrap .-main_ad .-main_ad_remote:after{display:block;content:'';clear:both}
+.-nst_ad_wrap .-main_ad .-ad_count{width:3.9rem;height:2.4rem;line-height:2.4rem;text-align:center;font-weight:400}
+.-nst_ad_wrap .-main_ad .-control{margin:0 .4rem 0 0;width:2.4rem;height:2.4rem}
+.-nst_ad_wrap .-main_ad .-control.-stop{background:url(/img/nonetouch/pib/_new/content/icon/ic_main_banner_pause.png) no-repeat 0 0;background-size:100%}
+.-nst_ad_wrap .-main_ad .-control.-play{background:url(/img/nonetouch/pib/_new/content/icon/ic_main_banner_play.png) no-repeat 0 0;background-size:100%}
+.-nst_ad_wrap .-main_ad .item{position:relative;border-radius:1rem}
+.-nst_ad_wrap .-main_ad .-just1{padding:0 2rem}
+.-nst_ad_wrap .-main_ad .-just1 .item .-ad_txt{position:relative;z-index:2}
+.-nst_ad_wrap .-main_ad .-slider_next,
+.-nst_ad_wrap .-main_ad .-slider_prev{top:0;height:100%}
+.-nst_ad_wrap .-main_ad .-ad_count > span{font-family:RobotoNew;letter-spacing:-.75px;font-size:1.2rem;font-weight:inherit;color:#fff}
+.-nst_ad_wrap .-main_ad .-ad_count .-present{color:#fff;font-weight:400}
+.-nst_ad_wrap .-main_ad .-ad_count .-total{color:#fff;opacity:.4;font-weight:400}
+.-nst_ad_wrap .-main_ad .owl-carousel .owl-item .-item_img{opacity:0;right:-1rem;transition:.5s .1s right}
+.-nst_ad_wrap .-main_ad .owl-carousel .owl-item .-ad_txt .-tit{position:relative;opacity:0;margin-left:1rem;transition:margin-left .7s .1s,opacity .7s .1s;z-index:2}
+.-nst_ad_wrap .-main_ad .owl-carousel .owl-item .-ad_txt .-txt{position:relative;opacity:0;margin-left:1.5rem;transition:margin-left .9s .1s, opacity .9s .1s;z-index:2}
+.-nst_ad_wrap .-main_ad .owl-carousel .owl-item.active .-item_img{opacity:1;right:0}
+.-nst_ad_wrap .-main_ad .owl-carousel .owl-item.active .-ad_txt .-tit{opacity:1;margin-left:0}
+.-nst_ad_wrap .-main_ad .owl-carousel .owl-item.active .-ad_txt .-txt{opacity:1;margin-left:0;margin-top:0}
+
+/* 간편회원 오늘의 환율 레이아웃 변경 */
+.nst_rolling.nst_rolling_flag.re_style {display:inline-block;}
+.nst_rolling.nst_rolling_flag.re_style + .nst_rolling_curr{margin-top:0;display:inline-block;width: calc(100% - 24px);text-align:right;}
+.nst_rolling.nst_rolling_flag.re_style + .nst_rolling_curr .nst_rolling_item{position:static;}
+
+/* LCK 스타일변경 */
+.nst_main_panel.nst_wonlck{background:#3a344e;margin:0 2rem 2.4rem 2rem;border-radius:1rem;}
+.nst_wonlck > .inner {position:relative;text-align:center;border-radius:0;padding:4rem 0 2.4rem 0;background:transparent;}
+.nst_wonlck > .inner:after {content:"";position:absolute;right:1.4rem;top:1.4rem;width:5rem;background:url(/img/nonetouch/pib/_new2/image/img_logo_lck.png) right top no-repeat;height:3.8rem;background-size:5rem;}
+.nst_wonlck .nst_main_text {font-size:2.3rem;color:#fff;}
+.nst_wonlck .nst_main_title {font-size:1.3rem;color:#3a344e;background:#fff;}
+.nst_wonlck .nst_center_img {padding:1rem 3.5rem;margin-top:.5rem;}
+.nst_wonlck_subtxt {font-weight:600;font-size:1.8rem;color:#fff;}
+.nst_wonlck_subtxt .pink{font-weight:600;font-size:2.2rem;color:#fd73ab;}
+
+/* 간편회원 틴틴 상단스타일 추가 */
+.nst_noti_img {position:absolute;top:2.6rem;right:2rem;width:8.8rem;height:8.8rem;margin:0;background-image:url(/img/nonetouch/pib/_new2/common/icon_noti.png);}
+.-main_slider_account.woori_teenteen .-wooribank{min-height:15.2rem;border-radius:.8rem;border-radius:1rem;box-shadow: 0 6px 12px rgba(0,0,0,0.10)}
+.-main_slider_account.woori_teenteen{margin-bottom:1.6rem;}
+.-main_slider_account.woori_teenteen .-nst_accnumcopy_btn {text-align:left;line-height:0;}
+.-main_slider_account.woori_teenteen .-nst_accnumcopy_btn::after {content:'';display:inline-block;width:2.4rem;height:2.4rem;margin-left:-0.3rem;background:url(/img/nonetouch/pib/_new/content/icon/ic_main_copy.png) no-repeat 0 0 / 100%;}
+.-main_slider_account.woori_teenteen .-account_bank .-bank_account{margin-right:.5rem;vertical-align:top;}
+.-main_slider_account.woori_teenteen .-account_bank{text-align:left;}
+
+.-main_slider_account.woori_teenteen .-buttons{bottom:1.4rem;display:inline-block;margin: 0 auto;padding: 0;width: 100%}
+.-main_slider_account.woori_teenteen .-buttons>span{display: block;float: left;height: 100%;width: 100%;text-align: center;}
+.-main_slider_account.woori_teenteen .-buttons>span em{color:#fff;}
+.-main_slider_account.woori_teenteen .-buttons>span a{width:100%;}
+.-main_slider_account.woori_teenteen .-buttons>span:first-child:nth-last-child(1) {width: 100%;}
+.-main_slider_account.woori_teenteen .-buttons>span:first-child:nth-last-child(2),
+.-main_slider_account.woori_teenteen .-buttons>span:first-child:nth-last-child(2) ~ span {width: 50%;position: relative;}
+.-main_slider_account.woori_teenteen .-buttons>span:first-child:nth-last-child(2) .-button:first-child {text-align: center;}
+.-main_slider_account.woori_teenteen .-buttons>span:first-child:nth-last-child(2) ~ span:last-child::before {content: '';width: 1px;height: 12px;display: block;position: absolute;background-color: #fff;opacity:.2;top: 6px;left: 0;transform: initial;}
+.-main_slider_account.woori_teenteen .-buttons>span:first-child:nth-last-child(3),
+.-main_slider_account.woori_teenteen .-buttons>span:first-child:nth-last-child(3) ~ span {width: 33.3333%;position: relative;}
+.-main_slider_account.woori_teenteen .-buttons>span:first-child:nth-last-child(3) ~ span:nth-last-child(2)::before {content: '';width: 1px;height: 12px;display: block;position: absolute;background-color: #fff;opacity:.2;top: 6px;left: 0;transform: initial;}
+.-main_slider_account.woori_teenteen .-buttons>span:first-child:nth-last-child(3) ~ span:nth-last-child(2)::after {content: '';width: 1px;height: 12px;display: block;position: absolute;background-color: #fff;opacity:.2;top: 6px;right: 0;transform: initial;}
+.-main_slider_account.woori_teenteen .-buttons>span .-button em {margin: 0 auto;display: table-cell;vertical-align: middle; max-width: 8rem;}
+.-main_slider_account.woori_teenteen .-buttons>span:first-child .-button {float: left;width: 100%;}
+.-main_slider_account.woori_teenteen .-buttons>span .-button {height:2.4rem;font-size:1.5rem;font-weight:500}
+.-main_slider_account.woori_teenteen .-buttons>span .-button:after {position: absolute;content:none;}
+.-main_slider_account.woori_teenteen .-buttons>span+span:before{display:none}
+
+.-main_slider_account.woori_teenteen .-selection.-nst_switch input.-normal.-right ~ label{height:2rem;padding-right:3rem;letter-spacing:-.75px;font-weight:500;}
+.-main_slider_account.woori_teenteen .-selection.-nst_switch input[type="checkbox"].-normal ~ label:after{content:'OFF';display:inline-block;font-size:1.1rem;line-height:1.6;position:absolute;left:auto;right:.7rem;top:.2rem;width:1.6rem;height:1.6rem;font-weight:500;font-family:'NewRoboto';letter-spacing:-.3px;color:#fff;}
+.-main_slider_account.woori_teenteen .-selection.-nst_switch input[type="checkbox"].-normal:checked ~ label:after{content:'ON';right:.5rem;}
+.-main_slider_account.woori_teenteen .-selection.-nst_switch input[type="checkbox"].-normal ~ label:before{background-image:none;background-color:#136dc5;width:2.6rem;height:2rem;border-radius:0.6rem;}
+.-main_slider_account.woori_teenteen .-selection.-nst_switch input[type="checkbox"].-normal ~ label:after{color:#fff;}
+.-main_slider_account.woori_teenteen .-selection.-nst_switch input[type="checkbox"].-normal:checked ~ label:before{background-image:none;background-color:#f2f5f9;opacity:1;}
+.-main_slider_account.woori_teenteen .-selection.-nst_switch input[type="checkbox"].-normal:checked ~ label:after{color:#1490ef;}
+.-main_slider_account.woori_teenteen .-selection.-nst_switch input[type="checkbox"].-normal ~ label:before {background-color:#0089b1;}
+.-main_slider_account.woori_teenteen .-btn_sum .-selection.-nst_switch input[type="checkbox"].-normal:checked ~ label:before{background-color:#f2f5f9;}
+.-main_slider_account.woori_teenteen .-btn_sum .-selection.-nst_switch input[type="checkbox"].-normal:checked ~ label:after{color:#297af8;}
+
+.woori_slider_teenteen{height:19.2rem !important;margin-bottom:1.6rem;}
+.woori_slider_teenteen .owl-carousel{display:block;height:100%;}
+.woori_slider_teenteen .owl-carousel .owl-item{height:19.2rem;}
+.woori_slider_teenteen .nst_gowon{margin:0 0 1.6rem;height:19.2rem;}
+.woori_slider_teenteen .nst_gowon .inner{height:19.2rem;padding:3.6rem 2rem 2rem;}
+.woori_slider_teenteen .nst_gowon .nst_btn_ground2{margin-top:1.2rem;height:3rem;width:11.1rem;padding:.5rem .8rem;background-color:rgba(0,0,0,.2);}
+.woori_slider_teenteen .nst_ad_slider .nst_slider_prev,.woori_slider_tintin .nst_ad_slider .nst_slider_next{display:none;}
+.woori_slider_teenteen .nst_gowon .nst_btn_ground2 em{font-size:1.3rem;font-weight:500;line-height:2rem;color:#fff;height:2rem;vertical-align:top;}
+.woori_slider_teenteen .nst_teenteen_img{position:absolute;top:2.4rem;right:0;width:13.6rem;height:13.6rem;margin:0;background-image:url(/img/nonetouch/pib/_new2/image/img_teenteen_banner_01.png);}
+.woori_slider_teenteen .nst_gowon_img{position:absolute;top:2.4rem;right:0;width:13.6rem;height:13.6rem;margin:0;background-image:url(/img/nonetouch/pib/_new2/image/img_teenteen_banner_02.png);}
+.woori_slider_teenteen .nst_gowon_tit{font-weight:400;}
+.woori_slider_teenteen .nst_gowon > .inner {background:#297af8;box-shadow: 0 10px 20px rgba(0,0,0,0.08);}
+.woori_slider_teenteen .nst_gowon > .inner.po_con{background:#525ed4;box-shadow: 0 10px 20px rgba(0,0,0,0.08);}
+.woori_slider_teenteen .nst_gowon > .inner > strong{line-height:2.6rem;}
+
+.nst_upper_slider_wrap .nst_ad_slider{position:relative;margin:0;z-index:2;height:100%;}
+.nst_upper_slider .nst_slider_remote{position:absolute;right:2.8rem;bottom:.8rem;z-index:2;font-size:0;}
+.nst_upper_slider .nst_slider_remote:after{display:block;content:'';clear:both}
+.nst_upper_slider .nst_slider_remote > *{vertical-align:middle;}
+.nst_upper_slider .nst_slider_count{display:inline-block; width:3.9rem;height:2.4rem;line-height:2.4rem;text-align:center;font-weight:400}
+.nst_upper_slider .nst_slider_control{display:inline-block;margin:0 0.4rem 0 0;width:2.4rem;height:2.4rem}
+.nst_upper_slider .nst_slider_control.nst_stop{background:url(/img/nonetouch/pib/_new/content/icon/ic_main_banner_pause.png) no-repeat 0 0;background-size:100%}
+.nst_upper_slider .nst_slider_control.nst_play{background:url(/img/nonetouch/pib/_new/content/icon/ic_main_banner_play.png) no-repeat 0 0;background-size:100%}
+
+/* 20230612 우리틴틴 거래중지 벳지추가 */
+#teenteen_act.-main_slider_account .-account_opener{min-height:15.2rem;}
+#teenteen_act.-main_slider_account .-status_wrap {height:3.3rem;line-height:1.2;}
+#teenteen_act.-main_slider_account .-status_flag.-nst_status {position:absolute;display:inline-block;min-width:5.8rem;height:1.8rem;padding:0 0.8rem;top:auto;left:50%;bottom:8.3rem;transform:translateX(-50%);text-align:center;background:none;line-height:1.6;z-index:1;}
+#teenteen_act.-main_slider_account .-status_flag.-nst_status::before {content:'';position:absolute;left:0;top:0;width:100%;height:100%;background-color:#000;border-radius:10rem;opacity:0.1;}
+#teenteen_act.-main_slider_account .-status_flag.-nst_status em {position:relative;display:inline-block;font-size:1.1rem;letter-spacing:0;line-height:1.8rem;vertical-align:top;color:#fff;}
+#teenteen_act.-main_slider_account .-status_flag.-nst_status + .-account_status {top:auto;bottom:5rem;transform:translate(-50%, 0);}
+#teenteen_act.-main_slider_account .-account_status{margin-top:0;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
+#teenteen_act.-main_slider_account .-status_sum .-sum {font-size:2.8rem;line-height:1.2;font-weight:500;font-family:'NewRoboto';}
+#teenteen_act.-main_slider_account .-status_sum .-unit{margin-left:2px;font-size:1.8rem;line-height:1.6;letter-spacing:-.6px;}
