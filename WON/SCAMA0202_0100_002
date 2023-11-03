@@ -1,0 +1,237 @@
+<!-- 금융회원 전환 랜딩페이지 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>우리WON뱅킹 금융회원 안내</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<!-- 기존 css -->
+<link rel="stylesheet" href="/css/nonetouch/pib/common.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/prdt_recommend.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_account.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_tax.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_transfer.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_fx.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_goods2.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_cs.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_authorized.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_mypage.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_setup.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/chart.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/blog.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/consent_form.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/content.css">
+<!-- 기존 js -->
+<script src="/js/nonetouch/com/lib/jquery-2.1.0.min.js"></script>
+<script src="/js/nonetouch/com/renewal/lib/jquery-ui.js"></script>
+<script src="/js/nonetouch/com/renewal/lib/owl.carousel.js"></script>
+<script src="/js/nonetouch/com/renewal/common_ui.js"></script>
+
+<!-- 신규 리소스 -->
+<link rel="stylesheet" type="text/css" href="/css/nonetouch/pib/_new2/common.css">
+<link rel="stylesheet" type="text/css" href="/css/nonetouch/pib/_new2/login.css"> <!-- 개발 추가 요청 --> 
+<script type="text/javascript" src="/js/nonetouch/com/renewal/_new2/common_ui.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/renewal/lib/lottie.min.js"></script> <!-- 개발 추가 요청 --> 
+<script type="text/javascript" src="/js/nonetouch/com/renewal/lib/lottie-player.js"></script> <!-- 개발 추가 요청 --> 
+</head>
+<body>
+<div class="frame_container">
+	<!-- @frame_pageWrap : 퍼블영역
+		-----------------------------------
+		data-page-type="general" 기본
+		data-page-type="sub-main" 서브메인
+		data-page-type="finish"  완료페이지
+		data-page-type="fail"    결과-실패
+		data-page-type="popup"   팝업(레이어아님)
+		-----------------------------------
+	-->
+	<!-- ==================== 새 가이드 시작 ==================== -->
+	<div class="frame_pageWrap newST" data-top-option="" data-page-type="general"> <!-- newST 클래스 추가 --->
+		<main role="main">
+			<div class="page_container">
+                <!-- view_area(스크롤 영역) -->
+                <div class="view_area">
+                    <!-- 2021 new STYLE TYPE -->
+                    <div id="nst_wrapper">
+                        <!-- header 퍼블용(개발시 기존 공통 헤더사용 필요!) -->
+                        <div id="nst_header">
+                            <div class="nst_header_wrap fixed">
+                                <div class="nst_header">
+                                    <h1 class="nst_header_title nst_blind">우리WON뱅킹 금융회원 안내</h1>
+                                    <a href="javascript:;" class="nst_header_prev" aria-label="이전화면으로 이동"></a>
+                                    <!-- <button type="button" class="nst_header_menu" aria-label="전체메뉴"></button> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //header -->
+                        <!-- container -->
+                        <div id="nst_container" class="nst_container">
+                            <!-- content -->
+                            <div id="nst_content" class="nst_content nst_wbank">
+								<div class="nst_tutorial_wrap">
+									<div class="owl-carousel nst_tutorial_slider">
+										<div class="item">
+											<div class="nst_tutorial_cont01">
+												<div class="nst_box_con nst_top_con">
+													<div class="nst_tit_wrap">
+														<h2 class="nst_title_h1 nst_tutorial_txt">휴대폰 인증만으로<br>간편하게 가입하셨죠!</h2>
+													</div>
+													<p class="nst_desc nst_sub_gray3 nst_tutorial_txt">금융회원으로 전환가입하시면<br>계좌개설 및 다양한 금융상품과 혜택을<br>만나실 수 있습니다.</p>
+												</div>
+												<div class="nst_tutorial_imgbox" aria-hidden="true">
+													<div class="nst_tutorial_motion">
+														<div class="nst_motion_obj">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_device.png" alt="" class="obj_main">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_01.png" alt="" class="obj_absol obj01">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_particle_01.png" alt="" class="obj_absol obj02">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_particle_02.png" alt="" class="obj_absol obj03">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_particle_03.png" alt="" class="obj_absol obj04">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_particle_04.png" alt="" class="obj_absol obj05">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="nst_tutorial_cont02">
+												<div class="nst_box_con nst_top_con">
+													<div class="nst_tit_wrap">
+														<h2 class="nst_title_h1 nst_tutorial_txt">보다 쉽게 관리하는<br>내 계좌</h2>
+													</div>
+													<p class="nst_desc nst_sub_gray3 nst_tutorial_txt">많이 사용한 계좌는 대표 계좌로!<br>그 외 내가 보유한 모든 계좌들을<br> 전체 계좌 조회에서 한눈에!</p>
+												</div>
+												<div class="nst_tutorial_imgbox" aria-hidden="true">
+													<div class="nst_tutorial_motion">
+														<div class="nst_motion_obj">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_device.png" alt="" class="obj_main">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_02.png" alt="" class="obj_absol obj01">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_card_01.png" alt="" class="obj_absol obj02">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_card_02.png" alt="" class="obj_absol obj03">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_card_03.png" alt="" class="obj_absol obj04">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="nst_tutorial_cont03">
+												<div class="nst_box_con nst_top_con">
+													<div class="nst_tit_wrap">
+														<h2 class="nst_title_h1 nst_tutorial_txt">편리하고 특별한<br>생활금융 서비스</h2>
+													</div>
+													<p class="nst_desc nst_sub_gray3 nst_tutorial_txt">다양한 생활밀착형 금융 서비스 중 ‘환전주머니’!<br>알뜰하게 환전하고 안전하게 보관하다가<br> 필요할 때 찾아가세요</p>
+												</div>
+												<div class="nst_tutorial_imgbox" aria-hidden="true">
+													<div class="nst_tutorial_motion">
+														<div class="nst_motion_obj">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_device.png" alt="" class="obj_main">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_03.png" alt="" class="obj_absol obj01">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_coin_01.png" alt="" class="obj_absol obj02">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_coin_02.png" alt="" class="obj_absol obj03">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="nst_tutorial_cont04">
+												<div class="nst_box_con nst_top_con">
+													<div class="nst_tit_wrap">
+														<h2 class="nst_title_h1 nst_tutorial_txt">다양한 이벤트와 혜택!</h2>
+													</div>
+													<p class="nst_desc nst_sub_gray3 nst_tutorial_txt">어떤 매력적인 이벤트와 혜택들이 있는지<br>직접 경험해 보세요!</p>
+												</div>
+												<div class="nst_tutorial_imgbox" aria-hidden="true">
+													<div class="nst_tutorial_motion">
+														<div class="nst_motion_obj">
+															<img src="/img/nonetouch/pib/_new2/image/img_easy_tutorial_device.png" alt="" class="obj_main">
+															<div class="obj_absol">
+																<div class="lottieplayer" aria-hidden="true">
+																	<lottie-player 
+																		src="/img/nonetouch/pib/_new2/motion/img_easy_tutorial_event.json" 
+																		background="transparent" 
+																		speed="1" 
+																		>
+																	</lottie-player>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="nst_buttons_wrap">
+									<div class="nst_buttons">
+										<span><a href="javascript:;" role="button" class="nst_btn_type1 nst_primary"><em>금융회원으로 전환</em></a></span>
+									</div>
+								</div>
+                            </div>
+                            <!-- //content -->
+                        </div>
+                        <!-- //container -->
+                    </div>
+                    <!-- //2021 new STYLE TYPE -->
+              
+                </div>
+                <!-- //view_area(스크롤 영역) -->
+			</div>
+		</main>
+	</div>
+	<!-- // ==================== 새 가이드 끝 ==================== -->
+	<!-- //@frame_pageWrap : 퍼블영역 -->
+</div>
+<script>
+	function landingHSet(){
+		var winH = $(window).height();
+		var headerH = $('.nst_header').innerHeight();
+		var fixedH = $('.nst_buttons_wrap').innerHeight();
+		var textH = $('.owl-item .nst_top_con').outerHeight(true);
+		var dotsH = $('.owl-dots').outerHeight(true);
+		var imgH = winH - headerH - fixedH - textH - dotsH;
+		$('.nst_tutorial_imgbox').css({'height' : imgH});
+		$('.nst_buttons_wrap').addClass('fixed').css('opacity','1');
+	}
+
+	function landingSlider(){
+		var owlLanding = $('.nst_tutorial_wrap .owl-carousel');
+		var owlLandingItem = $('.nst_tutorial_wrap .owl-carousel .item').length;
+		var owlLandingOpt = {
+			nav: false,
+			dots: true,
+			items: 1,
+			loop : false,
+			onTranslated : function(evt){
+				var idx = evt.relatedTarget.relative(evt.item.index) + 1;
+				if(idx === 4){
+					$('.nst_tutorial_wrap lottie-player').get(0).play();
+				} else {
+					$('.nst_tutorial_wrap lottie-player').get(0).stop();
+				}
+			}
+		}
+		if(owlLandingItem > 1) {
+			owlLanding.owlCarousel(owlLandingOpt);
+		} 
+	}
+
+	$(document).ready(function(){
+		landingSlider();
+		landingHSet();
+	})
+
+	$(window).on({
+		'resize' : function(){
+			landingHSet();
+		},
+		'load' : function(){
+			$('.nst_tutorial_wrap').addClass('loaded');
+		}
+	})
+</script>
+</body>
+</html>
