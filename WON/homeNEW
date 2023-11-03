@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>간편회원 홈</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<!-- 기존 css -->
+<link rel="stylesheet" href="/css/nonetouch/pib/common.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/prdt_recommend.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_account.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_tax.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_transfer.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_fx.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_goods2.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_cs.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_authorized.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_mypage.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/sub_setup.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/chart.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/blog.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/consent_form.css">
+<link rel="stylesheet" href="/css/nonetouch/pib/content.css">
+<!-- 기존 js  -->
+<script src="/js/nonetouch/com/lib/jquery-2.1.0.min.js"></script>
+<script src="/js/nonetouch/com/renewal/lib/jquery-ui.js"></script>
+<script src="/js/nonetouch/com/renewal/lib/owl.carousel.js"></script>
+<script src="/js/nonetouch/com/renewal/common_ui.js"></script>
+<!-- 신규 리소스 -->
+<link rel="stylesheet" type="text/css" href="/css/nonetouch/pib/_new/swiper.css">
+<link rel="stylesheet" type="text/css" href="/css/nonetouch/pib/_new2/common.css">
+<link rel="stylesheet" type="text/css" href="/css/nonetouch/pib/_new2/main.css"><!-- 개발 추가 요청 -->
+<script type="text/javascript" src="/js/nonetouch/com/renewal/_new2/common_ui.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/renewal/lib/lottie.min.js"></script>
+<script type="text/javascript" src="/js/nonetouch/com/renewal/lib/lottie-player.js"></script>
+<style>
+	html{overflow:visible !important}
+	html,body{background:#f3f6fa !important}
+</style>
+</head>
+<body>
+<!-- 공통 레이아웃 (frame_container) -->
+<div class="frame_container">
+	<div class="nst_main_header">
+		<p class="nst_header_text"><em>김우리</em>님 좋은 하루 되세요</p>
+		<div class="nst_header_link">
+			<a href="javascript:;" class="-profile_link" onclick="" aria-label="프로필 메뉴로 이동"></a>
+			<a href="javascript:;" class="-bell_link -bell_svg new" id="alrim" name="alrim" onclick="doAlrimClick();" aria-label="새소식 알림 목록으로 이동"></a>
+		</div>
+	</div>
+
+	<!-- 금융서비스 전환하기[S] -->
+	<div class="nst_gowon">
+		<div class="-main_skeleton" aria-label="로딩중"></div>
+		<div class="-main_skeleton_panel inner">
+			<span class="nst_gowon_tit">계좌개설, 예&middot;적금, 대출 등</span>
+			<strong class="nst_gowon_txt">금융서비스가 <br>필요하세요?</strong>
+			<span class="nst_main_img nst_gowon_img" aria-hidden="true"></span>
+			<a href="javascript:;" role="button" class="nst_btn_ground2"><em>지금 바로 전환하기</em></a>
+		</div>
+	</div>
+	<!-- //금융서비스 전환하기[E] -->
+
+	<!-- 우리페이 배너[S] -->
+	<div class="nst_mbanner nst_wooripay">
+		<div class="-main_skeleton" aria-label="로딩중"></div>
+		<a href="javascript:;" class="-main_skeleton_panel inner">
+			<strong class="nst_mbanner_tit">쉽고 빠른 우리페이!</strong>
+			<span class="nst_mbanner_txt">언제 어디서나 세상 편한 간편결제</span>
+			<span class="nst_mbanner_img nst_wooripay_img" aria-hidden="true"></span>
+		</a>
+	</div>
+	<!-- //우리페이 배너[E] -->
+
+	<!-- 환율[S] -->
+	<div class="nst_maindex">
+		<div class="-main_skeleton" aria-label="로딩중"></div>
+		<a href="javascript:();" class="nst_maindex_wrap -main_skeleton_panel">
+			<div class="nst_maindex_head">
+				<h2 class="title">오늘의 환율</h2>
+				<span class="text"><span class="num">10</span>월<span class="num">14</span>일 <span class="num">04:28:30</span> 기준</span>
+				<i class="arrow" aria-hidden="true"></i>
+			</div>
+			<div class="nst_maindex_body">
+				<div class="nst_maindex_item">
+					<div class="nst_rollbox nst_maindex_title">
+						<div class="nst_rollbox_item" aria-hidden="false"><span class="nst_exrate_flag usd">미국</span><em class="txt curr">USD</em></div>
+						<div class="nst_rollbox_item" aria-hidden="true"><span class="nst_exrate_flag cny">중국</span><em class="txt curr">CNY</em></div>
+					</div>
+					<div class="nst_rollbox nst_maindex_price">
+						<div class="nst_rollbox_item" aria-hidden="false"><strong class="num">1,269.70<span class="nst_blind">달러</span></strong></div>
+						<div class="nst_rollbox_item" aria-hidden="true"><strong class="num">193.62<span class="nst_blind">위안</span></strong></div>
+					</div>
+					<div class="nst_rollbox nst_maindex_ratio"><!-- 상승 up / 하락 dw -->
+						<div class="nst_rollbox_item" aria-hidden="false"><div class="situ up"><span class="nst_blind">상승</span><em class="num">5.20 (+0.41%)</em></div></div>
+						<div class="nst_rollbox_item" aria-hidden="true"><div class="situ up"><span class="nst_blind">상승</span><em class="num">18.22 (+0.64%)</em></div></div>
+					</div>
+				</div>
+				<div class="nst_maindex_item">
+					<div class="nst_rollbox nst_maindex_title">
+						<div class="nst_rollbox_item" aria-hidden="false"><span class="nst_exrate_flag eur">유럽</span><em class="txt curr">EUR</em></div>
+						<div class="nst_rollbox_item" aria-hidden="true"><span class="nst_exrate_flag jpy">일본</span><em class="txt curr">JPY</em></div>
+					</div>
+					<div class="nst_rollbox nst_maindex_price">
+						<div class="nst_rollbox_item" aria-hidden="false"><strong class="num">1,325.51<span class="nst_blind">유로</span></strong></div>
+						<div class="nst_rollbox_item" aria-hidden="true"><strong class="num">968.93<span class="nst_blind">엔</span></strong></div>
+					</div>
+					<div class="nst_rollbox nst_maindex_ratio"><!-- 상승 up / 하락 dw -->
+						<div class="nst_rollbox_item" aria-hidden="false"><div class="situ"><span class="nst_blind">보합</span><em class="num">0.00 (0.00%)</em></div></div>
+						<div class="nst_rollbox_item" aria-hidden="true"><div class="situ dw"><span class="nst_blind">하락</span><em class="num">11.00 (-2.13%)</em></div></div>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+	<!-- //환율[E] -->
+
+	<!-- 주요서비스(WSM)[S] -->
+	<!-- 미리보기 /_component/_new2/login/main_preview_shortcut.html -->
+	<div class="nst_shortcut">
+		<h2 class="nst_blind">주요서비스</h2>
+		<div class="inner">
+			<ul class="nst_shortcut_slide">
+				<li class="nst_shortcut_list">
+					<a href="javascript:;" class="nst_shortcut_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<em class="nst_shortcut_badge" style="border-color:#1490ef;color:#1490ef;">금융서비스</em>
+						<div class="nst_shortcut_desc">
+							<strong class="tit">매일걷기만 해도</strong>
+							<span class="txt">최고 연 11%</span>
+						</div>
+						<img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_shortcut01.png" alt="" class="nst_shortcut_img" aria-hidden="true">
+					</a>
+				</li>
+				<li class="nst_shortcut_list">
+					<a href="javascript:;" class="nst_shortcut_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<em class="nst_shortcut_badge" style="border-color:#848a92;color:#848a92;">WON하는 LCK</em>
+						<div class="nst_shortcut_desc">
+							<strong class="tit">LCK 오픈리그</strong>
+							<span class="txt">아이템 득템!</span>
+						</div>
+						<img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_shortcut02.png" alt="" class="nst_shortcut_img" aria-hidden="true">
+					</a>
+				</li>
+				<li class="nst_shortcut_list">
+					<a href="javascript:;" class="nst_shortcut_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<em class="nst_shortcut_badge" style="border-color:#1056c3;color:#1056c3;">투자</em>
+						<div class="nst_shortcut_desc">
+							<strong class="tit">애널리스트의</strong>
+							<span class="txt">투자전력 인사이트</span>
+						</div>
+						<img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_shortcut03.png" alt="" class="nst_shortcut_img" aria-hidden="true">
+					</a>
+				</li>
+				<li class="nst_shortcut_list">
+					<a href="javascript:;" class="nst_shortcut_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<em class="nst_shortcut_badge" style="border-color:#05aa80;color:#05aa80;">선물하기</em>
+						<div class="nst_shortcut_desc">
+							<strong class="tit">마음을 전하는</strong>
+							<span class="txt">모바일쿠폰</span>
+						</div>
+						<img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_shortcut04.png" alt="" class="nst_shortcut_img" aria-hidden="true">
+					</a>
+				</li>
+				<li class="nst_shortcut_list">
+					<a href="javascript:;" class="nst_shortcut_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<em class="nst_shortcut_badge" style="border-color:#ef6b22;color:#ef6b22;">텍스트</em>
+						<div class="nst_shortcut_desc">
+							<strong class="tit">첫번째 텍스트</strong>
+							<span class="txt">두번째 텍스트</span>
+						</div>
+						<img src="" alt="" class="nst_shortcut_img" aria-hidden="true">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //주요서비스(WSM)[E] -->
+
+	<!-- 이벤트[S] : 뱅킹 메인 배너와 동일 마크업 -->
+	<div id="marketingBannerArea">
+		<div class="-main_ad_wrap -nst_ad_wrap">
+			<h2 class="-blind">이벤트</h2>
+			<div class="-main_ad -js_slider_ad">
+				<div class="-main_skeleton" aria-label="로딩중"></div>
+				<div class="-main_ad_remote">
+					<button type="button" class="-control"></button>
+					<div id="adCount" class="-ad_count"><span></span></div>
+				</div>
+				<button type="button" class="-slider_prev"><span class="-blind">이전 광고 이동</span></button>
+				<div class="owl-carousel">
+					<!-- 1set -->
+					<div class="item">
+						<a href="javascript:;" class="-item_inner">
+							<img src="/img/nonetouch/pib/_new/content/temp_ad_img01.png" alt="선물보따리" class="-item_img">
+							<div class="-ad_txt">
+								<strong class="-tit">3개월간 캐쉬백 100%</strong>
+								<span class="-txt">적금 가입하고<br><b class="-txt_s">선물</b> 받으러 갈래?</span>
+							</div>
+						</a>
+					</div>
+					<!-- //1set -->
+					<div class="item">
+						<a href="javascript:;" class="-item_inner">
+							<img src="/img/nonetouch/pib/_new/content/temp_ad_img01.png" alt="선물보따리" class="-item_img">
+							<div class="-ad_txt">
+								<strong class="-tit">3개월간 캐쉬백 100%</strong>
+								<span class="-txt">적금 가입하고<br><b class="-txt_s">선물</b> 받으러 갈래?</span>
+							</div>
+						</a>
+					</div>
+					<div class="item">
+						<a href="javascript:;" class="-item_inner">
+							<img src="/img/nonetouch/pib/_new/content/temp_ad_img01.png" alt="선물보따리" class="-item_img">
+							<div class="-ad_txt">
+								<strong class="-tit">3개월간 캐쉬백 100%</strong>
+								<span class="-txt">적금 가입하고<br><b class="-txt_s">선물</b> 받으러 갈래?</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<button type="button" class="-slider_next"><span class="-blind">다음 광고 이동</span></button>
+			</div>
+		</div>
+	</div>
+	<!-- //이벤트[E] : 뱅킹 메인 배너와 동일 마크업 -->
+
+	<!-- 만보기[S] -->
+	<div class="nst_main_panel nst_pedometer nst_walkbox">
+		<div class="-main_skeleton" aria-label="로딩중"></div>
+		<div class="-main_skeleton_panel inner">
+			<h2 class="nst_main_title">만보기</h2>
+			<!-- 시작 전[S] -->
+			<div class="nst_pedometer_group before">
+				<div class="nst_fltbox">
+					<div class="nst_fltbox_item">
+						<strong class="nst_main_text">건강한 하루의 시작! <br>만보 건기 도전해볼까요?</strong>
+					</div>
+					<div class="nst_fltbox_item">
+						<div class="nst_steps_lottie nst_lottie_beginning" aria-hidden="true">
+							<lottie-player 
+								src="/img/nonetouch/pib/_new2/motion/img_easy_step_beginning.json"
+								background="transparent" 
+								speed="1" 
+								autoplay loop>
+							</lottie-player>
+						</div>
+					</div>
+				</div>
+				<a href="javascript:;" role="button" class="nst_btn_ground2 mt16"><em>시작하기</em></a>
+			</div>
+			<!-- //시작 전[E] -->
+			<!-- 시작 후[S] -->
+			<div class="nst_pedometer_group after">
+				<strong class="nst_main_text">오늘도 힘내서 걸어보아요!</strong>
+				<div class="nst_steps">
+					<div class="nst_steps_count">
+						<span class="nst_steps_text"><em class="num">1,374</em>걸음</span>
+						<div class="nst_steps_lottie nst_lottie_progress" aria-hidden="true">
+							<lottie-player 
+								src="/img/nonetouch/pib/_new2/motion/img_easy_step_progress.json"
+								background="transparent" 
+								speed="1" 
+								autoplay loop>
+							</lottie-player>
+						</div>
+					</div>
+					<progress max="100" value="27" class="nst_steps_progress"></progress>
+					<span class="nst_steps_mission">5,000</span>
+				</div>
+			</div>
+			<!-- //시작 후[E] -->
+		</div>
+	</div>
+	<!-- //만보기[E] -->
+
+	<!-- 생활혜택(WSM)[S] -->
+	<!-- 미리보기 /_component/_new2/login/main_preview_benefit.html -->
+	<div class="nst_svclink">
+		<h2 class="nst_blind">생활혜택</h2>
+		<div class="inner">
+			<ul class="nst_svclink_wrap">
+				<li class="nst_svclink_list">
+					<a href="javascript:;" class="nst_svclink_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<div class="-main_skeleton_panel">
+							<div class="nst_svclink_icon" aria-hidden="true"><img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_fortune.png" alt=""></div>
+							<span class="nst_svclink_text">운세정보</span>
+						</div>
+					</a>
+				</li>
+				<li class="nst_svclink_list">
+					<a href="javascript:;" class="nst_svclink_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<div class="-main_skeleton_panel">
+							<div class="nst_svclink_icon" aria-hidden="true"><img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_insure.png" alt=""></div>
+							<span class="nst_svclink_text">실손보험<br>빠른청구</span>
+						</div>
+					</a>
+				</li>
+				<li class="nst_svclink_list">
+					<a href="javascript:;" class="nst_svclink_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<div class="-main_skeleton_panel">
+							<div class="nst_svclink_icon" aria-hidden="true"><img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_wooripay.png" alt=""></div>
+							<span class="nst_svclink_text">우리페이</span>
+						</div>
+					</a>
+				</li>
+				<li class="nst_svclink_list">
+					<a href="javascript:;" class="nst_svclink_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<div class="-main_skeleton_panel">
+							<div class="nst_svclink_icon" aria-hidden="true"><img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_delivery.png" alt=""></div>
+							<span class="nst_svclink_text">MY택배</span>
+						</div>
+					</a>
+				</li>
+				<li class="nst_svclink_list">
+					<a href="javascript:;" class="nst_svclink_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<div class="-main_skeleton_panel">
+							<div class="nst_svclink_icon" aria-hidden="true"><img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_shortcut02.png" alt=""></div>
+							<span class="nst_svclink_text">WON하는<br>LCK</span>
+						</div>
+					</a>
+				</li>
+				<li class="nst_svclink_list">
+					<a href="javascript:;" class="nst_svclink_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<div class="-main_skeleton_panel">
+							<div class="nst_svclink_icon" aria-hidden="true"><img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_present.png" alt=""></div>
+							<span class="nst_svclink_text">선물하기</span>
+						</div>
+					</a>
+				</li>
+				<li class="nst_svclink_list">
+					<a href="javascript:;" class="nst_svclink_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<div class="-main_skeleton_panel">
+							<div class="nst_svclink_icon" aria-hidden="true"><img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_exchangerate.png" alt=""></div>
+							<span class="nst_svclink_text">환율조회</span>
+						</div>
+					</a>
+				</li>
+				<li class="nst_svclink_list">
+					<a href="javascript:;" class="nst_svclink_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<div class="-main_skeleton_panel">
+							<div class="nst_svclink_icon" aria-hidden="true"><img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_benefit.png" alt=""></div>
+							<span class="nst_svclink_text">WON<br>꿀혜택</span>
+						</div>
+					</a>
+				</li>
+				<li class="nst_svclink_list">
+					<a href="javascript:;" class="nst_svclink_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<div class="-main_skeleton_panel">
+							<div class="nst_svclink_icon" aria-hidden="true"><img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_world.png" alt=""></div>
+							<span class="nst_svclink_text">WON THE<br>STAGE</span>
+						</div>
+					</a>
+				</li>
+				<li class="nst_svclink_list">
+					<a href="javascript:;" class="nst_svclink_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<div class="-main_skeleton_panel">
+							<div class="nst_svclink_icon" aria-hidden="true"><img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_exchange.png" alt=""></div>
+							<span class="nst_svclink_text">환전</span>
+						</div>
+					</a>
+				</li>
+				<li class="nst_svclink_list">
+					<a href="javascript:;" class="nst_svclink_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<div class="-main_skeleton_panel">
+							<div class="nst_svclink_icon" aria-hidden="true"><img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_payment.png" alt=""></div>
+							<span class="nst_svclink_text">선불 서비스</span>
+						</div>
+					</a>
+				</li>
+				<li class="nst_svclink_list">
+					<a href="javascript:;" class="nst_svclink_item">
+						<div class="-main_skeleton" aria-label="로딩중"></div>
+						<div class="-main_skeleton_panel">
+							<div class="nst_svclink_icon" aria-hidden="true"><img src="/img/nonetouch/pib/_new2/icon/ic_opentypehome_indice.png" alt=""></div>
+							<span class="nst_svclink_text">주식매매</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //생활혜택(WSM)[E] -->
+
+</div>
+<!-- //공통 레이아웃 (frame_container) -->
+
+<script>
+	$(document).ready(function(){
+		wrappingMain();
+	});
+	var wrappingMain = function(){
+		$('.frame_container').wrapAll('<div class="nst_main" />');
+	};
+
+	//간편회원 개편[S]
+	$(function(){
+		let winWid = window.innerWidth;
+		let sldWid = $('.nst_shortcut_slide').width() - 20;
+
+		//슬라이드 정렬 기준
+		if(winWid < sldWid){
+			$('.nst_shortcut_slide').css({'right' : 0});
+		} else {
+			$('.nst_shortcut_slide').addClass('nst_static');
+		}
+
+		//스켈레톤
+		$('.-main_skeleton_panel').hide();
+		setTimeout(function(){
+			$('.nst_main .-main_skeleton').fadeOut();
+			$('.-main_skeleton_panel').fadeIn();
+
+			//스켈레톤 사라진 후 슬라이드 적용
+			if(winWid < sldWid){
+				shortcutSlide.active()
+			}
+		},500);
+
+		//주요서비스 슬라이드
+		let shortcutSlide = {
+			active : function(){
+				$('.nst_shortcut_slide').removeClass('nst_static');
+				$('.nst_shortcut').addClass('nst_motion');
+				$('.nst_motion .nst_shortcut_slide').css({
+					'right' : 0,
+					'-webkit-transform' : 'translateX(calc(100% - ' + winWid + 'px))',
+					'transform' : 'translateX(calc(100% - ' + winWid + 'px))'
+				});
+				setTimeout(function(){
+					$('.nst_motion .nst_shortcut_slide').addClass('nst_static');
+				},1600);
+			},
+			remove : function(){
+				$('.nst_shortcut').removeClass('nst_motion');
+				$('.nst_shortcut_slide').removeAttr('style');
+			}
+		}
+		$(window).on('resize', function(){
+			winWid = window.innerWidth;
+			if(winWid < sldWid){
+				shortcutSlide.active();
+			}else{
+				shortcutSlide.remove();
+			}
+		});
+
+		//환율 롤링
+		let rollingData = {
+			curIdx : 1,
+			init : function(){
+				$('.nst_rollbox_item:first-child').css({top:0})
+			},
+			rollingBody : function(){
+				let preIdx = rollingData.curIdx, maxLen = 2;
+				let contItem = $('.nst_maindex_body .nst_rollbox_item');
+				(preIdx < maxLen) ? rollingData.curIdx++ : rollingData.curIdx = 1;
+				contItem.filter(':nth-child('+ preIdx + ')').attr({'aria-hidden':true}).css({top: 0}).stop().animate({top:'-100%', opacity:0}, 400, 'easeOutQuad', function(){
+					setTimeout(function(){
+						contItem.filter(':nth-child('+ preIdx + ')').css({top: '100%'})
+					},500)
+				});
+				contItem.filter(':nth-child('+ rollingData.curIdx + ')').attr({'aria-hidden':false}).delay(300).animate({top:0, opacity:1}, 400, 'easeOutQuad');
+			}
+		}
+		setInterval(function(){
+			rollingData.rollingBody();
+		},5000);
+		rollingData.init();
+	});
+	//간편회원 개편[E]
+
+
+	//새소식 알람 스크립트 제어 : 뱅킹 메인과 동일
+	let belllink = bodymovin.loadAnimation({
+		container: document.getElementById('alrim'),
+		renderer: 'svg',
+		loop: false,
+		autoplay: false,
+		path: '/img/nonetouch/pib/_new/content/motion/ic_header_alarm.json'
+	});
+
+	belllink.addEventListener('DOMLoaded', function(){
+		if ($('#alrim').hasClass('off')) {
+			belllink.goToAndStop(1, true);
+		} 
+		else if ($('#alrim').hasClass('new')) {
+			belllink.playSegments([1, 70], true);
+		} 
+		else if ($('#alrim').hasClass('on')) {
+			belllink.goToAndStop(70, true);
+		}
+	});
+
+	function doAlrimClick() {
+		$('#alrim').removeClass('new');
+		$('#alrim').addClass('off');
+	}
+
+	//이벤트 배너 : 뱅킹 메인과 동일
+	function accActiveFocus(evt){
+		$(evt.target).find('.owl-item:not('+ '.active' +')').attr('aria-hidden','true').find('*').attr('aria-hidden','true');
+		$(evt.target).find('.owl-item.active').removeAttr('aria-hidden').find('*').removeAttr('aria-hidden');
+	}
+	function accActiveBtnFocus(obj){
+		$(obj).find('.owl-item:not('+ '.active' +')').attr('aria-hidden','true').find('*').attr('aria-hidden','true');
+		$(obj).find('.owl-item.active').removeAttr('aria-hidden').find('*').removeAttr('aria-hidden');
+	}
+	var adSlide = (function(){
+		var owl_ad = $('.-js_slider_ad .owl-carousel'),
+			owl_adLen = $('.-js_slider_ad .item').length;
+		var financeOption = {
+			loop: true,
+			nav: false,
+			autoplay: true,
+			autoplayTimeout: 2500,
+			autoplaySpeed: 400,
+			dots: false,
+			responsive:{0:{items: 1}},
+			stagePadding: 20,
+			margin:20,
+			onTranslated: function(e){
+				accActiveFocus(e);
+				ttlCount(e);
+				if( $(e.target).parents('.-js_slider_ad').find('.-control.-play').length ){
+					owl_ad.trigger('stop.owl.autoplay');
+				}else{
+					owl_ad.trigger('stop.owl.autoplay');
+					owl_ad.trigger('play.owl.autoplay');
+				}
+				var activeIdx = $('#adCount .-present').text() - 1;
+
+				$(e.target).find('.owl-item').removeClass('firstBanner initActive');
+			},
+			onInitialized: function(e){
+				accActiveFocus(e);
+				ttlCount(e);
+				
+				//처음 로딩시 모션동작
+				$(e.target).find('.owl-item.active').addClass('firstBanner');
+				setTimeout(function(){
+					$(e.target).find('.firstBanner').addClass('initActive');
+				},100);
+			}
+		}
+		function attachEvent(){
+
+			//칼라지정값 처리 (객체 배열로 들어온다고함)
+			var colorCode = [
+				{"background":"#746fe2"},
+				{"background":"#071d65"},
+				{"background":"#1d870c"}
+			];
+			$('.-js_slider_ad').find('.item').each(function(i){
+				$(this).css( colorCode[i] );
+			});
+			
+			if( owl_adLen < 2 ){
+				owl_ad.addClass('-just1');
+				owl_ad.trigger('destroy.owl.carousel').removeClass('owl-carousel');
+				$('.-js_slider_ad .-main_ad_remote').hide();
+			}else{
+				owl_ad.owlCarousel(financeOption);
+				$('.-js_slider_ad .-control').addClass('-stop').attr('aria-label','일시정지');
+				$('.-js_slider_ad .-slider_prev').click(function(){
+					owl_ad.trigger('stop.owl.autoplay');
+					owl_ad.trigger('play.owl.autoplay');
+	
+					owl_ad.trigger('prev.owl.carousel');
+					accActiveBtnFocus(owl_ad);
+				});
+				$('.-js_slider_ad .-slider_next').click(function(){
+					owl_ad.trigger('stop.owl.autoplay');
+					owl_ad.trigger('play.owl.autoplay');
+	
+					owl_ad.trigger('next.owl.carousel');
+					accActiveBtnFocus(owl_ad);
+				});
+				$('.-js_slider_ad .-control').on('click', function(){
+					if( $(this).hasClass('-stop') ){
+						$(this).removeClass('-stop').addClass('-play').attr('aria-label','재생');
+						owl_ad.trigger('stop.owl.autoplay');
+					}
+					else if( $(this).hasClass('-play') ){
+						$(this).removeClass('-play').addClass('-stop').attr('aria-label','일시정지');
+						owl_ad.trigger('play.owl.autoplay');
+					}
+				});
+			}
+		}
+		function ttlCount(evt){
+			$('#adCount span').html( '<span class="-present">'+ (evt.relatedTarget.relative(evt.item.index) + 1) +'</span> / <span class="-total"> ' + evt.item.count + '</span>' );
+		}
+		return {
+			init: function(){
+				/* 스켈레톤 처리 예시(참고만) */
+				setTimeout(function(){
+					$('.-js_slider_ad .-main_skeleton').fadeOut();
+					attachEvent();
+				},500);
+			}
+		};
+	})();
+	$(function(){
+		adSlide.init();
+	});
+</script>
+</body>
+</html>
