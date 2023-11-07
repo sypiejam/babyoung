@@ -28,6 +28,12 @@ function SMJ1201P00(){
                         <CustomA href="#none" btnClass="btn_home" callback={()=> navigate(".")}><span className="blind">홈화면으로 이동</span></CustomA>
                         <button type="button" className="btn_close"><span className="blind">팝업닫기</span></button>
                     </div>
+                    {
+                        login &&
+                        <div className="login_time">
+                            <span>{t("ma0600_0050")}</span><em className="time">2023.10.05 11:00:00</em>
+                        </div>
+                    }
                     <div className="user_info">
                         {
                             login ? 
