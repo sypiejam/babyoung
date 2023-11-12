@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
 import { popupAction } from "../../../../../common/store/popupReducer"
 import PopupFrame from "../../../../../common/components/popup/PopupFrame"
 import { CustomA } from "../../../../../common/components/button"
@@ -11,174 +12,188 @@ function SMJ1201P00(){
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const login = true; // 로그인 여부
+
+    // 퍼블 테스트 : ios 스크롤 버그
+    useEffect(()=>{
+        document.body.classList.add("m-fixed");
+        return () => {
+            document.body.classList.remove("m-fixed");
+            // if(!document.querySelector(".react-layer")) {
+            //     document.body.classList.remove("hidden");
+            // }
+        }
+    },[])
     return(
         <>
-           <PopupFrame>
-                <header className="m-allmenu_header">
-                    <h1 className="blind">전체메뉴</h1>
-                    <div className="control_btns">
-                        {/* 언어설정팝업 호출 */}
-                        <button type="button" className="btn_lang" title={t("cs0401_0003")} onClick={()=>
-                            dispatch(popupAction({
-                                title: "",
-                                message : <SMJ5414P00 />,
-                                state : null
-                            }))
-                        }><span className="ico_flag us" aria-hidden="true"></span><em className="lang">EN</em></button>
-                        <CustomA href="#none" btnClass="btn_home" callback={()=> navigate(".")}><span className="blind">홈화면으로 이동</span></CustomA>
-                        <button type="button" className="btn_close"><span className="blind">팝업닫기</span></button>
-                    </div>
-                    {
-                        login &&
-                        <div className="login_time">
-                            <span>{t("ma0600_0050")}</span><em className="time">2023.10.05 11:00:00</em>
+            {/* 퍼블 테스트 : ios 스크롤 버그 - PopupFrame 컴포넌트 제거 */}
+           <StyledDimmed className="popup-dimmed" />
+            <div className="popup_allmenu ariaItem">
+                <div className="m-allmenu">
+                    <header className="m-allmenu_header">
+                        <h1 className="blind">전체메뉴</h1>
+                        <div className="control_btns">
+                            {/* 언어설정팝업 호출 */}
+                            <button type="button" className="btn_lang" title={t("cs0401_0003")} onClick={()=>
+                                dispatch(popupAction({
+                                    title: "",
+                                    message : <SMJ5414P00 />,
+                                    state : null
+                                }))
+                            }><span className="ico_flag us" aria-hidden="true"></span><em className="lang">EN</em></button>
+                            <CustomA href="#none" btnClass="btn_home" callback={()=> navigate(".")}><span className="blind">홈화면으로 이동</span></CustomA>
+                            <button type="button" className="btn_close"><span className="blind">팝업닫기</span></button>
                         </div>
-                    }
-                    <div className="user_info">
                         {
-                            login ? 
-                            <>
-                                <CustomA href="#none" btnClass="user_name" callback={()=> navigate(".")}>
-                                    <strong className="underline">Christopher McQuarrie</strong>
-                                    <span className="blind">마이페이지로 이동</span> {/* 마이페이지로 이동 */}
-                                </CustomA>
-                                <CustomA href="#none" btnClass="link_arr arr_right" callback={()=> navigate(".")}><span>{t("co0200_0006")}</span></CustomA>
-                            </>
-                            : <CustomA href="#none" btnClass="user_name" callback={()=> navigate(".")}><strong className="underline"><span>{t("cs0306_0008")}</span></strong></CustomA>
+                            login &&
+                            <div className="login_time">
+                                <span>{t("ma0600_0050")}</span><em className="time">2023.10.05 11:00:00</em>
+                            </div>
                         }
-                    </div>
-                </header>
-                <div className="m-allmenu_cont">
-                    <div className="m-allmenu_top">
-                        <ul className="menu_box">
-                            <li className="menu01">
-                                <CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>
-                                    <img src="/images/man/ic_security.png" alt="" />
-                                    <span className="menu_name">{t("ma0600_0008")}</span> {/* 2023-09-04 디자인 최종본반영 : 클래스 추가(리스트 공통) */}
+                        <div className="user_info">
+                            {
+                                login ? 
+                                <>
+                                    <CustomA href="#none" btnClass="user_name" callback={()=> navigate(".")}>
+                                        <strong className="underline">Christopher McQuarrie</strong>
+                                        <span className="blind">마이페이지로 이동</span> {/* 마이페이지로 이동 */}
+                                    </CustomA>
+                                    <CustomA href="#none" btnClass="link_arr arr_right" callback={()=> navigate(".")}><span>{t("co0200_0006")}</span></CustomA>
+                                </>
+                                : <CustomA href="#none" btnClass="user_name" callback={()=> navigate(".")}><strong className="underline"><span>{t("cs0306_0008")}</span></strong></CustomA>
+                            }
+                        </div>
+                    </header>
+                    <div className="m-allmenu_cont">
+                        <div className="m-allmenu_top">
+                            <ul className="menu_box">
+                                <li className="menu01">
+                                    <CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>
+                                        <img src="/images/man/ic_security.png" alt="" />
+                                        <span className="menu_name">{t("ma0600_0008")}</span> {/* 2023-09-04 디자인 최종본반영 : 클래스 추가(리스트 공통) */}
+                                    </CustomA>
+                                </li> 
+                                <li className="menu02">
+                                    <CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>
+                                        <img src="/images/man/ic_branchloctor.png" alt="" />
+                                        <span className="menu_name">{t("ma0600_0009")}</span>
+                                    </CustomA>
+                                </li>
+                                <li className="menu03">
+                                    <CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>
+                                        <img src="/images/man/ic_customercenter.png" alt="" />
+                                        <span className="menu_name">{t("ma0600_0011")}</span>
+                                    </CustomA>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="m-allmenu_btm">
+                            {/* 조회 2023-09-07 마크업 추가 st */}
+                            <div className="menu_box">
+                                <strong className="menu_title">
+                                    <img src="/images/man/ic_fullmenu_inquiry.png" alt="" />
+                                    <span className="menu_name">{t("bk0201_0081")}</span>
+                                </strong> 
+                                <ul className="menu_list">
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0041")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0042")}</CustomA></li>
+                                </ul>
+                            </div>
+                            {/* 조회 2023-09-07 마크업 추가 end */}
+                            {/* 1set st */}
+                            {/* 이체 */}
+                            <div className="menu_box">
+                                {/* 2023-09-04 디자인 최종본반영 : 메뉴명 마크업 변경(리스트 공통) st */}
+                                <strong className="menu_title">
+                                    <img src="/images/man/ic_fullmenu_transfer.png" alt="" />
+                                    <span className="menu_name">{t("ma0600_0014")}</span>
+                                </strong> 
+                                {/* 2023-09-04 디자인 최종본반영 : 메뉴명 마크업 변경(리스트 공통) end */}
+                                <ul className="menu_list">
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0015")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0016")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0017")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0018")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0019")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0020")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0021")}</CustomA></li>
+                                </ul>
+                            </div>
+                            {/* 1set end */}
+                            {/* 해외송금 */}
+                            <div className="menu_box">
+                                <strong className="menu_title">
+                                    <img src="/images/man/ic_fullmenu_remittance.png" alt="" />
+                                    <span className="menu_name">{t("ma0600_0022")}</span>
+                                </strong> 
+                                <ul className="menu_list">
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0023")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0024")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0025")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0026")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0027")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("fx1001_0001")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("fx0801_0021")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0029")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("fx1003_0001")}</CustomA></li>
+                                </ul>
+                            </div>
+                            {/* 환율조회 */}
+                            <div className="menu_box">
+                                <strong className="menu_title">
+                                    <img src="/images/man/ic_fullmenu_exchange.png" alt="" />
+                                    <span className="menu_name">{t("ma0600_0030")}</span>
+                                </strong>
+                                <ul className="menu_list">
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0030")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0031")}</CustomA></li>
+                                </ul>
+                            </div>
+                            {/* 생활편의 */}
+                            <div className="menu_box">
+                                <strong className="menu_title">
+                                    <img src="/images/man/ic_fullmenu_life.png" alt="" />
+                                    <span className="menu_name">{t("ma0600_0040")}</span>
+                                </strong>
+                                <ul className="menu_list">
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0033")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0034")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0035")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0010")}</CustomA></li>
+                                </ul>
+                            </div>
+                            {/* 상품 2023-09-07 마크업 추가 st */}
+                            <div className="menu_box">
+                                <strong className="menu_title">
+                                    <img src="/images/man/ic_fullmenu_product.png" alt="" />
+                                    <span className="menu_name">{t("bk0101_0146")}</span>
+                                </strong> 
+                                <ul className="menu_list">
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0043")}</CustomA></li>
+                                </ul>
+                            </div>
+                            {/* 상품 2023-09-07 마크업 추가 end */}
+                            {/* 설정 */}
+                            <div className="menu_box">
+                                <strong className="menu_title">
+                                    <img src="/images/man/ic_fullmenu_setting.png" alt="" />
+                                    <span className="menu_name">{t("ma0600_0039")}</span>
+                                </strong>
+                                <ul className="menu_list">
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0037")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0038")}</CustomA></li>
+                                    <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0039")}</CustomA></li>
+                                </ul>
+                            </div>
+                            {/* 하위메뉴 없는 경우 */}
+                            <div className="menu_box">
+                                <CustomA href="#none" btnClass="menu_title" callback={()=> navigate(".")}>
+                                    <span className="menu_name">test</span>
                                 </CustomA>
-                            </li> 
-                            <li className="menu02">
-                                <CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>
-                                    <img src="/images/man/ic_branchloctor.png" alt="" />
-                                    <span className="menu_name">{t("ma0600_0009")}</span>
-                                </CustomA>
-                            </li>
-                            <li className="menu03">
-                                <CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>
-                                    <img src="/images/man/ic_customercenter.png" alt="" />
-                                    <span className="menu_name">{t("ma0600_0011")}</span>
-                                </CustomA>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="m-allmenu_btm">
-                        {/* 조회 2023-09-07 마크업 추가 st */}
-                        <div className="menu_box">
-                            <strong className="menu_title">
-                                <img src="/images/man/ic_fullmenu_inquiry.png" alt="" />
-                                <span className="menu_name">{t("bk0201_0081")}</span>
-                            </strong> 
-                            <ul className="menu_list">
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0041")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0042")}</CustomA></li>
-                            </ul>
-                        </div>
-                        {/* 조회 2023-09-07 마크업 추가 end */}
-                        {/* 1set st */}
-                        {/* 이체 */}
-                        <div className="menu_box">
-                            {/* 2023-09-04 디자인 최종본반영 : 메뉴명 마크업 변경(리스트 공통) st */}
-                            <strong className="menu_title">
-                                <img src="/images/man/ic_fullmenu_transfer.png" alt="" />
-                                <span className="menu_name">{t("ma0600_0014")}</span>
-                            </strong> 
-                            {/* 2023-09-04 디자인 최종본반영 : 메뉴명 마크업 변경(리스트 공통) end */}
-                            <ul className="menu_list">
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0015")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0016")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0017")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0018")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0019")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0020")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0021")}</CustomA></li>
-                            </ul>
-                        </div>
-                        {/* 1set end */}
-                        {/* 해외송금 */}
-                        <div className="menu_box">
-                            <strong className="menu_title">
-                                <img src="/images/man/ic_fullmenu_remittance.png" alt="" />
-                                <span className="menu_name">{t("ma0600_0022")}</span>
-                            </strong> 
-                            <ul className="menu_list">
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0023")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0024")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0025")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0026")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0027")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("fx1001_0001")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("fx0801_0021")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0029")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("fx1003_0001")}</CustomA></li>
-                            </ul>
-                        </div>
-                        {/* 환율조회 */}
-                        <div className="menu_box">
-                            <strong className="menu_title">
-                                <img src="/images/man/ic_fullmenu_exchange.png" alt="" />
-                                <span className="menu_name">{t("ma0600_0030")}</span>
-                            </strong>
-                            <ul className="menu_list">
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0030")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0031")}</CustomA></li>
-                            </ul>
-                        </div>
-                        {/* 생활편의 */}
-                        <div className="menu_box">
-                            <strong className="menu_title">
-                                <img src="/images/man/ic_fullmenu_life.png" alt="" />
-                                <span className="menu_name">{t("ma0600_0040")}</span>
-                            </strong>
-                            <ul className="menu_list">
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0033")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0034")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0035")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0010")}</CustomA></li>
-                            </ul>
-                        </div>
-                        {/* 상품 2023-09-07 마크업 추가 st */}
-                        <div className="menu_box">
-                            <strong className="menu_title">
-                                <img src="/images/man/ic_fullmenu_product.png" alt="" />
-                                <span className="menu_name">{t("bk0101_0146")}</span>
-                            </strong> 
-                            <ul className="menu_list">
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0043")}</CustomA></li>
-                            </ul>
-                        </div>
-                        {/* 상품 2023-09-07 마크업 추가 end */}
-                        {/* 설정 */}
-                        <div className="menu_box">
-                            <strong className="menu_title">
-                                <img src="/images/man/ic_fullmenu_setting.png" alt="" />
-                                <span className="menu_name">{t("ma0600_0039")}</span>
-                            </strong>
-                            <ul className="menu_list">
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0037")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0038")}</CustomA></li>
-                                <li><CustomA href="#none" btnClass="menu_link" callback={()=> navigate(".")}>{t("ma0600_0039")}</CustomA></li>
-                            </ul>
-                        </div>
-                        {/* 하위메뉴 없는 경우 */}
-                        <div className="menu_box">
-                            <CustomA href="#none" btnClass="menu_title" callback={()=> navigate(".")}>
-                                <span className="menu_name">test</span>
-                            </CustomA>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-            </PopupFrame>
+            </div>
         </>
     )
 }
