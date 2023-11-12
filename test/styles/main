@@ -18,7 +18,10 @@
 .m-account_body .isdragging .chk_item {border-bottom-color:#f7f9fc;}
 
 /* 전체메뉴 */
-.m-allmenu_header {z-index:10;position:-webkit-sticky;position:sticky;top:0;right:0;left:0;padding:1.8rem 2rem 1.6rem;background:#fff;}
+.m-fixed {overflow:hidden;position:fixed;width:100%;}
+.popup_allmenu {position:absolute;top:0;left:0;width:100%;height:100vh;z-index:60;}
+.m-allmenu {display:flex;flex-direction:column;flex-wrap:nowrap;height:100%;background-color:#fff;}
+.m-allmenu_header {padding:1.8rem 2rem 1.6rem;}
 .m-allmenu_header .control_btns {display:flex;justify-content:flex-end;align-items:center;margin-right:-0.4rem;}
 .m-allmenu_header .btn_lang {display:flex;align-items:center;height:2.4rem;padding:0 0.8rem;border-radius:1.6rem;border:1px solid #d5dbe3;font-weight:500;font-size:1.4rem;color:#333a40;}
 .m-allmenu_header .lang {margin-left:0.4rem;}
@@ -33,7 +36,7 @@
 .m-allmenu_header .login_time > span {margin-right:0.4rem;}
 .m-allmenu_header .login_time .time {display:inline-block;font-size:1.4rem;}
 .m-allmenu_header .login_time~.user_info {margin-top:1.6rem;}
-.m-allmenu_cont {padding:0 2rem;}
+.m-allmenu_cont {overflow-y:auto;padding:0 2rem;-webkit-overflow-scrolling:touch;}
 /* .m-allmenu_top {margin-bottom:4.8rem;} */
 .m-allmenu_top .menu_box {display:flex;padding:0 1.2rem;background:#f7f9fc;border-radius:0.6rem;}
 .m-allmenu_top li {flex:1;}
@@ -41,7 +44,9 @@
 .m-allmenu_top .menu_link {flex:1;position:relative;display:block;margin:auto;padding:1.6rem 0;text-align:center;}
 .m-allmenu_top .menu_name {display:block;font-size:1.4rem;color:#333a40;line-height:1.2;}
 .m-allmenu_top .menu_box img {display:block;width:4rem;height:4rem;margin:0 auto 0.8rem;}
+.m-allmenu_btm {padding-bottom:4.8rem;}
 .m-allmenu_btm .menu_box {margin:4rem 0 4.8rem;}
+.m-allmenu_btm .menu_box:last-child {margin-bottom:0;}
 .m-allmenu_btm .menu_title {display:flex;align-items:center;padding:0 0 0.8rem 0;font-size:1.4rem;color:#686e75;border-bottom:1px solid #f2f5f9;}
 .m-allmenu_btm .menu_title img {width:3.2rem;height:3.2rem;margin-right:0.2rem;margin-left:-0.4rem;}
 .m-allmenu_btm .menu_name {flex:1;}
