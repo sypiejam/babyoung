@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="format-detection" content="telephone=no, address=no, email=no" />
+		<link rel="stylesheet" href="/images/web/css/style.css" />
+		<link rel="stylesheet" href="/images/web/css/bm05.css" />
+		<link rel="stylesheet" href="/images/web/css/swiper.min.css" />
+		<title>연금케어&#43;(Tab) 나의 퇴직연금 | 신한쏠</title>
+		<script src="/pub/style/static/js/swiper.min.js"></script>
+		<script src="/pub/style/static/js/dayjs.min.js"></script>
+		<script src="/pub/style/static/js/lottie.js"></script>
+		<script src="/pub/style/static/js/ui.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<header id="header" class="header-wrap">
+				<div class="header-left">
+					<button type="button" class="icon-header-back">뒤로 가기</button>
+					<h1>나의 퇴직연금</h1>
+				</div>
+				<div class="header-right">
+					<button type="button" class="icon-header-chatbot">쳇봇</button>
+					<button type="button" class="icon-header-voice">음성뱅킹</button>
+					<button type="button" class="icon-header-home">홈으로 가기</button>
+				</div>
+			</header>
+
+			<div id="contents-area">
+				<div class="container irp24-myrp-container"><!-- 24-09-06 IRP2024 : 클래스 irp24-myrp-container 추가--><!-- 24-08-30 IRP2024 : pb0 삭제 -->
+					<div class="irp24-myrp-wrap">
+						<div class="irp24-myrp-topcont">
+							<!-- 계좌 선택 -->
+							<div class="type-card-loan irp24-myrp-account">
+								<button type="button" class="tit-loan">
+									<div class="title">
+										<span class="logo"><img src="/images/web/img/bank_logo/banklogo_088.png" alt="신한은행"></span>
+										<span class="name">개인형IRP_김신한</span>
+									</div>
+									<em class="accnum">110-123-123123</em>
+								</button>
+								<button type="button" class="btn btn-type-2 btn-size-r icon-accset"><span class="label">계좌관리</span></button>
+							</div>
+							<!--// 계좌 선택 -->
+							<!-- 계좌 상세 -->
+							<div class="irp24-myrp-accdetail">
+								<div class="detail-wrap">
+									<div class="title-box d-flex">
+										<h4 class="tit">평가금액</h4>
+										<button type="button" class="tooltip-trigger type02" onclick="myModalObj01.show()">안내툴팁</button>
+										<span class="date">2024.08.07 기준</span>
+									</div>
+									<a href="javascript:;" class="btn-text-arrow amount"><span class="fw-700">119,144,990</span>원</a>
+									<span class="rate color-plus">&#43;2,316,457 (10.09%)</span><!-- 플러스 표기 클래스 color-plus -->
+									<span class="rate color-em">&#45;1,000,000 (8.09%)</span><!-- 마이너스 표기 클래스 color-em -->
+								</div>
+								<div class="button-group">
+									<div class="button-row">
+										<button type="button" class="btn btn-type-5 btn-size-m">
+											<span class="label">입금</span>
+										</button>
+										<button type="button" class="btn btn-type-5 btn-size-m" onclick="UI.bottomSheetShow('bottomSheet01')">
+											<span class="label">상품변경</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<!--// 계좌 상세 -->
+							<!-- 주요알림 배너 -->
+							<div class="irp24-myrp-banner mt16">
+								<div class="swiper js-swiper myp-mdt-banner-swiper type-round" data-swiper-options="swiperOptions">
+									<!-- 24-10-11 IRP2024 : 배너(6순위) 추가 및 아이콘 적용 -->
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<a href="javascript:void(0)" class="banner-item" style="background-color:#EBEFF5;">
+												<span class="icon">
+													<img src="/images/web/img/manage/ic_irp24_alarm_01.png" alt="" />
+												</span>
+												<div class="inner-text">
+													<p class="main">거래내역 확인</p>
+													<p class="sub">오늘 잔액변동이 있습니다</p>
+												</div>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href="javascript:void(0)" class="banner-item" style="background-color:#EBEFF5;">
+												<span class="icon">
+													<img src="/images/web/img/manage/ic_irp24_alarm_02.png" alt="" />
+												</span>
+												<div class="inner-text">
+													<p class="main">거래진행현황</p>
+													<p class="sub">상품변경 진행중입니다</p>
+												</div>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href="javascript:void(0)" class="banner-item" style="background-color:#EBEFF5;">
+												<span class="icon">
+													<img src="/images/web/img/manage/ic_irp24_alarm_03.png" alt="" />
+												</span>
+												<div class="inner-text">
+													<p class="main">거래 안내</p>
+													<p class="sub">자동 운용할 디폴트옵션을 지정해주세요</p>
+												</div>
+											</a>
+										</div>
+										<!-- 24-09-02 IRP2024 : 주요알림 배너 팝업 페이지 => 바텀시트로 적용 start -->
+										<div class="swiper-slide">
+											<a href="javascript:void(0)" class="banner-item" style="background-color:#EBEFF5;" onclick="UI.bottomSheetShow('BM1101S0016P01')">
+												<span class="icon">
+													<img src="/images/web/img/manage/ic_irp24_alarm_04.png" alt="" />
+												</span>
+												<div class="inner-text">
+													<p class="main">거래 안내</p>
+													<p class="sub">기준가 변동이 큰 상품이 N개 있어요</p>
+												</div>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href="javascript:void(0)" class="banner-item" style="background-color:#EBEFF5;" onclick="UI.bottomSheetShow('BM1101S0017P01')">
+												<span class="icon">
+													<img src="/images/web/img/manage/ic_irp24_alarm_05.png" alt="" />
+												</span>
+												<div class="inner-text">
+													<p class="main">거래 안내</p>
+													<p class="sub">주의 펀드가 N개 있어요</p>
+												</div>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href="javascript:void(0)" class="banner-item" style="background-color:#EBEFF5;">
+												<span class="icon">
+													<img src="/images/web/img/manage/ic_irp24_alarm_06.png" alt="" />
+												</span>
+												<div class="inner-text">
+													<p class="main">거래 안내</p>
+													<p class="sub">실물이전 미리조회 결과가 있어요</p>
+												</div>
+											</a>
+										</div>
+										<!--// 24-09-02 IRP2024 : 주요알림 배너 팝업 페이지 => 바텀시트로 적용 end -->
+									</div>
+									<!--// 24-10-11 IRP2024 : 배너(6순위) 추가 및 아이콘 적용 -->
+									<!-- 접근성 수정 20240910 -->
+									<div class="control-box">
+										<div class="autoplay-control-wrap">
+											<button type="button" aria-pressed="false" aria-label="자동 재생 일시정지"></button>
+										</div>
+										<div class="navi">
+											<div class="swiper-button-prev" role="button" aria-label="이전슬라이드"></div>
+											<div class="swiper-pagination"></div>
+											<div class="swiper-button-next" role="button" aria-label="다음슬라이드"></div>
+										</div>
+									</div>			
+									<!-- 접근성 수정 20240910 -->
+								</div>
+								<script>
+									var swiperOptions = {
+										autoplay : {
+											disableOnInteraction : true,
+										},
+										loop: true,
+										speed: 600,
+										pagination: {
+											el: ".swiper-pagination",
+											type: "fraction",
+										},
+										navigation:{
+											prevEl:'.swiper-button-prev',
+											nextEl:'.swiper-button-next',
+										},
+									};
+								</script>
+							</div>
+							<!-- // 주요알림 배너 -->
+						</div>
+						<!-- 탭 영역 start -->
+						<div class="irp24-myrp-tapwrap">
+						<!-- 24-09-02 IRP2024 : 마크업 수정 -->
+							<div class="tabs default-tabs fullsize-layout mt0">
+								<!-- 탭 메뉴 -->
+								<div class="tab-list" role="tablist" aria-label="자산, 연금케어&#43; 탭 메뉴">
+									<button class="tab-item" role="tab" aria-selected="false" aria-controls="tab-panel-1">자산</button>
+									<button class="tab-item active" role="tab" aria-selected="true" aria-controls="tab-panel-2">연금케어&#43;</button>
+								</div>
+								<!--// 탭 메뉴 -->
+								<!-- 상세 탭 : 자산 -->
+								<div role="tabpanel" id="tab-panel-1" class="irp24-myrp-tabcont" hidden="">
+									<h2 class="blind">자산</h2>
+									<p>나의 퇴직연금 홈 자산</p>
+									<!-- /html/manage/BM1101-S0011-T01.html -->
+								</div>
+								<!-- 상세 탭 : 연금케어+ -->
+								<div role="tabpanel" id="tab-panel-2" class="irp24-myrp-tabcont">
+									<h2 class="blind">연금케어&#43;</h2>
+									<!-- 세제 혜택 -->
+									<div class="irp24-myrp-title">
+										<div class="tit-item">
+											<h3 class="h4">김신한님을 위한 자산관리</h3>
+											<button type="button" class="btn-text btn-text-arrow"><span class="label">신한 연금케어</span></button>
+										</div>
+										<span class="subtext">2024.08.07 기준</span>
+									</div>
+									<div class="irp24-info-box">
+										<div class="title"><strong class="h3 keytext">올해 <span class="c-blue">6,350,000원</span> <br>더 입금할 수 있어요</strong></div>
+										<div class="irp24-care-gauge">
+											<script src="/pub/script/include/library/jquery-1.12.4.min.js"></script>
+											<script src="/pub/script/include/library/circle-progress.js"></script>
+											<div class="gauge">
+												<span class="txt1">올해 입금액 기준</span>
+												<span class="txt2">65% 달성</span>
+												<div class="progress"></div>
+											</div>
+											<script>
+												var myGrade = 65; // 그래프 표시 값
+												var gaugeValue = myGrade / 100 / 2;
+												$(".gauge .progress").circleProgress({
+													size: 200,
+													value: gaugeValue,
+													animation: true,
+													thickness: 16, // 그래프 두께
+													lineCap: "round",
+													fill: "#368DED",
+													emptyFill: "rgba(0,0,0,0)"
+												});
+											</script>
+										</div>
+										<div class="irp24-legend-wrap">
+											<ul class="legend-list list-column has-value">
+												<li class="legend-item color-2401">
+													원리금보장
+													<span class="value font-em">12,120,000원</span>
+												</li>
+												<li class="legend-item color-2402">
+													올해 입금 한도
+													<a href="javascript:;" class="value font-em btn-text-arrow">18,524,500원</a>
+												</li>
+											</ul>
+										</div>
+										<div class="button-group">
+											<div class="button-row">
+												<a href="javascript:;" class="btn btn-type-2 btn-size-l"><span class="label">입금하기</span></a>
+											</div>
+										</div>
+										<hr class="dividers-middle mt20">
+										<div class="box-layout-wrap irp24-expect-deduct">
+											<ul class="text-data-list">
+												<li>
+													<p class="tit-data-view">예상 세액공제액</p>
+													<div>
+														<p class="txt-data-view color-em">150,000원</p>
+														<p class="subtext">최대 118만 8000원</p>
+													</div>
+												</li>
+											</ul>
+											<div class="irp24-income-set">
+												<p class="text"><span class="inner"><!-- 소득조건을 설정해 주세요 -->근로소득, 5,500만원 이하</span></p>
+												<button type="button" class="btn btn-type-3 btn-size-r" onclick="UI.bottomSheetShow('bottomSheet02')"><span class="label">설정</span></button>
+											</div>
+										</div>
+										<div class="button-group">
+											<div class="button-row">
+												<a href="javascript:;" class="btn btn-type-3 btn-size-m"><span class="label">퇴직연금 시뮬레이션 하기</span></a>
+											</div>
+										</div>
+									</div>
+									<!--// 세제 혜택 -->
+									<!-- 보유자산이 없을 경우 -->
+									<div class="irp24-info-box">
+										<div class="no-data-wrap">
+											<p class="text-nodata">
+												보유하고 있는 자산이 없어요
+												<span class="text-sub-nodata">신한 연금케어가 추천해 드리는 포트폴리오를 통해 자산을 운용해보세요.</span>
+											</p>
+										</div>
+										<a href="javascript:;" class="irp24-investstyle-anchor">
+											<div class="btn-text-arrow">
+												<span class="txt">목표달성 포트폴리오를 추천해드려요</span>
+												<em class="tit">나에게 딱 맞는 포트폴리오</em>
+											</div>
+										</a>
+										<!-- GBI 설계가 있는 경우 BM1124-S0009-T01, GBI 설계가 없는 경우 BM0006-S0034-P01 -->
+									</div>
+									<!--// 보유자산이 없을 경우 -->
+									<!-- 자산 차트 데이터 호출 중 -->
+									<div class="irp24-info-box">
+										<div class="no-data-wrap">
+											<p class="text-nodata case-ing">
+												잠시만 기다려 주세요.<br>
+												<span class="text-sub-nodata">보유자산 및 거래패턴, 수익률 등을 <br>조회하고 있어요</span>
+											</p>
+										</div>
+										<div class="loading-spinner-wrap">
+											<span class="loading-spinner">로딩중</span>
+										</div>
+									</div>
+									<!--// 자산 차트 데이터 호출 중 -->
+									<!-- 서비스 접속 지연 -->
+									<div class="irp24-info-box">
+										<div class="error-data-wrap">
+											<div class="error-text"></div>
+											<p class="error-sub-text">서비스 접속이 지연되고 있습니다.<br>잠시후 다시 시도해주세요.</p>
+											<button type="button" class="btn btn-type-3 btn-size-l"><span class="label">재시도</span></button>
+										</div>
+									</div>
+									<!--// 서비스 접속 지연 -->
+									<!-- 수익률 비교 -->
+									<div class="irp24-info-box">
+										<div class="title"><strong class="h3 keytext">수익률 상위 10%보다 <br>누적수익률이 <span class="c-blue">-3%</span>차이나요</strong></div>
+										<div class="chart-area">
+											<div class="dummy" style="height: 220px">차트영역</div>
+											<ul class="legend-list">
+												<li class="legend-item font-small color-19">나</li>
+												<li class="legend-item font-small color-02">수익률 상위10%</li>
+											</ul>
+										</div>
+										<div class="button-group">
+											<div class="button-row">
+												<a href="javascript:;" class="btn btn-type-3 btn-size-l"><span class="label">동일 연령대와 비교</span></a>
+											</div>
+										</div>
+									</div>
+									<!--// 수익률 비교 -->
+									<!-- 현금성대기자산 -->
+									<div class="irp24-info-box">
+										<div class="title"><strong class="h3 keytext">현금성대기자산이 <br><span class="c-blue">15,500,000원</span> 있어요</strong></div>
+										<div class="chart-area irp24-asset-graph">
+											<div class="graph-wrap">
+												<em class="date">24.01</em>
+												<!-- 24-08-30 IRP2024 : 마크업 수정 -->
+												<div class="stackbar">
+													<span class="bar-value-01" style="width:40%">
+														<span class="bar-balloon"><span class="blind">현금성대기자산</span><em>40%</em></span>
+													</span>
+													<span class="bar-value-02" style="width:60%">
+														<span class="bar-balloon"><span class="blind">비 현금성대기자산</span><em>60%</em></span>
+													</span>
+												</div>
+												<!--// 24-08-30 IRP2024 : 마크업 수정 -->
+											</div>
+											<ul class="legend-list">
+												<li class="legend-item font-small color-19">현금성대기자산</li>
+												<li class="legend-item font-small color-22">비 현금성대기자산</li>
+											</ul>
+										</div>
+										<div class="button-group">
+											<div class="button-row">
+												<a href="javascript:;" class="btn btn-type-3 btn-size-l"><span class="label">상품 변경</span></a>
+											</div>
+										</div>
+									</div>
+									<!--// 현금성대기자산 -->
+									<!-- 자산배분 -->
+									<div class="irp24-info-box">
+										<div class="title"><strong class="h3 keytext">자산배분이 <span class="c-blue">균형적</span>이고,<br><span class="c-blue">채권형</span> 상품이 가장 많아요</strong></div>
+										<div class="chart-area">
+											<div class="dummy" style="height: 200px">차트영역</div>
+											<ul class="legend-list">
+												<li class="legend-item font-small color-19">원리금보장</li>
+												<li class="legend-item font-small color-02">채권형</li>
+												<li class="legend-item font-small color-20">주식형</li>
+												<li class="legend-item font-small color-16">디폴트옵션/TDF</li>
+												<li class="legend-item font-small color-21">ETF/기타</li>
+											</ul>
+										</div>
+										<div class="button-group">
+											<div class="button-row">
+												<a href="javascript:;" class="btn btn-type-3 btn-size-l"><span class="label">수익률 상위 10%와 비교</span></a>
+											</div>
+										</div>
+									</div>
+									<!--// 자산배분 -->
+									<!-- 위험성 진단 -->
+									<div class="irp24-info-box">
+										<div class="title">
+											<strong class="h3 keytext">나와 수익률이 비슷한 그룹보다 <br>매우높은위험 상품이 <span class="c-blue">21%</span> 적어요</strong>
+											<p class="subtext">최근 1년 수익률 기준</p>
+										</div>
+										<div class="chart-area">
+											<div class="dummy" style="height: 177px">차트영역</div>
+											<ul class="legend-list">
+												<li class="legend-item font-small color-19">나</li>
+												<li class="legend-item font-small color-02">나와 수익률이 비슷한 그룹</li>
+											</ul>
+										</div>
+										<div class="button-group">
+											<div class="button-row">
+												<a href="javascript:;" class="btn btn-type-3 btn-size-l"><span class="label">상품 변경</span></a>
+											</div>
+										</div>
+									</div>
+									<!--// 위험성 진단 -->
+
+									<!-- 24-08-30 IRP2024 : 배너 추가 -->
+									<a href="javascript:;" class="irp24-investstyle-anchor">
+										<div class="btn-text-arrow">
+											<span class="txt">목표달성 포트폴리오를 추천해드려요</span>
+											<em class="tit">나에게 딱 맞는 포트폴리오</em>
+										</div>
+									</a>
+									<!--// 24-08-30 IRP2024 : 배너 추가 -->
+
+									<!-- 부가 서비스 -->
+									<h3 class="h4">연금케어&#43; 서비스</h3>
+									<div class="irp24-care-service">
+										<a href="javascript:;" class="link-item">
+											<i class="icon-item-01"></i>
+											<span class="txt1">퇴직연금</span>
+											<span class="txt2">지식 더하기</span>
+										</a>
+										<a href="javascript:;" class="link-item">
+											<i class="icon-item-02"></i>
+											<span class="txt1">나의 자산 기준</span>
+											<span class="txt2">퇴직 전망 분석</span>
+										</a>
+										<a href="javascript:;" class="link-item">
+											<i class="icon-item-03"></i>
+											<span class="txt1">신한연금케어</span>
+											<span class="txt2">복지몰</span>
+										</a>
+									</div>
+									<!--// 부가 서비스 -->
+									<!-- 미래컨설턴트 배너 -->
+									<!-- 24-09-20 IRP2024 : 배너제공방식 수정 -->
+									<a href="javascript:;" class="irp24-myrp-banner">
+										<div class="irp24-banner-item">
+											<div class="inner">
+												<p class="main-text">통장으로 받은 퇴직연금이 있다면? 퇴직연금 컨설턴트</p>
+											</div>
+											<span class="icon"><img src="/images/web/img/manage/banner_irp24_icon56_m01.png" alt=""></span>
+										</div>
+									</a>
+									<!--// 24-09-20 IRP2024 : 배너제공방식 수정 -->
+									<!--// 미래컨설턴트 배너 -->
+								</div>
+								<!-- // 상세 탭 : 연금케어+ -->
+							</div><!--// tabs default-tabs -->
+						<!--// 24-09-02 IRP2024 : 마크업 수정 -->
+						</div>
+						<!--// 탭 영역 end -->
+					</div><!--// irp24-myrp-wrap -->
+
+<!-- 24-09-02 IRP2024 : 주요알림 배너 팝업 페이지 => 바텀시트로 적용 start -->
+<!-- 기준가 변동 BM1101S0016P01 -->
+<div class="bottom-sheet irp24-fullsheet" id="BM1101S0016P01">
+	<div class="bottom-sheet-dimm" aria-hidden="true"></div>
+	<div class="bottom-sheet-container" role="dialog">
+		<div class="bottom-sheet-header">
+			<span class="title">기준가 변동 안내</span><!-- 24-10-17 IRP2024 : 문구 수정 -->
+		</div>
+		<div class="bottom-sheet-contents">
+			<div class="change-of-held-product check irp24-change-of-held-product">
+				<div class="irp24-fullsheet-content">
+					<h2 class="h2">변동이 큰 상품을 다른 상품으로 <br>변경하는 것을 추천드려요.</h2>
+					<div class="accordion irp24-myrp-infoaccordion" data-allow-toggle="true"><!-- 24-10-17 IRP2024 : 클래스(irp24-myrp-infoaccordion) 추가 -->
+						<!-- 기준가 급등 아코디언 -->
+						<div class="accordion-item">
+							<button aria-expanded="true" class="accordion-trigger" aria-controls="S0016sect1B">
+								<span class="accordion-title">
+									기준가 급등 <span class="color-em">2</span>건
+								</span>
+							</button>
+							<div id="S0016sect1B" role="region" class="accordion-panel"><!-- 접혔을때  hidden="" 추가-->
+								<div class="card-list-wrap irp24-roundbox-list">
+									<div class="type-card-detail">
+										<div class="label-wrap">
+											<span class="label-type-retirement color5013">주식형</span>
+										</div>
+										<span class="name">신한골드증권투자신탁제1호[주식]종류C-RE(퇴직연금)</span>
+										<ul class="list-type-table">
+											<li>
+												<span class="tit-data-area">수익률</span>
+												<span class="txt-data-area c-red">+12.34%</span><!-- [공통적용] 플러스(+) 클래스 : c-red / 마이너스(-) 클래스 : c-blue -->
+											</li>
+											<li>
+												<span class="tit-data-area">평가금액</span>
+												<span class="txt-data-area">123,456,789원</span>
+											</li>
+											<li>
+												<span class="tit-data-area">기준가</span>
+												<span class="txt-data-area">50,254,000원</span>
+											</li>
+											<li>
+												<span class="tit-data-area">지난주 비교 증감</span>
+												<span class="txt-data-area c-red">+123,456,000원 (12.34%)</span>
+											</li>
+										</ul>
+									</div>
+									<div class="type-card-detail">
+										<div class="label-wrap">
+											<span class="label-type-retirement color5013">주식형</span>
+										</div>
+										<span class="name">AB글로벌고수익증권투자신탁 [채권-재간접형]종류C-P2(퇴직연금)</span>
+										<ul class="list-type-table">
+											<li>
+												<span class="tit-data-area">수익률</span>
+												<span class="txt-data-area c-red">+12.34%</span>
+											</li>
+											<li>
+												<span class="tit-data-area">평가금액</span>
+												<span class="txt-data-area">123,456,789원</span>
+											</li>
+											<li>
+												<span class="tit-data-area">기준가</span>
+												<span class="txt-data-area">50,254,000원</span>
+											</li>
+											<li>
+												<span class="tit-data-area">지난주 비교 증감</span>
+												<span class="txt-data-area c-red">+123,456,000원 (12.34%)</span>
+											</li>
+										</ul>
+									</div>																
+								</div>
+							</div>
+						</div>
+						<!--// 기준가 급등 아코디언  -->
+						<!-- 기준가 급감 아코디언 -->
+						<div class="accordion-item">
+							<button aria-expanded="true" class="accordion-trigger" aria-controls="S0016sect2B">
+								<span class="accordion-title">
+									기준가 급감 <span class="color-em">1</span>건
+								</span>
+							</button>
+							<div id="S0016sect2B" role="region" class="accordion-panel"><!-- 접혔을때  hidden="" 추가-->
+								<div class="card-list-wrap irp24-roundbox-list">
+									<div class="type-card-detail">
+										<div class="label-wrap">
+											<span class="label-type-retirement color5013">주식형</span>
+										</div>
+										<span class="name">KB중국본토A주증권투자신탁[주식]종류C-퇴직E</span>
+										<ul class="list-type-table">
+											<li>
+												<span class="tit-data-area">수익률</span>
+												<span class="txt-data-area c-blue">-12.34%</span>
+											</li>
+											<li>
+												<span class="tit-data-area">평가금액</span>
+												<span class="txt-data-area">123,456,789원</span>
+											</li>
+											<li>
+												<span class="tit-data-area">기준가</span>
+												<span class="txt-data-area">50,254,000원</span>
+											</li>
+											<li>
+												<span class="tit-data-area">지난주 비교 증감</span>
+												<span class="txt-data-area c-blue">-123,456,000원 (12.34%)</span>
+											</li>
+										</ul>
+									</div>															
+								</div>
+							</div>
+						</div>						
+						<!--// 기준가 급감 아코디언 -->
+					</div>
+				</div>
+				<div class="button-group">
+					<div class="button-row">
+						<button type="button" class="btn btn-type-1 btn-size-xl" onclick="UI.bottomSheetShow('bottomSheet01')"><span class="label">상품변경</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="bottom-sheet-close" data-action="sheet-close">닫기</button>
+	</div>
+</div>
+<!--// 기준가 변동 BM1101S0016P01 -->
+
+<!-- 주의 펀드 보유 BM1101S0017P01 -->
+<div class="bottom-sheet irp24-fullsheet" id="BM1101S0017P01">
+	<div class="bottom-sheet-dimm" aria-hidden="true"></div>
+	<div class="bottom-sheet-container" role="dialog">
+		<div class="bottom-sheet-header">
+			<span class="title">주의 펀드 안내</span><!-- 24-10-17 IRP2024 : 문구 수정-->
+		</div>
+		<div class="bottom-sheet-contents">
+			<div class="change-of-held-product check irp24-change-of-held-product">
+				<div class="irp24-fullsheet-content">
+					<div class="h2 mb24">
+						<h2>주의 펀드를 다른 상품으로 <br>변경하는 것을 추천드려요.</h2>
+						<p class="text text-right mt16"><button type="button" class="btn-text btn-text-arrow"><span class="label">투자 시황 및 이슈 리포트</span></button></p>
+					</div>
+					<div class="accordion irp24-myrp-infoaccordion" data-allow-toggle="true"><!-- 24-10-17 IRP2024 : 클래스(irp24-myrp-infoaccordion) 추가 -->
+						<!-- 24-10-17 IRP2024 : 리밸런싱 펀드상품과 소규모 펀드상품 위치 변경 v3.10 -->
+						<!-- 리밸런싱 대상 펀드 아코디언 -->
+						<div class="accordion-item">
+							<button aria-expanded="true" class="accordion-trigger" aria-controls="S0017sect2B">
+								<span class="accordion-title">
+									리밸런싱 대상 펀드 <span class="color-em">2</span>건
+								</span>
+							</button>
+							<div id="S0017sect2B" role="region" class="accordion-panel"><!-- 접혔을때  hidden="" 추가-->
+								<div class="card-list-wrap irp24-roundbox-list">
+									<div class="type-card-detail">
+										<div class="label-wrap">
+											<span class="label-type-retirement color5013">주식형</span>
+										</div>
+										<span class="name">KB중국본토A주증권투자신탁[주식]종류C-퇴직E</span>
+										<ul class="list-type-table">
+											<!-- 24-10-17 IRP2024 : 항목 위치 변경 -->
+											<li>
+												<span class="tit-data-area">수익률</span>
+												<span class="txt-data-area c-red">-12.34%</span><!-- [공통적용] 플러스(+) 클래스 : c-red / 마이너스(-) 클래스 : c-blue -->
+											</li>
+											<li>
+												<span class="tit-data-area">평가금액</span>
+												<span class="txt-data-area">123,456,789원</span>
+											</li>
+											<!--// 24-10-17 IRP2024 : 항목 위치 변경 -->
+										</ul>
+										<!-- 24-10-17 IRP2024 : 마크업 추가 v3.10 -->
+										<div class="irp24-operation-mall">
+											<div class="box-more-view">
+												<p class="h5"><span class="irp24-icon-info"></span>선정하는 이유</p>
+												<div class="text-wrap">
+													<p class="text">공무주와 우량 가치주에 30%이하로 투자하고 AA등급 이상의 채권에 50%이상 투자하는 채권혼합형 펀드 우량 가치주 중심으로 저평가 주식 매수 후 목표가격 도달 시 매도하는 밴드 트레이닝 전략, 변동성이 높은 시장에서도 수익 기회를 포착 꾸준한 성과를 추구하는 펀드로 활용</p>
+												</div>
+												<div class="button-center mt8">
+													<button type="button" class="btn-text btn-text-arrow more"><span>펼치기</span></button>
+												</div>
+											</div>
+										</div>
+										<!--// 24-10-17 IRP2024 : 마크업 추가 v3.10 -->
+									</div>
+									<div class="type-card-detail">
+										<div class="label-wrap">
+											<span class="label-type-retirement color5013">주식형</span>
+										</div>
+										<span class="name">KB중국본토A주증권투자신탁[주식]종류C-퇴직E</span>
+										<ul class="list-type-table">
+											<!-- 24-10-17 IRP2024 : 항목 위치 변경 -->
+											<li>
+												<span class="tit-data-area">수익률</span>
+												<span class="txt-data-area c-blue">-12.34%</span>
+											</li>
+											<li>
+												<span class="tit-data-area">평가금액</span>
+												<span class="txt-data-area">123,456,789원</span>
+											</li>
+											<!--// 24-10-17 IRP2024 : 항목 위치 변경 -->
+										</ul>
+										<!-- 24-10-17 IRP2024 : 마크업 추가 v3.10 -->
+										<div class="irp24-operation-mall">
+											<div class="box-more-view">
+												<p class="h5"><span class="irp24-icon-info"></span>선정하는 이유</p>
+												<div class="text-wrap">
+													<p class="text">공무주와 우량 가치주에 30%이하로 투자하고 AA등급 이상의 채권에 50%이상 투자하는 채권혼합형 펀드 우량 가치주 중심으로 저평가 주식 매수 후 목표가격 도달 시 매도하는 밴드 트레이닝 전략, 변동성이 높은 시장에서도 수익 기회를 포착 꾸준한 성과를 추구하는 펀드로 활용</p>
+												</div>
+												<div class="button-center mt8">
+													<button type="button" class="btn-text btn-text-arrow more"><span>펼치기</span></button>
+												</div>
+											</div>
+										</div>
+										<!--// 24-10-17 IRP2024 : 마크업 추가 v3.10 -->
+									</div>															
+								</div>
+							</div>
+						</div>						
+						<!--// 리밸런싱 대상 펀드 아코디언 -->
+
+						<!-- 소규모 펀드 아코디언 -->
+						<div class="accordion-item">
+							<button aria-expanded="true" class="accordion-trigger" aria-controls="S0017sect1B">
+								<span class="accordion-title">
+									소규모 펀드 <span class="color-em">2</span>건
+								</span>
+							</button>
+							<div id="S0017sect1B" role="region" class="accordion-panel"><!-- 접혔을때  hidden="" 추가-->
+								<div class="card-list-wrap irp24-roundbox-list">
+									<div class="type-card-detail">
+										<div class="label-wrap">
+											<span class="label-type-retirement color5013">주식형</span>
+										</div>
+										<span class="name">신한골드증권투자신탁제1호[주식]종류C-RE(퇴직연금)</span>
+										<ul class="list-type-table">
+											<!-- 24-10-17 IRP2024 : 항목 위치 변경 -->
+											<li>
+												<span class="tit-data-area">수익률</span>
+												<span class="txt-data-area c-red">+12.34%</span>
+											</li>
+											<li>
+												<span class="tit-data-area">평가금액</span>
+												<span class="txt-data-area">123,456,789원</span>
+											</li>
+											<!--// 24-10-17 IRP2024 : 항목 위치 변경 -->
+										</ul>
+									</div>
+									<div class="type-card-detail">
+										<div class="label-wrap">
+											<span class="label-type-retirement color5013">주식형</span>
+										</div>
+										<span class="name">AB글로벌고수익증권투자신탁 [채권-재간접형]종류C-P2(퇴직연금)</span>
+										<ul class="list-type-table">
+											<!-- 24-10-17 IRP2024 : 항목 위치 변경 -->
+											<li>
+												<span class="tit-data-area">수익률</span>
+												<span class="txt-data-area c-red">+12.34%</span>
+											</li>
+											<li>
+												<span class="tit-data-area">평가금액</span>
+												<span class="txt-data-area">123,456,789원</span>
+											</li>
+											<!--// 24-10-17 IRP2024 : 항목 위치 변경 -->
+										</ul>
+									</div>																
+								</div>
+							</div>
+						</div>
+						<!--// 소규모 펀드 아코디언  -->
+						<!--// 24-10-17 IRP2024 : 리밸런싱 펀드상품과 소규모 펀드상품 위치 변경 v3.10 -->
+					</div>
+				</div>
+				<div class="button-group">
+					<div class="button-row">
+						<button type="button" class="btn btn-type-1 btn-size-xl" onclick="UI.bottomSheetShow('bottomSheet01')"><span class="label">상품변경</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="bottom-sheet-close" data-action="sheet-close">닫기</button>
+	</div>
+</div>
+<!--// 주의 펀드 보유 BM1101S0017P01 -->
+<!--// 24-09-02 IRP2024 : 주요알림 배너 팝업 페이지 => 바텀시트로 적용 end -->
+
+				</div>
+				<!--// container -->
+
+				<!-- 24-09-06 IRP2024 : 위치 변경 -->
+				<!-- 공통 푸터 -->
+				<div class="irp24-comm-footer">
+					<h4 class="h4">도움이 필요하시다면?</h4>
+					<div class="btn-wrap">
+						<button type="button" class="btn btn-type-3 btn-size-r"><span class="label">퇴직연금 고객상담 센터</span></button>
+						<button type="button" class="btn btn-type-3 btn-size-r"><span class="label">퇴직연금 카카오톡 플러스친구</span></button>
+					</div>
+				</div>
+				<!--// 공통 푸터 -->
+				<!--// 24-09-06 IRP2024 : 위치 변경 -->
+
+				<!-- Top Button-->
+				<div class="ui-btn-top sticky-top-button">
+					<a href="javascript:;" class="link" onclick="moveTop()"><span class="blind">페이지 상단으로 이동</span></a>
+				</div>
+				<!-- // Top Button -->
+			</div>
+		</div>
+
+		<!-- bottomsheet 상품변경 -->
+		<div class="bottom-sheet irp24-bottomsheet-tooltip" id="bottomSheet01">
+			<div class="bottom-sheet-dimm" aria-hidden="true"></div>
+			<div class="bottom-sheet-container max" role="dialog" data-size="max"><!-- 24-08-30 IRP2024 : data-size 추가 -->
+				<div class="bottom-sheet-header">
+					<span class="title">상품변경</span>
+				</div>
+				<div class="bottom-sheet-contents irp24-change-btmsheet">
+					<div class="irp24-myrp-accdetail pd0">
+						<div class="detail-wrap">
+							<div class="title-box d-flex">
+								<h4 class="tit">거래가능금액</h4>
+								<span class="tooltip-area">
+									<button class="btn-tooltip">?</button>
+									<span class="tooltip-box">
+										<span class="tooltip-box-text ws-init c-grey60">거래가능금액: 현재 잔고금액에서 매수예약금액, 매도예약금액, 지급예약금액을 제외한 금액입니다.</span>
+										<button class="tooltip-box-close" onclick="toolTipClose()">닫기</button>
+									</span>
+								</span>
+							</div>
+							<div class="amount"><span class="fw-700">123,456,789</span>원</div>
+						</div>
+						<div class="button-group">
+							<div class="button-row">
+								<button type="button" class="btn btn-type-red btn-size-l">
+									<span class="label">매수</span>
+								</button>
+								<button type="button" class="btn btn-type-5 btn-size-l">
+									<span class="label">매도/상품교체</span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<hr class="dividers-group">
+					<div class="irp24-change-list">
+						<!-- 24-10-31 IRP2024 : 툴팁 추가 v3.11 -->
+						<div class="title-box d-flex">
+							<h5 class="title">더 많은 거래하기</h5>
+							<button type="button" class="tooltip-trigger type02 ml4">안내툴팁</button>
+						</div>
+						<!--// 24-10-31 IRP2024 : 툴팁 추가 v3.11 -->
+						<ul class="ui-list thick">
+							<li class="list-item">
+								<a href="javascript:;" class="item-content icon-item-01">
+									<div class="item-body">ETF 매수
+										<p class="subtext">ETF 거래가능금액 : 123,456,789원</p>
+									</div>
+								</a>
+							</li>
+							<li class="list-item">
+								<a href="javascript:;" class="item-content icon-item-02">
+									<div class="item-body">ETF 매수/상품교체</div>
+								</a>
+							</li>
+							<li class="list-item">
+								<a href="javascript:;" class="item-content icon-item-03">
+									<div class="item-body">만기예정상품 교체</div>
+								</a>
+							</li>
+							<li class="list-item">
+								<a href="javascript:;" class="item-content icon-item-04">
+									<div class="item-body">신한 연금케어 포트폴리오</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="irp24-change-list">
+						<h5 class="title">미리 지정하기</h5>
+						<ul class="ui-list thick">
+							<li class="list-item">
+								<a href="javascript:;" class="item-content icon-item-05">
+									<div class="item-body">입금 시 매수될 상품 지정</div>
+								</a>
+							</li>
+							<li class="list-item">
+								<a href="javascript:;" class="item-content icon-item-06">
+									<div class="item-body">디폴트옵션 지정</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<button class="bottom-sheet-close" data-action="sheet-close">닫기</button>
+			</div>
+		</div>
+		<!--// bottomsheet 상품변경 -->
+
+		<!-- bottomsheet 소득조건 설정 -->
+		<div class="bottom-sheet" id="bottomSheet02">
+			<div class="bottom-sheet-dimm" aria-hidden="true"></div>
+			<div class="bottom-sheet-container max" role="dialog" data-size="max"><!-- 24-08-30 IRP2024 : data-size 추가 -->
+				<div class="bottom-sheet-header">
+					<span class="title">소득조건 설정</span>
+				</div>
+				<div class="bottom-sheet-contents irp24-income-btmsheet">
+					<div>
+						<strong class="h4 cont-title">소득유형</strong>
+						<div class="tabs segment-tabs">
+							<div class="tab-list" role="tablist" aria-label="Tab Sample">
+								<button class="tab-item active" role="tab" aria-selected="true" aria-controls="tab-i-panel-1">근로소득</button>
+								<button class="tab-item" role="tab" aria-selected="false" aria-controls="tab-i-panel-2">종합소득</button>
+							</div>
+							<div role="tabpanel" id="tab-i-panel-1">
+								<ul class="btn-radio-list type-btn-sort">
+									<li>
+										<div class="btn-type-radio">
+											<input type="radio" id="uiRadio0111" name="uiRadio011" checked title="5,500만원 이하">
+											<label for="uiRadio0111" aria-hidden="true"><em>5,500만원 이하</em></label>
+										</div>
+									</li>
+									<li>
+										<div class="btn-type-radio">
+											<input type="radio" id="uiRadio0112" name="uiRadio011" title="5,500만원 초과">
+											<label for="uiRadio0112" aria-hidden="true"><em>5,500만원 초과</em></label>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div role="tabpanel" id="tab-i-panel-2" hidden="hidden">
+								<ul class="btn-radio-list type-btn-sort">
+									<li>
+										<div class="btn-type-radio">
+											<input type="radio" id="uiRadio0121" name="uiRadio012" checked title="4,500만원 이하">
+											<label for="uiRadio0121" aria-hidden="true"><em>4,500만원 이하</em></label>
+										</div>
+									</li>
+									<li>
+										<div class="btn-type-radio">
+											<input type="radio" id="uiRadio0122" name="uiRadio012" title="4,500만원 초과">
+											<label for="uiRadio0122" aria-hidden="true"><em>4,500만원 초과</em></label>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="radio-form">
+						<strong class="h4 cont-title">최대입금액</strong>
+						<ul class="btn-radio-list type-btn-sort mb8">
+							<li>
+								<div class="btn-type-radio">
+									<input type="radio" id="uiRadio0201" name="uiRadio02" checked title="1,200만원 (ISA포함)">
+									<label for="uiRadio0201" aria-hidden="true"><em>1,200만원 (ISA포함)</em></label>
+								</div>
+							</li>
+							<li>
+								<div class="btn-type-radio">
+									<input type="radio" id="uiRadio0202" name="uiRadio02" title="900만원">
+									<label for="uiRadio0202" aria-hidden="true"><em>900만원</em></label>
+								</div>
+							</li>
+						</ul>
+						<p class="subtext bullet-star"><!-- 24-10-30 IRP2024 : 클래스 변경 [결함관리대장 NO.77] -->ISA만기자금 전환 시 전환금액의 10% (최대 300만원) <br>세액공제 한도 추가됩니다.</p>
+					</div>
+					<strong class="h4 cont-title">선택값에 따른 적용 공제율</strong>
+					<div class="tax-graph-wrap">
+						<div class="tax-graph">
+							<span class="graph-line-less" style="display:none;width:16.5%">
+								<spen class="blind">근로소득 5,500만원 이하 또는 종합소득 4,500만원 이하</spen>
+								<span class="tax-balloon">16.5% 공제</span>
+							</span>
+							<span class="graph-line-over" style="display:block;width:13.2%">
+								<spen class="blind">근로소득 5,500만원 초과 또는 종합소득 4,500만원 초과</spen>
+								<span class="tax-balloon">13.2% 공제</span>
+							</span>
+						</div>
+						<div class="tax-graph-txt">
+							<span class="below">이하</span>
+							<span class="profit">순이익 $5,500$만원</span>
+							<span class="more">초과</span>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-sheet-buttons button-group">
+					<div class="button-row">
+						<button type="button" class="btn btn-type-1 btn-size-xl"><span class="label">예상세액공제액 확인하기</span></button>
+					</div>
+				</div>
+				<button class="bottom-sheet-close" data-action="sheet-close">닫기</button>
+			</div>
+		</div>
+		<!-- // bottomsheet 소득조건 설정 -->
+
+		<!-- 평가금액 툴팁 팝업 -->
+		<div class="modal-popup none-title" id="modalPopup01">
+			<div class="modal-popup-container">
+				<div class="popup-wrap">
+					<div class="popup-body">
+						<ul class="text">
+							<li>평가금액: 전일 기준 자산 평가 금액입니다.</li>
+							<li>누적수익률: 금융감독원 수익률 산출기준으로 계산되며, 가입일부터 기준일까지 누적된 금액입니다. <br>누적수익률&#61;&#123;적립금(평가금액)&#125;&#43;중도인출금 등&#125;&#47;납입원금&#45;1</li>
+							<li>원금: 원금(순입금액)&#61;총입금액&#45;총출금금액</li>
+						</ul>
+					</div>
+					<button class="button-x" type="button">팝업 닫기</button>
+				</div>
+			</div>
+		</div>
+		<!--// 평가금액 툴팁 팝업 -->
+
+		<script>
+			//팝업 툴팁 뉴타입 추가
+			$(document).on('click', '.btn-tooltip', function(){
+				var idx = $(this).parent();
+				toolTipClose();
+				idx.addClass("on");
+				var idxW = idx.find(".tooltip-box").offset().left - 20;
+				idx.find(".tooltip-box").css("left","-"+idxW+"px")
+			});
+			function toolTipClose(){
+				$(".tooltip-area").removeClass("on");
+				$(".tooltip-box").css("left",0)
+			}
+            // 24-09-11 IRP2024 : 상품변경 바텀시트 ID값 추가
+			// 24-09-26 IRP2024 : ID값 클래스로 변경
+            $(document).on("click", ".irp24-bottomsheet-tooltip", function(){
+				var target = $(".btn-tooltip");
+				var clickDiv = event.target;
+				if(!target.is(clickDiv)){
+					toolTipClose();
+				}
+			});
+
+			const myModalObj01 = new UI.ModalPopup("#modalPopup01"); //평가금액 툴팁
+
+			const topBtn = document.querySelector(".ui-btn-top");
+			window.addEventListener("scroll", () => {
+				if (window.pageYOffset > 100) {
+					topBtn.classList.add("view");
+				} else {
+					topBtn.classList.remove("view");
+				}
+			});
+			function moveTop() {
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			}
+
+			// 24-10-17 IRP2024 : 선정하는 이유 펼치기/접기 버튼 추가
+			$(document).on('click', '.irp24-operation-mall .box-more-view .more', function(){
+				var el = $(this).parents(".box-more-view").find(".text-wrap");
+				if ($(this).hasClass("on")) {
+					$(this).removeClass("on").find("span").text("펼치기");
+					el.removeClass("on");
+				} else {
+					$(this).addClass("on").find("span").text("접기");
+					el.addClass("on");
+				}
+			});
+		</script>
+	</body>
+</html>
