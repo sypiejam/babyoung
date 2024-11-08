@@ -995,6 +995,20 @@
 					el.addClass("on");
 				}
 			});
+			// 24-11-08 IRP2024 : 2줄 이하 일때 버튼 숨기기 추가
+			$('.banner-fund').click(function(){
+				setTimeout(function(){
+					$(".box-more-view .text-wrap").each(function(){
+						$(this).addClass("on")
+						var idHeight = $(this).height();
+						if(idHeight > 70){
+							$(this).removeClass("on");
+						}else{
+							$(this).next(".button-center").hide();
+						}
+					});
+				},50)
+			});
 		</script>
 	</body>
 </html>
