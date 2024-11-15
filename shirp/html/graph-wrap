@@ -1,0 +1,29 @@
+<div class="rate">
+							<div class="graph-wrap">
+								<div class="graph" data-value="80"><!-- 그래프 % data-value 입력 -->
+									<span class="balloon" role="tooltip">동의율 <em>80</em>%</span>
+								</div>
+							</div>
+							<div class="person">
+								<span class="min">0명</span>
+								<span class="max">10명</span>
+							</div>
+						</div>
+
+/* 그래프 */		
+			window.addEventListener('load', ()=>{
+				const $graph = document.querySelector(".graph-wrap .graph");
+				const $tooltip = document.querySelector(".graph-wrap .balloon");
+				let $percent = $graph.dataset.value;
+				$graph.style.width = $percent + "%";						
+
+				setTimeout(() => {
+					$tooltip.classList.add("active");					
+				}, 700);
+
+				if($percent <= 15){
+					$tooltip.classList.add("min")
+				}else if($percent >= 95){
+					$tooltip.classList.add("max")
+				}		
+			})	
