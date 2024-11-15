@@ -27,3 +27,28 @@
 					$tooltip.classList.add("max")
 				}		
 			})	
+
+
+<div class="graph-info-view">
+						<div class="graph-view-area">
+							<span class="data-view type-01" data-value="65" style="width: 65%;"><em class="blind">65%</em></span>
+						</div>
+						<p class="text">일반</p>
+					</div>
+
+						function delay(time) {
+							return new Promise((resolve) => {
+								setTimeout(() => {
+									resolve("");
+								}, time);
+							});
+						}
+						async function play() {
+							let graph = document.querySelectorAll(".graph-view-area .data-view");
+							for (let i = 0; i < graph.length; ++i) {
+								await delay(300);
+								graph[i].style.width = graph[i].dataset.value + "%";
+							}
+						}
+						play();
+					
