@@ -103,3 +103,44 @@
 						}
 					},
 				},
+
+
+<div class="container">
+					<div class="notice-contents-wrap fullsize-layout">
+						<ul class="notice-txt-list">
+							<li>조회, 이체 화면의 글자크기를 변경하실 수 있습니다.</li>
+						</ul>
+					</div>
+
+					<h4 class="h4">미리보기</h4>
+					<div class="box-layout-wrap style-radius">
+						<p class="order-p-m">신한청춘드림(DREAM)예금<br />123-456-789123</p>
+					</div>
+
+					<div class="order-check-box">
+						<div class="input-type-radio">
+							<!-- id,for값 맞춰주세요 -->
+							<input type="radio" id="radio01" name="textCheck" checked="checked" onclick="smallTextToggle()" />
+							<label for="radio01"><span>기본</span></label>
+						</div>
+						<div class="input-type-radio">
+							<!-- id,for값 맞춰주세요 -->
+							<input type="radio" id="radio01_2" name="textCheck" onclick="largeTextToggle()" />
+							<label for="radio01_2"><span class="check-h2">더 크게</span></label>
+						</div>
+					</div>
+				</div>
+<script>
+					function smallTextToggle() {
+						if (document.querySelector(".order-p-m").classList.contains("large-text")) {
+							document.querySelector(".order-p-m").classList.remove("large-text");
+						}
+					}
+					function largeTextToggle() {
+						if (!document.querySelector(".order-p-m").classList.contains("large-text")) {
+							document.querySelector(".order-p-m").classList.add("large-text");
+						}
+					}
+				</script>
+
+
