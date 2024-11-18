@@ -144,3 +144,98 @@
 				</script>
 
 
+<div class="sol-wallet-box">
+	<p class="notice">
+		<a href="javascript:;">국민비서로 나의 생활 행정 알림을 받아보세요.</a>
+	</p>
+						<ul class="card-box">
+							<!--20240821 추가-->
+							<li class="type-idcard">
+								<a href="javascript:;" class="link">
+									<span class="tit">주민등록증 모바일 확인 서비스</span>
+									<span class="join" style="/*display: none;*/">가입하기</span>
+								</a>
+							</li>
+							<!--//20240821 추가-->
+							<li class="type-sign">
+								<span class="tit">신한인증서</span><!-- //접근성2차 button > span -->
+								<a href="javascript:;" class="link">
+									<span>만료일</span>
+									<strong>2025.02.08</strong>
+								</a>
+							</li>
+							<li class="type-pay">
+								<!-- 가입 case -->
+								<div class="use">
+									<span class="tit">쏠편한 결제</span><!-- //접근성2차 button > span -->
+									<p class="acc">
+										<span>신한 110123123123</span>
+										<a href="javascript:;">관리</a>
+									</p>
+									<p class="price-tit">출금계좌잔액</p>
+									<p class="price-num">
+										<a href="javascript:;">5,100,000원</a>
+									</p>
+									<a href="javascript:;" class="onsite-pay">
+										<span>현장결제</span>
+									</a>
+									<div class="bot-btns">
+										<a href="javascript:;">제로페이 상품권</a>
+										<!-- <a href="javascript:;">온누리 상품권</a> 2024112 삭제 -->
+									</div>
+								</div>
+							</li>
+						</ul>
+						<!-- 20241017 수정 -->
+						<a href="javascript:;" class="banner-link">
+							<img src="/images/web/img/icon/icon-44-cbcd.png" alt=""/>
+							디지털화폐 전자지갑
+							<span class="label-wrap">
+								<span class="label-type-round color01">실험중</span>
+							</span>
+						</a>
+						<a href="javascript:;" class="banner-link">
+							<img src="/images/web/img/icon/icon-44-nft.png" alt=""/>
+							NFT 지갑
+						</a>
+						<a href="javascript:;" class="banner-link">
+							<img src="/images/web/img/icon/icon-44-coinpoint.png" alt=""/>
+							페이/포인트
+						</a>
+</div>
+<div class="sol-wallet-tab ty2"></div>
+.sol-wallet-box{background:#EBEFF5;padding:0px 20px 52px 20px;height:calc(100vh - 5px);box-sizing:border-box;}
+.sol-wallet-tab{border-radius: 16px 16px 0 0;background: #fff;padding-top:16px;position:fixed;top:541px;transition: .3s all;}						
+.sol-wallet-tab.active{top:214px;}
+
+		const walletBox = $(".sol-wallet-box");
+		const walletTab = $(".sol-wallet-tab");
+
+		/* 스크롤 시 내용 접힘 */
+		$(window).scroll(function(){
+			const currentScroll = $(this).scrollTop();				
+			if(currentScroll >= 42){// 20240102 수정
+				walletBox.addClass("active")
+				walletTab.addClass("active")
+			}else{
+				walletBox.removeClass("active")
+				walletTab.removeClass("active")			
+			}
+		});
+				
+		/* 타이틀 클릭 시 내용 펼침 */
+		$(".card-box li .tit").click(function(){
+			if(walletBox.hasClass("active")){	
+				$("html").animate({ scrollTop: 0 }, 300, function () {
+					walletBox.removeClass("active")
+					walletTab.removeClass("active")				
+				});						
+			}
+		});
+		
+
+
+
+
+
+
