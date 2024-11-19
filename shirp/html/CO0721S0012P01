@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="format-detection" content="telephone=no, address=no, email=no" />
+		<link rel="stylesheet" href="/images/web/css/style.css" />
+
+		<link rel="stylesheet" href="/images/web/css/swiper.min.css" />
+		<title>휴대폰 본인인증 | 신한쏠</title>
+		<script src="/pub/style/static/js/swiper.min.js"></script>
+		<script src="/pub/style/static/js/dayjs.min.js"></script>
+		<script src="/pub/style/static/js/lottie.js"></script>
+		<script src="/pub/style/static/js/ui.js"></script>
+	</head>
+	<body>
+		<div id="wrap" data-header-interaction="false">
+			<header id="header" class="header-wrap">
+				<div class="header-left">
+					<h1>휴대폰 본인인증</h1>
+				</div>
+				<div class="header-right">
+					<button type="button" class="icon-header-close">닫기</button>
+				</div>
+			</header>
+
+			<div id="contents-area">
+				<div class="container">
+					<h2 class="h2">휴대폰번호를 아이디로 가입할게요.<br /> 본인인증을 진행해주세요.</h2><!-- 20230619 추가 -->
+					<div class="self-certification">
+						<!-- 약관동의 영역 -->
+						<div class="terms-area">
+							<div class="terms-view-wrap">
+								<div class="tit-terms-area">
+									<span class="input-type-checkbox">
+										<!-- id,for값 맞춰주세요 -->
+										<input type="checkbox" id="checkAll" title="전체동의">
+										<label for="checkAll" aria-hidden="true"><em>전체동의</em></label>
+									</span>
+									<a href="" class="terms-link">전체 약관보기</a>
+								</div>
+								<ul class="terms-list-area type-arrow">
+									<li>
+										<div class="terms-check-wrap">
+											<span class="input-type-checkbox type02 style-inline">
+												<!-- id,for값 맞춰주세요 -->
+												<input type="checkbox" id="checklist01_1" title="[필수] 개인정보 수집・이용 동의">
+												<label for="checklist01_1" aria-hidden="true"><em>[필수] 개인정보 수집・이용 동의</em></label>
+											</span>
+											<a href="" class="terms-confirm txt-blind">[필수] 개인정보 수집・이용 동의 상세 보기</a>
+										</div>
+									</li>
+									<li>
+										<div class="terms-check-wrap">
+											<span class="input-type-checkbox type02 style-inline">
+												<!-- id,for값 맞춰주세요 -->
+												<input type="checkbox" id="checklist02_1" title="[필수] 고유식별정보 수집・이용・제공 동의">
+												<label for="checklist02_1" aria-hidden="true"><em>[필수] 고유식별정보 수집・이용・제공 동의</em></label><!--//20230220 문구 변경-->
+											</span>
+											<a href="" class="terms-confirm txt-blind">[필수] 고유식별정보 수집・이용・제공 동의 상세 보기</a>
+										</div>
+									</li>
+									<li>
+										<div class="terms-check-wrap">
+											<span class="input-type-checkbox type02 style-inline">
+												<!-- id,for값 맞춰주세요 -->
+												<input type="checkbox" id="checklist03_1" title="[필수] 통신사 이용약관 동의">
+												<label for="checklist03_1" aria-hidden="true"><em>[필수] 통신사 이용약관 동의</em></label>
+											</span>
+											<a href="" class="terms-confirm txt-blind">[필수] 통신사 이용약관 동의 상세 보기</a>
+										</div>
+									</li>
+									<li>
+										<div class="terms-check-wrap">
+											<span class="input-type-checkbox type02 style-inline">
+												<!-- id,for값 맞춰주세요 -->
+												<input type="checkbox" id="checklist04_1" title="[필수] 서비스 이용약관 동의">
+												<label for="checklist04_1" aria-hidden="true"><em>[필수] 서비스 이용약관 동의</em></label>
+											</span>
+											<a href="" class="terms-confirm txt-blind">[필수] 서비스 이용약관 동의 상세 보기</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- // 약관동의 영역 -->
+
+						<div class="forms-area">
+							<!-- 정보입력 안내 영역 -->
+							<div class="guide-message">
+								<p class="step-1"><em>이름</em>을 입력해주세요</p>
+								<p class="step-2"><em>주민등록번호</em>를 입력해주세요</p>
+								<p class="step-3"><em>휴대폰번호</em>를 입력해주세요</p>
+								<p class="step-4"><em>인증</em>을 눌러주세요</p>
+								<p class="step-5"><em>인증번호</em>를 입력해주세요</p>
+							</div>
+							<!-- // 정보입력 안내 영역 -->
+
+							<div class="form-container">
+								<div class="item item-1">
+									<div class="ui-form form-1">
+										<!-- 에러메시지 있는경우 error 클래스 추가 -->
+										<label class="form-label" for="uiFormName">이름</label>
+										<div class="form-set">
+											<input id="uiFormName" type="text" placeholder="직접 입력" value="" />
+											<!-- 22-08-19 : '확인' 버튼 추가 -->
+											<span class="right-section">
+												<button type="button" class="sbtn">확인</button>
+											</span>
+										</div>
+										<!-- <div class="form-message">이름을 입력해주세요.</div> -->
+									</div>
+								</div>
+
+								<!-- 10/20 퍼블 수정  -->
+								<div class="item item-2">
+									<div class="ui-form form-2">
+										<label class="form-label" for="minbunFrontC">주민등록번호 (뒷 1자리 보임)</label>
+										<div class="form-set minbun-set minbun-b">
+											<div class="minbun-front">
+												<input title="주민등록번호 앞자리" id="minbunFrontC" type="text" inputmode="numeric" placeholder="생년월일 6자리" maxlength="6" value="" />
+											</div>
+											<span class="dash"></span>
+											<div class="minbun-back">
+												<input title="주민등록번호 뒤 첫자리" type="text" inputmode="numeric" placeholder="●" maxlength="1" value="" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- // 10/20 퍼블 수정  -->
+
+								<div class="item item-3">
+									<div class="ui-form form-3" data-mode="phone-auth">
+										<!-- 에러메시지 있는경우 error 클래스 추가 -->
+										<label class="form-label" for="telecom">휴대폰 번호</label>
+										<div class="form-set phone-auth-set">
+											<div class="phone-auth-select">
+												<select name="" id="telecom">
+													<option value="">통신사</option>
+													<option value="1">SKT</option>
+													<option value="2">KT</option>
+													<option value="3">LGT</option>
+													<option value="4">SK알뜰폰</option>
+													<option value="5">KT알뜰폰</option>
+													<option value="6">LG알뜰폰</option>
+												</select>
+											</div>
+											<div class="phone-auth-input">
+												<input id="uiFormPhone" type="text" placeholder="- 없이 입력" title="휴대폰번호 입력" inputmode="numeric" maxlength="11" value="" />
+											</div>
+											<span class="right-section">
+												<button type="button" class="sbtn" disabled>인증</button>
+											</span>
+										</div>
+										<!-- <div class="form-message">휴대폰번호를 입력해주세요.</div> -->
+									</div>
+									<div class="ui-form form-4">
+										<!-- 에러메시지 있는경우 error 클래스 추가 -->
+										<div class="form-set">
+											<input id="authCode" title="인증번호 6자리" type="text" placeholder="인증번호 6자리" inputmode="numeric" maxlength="6" value="" />
+											<span class="right-section">
+												<span class="timelimit">02:59</span>
+												<button type="button" class="sbtn">시간연장</button>
+											</span>
+										</div>
+										<!-- <div class="form-message">인증번호를 입력해주세요.</div> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sticky-button button-group no-floating">
+					<!-- 22-08-19 : no-floating 추가 -->
+					<div class="button-row center">
+						<button type="button" class="btn-text btn-text-line"><span class="label">인증서나 신분증으로 본인인증을 할 수 있어요</span></button>
+					</div>
+					<div class="button-row button-auth">
+						<!-- 22-08-19 : '확인' 버튼 문구 '인증하기'로 수정 -->
+						<button type="button" class="btn btn-type-1 btn-size-xl" disabled><span class="label">인증하기</span></button>
+					</div>
+				</div>
+
+				<script src="/pub/style/static/js/jquery.min.js"></script>
+				<script>
+					let currentStep = 0;
+					const duration = 200;
+					const $termsArea = $(".terms-area");
+					const $checkAll = $("#checkAll");
+					const $formsArea = $(".forms-area");
+					const $guideMessage = $(".guide-message p");
+					const $item = $(".form-container > .item");
+					const $item1 = $item.filter(".item-1");
+					const $item2 = $item.filter(".item-2");
+					const $item3 = $item.filter(".item-3");
+					const $form4 = $(".form-4");
+					const $name = $("#uiFormName");
+					const $minbunFront = $("#minbunFront");
+					const $minbunBack = $("#minbunBack");
+					const $telecom = $("#telecom");
+					const $phone = $("#uiFormPhone");
+					const $sbtn = $(".form-3 .sbtn");
+					const $authCode = $("#authCode");
+					const $buttonAuth = $(".button-auth");
+
+					// 약관 동의 항목 가변 대응
+					$termsArea.find(".terms-view-wrap").height($termsArea.find(".terms-view-wrap").height());
+
+					// 전체동의 change 이벤트
+					$checkAll.on("change", function () {
+						if ($checkAll.is(":checked")) {
+							$termsArea.addClass("checked");
+							if (currentStep != 0) {
+								$formsArea.show();
+								changeStep(currentStep);
+								if ($authCode.val().length === 6) {
+									$buttonAuth.find("button").prop("disabled", false);
+								}
+							} else {
+								setTimeout(function () {
+									changeStep(1);
+								}, 200);
+							}
+						} else {
+							$termsArea.removeClass("checked");
+							if (currentStep != 0) {
+								$formsArea.hide();
+							}
+							$buttonAuth.find("button").prop("disabled", true);
+						}
+					});
+					// 이름입력 이벤트 처리
+					$name.on("keyup", function (e) {
+						if (e.keyCode === 13 && $name.val() !== "") {
+							changeStep(2);
+						}
+					});
+					$name.on("blur", function () {
+						setTimeout(function () {
+							if ($name.val() !== "" && currentStep === 1 && $checkAll.is(":checked")) {
+								changeStep(2);
+							}
+						}, 100);
+					});
+					// 주민등록번호 이벤트 처리
+					$minbunFront.on("keyup", function () {
+						if ($minbunFront.val().length === 6) {
+							$minbunBack.focus();
+						}
+					});
+					$minbunBack.on("keyup", function () {
+						if ($minbunBack.val().length === 1) {
+							changeStep(3);
+						}
+					});
+					// 휴대폰번호 이벤트 처리
+					$telecom.on("change", function () {
+						$phone.focus();
+					});
+					$phone.on("keyup", function () {
+						if ($phone.val().length == 11) {
+							$phone.trigger("blur");
+						}
+					});
+					$phone.on("blur", function () {
+						if ($phone.val().length >= 10) {
+							changeStep(4);
+							$sbtn.prop("disabled", false);
+						} else if (currentStep != 3) {
+							changeStep(3);
+							$sbtn.prop("disabled", true);
+						}
+					});
+					$sbtn.on("click", function () {
+						changeStep(5);
+					});
+					// 인증번호 이벤트 처리
+					$authCode.on("keyup", function () {
+						if ($authCode.val().length === 6) {
+							$buttonAuth.find("button").prop("disabled", false);
+						} else {
+							$buttonAuth.find("button").prop("disabled", true);
+						}
+					});
+
+					resetForms();
+
+					function resetForms() {
+						$guideMessage.fadeOut(0);
+						$item.slideUp(0);
+						$form4.slideUp(0);
+						$sbtn.text("인증");
+						$buttonAuth.hide();
+					}
+
+					function changeStep(n) {
+						currentStep = n;
+						// 메시지 전환
+						$guideMessage.fadeOut(duration);
+						$guideMessage.filter(".step-" + n).fadeIn(duration);
+
+						if (n === 1) {
+							// 이름입력 단계
+							$item1.slideDown(duration);
+							$buttonAuth.show();
+							// 22-08-19 : 이름입력폼 확인버튼 추가로 인한 x 버튼 위치 조정 추가
+							UI.UIFormsUpdate();
+						} else if (n === 2) {
+							// 주민등록번호 입력 단계
+							$item2.slideDown(duration);
+							$minbunFront.focus();
+						} else if (n === 3) {
+							// 휴대폰번호 입력 단계
+							$item3.slideDown(duration);
+							$item3.find(".select-label").trigger("click");
+						} else if (n === 4) {
+							// 인증요청 단계
+						} else if (n === 5) {
+							// 인증번호 입력 단계
+							$sbtn.text("재요청");
+							$form4.slideDown(duration);
+							UI.UIFormsUpdate();
+							$authCode.focus();
+						}
+					}
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
