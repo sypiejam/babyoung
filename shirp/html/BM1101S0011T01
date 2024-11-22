@@ -981,6 +981,13 @@
 			$(".js-more-control").click(function(){
 				$(".irp24-asset-list").find(".list-hidden").prop('hidden', false);
 			})
+
+			// 24-11-21 IRP2024 : 내 상품 토글탭 가로스크롤 오류(ios) 대응
+			$('.irp24-myrp-product .toggle-tabs .toggle').click(function(){
+				setTimeout(function () {
+					UI.TabsUpdate('.toggle-tabs');
+				},100);
+			});
 		</script>
 	</body>
 </html>
