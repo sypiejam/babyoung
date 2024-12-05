@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="format-detection" content="telephone=no, address=no, email=no" />
+		<link rel="stylesheet" href="/images/web/css/style.css" />
+
+		<link rel="stylesheet" href="/images/web/css/swiper.min.css" />
+		<title>| 신한쏠</title>
+		<script src="/pub/style/static/js/swiper.min.js"></script>
+		<script src="/pub/style/static/js/dayjs.min.js"></script>
+		<script src="/pub/style/static/js/lottie.js"></script>
+		<script src="/pub/style/static/js/ui.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<header id="header" class="header-wrap transparent">
+				<div class="header-left">
+					<h1></h1>
+				</div>
+				<div class="header-right">
+					<button type="button" class="icon-header-close type-white">닫기</button>
+				</div>
+			</header>
+
+			<div id="contents-area">
+				<div class="container meme main">
+					<!-- 스와이퍼 영역 -->
+					<div class="fixed-wrap fullsize-layout">
+						<div class="main-visual">
+							<div class="swiper js-swiper" data-swiper-options="swiperOptions" data-swiper-instance="memeSwiper">
+								<div class="swiper-wrapper">
+									<!-- slide1 -->
+									<div class="swiper-slide">
+										<div class="text-area">
+											<h2>
+												<p class="t5">
+													내 이름이 새겨진 카드로 <span class="blue-font">결제</span><br />
+													연락처부터 계좌까지 무제한 무료 <span class="blue-font">이체</span>
+												</p>
+												<p class="t1">슬기로운 <span class="blue-font">용돈생활</span></p>
+											</h2>
+										</div>
+										<div id="anim01" class="ani-area"></div>
+									</div>
+									<!--// slide1 -->
+									<!-- slide2 -->
+									<div class="swiper-slide">
+										<div class="text-area">
+											<h2>
+												<p class="t4">응악/앱스토어/편의점 5% 적립에</p>
+												<p class="t1"><span class="blue-font">쓸때마다 0.1% 적립</span></p>
+											</h2>
+										</div>
+										<div id="anim02" class="ani-area"></div>
+									</div>
+									<!--// slide2 -->
+									<!-- slide3 -->
+									<div class="swiper-slide">
+										<div class="text-area">
+											<h2>
+												<p class="t4">
+													<span class="blue-font">불편한 충전은 NO!</span>
+												</p>
+												<p class="t4">
+													신한 Meme(밈)으로 충전되는<br />
+													FAN교통으로 버스, 지하철 까지~
+												</p>
+											</h2>
+										</div>
+										<div id="anim03" class="ani-area"></div>
+									</div>
+									<!--// slide3 -->
+									<!-- slide4 -->
+									<div class="swiper-slide">
+										<div class="text-area">
+											<h2>
+												<p class="t4">
+													<span class="blue-font">불편한 충전은 NO!</span>
+												</p>
+												<p class="t4">
+													신한 Meme(밈)으로 충전되는<br />
+													FAN교통으로 버스, 지하철 까지~
+												</p>
+											</h2>
+										</div>
+										<div id="anim04" class="ani-area"></div>
+									</div>
+									<!--// slide4 -->
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+						</div>
+						<!--// 스와이퍼 영역 -->
+
+						<!-- 가이드 텍스트 -->
+						<div class="text-box">
+							<h3 class="h3 color-em">신한 Meme(밈)은,</h3>
+							<p class="text">만 14세 이상~만 18세 이하 청소년 전용 상품이에요. 나만의 카드 만들어 슬기로운 용돈생활 시작해보세요!</p>
+							<h3 class="h3 color-em">오직 신한 Meme(밈) 만의 혜택</h3>
+							<p class="text">어디서 사용하던 0.1%적립</p>
+							<p class="subtext bullet-star">조건, 한도 없이 무제한 적립 되요.</p>
+							<p class="text">특별 한 곳에선 5% 적립</p>
+							<ul class="text-guide-list">
+								<li>음원 스트리밍 : 벅스, 멜론, 지니, FLO</li>
+								<li>앱스토어 : 구글, 애플, 원스토어(국내 결제 건)</li>
+								<li>편의점 : GS, CU, 세븐 일레븐, 이마트24</li>
+							</ul>
+							<p class="subtext bullet-star">이전 달 (1일~말일) 이용금액 10만원 이상인 경우 적립되고, 한 달 최대 1만원까지 적립가능 해요.</p>
+							<h3 class="h3 color-em">이 모든걸 이용할 수 있어요</h3>
+							<ul class="text-guide-list">
+								<li>온라인/오프라인 결제</li>
+								<li>나만의 가상 계좌번호</li>
+								<li>내 계좌로 충전하기</li>
+								<li>송금(계좌, 연락처)</li>
+								<li>용돈 조르기</li>
+								<li>이용 내역확인</li>
+								<li>모바일 교통서비스(안드로이드 휴대폰)</li>
+								<li>환불</li>
+							</ul>
+
+							<hr class="dividers-middle" />
+							<!-- 20241014 수정 -->
+							<p class="compliance-area">
+								<strong>신한은행 준법감시인 사전심사필</strong><br />
+								제2024-14695-1호(2024.10.14~2025.10.13) 
+							</p>
+							<p class="compliance-area">
+								<strong>신한카드 준법감시 심의필</strong><br />
+								제20240926-Exi-009호(2024.09.26~2025.09.25) 
+							</p>
+							<!-- // 20241014 수정 -->
+						</div>
+						<!--// 가이드 텍스트 -->
+					</div>
+				</div>
+
+				<div class="sticky-button button-group bg-grey">
+					<div class="button-row">
+						<button type="button" class="btn btn-type-1 btn-size-xl">
+							<span class="label">지금 시작하기</span>
+						</button>
+					</div>
+				</div>
+
+				<script>
+					// swiper js 옵션
+					var swiperOptions = {
+						slidesPerView: 1,
+						observer: true,
+						observeParents: true,
+						on: {
+							slideChange: () => {
+								anim1.stop();
+								anim2.stop();
+								anim3.stop();
+								anim4.stop();
+								console.log(memeSwiper.activeIndex + 1);
+								let slideIdx = memeSwiper.activeIndex + 1;
+								eval("anim" + slideIdx).play();
+							},
+						},
+					};
+
+					// lottie bodymovin 사용
+					const anim1 = bodymovin.loadAnimation({
+						container: document.getElementById("anim01"),
+						autoplay: false,
+						path: "/images/web/img/meme/img_meme_service_m1.json",
+					});
+					const anim2 = bodymovin.loadAnimation({
+						container: document.getElementById("anim02"),
+						autoplay: false,
+						path: "/images/web/img/meme/img_meme_service_m2.json",
+					});
+					const anim3 = bodymovin.loadAnimation({
+						container: document.getElementById("anim03"),
+						autoplay: false,
+						path: "/images/web/img/meme/img_meme_service_m3.json",
+					});
+					const anim4 = bodymovin.loadAnimation({
+						container: document.getElementById("anim04"),
+						autoplay: false,
+						path: "/images/web/img/meme/img_meme_service_m4.json",
+					});
+
+					// 초기 첫슬라이드 애니메이션 실행
+					anim1.play();
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
