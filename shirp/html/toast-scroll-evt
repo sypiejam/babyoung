@@ -1,0 +1,44 @@
+<div class="prod-desc-scroll">
+						<p class="text">상품 중요설명 사항을 끝까지 읽어주세요.</p>
+					</div>
+/* IRP2024 : 토스트 스크롤 이벤트 추가 st */
+			window.onload = function(){
+				const toast = document.querySelector('.prod-desc-scroll');
+				const confirmBtn = document.querySelector('.sticky-button .btn-type-1');
+				const winH = window.innerHeight;
+				const body = document.body;
+				const html = document.documentElement;
+				const height = Math.max(
+						body.scrollHeight,
+						body.offsetHeight,
+						html.clientHeight,
+						html.scrollHeight,
+						html.offsetHeight
+					);
+				let crrentT = window.pageYOffset;
+
+				if(height !== winH){
+
+					let toastHide = ()=>{
+						if((height-winH) <= Math.floor(crrentT)+100){ //24-10-24 IRP2024 : 조건문 수정
+								toast.style.opacity = '0';
+								confirmBtn.removeAttribute('disabled');
+								setTimeout(function(){
+									toast.style.display = 'none';
+								},300);
+							}
+						}
+
+					//초기화
+					toast.style.display = 'flex';
+
+					window.addEventListener("scroll", function(){
+						crrentT = window.pageYOffset;
+						toastHide();
+	
+					})
+				}else{
+					confirmBtn.removeAttribute('disabled');
+				}
+			}
+			/* IRP2024 : 토스트 스크롤 이벤트 추가 end */
