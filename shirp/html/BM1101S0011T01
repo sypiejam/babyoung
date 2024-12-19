@@ -58,7 +58,23 @@
 								<div class="detail-wrap">
 									<div class="title-box d-flex">
 										<h4 class="tit">평가금액</h4>
-										<button type="button" class="tooltip-trigger type02" onclick="myModalObj01.show()">안내툴팁</button>
+										<!-- 24-11-13 IRP2024 : 툴팁 UI 변경 -->
+										<button class="tooltip-trigger type02"
+											type="button"
+											class="tooltip-trigger"
+											data-tooltip-closebtn="true"
+											data-ui-toggle="tooltip"
+											data-tooltip-placement="bottom"
+											title="
+											<div class='irp24-myrp-tooltip'>
+												<ul class='text'>
+													<li><strong class='tit'>평가금액</strong>전일 기준 자산 평가 금액입니다.</li>
+													<li><strong class='tit'>수익률</strong>기준일의 평가금액과 원금을 기준으로 산출합니다. 이는 운용현황수익률에서 활용되는 금융감독원 수익률 산출기준인 누적수익률과 차이가 있을 수 있습니다.</li>
+													<li><strong class='tit'>원금</strong>총입금액 - 총출금액</li>
+												</ul>
+											</div>
+										">안내툴팁</button>
+										<!--// 24-11-13 IRP2024 : 툴팁 UI 변경 -->
 										<span class="date">2024.08.07 기준</span>
 									</div>
 									<a href="javascript:;" class="btn-text-arrow amount"><span class="fw-700">119,144,990</span>원</a>
@@ -89,7 +105,7 @@
 												</span>
 												<div class="inner-text">
 													<p class="main">거래내역 확인</p>
-													<p class="sub">오늘 잔액변동이 있습니다</p>
+													<p class="sub">오늘 잔액변동이 있습니다.</p><!-- 24-12-10 IRP2024 : 마침표 추가 -->
 												</div>
 											</a>
 										</div>
@@ -100,7 +116,7 @@
 												</span>
 												<div class="inner-text">
 													<p class="main">거래진행현황</p>
-													<p class="sub">상품변경 진행중입니다</p>
+													<p class="sub">상품변경 진행 중입니다.</p><!-- 24-12-10 IRP2024 : 띄어쓰기 적용 v3.15, 마침표 추가 -->
 												</div>
 											</a>
 										</div>
@@ -111,7 +127,7 @@
 												</span>
 												<div class="inner-text">
 													<p class="main">거래 안내</p>
-													<p class="sub">자동 운용할 디폴트옵션을 지정해주세요</p>
+													<p class="sub">자동 운용할 디폴트옵션을 지정해주세요.</p><!-- 24-12-10 IRP2024 : 마침표 추가 -->
 												</div>
 											</a>
 										</div>
@@ -122,7 +138,7 @@
 												</span>
 												<div class="inner-text">
 													<p class="main">거래 안내</p>
-													<p class="sub">기준가 변동이 큰 상품이 N개 있어요</p>
+													<p class="sub">기준가 변동이 큰 상품이 N개 있어요.</p><!-- 24-12-10 IRP2024 : 마침표 추가 -->
 												</div>
 											</a>
 										</div>
@@ -133,7 +149,7 @@
 												</span>
 												<div class="inner-text">
 													<p class="main">거래 안내</p>
-													<p class="sub">주의 펀드가 N개 있어요</p>
+													<p class="sub">주의 펀드가 N개 있어요.</p><!-- 24-12-10 IRP2024 : 마침표 추가 -->
 												</div>
 											</a>
 										</div>
@@ -144,7 +160,7 @@
 												</span>
 												<div class="inner-text">
 													<p class="main">거래 안내</p>
-													<p class="sub">실물이전 미리조회 결과가 있어요</p>
+													<p class="sub">실물이전 미리조회 결과가 있어요.</p><!-- 24-12-10 IRP2024 : 마침표 추가 -->
 												</div>
 											</a>
 										</div>
@@ -253,47 +269,10 @@
 														<input type="radio" id="oneYear" name="monthSelector" checked>
 														<label for="oneYear">1년</label>
 													</div>
-													<div class="radio-btn-item">
-														<input type="radio" id="directMonth" name="monthSelector">
-														<label for="directMonth" class="call-datePicker">직접선택</label>
-													</div>
+											<!-- 24-11-18 IRP2024 : 직접선택 삭제 및 운용현황 안내 버튼 추가 v3.13 -->
 												</div>
-												<!-- 상단의 직접선택(directMonth) selected 되면 display:block; -->
-												<div class="date-range-wrap">
-													<div class="date-range-set">
-														<div class="start">
-															<div class="ui-form line-type">
-																<label class="form-label blind" for="date-range-start">시작 날짜</label>
-																<div class="form-set">
-																	<input id="date-range-start" type="text" placeholder="시작 날짜" inputmode="numeric" data-action="dateFormatter" maxlength="10" value="">
-																	<span class="right-section">
-																		<button type="button" class="calendar-btn" onclick="initScrollPicker('START')">
-																			스크롤 달력 열기
-																		</button>
-																	</span>
-																</div>
-															</div>
-														</div>
-														<div class="end">
-															<div class="ui-form line-type">
-																<label class="form-label blind" for="date-range-end">종료 날짜</label>
-																<div class="form-set">
-																	<input id="date-range-end" type="text" placeholder="종료 날짜" inputmode="numeric" data-action="dateFormatter" maxlength="10" value="">
-																	<span class="right-section">
-																		<button type="button" class="calendar-btn" onclick="initScrollPicker('END')">
-																			스크롤 달력 열기
-																		</button>
-																	</span>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="button-group">
-														<div class="button-row">
-															<button type="button" class="btn btn-type-2 btn-size-m"><span class="label">조회하기</span></button>
-														</div>
-													</div>
-												</div>
+												<a href="javascript:;" class="btn-text btn-text-arrow btn-text-size-s">운용현황 안내</a>
+											<!--// 24-11-18 IRP2024 : 직접선택 삭제 및 운용현황 안내 버튼 추가 v3.13 -->
 											</div>
 										</div>
 										<!--// 추이 -->
@@ -318,28 +297,28 @@
 													bar-value-asset08 : 해외채권, 디폴트옵션
 													bar-value-asset09 : 원자재(금)
 													bar-value-asset10 : TDF
-													bar-value-asset11 : 원금보장
+													bar-value-asset11 : 원리금보장형
 													bar-value-asset12 : 기타, ETF, 원금
 													bar-value-asset13 : 평가금액
-													-->
+													--> 
 													<div class="stackbar">
-														<span class="bar-value-asset02" style="width:36%">
-															<span class="bar-balloon"><em><span>펀드</span> 36%</em></span>
+														<span class="bar-value-asset02" style="width:44%">
+															<span class="bar-balloon"><em><span>펀드</span> 44%</em></span>
 														</span>
-														<span class="bar-value-asset08" style="width:20%">
-															<span class="bar-balloon"><em><span>디폴트옵션</span> 20%</em></span>
+														<span class="bar-value-asset08" style="width:33%">
+															<span class="bar-balloon"><em><span>디폴트옵션</span> 33%</em></span>
 														</span>
-														<span class="bar-value-asset11" style="width:14%">
-															<span class="bar-balloon"><em><span>원금보장</span> 14%</em></span>
+														<span class="bar-value-asset11" style="width:9%">
+															<span class="bar-balloon"><em><span>원리금보장형</span> 9%</em></span>
 														</span>
-														<span class="bar-value-asset10" style="width:12%">
-															<span class="bar-balloon"><em><span>TDF</span> 12%</em></span>
+														<span class="bar-value-asset10" style="width:7%">
+															<span class="bar-balloon"><em><span>TDF</span> 7%</em></span>
 														</span>
-														<span class="bar-value-asset01" style="width:10%">
-															<span class="bar-balloon"><em><span>현금성자산</span> 10%</em></span>
+														<span class="bar-value-asset01" style="width:4%">
+															<span class="bar-balloon"><em><span>현금성자산</span> 4%</em></span>
 														</span>
-														<span class="bar-value-asset12" style="width:8%">
-															<span class="bar-balloon"><em><span>ETF</span> 8%</em></span>
+														<span class="bar-value-asset12" style="width:3%">
+															<span class="bar-balloon"><em><span>ETF</span> 3%</em></span>
 														</span>
 													</div>
 												</div>
@@ -362,7 +341,7 @@
 														</div>
 													</button>
 													<button type="button" class="legend-item color-24" data-link="myGoods05" onclick="UI.pageScrollTo('#myGoods')">
-														원금보장 14%
+														원리금보장형 14%
 														<div class="item-data">
 															<span class="value font-em">85,524,500원</span>
 															<span class="subtext color-plus">+150,000원 (8.42%)</span>
@@ -515,13 +494,15 @@
 												<div class="form-set form-set-padding">
 													<select name="uiForm01" id="uiForm01" title="정렬 선택">
 														<option value="">정렬 기준</option>
-														<option value="1" selected>수익률 높은 순</option>
-														<option value="2">수익률 낮은 순</option>
+														<!-- 24-12-10 IRP2024 : 띄어쓰기 수정 v3.15 -->
+														<option value="1" selected>수익률 높은순</option>
+														<option value="2">수익률 낮은순</option>
 														<option value="3">이자율 높은순</option>
-														<option value="4">이자율 낮은 순</option>
-														<option value="5">평가금액 높은 순 </option>
-														<option value="6">평가금액 낮은 순</option>
-														<option value="7">만기일 가까운 순</option>
+														<option value="4">이자율 낮은순</option>
+														<option value="5">평가금액 높은순 </option>
+														<option value="6">평가금액 낮은순</option>
+														<option value="7">만기일 가까운순</option>
+														<!--// 24-12-10 IRP2024 : 띄어쓰기 수정 v3.15 -->
 													</select>
 												</div>
 											</div>
@@ -534,21 +515,24 @@
 												<button class="tab-item" role="tab" data-anchor="myGoods02" aria-selected="false">펀드</button>
 												<button class="tab-item" role="tab" data-anchor="myGoods03" aria-selected="false">TDF</button>
 												<button class="tab-item" role="tab" data-anchor="myGoods04" aria-selected="false">디폴트옵션</button>
-												<button class="tab-item" role="tab" data-anchor="myGoods05" aria-selected="false">원금보장</button>
+												<button class="tab-item" role="tab" data-anchor="myGoods05" aria-selected="false">원리금보장</button><!-- 24-12-10 IRP2024 : 명칭 변경 v3.15 -->
 												<!-- [E] data-link, data-anchor 값 맞춰주세요 -->
 											</div>
 											<div class="btns">
 												<button type="button" class="toggle">열기</button>
 											</div>
 										</div>
+										<p class="subtext pb8">2024.12.17 기준</p><!-- 24-12-17 IRP2024 : 상품군 기준일자 추가 v3.17 -->
 										<!-- 내 상품 목록 -->
 										<div class="irp24-retirement-pension list-wide">
 											<ul class="prod-sale-list">
 												<!-- ETF 계좌 -->
 												<li class="type-card-check">
 													<div class="label-wrap">
+														<!-- 24-11-14 IRP2024 : 라벨 위치/텍스트 변경 // -->
+														<span class="label-type-line color17">상품변경중</span><!-- 24-09-04 IRP2024 : 케이스 추가 v3.04 -->
 														<span class="label-type-line color13">ETF</span>
-														<span class="label-type-line color17">상품변경 진행중</span><!-- 24-09-04 IRP2024 : 케이스 추가 v3.04 -->
+														<!--// 24-11-14 IRP2024 : 라벨 위치/텍스트 변경  -->
 														<span class="label-text-wrap">
 															<span class="label-type-text">본인입금</span>
 														</span>							
@@ -585,12 +569,13 @@
 																	<span class="txt-data-area">23,456,789원</span>
 																</li>
 															</ul>
-															<div class="ml32 mt16">
-																<p class="subtext bullet-reference">평가금액은 기준일 종가로 표시됩니다.</p>
+															<div class="ml32 mt6"><!-- 24-12-10 IRP2024 : 클래스 변경(mt16 => mt6) -->
+																<p class="subtext bullet-star">평가금액은 기준일 종가로 표시됩니다.</p><!-- 24-12-10 IRP2024 : 클래스 변경(bullet-reference => bullet-star) -->
 															</div>
 															<div class="button-group mt16">
 																<div class="button-row">
-																	<a href="javascript:;" class="btn btn-type-3 btn-size-l"><span class="label">상품정보</span></a>
+																	<a href="javascript:;" class="btn btn-type-3 btn-size-l"><span class="label">추가 매수</span></a><!-- 24-12-10 IRP2024 : '추가 매수' 버튼 추가(현금성, 디폴트옵션, ELB(DLB 제외)) v3.14 -->
+																	<a href="javascript:;" class="btn btn-type-3 btn-size-l"><span class="label">매도</span></a><!-- 24-12-17 IRP2024 : 버튼명 변경(상품정보 => 매도) v3.17 -->
 																</div>
 															</div>
 														</div>
@@ -603,9 +588,10 @@
 												<!-- 펀드, TDF, 디폴트옵션 계좌 -->
 												<li class="type-card-check">
 													<div class="label-wrap">
+														<!-- 24-11-14 IRP2024 : 삭제
 														<span class="label-type-retirement color5013">주식형</span>
-														<span class="label-type-retirement color5012">주식혼합형</span>
-														<span class="label-type-line color12">사전지정운용상품</span>
+														<span class="label-type-retirement color5012">주식혼합형</span> -->
+														<span class="label-type-line color12">디폴트옵션</span><!-- 24-11-14 IRP2024 : 텍스트 변경 -->
 														<span class="label-text-wrap">
 															<span class="label-type-text">본인입금</span>
 														</span>							
@@ -640,7 +626,7 @@
 															</ul>
 															<div class="button-group mt16">
 																<div class="button-row">
-																	<a href="javascript:;" class="btn btn-type-3 btn-size-l"><span class="label">상품정보</span></a>
+																	<a href="javascript:;" class="btn btn-type-3 btn-size-l"><span class="label">매도</span></a><!-- 24-12-17 IRP2024 : 버튼명 변경(상품정보 => 매도) v3.17 -->
 																</div>
 															</div>
 														</div>
@@ -653,10 +639,12 @@
 												<!-- 원금보장현 계좌 -->
 												<li class="type-card-check">
 													<div class="label-wrap">
+														<span class="label-type-line color17">상품변경중</span><!-- 24-11-14 IRP2024 : 개발 요청으로 추가 -->
 														<span class="label-type-retirement color1010">정기예금</span>
-														<span class="label-type-retirement during01">12개월</span>
+														<!-- <span class="label-type-retirement during01">12개월</span>24-11-14 IRP2024 : 디자인 변경으로 위치 이동 & 클래스 변경 -->
 														<span class="label-text-wrap">
 															<span class="label-type-text">본인입금</span>
+															<span class="label-type-text">12개월</span><!-- 24-11-14 IRP2024 : 디자인 변경으로 위치 이동 & 클래스 변경 -->
 														</span>							
 													</div>
 													<div class="card-select-area">
@@ -687,7 +675,7 @@
 															</ul>
 															<div class="button-group mt16">
 																<div class="button-row">
-																	<a href="javascript:;" class="btn btn-type-3 btn-size-l"><span class="label">상품정보</span></a>
+																	<a href="javascript:;" class="btn btn-type-3 btn-size-l"><span class="label">매도</span></a><!-- 24-12-17 IRP2024 : 버튼명 변경(상품정보 => 매도) v3.17 -->
 																</div>
 															</div>
 														</div>
@@ -781,7 +769,7 @@
 				<div class="irp24-comm-footer">
 					<h4 class="h4">도움이 필요하시다면?</h4>
 					<div class="btn-wrap">
-						<button type="button" class="btn btn-type-3 btn-size-r"><span class="label">퇴직연금 고객상담 센터</span></button>
+						<button type="button" class="btn btn-type-3 btn-size-r"><span class="label">퇴직연금 고객상담센터</span></button><!-- 24-12-10 IRP2024 : 띄어쓰기 수정 -->
 						<button type="button" class="btn btn-type-3 btn-size-r"><span class="label">퇴직연금 카카오톡 플러스친구</span></button>
 					</div>
 				</div>
@@ -876,22 +864,7 @@
 		</div>
 		<!--// bottomsheet 퇴직연금계좌 선택 -->
 
-		<!-- 평가금액 툴팁 팝업 -->
-		<div class="modal-popup none-title" id="modalPopup01">
-			<div class="modal-popup-container">
-				<div class="popup-wrap">
-					<div class="popup-body">
-						<ul class="text">
-							<li>평가금액: 전일 기준 자산 평가 금액입니다.</li>
-							<li>누적수익률: 금융감독원 수익률 산출기준으로 계산되며, 가입일부터 기준일까지 누적된 금액입니다. <br>누적수익률&#61;&#123;적립금(평가금액)&#125;&#43;중도인출금 등&#125;&#47;납입원금&#45;1</li>
-							<li>원금: 원금(순입금액)&#61;총입금액&#45;총출금금액</li>
-						</ul>
-					</div>
-					<button class="button-x" type="button">팝업 닫기</button>
-				</div>
-			</div>
-		</div>
-		<!--// 평가금액 툴팁 팝업 -->
+		<!-- 평가금액 툴팁 팝업 -- 24-11-13 IRP2024 : 툴팁 UI 변경으로 삭제 -->
 
 		<script>
 			// 스탠다드시트 노출 시 바닥페이지 스크롤 고정
@@ -917,7 +890,7 @@
 				}
 			});
 
-			const myModalObj01 = new UI.ModalPopup("#modalPopup01"); //평가금액 툴팁
+			// const myModalObj01 = new UI.ModalPopup("#modalPopup01"); //평가금액 툴팁
 
 			const topBtn = document.querySelector(".ui-btn-top");
 			window.addEventListener("scroll", () => {
@@ -987,6 +960,18 @@
 				setTimeout(function () {
 					UI.TabsUpdate('.toggle-tabs');
 				},100);
+			});
+
+			// 24-12-19 IRP2024 : 보유상품 차트 말풍선 js 추가(9% 이하 일때 오른쪽 정렬)
+			$(document).ready(()=>{
+				$('.irp24-asset-tab02 .irp24-asset-graph .stackbar > span').map(function(){
+					var _this = $(this);
+					var str = _this.attr('style');
+					var strNumber = Number(str.slice(6, str.length-1));
+					if(strNumber <= 9){
+						_this.addClass('right');
+					}
+				});
 			});
 		</script>
 	</body>
