@@ -5091,6 +5091,7 @@ p.text.icon-info::before {
 .irp24-detail-type01.type-card-detail .list-table-wrap .list-type-table {margin-top:0;border:none;}
 .irp24-detail-type01 .list-table-wrap .list-type-table + .list-sub-wrap,
 .irp24-detail-type01 .list-table-wrap .list-type-table + .list-type-table {border-top:1px solid #EBEFF5}
+.irp24-detail-type01 .list-table-wrap .list-type-table.no-line {border-top:none;padding-top:0;}
 .irp24-detail-type01.type-card-detail > .button-group .btn-text .label.txt-type01 {line-height:1;}
 .irp24-detail-type01.type-card-detail > .button-group .btn-text.top[aria-expanded=false] .label.txt-type01::before {content: '펼치기';}
 .irp24-detail-type01.type-card-detail > .button-group .btn-text.top[aria-expanded=true] .label.txt-type01::before {content: '접기';}
@@ -5124,9 +5125,12 @@ p.text.icon-info::before {
 .irp24-tooltip-top.tooltip-area .tooltip-box {top:initial;bottom:29px;}
 .irp24-tooltip-top.tooltip-area:after {top:initial;bottom:25px;transform: rotate(135deg);}
 .tooltip-area .btn-tooltip.irp24-tooltip-gray {color: transparent;background-position: -216px 0;background-repeat: no-repeat;background-color: transparent;width: 24px;height: 24px;background-image: url(/images/web/img/icon/sprite-icons24.png);background-size: 360px 288px}
+.irp24-tooltip-top .tooltip-box-text .subtext {position:relative;display:block;margin-top:10px;padding-left:12px;font-size:var(--t8-font-size);line-height:var(--t8-line-height);color:#6C747E;}
+.irp24-tooltip-top .tooltip-box-text .subtext::before {content:"*";position:absolute;left:0;top:2px;}
 .md0 {margin-bottom:0 !important}
 .ml4 {margin-left:4px !important}
 .mr16 {margin-right:16px !important}
+.mt-16 {margin-top:-16px !important;}
 .pt14 {padding-top:14px !important;}
 .pl18 {padding-left:18px !important;}
 .pb82 {padding-bottom:82px !important}
@@ -5138,6 +5142,13 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-operation-mall .card-type.fund2 .input-type-radio input[type=radio],
 .irp24-retirement-pension .type-card-check .input-type-checkbox input[type=checkbox],
 .card-info.irp24-info-detail .input-type-radio input[type=radio] {width:38px;height:38px}
+/* 상세 상품 정보 - 링크 추가 */
+.irp24-account-link .button {position:relative;display:block;width:100%;padding-right:34px;border:0;text-align:left;background-color:transparent;}
+.irp24-account-link .button::after {content:'';position:absolute;top:50%;right:6px;width:12px;height:12px;margin-top:-6px;background-image:url(/images/web/img/icon/sprite-icons12.png);background-repeat:no-repeat;background-position:-24px 0;background-size:48px 48px;}
+.box-layout-wrap .type-card-service.irp24-account-link {padding:8px 0;}
+.box-layout-wrap .type-card-service.irp24-account-link .button {padding:0 0 0 32px;}
+.box-layout-wrap .type-card-service.irp24-account-link .button::after {top:10px;}
+.box-layout-wrap .type-card-service.irp24-account-link .button .logo {top:4px;}
 
 /* 상품운용 > 보유상품변경 */
 .step-linear-type3 .step-sub-text.round {display:inline-block;padding:1px 8px 1px;font-size:var(--t9-font-size);font-weight:500;line-height:var(--t9-line-height);border:1px solid #b9c1c9;border-radius:12px;box-sizing:border-box}
@@ -5170,19 +5181,31 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-product-change .error-box {margin-top:16px;padding:12px 16px;color:#d61111;font-size:var(--t8-font-size);line-height:var(--t8-line-height);letter-spacing:-0.5px;border-radius:8px;background:rgba(235, 61, 79, 0.10);}
 /* 매수 후 위험자산 그래프 css */
 .irp24-risky-asset .risky-top-info {color:#343A3F;font-size:var(--t6-font-size);line-height:var(--t6-line-height);}
+.irp24-risky-asset .risky-top-info .title {color:#121619;font-size:var(--t5-font-size);line-height:var(--t6-line-height);}
+.irp24-risky-asset .risky-top-info .title + p {margin-top:4px;}
 .irp24-risky-asset .risky-top-info strong {font-weight:500;}
 .irp24-risky-asset .risky-top-info .sub-txt {margin-top:4px;color:#808892;font-size:var(--t8-font-size);line-height:var(--t8-line-height);}
-.irp24-risky-asset .risky-asset-graph {margin:24px 0;}
-.irp24-risky-asset .risky-asset-graph strong {display:block;color:#121619;font-size:var(--t8-font-size);font-weight:500;line-height:var(--t8-line-height);}
+.irp24-risky-asset .risky-asset-graph {margin:24px 0;padding:20px;border-radius:12px;border:1px solid #E1E6EC;}
+.irp24-risky-asset .risky-asset-graph strong {display:block;color:#21272A;font-size:var(--t8-font-size);font-weight:500;line-height:var(--t8-line-height);}
+.irp24-risky-asset .risky-asset-graph .risky-img {margin:24px auto;}
+.irp24-risky-asset .risky-asset-graph .box-layout-wrap.style-radius {padding:0px;border:none;background-color:#F8F9FC;}
+.irp24-risky-asset .risky-asset-graph .graph-info {padding:16px;}
+.irp24-risky-asset .risky-asset-graph .graph-info + .graph-info {margin-top:-4px;padding:12px 16px 16px;border-top:1px solid #EBEFF5;}
+.irp24-risky-asset .risky-asset-graph .graph-info dl {display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between; color:#121619;font-size:var(--t6-font-size);line-height:var(--t6-line-height);}
+.irp24-risky-asset .risky-asset-graph .graph-info dd {display:-webkit-box;display:-ms-flexbox;display:flex;}
+.irp24-risky-asset .risky-asset-graph .graph-info .ic-arr {width:24px;height:24px;margin:0 8px;background:url(/images/web/img/icon/sprite-icons24.png) -192px -144px no-repeat;background-size:360px 288px;}
+.irp24-risky-asset .risky-asset-graph .graph-info dl + .subtext {margin-top:2px;}
+.irp24-risky-asset .risky-asset-graph .graph-info .sub-tit {color:#D61111;font-size:var(--t6-font-size);line-height:var(--t6-line-height);font-weight:500;}
+.irp24-risky-asset .risky-asset-graph .graph-info .sub-tit + .text {margin-top:8px;}
+.irp24-risky-asset .risky-asset-graph .graph-info .sub-tit + ul.text li {margin-bottom:0px;}
 .irp24-risky-asset .risky-img {display:block;width:100%;max-width:375px;margin:12px auto 0;}
-.irp24-risky-asset .risky-asset-info {padding-top:20px;border-top:1px solid #f2f2f2;}
 .irp24-risky-asset .risky-asset-info .info-tit {color:#21272A;font-weight:500;}
-.irp24-risky-asset .risky-asset-info .notice-order-list {margin-top:12px}
-.irp24-risky-asset .risky-asset-info .notice-order-list li {margin:0;}
-.irp24-risky-asset .risky-asset-info .notice-order-list li .order-num {top:5px;border:none;font-size:var(--t6-font-size);}
+.irp24-risky-asset .risky-asset-info ul.text {margin-top:12px;}
+.irp24-risky-asset .risky-asset-info ul.text li {margin-bottom:0;}
 .irp24-risky-asset .risky-asset-info .box-layout-wrap {margin-top:16px}
 .irp24-risky-asset .risky-asset-info .box-layout-wrap .text {margin-top:8px;}
-
+.bottom-sheet-container.irp24-max70 {max-height:70vh;} /* 위험자산 매수비율 안내 */
+.bottom-sheet-container.irp24-max70.max {max-height:calc(100vh - 49px - var(--safeAreaInsetTop));}
 .irp24-bm-list li {display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:8px;} 
 .irp24-bm-list li  ~ li {margin-top:12px}
 .irp24-bm-list .tit-area {-webkit-box-flex:1;-ms-flex:1;flex:1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#121619;font-size:var(--t6-font-size);font-weight:500;line-height:var(--t6-line-height);letter-spacing:-0.5px}
@@ -5256,7 +5279,7 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .button-group.irp24-card-btn .button-row {justify-content:center;}
 .button-group.irp24-card-btn .btn-text {line-height:var(--t6-line-height);border:none;}
 .irp24-retirement-pension .trigger-defense::after {display:none;}
-.irp24-retirement-pension .trigger-defense {padding-right:20px !important;}
+.irp24-retirement-pension .trigger-defense {padding-right:16px !important;}
 
 /* 슬라이드 팝업 */
 .has-sticky-button #contents-area > .container.irp24-sheet-bottom {padding-bottom:calc(60px + var(--containerPaddingBottom) + var(--safeAreaInsetBottom))}
@@ -5334,6 +5357,7 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-round-accordion.accordion + .irp24-round-accordion.accordion {margin-top:12px;}
 .irp24-round-accordion.accordion .accordion-item {border-bottom:0;}
 .irp24-round-accordion.accordion .accordion-trigger {display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding:16px 48px 16px 16px;}
+.irp24-round-accordion.accordion .accordion-trigger + .subtext {margin:-8px 48px 16px 16px;}
 .irp24-round-accordion.accordion .accordion-title.amount {text-align:right;}
 .irp24-round-accordion.accordion .accordion-panel {padding:16px 16px 0;border-top:1px solid #EBEFF5;}
 .irp24-round-accordion.accordion .pr-details + .pr-details,
@@ -5396,8 +5420,8 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-operation-mall .tabs.select-tabs > .tab-list .tab-item:last-child {margin-right:20px;}
 .irp24-operation-mall .tabs.select-tabs.scrollable-tabs > .tab-list::before {display:none;}
 .tabs.toggle-tabs.tabs-filter {background-color: #FFF;}
-.tabs.toggle-tabs.tabs-filter > .tab-list {position: sticky;left:0;top:0;z-index:3;padding-top:8px;padding-right:1px;background-color: #FFF;}
-.tabs.toggle-tabs.tabs-filter .btns {position: sticky;right: 0;top: 8px;z-index: 3;width: 32px;height: 32px;float:right;margin-top: -55px;}
+.tabs.toggle-tabs.tabs-filter > .tab-list {position:sticky;left:0;top:0;right:0;z-index:3;width:calc(100% - 2px);padding-top:8px;padding-right:1px;background-color:#FFF;overscroll-behavior:none;}
+.tabs.toggle-tabs.tabs-filter .btns {position:sticky;right:0;top: 8px;z-index:3;width: 32px;height:32px;float:right;margin-top:-55px;}
 .tabs.toggle-tabs.tabs-filter .btns::after {content: "";clear: both;display: block;}
 .tabs.toggle-tabs.tabs-filter .btns + .section {margin-top: 16px}
 .tabs.toggle-tabs.tabs-filter .tabs.segment-tabs > .tab-list .tab-item {padding: 10px 10px;margin-bottom: 0;}
@@ -5417,6 +5441,7 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-operation-mall .card-type.fund2 .label-wrap .label-type-risk + .label-type-text {margin-left:8px;}
 .irp24-operation-mall .card-type.fund2 .title-utility .btn-text {overflow:hidden;text-overflow:ellipsis;max-width:100%;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
 .irp24-operation-mall .card-type.fund2 .fund-cont {margin-top:8px;color:#808892;line-height:20px;}
+.irp24-operation-mall .card-type.fund2 .fund-cont + .list-type-table {margin-top:2px;}
 .irp24-operation-mall .card-type.fund2 .expiry-date {padding-top:4px;color:#D61111;font-size:var(--t8-font-size);line-height:var(--t8-line-height);}
 .irp24-operation-mall .card-type.fund2 .title-utility + .expiry-date {margin-top:4px}
 .irp24-operation-mall .card-type.fund2 label.icon-toggle.size-l {position:absolute;top:18px;right:18px;width:24px;height:24px;} 
@@ -5499,7 +5524,7 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-swiper-list .swiper-slide.slide04::before {background-position:0 -120px;}
 .irp24-swiper-list .swiper-slide.slide05::before {background-position:0 -160px;}
 .irp24-swiper-list .swiper-slide.slide-attr {width:100%;}
-.irp24-swiper-list .swiper-box-btn {display:block;padding:16px 14px 16px 56px;;margin:0;background:transparent;border:none;text-align:left;}
+.irp24-swiper-list .swiper-box-btn {display:block;padding:16px 14px 16px 56px;margin:0;background:transparent;border:none;text-align:left;}
 .irp24-swiper-list .swiper-slide.slide-attr .swiper-box-btn:after {content: "";position:absolute;right:20px;top:22px;background-position:-24px 0;background-repeat:no-repeat;background-color:transparent;width:12px;height:12px;background-image:url(/images/web/img/icon/sprite-icons12.png);background-size:48px 48px;}
 .irp24-swiper-list .desc {display:block;color:#6C747E;font-size:var(--t9-font-size);line-height:var(--t9-line-height);}
 .irp24-swiper-list .tit {display:block;color:#121418;font-size:var(--t6-font-size);font-weight:500;line-height:var(--t5-line-height);}
@@ -5566,7 +5591,7 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-myrp-title .btn-text-arrow {padding:0 16px 0 0;font-size:var(--t5-font-size);line-height:var(--t5-line-height);font-weight:500;letter-spacing:-0.5px;color:#121619;}
 .irp24-myrp-title .btn-text-arrow::after {background-position:-24px 0;}
 .irp24-myrp-title .subtext {margin-bottom:1px;font-size:var(--t8-font-size);line-height:var(--t8-line-height);color:#6C747E;}
-.irp24-myrp-tabcont {padding:24px 20px 0;}
+.irp24-myrp-tabcont {overflow:hidden;padding:24px 20px 0;}
 .irp24-myrp-tabcont .tabs-section {margin-bottom:32px;}
 .irp24-myrp-tabcont .tab-list {margin-bottom:24px;}
 .irp24-comm-footer {padding:32px 20px;background:#f3f6fb;}
@@ -5583,6 +5608,12 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-fullsheet-content {min-height:calc(100vh - 173px);}
 .irp24-icon-info {display:inline-block;width:24px;height:24px;margin-right:4px;vertical-align:top;background:url(/images/web/img/icon/ic_24_information.png) no-repeat 0 0 / 100%;}
 .change-of-held-product.check .irp24-myrp-infoaccordion .accordion-item+.accordion-item {margin-top:8px;border-top:1px solid #EBEFF5;}
+/* 평가금액 툴팁 */
+.irp24-myrp-tooltip {margin:0 -2px;padding:4px 0;}
+.irp24-myrp-tooltip ul.text > li {margin-bottom:10px;padding-left:9px;font-size:var(--t8-font-size);line-height:var(--t8-line-height);word-break:break-all;}
+.irp24-myrp-tooltip ul.text > li:last-child {margin-bottom:0;}
+.irp24-myrp-tooltip ul.text > li::before {top:8px;}
+.irp24-myrp-tooltip ul.text > li .tit {display:block;margin-bottom:4px;font-weight:700;color:#343A3F;}
 
 /* 나의 퇴직연금 홈_계좌 보유(DB) */
 .irp24-myrp-account .none-logo .name {padding-left:0;}
@@ -5630,7 +5661,7 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 /* 나의 퇴직연금 홈_예약 신규 중 */
 .irp24-myrp-step {padding:16px;}
 .irp24-myrp-step .title {margin:8px 0 24px;}
-.irp24-myrp-step .step-linear-type3 {overflow:hidden;;margin:0 0 24px;padding-top:10px;}
+.irp24-myrp-step .step-linear-type3 {overflow:hidden;margin:0 0 24px;padding-top:10px;}
 .irp24-myrp-step .step-linear-type3 > ul {margin:0 -36px;}
 /* 퇴직연금 가져오기 안내 BS */
 .irp24-change-guide {position:relative;text-align:center;margin-bottom:-12px;}
@@ -5654,10 +5685,12 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .graph-amount .balloon .asset-legend li .rate {display:block;font-size:13px;font-weight:300;}
 /* [E] bm.css 에서 가져옴(수정) : 자산 > 추이 그래프 */
 .irp24-myrp-tabcont .tabs-section {margin-bottom:32px;}
-.irp24-filter-wrap .radio-btn-row {display:flex;justify-content:center;margin:20px 0 0;}
+.irp24-filter-wrap {position:relative;}
+.irp24-filter-wrap .btn-text {position:absolute;top:0;right:20px;}
+.irp24-filter-wrap .radio-btn-row {display:flex;justify-content:flex-start;margin:20px 0 0;padding:2px 0 0 11px;}
 .irp24-filter-wrap .radio-btn-item {overflow:hidden;position:relative;padding:0 8px 0 9px;font-size:var(--t8-font-size);line-height:var(--t8-line-height);color:#565C63;}
 .irp24-filter-wrap .radio-btn-item+.radio-btn-item::before {content:'';display:block;position:absolute;left:0;top:3px;width:1px;height:12px;background-color:#EBEFF5;}
-.irp24-filter-wrap .radio-btn-item input {position:absolute;left:0;top:-2px;display:inline-block;width:0;height:0;margin:0;background-color:transparent;border-color:transparent;}
+.irp24-filter-wrap .radio-btn-item input {position:absolute;left:0;top:-2px;display:inline-block;width:0;height:0;margin:0;background-color:transparent;border-color:transparent;appearance:none;-webkit-appearance:none;}
 .irp24-filter-wrap .radio-btn-item input:checked+label {font-weight:500;color:#0471E9;}
 .irp24-filter-wrap .date-range-wrap {display:none;margin-top:32px;padding:8px 16px 16px;border-radius:16px;background-color:#F8F9FC;}
 .irp24-filter-wrap .date-range-set {margin:0;}
@@ -5759,7 +5792,7 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-myrp-product .more-button {margin-bottom:0;}
 /* 나의 퇴직연금 홈 > 자산 Tab > 보상품현황 > 계좌관리 */
 .irp24-account-fullsize {border:0;background:transparent;}
-[type="button"].irp24-account-fullsize {position:relative;padding-right:24px;}
+[type="button"].irp24-account-fullsize {position:relative;width:100%;padding-right:24px;}
 [type="button"].irp24-account-fullsize::after {content:'';position:absolute;top:14px;right:6px;width:12px;height:12px;background-image:url(/images/web/img/icon/sprite-icons12.png);background-repeat:no-repeat;background-position:-12px 0;background-size:48px 48px;}
 .irp24-account-fullsize .type-card-service.no-line .name {line-height:var(--t6-line-height);}
 
@@ -5779,22 +5812,24 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-info-box .title .subtext {margin-top:8px;}
 .irp24-info-box .legend-list {margin:16px 0 0;}
 .irp24-expect-deduct {margin-top:20px;padding:16px 16px 20px 16px;border-radius:12px;background-color:#F3F6FB;}
-.irp24-expect-deduct .text-data-list li {justify-content:space-between;}
-.irp24-expect-deduct .text-data-list li .tit-data-view {font-weight:500;color:#121619;}
-.irp24-expect-deduct .text-data-list .color-em {font-weight:500;}
-.irp24-expect-deduct .text-data-list .subtext {margin-top:2px;font-size:var(--t9-font-size);line-height:var(--t9-line-height);color:#808892;}
-.irp24-income-set {position:relative;margin-top:16px;padding-top:20px;border-top:1px solid #E1E6EC;}
+.irp24-expect-deduct .tit {font-weight:500;color:#121619;}
+.irp24-deduct-amount {margin-top:-23px;padding-bottom:16px;border-bottom:1px solid #E1E6EC;text-align:right;}
+.irp24-deduct-amount .txt-data {font-size:var(--t6-font-size);line-height:var(--t6-line-height);font-weight:500;color:#0471E9;}
+.irp24-deduct-amount .subtext {display:block;margin-top:2px;font-size:var(--t9-font-size);line-height:var(--t9-line-height);color:#808892;}
+.irp24-income-set {position:relative;padding-top:20px;}
 .irp24-income-set .btn {position:absolute;top:20px;right:0;margin:0;}
 .irp24-income-set .text .inner {display:inline-block;margin:4px 0 0 4px;color:#343A3F;}
 .irp24-income-set .text::before {content:'';display:inline-block;width:32px;height:32px;vertical-align:top;background:url(/images/web/img/icon/ic_32_income.png) no-repeat 0 0 / 100%;}
 /* [S] 상품변경 바텀시트 */
 .btn-type-red {border:0;background-color:rgba(214, 17, 17, 0.1);color:#D61111;}
+.irp24-change-btmsheet .button-group .btn-size-l {font-weight:500;}
 .irp24-change-btmsheet .dividers-group {margin:24px -20px;}
 .irp24-change-btmsheet .irp24-myrp-accdetail {box-shadow:none;}
 .irp24-change-btmsheet .irp24-myrp-accdetail .tooltip-area {margin-left:4px;}
 .irp24-change-btmsheet .irp24-myrp-accdetail .title-box {margin-bottom:4px;}
 .irp24-change-btmsheet .irp24-myrp-accdetail .amount {font-weight:300;}
 .irp24-change-btmsheet .irp24-myrp-accdetail .button-group {margin-top:16px;}
+.irp24-change-btmsheet .ui-list.thick > li > * .item-body {color:#343A3F}
 .irp24-change-list {margin-top:24px;}
 .irp24-change-list .title {display:block;color:#6C747E;}
 .irp24-change-list .ui-list.thick .item-content {position:relative;min-height:40px;margin-top:16px;padding:0 0 0 56px;}
@@ -5820,8 +5855,8 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .tax-graph [class^=graph-line-]::after{content:"";display:block;position:absolute;top:0;width:4px;height:24px;background-color:#2cb2aa;}
 .tax-graph .graph-line-less {left:0;border-radius:8px 0 0 8px;}
 .tax-graph .graph-line-less::after {right:0;}
-.tax-graph [class^=graph-line-][style*="width:100%"] {border-radius:8px;}
-.tax-graph [class^=graph-line-][style*="width:100%"]::after {display:none;}
+.tax-graph [class^=graph-line-][style*="width: 100%"] {border-radius:8px;}
+.tax-graph [class^=graph-line-][style*="width: 100%"]::after {display:none;}
 .tax-graph .graph-line-over {right:0;border-radius:0 8px 8px 0;}
 .tax-graph .graph-line-over::after {left:0;}
 .tax-graph .tax-balloon{position:absolute;top:-56px;left:50%;transform:translateX(-50%);height:34px;padding:7px;font-size:12px;font-weight:500;color:#188379;border-radius:8px;line-height:18px;white-space:nowrap;border:1px solid rgba(24, 131, 121, 0.60);background-color:#fff;box-sizing:border-box;z-index:999}
@@ -5850,6 +5885,7 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .legend-item.color-26::before {background-color:#2998E6;}
 .legend-item.color-27::before {background-color:#567DDF;}
 .legend-item.color-28::before {background-color:#56A426;}
+.legend-item.border-01::before {border:2px dotted #1EA39C;background-color:transparent;box-sizing:border-box;}
 .irp24-asset-graph {padding-top:44px;}
 .irp24-asset-graph .graph-wrap {position:relative;padding-left:47px;}
 .irp24-asset-graph .date {position:absolute;top:3px;left:0;font-size:var(--t8-font-size);line-height:var(--t8-line-height);}
@@ -5857,15 +5893,17 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-asset-graph [class^=bar-value-] {position:relative;display:block;height:100%;}
 .irp24-asset-graph [class^=bar-value-]:only-child {border:0;border-radius:8px;}
 .irp24-asset-graph .bar-value-01 {border-radius:8px 0 0 8px;background-color:#228BE6;border-right:2px solid #fff;}
-.irp24-asset-graph .bar-value-01[style*="width:0%"],
-.irp24-asset-graph .bar-value-01[style*="width:100%"] {border:0;border-radius:8px;}
+.irp24-asset-graph .bar-value-01[style*="width: 0%"],
+.irp24-asset-graph .bar-value-01[style*="width: 100%"] {border:0;border-radius:8px;}
 .irp24-asset-graph .bar-value-02 {border-radius:0 8px 8px 0;background-color:#808892;}
-.irp24-asset-graph .bar-value-02[style*="width:100%"] {border-radius:8px;}
+.irp24-asset-graph .bar-value-02[style*="width: 100%"] {border-radius:8px;}
 .irp24-asset-graph .bar-value-02 .bar-balloon {color:#121619;filter:grayscale(100%);}
 .irp24-asset-graph .bar-balloon {display:none;position:absolute;left:50%;bottom:calc(100% + 10px);font-size:var(--t8-font-size);line-height:var(--t8-line-height);letter-spacing:-0.5px;font-weight:500;color:#228BE6;background-color:#fff;border-radius:8px;border:1px solid #68AAF2;-webkit-box-shadow:0px 2px 6px rgba(22, 37, 66, 0.1);box-shadow:0px 2px 6px rgba(22, 37, 66, 0.1);white-space:nowrap;-webkit-transform:translateX(-50%);transform:translateX(-50%);} 
 .irp24-asset-graph [class^=bar-value-]:active .bar-balloon,
 .irp24-asset-graph [class^=bar-value-]:hover .bar-balloon,
 .irp24-asset-graph [class^=bar-value-]:focus .bar-balloon {display:block;}
+.irp24-asset-graph [class^=bar-value-].right .bar-balloon {left:auto;right:-5px;-webkit-transform:translateX(0);transform:translateX(0);}
+.irp24-asset-graph [class^=bar-value-].right .bar-balloon::after {left:auto;right:5px;}
 .irp24-asset-graph .bar-balloon::after {content:"";position:absolute;top:100%;left:calc(50% - 5px);width:11px;height:7px;background:url(/images/web/img/bg/bg-progress1.png) no-repeat 0 -5px/11px 10px;} 
 .irp24-asset-graph .bar-balloon em {display:block;padding:7px;}
 .irp24-investstyle-anchor {display:block;padding:16px;border-radius:12px;font-size:var(--t6-font-size);line-height:var(--t6-line-height);color:#121619;background:#F3F6FB;}
@@ -5891,6 +5929,9 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-trade-guide .dvimg {display:block;margin:24px 0 16px;line-height:0;}
 .irp24-trade-guide .dvimg:last-child {margin-bottom:0;}
 .irp24-trade-guide .dvimg img {width:100%;}
+/* 현금성자산 계좌상세 바텀시트 */
+.irp24-table-wrap {border-top:1px solid #565C63;}
+.irp24-table-wrap .list-type-table {border-top:0;}
 
 /* 매수예정상품 */
 .irp24-tit-tooltip .tooltip-trigger {margin-top:-5px;}
@@ -5901,7 +5942,7 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .btn-radio-list.type-full.irp24-type-full .btn-type-radio input[type=radio]:checked + label::after {top:calc(50% - 12px)}
 .btn-text.irp24-btn-text {font-size:var(--t7-font-size);line-height:var(--t7-line-height);}
 .irp24-graph-area.graph-area-wrap {margin:0 12px;}
-.irp24-graph-bdbox.graph-area {padding:24px;border:1px solid #E1E6EC;border-radius:12px;}
+.irp24-graph-bdbox.graph-area {display:block;padding:24px;border:1px solid #E1E6EC;border-radius:12px;line-height:0;}
 .irp24-graph-bdbox.graph-area img {max-width:none;width:100%;}
 .irp24-graph-bdbox.graph-area .title {color:#565C63;font-size:var(--t9-font-size);line-height:var(--t9-line-height);font-weight:400;}
 
@@ -5944,7 +5985,7 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-pension-bannerbox .go-link {display:block;padding:19px;color:#121612;}
 .irp24-banner-goal {background-image:url(/images/web/img/manage/banner_irp24_80x80_goal.png);}
 .irp24-banner-care {background-image:url(/images/web/img/manage/banner_irp24_80x80_care.png);}
-.irp24-pension-diagnosis .tab-contents-group {padding:24px 20px 0;}
+.irp24-pension-diagnosis .tab-contents-group {overflow:hidden;padding:24px 20px 0;}
 .irp24-pension-diagnosis .irp24-dvgroup .title-box {margin:24px 0 8px;}
 .irp24-pension-diagnosis .ui-form-wrap .btn-text-arrow {height:56px;padding:16px;border-radius:12px;text-align:left;}
 .irp24-pension-diagnosis .ui-form-wrap .btn-text-arrow::after {right:16px;background-position:-12px 0;}
@@ -5954,9 +5995,13 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-investchart-swiper .swiper {position:static;border-radius:12px;border:1px solid #E1E6EC;background:#fff;}
 .irp24-investchart-swiper .swiper .swiper-pagination {bottom:0;padding:8px 0;}
 .irp24-pension-diagnosis .crisis-scenario-list {margin:0 -20px;padding:0 0 40px 0;background-color:transparent;}
-.irp24-pension-diagnosis .crisis-scenario-list .swiper {overflow:visible;height:100px;padding:0 20px;}
+.irp24-pension-diagnosis .crisis-scenario-list .swiper {overflow:visible;padding:0 20px;}
 .irp24-pension-diagnosis .crisis-scenario-list+.button-group {margin-top:16px;}
 .irp24-pension-diagnosis .custom-suggestion-tab .legend-item {color:#565C63;}
+.irp24-pension-diagnosis .stress-result-box .info-box {padding:24px 16px;}
+.irp24-pension-diagnosis .stress-result-box .chart-area {margin-top:4px;}
+.irp24-pension-diagnosis .stress-result-list {margin-top:16px;padding:0 8px;background-color:inherit;}
+.irp24-pension-diagnosis .stress-result-list .text {color:#6C747E;}
 
 /* 나의 퇴직연금 준비정도 */
 .irp24-link-column .prepare-link + .prepare-link {margin-left:0;}
@@ -6138,9 +6183,9 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 #contents-area > .container.pr-common.type-irp .visual-content .box-content-wrap.irp24-prod-info {padding:16px;background-color:#fff;}
 #contents-area > .container.pr-common.type-irp .visual-content .box-content-wrap.irp24-prod-info .prod-info-top {position:relative;padding-right:58px;color:#565C63;font-size:var(--t6-font-size);line-height:var(--t6-line-height);text-align:left;}
 #contents-area > .container.pr-common.type-irp .visual-content .box-content-wrap.irp24-prod-info .prod-info-top strong {display:block;margin-top:4px;color:#121619;font-size:var(--t5-font-size);line-height:var(--t6-line-height);}
-#contents-area > .container.pr-common.type-irp .visual-content .box-content-wrap.irp24-prod-info .prod-info-top::after {position:absolute;display:block;top:50%;right:0;transform:translateY(-50%);width:50px;height:50px;background-image:url(/images//web/img/manage/bg_irp_product_details.png);background-repeat:no-repeat;background-size:50px auto;content:'';}
-#contents-area > .container.pr-common.type-irp .visual-content .box-content-wrap.irp24-prod-info .prod-info-top.up::after {background-position:0 0;}
-#contents-area > .container.pr-common.type-irp .visual-content .box-content-wrap.irp24-prod-info .prod-info-top.down::after {background-position:0 -51px;}
+#contents-area > .container.pr-common.type-irp .visual-content .box-content-wrap.irp24-prod-info .prod-info-top::after {position:absolute;display:block;top:50%;right:0;transform:translateY(-50%);width:50px;height:50px;background-image:url(/images/web/img/manage/bg_irp_product_details.png);background-repeat:no-repeat;background-size:50px auto;}
+#contents-area > .container.pr-common.type-irp .visual-content .box-content-wrap.irp24-prod-info .prod-info-top.up::after {background-position:0 0;content:'';}
+#contents-area > .container.pr-common.type-irp .visual-content .box-content-wrap.irp24-prod-info .prod-info-top.down::after {background-position:0 -51px;content:'';}
 #contents-area > .container.pr-common.type-irp .visual-content .box-content-wrap.irp24-prod-info .prod-info-top.up em {color:#D61111}
 #contents-area > .container.pr-common.type-irp .visual-content .box-content-wrap.irp24-prod-info .prod-info-top.down em {color:#0471E9}
 .box-content-wrap.irp24-prod-info .info-wrap {margin-top:12px;padding-top:12px;border-top:1px solid #EBEFF5}
@@ -6228,7 +6273,7 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-knowledgeplus .irp24-banner-swiper {margin:0 0 16px;}
 
 /* 대고객 변경사항 가이드 */
-.irp24-guide-swiper {text-align:center}
+.irp24-guide-swiper {overflow:hidden;height:calc( 100vh - 49px - 56px - var(--containerPaddingBottom) );margin-bottom:calc(var(--containerPaddingBottom) * -1 );text-align:center}
 .irp24-guide-swiper .tit {font-size:20px;font-weight:500;line-height:32px}
 .irp24-guide-swiper .txt {margin-top:16px;color:#565c63;font-size:16px;font-weight:300}
 .irp24-guide-swiper .txt strong {font-weight:500;color:#5F74FB}
@@ -6252,6 +6297,56 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 .irp24-trans-history .type-card-detail .box-layout-wrap .text-data-list li .txt-data-view {font-size:var(--t7-font-size);line-height:var(--t7-line-height);}
 .irp24-trans-history .type-card-detail .box-layout-wrap .text-data-list li {margin-top:4px;}
 
+/* 투자고수의 포트폴리오 */
+.irp24-visual-top100 {background-color:#4282D1;}
+.irp24-visual-top100 .inner {position:relative;padding:62px 20px;color:#fff;}
+.irp24-visual-top100 .inner::after {content:'';position:absolute;top:50%;right:20px;display:block;margin-top:-70px;width:140px;height:140px;background-color: aqua;}
+.irp24-portfolio {margin-top:32px;}
+.irp24-chart-tree {margin:24px 0;}
+.irp24-chart-tree .btn-area {display:flex;justify-content:flex-start;align-items:center;margin-bottom:12px;}
+.irp24-chart-tree .btn-area .btn:first-child {margin-left:0;}
+.irp24-chart-tree .btn-area .irp24-arrow-blue {display:inline-block;width:8px;height:8px;background:url(/images/web/img/icon/ic_8_arrow_blue.png) no-repeat 0 0 / 100%;}
+.irp24-chart-tree .btn-area .btn-type-5.btn-size-m {min-width:auto;padding:4px 7px;}
+.irp24-chart-tree .chart-area {overflow:hidden;;border-radius:12px;}
+
+/* 일임형로보 */
+.irp24-robo-info .dvimg {display:block;margin:32px 0;line-height:0;}
+.irp24-robo-info .dvimg img {width:100%;}
+.irp24-robo-info .q-subject {padding:24px 36px 24px 45px;}
+.irp24-robo-info .q-subject::after {top:21px;}
+.irp24-robo-info .q-question-text {color:#565C63;}
+.irp24-robo-btngroup {margin-top:24px;}
+.irp24-robo-btngroup .label {line-height:1;}
+.irp24-robo-btngroup .label::before {content:'';display:inline-block;width:24px;height:24px;margin-right:4px;vertical-align:middle;background-repeat:no-repeat;background-position:0 0;background-size:100%;}
+.irp24-robo-btngroup .icon-quantec .label::before {background-image:url(/images/web/img/icon/ic_24_quantec.png);}
+.irp24-robo-btngroup .icon-quarterback .label::before {background-image:url(/images/web/img/icon/ic_24_quarterback.png);}
+.irp24-robo-radio .list-type-table {margin-left:32px;padding-bottom:0;}
+.irp24-robo-radio .list-type-table > li + li {margin-top:4px;}
+.irp24-robo-radio .type-card-check .card-select-area .label-wrap {float:right;display:inline-block;margin:0;}
+.irp24-robo-radio .type-card-check .card-select-area .label-type-round {font-size:var(--t9-font-size);line-height:var(--t9-line-height);}
+.irp24-robo-radio .bottom-area {margin-top:24px;text-align:right;}
+.irp24-robo-radio .msgbox {display:block;margin-top:24px;padding:12px 16px;color:#d61111;font-size:var(--t8-font-size);line-height:var(--t8-line-height);letter-spacing:-0.5px;border-radius:8px;background:rgba(235, 61, 79, 0.10);}
+.irp24-robo-radio a.msgbox {position:relative;}
+.irp24-robo-radio a.msgbox::after {content:'';position:absolute;top:15px;right:16px;display:block;width:12px;height:12px;background:url(/images/web/img/icon/ic_12_arrow_right_red.png) no-repeat 0 0 / 100%;}
+.irp24-robo-wrap .step-linear-type3 {overflow:hidden;margin-top:40px;padding-top:10px;}
+.irp24-robo-wrap .step-linear-type3 > ul {margin:0 -36px;}
+.irp24-robo-wrap .text-data-list > li.data-over .tit-data-view {-webkit-box-flex:1;flex:auto;} 
+.irp24-robo-wrap .text-data-list > li.data-over .txt-data-view {-webkit-box-flex:2.5;flex:2.5;}
+.irp24-robo-wrap .irp24-myrp-accdetail {border:1px solid #E1E6EC;box-shadow:none;-webkit-box-shadow:none;}
+.irp24-robo-wrap .irp24-expect-deduct {padding:16px;}
+.irp24-robo-wrap .irp24-deduct-amount {padding:0;border:none;}
+.irp24-robo-wrap .type-card-check .step-linear-type3 {margin:16px 0 0;}
+.irp24-robo-wrap .type-card-check .step-linear-type3 > ul {margin:0;}
+.irp24-robo-wrap .irp24-myrp-product {padding-bottom:0;}
+.irp24-robo-wrap .label-wrap .label-text-wrap:first-child {padding-left:0;}
+.irp24-robo-wrap .irp24-retirement-pension .prod-sale-list button.name {width:100%;margin-left:0;}
+.irp24-robo-wrap .irp24-retirement-pension .card-select-area .amount,
+.irp24-robo-wrap .irp24-retirement-pension .prod-sale-list .list-type-table {padding-left:0;}
+.irp24-lobo-salelist {margin-top:32px;}
+.irp24-lobo-salelist .button-group {margin-top:16px;}
+.irp24-lobo-salelist .label-wrap.multi {display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center;}
+.irp24-retirement-pension .irp24-lobo-salelist .select-method .list-type-table .txt-data-area .btn {width:40px;}
+
 /*  Safari 버전 14.1 이하(iOS는 14.5 이하) 버전 크로스브라우징 (gap속성) */
 @supports (-webkit-touch-callout: none) and (not (translate: none)) {
 	.container[class*=irp24-] .list-type-table > li .tit-data-area, 
@@ -6272,4 +6367,5 @@ p.subtext.bullet-star.ipr24-bullet-star::before {content: "**";}
 	.irp24-knowledge-list .item-flex .flex-1 {padding-left:16px;}
 	.irp24-guide-swiper .swiper-pagination .swiper-pagination-bullet {margin:0 3px !important;}
 	.irp24-link-column .prepare-link + .prepare-link {margin-top:12px}
+	.irp24-chart-border.chart-style03 .bar-graph .bar + .bar {margin-left:15px}
   }
